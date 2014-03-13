@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
+  <Identity Name="15DE2A7F-E7C3-41E4-A8C7-7EAAEFE5BB69" Publisher="CN=vferrer" Version="1.0.0.0" />
+  <Properties>
+    <DisplayName>FlyingKite</DisplayName>
+    <PublisherDisplayName>jcanton</PublisherDisplayName>
+    <Logo>Images\StoreLogo.png</Logo>
+    <Description>FlyingKite Launcher</Description>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.2</OSMinVersion>
+    <OSMaxVersionTested>6.2</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="Launcher.App">
+      <VisualElements DisplayName="FlyingKite" Logo="Images\Logo.png" SmallLogo="Images\SmallLogo.png" Description="FlyingKite Launcher" ForegroundText="light" BackgroundColor="#222222">
+        <DefaultTile ShowName="allLogos" />
+        <SplashScreen Image="Images\SplashScreen.png" />
+      </VisualElements>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClient" />
+  </Capabilities>
+</Package>

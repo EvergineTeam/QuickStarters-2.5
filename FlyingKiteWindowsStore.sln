@@ -1,0 +1,30 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Launcher", "LauncherWindowsStore\Launcher.csproj", "{339563E5-2D36-4541-A4C1-6CCAF629A6DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlyingKiteProjectWindowsStore", "FlyingKite\FlyingKiteProject\FlyingKiteProjectWindowsStore.csproj", "{15DE2A7F-E7C3-41E4-A8C7-7EAAEFE5BB69}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AnyCPU = Debug|AnyCPU
+		Release|AnyCPU = Release|AnyCPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{339563E5-2D36-4541-A4C1-6CCAF629A6DB}.Debug|AnyCPU.ActiveCfg = Debug|Any CPU
+		{339563E5-2D36-4541-A4C1-6CCAF629A6DB}.Debug|AnyCPU.Build.0 = Debug|Any CPU
+		{339563E5-2D36-4541-A4C1-6CCAF629A6DB}.Debug|AnyCPU.Deploy.0 = Debug|Any CPU
+		{339563E5-2D36-4541-A4C1-6CCAF629A6DB}.Release|AnyCPU.ActiveCfg = Release|Any CPU
+		{339563E5-2D36-4541-A4C1-6CCAF629A6DB}.Release|AnyCPU.Build.0 = Release|Any CPU
+		{339563E5-2D36-4541-A4C1-6CCAF629A6DB}.Release|AnyCPU.Deploy.0 = Release|Any CPU
+		{15DE2A7F-E7C3-41E4-A8C7-7EAAEFE5BB69}.Debug|AnyCPU.ActiveCfg = Debug|Any CPU
+		{15DE2A7F-E7C3-41E4-A8C7-7EAAEFE5BB69}.Debug|AnyCPU.Build.0 = Debug|Any CPU
+		{15DE2A7F-E7C3-41E4-A8C7-7EAAEFE5BB69}.Release|AnyCPU.ActiveCfg = Release|Any CPU
+		{15DE2A7F-E7C3-41E4-A8C7-7EAAEFE5BB69}.Release|AnyCPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(SpecExplorer.ActivityCompletionStatus) = preSolution
+		SpecExplorer.ActivityCompletionStatus = 
+	EndGlobalSection
+EndGlobal
