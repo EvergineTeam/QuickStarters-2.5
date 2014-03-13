@@ -17,7 +17,7 @@
   <Applications>
     <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="Launcher.App">
       <VisualElements DisplayName="FlyingKite" Logo="Images\Logo.png" SmallLogo="Images\SmallLogo.png" Description="FlyingKite Launcher" ForegroundText="light" BackgroundColor="#222222">
-        <DefaultTile ShowName="allLogos" />
+        <DefaultTile ShowName="logoOnly" WideLogo="Images\WideLogo.png" />
         <SplashScreen Image="Images\SplashScreen.png" />
       </VisualElements>
     </Application>
