@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
+  <Identity Name="700DCE5B-CAE6-4B75-991A-5CF6C86F38B0" Publisher="CN=vferrer" Version="1.0.0.0" />
+  <Properties>
+    <DisplayName>OrbitRabbits</DisplayName>
+    <PublisherDisplayName>jcanton</PublisherDisplayName>
+    <Logo>Images\StoreLogo.png</Logo>
+    <Description>OrbitRabbits Launcher</Description>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.2</OSMinVersion>
+    <OSMaxVersionTested>6.2</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="Launcher.App">
+      <VisualElements DisplayName="OrbitRabbits" Logo="Images\Logo.png" SmallLogo="Images\SmallLogo.png" Description="OrbitRabbits Launcher" ForegroundText="light" BackgroundColor="#222222">
+        <DefaultTile ShowName="noLogos" WideLogo="Images\WideLogo.png" />
+        <SplashScreen Image="Images\SplashScreen.png" />
+      </VisualElements>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClient" />
+  </Capabilities>
+</Package>
