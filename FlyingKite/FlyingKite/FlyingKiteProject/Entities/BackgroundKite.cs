@@ -1,4 +1,13 @@
-﻿#region Using Statements
+﻿#region File Description
+//-----------------------------------------------------------------------------
+// Flying Kite
+//
+// Quickstarter for Wave University Tour 2014.
+// Author: Wave Engine Team
+//-----------------------------------------------------------------------------
+#endregion
+
+#region Using Statements
 using FlyingKiteProject.Behaviors;
 using FlyingKiteProject.Resources;
 using System;
@@ -33,9 +42,11 @@ namespace FlyingKiteProject.Entities
                 YScale = scale
             };
 
+            var spriteAtlas = new SpriteAtlas(Textures.GAME_ATLAS, this.GetRandomTextureName());
+
             this.entity = new Entity()
                 .AddComponent(transform)
-                .AddComponent(new SpriteAtlas(Textures.GAME_ATLAS, this.GetRandomTextureName()))
+                .AddComponent(spriteAtlas)
                 .AddComponent(new SpriteAtlasRenderer(DefaultLayers.Opaque))
                 .AddComponent(scrollBehavior);
 
@@ -47,13 +58,9 @@ namespace FlyingKiteProject.Entities
                 transform.XScale = newScale;
                 transform.YScale = newScale;
 
-                this.SetNewKite();
+                //Set a new kite texture
+                spriteAtlas.TextureName = this.GetRandomTextureName();
             };
-        }
-
-        public void SetNewKite()
-        {
-            this.entity.FindComponent<SpriteAtlas>().TextureName = this.GetRandomTextureName();
         }
 
         private float GetRandomScale()

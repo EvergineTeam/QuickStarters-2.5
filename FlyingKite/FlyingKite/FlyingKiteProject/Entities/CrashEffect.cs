@@ -1,4 +1,13 @@
-﻿#region Using Statements
+﻿#region File Description
+//-----------------------------------------------------------------------------
+// Flying Kite
+//
+// Quickstarter for Wave University Tour 2014.
+// Author: Wave Engine Team
+//-----------------------------------------------------------------------------
+#endregion
+
+#region Using Statements
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +28,9 @@ namespace FlyingKiteProject.Entities
     {
         private SingleAnimation fadeOutAnimation;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CrashEffect" /> class.
+        /// </summary>
         public CrashEffect()
         {
             this.entity = new Entity()
@@ -40,6 +52,9 @@ namespace FlyingKiteProject.Entities
             this.fadeOutAnimation = new SingleAnimation(1, 0, TimeSpan.FromMilliseconds(200));
         }
 
+        /// <summary>
+        /// Does the crash effect.
+        /// </summary>
         public void DoEffect()
         {
             this.entity.FindComponent<AnimationUI>().BeginAnimation(Transform2D.OpacityProperty, this.fadeOutAnimation);

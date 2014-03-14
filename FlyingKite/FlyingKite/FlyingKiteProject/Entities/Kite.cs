@@ -1,4 +1,13 @@
-﻿#region Using Statements
+﻿#region File Description
+//-----------------------------------------------------------------------------
+// Flying Kite
+//
+// Quickstarter for Wave University Tour 2014.
+// Author: Wave Engine Team
+//-----------------------------------------------------------------------------
+#endregion
+
+#region Using Statements
 using FlyingKiteProject.Behaviors;
 using FlyingKiteProject.Resources;
 using System;
@@ -26,6 +35,9 @@ namespace FlyingKiteProject.Entities
             "Orange"
         };
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Kite" /> class.
+        /// </summary>
         public Kite()
         {
             this.entity = new Entity("kite")
@@ -45,6 +57,9 @@ namespace FlyingKiteProject.Entities
                         .AddComponent(new KiteBehavior());
         }
 
+        /// <summary>
+        /// Sets a kite new color.
+        /// </summary>
         public void SetNewColor()
         {
             var anim2D = this.entity.FindComponent<Animation2D>();

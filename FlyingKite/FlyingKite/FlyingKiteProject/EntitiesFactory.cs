@@ -1,4 +1,13 @@
-﻿#region Using Statements
+﻿#region File Description
+//-----------------------------------------------------------------------------
+// Flying Kite
+//
+// Quickstarter for Wave University Tour 2014.
+// Author: Wave Engine Team
+//-----------------------------------------------------------------------------
+#endregion
+
+#region Using Statements
 using FlyingKiteProject.Behaviors;
 using FlyingKiteProject.Drawables;
 using FlyingKiteProject.Entities;
@@ -22,11 +31,19 @@ namespace FlyingKiteProject
 {
     public static class EntitiesFactory
     {
+        /// <summary>
+        /// Creates the kite.
+        /// </summary>
+        /// <returns></returns>
         public static Kite CreateKite()
         {
             return new Kite();
         }
 
+        /// <summary>
+        /// Creates the kite ball.
+        /// </summary>
+        /// <returns></returns>
         public static Entity CreateKiteBall()
         {
             var ball = new Entity()
@@ -41,11 +58,23 @@ namespace FlyingKiteProject
             return ball;
         }
 
+        /// <summary>
+        /// Creates the crash effect.
+        /// </summary>
+        /// <returns></returns>
         public static CrashEffect CreateCrashEffect()
         {
             return new CrashEffect();
         }
 
+        /// <summary>
+        /// Creates the linked rope.
+        /// </summary>
+        /// <param name="from">From.</param>
+        /// <param name="fromOrigin">From origin.</param>
+        /// <param name="to">To.</param>
+        /// <param name="toOrigin">To origin.</param>
+        /// <returns></returns>
         public static Entity CreateLinkedRope(Entity from, Vector2 fromOrigin, Entity to, Vector2 toOrigin)
         {
             var rope = new Entity()
@@ -56,11 +85,22 @@ namespace FlyingKiteProject
             return rope;
         }
 
+        /// <summary>
+        /// Creates the obstacle pair.
+        /// </summary>
+        /// <param name="reappearanceX">The reappearance X.</param>
+        /// <returns></returns>
         public static ObstaclePair CreateObstaclePair(float reappearanceX)
         {
             return new ObstaclePair(reappearanceX);
         }
 
+        /// <summary>
+        /// Creates the game star.
+        /// </summary>
+        /// <param name="x">The x.</param>
+        /// <param name="y">The y.</param>
+        /// <returns></returns>
         public static Entity CreateGameStar(float x, float y)
         {
             var star = new Entity()
@@ -76,6 +116,10 @@ namespace FlyingKiteProject
             return star;
         }
 
+        /// <summary>
+        /// Creates a new background entity.
+        /// </summary>
+        /// <returns></returns>
         public static Entity CreateBackground()
         {
             var background = new Entity()
@@ -92,6 +136,10 @@ namespace FlyingKiteProject
             return background;
         }
 
+        /// <summary>
+        /// Creates a new backgroundCloud entity.
+        /// </summary>
+        /// <returns></returns>
         public static Entity CreateBackgroundCloud()
         {
             var scrollBehavior = new ScrollBehavior(0.06f);
@@ -117,6 +165,10 @@ namespace FlyingKiteProject
             return cloud;
         }
 
+        /// <summary>
+        /// Creates a new backgroundPlane entity.
+        /// </summary>
+        /// <returns></returns>
         public static Entity CreateBackgroundPlane()
         {
             var scrollBehavior = new ScrollBehavior(0.08f);
@@ -142,11 +194,22 @@ namespace FlyingKiteProject
             return cloud;
         }
 
+        /// <summary>
+        /// Creates a new background kite.
+        /// </summary>
+        /// <param name="initialX">The initial X of the new element.</param>
+        /// <returns></returns>
         public static BackgroundKite CreateBackgroundKite(float initialX)
         {
             return new BackgroundKite(initialX);
         }
 
+        /// <summary>
+        /// Creates a new BestScore panel.
+        /// </summary>
+        /// <param name="y">The y of the new element.</param>
+        /// <param name="score">The score of the new element.</param>
+        /// <returns></returns>
         public static StackPanel CreateBestScore(int y, int score)
         {
             var stackPanelScore = new StackPanel()
@@ -176,6 +239,11 @@ namespace FlyingKiteProject
             return stackPanelScore;
         }
 
+        /// <summary>
+        /// Creates a new CurrentScore TextBlock.
+        /// </summary>
+        /// <param name="y">The y of the new element.</param>
+        /// <returns></returns>
         public static TextBlock CreateCurrentScore(int y)
         {
             var scoreNumber = new TextBlock()
@@ -191,6 +259,10 @@ namespace FlyingKiteProject
             return scoreNumber;
         }
 
+        /// <summary>
+        /// Creates a new logo.
+        /// </summary>
+        /// <returns></returns>
         public static Image CreateLogo()
         {
             var logo = new Image(Textures.LOGO)
@@ -202,6 +274,12 @@ namespace FlyingKiteProject
             return logo;
         }
 
+        /// <summary>
+        /// Creates a new play button.
+        /// </summary>
+        /// <param name="x">The x of the new button.</param>
+        /// <param name="y">The y of the new button.</param>
+        /// <returns></returns>
         public static Button CreatePlayButton(float x, float y)
         {
             var button = new Button()
@@ -218,6 +296,10 @@ namespace FlyingKiteProject
             return button;
         }
 
+        /// <summary>
+        /// Creates a new GameOverText Image.
+        /// </summary>
+        /// <returns></returns>
         public static Image CreateGameOverText()
         {
             var gameOverImage = new Image(Textures.GAME_OVER)
@@ -229,6 +311,10 @@ namespace FlyingKiteProject
             return gameOverImage;
         }
 
+        /// <summary>
+        /// Creates a new gameOverBackground.
+        /// </summary>
+        /// <returns></returns>
         public static Entity CreateGameOverBackground()
         {
             var background = new Entity()

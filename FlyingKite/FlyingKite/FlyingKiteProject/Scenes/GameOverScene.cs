@@ -1,4 +1,13 @@
-﻿#region Using Statements
+﻿#region File Description
+//-----------------------------------------------------------------------------
+// Flying Kite
+//
+// Quickstarter for Wave University Tour 2014.
+// Author: Wave Engine Team
+//-----------------------------------------------------------------------------
+#endregion
+
+#region Using Statements
 using FlyingKiteProject.Behaviors;
 using FlyingKiteProject.Drawables;
 using FlyingKiteProject.Managers;
@@ -30,6 +39,12 @@ namespace FlyingKiteProject.Scenes
 
         private GameScene gameScene;
 
+        /// <summary>
+        /// Creates the scene.
+        /// </summary>
+        /// <remarks>
+        /// This method is called before all <see cref="T:WaveEngine.Framework.Entity" /> instances in this instance are initialized.
+        /// </remarks>
         protected override void CreateScene()
         {
             // Allow transparent background
@@ -57,6 +72,9 @@ namespace FlyingKiteProject.Scenes
 #endif
         }
 
+        /// <summary>
+        /// Creates the UI elements and add them to the EntityManager.
+        /// </summary>
         private void CreateUI()
         {
             var gameOver = EntitiesFactory.CreateGameOverText();

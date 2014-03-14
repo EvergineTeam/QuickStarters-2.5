@@ -1,3 +1,12 @@
+#region File Description
+//-----------------------------------------------------------------------------
+// Flying Kite
+//
+// Quickstarter for Wave University Tour 2014.
+// Author: Wave Engine Team
+//-----------------------------------------------------------------------------
+#endregion
+
 #region Using Statements
 using FlyingKiteProject.Behaviors;
 using FlyingKiteProject.Entities;
@@ -42,6 +51,7 @@ namespace FlyingKiteProject.Scenes
 
         private TextBlock currentScoreTB;
 
+        #region Properties
         public GameSceneStates CurrentState
         {
             get;
@@ -60,8 +70,15 @@ namespace FlyingKiteProject.Scenes
                 this.score = value;
                 this.currentScoreTB.Text = this.score.ToString();
             }
-        }
+        } 
+        #endregion
 
+        /// <summary>
+        /// Creates the scene.
+        /// </summary>
+        /// <remarks>
+        /// This method is called before all <see cref="T:WaveEngine.Framework.Entity" /> instances in this instance are initialized.
+        /// </remarks>
         protected override void CreateScene()
         {
             this.RenderManager.RegisterLayerBefore(new ObstaclesLayer(this.RenderManager), DefaultLayers.Alpha);
@@ -83,6 +100,9 @@ namespace FlyingKiteProject.Scenes
 #endif
         }
 
+        /// <summary>
+        /// Creates the background.
+        /// </summary>
         private void CreateBackground()
         {
             this.EntityManager.Add(EntitiesFactory.CreateBackground());
@@ -100,6 +120,9 @@ namespace FlyingKiteProject.Scenes
             }
         }
 
+        /// <summary>
+        /// Creates the kite.
+        /// </summary>
         private void CreateKite()
         {
             this.kite = EntitiesFactory.CreateKite();
@@ -121,6 +144,9 @@ namespace FlyingKiteProject.Scenes
             this.EntityManager.Add(EntitiesFactory.CreateLinkedRope(kiteBall, Vector2.Center, ropeEnd, Vector2.Center));
         }
 
+        /// <summary>
+        /// Creates the obstacles pairs.
+        /// </summary>
         private void CreateObstacles()
         {
             for (int i = 0; i < 4; i++)
@@ -132,6 +158,10 @@ namespace FlyingKiteProject.Scenes
             }
         }
 
+        /// <summary>
+        /// Resets the scene. Used to restart the game.
+        /// </summary>
+        /// <param name="setNewKite">if set to <c>true</c> [set new kite].</param>
         private void ResetScene(bool setNewKite)
         {
             int obstacleIndex = 0;
@@ -154,6 +184,10 @@ namespace FlyingKiteProject.Scenes
             }
         }
 
+        /// <summary>
+        /// Enable or disable the ScrollBehavior of all the entities inside the EntityManger of the scene.
+        /// </summary>
+        /// <param name="value">if set to <c>true</c> [value].</param>
         private void SetScrollEnable(bool value)
         {
             foreach (var entity in this.EntityManager.EntityGraph)
@@ -167,6 +201,10 @@ namespace FlyingKiteProject.Scenes
             }
         }
 
+        /// <summary>
+        /// Changes the scene state.
+        /// </summary>
+        /// <param name="state">The state.</param>
         public void SetState(GameSceneStates state)
         {
             var previusState = this.CurrentState;

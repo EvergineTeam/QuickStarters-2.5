@@ -1,4 +1,13 @@
-﻿#region Using Statements
+﻿#region File Description
+//-----------------------------------------------------------------------------
+// Flying Kite
+//
+// Quickstarter for Wave University Tour 2014.
+// Author: Wave Engine Team
+//-----------------------------------------------------------------------------
+#endregion
+
+#region Using Statements
 using FlyingKiteProject.Behaviors;
 using FlyingKiteProject.Components;
 using FlyingKiteProject.Layers;
@@ -28,6 +37,7 @@ namespace FlyingKiteProject.Entities
 
         private Entity starEntity, starParticles;
 
+        #region Properties
         public Transform2D Transform2D
         {
             get;
@@ -63,8 +73,13 @@ namespace FlyingKiteProject.Entities
             {
                 this.starEntity.IsVisible = value;
             }
-        }
+        } 
+        #endregion
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ObstaclePair" /> class.
+        /// </summary>
+        /// <param name="reappearanceX">The reappearance X.</param>
         public ObstaclePair(float reappearanceX)
         {
             var topObstacleY = (WaveServices.ViewportManager.VirtualHeight - OBSTACLES_SEPARATION) / 2;
@@ -150,6 +165,9 @@ namespace FlyingKiteProject.Entities
             };
         }
 
+        /// <summary>
+        /// Shots the star particles.
+        /// </summary>
         public void ShotStarParticles()
         {
             var particleSystem = this.starParticles.FindComponent<ParticleSystem2D>();
@@ -161,6 +179,10 @@ namespace FlyingKiteProject.Entities
             }, false);
         }
 
+        /// <summary>
+        /// Gets a new random Y position.
+        /// </summary>
+        /// <returns></returns>
         private float GetRandomY()
         {
             var randomOffsetY = (int)(this.Transform2D.Rectangle.Height - WaveServices.ViewportManager.VirtualHeight) / 2;

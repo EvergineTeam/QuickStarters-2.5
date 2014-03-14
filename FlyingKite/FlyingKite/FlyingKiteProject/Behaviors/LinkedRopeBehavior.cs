@@ -1,4 +1,14 @@
-﻿using FlyingKiteProject.Drawables;
+﻿#region File Description
+//-----------------------------------------------------------------------------
+// Flying Kite
+//
+// Quickstarter for Wave University Tour 2014.
+// Author: Wave Engine Team
+//-----------------------------------------------------------------------------
+#endregion
+
+#region Using Statements
+using FlyingKiteProject.Drawables;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +17,8 @@ using WaveEngine.Common.Graphics;
 using WaveEngine.Common.Math;
 using WaveEngine.Framework;
 using WaveEngine.Framework.Graphics;
-using WaveEngine.Framework.Services;
+using WaveEngine.Framework.Services; 
+#endregion
 
 namespace FlyingKiteProject.Behaviors
 {

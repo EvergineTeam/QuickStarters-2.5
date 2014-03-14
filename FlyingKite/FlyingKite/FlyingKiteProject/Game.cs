@@ -1,3 +1,12 @@
+#region File Description
+//-----------------------------------------------------------------------------
+// Flying Kite
+//
+// Quickstarter for Wave University Tour 2014.
+// Author: Wave Engine Team
+//-----------------------------------------------------------------------------
+#endregion
+
 #region Using Statements
 using FlyingKite.Managers;
 using FlyingKiteProject.Managers;

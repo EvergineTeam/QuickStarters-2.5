@@ -22,7 +22,7 @@ namespace FlyingKite
         public App()
         {
             this.Width = 1280;
-            this.Height = 720;
+            this.Height = 768;
             this.FullScreen = false;
             this.WindowTitle = "FlyingKite";
         }
