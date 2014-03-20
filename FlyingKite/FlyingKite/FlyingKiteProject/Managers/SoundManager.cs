@@ -36,8 +36,6 @@ namespace FlyingKite.Managers
             Last
         };
 
-        public static readonly SoundManager Instance = new SoundManager();
-
         private SoundInfo[] sounds;
         private SoundBank soundsBank;
         private float defaultVolume = 0.5f;
