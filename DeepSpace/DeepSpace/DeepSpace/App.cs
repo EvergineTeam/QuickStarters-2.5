@@ -25,7 +25,6 @@ namespace DeepSpace
             this.Height = 800;
             this.FullScreen = false;
             this.WindowTitle = "DeepSpace";
-            this.BorderStyle = System.Windows.Forms.FormBorderStyle.Sizable;
         }
 
         public override void Initialize()
