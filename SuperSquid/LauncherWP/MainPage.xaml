@@ -1,0 +1,41 @@
+<phone:PhoneApplicationPage
+    x:Class="LauncherWP.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:UI ="clr-namespace:Microsoft.Advertising.Mobile.UI;assembly=Microsoft.Advertising.Mobile.UI"
+    xmlns:GoogleAds="clr-namespace:GoogleAds;assembly=GoogleAds"
+    mc:Ignorable="d"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="False">
+
+    <Grid>
+    <DrawingSurfaceBackgroundGrid x:Name="DrawingSurface"/>
+
+        <!-- Advertising -->
+        <!--
+            ApplicationId="test_client"
+            AdUnitId="Image480_80"
+            -->
+        <!--<UI:AdControl
+            ApplicationId="0a62661b-3924-43d0-8e38-76d29aaaa9fe" 
+            AdUnitId="10727915"
+            IsAutoRefreshEnabled="True"            
+            Width="320"
+            Height="50" 
+            Margin="0,0,0,0" 
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Bottom" 
+            />-->
+
+        <GoogleAds:AdView x:Name="admob" AdUnitID="ca-app-pub-3713925795415653/6115949325"
+                          Format="Banner"   
+                          ReceivedAd="OnAdReceived"
+                          FailedToReceiveAd="OnFailedToReceiveAd"
+                          VerticalAlignment="Bottom" />
+    </Grid>
+
+</phone:PhoneApplicationPage>
