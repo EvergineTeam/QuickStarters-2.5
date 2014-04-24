@@ -24,7 +24,7 @@ using WaveEngine.Framework.UI;
 
 namespace SuperSquidProject.Entities
 {
-    public class ScorePanel : StackPanel
+    public class ScorePanel : BaseDecorator
     {
         private TextBlock scoreText;
 
@@ -46,17 +46,20 @@ namespace SuperSquidProject.Entities
 
         public ScorePanel()
         {
-            this.Width = (int)WaveServices.ViewportManager.VirtualWidth;
-            this.Height = 76;
+
+            StackPanel stack = new StackPanel();
+
+            stack.Width = (int)WaveServices.ViewportManager.VirtualWidth;
+            stack.Height = 76;
             //this.BackgroundColor = Color.Black;
-            this.HorizontalAlignment = HorizontalAlignment.Right;
-            this.VerticalAlignment = VerticalAlignment.Bottom;
-            this.Orientation = Orientation.Horizontal;
-            this.Margin = new Thickness(10);
+            stack.HorizontalAlignment = HorizontalAlignment.Right;
+            stack.VerticalAlignment = VerticalAlignment.Bottom;
+            stack.Orientation = Orientation.Horizontal;
+            stack.Margin = new Thickness(10);
             //this.Opacity = 0.7f;
 
 
-            this.Add(new Image(Directories.TexturePath + "starfish.wpk")
+            stack.Add(new Image(Directories.TexturePath + "starfish.wpk")
                                 {
                                     Width = 70,
                                     Height = 70,
@@ -75,7 +78,9 @@ namespace SuperSquidProject.Entities
                 Margin = new Thickness(5, 10, 5, 5),
                 DrawOrder = 0.1f,
             };
-            this.Add(this.scoreText);
+            stack.Add(this.scoreText);
+
+            this.entity = stack.Entity;
 
             this.Score = 0;
         }
