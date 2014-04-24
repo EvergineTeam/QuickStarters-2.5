@@ -126,8 +126,7 @@ namespace SuperSquidProject.Entities.Behaviors
 
                 if (gameOverDetected)
                 {
-                    var transition = new ColorFadeTransition(Color.White, TimeSpan.FromSeconds(0.5f));
-                    WaveServices.ScreenContextManager.Push(new ScreenContext(new GameOverScene()), transition);
+                    this.scene.OpenGameOver();
                 }
 
                 var diff = block.Transform2D.Y - WaveServices.ViewportManager.BottomEdge;

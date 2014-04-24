@@ -24,7 +24,7 @@ using WaveEngine.Framework.UI;
 
 namespace SuperSquidProject.Entities
 {
-    public class ScorePanel : StackPanel
+    public class ScorePanel : BaseDecorator
     {
         private TextBlock scoreText;
 
@@ -46,25 +46,27 @@ namespace SuperSquidProject.Entities
 
         public ScorePanel()
         {
-            this.Width = (int)WaveServices.ViewportManager.VirtualWidth;
-            this.Height = 76;
-            //this.BackgroundColor = Color.Black;
-            this.HorizontalAlignment = HorizontalAlignment.Right;
-            this.VerticalAlignment = VerticalAlignment.Bottom;
-            this.Orientation = Orientation.Horizontal;
-            this.Margin = new Thickness(10);
-            //this.Opacity = 0.7f;
+
+            StackPanel stack = new StackPanel()
+            {
+                Width = (int)WaveServices.ViewportManager.VirtualWidth,
+                Height = 76,
+                HorizontalAlignment = HorizontalAlignment.Right,
+                VerticalAlignment = VerticalAlignment.Bottom,
+                Orientation = Orientation.Horizontal,
+                Margin = new Thickness(10),
+            };
 
 
-            this.Add(new Image(Directories.TexturePath + "starfish.wpk")
-                                {
-                                    Width = 70,
-                                    Height = 70,
-                                    Stretch = Stretch.Fill,
-                                    DrawOrder = 0.1f,
-                                    VerticalAlignment = VerticalAlignment.Center,
-                                    Margin = new Thickness(5),
-                                });
+            stack.Add(new Image(Directories.TexturePath + "starfish.wpk")
+            {
+                Width = 70,
+                Height = 70,
+                Stretch = Stretch.Fill,
+                DrawOrder = 0.1f,
+                VerticalAlignment = VerticalAlignment.Center,
+                Margin = new Thickness(5),
+            });
 
             this.scoreText = new TextBlock("scoresText")
             {
@@ -75,7 +77,9 @@ namespace SuperSquidProject.Entities
                 Margin = new Thickness(5, 10, 5, 5),
                 DrawOrder = 0.1f,
             };
-            this.Add(this.scoreText);
+            stack.Add(this.scoreText);
+
+            this.entity = stack.Entity;
 
             this.Score = 0;
         }

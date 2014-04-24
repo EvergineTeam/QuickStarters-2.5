@@ -67,8 +67,8 @@ namespace SuperSquidProject.Entities
             {
                 case BlockTypes.One:
                     this.jellyFishs.Add(new JellyFish(JellyFish.JellyFishType.Little, new Vector2(176, 154)));
-                    this.rocks.Add(new Rock(Rock.RockType.Left, new Vector2(WaveServices.ViewportManager.LeftEdge, 616)));
-                    this.rocks.Add(new Rock(Rock.RockType.Right, new Vector2(WaveServices.ViewportManager.RightEdge, 163)));
+                    this.rocks.Add(new Rock(Rock.RockType.Left, new Vector2(0, 616)));
+                    this.rocks.Add(new Rock(Rock.RockType.Right, new Vector2(WaveServices.ViewportManager.VirtualWidth, 163)));
                     this.stars.Add(new StarFish(new Vector2(711, 640)));
                     this.stars.Add(new StarFish(new Vector2(49, 460)));
                     break;
@@ -87,8 +87,8 @@ namespace SuperSquidProject.Entities
                     break;
                 case BlockTypes.Four:
                     this.jellyFishs.Add(new JellyFish(JellyFish.JellyFishType.Little, new Vector2(170, 807)));
-                    this.rocks.Add(new Rock(Rock.RockType.Right, new Vector2(WaveServices.ViewportManager.RightEdge + 60, 616)));
-                    this.rocks.Add(new Rock(Rock.RockType.Left, new Vector2(WaveServices.ViewportManager.LeftEdge, 163)));
+                    this.rocks.Add(new Rock(Rock.RockType.Left, new Vector2(0, 163)));
+                    this.rocks.Add(new Rock(Rock.RockType.Right, new Vector2(WaveServices.ViewportManager.VirtualWidth + 60, 616)));
                     this.stars.Add(new StarFish(new Vector2(130, 580)));
                     this.stars.Add(new StarFish(new Vector2(573, 478)));
                     this.stars.Add(new StarFish(new Vector2(110, 68)));
@@ -102,7 +102,7 @@ namespace SuperSquidProject.Entities
                     this.stars.Add(new StarFish(new Vector2(648, 423)));
                     break;
                 case BlockTypes.Six:
-                    this.rocks.Add(new Rock(Rock.RockType.Right, new Vector2(WaveServices.ViewportManager.RightEdge, 171)));
+                    this.rocks.Add(new Rock(Rock.RockType.Right, new Vector2(WaveServices.ViewportManager.VirtualWidth, 171)));
                     this.jellyFishs.Add(new JellyFish(JellyFish.JellyFishType.Little, new Vector2(98, 418)));
                     this.jellyFishs.Add(new JellyFish(JellyFish.JellyFishType.Little, new Vector2(165, 807)));
                     this.jellyFishs.Add(new JellyFish(JellyFish.JellyFishType.Big, new Vector2(553, 835), false));
@@ -110,8 +110,8 @@ namespace SuperSquidProject.Entities
                     this.stars.Add(new StarFish(new Vector2(203, 616)));
                     break;
                 case BlockTypes.Seven:
-                    this.rocks.Add(new Rock(Rock.RockType.Right, new Vector2(WaveServices.ViewportManager.RightEdge + 119, 74)));
-                    this.rocks.Add(new Rock(Rock.RockType.Left, new Vector2(WaveServices.ViewportManager.LeftEdge - 193, 469)));
+                    this.rocks.Add(new Rock(Rock.RockType.Left, new Vector2(-193, 469)));
+                    this.rocks.Add(new Rock(Rock.RockType.Right, new Vector2(WaveServices.ViewportManager.VirtualWidth + 119, 74)));
                     this.jellyFishs.Add(new JellyFish(JellyFish.JellyFishType.Big, new Vector2(152, 235)));
                     this.jellyFishs.Add(new JellyFish(JellyFish.JellyFishType.Little, new Vector2(444, 433), false));
                     this.jellyFishs.Add(new JellyFish(JellyFish.JellyFishType.Little, new Vector2(316, 835)));

@@ -40,6 +40,7 @@ namespace SuperSquidProject.Scenes
         {
             // Allow transparent background
             this.RenderManager.ClearFlags = ClearFlags.DepthAndStencil;
+            this.RenderManager.BackgroundColor = Color.Transparent;
 
             this.gameStorage = Catalog.GetItem<GameStorage>();
 

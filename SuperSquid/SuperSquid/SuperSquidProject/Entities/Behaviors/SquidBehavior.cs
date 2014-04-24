@@ -105,11 +105,21 @@ namespace SuperSquidProject.Entities.Behaviors
             // Horizontal displacement
             if (this.inputManager.AccelerometerState.IsConnected)
             {
-                var accX = this.inputManager.AccelerometerState.SmoothAcceleration.X;
+                float accVal;
 
-                Labels.Add("Acc X", accX.ToString());
+                // Metro devices plays in landscape orientation mode
+                if (WaveServices.Platform.PlatformName == "Metro")
+                {
+                    accVal = -this.inputManager.AccelerometerState.SmoothAcceleration.Y * 1.5f;
+                }
+                else
+                {
+                    accVal = this.inputManager.AccelerometerState.SmoothAcceleration.X;
+                }
 
-                this.transform2D.X += accX * (float)gameTime.TotalMilliseconds;
+                Labels.Add("Acc val", accVal.ToString());
+
+                this.transform2D.X += accVal * (float)gameTime.TotalMilliseconds;
             }
             else if (this.inputManager.KeyboardState.IsKeyPressed(Keys.Right))
             {

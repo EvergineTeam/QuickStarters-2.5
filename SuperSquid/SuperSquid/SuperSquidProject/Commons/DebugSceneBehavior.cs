@@ -30,7 +30,6 @@ namespace SuperSquidProject.Commons
         public DebugSceneBehavior()
             : base("DebugSceneBehavior")
         {
-            this.diagnostics = false;
             WaveServices.ScreenContextManager.SetDiagnosticsActive(this.diagnostics);
         }
 

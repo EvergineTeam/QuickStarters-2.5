@@ -19,6 +19,7 @@ using WaveEngine.Common.Graphics;
 using WaveEngine.Common.Math;
 using WaveEngine.Components.Graphics2D;
 using WaveEngine.Components.Particles;
+using WaveEngine.Components.UI;
 using WaveEngine.Framework;
 using WaveEngine.Framework.Graphics;
 using WaveEngine.Framework.Services;
@@ -29,10 +30,12 @@ namespace SuperSquidProject.Scenes
 {
     public class BackgroundScene : Scene
     {
+        private readonly Color backgroundColor = new Color(0 / 255f, 31 / 255f, 39 / 255f);
+
         protected override void CreateScene()
         {
             // Background color
-            RenderManager.BackgroundColor = new Color(0 / 255f, 31 / 255f, 39 / 255f);
+            RenderManager.BackgroundColor = this.backgroundColor;
 
             // Water particles
             Entity waterParticles = new Entity("waterParticles")

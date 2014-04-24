@@ -21,6 +21,8 @@ using WaveEngine.Common.Math;
 using WaveEngine.Common.Media;
 using WaveEngine.Components.Gestures;
 using WaveEngine.Components.Graphics2D;
+using WaveEngine.Components.Transitions;
+using WaveEngine.Components.UI;
 using WaveEngine.Framework;
 using WaveEngine.Framework.Graphics;
 using WaveEngine.Framework.Physics2D;
@@ -36,6 +38,8 @@ namespace SuperSquidProject.Scenes
         private BlockBuilder blockBuilder;
 
         private ScorePanel scorePanel;
+
+        private BackgroundScene backScene;
 
         /// <summary>
         /// Gets or sets the current score.
@@ -67,6 +71,37 @@ namespace SuperSquidProject.Scenes
             // Background color
             this.RenderManager.ClearFlags = ClearFlags.DepthAndStencil;
             //RenderManager.BackgroundColor = new Color(0 / 255f, 31 / 255f, 39 / 255f);
+
+            //Backscene 
+            this.backScene = WaveServices.ScreenContextManager.FindContextByName("BackContext")
+                                                              .FindScene<BackgroundScene>();
+
+            // Side black panels
+            Entity rightBlackpanel = new Entity()
+                    .AddComponent(new Transform2D()
+                    {
+                        DrawOrder = 1f,
+                        X = WaveServices.ViewportManager.LeftEdge
+                    })
+                    .AddComponent(new ImageControl(
+                        Color.Black,
+                        (int)-WaveServices.ViewportManager.LeftEdge,
+                        (int)WaveServices.ViewportManager.VirtualHeight))
+                    .AddComponent(new ImageControlRenderer(DefaultLayers.GUI));
+            EntityManager.Add(rightBlackpanel);
+
+            Entity leftBlackpanel = new Entity()
+                    .AddComponent(new Transform2D()
+                    {
+                        DrawOrder = 1f,
+                        X = WaveServices.ViewportManager.VirtualWidth
+                    })
+                    .AddComponent(new ImageControl(
+                        Color.Black,
+                        (int)-WaveServices.ViewportManager.LeftEdge,
+                        (int)WaveServices.ViewportManager.VirtualHeight))
+                    .AddComponent(new ImageControlRenderer(DefaultLayers.GUI));
+            EntityManager.Add(leftBlackpanel);
 
             // Squid
             this.squid = new Squid(WaveServices.ViewportManager.VirtualHeight - 300);
@@ -106,8 +141,20 @@ namespace SuperSquidProject.Scenes
             WaveServices.MusicPlayer.Volume = 1.0f;
             WaveServices.MusicPlayer.IsRepeat = true;
 
+            //Resume back particles
+            this.backScene.Resume();
+
             this.blockBuilder.Reset();
             this.squid.Appear();
+        }
+
+        public void OpenGameOver()
+        {
+            //Pause back particles
+            this.backScene.Pause();
+
+            var transition = new ColorFadeTransition(Color.White, TimeSpan.FromSeconds(0.5f));
+            WaveServices.ScreenContextManager.Push(new ScreenContext(new GameOverScene()), transition);
         }
     }
 }

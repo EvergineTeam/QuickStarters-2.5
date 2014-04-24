@@ -38,8 +38,8 @@ namespace SuperSquidProject.Managers
                 EndDeltaScale = 1f,
                 LinearColorEnabled = true,
                 InterpolationColors = new List<Color>() { Color.White, Color.Transparent },
-                EmitterSize = new Vector2(WaveServices.ViewportManager.RightEdge - WaveServices.ViewportManager.LeftEdge, 
-                                          WaveServices.ViewportManager.BottomEdge - WaveServices.ViewportManager.TopEdge),
+                EmitterSize = new Vector2(WaveServices.ViewportManager.VirtualWidth, 
+                                          WaveServices.ViewportManager.VirtualHeight),
                 EmitterShape = ParticleSystem2D.Shape.FillRectangle,
             };
         }

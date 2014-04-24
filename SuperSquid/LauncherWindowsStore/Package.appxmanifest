@@ -19,6 +19,10 @@
       <VisualElements DisplayName="Super Squid" Logo="Images\Logo.png" SmallLogo="Images\SmallLogo.png" Description="SuperSquid Launcher" ForegroundText="light" BackgroundColor="#222222">
         <DefaultTile ShowName="logoOnly" WideLogo="Images\WideLogo.png" />
         <SplashScreen Image="Images\SplashScreen.png" />
+        <InitialRotationPreference>
+          <Rotation Preference="landscape" />
+          <Rotation Preference="landscapeFlipped" />
+        </InitialRotationPreference>
       </VisualElements>
     </Application>
   </Applications>
