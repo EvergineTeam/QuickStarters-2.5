@@ -7,7 +7,6 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:UI ="clr-namespace:Microsoft.Advertising.Mobile.UI;assembly=Microsoft.Advertising.Mobile.UI"
-    xmlns:GoogleAds="clr-namespace:GoogleAds;assembly=GoogleAds"
     mc:Ignorable="d"
     SupportedOrientations="Portrait" Orientation="Portrait"
     shell:SystemTray.IsVisible="False">
@@ -30,12 +29,6 @@
             HorizontalAlignment="Center" 
             VerticalAlignment="Bottom" 
             />-->
-
-        <GoogleAds:AdView x:Name="admob" AdUnitID="ca-app-pub-3713925795415653/6115949325"
-                          Format="Banner"   
-                          ReceivedAd="OnAdReceived"
-                          FailedToReceiveAd="OnFailedToReceiveAd"
-                          VerticalAlignment="Bottom" />
     </Grid>
 
 </phone:PhoneApplicationPage>
