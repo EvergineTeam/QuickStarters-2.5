@@ -1,0 +1,196 @@
+35 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+35 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Video" is not marked with AssetAttribute. 
+35 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+35 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Video" is not marked with AssetAttribute. 
+35 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+35 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Video" is not marked with AssetAttribute. 
+35 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+35 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+35 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+35 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+35 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+35 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+35 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+35 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+35 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+35 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+35 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+35 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+35 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+35 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+35 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+35 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+35 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+35 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+35 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+35 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+35 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+35 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+36 GetAsset Asset "Textures" does not exist. 
+36 GetAsset Asset "Textures" does not exist. 
+36 GetAsset Asset "Textures" does not exist. 
+36 GetAsset Asset "Textures" does not exist. 
+40 ExportAsset File F:\WaveUniversityTour\TFS\SuperSquid\Resources\Assets\Fonts\Bulky Pixels_16.spr could not be exported for platform Default. Reason: Font could not be found 
+40 ExportAsset File F:\WaveUniversityTour\TFS\SuperSquid\Resources\Assets\Fonts\Bulky Pixels_26.spr could not be exported for platform Default. Reason: Font could not be found 
+45 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+45 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Video" is not marked with AssetAttribute. 
+41 ExportAsset File F:\WaveUniversityTour\TFS\SuperSquid\Resources\Assets\Fonts\Bulky Pixels_16.spr could not be exported for platform Default. Reason: Font could not be found 
+41 ExportAsset File F:\WaveUniversityTour\TFS\SuperSquid\Resources\Assets\Fonts\Bulky Pixels_26.spr could not be exported for platform Default. Reason: Font could not be found 
+41 ExportAsset File F:\WaveUniversityTour\TFS\SuperSquid\Resources\Assets\Sounds\squid_swim1.wav could not be exported for platform Default. Reason: The system cannot find the file specified 
+41 ExportAsset File F:\WaveUniversityTour\TFS\SuperSquid\Resources\Assets\Sounds\squid_swim2.wav could not be exported for platform Default. Reason: The system cannot find the file specified 
+21 ExportAsset File F:\WaveUniversityTour\TFS\SuperSquid\Resources\Assets\Fonts\Bulky Pixels_16.spr could not be exported for platform Default. Reason: Font could not be found 
+21 ExportAsset File F:\WaveUniversityTour\TFS\SuperSquid\Resources\Assets\Fonts\Bulky Pixels_26.spr could not be exported for platform Default. Reason: Font could not be found 
+21 ExportAsset File F:\WaveUniversityTour\TFS\SuperSquid\Resources\Assets\Sounds\squid_swim1.wav could not be exported for platform Default. Reason: The system cannot find the file specified 
+21 ExportAsset File F:\WaveUniversityTour\TFS\SuperSquid\Resources\Assets\Sounds\squid_swim2.wav could not be exported for platform Default. Reason: The system cannot find the file specified 
+40 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+40 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Video" is not marked with AssetAttribute. 
+40 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+40 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Video" is not marked with AssetAttribute. 
+40 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+40 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Video" is not marked with AssetAttribute. 
+40 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+40 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+40 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+40 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+40 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+40 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+40 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+40 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+40 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+40 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+40 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+40 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+40 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+40 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+40 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+40 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+40 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+40 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+40 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+40 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+40 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+40 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+43 ExportAsset File F:\WaveUniversityTour\TFS\SuperSquid\Resources\Assets\Fonts\Bulky Pixels_16.spr could not be exported for platform Default. Reason: Font could not be found 
+43 ExportAsset File F:\WaveUniversityTour\TFS\SuperSquid\Resources\Assets\Fonts\Bulky Pixels_26.spr could not be exported for platform Default. Reason: Font could not be found 
+43 ExportAsset File F:\WaveUniversityTour\TFS\SuperSquid\Resources\Assets\Sounds\squid_swim1.wav could not be exported for platform Default. Reason: The system cannot find the file specified 
+43 ExportAsset File F:\WaveUniversityTour\TFS\SuperSquid\Resources\Assets\Sounds\squid_swim2.wav could not be exported for platform Default. Reason: The system cannot find the file specified 
+09 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+09 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Video" is not marked with AssetAttribute. 
+09 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+09 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Video" is not marked with AssetAttribute. 
+09 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+09 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Video" is not marked with AssetAttribute. 
+09 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+09 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+09 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+09 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+09 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+09 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+09 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+09 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+09 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+09 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+09 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+09 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+09 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+09 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+09 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+09 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+09 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+09 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+09 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+09 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+09 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+09 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+18 ExportAsset File F:\WaveUniversityTour\TFS\SuperSquid\Resources\Assets\Fonts\Bulky Pixels_16.spr could not be exported for platform Default. Reason: Font could not be found 
+18 ExportAsset File F:\WaveUniversityTour\TFS\SuperSquid\Resources\Assets\Fonts\Bulky Pixels_26.spr could not be exported for platform Default. Reason: Font could not be found 
+18 ExportAsset File F:\WaveUniversityTour\TFS\SuperSquid\Resources\Assets\Sounds\jellyCrash.wav could not be exported for platform Default. Reason: The system cannot find the file specified 
+18 ExportAsset File F:\WaveUniversityTour\TFS\SuperSquid\Resources\Assets\Sounds\squid_swim1.wav could not be exported for platform Default. Reason: The system cannot find the file specified 
+18 ExportAsset File F:\WaveUniversityTour\TFS\SuperSquid\Resources\Assets\Sounds\squid_swim2.wav could not be exported for platform Default. Reason: The system cannot find the file specified 
+36 ExportAsset File F:\WaveUniversityTour\TFS\SuperSquid\Resources\Assets\Fonts\Bulky Pixels_16.spr could not be exported for platform Default. Reason: Font could not be found 
+36 ExportAsset File F:\WaveUniversityTour\TFS\SuperSquid\Resources\Assets\Fonts\Bulky Pixels_26.spr could not be exported for platform Default. Reason: Font could not be found 
+36 ExportAsset File F:\WaveUniversityTour\TFS\SuperSquid\Resources\Assets\Sounds\jellyCrash.wav could not be exported for platform Default. Reason: The system cannot find the file specified 
+36 ExportAsset File F:\WaveUniversityTour\TFS\SuperSquid\Resources\Assets\Sounds\squid_swim1.wav could not be exported for platform Default. Reason: The system cannot find the file specified 
+36 ExportAsset File F:\WaveUniversityTour\TFS\SuperSquid\Resources\Assets\Sounds\squid_swim2.wav could not be exported for platform Default. Reason: The system cannot find the file specified 
+09 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+09 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Video" is not marked with AssetAttribute. 
+09 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+09 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Video" is not marked with AssetAttribute. 
+09 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+09 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Video" is not marked with AssetAttribute. 
+09 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+09 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+09 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+09 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+09 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+09 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+09 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+09 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+09 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+09 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+09 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+09 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+09 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+09 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+09 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+09 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+09 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+09 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+09 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+09 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+09 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+09 CreateAsset Registered asset of type "WaveEditor.Extensions.Model.Assets.Music" is not marked with AssetAttribute. 
+14 ExportAsset File F:\WaveUniversityTour\TFS\SuperSquid\Resources\Assets\Fonts\Bulky Pixels_16.spr could not be exported for platform Default. Reason: Font could not be found 
+14 ExportAsset File F:\WaveUniversityTour\TFS\SuperSquid\Resources\Assets\Fonts\Bulky Pixels_16.spr could not be exported for platform Android. Reason: Font could not be found 
+14 ExportAsset File F:\WaveUniversityTour\TFS\SuperSquid\Resources\Assets\Fonts\Bulky Pixels_26.spr could not be exported for platform Default. Reason: Font could not be found 
+14 ExportAsset File F:\WaveUniversityTour\TFS\SuperSquid\Resources\Assets\Fonts\Bulky Pixels_26.spr could not be exported for platform Android. Reason: Font could not be found 
+14 ExportAsset File F:\WaveUniversityTour\TFS\SuperSquid\Resources\Assets\Sounds\jellyCrash.wav could not be exported for platform Android. Reason: The system cannot find the file specified 
+14 ExportAsset File F:\WaveUniversityTour\TFS\SuperSquid\Resources\Assets\Sounds\jellyCrash.wav could not be exported for platform Default. Reason: The system cannot find the file specified 
+14 ExportAsset File F:\WaveUniversityTour\TFS\SuperSquid\Resources\Assets\Sounds\rockCrash.wav could not be exported for platform Android. Reason: The system cannot find the file specified 
+14 ExportAsset File F:\WaveUniversityTour\TFS\SuperSquid\Resources\Assets\Sounds\rockCrash.wav could not be exported for platform Default. Reason: The system cannot find the file specified 
+14 ExportAsset File F:\WaveUniversityTour\TFS\SuperSquid\Resources\Assets\Sounds\squid_swim1.wav could not be exported for platform Android. Reason: The system cannot find the file specified 
+14 ExportAsset File F:\WaveUniversityTour\TFS\SuperSquid\Resources\Assets\Sounds\squid_swim1.wav could not be exported for platform Default. Reason: The system cannot find the file specified 
+14 ExportAsset File F:\WaveUniversityTour\TFS\SuperSquid\Resources\Assets\Sounds\squid_swim2.wav could not be exported for platform Android. Reason: The system cannot find the file specified 
+14 ExportAsset File F:\WaveUniversityTour\TFS\SuperSquid\Resources\Assets\Sounds\squid_swim2.wav could not be exported for platform Default. Reason: The system cannot find the file specified 
+14 ExportAsset File F:\WaveUniversityTour\TFS\SuperSquid\Resources\Assets\Sounds\star.wav could not be exported for platform Android. Reason: The system cannot find the file specified 
+14 ExportAsset File F:\WaveUniversityTour\TFS\SuperSquid\Resources\Assets\Sounds\star.wav could not be exported for platform Default. Reason: The system cannot find the file specified 
+13 GetPropertyElement There was a problem trying to create an editor for the property editor. 
+13 GetPropertyElement There was a problem trying to create an editor for the property editor. 
+15 GetPropertyElement There was a problem trying to create an editor for the property editor. 
+15 GetPropertyElement There was a problem trying to create an editor for the property editor. 
+15 GetPropertyElement There was a problem trying to create an editor for the property editor. 
+15 GetPropertyElement There was a problem trying to create an editor for the property editor. 
+15 GetPropertyElement There was a problem trying to create an editor for the property editor. 
+15 GetPropertyElement There was a problem trying to create an editor for the property editor. 
+15 GetPropertyElement There was a problem trying to create an editor for the property editor. 
+15 GetPropertyElement There was a problem trying to create an editor for the property editor. 
+15 GetPropertyElement There was a problem trying to create an editor for the property editor. 
+15 GetPropertyElement There was a problem trying to create an editor for the property editor. 
+15 GetPropertyElement There was a problem trying to create an editor for the property editor. 
+15 GetPropertyElement There was a problem trying to create an editor for the property editor. 
+15 GetPropertyElement There was a problem trying to create an editor for the property editor. 
+15 GetPropertyElement There was a problem trying to create an editor for the property editor. 
+15 GetPropertyElement There was a problem trying to create an editor for the property editor. 
+15 GetPropertyElement There was a problem trying to create an editor for the property editor. 
+15 GetPropertyElement There was a problem trying to create an editor for the property editor. 
+15 GetPropertyElement There was a problem trying to create an editor for the property editor. 
+15 GetPropertyElement There was a problem trying to create an editor for the property editor. 
+15 GetPropertyElement There was a problem trying to create an editor for the property editor. 
+15 GetPropertyElement There was a problem trying to create an editor for the property editor. 
+15 GetPropertyElement There was a problem trying to create an editor for the property editor. 
+15 GetPropertyElement There was a problem trying to create an editor for the property editor. 
+15 GetPropertyElement There was a problem trying to create an editor for the property editor. 
+15 GetPropertyElement There was a problem trying to create an editor for the property editor. 
+15 GetPropertyElement There was a problem trying to create an editor for the property editor. 
+15 GetPropertyElement There was a problem trying to create an editor for the property editor. 
+15 GetPropertyElement There was a problem trying to create an editor for the property editor. 
+15 GetPropertyElement There was a problem trying to create an editor for the property editor. 
+15 GetPropertyElement There was a problem trying to create an editor for the property editor. 
+15 GetPropertyElement There was a problem trying to create an editor for the property editor. 
+15 GetPropertyElement There was a problem trying to create an editor for the property editor. 
+15 GetPropertyElement There was a problem trying to create an editor for the property editor. 
+15 GetPropertyElement There was a problem trying to create an editor for the property editor. 
+16 GetPropertyElement There was a problem trying to create an editor for the property editor. 
+16 GetPropertyElement There was a problem trying to create an editor for the property editor. 
+16 GetPropertyElement There was a problem trying to create an editor for the property editor. 
+16 GetPropertyElement There was a problem trying to create an editor for the property editor. 

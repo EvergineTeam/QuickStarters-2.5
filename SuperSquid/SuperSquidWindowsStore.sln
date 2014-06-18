@@ -1,0 +1,32 @@
+
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Launcher", "LauncherWindowsStore\Launcher.csproj", "{19BD048D-AEE5-436D-B2FF-BC40CDCE38FA}" 
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperSquidProjectWindowsStore", "SuperSquid\SuperSquidProject\SuperSquidProjectWindowsStore.csproj", "{DC08893D-16ED-403E-ABCE-92F2058372D4}" 
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DC08893D-16ED-403E-ABCE-92F2058372D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC08893D-16ED-403E-ABCE-92F2058372D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC08893D-16ED-403E-ABCE-92F2058372D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC08893D-16ED-403E-ABCE-92F2058372D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19BD048D-AEE5-436D-B2FF-BC40CDCE38FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19BD048D-AEE5-436D-B2FF-BC40CDCE38FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19BD048D-AEE5-436D-B2FF-BC40CDCE38FA}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{19BD048D-AEE5-436D-B2FF-BC40CDCE38FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19BD048D-AEE5-436D-B2FF-BC40CDCE38FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19BD048D-AEE5-436D-B2FF-BC40CDCE38FA}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(SpecExplorer.ActivityCompletionStatus) = preSolution
+		SpecExplorer.ActivityCompletionStatus = 
+	EndGlobalSection
+EndGlobal
+
