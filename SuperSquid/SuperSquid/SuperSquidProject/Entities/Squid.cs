@@ -79,8 +79,8 @@ namespace SuperSquidProject.Entities
                                         Y = 210,
                                     })
                                     .AddComponent(ParticleFactory.CreateBubbleParticles())
-                                    .AddComponent(new Material2D(new BasicMaterial2D(Directories.TexturePath + "waterParticle.wpk")))
-                                    .AddComponent(new ParticleSystemRenderer2D("bubblesParticle", DefaultLayers.Additive))
+                                    .AddComponent(new Material2D(new BasicMaterial2D(Directories.TexturePath + "waterParticle.wpk", DefaultLayers.Additive)))
+                                    .AddComponent(new ParticleSystemRenderer2D("bubblesParticle"))
                                     .AddComponent(new ChildFollower2D()));
 
             // Cached

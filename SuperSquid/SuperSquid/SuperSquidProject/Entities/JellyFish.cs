@@ -79,7 +79,7 @@ namespace SuperSquidProject.Entities
             this.entity.AddComponent(new Sprite(Directories.TexturePath + string.Format("{0}.wpk", textureName)) { IsGlobalAsset = true});
             this.entity.AddComponent(Animation2D.Create<TexturePackerGenericXml>(Directories.TexturePath + string.Format("{0}.xml", textureName))
                                                        .Add("swim", new SpriteSheetAnimationSequence() { First = 1, Length = 40, FramesPerSecond = 30 }));
-            this.entity.AddComponent(new AnimatedSpriteRenderer(DefaultLayers.Opaque));
+            this.entity.AddComponent(new AnimatedSpriteRenderer(DefaultLayers.Alpha));
 
             this.entity.FindComponent<Animation2D>().Play(true);
 

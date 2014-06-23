@@ -84,8 +84,8 @@ namespace OrbitRabbitsProject.Entities
             this.entity.AddChild(new Entity("rabbitParticles")
                                         .AddComponent(new Transform2D())
                                         .AddComponent(ParticleFactory.CreateStarsParticle())
-                                        .AddComponent(new Material2D(new BasicMaterial2D(Directories.TexturePath + "starParticle.wpk")))
-                                        .AddComponent(new ParticleSystemRenderer2D("rabbitParticles", DefaultLayers.Additive)));
+                                        .AddComponent(new Material2D(new BasicMaterial2D(Directories.TexturePath + "starParticle.wpk", DefaultLayers.Additive)))
+                                        .AddComponent(new ParticleSystemRenderer2D("rabbitParticles")));
 
         }
 

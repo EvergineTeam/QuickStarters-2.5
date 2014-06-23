@@ -54,8 +54,8 @@ namespace OrbitRabbitsProject.Entities.Behaviors
             this.explosion = new Entity("explosion")
                                 .AddComponent(new Transform2D())
                                 .AddComponent(ParticleFactory.CreateExplosion())
-                                .AddComponent(new Material2D(new BasicMaterial2D(Directories.TexturePath + "starParticle.wpk")))
-                                .AddComponent(new ParticleSystemRenderer2D("explosion", DefaultLayers.Additive));  
+                                .AddComponent(new Material2D(new BasicMaterial2D(Directories.TexturePath + "starParticle.wpk", DefaultLayers.Additive)))
+                                .AddComponent(new ParticleSystemRenderer2D("explosion"));  
           
             // Cached
             this.explosionSystem = this.explosion.FindComponent<ParticleSystem2D>();

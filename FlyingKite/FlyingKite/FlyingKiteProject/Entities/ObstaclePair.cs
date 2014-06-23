@@ -115,8 +115,8 @@ namespace FlyingKiteProject.Entities
                     X = 0,
                     Y = WaveServices.ViewportManager.VirtualHeight / 2,
                 })
-                .AddComponent(new Material2D(new BasicMaterial2D(Textures.STAR)))
-                .AddComponent(new ParticleSystemRenderer2D("explosion", DefaultLayers.Alpha))
+                .AddComponent(new Material2D(new BasicMaterial2D(Textures.STAR, DefaultLayers.Alpha)))
+                .AddComponent(new ParticleSystemRenderer2D("explosion"))
                 .AddComponent(new ParticleSystem2D()
                 {
                     NumParticles = 20,

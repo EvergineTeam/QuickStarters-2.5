@@ -32,15 +32,14 @@ namespace FlyingKiteProject.Drawables
         private Material2D material2D;
 
         private Vector2[] curve;
-        private VertexPositionColorTexture[] vertices;
-        private DynamicVertexBuffer vertexBuffer;
-        private ushort[] indices;
-        private IndexBuffer indexBuffer;
+        private VertexPositionColorTexture[] vertices;        
+        private Mesh mesh;
         private Vector2 point;
         private Vector2 nextPoint;
         private Vector2 unitaryPerpendicularVector;
         private int vertexIndex;
         private Platform platform;
+        private Matrix identityTransform;
 
         public Vector2[] Curve
         {
@@ -65,6 +64,7 @@ namespace FlyingKiteProject.Drawables
         #region Overridden Methods
         protected override void Initialize()
         {
+            this.identityTransform = Matrix.Identity;
             this.platform = WaveServices.Platform;
 
             base.Initialize();
@@ -72,29 +72,14 @@ namespace FlyingKiteProject.Drawables
 
         protected override void Dispose(bool disposing)
         {
-            if (this.indexBuffer != null)
+            if (this.mesh != null)
             {
-                this.GraphicsDevice.DestroyIndexBuffer(this.indexBuffer);
-            }
-
-            if (this.vertexBuffer != null)
-            {
-                this.GraphicsDevice.DestroyVertexBuffer(this.vertexBuffer);
+                this.GraphicsDevice.DestroyIndexBuffer(this.mesh.IndexBuffer);
+                this.GraphicsDevice.DestroyVertexBuffer(this.mesh.VertexBuffer);
             }
         }
 
         public override void Draw(TimeSpan gameTime)
-        {
-            if (this.curve == null)
-            {
-                return;
-            }
-
-            var layer = this.RenderManager.FindLayer(this.material2D.Material.LayerType);
-            layer.AddDrawable(0, this);
-        }
-
-        protected override void DrawBasicUnit(int parameter)
         {
             if (this.curve == null)
             {
@@ -121,19 +106,30 @@ namespace FlyingKiteProject.Drawables
         #region Private Methods
         private void SetUpVertexBuffer()
         {
-            if (this.vertexBuffer == null)
+            if (this.mesh == null)
             {
                 // Per each point we have 2 vertices
                 int verticesNumber = 2 * this.curve.Length;
 
                 this.vertices = new VertexPositionColorTexture[verticesNumber];
-                this.vertexBuffer = new DynamicVertexBuffer(VertexPositionColorTexture.VertexFormat);
-                this.indices = new ushort[verticesNumber];
+                DynamicVertexBuffer vertexBuffer = new DynamicVertexBuffer(VertexPositionColorTexture.VertexFormat);
+                ushort[] indices = new ushort[verticesNumber];
 
-                for (ushort i = 0; i < this.indices.Length; i++)
+                for (ushort i = 0; i < indices.Length; i++)
                 {
-                    this.indices[i] = i;
+                    indices[i] = i;
                 }
+
+                var indexBuffer = new IndexBuffer(indices);
+
+                this.mesh = new Mesh(
+                    0, 
+                    verticesNumber, 
+                    0,
+                    verticesNumber - 2, 
+                    vertexBuffer, 
+                    indexBuffer, 
+                    PrimitiveType.TriangleStrip);
             }
         }
 
@@ -201,23 +197,10 @@ namespace FlyingKiteProject.Drawables
 
         private void UpdateGraphicDeviceAndDraw()
         {
-            if (this.indexBuffer == null)
-            {
-                this.indexBuffer = new IndexBuffer(this.indices);
-                this.GraphicsDevice.BindIndexBuffer(this.indexBuffer);
-            }
+            this.mesh.VertexBuffer.SetData(this.vertices, this.vertices.Length);
+            this.GraphicsDevice.BindVertexBuffer(this.mesh.VertexBuffer);
 
-            this.vertexBuffer.SetData(this.vertices, this.vertices.Length);
-            this.GraphicsDevice.BindVertexBuffer(this.vertexBuffer);
-
-            this.material2D.Material.Apply(this.RenderManager);
-
-            this.GraphicsDevice.DrawVertexBuffer(
-                this.vertexBuffer.VertexCount,
-                this.vertexBuffer.VertexCount - 2,
-                PrimitiveType.TriangleStrip,
-                this.vertexBuffer,
-                this.indexBuffer);
+            this.RenderManager.DrawMesh(this.mesh, this.material2D.Material, ref this.identityTransform);
         } 
         #endregion
     }

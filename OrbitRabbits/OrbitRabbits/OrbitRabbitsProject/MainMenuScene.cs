@@ -67,7 +67,7 @@ namespace OrbitRabbitsProject
                                 Origin = Vector2.Center
                             })
                             .AddComponent(new SpriteAtlas(Directories.TexturePath + "game.wpk", "waveLogo"))
-                            .AddComponent(new SpriteAtlasRenderer(DefaultLayers.Opaque));
+                            .AddComponent(new SpriteAtlasRenderer(DefaultLayers.Alpha));
             EntityManager.Add(waveLogo);
 
             // Logo

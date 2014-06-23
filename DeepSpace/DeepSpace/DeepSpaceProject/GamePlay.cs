@@ -43,7 +43,7 @@ namespace DeepSpaceProject
                     {
                         TintColor = new Color((float)rnd.NextDouble(), (float)rnd.NextDouble(), (float)rnd.NextDouble())
                     })
-                    .AddComponent(new SpriteRenderer(DefaultLayers.Opaque));
+                    .AddComponent(new SpriteRenderer(DefaultLayers.Alpha));
 
                 EntityManager.Add(star);
             }
@@ -64,7 +64,7 @@ namespace DeepSpaceProject
                     .AddComponent(new RectangleCollider())
                     .AddComponent(new EnemyBehavior())
                     .AddComponent(new Sprite("Content/Enemy.wpk"))
-                    .AddComponent(new SpriteRenderer(DefaultLayers.Opaque));
+                    .AddComponent(new SpriteRenderer(DefaultLayers.Alpha));
 
                 EntityManager.Add(enemy);
             }
@@ -83,7 +83,7 @@ namespace DeepSpaceProject
                 .AddComponent(new RectangleCollider())
                 .AddComponent(new PlayerBehavior())
                 .AddComponent(new Sprite("Content/Player.wpk"))
-                .AddComponent(new SpriteRenderer(DefaultLayers.Opaque));
+                .AddComponent(new SpriteRenderer(DefaultLayers.Alpha));
             
             EntityManager.Add(player);
 

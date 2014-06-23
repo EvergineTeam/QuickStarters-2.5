@@ -45,8 +45,8 @@ namespace SuperSquidProject.Scenes
                                             Y = WaveServices.ViewportManager.VirtualHeight / 2,                          
                                         })
                                         .AddComponent(ParticleFactory.CreateWaterParticles())
-                                        .AddComponent(new Material2D(new BasicMaterial2D(Directories.TexturePath + "waterParticle.wpk")))
-                                        .AddComponent(new ParticleSystemRenderer2D("waterParticles", DefaultLayers.Additive));
+                                        .AddComponent(new Material2D(new BasicMaterial2D(Directories.TexturePath + "waterParticle.wpk", DefaultLayers.Additive)))
+                                        .AddComponent(new ParticleSystemRenderer2D("waterParticles"));
             EntityManager.Add(waterParticles);
 
             Entity waterParticles2 = new Entity("waterParticles2")
@@ -56,8 +56,8 @@ namespace SuperSquidProject.Scenes
                                             Y = WaveServices.ViewportManager.VirtualHeight / 2,
                                         })
                                         .AddComponent(ParticleFactory.CreateWaterParticles())
-                                        .AddComponent(new Material2D(new BasicMaterial2D(Directories.TexturePath + "waterParticle2.wpk")))
-                                        .AddComponent(new ParticleSystemRenderer2D("waterParticles2", DefaultLayers.Additive));
+                                        .AddComponent(new Material2D(new BasicMaterial2D(Directories.TexturePath + "waterParticle2.wpk", DefaultLayers.Additive)))
+                                        .AddComponent(new ParticleSystemRenderer2D("waterParticles2"));
             EntityManager.Add(waterParticles2);
         }
     }

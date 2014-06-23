@@ -35,7 +35,7 @@ namespace OrbitRabbits
             this.game.Initialize(this);
 
             #region WAVE SOFTWARE LICENSE AGREEMENT
-            this.backgroundSplashColor = new Color(32, 32, 32, 255);
+            this.backgroundSplashColor = new Color("#ebebeb");
             this.spriteBatch = new SpriteBatch(WaveServices.GraphicsDevice);
 
             var resourceNames = Assembly.GetExecutingAssembly().GetManifestResourceNames();
@@ -128,9 +128,8 @@ namespace OrbitRabbits
                     #region WAVE SOFTWARE LICENSE AGREEMENT
                     WaveServices.GraphicsDevice.RenderTargets.SetRenderTarget(null);
                     WaveServices.GraphicsDevice.Clear(ref this.backgroundSplashColor, ClearFlags.Target, 1);
-                    this.spriteBatch.Begin();
                     this.spriteBatch.Draw(this.splashScreen, this.position, Color.White);
-                    this.spriteBatch.End();
+                    this.spriteBatch.Render();
                     #endregion
                 }
                 else

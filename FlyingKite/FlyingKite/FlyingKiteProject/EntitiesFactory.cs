@@ -50,10 +50,10 @@ namespace FlyingKiteProject
                     .AddComponent(new Transform2D()
                         {
                             X = WaveServices.ViewportManager.VirtualWidth / 4 + 112,
-                            Y = WaveServices.ViewportManager.VirtualHeight / 2 + 47
+                            Y = WaveServices.ViewportManager.VirtualHeight / 2 + 47,
                         })
                     .AddComponent(new SpriteAtlas(Textures.GAME_ATLAS, Textures.GameAtlas.kite_ball.ToString()))
-                    .AddComponent(new SpriteAtlasRenderer(DefaultLayers.Alpha));
+                    .AddComponent(new SpriteAtlasRenderer(DefaultLayers.GUI));
 
             return ball;
         }

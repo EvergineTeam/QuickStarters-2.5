@@ -66,7 +66,7 @@ namespace DeepSpaceProject
                 .AddComponent(new RectangleCollider())
                 .AddComponent(new Sprite("Content/Bullet.wpk"))
                 .AddComponent(new BulletBehavior())
-                .AddComponent(new SpriteRenderer(DefaultLayers.Opaque));
+                .AddComponent(new SpriteRenderer(DefaultLayers.Alpha));
         }
     }
 }

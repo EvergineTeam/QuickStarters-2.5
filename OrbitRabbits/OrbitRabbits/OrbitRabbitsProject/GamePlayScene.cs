@@ -72,7 +72,7 @@ namespace OrbitRabbitsProject
                                DrawOrder = 0.9f,
                            })
                            .AddComponent(new SpriteAtlas(Directories.TexturePath + "game.wpk", "smallLogo"))
-                           .AddComponent(new SpriteAtlasRenderer(DefaultLayers.Opaque));
+                           .AddComponent(new SpriteAtlasRenderer(DefaultLayers.Alpha));
             EntityManager.Add(logo);
 
             // Gravity
@@ -85,7 +85,7 @@ namespace OrbitRabbitsProject
                                 DrawOrder = 0.9f,
                             })
                             .AddComponent(new SpriteAtlas(Directories.TexturePath + "game.wpk", "gravity"))
-                            .AddComponent(new SpriteAtlasRenderer(DefaultLayers.Opaque));
+                            .AddComponent(new SpriteAtlasRenderer(DefaultLayers.Alpha));
             EntityManager.Add(gravity);
             
             // Moon back
@@ -98,7 +98,7 @@ namespace OrbitRabbitsProject
                                 DrawOrder = 0.8f,
                             })
                             .AddComponent(new SpriteAtlas(Directories.TexturePath + "game.wpk", "moonBack"))
-                            .AddComponent(new SpriteAtlasRenderer(DefaultLayers.Opaque));
+                            .AddComponent(new SpriteAtlasRenderer(DefaultLayers.Alpha));
             EntityManager.Add(moonBack);
 
             // Rabbits
@@ -114,7 +114,7 @@ namespace OrbitRabbitsProject
                                 DrawOrder = 0.4f,
                             })
                             .AddComponent(new SpriteAtlas(Directories.TexturePath + "game.wpk", "tapHand"))
-                            .AddComponent(new SpriteAtlasRenderer(DefaultLayers.Opaque));
+                            .AddComponent(new SpriteAtlasRenderer(DefaultLayers.Alpha));
             EntityManager.Add(this.tapHand);
 
             // Touch Panel
