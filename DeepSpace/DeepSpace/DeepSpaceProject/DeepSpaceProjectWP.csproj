@@ -12,6 +12,10 @@
     <AssemblyName>DeepSpaceProjectWP</AssemblyName>
     <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
     <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <TargetFrameworkIdentifier>WindowsPhone</TargetFrameworkIdentifier>
     <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
@@ -84,12 +88,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Behaviors\BulletBehavior.cs" />
     <Compile Include="Behaviors\EnemyBehavior.cs" />
     <Compile Include="Behaviors\PlayerBehavior.cs" />
     <Compile Include="Behaviors\StarBehavior.cs" />
-    <Compile Include="GamePlay.cs" />
+    <Compile Include="FireButton.cs" />
+    <Compile Include="GameOverScene.cs" />
+    <Compile Include="IntroScene.cs" />
+    <Compile Include="Joystick.cs" />
+    <Compile Include="Managers\BulletManager.cs" />
+    <Compile Include="Behaviors\GameplayBehavior.cs" />
+    <Compile Include="GamePlayScene.cs" />
     <Compile Include="Game.cs" />
+    <Compile Include="Managers\GameStorage.cs" />
     <Compile Include="Menu.cs" />
+    <Compile Include="Managers\SoundManager.cs" />
+    <Compile Include="Resources\Fonts.cs" />
+    <Compile Include="Resources\Sounds.cs" />
+    <Compile Include="Resources\Textures.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

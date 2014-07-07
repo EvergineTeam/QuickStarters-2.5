@@ -11,6 +11,10 @@
     <RootNamespace>DeepSpaceProject</RootNamespace>
     <AssemblyName>DeepSpaceProject</AssemblyName>
     <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
     <ProjectTypeGuids>{BC8A1FFA-BEE3-4634-8014-F334798102B3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <DefaultLanguage>en-US</DefaultLanguage>
   </PropertyGroup>
@@ -47,12 +51,24 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Behaviors\BulletBehavior.cs" />
     <Compile Include="Behaviors\EnemyBehavior.cs" />
     <Compile Include="Behaviors\PlayerBehavior.cs" />
     <Compile Include="Behaviors\StarBehavior.cs" />
-    <Compile Include="GamePlay.cs" />
+    <Compile Include="FireButton.cs" />
+    <Compile Include="GameOverScene.cs" />
+    <Compile Include="IntroScene.cs" />
+    <Compile Include="Joystick.cs" />
+    <Compile Include="Managers\BulletManager.cs" />
+    <Compile Include="Behaviors\GameplayBehavior.cs" />
+    <Compile Include="GamePlayScene.cs" />
     <Compile Include="Game.cs" />
+    <Compile Include="Managers\GameStorage.cs" />
     <Compile Include="Menu.cs" />
+    <Compile Include="Managers\SoundManager.cs" />
+    <Compile Include="Resources\Fonts.cs" />
+    <Compile Include="Resources\Sounds.cs" />
+    <Compile Include="Resources\Textures.cs" />
   </ItemGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
+  <Identity Name="3E1A2F36.DeepSpace" Publisher="CN=3A031B17-B08B-46B6-ADC5-04475F066C30" Version="1.0.0.1" />
+  <Properties>
+    <DisplayName>Deep Space</DisplayName>
+    <PublisherDisplayName>Plain Concepts S.L.</PublisherDisplayName>
+    <Logo>Images\StoreLogo.png</Logo>
+    <Description>DeepSpace Launcher</Description>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.2</OSMinVersion>
+    <OSMaxVersionTested>6.2</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="Launcher.App">
+      <VisualElements DisplayName="Deep Space" Logo="Images\Logo.png" SmallLogo="Images\SmallLogo.png" Description="Play the legendary ship shooter with graphics redefined" ForegroundText="light" BackgroundColor="#222222">
+        <DefaultTile ShowName="logoOnly" WideLogo="Images\WideLogo.png" />
+        <SplashScreen Image="Images\SplashScreen.png" />
+        <InitialRotationPreference>
+          <Rotation Preference="portrait" />
+          <Rotation Preference="portraitFlipped" />
+        </InitialRotationPreference>
+      </VisualElements>
+    </Application>
+  </Applications>
+</Package>

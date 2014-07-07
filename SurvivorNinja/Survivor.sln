@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Survivor", "Survivor\Survivor\Survivor.csproj", "{C3A2E831-0A38-44A4-8BEF-1A53735BC9D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SurvivorProject", "Survivor\SurvivorProject\SurvivorProject.csproj", "{E41BEAB4-97F0-4AC8-8ADC-473A8BAB234D}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs2013.plainconcepts.com/tfs/wave
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Survivor\\Survivor\\Survivor.csproj
+		SccProjectName1 = Survivor/Survivor
+		SccLocalPath1 = Survivor\\Survivor
+		SccProjectUniqueName2 = Survivor\\SurvivorProject\\SurvivorProject.csproj
+		SccProjectName2 = Survivor/SurvivorProject
+		SccLocalPath2 = Survivor\\SurvivorProject
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C3A2E831-0A38-44A4-8BEF-1A53735BC9D2}.Debug|x86.ActiveCfg = Debug|x86
+		{C3A2E831-0A38-44A4-8BEF-1A53735BC9D2}.Debug|x86.Build.0 = Debug|x86
+		{C3A2E831-0A38-44A4-8BEF-1A53735BC9D2}.Release|x86.ActiveCfg = Release|x86
+		{C3A2E831-0A38-44A4-8BEF-1A53735BC9D2}.Release|x86.Build.0 = Release|x86
+		{E41BEAB4-97F0-4AC8-8ADC-473A8BAB234D}.Debug|x86.ActiveCfg = Debug|x86
+		{E41BEAB4-97F0-4AC8-8ADC-473A8BAB234D}.Debug|x86.Build.0 = Debug|x86
+		{E41BEAB4-97F0-4AC8-8ADC-473A8BAB234D}.Release|x86.ActiveCfg = Release|x86
+		{E41BEAB4-97F0-4AC8-8ADC-473A8BAB234D}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

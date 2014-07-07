@@ -1,0 +1,54 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Launcher", "LauncherWP\Launcher.csproj", "{ACA52CE2-012F-40C0-9661-8CC7E48B6869}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SurvivorProjectWP", "Survivor\SurvivorProject\SurvivorProjectWP.csproj", "{E41BEAB4-97F0-4AC8-8ADC-473A8BAB234D}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs2013.plainconcepts.com/tfs/wave
+		SccProjectUniqueName0 = Survivor\\SurvivorProject\\SurvivorProjectWP.csproj
+		SccProjectName0 = Survivor/SurvivorProject
+		SccLocalPath0 = Survivor\\SurvivorProject
+		SccLocalPath1 = .
+		SccProjectUniqueName2 = LauncherWP\\Launcher.csproj
+		SccProjectName2 = LauncherWP
+		SccLocalPath2 = LauncherWP
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|ARM = Debug|ARM
+		Debug|x86 = Debug|x86
+		Release|ARM = Release|ARM
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ACA52CE2-012F-40C0-9661-8CC7E48B6869}.Debug|ARM.ActiveCfg = Debug|ARM
+		{ACA52CE2-012F-40C0-9661-8CC7E48B6869}.Debug|ARM.Build.0 = Debug|ARM
+		{ACA52CE2-012F-40C0-9661-8CC7E48B6869}.Debug|ARM.Deploy.0 = Debug|ARM
+		{ACA52CE2-012F-40C0-9661-8CC7E48B6869}.Debug|x86.ActiveCfg = Debug|x86
+		{ACA52CE2-012F-40C0-9661-8CC7E48B6869}.Debug|x86.Build.0 = Debug|x86
+		{ACA52CE2-012F-40C0-9661-8CC7E48B6869}.Debug|x86.Deploy.0 = Debug|x86
+		{ACA52CE2-012F-40C0-9661-8CC7E48B6869}.Release|ARM.ActiveCfg = Release|ARM
+		{ACA52CE2-012F-40C0-9661-8CC7E48B6869}.Release|ARM.Build.0 = Release|ARM
+		{ACA52CE2-012F-40C0-9661-8CC7E48B6869}.Release|ARM.Deploy.0 = Release|ARM
+		{ACA52CE2-012F-40C0-9661-8CC7E48B6869}.Release|x86.ActiveCfg = Release|x86
+		{ACA52CE2-012F-40C0-9661-8CC7E48B6869}.Release|x86.Build.0 = Release|x86
+		{ACA52CE2-012F-40C0-9661-8CC7E48B6869}.Release|x86.Deploy.0 = Release|x86
+		{E41BEAB4-97F0-4AC8-8ADC-473A8BAB234D}.Debug|ARM.ActiveCfg = Debug|ARM
+		{E41BEAB4-97F0-4AC8-8ADC-473A8BAB234D}.Debug|ARM.Build.0 = Debug|ARM
+		{E41BEAB4-97F0-4AC8-8ADC-473A8BAB234D}.Debug|x86.ActiveCfg = Debug|x86
+		{E41BEAB4-97F0-4AC8-8ADC-473A8BAB234D}.Debug|x86.Build.0 = Debug|x86
+		{E41BEAB4-97F0-4AC8-8ADC-473A8BAB234D}.Release|ARM.ActiveCfg = Release|ARM
+		{E41BEAB4-97F0-4AC8-8ADC-473A8BAB234D}.Release|ARM.Build.0 = Release|ARM
+		{E41BEAB4-97F0-4AC8-8ADC-473A8BAB234D}.Release|x86.ActiveCfg = Release|x86
+		{E41BEAB4-97F0-4AC8-8ADC-473A8BAB234D}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(SpecExplorer.ActivityCompletionStatus) = preSolution
+		SpecExplorer.ActivityCompletionStatus = 
+	EndGlobalSection
+EndGlobal

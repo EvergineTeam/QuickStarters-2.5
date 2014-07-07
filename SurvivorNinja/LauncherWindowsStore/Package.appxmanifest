@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
+  <Identity Name="3E1A2F36.SurvivorSamurai" Publisher="CN=3A031B17-B08B-46B6-ADC5-04475F066C30" Version="1.0.0.4" />
+  <Properties>
+    <DisplayName>Survivor Samurai</DisplayName>
+    <PublisherDisplayName>Plain Concepts S.L.</PublisherDisplayName>
+    <Logo>Images\StoreLogo.png</Logo>
+    <Description>Survivor Launcher</Description>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.2</OSMinVersion>
+    <OSMaxVersionTested>6.2</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="Launcher.App">
+      <VisualElements DisplayName="Survivor Samurai" Logo="Images\Logo.png" SmallLogo="Images\SmallLogo.png" Description="Survive the attack of multiple waves of ninjas using your skills." ForegroundText="dark" BackgroundColor="#FFFFFF">
+        <DefaultTile ShowName="noLogos" />
+        <SplashScreen Image="Images\SplashScreen.png" BackgroundColor="#222222" />
+        <InitialRotationPreference>
+          <Rotation Preference="landscape" />
+          <Rotation Preference="landscapeFlipped" />
+        </InitialRotationPreference>
+      </VisualElements>
+    </Application>
+  </Applications>
+</Package>

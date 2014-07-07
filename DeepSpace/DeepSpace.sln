@@ -6,6 +6,18 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeepSpaceProject", "DeepSpace\DeepSpaceProject\DeepSpaceProject.csproj", "{076E70B5-E112-4151-AC9B-9FF9EE1FC32F}"
 EndProject
 Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs2013.plainconcepts.com/tfs/wave
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = DeepSpace\\DeepSpace\\DeepSpace.csproj
+		SccProjectName1 = DeepSpace/DeepSpace
+		SccLocalPath1 = DeepSpace\\DeepSpace
+		SccProjectUniqueName2 = DeepSpace\\DeepSpaceProject\\DeepSpaceProject.csproj
+		SccProjectName2 = DeepSpace/DeepSpaceProject
+		SccLocalPath2 = DeepSpace\\DeepSpaceProject
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
 		Release|x86 = Release|x86

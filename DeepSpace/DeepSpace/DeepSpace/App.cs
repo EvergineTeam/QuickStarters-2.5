@@ -25,7 +25,6 @@ namespace DeepSpace
             this.Height = 800;
             this.FullScreen = false;
             this.WindowTitle = "DeepSpace";
-            this.BorderStyle = System.Windows.Forms.FormBorderStyle.Sizable;
         }
 
         public override void Initialize()
@@ -34,7 +33,7 @@ namespace DeepSpace
             this.game.Initialize(this);
 
             #region WAVE SOFTWARE LICENSE AGREEMENT
-            this.backgroundSplashColor = new Color("#ebebeb");
+            this.backgroundSplashColor = new Color(32, 32, 32, 255);
             this.spriteBatch = new SpriteBatch(WaveServices.GraphicsDevice);
 
             var resourceNames = Assembly.GetExecutingAssembly().GetManifestResourceNames();

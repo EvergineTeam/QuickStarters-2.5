@@ -22,7 +22,7 @@ namespace DeepSpaceProject.Behaviors
         public BulletBehavior()
             : base()
         {
-            this.SpeedY = 5;
+            this.SpeedY = 15;
         }
 
         protected override void Update(TimeSpan gameTime)

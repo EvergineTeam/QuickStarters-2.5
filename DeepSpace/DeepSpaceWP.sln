@@ -1,0 +1,54 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Launcher", "LauncherWP\Launcher.csproj", "{F4F25F68-E2B3-4A1F-9129-BE7BEC5635C8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeepSpaceProjectWP", "DeepSpace\DeepSpaceProject\DeepSpaceProjectWP.csproj", "{076E70B5-E112-4151-AC9B-9FF9EE1FC32F}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs2013.plainconcepts.com/tfs/wave
+		SccProjectUniqueName0 = DeepSpace\\DeepSpaceProject\\DeepSpaceProjectWP.csproj
+		SccProjectName0 = DeepSpace/DeepSpaceProject
+		SccLocalPath0 = DeepSpace\\DeepSpaceProject
+		SccLocalPath1 = .
+		SccProjectUniqueName2 = LauncherWP\\Launcher.csproj
+		SccProjectName2 = LauncherWP
+		SccLocalPath2 = LauncherWP
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|ARM = Debug|ARM
+		Debug|x86 = Debug|x86
+		Release|ARM = Release|ARM
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F4F25F68-E2B3-4A1F-9129-BE7BEC5635C8}.Debug|ARM.ActiveCfg = Debug|ARM
+		{F4F25F68-E2B3-4A1F-9129-BE7BEC5635C8}.Debug|ARM.Build.0 = Debug|ARM
+		{F4F25F68-E2B3-4A1F-9129-BE7BEC5635C8}.Debug|ARM.Deploy.0 = Debug|ARM
+		{F4F25F68-E2B3-4A1F-9129-BE7BEC5635C8}.Debug|x86.ActiveCfg = Debug|x86
+		{F4F25F68-E2B3-4A1F-9129-BE7BEC5635C8}.Debug|x86.Build.0 = Debug|x86
+		{F4F25F68-E2B3-4A1F-9129-BE7BEC5635C8}.Debug|x86.Deploy.0 = Debug|x86
+		{F4F25F68-E2B3-4A1F-9129-BE7BEC5635C8}.Release|ARM.ActiveCfg = Release|ARM
+		{F4F25F68-E2B3-4A1F-9129-BE7BEC5635C8}.Release|ARM.Build.0 = Release|ARM
+		{F4F25F68-E2B3-4A1F-9129-BE7BEC5635C8}.Release|ARM.Deploy.0 = Release|ARM
+		{F4F25F68-E2B3-4A1F-9129-BE7BEC5635C8}.Release|x86.ActiveCfg = Release|x86
+		{F4F25F68-E2B3-4A1F-9129-BE7BEC5635C8}.Release|x86.Build.0 = Release|x86
+		{F4F25F68-E2B3-4A1F-9129-BE7BEC5635C8}.Release|x86.Deploy.0 = Release|x86
+		{076E70B5-E112-4151-AC9B-9FF9EE1FC32F}.Debug|ARM.ActiveCfg = Debug|ARM
+		{076E70B5-E112-4151-AC9B-9FF9EE1FC32F}.Debug|ARM.Build.0 = Debug|ARM
+		{076E70B5-E112-4151-AC9B-9FF9EE1FC32F}.Debug|x86.ActiveCfg = Debug|x86
+		{076E70B5-E112-4151-AC9B-9FF9EE1FC32F}.Debug|x86.Build.0 = Debug|x86
+		{076E70B5-E112-4151-AC9B-9FF9EE1FC32F}.Release|ARM.ActiveCfg = Release|ARM
+		{076E70B5-E112-4151-AC9B-9FF9EE1FC32F}.Release|ARM.Build.0 = Release|ARM
+		{076E70B5-E112-4151-AC9B-9FF9EE1FC32F}.Release|x86.ActiveCfg = Release|x86
+		{076E70B5-E112-4151-AC9B-9FF9EE1FC32F}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(SpecExplorer.ActivityCompletionStatus) = preSolution
+		SpecExplorer.ActivityCompletionStatus = 
+	EndGlobalSection
+EndGlobal
