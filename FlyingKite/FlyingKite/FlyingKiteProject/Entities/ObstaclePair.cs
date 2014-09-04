@@ -132,7 +132,7 @@ namespace FlyingKiteProject.Entities
                     EndDeltaScale = 0f,
                     LinearColorEnabled = true,
                     InterpolationColors = new List<Color>() { Color.White, Color.Black},
-                    EmitterSize = new Vector2(30),
+                    EmitterSize = new Vector3(30,30,0),
                     Gravity = Vector2.UnitY * 0.2f,
                     EmitterShape = ParticleSystem2D.Shape.FillCircle,
                     Emit = false,

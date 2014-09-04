@@ -94,8 +94,11 @@
     <Compile Include="Resources\Textures.cs" />
     <Compile Include="Managers\GameStorage.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources.weproj" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(WaveEngine)v1.0\Targets\Windows\WPKAssetsExport.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
 	-->

@@ -21,7 +21,7 @@ using WaveEngine.Components.Graphics2D;
 using WaveEngine.Components.Graphics3D;
 using WaveEngine.Framework;
 using WaveEngine.Framework.Graphics;
-using WaveEngine.Framework.Services; 
+using WaveEngine.Framework.Services;
 #endregion
 
 namespace FlyingKiteProject.Drawables
@@ -32,7 +32,7 @@ namespace FlyingKiteProject.Drawables
         private Material2D material2D;
 
         private Vector2[] curve;
-        private VertexPositionColorTexture[] vertices;        
+        private VertexPositionColorTexture[] vertices;
         private Mesh mesh;
         private Vector2 point;
         private Vector2 nextPoint;
@@ -100,7 +100,7 @@ namespace FlyingKiteProject.Drawables
             this.SetUpPointsAndVertices(lastPoint: true);
 
             this.UpdateGraphicDeviceAndDraw();
-        } 
+        }
         #endregion
 
         #region Private Methods
@@ -123,12 +123,12 @@ namespace FlyingKiteProject.Drawables
                 var indexBuffer = new IndexBuffer(indices);
 
                 this.mesh = new Mesh(
-                    0, 
-                    verticesNumber, 
                     0,
-                    verticesNumber - 2, 
-                    vertexBuffer, 
-                    indexBuffer, 
+                    verticesNumber,
+                    0,
+                    verticesNumber - 2,
+                    vertexBuffer,
+                    indexBuffer,
                     PrimitiveType.TriangleStrip);
             }
         }
@@ -139,7 +139,7 @@ namespace FlyingKiteProject.Drawables
 
             for (int i = 0; i < this.curve.Length - 1; i++)
             {
-                this.RenderManager.LineBatch2D.DrawLineVM(this.curve[i], this.curve[i + 1], Color.Red);
+                this.RenderManager.LineBatch2D.DrawLineVM(this.curve[i], this.curve[i + 1], Color.Red, 0f);
             }
         }
 
@@ -188,7 +188,7 @@ namespace FlyingKiteProject.Drawables
             {
                 this.vertices[this.vertexIndex].Position = new Vector3(realX, realY, 1f);
             }
-                 
+
             this.vertices[this.vertexIndex].TexCoord = texCoord;
             this.vertices[this.vertexIndex].Color = Color.White;
 
@@ -201,7 +201,7 @@ namespace FlyingKiteProject.Drawables
             this.GraphicsDevice.BindVertexBuffer(this.mesh.VertexBuffer);
 
             this.RenderManager.DrawMesh(this.mesh, this.material2D.Material, ref this.identityTransform);
-        } 
+        }
         #endregion
     }
 }
