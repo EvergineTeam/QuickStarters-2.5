@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WaveEngine.Common.Graphics;
 using WaveEngine.Common.Math;
+using WaveEngine.Components.Cameras;
 using WaveEngine.Components.Graphics2D;
 using WaveEngine.Components.Transitions;
 using WaveEngine.Components.UI;
@@ -26,9 +27,13 @@ namespace DeepSpaceProject
 
         protected override void CreateScene()
         {
-            ////this.RenderManager.ClearFlags = WaveEngine.Common.Graphics.ClearFlags.DepthAndStencil;
-
-            this.RenderManager.BackgroundColor = Color.Black;
+            FixedCamera2D camera2d = new FixedCamera2D("camera")
+            {
+                BackgroundColor = Color.Black,
+                ClearFlags = ClearFlags.DepthAndStencil,
+            };
+            camera2d.BackgroundColor = Color.Black;
+            EntityManager.Add(camera2d);
 
             Entity logo = new Entity()
             .AddComponent(new Transform2D() { X = WaveServices.ViewportManager.VirtualWidth / 2, Y = 227, Origin = Vector2.Center, DrawOrder = 0.1f })
@@ -39,9 +44,7 @@ namespace DeepSpaceProject
             this.labelAnimation = logo.FindComponent<AnimationUI>();
 
             this.EntityManager.Add(logo);
-
-            this.RenderManager.ClearFlags = WaveEngine.Common.Graphics.ClearFlags.DepthAndStencil;
-
+           
             var button = new Button()
             {
                 Margin = new Thickness(0, 657, 0, 0),

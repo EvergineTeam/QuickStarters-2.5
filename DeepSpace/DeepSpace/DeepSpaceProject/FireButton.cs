@@ -74,8 +74,8 @@ namespace DeepSpaceProject
             {
                 this.pressedPosition = o.GestureSample.Position;
 
-                this.thumbTransform.X = this.pressedPosition.X - area.X;
-                this.thumbTransform.Y = this.pressedPosition.Y - area.Y;
+                this.thumbTransform.LocalX = this.pressedPosition.X - area.X;
+                this.thumbTransform.LocalY = this.pressedPosition.Y - area.Y;
                 this.thumb.IsVisible = true;
 
                 this.IsShooting = true;
@@ -84,8 +84,8 @@ namespace DeepSpaceProject
             {
                 Vector2 deltaTouch = this.pressedPosition - o.GestureSample.Position;
 
-                this.thumbTransform.X = this.pressedPosition.X - deltaTouch.X - area.X;
-                this.thumbTransform.Y = this.pressedPosition.Y - deltaTouch.Y - area.Y;
+                this.thumbTransform.LocalX = this.pressedPosition.X - deltaTouch.X - area.X;
+                this.thumbTransform.LocalY = this.pressedPosition.Y - deltaTouch.Y - area.Y;
             };
             touch.TouchReleased += (s, o) =>
             {
