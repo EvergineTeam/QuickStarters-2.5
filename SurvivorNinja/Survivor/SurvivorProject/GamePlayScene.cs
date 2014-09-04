@@ -15,6 +15,7 @@ using WaveEngine.Components.UI;
 using WaveEngine.Framework.UI;
 using WaveEngine.Components;
 using SurvivorProject.Managers;
+using WaveEngine.Components.Cameras;
 #endregion
 
 namespace SurvivorProject
@@ -55,7 +56,9 @@ namespace SurvivorProject
 
         protected override void CreateScene()
         {
-            RenderManager.BackgroundColor = Color.CornflowerBlue;
+            FixedCamera2D camera2d = new FixedCamera2D("camera");
+            camera2d.BackgroundColor = Color.CornflowerBlue;
+            EntityManager.Add(camera2d);
 
             // Background
             Entity background = new Entity()
