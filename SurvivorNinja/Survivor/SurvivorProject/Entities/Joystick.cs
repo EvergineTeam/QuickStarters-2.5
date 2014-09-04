@@ -102,12 +102,12 @@ namespace SurvivorProject.Entities
             touch.TouchPressed += (s, o) =>
             {
                 this.pressedPosition = o.GestureSample.Position;
-                this.backgroundTransform.X = this.pressedPosition.X - area.X;
-                this.backgroundTransform.Y = this.pressedPosition.Y - area.Y;
+                this.backgroundTransform.LocalX = this.pressedPosition.X - area.X;
+                this.backgroundTransform.LocalY = this.pressedPosition.Y - area.Y;
                 this.background.IsVisible = true;
 
-                this.thumbTransform.X = this.pressedPosition.X - area.X;
-                this.thumbTransform.Y = this.pressedPosition.Y - area.Y;
+                this.thumbTransform.LocalX = this.pressedPosition.X - area.X;
+                this.thumbTransform.LocalY = this.pressedPosition.Y - area.Y;
                 this.thumb.IsVisible = true;
 
                 this.direction = Vector2.Zero;
@@ -117,8 +117,8 @@ namespace SurvivorProject.Entities
                 Vector2 deltaTouch = this.pressedPosition - o.GestureSample.Position;
                 deltaTouch.X = MathHelper.Clamp(deltaTouch.X, -offset, offset);
                 deltaTouch.Y = MathHelper.Clamp(deltaTouch.Y, -offset, offset);
-                this.thumbTransform.X = this.pressedPosition.X - deltaTouch.X - area.X;
-                this.thumbTransform.Y = this.pressedPosition.Y - deltaTouch.Y - area.Y;
+                this.thumbTransform.LocalX = this.pressedPosition.X - deltaTouch.X - area.X;
+                this.thumbTransform.LocalY = this.pressedPosition.Y - deltaTouch.Y - area.Y;
 
                 deltaTouch /= this.offsetLimits;
                 this.direction = -deltaTouch;

@@ -89,7 +89,7 @@ namespace SurvivorProject.Entities
             // Murders
             this.murdersText = new TextBlock()
             {
-                FontPath = Directories.Fonts + "Coalition.wpk",                
+                //FontPath = Directories.Fonts + "Coalition.wpk",                
                 Text = "#00",
                 HorizontalAlignment = WaveEngine.Framework.UI.HorizontalAlignment.Center,
                 VerticalAlignment = WaveEngine.Framework.UI.VerticalAlignment.Bottom,

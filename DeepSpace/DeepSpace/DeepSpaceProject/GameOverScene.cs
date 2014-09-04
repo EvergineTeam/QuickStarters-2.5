@@ -4,8 +4,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WaveEngine.Common.Graphics;
 using WaveEngine.Common.Math;
 using WaveEngine.Components;
+using WaveEngine.Components.Cameras;
 using WaveEngine.Components.Graphics2D;
 using WaveEngine.Components.Transitions;
 using WaveEngine.Components.UI;
@@ -25,7 +27,10 @@ namespace DeepSpaceProject
 
         protected override void CreateScene()
         {
-            this.RenderManager.ClearFlags = WaveEngine.Common.Graphics.ClearFlags.DepthAndStencil;
+            FixedCamera2D camera2d = new FixedCamera2D("camera");
+            camera2d.ClearFlags = ClearFlags.DepthAndStencil;
+            EntityManager.Add(camera2d);
+            
             Entity logo = new Entity()
             .AddComponent(new Transform2D() { X = WaveServices.ViewportManager.VirtualWidth / 2, Y = 300, Origin = new Vector2(0.5f, 0), DrawOrder = 0.1f })
             .AddComponent(new Sprite("Content/GameOver.wpk"))
