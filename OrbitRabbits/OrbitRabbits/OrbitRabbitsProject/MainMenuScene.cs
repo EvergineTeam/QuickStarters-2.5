@@ -16,6 +16,7 @@ using WaveEngine.Common;
 using WaveEngine.Common.Graphics;
 using WaveEngine.Common.Math;
 using WaveEngine.Components;
+using WaveEngine.Components.Cameras;
 using WaveEngine.Components.Graphics2D;
 using WaveEngine.Components.Transitions;
 using WaveEngine.Components.UI;
@@ -41,7 +42,9 @@ namespace OrbitRabbitsProject
         /// </remarks>
         protected override void CreateScene()
         {
-            RenderManager.BackgroundColor = Color.CornflowerBlue;
+            FixedCamera2D camera2d = new FixedCamera2D("camera");
+            camera2d.BackgroundColor = Color.CornflowerBlue;
+            EntityManager.Add(camera2d);
 
             //Background          
             Entity background = new Entity()
@@ -151,8 +154,8 @@ namespace OrbitRabbitsProject
                 Foreground = Color.White,
                 Text = gameStorage.BestScore.ToString(),
                 Margin = new Thickness(
-                    250,
-                    WaveServices.ViewportManager.BottomEdge - 45,
+                    290,
+                    WaveServices.ViewportManager.BottomEdge - 40,
                     0,
                     0)
             };

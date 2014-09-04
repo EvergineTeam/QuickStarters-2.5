@@ -41,7 +41,7 @@ namespace OrbitRabbitsProject.Entities.Particles
                 MinRotateSpeed = 0.1f,
                 MaxRotateSpeed = -0.1f,
                 EndDeltaScale = 0.0f,
-                EmitterSize = new Vector2(5),
+                EmitterSize = new Vector3(5),
                 EmitterShape = ParticleSystem2D.Shape.FillCircle,
                 Emit = false
             };
@@ -66,7 +66,7 @@ namespace OrbitRabbitsProject.Entities.Particles
                 MinRotateSpeed = 0.03f,
                 MaxRotateSpeed = -0.03f,
                 EndDeltaScale = 0f,
-                EmitterSize = new Vector2(30),
+                EmitterSize = new Vector3(30),
                 Gravity = new Vector2(0, 0.03f),
                 EmitterShape = ParticleSystem2D.Shape.FillCircle,
                 Emit = false,

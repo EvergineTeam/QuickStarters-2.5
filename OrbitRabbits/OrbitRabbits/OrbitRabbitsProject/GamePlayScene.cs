@@ -16,6 +16,7 @@ using System;
 using System.Collections.Generic;
 using WaveEngine.Common.Graphics;
 using WaveEngine.Common.Math;
+using WaveEngine.Components.Cameras;
 using WaveEngine.Components.Gestures;
 using WaveEngine.Components.Graphics2D;
 using WaveEngine.Components.UI;
@@ -50,7 +51,9 @@ namespace OrbitRabbitsProject
         /// </remarks>
         protected override void CreateScene()
         {
-            RenderManager.BackgroundColor = Color.Black;
+            FixedCamera2D camera2d = new FixedCamera2D("camera");
+            camera2d.BackgroundColor = Color.Black;
+            EntityManager.Add(camera2d);
 
             //Background          
             Entity background = new Entity()
