@@ -11,6 +11,7 @@
 using FlyingKiteProject.Behaviors;
 using FlyingKiteProject.Drawables;
 using FlyingKiteProject.Entities;
+using FlyingKiteProject.Layers;
 using FlyingKiteProject.Resources;
 using System;
 using System.Collections.Generic;
@@ -111,7 +112,7 @@ namespace FlyingKiteProject
                    Origin = Vector2.Center
                })
                .AddComponent(new Sprite(Textures.STAR))
-               .AddComponent(new SpriteRenderer(DefaultLayers.Alpha));
+               .AddComponent(new SpriteRenderer(typeof(ObstaclesLayer)));
 
             return star;
         }
@@ -148,13 +149,12 @@ namespace FlyingKiteProject
             {
                 X = WaveServices.ViewportManager.VirtualWidth / 2,
                 Y = 197,
-                DrawOrder = 0.8f
             };
 
             var cloud = new Entity()
                 .AddComponent(transform)
                 .AddComponent(new SpriteAtlas(Textures.GAME_ATLAS, Textures.GameAtlas.bg_cloud.ToString()))
-                .AddComponent(new SpriteAtlasRenderer(DefaultLayers.Opaque))
+                .AddComponent(new SpriteAtlasRenderer(DefaultLayers.Alpha))
                 .AddComponent(scrollBehavior);
 
             scrollBehavior.EntityOutOfScreen += (entity) =>
@@ -183,7 +183,7 @@ namespace FlyingKiteProject
             var cloud = new Entity()
                 .AddComponent(transform)
                 .AddComponent(new SpriteAtlas(Textures.GAME_ATLAS, Textures.GameAtlas.bg_plane.ToString()))
-                .AddComponent(new SpriteAtlasRenderer(DefaultLayers.Opaque))
+                .AddComponent(new SpriteAtlasRenderer(DefaultLayers.Alpha))
                 .AddComponent(scrollBehavior);
 
             scrollBehavior.EntityOutOfScreen += (entity) =>

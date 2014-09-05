@@ -58,9 +58,7 @@ namespace FlyingKite
                 this.splashScreen = WaveServices.Assets.Global.LoadAsset<Texture2D>(name, stream);
             }
 
-            position = new Vector2();
-            position.X = (this.Width / 2.0f) - (this.splashScreen.Width / 2.0f);
-            position.Y = (this.Height / 2.0f) - (this.splashScreen.Height / 2.0f);
+            position = new Vector2();          
             #endregion
         }
 
@@ -95,6 +93,9 @@ namespace FlyingKite
                     {
                         this.splashState = false;
                     }
+
+                    position.X = (this.Width / 2.0f) - (this.splashScreen.Width / 2.0f);
+                    position.Y = (this.Height / 2.0f) - (this.splashScreen.Height / 2.0f);
                     #endregion
                 }
                 else
@@ -120,7 +121,7 @@ namespace FlyingKite
                     #region WAVE SOFTWARE LICENSE AGREEMENT
                     WaveServices.GraphicsDevice.RenderTargets.SetRenderTarget(null);
                     WaveServices.GraphicsDevice.Clear(ref this.backgroundSplashColor, ClearFlags.Target, 1);
-                    this.spriteBatch.Draw(this.splashScreen, this.position, Color.White);
+                    this.spriteBatch.DrawVM(this.splashScreen, this.position, Color.White);
                     this.spriteBatch.Render();
                     #endregion
                 }

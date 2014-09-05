@@ -88,7 +88,7 @@ namespace FlyingKiteProject.Entities
                                 .AddComponent(new Transform2D()
                                 {
                                     Y = topObstacleY,
-                                    Origin = Vector2.UnitY
+                                    Origin = Vector2.UnitY,
                                 })
                                 .AddComponent(new SpriteAtlas(Textures.GAME_ATLAS, Textures.GameAtlas.obstacle_top.ToString()))
                                 .AddComponent(new SpriteAtlasRenderer(typeof(ObstaclesLayer)))

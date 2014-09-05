@@ -81,7 +81,12 @@ namespace FlyingKiteProject.Scenes
         /// </remarks>
         protected override void CreateScene()
         {
-            this.RenderManager.RegisterLayerBefore(new ObstaclesLayer(this.RenderManager), DefaultLayers.Alpha);
+            Entity camera = new Entity()
+                               .AddComponent(new Camera2D());
+
+            EntityManager.Add(camera);
+
+            this.RenderManager.RegisterLayerAfter(new ObstaclesLayer(this.RenderManager), DefaultLayers.Alpha);
 
             // Game Entities
             this.CreateBackground();
