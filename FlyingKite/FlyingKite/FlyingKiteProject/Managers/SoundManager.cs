@@ -123,7 +123,11 @@ namespace FlyingKite.Managers
                 return WaveServices.SoundPlayer.Play(this.sounds[soundIndex], volume, loop);
             }
             return null;
-        } 
+        }
+
+        protected override void Terminate()
+        {            
+        }
         #endregion
     }
 }

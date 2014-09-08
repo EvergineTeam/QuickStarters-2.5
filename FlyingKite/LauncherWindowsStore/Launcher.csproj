@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{339563E5-2D36-4541-A4C1-6CCAF629A6DB}</ProjectGuid>
+    <ProjectGuid>{3C832CC9-A6BE-4C52-9C10-C2D473B39D6F}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Launcher</RootNamespace>
@@ -13,8 +13,11 @@
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{BC8A1FFA-BEE3-4634-8014-F334798102B3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <PackageCertificateKeyFile>Launcher_TemporaryKey.pfx</PackageCertificateKeyFile>
-    <PackageCertificateThumbprint>3CD537E4B66F74AEF7E2E1079F7D709D8B4478BE</PackageCertificateThumbprint>
+    <PackageCertificateThumbprint>A00362E81BCD14B6CA5D0ABD9808D1DCC04A3720</PackageCertificateThumbprint>
     <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+    <TargetPlatformVersion>8.1</TargetPlatformVersion>
+    <MinimumVisualStudioVersion>12</MinimumVisualStudioVersion>
+    <TargetFrameworkVersion />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -123,6 +126,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <Page Include="Common\StandardStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="MainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -134,14 +141,6 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\FlyingKite\FlyingKite\Content\Kite\kite_anims.xml">
-      <Link>Content\Kite\kite_anims.xml</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\FlyingKite\FlyingKite\Content\Sounds\bg_music.mp3">
-      <Link>Content\Sounds\bg_music.mp3</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Images\Logo.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -154,94 +153,11 @@
     <Content Include="Images\StoreLogo.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="..\FlyingKite\FlyingKite\Content\bg.wpk">
-      <Link>Content\bg.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\FlyingKite\FlyingKite\Content\Fonts\BadaBoom BB.wpk">
-      <Link>Content\Fonts\BadaBoom BB.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\FlyingKite\FlyingKite\Content\Fonts\Showcard Gothic.wpk">
-      <Link>Content\Fonts\Showcard Gothic.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\FlyingKite\FlyingKite\Content\Game.wpk">
-      <Link>Content\Game.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\FlyingKite\FlyingKite\Content\Kite\kite_anims.wpk">
-      <Link>Content\Kite\kite_anims.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\FlyingKite\FlyingKite\Content\Kite\kite_rope_3x1.wpk">
-      <Link>Content\Kite\kite_rope_3x1.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\FlyingKite\FlyingKite\Content\Menus\best_score.wpk">
-      <Link>Content\Menus\best_score.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\FlyingKite\FlyingKite\Content\Menus\bg_gameover.wpk">
-      <Link>Content\Menus\bg_gameover.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\FlyingKite\FlyingKite\Content\Menus\gameover.wpk">
-      <Link>Content\Menus\gameover.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\FlyingKite\FlyingKite\Content\Menus\logo.wpk">
-      <Link>Content\Menus\logo.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\FlyingKite\FlyingKite\Content\Menus\numbers.wpk">
-      <Link>Content\Menus\numbers.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\FlyingKite\FlyingKite\Content\Menus\play_button.wpk">
-      <Link>Content\Menus\play_button.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\FlyingKite\FlyingKite\Content\Menus\play_button_pressed.wpk">
-      <Link>Content\Menus\play_button_pressed.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\FlyingKite\FlyingKite\Content\Menus\star.wpk">
-      <Link>Content\Menus\star.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\FlyingKite\FlyingKite\Content\PixelCollider\fish_kite.wpk">
-      <Link>Content\PixelCollider\fish_kite.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\FlyingKite\FlyingKite\Content\PixelCollider\obstacle_bottom.wpk">
-      <Link>Content\PixelCollider\obstacle_bottom.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\FlyingKite\FlyingKite\Content\PixelCollider\obstacle_top.wpk">
-      <Link>Content\PixelCollider\obstacle_top.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\FlyingKite\FlyingKite\Content\Sounds\chop1.wpk">
-      <Link>Content\Sounds\chop1.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\FlyingKite\FlyingKite\Content\Sounds\chop2.wpk">
-      <Link>Content\Sounds\chop2.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\FlyingKite\FlyingKite\Content\Sounds\coin.wpk">
-      <Link>Content\Sounds\coin.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\FlyingKite\FlyingKite\Content\Sounds\crash.wpk">
-      <Link>Content\Sounds\crash.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\WideLogo.scale-100.png" />
     <None Include="Launcher_TemporaryKey.pfx" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Content\" />
+  </ItemGroup>
   <ItemGroup>
     <Reference Include="WaveEngine.Adapter">
       <HintPath>$(waveengine)\v1.0\Lib\Metro\WaveEngineMetro.Adapter.dll</HintPath>
@@ -267,14 +183,10 @@
       <HintPath>$(waveengine)\v1.0\Lib\Metro\SharpDX.XAudio2.dll</HintPath>
     </Reference>
   </ItemGroup>
-  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' ">
-    <VisualStudioVersion>11.0</VisualStudioVersion>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
+    <VisualStudioVersion>12.0</VisualStudioVersion>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
-  <PropertyGroup>
-    <PreBuildEvent>
-    </PreBuildEvent>
-  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
@@ -288,4 +200,6 @@
       <Name>FlyingKiteProjectWindowsStore</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(WaveEngine)v1.0\Targets\Metro\WPKAssetsCompilation.targets" />
 </Project>

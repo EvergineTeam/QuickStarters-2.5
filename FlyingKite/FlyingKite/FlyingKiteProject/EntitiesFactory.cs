@@ -47,11 +47,12 @@ namespace FlyingKiteProject
         /// <returns></returns>
         public static Entity CreateKiteBall()
         {
+            
             var ball = new Entity()
                     .AddComponent(new Transform2D()
                         {
-                            X = WaveServices.ViewportManager.VirtualWidth / 4 + 112,
-                            Y = WaveServices.ViewportManager.VirtualHeight / 2 + 47,
+                            X = WaveServices.ViewportManager.VirtualWidth / 4 + 150,
+                            Y = WaveServices.ViewportManager.VirtualHeight / 2 + 47,                            
                         })
                     .AddComponent(new SpriteAtlas(Textures.GAME_ATLAS, Textures.GameAtlas.kite_ball.ToString()))
                     .AddComponent(new SpriteAtlasRenderer(DefaultLayers.GUI));
@@ -79,7 +80,7 @@ namespace FlyingKiteProject
         public static Entity CreateLinkedRope(Entity from, Vector2 fromOrigin, Entity to, Vector2 toOrigin)
         {
             var rope = new Entity()
-                        .AddComponent(new Material2D(new BasicMaterial2D(Textures.KITE_ROPE, DefaultLayers.Alpha)))
+                        .AddComponent(new Material2D(new BasicMaterial2D(Textures.KITE_ROPE, typeof(ObstaclesLayer))))
                         .AddComponent(new DrawableCurve2D())
                         .AddComponent(new LinkedRopeBehavior(from, fromOrigin, to, toOrigin));
 

@@ -177,16 +177,13 @@ namespace FlyingKiteProject.Drawables
                 texCoord = (i % 2) == 0 ? Vector2.UnitX : Vector2.One;
             }
 
-            var realX = WaveServices.ViewportManager.TranslateX(x);
-            var realY = WaveServices.ViewportManager.TranslateY(y);
-
             if (this.RenderManager.ActiveRenderTarget != null && this.platform.AdapterType != AdapterType.DirectX)
             {
-                this.vertices[this.vertexIndex].Position = new Vector3(realX, platform.ScreenHeight - realY, 1f);
+                this.vertices[this.vertexIndex].Position = new Vector3(x, platform.ScreenHeight - y, 1f);
             }
             else
             {
-                this.vertices[this.vertexIndex].Position = new Vector3(realX, realY, 1f);
+                this.vertices[this.vertexIndex].Position = new Vector3(x, y, 1f);
             }
 
             this.vertices[this.vertexIndex].TexCoord = texCoord;
