@@ -47,7 +47,7 @@ namespace FlyingKiteProject.Entities
             this.entity = new Entity()
                 .AddComponent(transform)
                 .AddComponent(spriteAtlas)
-                .AddComponent(new SpriteAtlasRenderer(DefaultLayers.Opaque))
+                .AddComponent(new SpriteAtlasRenderer(DefaultLayers.Alpha))
                 .AddComponent(scrollBehavior);
 
             scrollBehavior.EntityOutOfScreen += (entity) =>

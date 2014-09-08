@@ -9,6 +9,7 @@
 
 #region Using Statements
 using FlyingKiteProject.Behaviors;
+using FlyingKiteProject.Layers;
 using FlyingKiteProject.Resources;
 using System;
 using System.Collections.Generic;
@@ -28,6 +29,8 @@ namespace FlyingKiteProject.Entities
 {
     public class Kite : BaseDecorator
     {
+        public Transform2D Transform;
+
         private readonly string[] kiteAnimations = 
         {
             "Blue",
@@ -40,19 +43,21 @@ namespace FlyingKiteProject.Entities
         /// </summary>
         public Kite()
         {
-            this.entity = new Entity("kite")
-                        .AddComponent(new Transform2D()
+            this.Transform = new Transform2D()
                         {
                             X = WaveServices.ViewportManager.VirtualWidth / 4,
                             Y = WaveServices.ViewportManager.VirtualHeight / 2,
                             Origin = Vector2.Center
-                        })
+                        };
+
+            this.entity = new Entity("kite")
+                        .AddComponent(this.Transform)
                         .AddComponent(new Sprite(Textures.KITE_ANIMS))
                         .AddComponent(Animation2D.Create<TexturePackerGenericXml>(Textures.KITE_ANIMS_XML)
                             .Add(this.kiteAnimations[0], new SpriteSheetAnimationSequence() { First = 1, Length = 9, FramesPerSecond = 27 })
                             .Add(this.kiteAnimations[1], new SpriteSheetAnimationSequence() { First = 10, Length = 9, FramesPerSecond = 27 })
                             .Add(this.kiteAnimations[2], new SpriteSheetAnimationSequence() { First = 19, Length = 9, FramesPerSecond = 27 }))
-                        .AddComponent(new AnimatedSpriteRenderer(DefaultLayers.Alpha))
+                        .AddComponent(new AnimatedSpriteRenderer(typeof(ObstaclesLayer)))
                         .AddComponent(new PerPixelCollider(Textures.KITE_COLLID, 0.5f))
                         .AddComponent(new KiteBehavior());
         }

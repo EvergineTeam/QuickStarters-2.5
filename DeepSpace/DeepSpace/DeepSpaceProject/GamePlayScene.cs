@@ -6,6 +6,7 @@ using WaveEngine.Common;
 using WaveEngine.Common.Graphics;
 using WaveEngine.Common.Math;
 using WaveEngine.Components.Animation;
+using WaveEngine.Components.Cameras;
 using WaveEngine.Components.Graphics2D;
 using WaveEngine.Components.UI;
 using WaveEngine.Framework;
@@ -42,7 +43,10 @@ namespace DeepSpaceProject
 
         protected override void CreateScene()
         {
-            RenderManager.BackgroundColor = Color.Black;
+            FixedCamera2D camera2d = new FixedCamera2D("camera");
+            camera2d.BackgroundColor = Color.Black;
+            EntityManager.Add(camera2d);
+
             System.Random rnd = new System.Random(23);
 
             CreateBackground();

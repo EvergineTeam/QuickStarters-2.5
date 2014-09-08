@@ -17,6 +17,10 @@ bld/
 [Bb]in/
 [Oo]bj/
 
+#Asset Exporter
+Export/
+log.txt
+
 # MSTest test Results
 [Tt]est[Rr]esult*/
 [Bb]uild[Ll]og.*

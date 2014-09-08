@@ -11,6 +11,7 @@
 using FlyingKiteProject.Behaviors;
 using FlyingKiteProject.Drawables;
 using FlyingKiteProject.Entities;
+using FlyingKiteProject.Layers;
 using FlyingKiteProject.Resources;
 using System;
 using System.Collections.Generic;
@@ -46,11 +47,12 @@ namespace FlyingKiteProject
         /// <returns></returns>
         public static Entity CreateKiteBall()
         {
+            
             var ball = new Entity()
                     .AddComponent(new Transform2D()
                         {
-                            X = WaveServices.ViewportManager.VirtualWidth / 4 + 112,
-                            Y = WaveServices.ViewportManager.VirtualHeight / 2 + 47,
+                            X = WaveServices.ViewportManager.VirtualWidth / 4 + 150,
+                            Y = WaveServices.ViewportManager.VirtualHeight / 2 + 47,                            
                         })
                     .AddComponent(new SpriteAtlas(Textures.GAME_ATLAS, Textures.GameAtlas.kite_ball.ToString()))
                     .AddComponent(new SpriteAtlasRenderer(DefaultLayers.GUI));
@@ -78,7 +80,7 @@ namespace FlyingKiteProject
         public static Entity CreateLinkedRope(Entity from, Vector2 fromOrigin, Entity to, Vector2 toOrigin)
         {
             var rope = new Entity()
-                        .AddComponent(new Material2D(new BasicMaterial2D(Textures.KITE_ROPE, DefaultLayers.Alpha)))
+                        .AddComponent(new Material2D(new BasicMaterial2D(Textures.KITE_ROPE, typeof(ObstaclesLayer))))
                         .AddComponent(new DrawableCurve2D())
                         .AddComponent(new LinkedRopeBehavior(from, fromOrigin, to, toOrigin));
 
@@ -111,7 +113,7 @@ namespace FlyingKiteProject
                    Origin = Vector2.Center
                })
                .AddComponent(new Sprite(Textures.STAR))
-               .AddComponent(new SpriteRenderer(DefaultLayers.Alpha));
+               .AddComponent(new SpriteRenderer(typeof(ObstaclesLayer)));
 
             return star;
         }
@@ -148,13 +150,12 @@ namespace FlyingKiteProject
             {
                 X = WaveServices.ViewportManager.VirtualWidth / 2,
                 Y = 197,
-                DrawOrder = 0.8f
             };
 
             var cloud = new Entity()
                 .AddComponent(transform)
                 .AddComponent(new SpriteAtlas(Textures.GAME_ATLAS, Textures.GameAtlas.bg_cloud.ToString()))
-                .AddComponent(new SpriteAtlasRenderer(DefaultLayers.Opaque))
+                .AddComponent(new SpriteAtlasRenderer(DefaultLayers.Alpha))
                 .AddComponent(scrollBehavior);
 
             scrollBehavior.EntityOutOfScreen += (entity) =>
@@ -183,7 +184,7 @@ namespace FlyingKiteProject
             var cloud = new Entity()
                 .AddComponent(transform)
                 .AddComponent(new SpriteAtlas(Textures.GAME_ATLAS, Textures.GameAtlas.bg_plane.ToString()))
-                .AddComponent(new SpriteAtlasRenderer(DefaultLayers.Opaque))
+                .AddComponent(new SpriteAtlasRenderer(DefaultLayers.Alpha))
                 .AddComponent(scrollBehavior);
 
             scrollBehavior.EntityOutOfScreen += (entity) =>
