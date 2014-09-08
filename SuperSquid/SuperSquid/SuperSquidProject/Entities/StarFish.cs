@@ -19,7 +19,7 @@ using WaveEngine.Components.Graphics2D;
 using WaveEngine.Framework;
 using WaveEngine.Framework.Graphics;
 using WaveEngine.Framework.Physics2D;
-using WaveEngine.Framework.Services; 
+using WaveEngine.Framework.Services;
 #endregion
 
 namespace SuperSquidProject.Entities

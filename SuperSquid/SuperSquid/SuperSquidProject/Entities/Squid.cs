@@ -74,14 +74,15 @@ namespace SuperSquidProject.Entities
 
             // Bubble
             this.entity.AddChild(new Entity("bubblesParticle")
-                                    .AddComponent(new Transform2D()
-                                    {
-                                        Y = 210,
-                                    })
-                                    .AddComponent(ParticleFactory.CreateBubbleParticles())
-                                    .AddComponent(new Material2D(new BasicMaterial2D(Directories.TexturePath + "waterParticle.wpk", DefaultLayers.Additive)))
-                                    .AddComponent(new ParticleSystemRenderer2D("bubblesParticle"))
-                                    .AddComponent(new ChildFollower2D()));
+                .AddComponent(new Transform2D()
+                {
+                    LocalY = 210,
+                })
+                .AddComponent(ParticleFactory.CreateBubbleParticles())
+                .AddComponent(
+                    new Material2D(new BasicMaterial2D(Directories.TexturePath + "waterParticle.wpk",
+                        DefaultLayers.Additive)))
+                .AddComponent(new ParticleSystemRenderer2D("bubblesParticle")));
 
             // Cached
             this.particleSystem = this.entity.FindChild("bubblesParticle").FindComponent<ParticleSystem2D>();

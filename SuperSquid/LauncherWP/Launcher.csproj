@@ -118,156 +118,12 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\SuperSquid\SuperSquid\Content\Fonts\Bulky Pixels_16.wpk">
-      <Link>Content\Fonts\Bulky Pixels_16.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\SuperSquid\SuperSquid\Content\Fonts\Bulky Pixels_26.wpk">
-      <Link>Content\Fonts\Bulky Pixels_26.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\SuperSquid\SuperSquid\Content\Sounds\jellyCrash.wpk">
-      <Link>Content\Sounds\jellyCrash.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\SuperSquid\SuperSquid\Content\Sounds\rockCrash.wpk">
-      <Link>Content\Sounds\rockCrash.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\SuperSquid\SuperSquid\Content\Sounds\squid_swim1.wpk">
-      <Link>Content\Sounds\squid_swim1.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\SuperSquid\SuperSquid\Content\Sounds\squid_swim2.wpk">
-      <Link>Content\Sounds\squid_swim2.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\SuperSquid\SuperSquid\Content\Sounds\star.wpk">
-      <Link>Content\Sounds\star.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\SuperSquid\SuperSquid\Content\Textures\centralRock.wpk">
-      <Link>Content\Textures\centralRock.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\SuperSquid\SuperSquid\Content\Textures\centralRockCollider.wpk">
-      <Link>Content\Textures\centralRockCollider.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\SuperSquid\SuperSquid\Content\Textures\game.wpk">
-      <Link>Content\Textures\game.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\SuperSquid\SuperSquid\Content\Textures\jellyFishCollider.wpk">
-      <Link>Content\Textures\jellyFishCollider.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\SuperSquid\SuperSquid\Content\Textures\jellyFishLittleCollider.wpk">
-      <Link>Content\Textures\jellyFishLittleCollider.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\SuperSquid\SuperSquid\Content\Textures\jellyFishLittleSpriteSheet.wpk">
-      <Link>Content\Textures\jellyFishLittleSpriteSheet.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\SuperSquid\SuperSquid\Content\Textures\jellyFishSpriteSheet.wpk">
-      <Link>Content\Textures\jellyFishSpriteSheet.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\SuperSquid\SuperSquid\Content\Textures\leftRock.wpk">
-      <Link>Content\Textures\leftRock.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\SuperSquid\SuperSquid\Content\Textures\leftRockCollider.wpk">
-      <Link>Content\Textures\leftRockCollider.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\SuperSquid\SuperSquid\Content\Textures\over.wpk">
-      <Link>Content\Textures\over.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\SuperSquid\SuperSquid\Content\Textures\play.wpk">
-      <Link>Content\Textures\play.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\SuperSquid\SuperSquid\Content\Textures\playPressed.wpk">
-      <Link>Content\Textures\playPressed.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\SuperSquid\SuperSquid\Content\Textures\restart.wpk">
-      <Link>Content\Textures\restart.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\SuperSquid\SuperSquid\Content\Textures\restartPressed.wpk">
-      <Link>Content\Textures\restartPressed.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\SuperSquid\SuperSquid\Content\Textures\rightRock.wpk">
-      <Link>Content\Textures\rightRock.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\SuperSquid\SuperSquid\Content\Textures\rightRockCollider.wpk">
-      <Link>Content\Textures\rightRockCollider.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\SuperSquid\SuperSquid\Content\Textures\seaweedsSpriteSheet.wpk">
-      <Link>Content\Textures\seaweedsSpriteSheet.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\SuperSquid\SuperSquid\Content\Textures\squid.wpk">
-      <Link>Content\Textures\squid.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\SuperSquid\SuperSquid\Content\Textures\squidCollider.wpk">
-      <Link>Content\Textures\squidCollider.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\SuperSquid\SuperSquid\Content\Textures\squidSpriteSheet.wpk">
-      <Link>Content\Textures\squidSpriteSheet.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\SuperSquid\SuperSquid\Content\Textures\starfish.wpk">
-      <Link>Content\Textures\starfish.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\SuperSquid\SuperSquid\Content\Textures\super.wpk">
-      <Link>Content\Textures\super.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\SuperSquid\SuperSquid\Content\Textures\waterParticle.wpk">
-      <Link>Content\Textures\waterParticle.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\SuperSquid\SuperSquid\Content\Textures\waterParticle2.wpk">
-      <Link>Content\Textures\waterParticle2.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <None Include="Properties\AppManifest.xml" />
     <None Include="Properties\WMAppManifest.xml">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\SuperSquid\SuperSquid\Content\Sounds\bg_music.mp3">
-      <Link>Content\Sounds\bg_music.mp3</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\SuperSquid\SuperSquid\Content\Textures\jellyFishLittleSpriteSheet.xml">
-      <Link>Content\Textures\jellyFishLittleSpriteSheet.xml</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\SuperSquid\SuperSquid\Content\Textures\jellyFishSpriteSheet.xml">
-      <Link>Content\Textures\jellyFishSpriteSheet.xml</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\SuperSquid\SuperSquid\Content\Textures\seaweedsSpriteSheet.xml">
-      <Link>Content\Textures\seaweedsSpriteSheet.xml</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\SuperSquid\SuperSquid\Content\Textures\squidSpriteSheet.xml">
-      <Link>Content\Textures\squidSpriteSheet.xml</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Assets\ApplicationIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -292,6 +148,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
+  <Import Project="$(WaveEngine)v1.0\Targets\WP\WPKAssetsCompilation.targets" />
   <!--
       To modify your build process, add your task inside one of the targets below and uncomment it. 
       Other similar extension points exist, see Microsoft.Common.targets.

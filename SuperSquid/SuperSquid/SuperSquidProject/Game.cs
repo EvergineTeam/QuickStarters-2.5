@@ -47,7 +47,7 @@ namespace SuperSquidProject
             WaveServices.RegisterService<SoundManager>(new SoundManager());
 
             // Set portrait orientation in WP
-            if (WaveServices.Platform.PlatformName != "Metro")
+            if (WaveServices.Platform.PlatformType == PlatformType.WindowsPhone)
             {
                 application.Adapter.DefaultOrientation = DisplayOrientation.Portrait;
                 application.Adapter.SupportedOrientations = DisplayOrientation.Portrait;

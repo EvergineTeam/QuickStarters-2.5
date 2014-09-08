@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:af29f59432145b4706881bf1b07e7826:26d8ea9eec198ff1db0391f2e336f312:097e6cbf67918c8946e322ef47d0808c$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+-->
+<TextureAtlas imagePath="jelly_little.png" width="1024" height="1024">
+    <sprite n="little jellyfish_00000.png" x="2" y="2" w="92" h="130" oX="29" oY="27" oW="140" oH="160"/>
+    <sprite n="little jellyfish_00001.png" x="96" y="2" w="92" h="130" oX="29" oY="26" oW="140" oH="160"/>
+    <sprite n="little jellyfish_00002.png" x="190" y="2" w="92" h="130" oX="29" oY="25" oW="140" oH="160"/>
+    <sprite n="little jellyfish_00003.png" x="284" y="2" w="92" h="130" oX="29" oY="24" oW="140" oH="160"/>
+    <sprite n="little jellyfish_00004.png" x="378" y="2" w="92" h="130" oX="29" oY="24" oW="140" oH="160"/>
+    <sprite n="little jellyfish_00005.png" x="472" y="2" w="92" h="130" oX="29" oY="23" oW="140" oH="160"/>
+    <sprite n="little jellyfish_00006.png" x="566" y="2" w="92" h="130" oX="29" oY="23" oW="140" oH="160"/>
+    <sprite n="little jellyfish_00007.png" x="660" y="2" w="94" h="132" oX="28" oY="21" oW="140" oH="160"/>
+    <sprite n="little jellyfish_00008.png" x="756" y="2" w="96" h="132" oX="28" oY="20" oW="140" oH="160"/>
+    <sprite n="little jellyfish_00009.png" x="854" y="2" w="96" h="132" oX="29" oY="20" oW="140" oH="160"/>
+    <sprite n="little jellyfish_00010.png" x="2" y="136" w="98" h="132" oX="29" oY="20" oW="140" oH="160"/>
+    <sprite n="little jellyfish_00011.png" x="102" y="136" w="100" h="132" oX="28" oY="19" oW="140" oH="160"/>
+    <sprite n="little jellyfish_00012.png" x="204" y="136" w="104" h="134" oX="26" oY="17" oW="140" oH="160"/>
+    <sprite n="little jellyfish_00013.png" x="310" y="136" w="108" h="134" oX="24" oY="17" oW="140" oH="160"/>
+    <sprite n="little jellyfish_00014.png" x="420" y="136" w="110" h="136" oX="23" oY="15" oW="140" oH="160"/>
+    <sprite n="little jellyfish_00015.png" x="532" y="136" w="114" h="136" oX="21" oY="15" oW="140" oH="160"/>
+    <sprite n="little jellyfish_00016.png" x="648" y="136" w="116" h="140" oX="21" oY="11" oW="140" oH="160"/>
+    <sprite n="little jellyfish_00017.png" x="766" y="136" w="120" h="142" oX="19" oY="9" oW="140" oH="160"/>
+    <sprite n="little jellyfish_00018.png" x="888" y="136" w="122" h="146" oX="18" oY="6" oW="140" oH="160"/>
+    <sprite n="little jellyfish_00019.png" x="2" y="284" w="124" h="148" oX="16" oY="4" oW="140" oH="160"/>
+    <sprite n="little jellyfish_00020.png" x="128" y="284" w="124" h="150" oX="16" oY="4" oW="140" oH="160"/>
+    <sprite n="little jellyfish_00021.png" x="254" y="284" w="124" h="152" oX="16" oY="3" oW="140" oH="160"/>
+    <sprite n="little jellyfish_00022.png" x="380" y="284" w="126" h="154" oX="14" oY="3" oW="140" oH="160"/>
+    <sprite n="little jellyfish_00023.png" x="508" y="284" w="124" h="150" oX="16" oY="5" oW="140" oH="160"/>
+    <sprite n="little jellyfish_00024.png" x="634" y="284" w="122" h="148" oX="17" oY="7" oW="140" oH="160"/>
+    <sprite n="little jellyfish_00025.png" x="758" y="284" w="120" h="146" oX="17" oY="9" oW="140" oH="160"/>
+    <sprite n="little jellyfish_00026.png" x="880" y="284" w="116" h="142" oX="19" oY="12" oW="140" oH="160"/>
+    <sprite n="little jellyfish_00027.png" x="2" y="440" w="112" h="138" oX="21" oY="16" oW="140" oH="160"/>
+    <sprite n="little jellyfish_00028.png" x="116" y="440" w="110" h="136" oX="22" oY="18" oW="140" oH="160"/>
+    <sprite n="little jellyfish_00029.png" x="228" y="440" w="108" h="136" oX="22" oY="19" oW="140" oH="160"/>
+    <sprite n="little jellyfish_00030.png" x="338" y="440" w="104" h="134" oX="24" oY="20" oW="140" oH="160"/>
+    <sprite n="little jellyfish_00031.png" x="444" y="440" w="100" h="134" oX="26" oY="20" oW="140" oH="160"/>
+    <sprite n="little jellyfish_00032.png" x="546" y="440" w="98" h="134" oX="27" oY="21" oW="140" oH="160"/>
+    <sprite n="little jellyfish_00033.png" x="646" y="440" w="94" h="132" oX="29" oY="22" oW="140" oH="160"/>
+    <sprite n="little jellyfish_00034.png" x="742" y="440" w="92" h="132" oX="29" oY="23" oW="140" oH="160"/>
+    <sprite n="little jellyfish_00035.png" x="836" y="440" w="92" h="132" oX="29" oY="23" oW="140" oH="160"/>
+    <sprite n="little jellyfish_00036.png" x="930" y="440" w="92" h="130" oX="29" oY="25" oW="140" oH="160"/>
+    <sprite n="little jellyfish_00037.png" x="2" y="580" w="92" h="130" oX="29" oY="25" oW="140" oH="160"/>
+    <sprite n="little jellyfish_00038.png" x="96" y="580" w="92" h="130" oX="29" oY="25" oW="140" oH="160"/>
+    <sprite n="little jellyfish_00039.png" x="190" y="580" w="92" h="130" oX="29" oY="26" oW="140" oH="160"/>
+</TextureAtlas>
