@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:e8ba6df16aa6f700e573e5b90d430b42:4a7217312f2be83fd123d6ef5cabdfb4:d9836846a1976f51e3c4ebc17cea6edd$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+-->
+<TextureAtlas imagePath="seaweeds.png" width="2048" height="2048">
+    <sprite n="final seaweeds_00000.png" x="2" y="2" w="242" h="206" oX="7" oY="44" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00001.png" x="246" y="2" w="240" h="206" oX="7" oY="44" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00002.png" x="488" y="2" w="238" h="206" oX="7" oY="44" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00003.png" x="728" y="2" w="234" h="206" oX="9" oY="44" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00004.png" x="964" y="2" w="232" h="204" oX="8" oY="46" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00005.png" x="1198" y="2" w="230" h="204" oX="8" oY="46" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00006.png" x="1430" y="2" w="226" h="202" oX="9" oY="48" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00007.png" x="1658" y="2" w="222" h="202" oX="10" oY="48" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00008.png" x="2" y="210" w="220" h="202" oX="10" oY="48" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00009.png" x="224" y="210" w="218" h="200" oX="10" oY="50" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00010.png" x="444" y="210" w="216" h="200" oX="10" oY="50" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00011.png" x="662" y="210" w="214" h="198" oX="9" oY="52" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00012.png" x="878" y="210" w="212" h="198" oX="9" oY="52" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00013.png" x="1092" y="210" w="210" h="196" oX="9" oY="54" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00014.png" x="1304" y="210" w="208" h="196" oX="9" oY="54" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00015.png" x="1514" y="210" w="208" h="196" oX="8" oY="54" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00016.png" x="1724" y="210" w="208" h="194" oX="8" oY="56" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00017.png" x="2" y="414" w="210" h="194" oX="6" oY="56" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00018.png" x="214" y="414" w="212" h="192" oX="5" oY="58" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00019.png" x="428" y="414" w="212" h="192" oX="6" oY="58" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00020.png" x="642" y="414" w="210" h="190" oX="8" oY="60" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00021.png" x="854" y="414" w="210" h="190" oX="9" oY="60" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00022.png" x="1066" y="414" w="210" h="188" oX="9" oY="62" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00023.png" x="1278" y="414" w="210" h="188" oX="9" oY="62" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00024.png" x="1490" y="414" w="208" h="188" oX="11" oY="62" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00025.png" x="1700" y="414" w="208" h="188" oX="11" oY="62" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00026.png" x="2" y="610" w="206" h="186" oX="13" oY="64" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00027.png" x="210" y="610" w="206" h="186" oX="12" oY="64" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00028.png" x="418" y="610" w="206" h="186" oX="13" oY="64" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00029.png" x="626" y="610" w="208" h="186" oX="13" oY="64" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00030.png" x="836" y="610" w="210" h="188" oX="12" oY="62" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00031.png" x="1048" y="610" w="210" h="188" oX="13" oY="62" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00032.png" x="1260" y="610" w="212" h="188" oX="12" oY="62" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00033.png" x="1474" y="610" w="214" h="188" oX="11" oY="62" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00034.png" x="1690" y="610" w="214" h="188" oX="12" oY="62" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00035.png" x="2" y="800" w="214" h="188" oX="12" oY="62" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00036.png" x="218" y="800" w="216" h="188" oX="11" oY="62" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00037.png" x="436" y="800" w="216" h="188" oX="11" oY="62" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00038.png" x="654" y="800" w="216" h="188" oX="11" oY="62" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00039.png" x="872" y="800" w="216" h="188" oX="11" oY="62" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00040.png" x="1090" y="800" w="216" h="188" oX="11" oY="62" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00041.png" x="1308" y="800" w="216" h="186" oX="11" oY="64" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00042.png" x="1526" y="800" w="216" h="186" oX="11" oY="64" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00043.png" x="1744" y="800" w="216" h="186" oX="11" oY="64" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00044.png" x="2" y="990" w="216" h="186" oX="10" oY="64" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00045.png" x="220" y="990" w="216" h="184" oX="10" oY="66" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00046.png" x="438" y="990" w="214" h="184" oX="12" oY="66" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00047.png" x="654" y="990" w="214" h="184" oX="11" oY="66" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00048.png" x="870" y="990" w="212" h="182" oX="12" oY="68" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00049.png" x="1084" y="990" w="212" h="184" oX="12" oY="66" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00050.png" x="1298" y="990" w="210" h="184" oX="13" oY="66" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00051.png" x="1510" y="990" w="208" h="184" oX="14" oY="66" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00052.png" x="1720" y="990" w="206" h="186" oX="15" oY="64" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00053.png" x="2" y="1178" w="206" h="186" oX="15" oY="64" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00054.png" x="210" y="1178" w="206" h="186" oX="15" oY="64" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00055.png" x="418" y="1178" w="206" h="188" oX="15" oY="62" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00056.png" x="626" y="1178" w="208" h="188" oX="14" oY="62" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00057.png" x="836" y="1178" w="210" h="188" oX="15" oY="62" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00058.png" x="1048" y="1178" w="212" h="190" oX="14" oY="60" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00059.png" x="1262" y="1178" w="214" h="190" oX="13" oY="60" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00060.png" x="1478" y="1178" w="214" h="190" oX="14" oY="60" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00061.png" x="1694" y="1178" w="214" h="192" oX="14" oY="58" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00062.png" x="2" y="1372" w="214" h="192" oX="14" oY="58" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00063.png" x="218" y="1372" w="216" h="192" oX="12" oY="58" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00064.png" x="436" y="1372" w="216" h="194" oX="12" oY="56" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00065.png" x="654" y="1372" w="216" h="194" oX="12" oY="56" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00066.png" x="872" y="1372" w="216" h="196" oX="12" oY="54" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00067.png" x="1090" y="1372" w="218" h="196" oX="11" oY="54" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00068.png" x="1310" y="1372" w="220" h="196" oX="10" oY="54" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00069.png" x="1532" y="1372" w="222" h="196" oX="10" oY="54" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00070.png" x="1756" y="1372" w="224" h="196" oX="10" oY="54" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00071.png" x="2" y="1570" w="226" h="198" oX="10" oY="52" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00072.png" x="230" y="1570" w="228" h="198" oX="10" oY="52" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00073.png" x="460" y="1570" w="232" h="198" oX="8" oY="52" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00074.png" x="694" y="1570" w="232" h="200" oX="9" oY="50" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00075.png" x="928" y="1570" w="234" h="200" oX="7" oY="50" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00076.png" x="1164" y="1570" w="236" h="202" oX="8" oY="48" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00077.png" x="1402" y="1570" w="238" h="204" oX="8" oY="46" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00078.png" x="1642" y="1570" w="240" h="204" oX="7" oY="46" oW="250" oH="250"/>
+    <sprite n="final seaweeds_00079.png" x="2" y="1776" w="240" h="206" oX="8" oY="44" oW="250" oH="250"/>
+</TextureAtlas>

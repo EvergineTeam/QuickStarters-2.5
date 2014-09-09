@@ -14,6 +14,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WaveEngine.Common;
 using WaveEngine.Common.Input;
 using WaveEngine.Common.Math;
 using WaveEngine.Components.Animation;
@@ -108,7 +109,7 @@ namespace SuperSquidProject.Entities.Behaviors
                 float accVal;
 
                 // Metro devices plays in landscape orientation mode
-                if (WaveServices.Platform.PlatformName == "Metro")
+                if (WaveServices.Platform.PlatformType == PlatformType.WindowsStore)
                 {
                     accVal = -this.inputManager.AccelerometerState.SmoothAcceleration.Y * 1.5f;
                 }

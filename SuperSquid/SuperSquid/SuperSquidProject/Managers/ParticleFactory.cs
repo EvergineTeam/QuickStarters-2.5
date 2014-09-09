@@ -37,9 +37,10 @@ namespace SuperSquidProject.Managers
                 MaxSize = 7,
                 EndDeltaScale = 1f,
                 LinearColorEnabled = true,
-                InterpolationColors = new List<Color>() { Color.White, Color.Transparent },
-                EmitterSize = new Vector2(WaveServices.ViewportManager.VirtualWidth, 
-                                          WaveServices.ViewportManager.VirtualHeight),
+                InterpolationColors = new List<Color>() { Color.Transparent, Color.White, Color.Transparent },
+                EmitterSize = new Vector3(WaveServices.ViewportManager.VirtualWidth, 
+                                          WaveServices.ViewportManager.VirtualHeight, 
+                                          0),
                 EmitterShape = ParticleSystem2D.Shape.FillRectangle,
             };
         }
@@ -56,7 +57,7 @@ namespace SuperSquidProject.Managers
                 RandomVelocity = new Vector2(3f, 1f),
                 MinSize = 5,
                 MaxSize = 8,                     
-                EmitterSize = new Vector2(80,20),
+                EmitterSize = new Vector3(80f,20f,0f),
                 EmitterShape = ParticleSystem2D.Shape.FillRectangle,
                 Emit = true
             };

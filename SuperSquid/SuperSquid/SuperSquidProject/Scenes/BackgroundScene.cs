@@ -17,6 +17,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WaveEngine.Common.Graphics;
 using WaveEngine.Common.Math;
+using WaveEngine.Components.Cameras;
 using WaveEngine.Components.Graphics2D;
 using WaveEngine.Components.Particles;
 using WaveEngine.Components.UI;
@@ -34,8 +35,8 @@ namespace SuperSquidProject.Scenes
 
         protected override void CreateScene()
         {
-            // Background color
-            RenderManager.BackgroundColor = this.backgroundColor;
+            var camera2D = new FixedCamera2D("Camera2D") { BackgroundColor = this.backgroundColor }; 
+            EntityManager.Add(camera2D);
 
             // Water particles
             Entity waterParticles = new Entity("waterParticles")

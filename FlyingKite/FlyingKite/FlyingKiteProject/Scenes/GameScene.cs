@@ -81,7 +81,12 @@ namespace FlyingKiteProject.Scenes
         /// </remarks>
         protected override void CreateScene()
         {
-            this.RenderManager.RegisterLayerBefore(new ObstaclesLayer(this.RenderManager), DefaultLayers.Alpha);
+            Entity camera = new Entity()
+                               .AddComponent(new Camera2D());
+
+            EntityManager.Add(camera);
+
+            this.RenderManager.RegisterLayerAfter(new ObstaclesLayer(this.RenderManager), DefaultLayers.Alpha);
 
             // Game Entities
             this.CreateBackground();
@@ -132,16 +137,17 @@ namespace FlyingKiteProject.Scenes
             .AddComponent(new Transform2D()
             {
                 X = WaveServices.ViewportManager.VirtualWidth - 150,
-                Y = WaveServices.ViewportManager.VirtualHeight + 50
+                Y = WaveServices.ViewportManager.VirtualHeight
             });
             this.EntityManager.Add(ropeEnd);
 
             var kiteBall = EntitiesFactory.CreateKiteBall();
             kiteBall.AddComponent(new Follower2DBehavior(this.kite.Entity, Follower2DBehavior.FollowTypes.Y));
+
             this.EntityManager.Add(kiteBall);
             this.EntityManager.Add(EntitiesFactory.CreateLinkedRope(this.kite.Entity, new Vector2(0.96f, 0.21f), kiteBall, Vector2.Center));
             this.EntityManager.Add(EntitiesFactory.CreateLinkedRope(this.kite.Entity, new Vector2(0.92f, 0.66f), kiteBall, Vector2.Center));
-            this.EntityManager.Add(EntitiesFactory.CreateLinkedRope(kiteBall, Vector2.Center, ropeEnd, Vector2.Center));
+            this.EntityManager.Add(EntitiesFactory.CreateLinkedRope(kiteBall, Vector2.Center, ropeEnd, this.kite.Transform.Position));
         }
 
         /// <summary>

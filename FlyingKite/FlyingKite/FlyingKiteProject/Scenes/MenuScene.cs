@@ -45,8 +45,13 @@ namespace FlyingKiteProject.Scenes
         /// </remarks>
         protected override void CreateScene()
         {
-            // Allow transparent background
-            this.RenderManager.ClearFlags = ClearFlags.DepthAndStencil;
+            Entity camera = new Entity()
+                                .AddComponent(new Camera2D()
+                                {
+                                    ClearFlags = ClearFlags.DepthAndStencil,
+                                });                                
+
+            EntityManager.Add(camera);
 
             this.gameStorage = Catalog.GetItem<GameStorage>();
 

@@ -19,6 +19,7 @@ using System.Threading.Tasks;
 using WaveEngine.Common.Graphics;
 using WaveEngine.Common.Math;
 using WaveEngine.Common.Media;
+using WaveEngine.Components.Cameras;
 using WaveEngine.Components.Gestures;
 using WaveEngine.Components.Graphics2D;
 using WaveEngine.Components.Transitions;
@@ -68,8 +69,9 @@ namespace SuperSquidProject.Scenes
         /// </remarks>
         protected override void CreateScene()
         {
-            // Background color
-            this.RenderManager.ClearFlags = ClearFlags.DepthAndStencil;
+            var camera2D = new FixedCamera2D("Camera2D") { ClearFlags = ClearFlags.DepthAndStencil };
+            EntityManager.Add(camera2D);
+
             //RenderManager.BackgroundColor = new Color(0 / 255f, 31 / 255f, 39 / 255f);
 
             //Backscene 
