@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{665AA5D6-BF6E-4AB8-B83B-AEE05E763275}</ProjectGuid>
+    <ProjectGuid>{DB7C34B4-9CC1-41B5-9F62-8BABBA86910E}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Launcher</RootNamespace>
@@ -13,8 +13,11 @@
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{BC8A1FFA-BEE3-4634-8014-F334798102B3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <PackageCertificateKeyFile>Launcher_TemporaryKey.pfx</PackageCertificateKeyFile>
-    <PackageCertificateThumbprint>0C69CC4903BA8E3F5E249AFCAFBE30D9EC1EF3CD</PackageCertificateThumbprint>
+    <PackageCertificateThumbprint>72BE59ECE022B541BB22A3C19C2A3816435AFB71</PackageCertificateThumbprint>
     <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+    <TargetPlatformVersion>8.1</TargetPlatformVersion>
+    <MinimumVisualStudioVersion>12</MinimumVisualStudioVersion>
+    <TargetFrameworkVersion />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -123,6 +126,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <Page Include="Common\StandardStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="MainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -134,94 +141,18 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\OrbitRabbits\OrbitRabbits\Content\Sounds\bg_music.mp3">
-      <Link>Content\Sounds\bg_music.mp3</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\Logo.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\SmallLogo.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Images\Logo.scale-100.png" />
+    <Content Include="Images\SmallLogo.scale-100.png" />
     <Content Include="Images\SplashScreen.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\StoreLogo.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\OrbitRabbits\OrbitRabbits\Content\Fonts\OCR A Std_14.wpk">
-      <Link>Content\Fonts\OCR A Std_14.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\OrbitRabbits\OrbitRabbits\Content\Fonts\OCR A Std_20.wpk">
-      <Link>Content\Fonts\OCR A Std_20.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\OrbitRabbits\OrbitRabbits\Content\Sounds\brokenGlass.wpk">
-      <Link>Content\Sounds\brokenGlass.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\OrbitRabbits\OrbitRabbits\Content\Sounds\click.wpk">
-      <Link>Content\Sounds\click.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\OrbitRabbits\OrbitRabbits\Content\Sounds\explosion.wpk">
-      <Link>Content\Sounds\explosion.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\OrbitRabbits\OrbitRabbits\Content\Sounds\fall.wpk">
-      <Link>Content\Sounds\fall.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\OrbitRabbits\OrbitRabbits\Content\Sounds\impulse.wpk">
-      <Link>Content\Sounds\impulse.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\OrbitRabbits\OrbitRabbits\Content\Sounds\start.wpk">
-      <Link>Content\Sounds\start.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\OrbitRabbits\OrbitRabbits\Content\Textures\background.wpk">
-      <Link>Content\Textures\background.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\OrbitRabbits\OrbitRabbits\Content\Textures\game.wpk">
-      <Link>Content\Textures\game.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\OrbitRabbits\OrbitRabbits\Content\Textures\largeLogo.wpk">
-      <Link>Content\Textures\largeLogo.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\OrbitRabbits\OrbitRabbits\Content\Textures\moonPressed.wpk">
-      <Link>Content\Textures\moonPressed.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\OrbitRabbits\OrbitRabbits\Content\Textures\moonRelease.wpk">
-      <Link>Content\Textures\moonRelease.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\OrbitRabbits\OrbitRabbits\Content\Textures\restartPressed.wpk">
-      <Link>Content\Textures\restartPressed.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\OrbitRabbits\OrbitRabbits\Content\Textures\restartRelease.wpk">
-      <Link>Content\Textures\restartRelease.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\OrbitRabbits\OrbitRabbits\Content\Textures\scorePanel.wpk">
-      <Link>Content\Textures\scorePanel.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\OrbitRabbits\OrbitRabbits\Content\Textures\starParticle.wpk">
-      <Link>Content\Textures\starParticle.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\WideLogo.scale-100.png" />
+    <Content Include="Images\StoreLogo.scale-100.png" />
+    <Content Include="Images\Wide310x150Logo.scale-100.png" />
     <None Include="Launcher_TemporaryKey.pfx" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Content\" />
+  </ItemGroup>
   <ItemGroup>
     <Reference Include="WaveEngine.Adapter">
       <HintPath>$(waveengine)\v1.0\Lib\Metro\WaveEngineMetro.Adapter.dll</HintPath>
@@ -247,11 +178,10 @@
       <HintPath>$(waveengine)\v1.0\Lib\Metro\SharpDX.XAudio2.dll</HintPath>
     </Reference>
   </ItemGroup>
-  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' ">
-    <VisualStudioVersion>11.0</VisualStudioVersion>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
+    <VisualStudioVersion>12.0</VisualStudioVersion>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
-  <Import Project="$(WaveEngine)v1.0\Targets\Metro\WPKAssetsCompilation.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
@@ -266,4 +196,5 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />
+  <Import Project="$(WaveEngine)v1.0\Targets\Metro\WPKAssetsCompilation.targets" />
 </Project>

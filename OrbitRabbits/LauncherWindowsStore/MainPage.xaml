@@ -12,7 +12,7 @@
     <SwapChainBackgroundPanel x:Name="SwapChainPanel">
 
         <!--Snapped logo overlay-->
-        <Grid x:Name="SnappedOverlay" Background="#222222" Visibility="Collapsed">
+        <Grid x:Name="SnappedOverlay" Background="#ebebeb" Visibility="Collapsed">
             <Image Source="Images/SplashScreen.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None"></Image>
         </Grid>
 

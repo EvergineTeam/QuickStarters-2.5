@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
-  <Identity Name="700DCE5B-CAE6-4B75-991A-5CF6C86F38B0" Publisher="CN=vferrer" Version="1.0.0.0" />
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest">
+  <Identity Name="700DCE5B-CAE6-4B75-991A-5CF6C86F38B0" Publisher="CN=waveengine" Version="1.0.0.0" />
   <Properties>
     <DisplayName>OrbitRabbits</DisplayName>
-    <PublisherDisplayName>jcanton</PublisherDisplayName>
+    <PublisherDisplayName>waveengine</PublisherDisplayName>
     <Logo>Images\StoreLogo.png</Logo>
     <Description>OrbitRabbits Launcher</Description>
   </Properties>
@@ -16,13 +16,18 @@
   </Resources>
   <Applications>
     <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="Launcher.App">
-      <VisualElements DisplayName="OrbitRabbits" Logo="Images\Logo.png" SmallLogo="Images\SmallLogo.png" Description="OrbitRabbits Launcher" ForegroundText="light" BackgroundColor="#222222">
-        <DefaultTile ShowName="noLogos" WideLogo="Images\WideLogo.png" />
-        <SplashScreen Image="Images\SplashScreen.png" />
-      </VisualElements>
+      <m2:VisualElements DisplayName="OrbitRabbits" Description="OrbitRabbits Launcher" BackgroundColor="#ebebeb" ForegroundText="dark" Square150x150Logo="Images\Logo.png" Square30x30Logo="Images\SmallLogo.png">
+        <m2:DefaultTile Wide310x150Logo="Images\Wide310x150Logo.png">
+          <m2:ShowNameOnTiles>
+            <m2:ShowOn Tile="square150x150Logo" />
+          </m2:ShowNameOnTiles>
+        </m2:DefaultTile>
+        <m2:SplashScreen BackgroundColor="#ebebeb" Image="Images\SplashScreen.png" />
+      </m2:VisualElements>
     </Application>
   </Applications>
   <Capabilities>
     <Capability Name="internetClient" />
+    <!--<Capability Name="internetClient" />-->
   </Capabilities>
 </Package>
