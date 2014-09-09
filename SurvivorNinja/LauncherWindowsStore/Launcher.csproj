@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CB1FD978-F99C-4005-981D-619FC32BE03C}</ProjectGuid>
+    <ProjectGuid>{CB9B8198-F8AD-4626-92CB-26D42E0B9BFD}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Launcher</RootNamespace>
@@ -12,13 +12,12 @@
     <DefaultLanguage>en-US</DefaultLanguage>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{BC8A1FFA-BEE3-4634-8014-F334798102B3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <PackageCertificateKeyFile>Launcher_StoreKey.pfx</PackageCertificateKeyFile>
-    <PackageCertificateThumbprint>9D2AAF933E6B5230130DF69FD2023699E6013612</PackageCertificateThumbprint>
+    <PackageCertificateKeyFile>Launcher_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <PackageCertificateThumbprint>D1DDA6401A76765E2ED21B3BFD03F5EAAA9BDDBD</PackageCertificateThumbprint>
     <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
-    <SccProjectName>SAK</SccProjectName>
-    <SccLocalPath>SAK</SccLocalPath>
-    <SccAuxPath>SAK</SccAuxPath>
-    <SccProvider>SAK</SccProvider>
+    <TargetPlatformVersion>8.1</TargetPlatformVersion>
+    <MinimumVisualStudioVersion>12</MinimumVisualStudioVersion>
+    <TargetFrameworkVersion />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -127,6 +126,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <Page Include="Common\StandardStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="MainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -138,77 +141,17 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\Survivor\Survivor\Content\Sounds\ninjaMusic.mp3">
-      <Link>Content\Sounds\ninjaMusic.mp3</Link>
-    </Content>
-    <Content Include="Images\Logo.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\SmallLogo.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Images\Logo.scale-100.png" />
+    <Content Include="Images\SmallLogo.scale-100.png" />
     <Content Include="Images\SplashScreen.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\StoreLogo.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\Survivor\Survivor\Content\Fonts\Coalition.wpk">
-      <Link>Content\Fonts\Coalition.wpk</Link>
-    </Content>
-    <Content Include="..\Survivor\Survivor\Content\Sounds\enemyDead.wpk">
-      <Link>Content\Sounds\enemyDead.wpk</Link>
-    </Content>
-    <Content Include="..\Survivor\Survivor\Content\Sounds\gameOver.wpk">
-      <Link>Content\Sounds\gameOver.wpk</Link>
-    </Content>
-    <Content Include="..\Survivor\Survivor\Content\Sounds\impact.wpk">
-      <Link>Content\Sounds\impact.wpk</Link>
-    </Content>
-    <Content Include="..\Survivor\Survivor\Content\Sounds\playerHurt.wpk">
-      <Link>Content\Sounds\playerHurt.wpk</Link>
-    </Content>
-    <Content Include="..\Survivor\Survivor\Content\Sounds\ready.wpk">
-      <Link>Content\Sounds\ready.wpk</Link>
-    </Content>
-    <Content Include="..\Survivor\Survivor\Content\Sounds\shoot.wpk">
-      <Link>Content\Sounds\shoot.wpk</Link>
-    </Content>
-    <Content Include="..\Survivor\Survivor\Content\Textures\background.wpk">
-      <Link>Content\Textures\background.wpk</Link>
-    </Content>
-    <Content Include="..\Survivor\Survivor\Content\Textures\bullet.wpk">
-      <Link>Content\Textures\bullet.wpk</Link>
-    </Content>
-    <Content Include="..\Survivor\Survivor\Content\Textures\enemy.wpk">
-      <Link>Content\Textures\enemy.wpk</Link>
-    </Content>
-    <Content Include="..\Survivor\Survivor\Content\Textures\gameover.wpk">
-      <Link>Content\Textures\gameover.wpk</Link>
-    </Content>
-    <Content Include="..\Survivor\Survivor\Content\Textures\hubBackground.wpk">
-      <Link>Content\Textures\hubBackground.wpk</Link>
-    </Content>
-    <Content Include="..\Survivor\Survivor\Content\Textures\joystickBackground.wpk">
-      <Link>Content\Textures\joystickBackground.wpk</Link>
-    </Content>
-    <Content Include="..\Survivor\Survivor\Content\Textures\joystickThumb.wpk">
-      <Link>Content\Textures\joystickThumb.wpk</Link>
-    </Content>
-    <Content Include="..\Survivor\Survivor\Content\Textures\logo.wpk">
-      <Link>Content\Textures\logo.wpk</Link>
-    </Content>
-    <Content Include="..\Survivor\Survivor\Content\Textures\player.wpk">
-      <Link>Content\Textures\player.wpk</Link>
-    </Content>
-    <Content Include="..\Survivor\Survivor\Content\Textures\tap_to_start.wpk">
-      <Link>Content\Textures\tap_to_start.wpk</Link>
-    </Content>
-    <None Include="Launcher_StoreKey.pfx" />
-    <None Include="Package.StoreAssociation.xml" />
+    <Content Include="Images\StoreLogo.scale-100.png" />
     <None Include="Launcher_TemporaryKey.pfx" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Content\" />
+  </ItemGroup>
   <ItemGroup>
     <Reference Include="WaveEngine.Adapter">
       <HintPath>$(waveengine)\v1.0\Lib\Metro\WaveEngineMetro.Adapter.dll</HintPath>
@@ -234,14 +177,10 @@
       <HintPath>$(waveengine)\v1.0\Lib\Metro\SharpDX.XAudio2.dll</HintPath>
     </Reference>
   </ItemGroup>
-  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' ">
-    <VisualStudioVersion>11.0</VisualStudioVersion>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
+    <VisualStudioVersion>12.0</VisualStudioVersion>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
-  <PropertyGroup>
-    <PreBuildEvent>
-    </PreBuildEvent>
-  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
@@ -255,4 +194,6 @@
       <Name>SurvivorProjectWindowsStore</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(WaveEngine)v1.0\Targets\Metro\WPKAssetsCompilation.targets" />
 </Project>

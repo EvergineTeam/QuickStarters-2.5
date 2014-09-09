@@ -6,7 +6,7 @@ using System.Resources;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Survivor")]
+[assembly: AssemblyTitle("")]
 [assembly: AssemblyProduct("")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyCompany("Weekend game Studio")]
@@ -23,7 +23,7 @@ using System.Resources;
 // On Windows, the following GUID is for the ID of the typelib if this
 // project is exposed to COM. On other platforms, it unique identifies the
 // title storage container when deploying this assembly to the device.
-[assembly: Guid("b44d1709-cba7-4670-ba87-5af317b67f99")]
+[assembly: Guid("24415009-fd0e-43ff-bfab-dbad60ef8065")]
 
 // Version information for an assembly consists of the following four values:
 //

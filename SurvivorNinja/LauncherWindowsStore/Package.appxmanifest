@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
-  <Identity Name="3E1A2F36.SurvivorSamurai" Publisher="CN=3A031B17-B08B-46B6-ADC5-04475F066C30" Version="1.0.0.4" />
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest">
+  <Identity Name="E41BEAB4-97F0-4AC8-8ADC-473A8BAB234D" Publisher="CN=waveengine" Version="1.0.0.0" />
   <Properties>
-    <DisplayName>Survivor Samurai</DisplayName>
-    <PublisherDisplayName>Plain Concepts S.L.</PublisherDisplayName>
+    <DisplayName>Survivor</DisplayName>
+    <PublisherDisplayName>waveengine</PublisherDisplayName>
     <Logo>Images\StoreLogo.png</Logo>
     <Description>Survivor Launcher</Description>
   </Properties>
@@ -16,14 +16,18 @@
   </Resources>
   <Applications>
     <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="Launcher.App">
-      <VisualElements DisplayName="Survivor Samurai" Logo="Images\Logo.png" SmallLogo="Images\SmallLogo.png" Description="Survive the attack of multiple waves of ninjas using your skills." ForegroundText="dark" BackgroundColor="#FFFFFF">
-        <DefaultTile ShowName="noLogos" />
-        <SplashScreen Image="Images\SplashScreen.png" BackgroundColor="#222222" />
-        <InitialRotationPreference>
-          <Rotation Preference="landscape" />
-          <Rotation Preference="landscapeFlipped" />
-        </InitialRotationPreference>
-      </VisualElements>
+      <m2:VisualElements DisplayName="Survivor Ninja" Description="Survivor Launcher" BackgroundColor="#ebebeb" ForegroundText="dark" Square150x150Logo="Images\Logo.png" Square30x30Logo="Images\SmallLogo.png">
+        <m2:DefaultTile>
+          <m2:ShowNameOnTiles>
+            <m2:ShowOn Tile="square150x150Logo" />
+          </m2:ShowNameOnTiles>
+        </m2:DefaultTile>
+        <m2:SplashScreen BackgroundColor="#ebebeb" Image="Images\SplashScreen.png" />
+      </m2:VisualElements>
     </Application>
   </Applications>
+  <Capabilities>
+    <Capability Name="internetClient" />
+    <!--<Capability Name="internetClient" />-->
+  </Capabilities>
 </Package>
