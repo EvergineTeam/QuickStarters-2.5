@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{514C74CF-F2E6-4E2B-80AC-D4CFAA5C0B7C}</ProjectGuid>
+    <ProjectGuid>{7124CF81-C552-43B4-B4C2-44653863FE70}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Launcher</RootNamespace>
@@ -12,13 +12,12 @@
     <DefaultLanguage>en-US</DefaultLanguage>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{BC8A1FFA-BEE3-4634-8014-F334798102B3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <PackageCertificateKeyFile>Launcher_StoreKey.pfx</PackageCertificateKeyFile>
-    <PackageCertificateThumbprint>7E90F12A34DD918699EF73EA93357769CD3F0AAF</PackageCertificateThumbprint>
+    <PackageCertificateKeyFile>Launcher_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <PackageCertificateThumbprint>D3D7C7DBE7B6E4886504634F578EA367D2E56C53</PackageCertificateThumbprint>
     <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
-    <SccProjectName>SAK</SccProjectName>
-    <SccLocalPath>SAK</SccLocalPath>
-    <SccAuxPath>SAK</SccAuxPath>
-    <SccProvider>SAK</SccProvider>
+    <TargetPlatformVersion>8.1</TargetPlatformVersion>
+    <MinimumVisualStudioVersion>12</MinimumVisualStudioVersion>
+    <TargetFrameworkVersion />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -127,6 +126,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <Page Include="Common\StandardStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="MainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -138,131 +141,13 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\DeepSpace\DeepSpace\Content\explodeSprite.xml">
-      <Link>Content\explodeSprite.xml</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\DeepSpace\DeepSpace\Content\music.mp3">
-      <Link>Content\music.mp3</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Images\Logo.scale-100.png" />
     <Content Include="Images\SmallLogo.scale-100.png" />
     <Content Include="Images\SplashScreen.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="..\DeepSpace\DeepSpace\Content\BestScore.wpk">
-      <Link>Content\BestScore.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\DeepSpace\DeepSpace\Content\bg_planets.wpk">
-      <Link>Content\bg_planets.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\DeepSpace\DeepSpace\Content\bg_space.wpk">
-      <Link>Content\bg_space.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\DeepSpace\DeepSpace\Content\blast0.wpk">
-      <Link>Content\blast0.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\DeepSpace\DeepSpace\Content\blast1.wpk">
-      <Link>Content\blast1.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\DeepSpace\DeepSpace\Content\blast2.wpk">
-      <Link>Content\blast2.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\DeepSpace\DeepSpace\Content\Bullet.wpk">
-      <Link>Content\Bullet.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\DeepSpace\DeepSpace\Content\BulletCollider.wpk">
-      <Link>Content\BulletCollider.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\DeepSpace\DeepSpace\Content\DeepSpace_logo.wpk">
-      <Link>Content\DeepSpace_logo.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\DeepSpace\DeepSpace\Content\Enemy.wpk">
-      <Link>Content\Enemy.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\DeepSpace\DeepSpace\Content\EnemyBullet.wpk">
-      <Link>Content\EnemyBullet.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\DeepSpace\DeepSpace\Content\EnemyBulletCollider.wpk">
-      <Link>Content\EnemyBulletCollider.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\DeepSpace\DeepSpace\Content\EnemyCollider.wpk">
-      <Link>Content\EnemyCollider.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\DeepSpace\DeepSpace\Content\explode0.wpk">
-      <Link>Content\explode0.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\DeepSpace\DeepSpace\Content\explode1.wpk">
-      <Link>Content\explode1.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\DeepSpace\DeepSpace\Content\explode2.wpk">
-      <Link>Content\explode2.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\DeepSpace\DeepSpace\Content\explodeSprite.wpk">
-      <Link>Content\explodeSprite.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\DeepSpace\DeepSpace\Content\GameOver.wpk">
-      <Link>Content\GameOver.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\DeepSpace\DeepSpace\Content\joystickBackground.wpk">
-      <Link>Content\joystickBackground.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\DeepSpace\DeepSpace\Content\joystickThumb.wpk">
-      <Link>Content\joystickThumb.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\DeepSpace\DeepSpace\Content\Player.wpk">
-      <Link>Content\Player.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\DeepSpace\DeepSpace\Content\PlayerCollider.wpk">
-      <Link>Content\PlayerCollider.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\DeepSpace\DeepSpace\Content\PressStart.wpk">
-      <Link>Content\PressStart.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\DeepSpace\DeepSpace\Content\restart.wpk">
-      <Link>Content\restart.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\DeepSpace\DeepSpace\Content\score.wpk">
-      <Link>Content\score.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\DeepSpace\DeepSpace\Content\Space Age.wpk">
-      <Link>Content\Space Age.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\DeepSpace\DeepSpace\Content\Star.wpk">
-      <Link>Content\Star.wpk</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Images\StoreLogo.scale-100.png" />
-    <Content Include="Images\WideLogo.scale-100.png" />
-    <None Include="Launcher_StoreKey.pfx" />
-    <None Include="Package.StoreAssociation.xml" />
+    <Content Include="Images\Wide310x150Logo.scale-100.png" />
     <None Include="Launcher_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup />
@@ -291,14 +176,10 @@
       <HintPath>$(waveengine)\v1.0\Lib\Metro\SharpDX.XAudio2.dll</HintPath>
     </Reference>
   </ItemGroup>
-  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' ">
-    <VisualStudioVersion>11.0</VisualStudioVersion>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
+    <VisualStudioVersion>12.0</VisualStudioVersion>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
-  <PropertyGroup>
-    <PreBuildEvent>
-    </PreBuildEvent>
-  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
@@ -312,4 +193,6 @@
       <Name>DeepSpaceProjectWindowsStore</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(WaveEngine)v1.0\Targets\Metro\WPKAssetsCompilation.targets" />
 </Project>

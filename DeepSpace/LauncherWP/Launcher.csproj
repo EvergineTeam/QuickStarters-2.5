@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <ProjectGuid>{F4F25F68-E2B3-4A1F-9129-BE7BEC5635C8}</ProjectGuid>
+    <ProjectGuid>{eaa16aca-68dd-4994-9a48-6fecf626ad44}</ProjectGuid>
     <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">ARM</Platform>
@@ -15,8 +15,7 @@
     <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
     <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
     <SilverlightApplication>true</SilverlightApplication>
-    <SupportedCultures>
-    </SupportedCultures>
+    <SupportedCultures></SupportedCultures>
     <XapOutputs>true</XapOutputs>
     <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
     <XapFilename>Launcher_$(Configuration)_$(Platform).xap</XapFilename>
@@ -25,10 +24,6 @@
     <ValidateXaml>true</ValidateXaml>
     <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
     <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
-    <SccProjectName>SAK</SccProjectName>
-    <SccLocalPath>SAK</SccLocalPath>
-    <SccAuxPath>SAK</SccAuxPath>
-    <SccProvider>SAK</SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>true</DebugSymbols>
@@ -119,99 +114,12 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\DeepSpace\DeepSpace\Content\BestScore.wpk">
-      <Link>Content\BestScore.wpk</Link>
-    </Content>
-    <Content Include="..\DeepSpace\DeepSpace\Content\bg_planets.wpk">
-      <Link>Content\bg_planets.wpk</Link>
-    </Content>
-    <Content Include="..\DeepSpace\DeepSpace\Content\bg_space.wpk">
-      <Link>Content\bg_space.wpk</Link>
-    </Content>
-    <Content Include="..\DeepSpace\DeepSpace\Content\blast0.wpk">
-      <Link>Content\blast0.wpk</Link>
-    </Content>
-    <Content Include="..\DeepSpace\DeepSpace\Content\blast1.wpk">
-      <Link>Content\blast1.wpk</Link>
-    </Content>
-    <Content Include="..\DeepSpace\DeepSpace\Content\blast2.wpk">
-      <Link>Content\blast2.wpk</Link>
-    </Content>
-    <Content Include="..\DeepSpace\DeepSpace\Content\Bullet.wpk">
-      <Link>Content\Bullet.wpk</Link>
-    </Content>
-    <Content Include="..\DeepSpace\DeepSpace\Content\BulletCollider.wpk">
-      <Link>Content\BulletCollider.wpk</Link>
-    </Content>
-    <Content Include="..\DeepSpace\DeepSpace\Content\DeepSpace_logo.wpk">
-      <Link>Content\DeepSpace_logo.wpk</Link>
-    </Content>
-    <Content Include="..\DeepSpace\DeepSpace\Content\Enemy.wpk">
-      <Link>Content\Enemy.wpk</Link>
-    </Content>
-    <Content Include="..\DeepSpace\DeepSpace\Content\EnemyBullet.wpk">
-      <Link>Content\EnemyBullet.wpk</Link>
-    </Content>
-    <Content Include="..\DeepSpace\DeepSpace\Content\EnemyBulletCollider.wpk">
-      <Link>Content\EnemyBulletCollider.wpk</Link>
-    </Content>
-    <Content Include="..\DeepSpace\DeepSpace\Content\EnemyCollider.wpk">
-      <Link>Content\EnemyCollider.wpk</Link>
-    </Content>
-    <Content Include="..\DeepSpace\DeepSpace\Content\explode0.wpk">
-      <Link>Content\explode0.wpk</Link>
-    </Content>
-    <Content Include="..\DeepSpace\DeepSpace\Content\explode1.wpk">
-      <Link>Content\explode1.wpk</Link>
-    </Content>
-    <Content Include="..\DeepSpace\DeepSpace\Content\explode2.wpk">
-      <Link>Content\explode2.wpk</Link>
-    </Content>
-    <Content Include="..\DeepSpace\DeepSpace\Content\explodeSprite.wpk">
-      <Link>Content\explodeSprite.wpk</Link>
-    </Content>
-    <Content Include="..\DeepSpace\DeepSpace\Content\GameOver.wpk">
-      <Link>Content\GameOver.wpk</Link>
-    </Content>
-    <Content Include="..\DeepSpace\DeepSpace\Content\joystickBackground.wpk">
-      <Link>Content\joystickBackground.wpk</Link>
-    </Content>
-    <Content Include="..\DeepSpace\DeepSpace\Content\joystickThumb.wpk">
-      <Link>Content\joystickThumb.wpk</Link>
-    </Content>
-    <Content Include="..\DeepSpace\DeepSpace\Content\Player.wpk">
-      <Link>Content\Player.wpk</Link>
-    </Content>
-    <Content Include="..\DeepSpace\DeepSpace\Content\PlayerCollider.wpk">
-      <Link>Content\PlayerCollider.wpk</Link>
-    </Content>
-    <Content Include="..\DeepSpace\DeepSpace\Content\PressStart.wpk">
-      <Link>Content\PressStart.wpk</Link>
-    </Content>
-    <Content Include="..\DeepSpace\DeepSpace\Content\restart.wpk">
-      <Link>Content\restart.wpk</Link>
-    </Content>
-    <Content Include="..\DeepSpace\DeepSpace\Content\score.wpk">
-      <Link>Content\score.wpk</Link>
-    </Content>
-    <Content Include="..\DeepSpace\DeepSpace\Content\Space Age.wpk">
-      <Link>Content\Space Age.wpk</Link>
-    </Content>
-    <Content Include="..\DeepSpace\DeepSpace\Content\Star.wpk">
-      <Link>Content\Star.wpk</Link>
-    </Content>
     <None Include="Properties\AppManifest.xml" />
     <None Include="Properties\WMAppManifest.xml">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\DeepSpace\DeepSpace\Content\explodeSprite.xml">
-      <Link>Content\explodeSprite.xml</Link>
-    </Content>
-    <Content Include="..\DeepSpace\DeepSpace\Content\music.mp3">
-      <Link>Content\music.mp3</Link>
-    </Content>
     <Content Include="Assets\ApplicationIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -250,4 +158,6 @@
       <Name>DeepSpaceProjectWP</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(WaveEngine)v1.0\Targets\WP\WPKAssetsCompilation.targets" />
 </Project>
