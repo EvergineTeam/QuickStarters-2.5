@@ -130,5 +130,9 @@ namespace DeepSpaceProject.Managers
             return null;
         } 
         #endregion
+
+        protected override void Terminate()
+        {          
+        }
     }
 }
