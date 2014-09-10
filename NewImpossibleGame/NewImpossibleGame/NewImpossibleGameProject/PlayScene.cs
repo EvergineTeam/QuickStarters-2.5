@@ -32,16 +32,14 @@ namespace NewImpossibleGameProject
         /// <summary>
         /// The game camera
         /// </summary>
-        public Camera GameCamera;
+        public Camera3D GameCamera;
 
         protected override void CreateScene()
         {
             // Lights
             DirectionalLight light = new DirectionalLight("light", new Vector3(-10f, 7f, -5f));
             EntityManager.Add(light);
-
-            // Background Color... better if skymap or similar
-            RenderManager.BackgroundColor = Color.CornflowerBlue;
+                        
             RenderManager.FrustumCullingEnabled = false;
 
             // Game Behavior
@@ -53,7 +51,8 @@ namespace NewImpossibleGameProject
 
             // Create Camera
             var camera = new FixedCamera("mainCamera", Vector3.Zero, Vector3.Zero); // Setted in GameBehavior Init
-            this.GameCamera = camera.Entity.FindComponent<Camera>();
+            camera.BackgroundColor = Color.CornflowerBlue;
+            this.GameCamera = camera.Entity.FindComponent<Camera3D>();
             EntityManager.Add(camera);
 
             // Add Scene Behavior

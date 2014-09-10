@@ -320,7 +320,9 @@ namespace NewImpossibleGameProject.Behaviors
             var modelColumn = this.LevelModel.GetNextColumn();
             var entityColumn = this.modelFactoryService.CreateColumn(modelColumn, currentZ);
             var entityTransform = entityColumn.FindComponent<Transform3D>();
-            entityTransform.Position.Z = currentZ;
+            Vector3 auxPosition = entityTransform.Position;
+            auxPosition.Z = currentZ;            
+            entityTransform.Position = auxPosition;
             this.playScene.EntityManager.Add(entityColumn);
             this.ColumnCollection.Add(entityColumn);
         }
@@ -418,9 +420,17 @@ namespace NewImpossibleGameProject.Behaviors
             }
 
             // update transforms position for player and camera
-            this.playerTransform.Position.Z += delta;
-            this.playScene.GameCamera.Position.Z = this.playerTransform.Position.Z + this.cameraPlayerPosition.Z;
-            this.playScene.GameCamera.LookAt.Z = this.playerTransform.Position.Z + this.cameraPlayerLookat.Z;
+            Vector3 auxPosition = this.playerTransform.Position;
+            auxPosition.Z += delta;
+            this.playerTransform.Position = auxPosition;
+
+            Vector3 auxCameraPosition = this.playScene.GameCamera.Position;
+            auxCameraPosition.Z = this.playerTransform.Position.Z + this.cameraPlayerPosition.Z;
+            this.playScene.GameCamera.Position = auxCameraPosition;
+
+            Vector3 auxCameraLookAt = this.playScene.GameCamera.LookAt;
+            auxCameraLookAt.Z = this.playerTransform.Position.Z + this.cameraPlayerLookat.Z;
+            this.playScene.GameCamera.LookAt = auxCameraLookAt;
 
             // update player bounding box
             this.playerBoundingBox.Min.Y = this.playerTransform.Position.Y - this.modelFactoryService.Scale.Y / 2;

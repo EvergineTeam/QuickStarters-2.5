@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WaveEngine.Common.Input;
+using WaveEngine.Common.Math;
 using WaveEngine.Framework;
 using WaveEngine.Framework.Graphics;
 using WaveEngine.Framework.Services;
@@ -48,6 +49,8 @@ namespace NewImpossibleGameProject.Behaviors
         /// </summary>
         private Transform3D playerTransform;
 
+        private Vector3 playerAngle;
+
         /// <summary>
         /// The game behavior
         /// </summary>
@@ -72,7 +75,7 @@ namespace NewImpossibleGameProject.Behaviors
 
             // fast references for players and its transform
             this.player = this.Owner;
-            this.playerTransform = this.player.FindComponent<Transform3D>();
+            this.playerTransform = this.player.FindComponent<Transform3D>();            
         }
 
         /// <summary>
@@ -94,15 +97,21 @@ namespace NewImpossibleGameProject.Behaviors
 
             // convert here the gametime in float, multiple uses in this method
             float elapsedSeconds = (float)gameTime.TotalSeconds;
-            this.playerTransform.Rotation.X += this.gameBehavior.PlayerVelocity * elapsedSeconds;
+
+            this.playerAngle.X += this.gameBehavior.PlayerVelocity * elapsedSeconds;   
+            this.playerTransform.Rotation = this.playerAngle;
 
             // 4 game states machine
+            Vector3 auxPosition;
+            Vector3 auxRotation;
             switch (this.playerState)
             {
                 // Initial State: Initial player configuration, simply set to Ground state
                 case PlayerState.INITIAL:
                     this.playerState = PlayerState.GROUND;
-                    this.playerTransform.Rotation.Z = 0f;
+                    auxRotation = this.playerTransform.Rotation;
+                    auxRotation.Z = 0f;
+                    this.playerTransform.Rotation = auxRotation;
                     this.currentVerticalVelocity = 0f;
                     break;
 
@@ -127,7 +136,9 @@ namespace NewImpossibleGameProject.Behaviors
                 // playing is jumping, ascending!!
                 case PlayerState.JUMPING:
                     // vertical acceleration and rotation (elapsed time relative, care with this)
-                    this.playerTransform.Position.Y += this.currentVerticalVelocity * elapsedSeconds;
+                    auxPosition = this.playerTransform.Position;
+                    auxPosition.Y += this.currentVerticalVelocity * elapsedSeconds;
+                    this.playerTransform.Position = auxPosition;
                     //this.playerTransform.Rotation.X += this.rotationSpeed * elapsedSeconds;
 
                     // update vertical velocity with the gravity acceleration
@@ -144,7 +155,9 @@ namespace NewImpossibleGameProject.Behaviors
                 case PlayerState.FALLING:
                     // its a free fall acceleration: v(t)=a*t
                     this.currentVerticalVelocity += this.gravity * elapsedSeconds;
-                    this.playerTransform.Position.Y += this.currentVerticalVelocity * elapsedSeconds;
+                    auxPosition = this.playerTransform.Position;
+                    auxPosition.Y += this.currentVerticalVelocity * elapsedSeconds;
+                    this.playerTransform.Position = auxPosition;
 
                     // no rotation, just fall
                     //this.playerTransform.Rotation.X = 0;
@@ -152,14 +165,18 @@ namespace NewImpossibleGameProject.Behaviors
                     // check if we touch the ground of current
                     if (this.playerTransform.Position.Y <= this.gameBehavior.CurrentGroundLevel + ModelFactoryService.Instance.Scale.Y / 2)
                     {
-                        this.playerTransform.Position.Y = this.gameBehavior.CurrentGroundLevel + ModelFactoryService.Instance.Scale.Y / 2;
+                        auxPosition = this.playerTransform.Position;
+                        auxPosition.Y = this.gameBehavior.CurrentGroundLevel + ModelFactoryService.Instance.Scale.Y / 2;
+                        this.playerTransform.Position = auxPosition;
                         this.playerState = PlayerState.GROUND;
                     }
 
                     // check if we touch the ground of next
                     if (this.playerTransform.Position.Y <= this.gameBehavior.NextGroundLevel + ModelFactoryService.Instance.Scale.Y / 2)
                     {
-                        this.playerTransform.Position.Y = this.gameBehavior.NextGroundLevel + ModelFactoryService.Instance.Scale.Y / 2;
+                        auxPosition = this.playerTransform.Position;
+                        auxPosition.Y = this.gameBehavior.NextGroundLevel + ModelFactoryService.Instance.Scale.Y / 2;
+                        this.playerTransform.Position = auxPosition;
                         this.playerState = PlayerState.GROUND;
                     }
                     break;
@@ -176,7 +193,9 @@ namespace NewImpossibleGameProject.Behaviors
         public void Restart()
         {
             this.playerState = PlayerState.INITIAL;
-            this.playerTransform.Rotation.X = 0f;
+            Vector3 auxRotation = this.playerTransform.Rotation;
+            auxRotation.X = 0f;
+            this.playerTransform.Rotation = auxRotation;
         }
     }
 }

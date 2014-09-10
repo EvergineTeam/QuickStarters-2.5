@@ -242,7 +242,7 @@ namespace NewImpossibleGameProject.GameServices
             Entity entity = null;
 
             entity = new Entity("player")
-                .AddComponent(new Transform3D() { UpdateOrder = 0 })
+                .AddComponent(new Transform3D() { })//UpdateOrder = 0 })
                 .AddComponent(Model.CreateSphere())
                 .AddComponent(new BoxCollider() { Size = new Vector3(this.Scale.X, this.Scale.Y, this.Scale.Z), UpdateOrder = 0.5f })
                 .AddComponent(new MaterialsMap())
