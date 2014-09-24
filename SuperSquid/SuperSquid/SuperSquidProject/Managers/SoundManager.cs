@@ -127,5 +127,9 @@ namespace SuperSquidProject.Managers
             return null;
         }
         #endregion
+
+        protected override void Terminate()
+        {
+        }
     }
 }

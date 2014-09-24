@@ -44,9 +44,9 @@ namespace DeepSpaceProject
             WaveServices.ScreenContextManager.Push(introContext);
 
             // Play background music
-            WaveServices.MusicPlayer.Play(new MusicInfo("Content/music.mp3"));
-            WaveServices.MusicPlayer.Volume = 0.3f;
-            WaveServices.MusicPlayer.IsRepeat = true;
+            //WaveServices.MusicPlayer.Play(new MusicInfo("Content/music.mp3"));
+            //WaveServices.MusicPlayer.Volume = 0.3f;
+            //WaveServices.MusicPlayer.IsRepeat = true;
         }
     }
 }
