@@ -67,8 +67,8 @@ namespace MangomacoProject.Scenes
             this.camera = GameEntitiesFactory.CreateCamera();
             EntityManager.Add(this.camera);
 
-            // Load Mangomaco
-            this.CreateMangomaco();
+            // Load TiledMap
+            this.CreateTiledMap();
 
             // Create UI
             this.CreateMenuOverlay();
@@ -89,9 +89,7 @@ namespace MangomacoProject.Scenes
             this.AddTraps();
             this.AddSceneColliders();
             this.AddFinish();
-            this.AddCharacter();
-
-            this.StartMusic();
+            this.AddCharacter();            
 
             this.gameplaySceneBehavior = new GameplaySceneBehavior();
             this.AddSceneBehavior(this.gameplaySceneBehavior, SceneBehavior.Order.PostUpdate);
@@ -104,14 +102,14 @@ namespace MangomacoProject.Scenes
         /// <summary>
         /// Creates the tiled map.
         /// </summary>
-        private void CreateMangomaco()
+        private void CreateTiledMap()
         {
             var map = new Entity("map")
                 .AddComponent(new Transform2D())
                 .AddComponent(this.tiledmap = new TiledMap(this.levelDefinition.TileMapPath)
                 {
                     MinLayerDrawOrder = -10,
-                    MaxLayerDrawOrder = -0
+                    MaxLayerDrawOrder = 0
                 });
 
             this.EntityManager.Add(map);
@@ -124,18 +122,7 @@ namespace MangomacoProject.Scenes
         {
             var pauseButton = ControlsFactory.CreatePauseButton();
             EntityManager.Add(pauseButton);
-        }
-
-        /// <summary>
-        /// Starts the music.
-        /// </summary>
-        private void StartMusic()
-        {
-            MusicInfo musicInfo = new MusicInfo(Resources.BgMusic);
-            WaveServices.MusicPlayer.IsRepeat = true;
-            WaveServices.MusicPlayer.Volume = 0.6f;
-            WaveServices.MusicPlayer.Play(musicInfo);
-        }
+        }       
 
         /// <summary>
         /// Add Level Finish

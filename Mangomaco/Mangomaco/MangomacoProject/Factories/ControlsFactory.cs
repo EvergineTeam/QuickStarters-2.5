@@ -6,6 +6,7 @@ using WaveEngine.Components;
 using WaveEngine.Components.UI;
 using WaveEngine.Framework.Services;
 using WaveEngine.Framework.UI;
+using WaveEngine.Common.Graphics;
 #endregion
 
 namespace MangomacoProject.Factories
@@ -183,10 +184,13 @@ namespace MangomacoProject.Factories
         /// <summary>
         /// Creates the level button.
         /// </summary>
+        /// <param name="index">The index.</param>
         /// <param name="isLocked">if set to <c>true</c> [is locked].</param>
         /// <param name="levelDefinition">The level definition.</param>
-        /// <returns>Button entity</returns>
-        public static Button CreateLevelButton(bool isLocked, LevelDefinition levelDefinition)
+        /// <returns>
+        /// Button entity
+        /// </returns>
+        public static Button CreateLevelButton(int index, bool isLocked, LevelDefinition levelDefinition)
         {
             var btn = new Button()
             {
@@ -195,7 +199,9 @@ namespace MangomacoProject.Factories
                 BackgroundImage = isLocked ? Resources.LevelBtnLocked : Resources.LevelBtn,
                 PressedBackgroundImage = isLocked ? Resources.LevelBtnLocked : Resources.LevelBtnPressed,
                 IsBorder = false,
-                Text = string.Empty,
+                FontPath = Resources.SkranjiFont,
+                Text = (index + 1).ToString(),
+                Foreground = Color.White,
             };
 
             if (!isLocked && levelDefinition != null)

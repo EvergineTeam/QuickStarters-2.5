@@ -56,13 +56,13 @@ namespace MangomacoProject
             }
             
             Catalog.RegisterItem(gameStorage);
-        }
+        }               
 
         /// <summary>
         /// Called when [deactivated].
         /// </summary>
         public override void OnDeactivated()
-        {
+        {                       
             base.OnDeactivated();
 
             // Save game storage

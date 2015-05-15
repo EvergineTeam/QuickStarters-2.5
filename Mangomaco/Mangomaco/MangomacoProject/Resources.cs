@@ -30,6 +30,9 @@ namespace MangomacoProject
         // Miscellaneous
         public static readonly string CoinTP = "Content/coin.xml";
 
+        // Fonts
+        public static readonly string SkranjiFont = "Content/Fonts/Skranji-Regular.spr";
+
         // Images
         public static readonly string MenuBackground = "Content/menuBackground.jgp";
         public static readonly string Ball = "Content/ball.png";

@@ -36,6 +36,8 @@ namespace MangomacoProject.Scenes
 
         bool isInitialized = false;
 
+        bool finished = false;
+
         /// <summary>
         /// Resolves the dependencies needed for this instance to work.
         /// </summary>
@@ -161,9 +163,10 @@ namespace MangomacoProject.Scenes
         /// </summary>
         private void CheckEnd()
         {
-            if (this.playerController.Collider.Intersects(this.endCollider))
+            if (!finished && this.playerController.Collider.Intersects(this.endCollider))
             {
-                this.Win();
+                finished = true;
+                WaveServices.ScreenContextManager.Pop(Resources.DefaultTransition);
             }
         }
 

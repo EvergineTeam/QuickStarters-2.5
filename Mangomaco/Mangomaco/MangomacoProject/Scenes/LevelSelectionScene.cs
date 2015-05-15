@@ -88,26 +88,27 @@ namespace MangomacoProject.Scenes
 
             var levels = WaveServices.GetService<LevelInfoService>().AvailableLevels;
 
-            int levelsIndex = 0;
+            int levelIndex = 0;
             for (int row = 0; row < 2; row++)
             {
                 for (int column = 0; column < 5; column++)
                 {
                     Button levelBtn;
 
-                    if (levels.Count() > levelsIndex)
+                    if (levels.Count() > levelIndex)
                     {
-                        levelBtn = ControlsFactory.CreateLevelButton(false, levels.ElementAt(levelsIndex));
-                        levelsIndex++;
+                        levelBtn = ControlsFactory.CreateLevelButton(levelIndex, false, levels.ElementAt(levelIndex));
                     }
                     else
                     {
-                        levelBtn = ControlsFactory.CreateLevelButton(true, null);
+                        levelBtn = ControlsFactory.CreateLevelButton(levelIndex, true, null);
                     }
 
                     levelBtn.SetValue(GridControl.RowProperty, 1 + row);
                     levelBtn.SetValue(GridControl.ColumnProperty, 1 + column);
                     gridPanel.Add(levelBtn);
+
+                    levelIndex++;
                 }
             }
 
