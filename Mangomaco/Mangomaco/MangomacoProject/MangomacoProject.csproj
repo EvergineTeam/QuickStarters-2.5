@@ -54,13 +54,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Components\CameraBehavior.cs" />
-    <Compile Include="Entities\IconCounterControl.cs" />
     <Compile Include="Factories\GameEntitiesFactory.cs" />
     <Compile Include="Scenes\DebugSceneBehavior.cs" />
     <Compile Include="Entities\JumpButton.cs" />
     <Compile Include="Entities\Joystick.cs" />
-    <Compile Include="Entities\ToggleButton.cs" />
-    <Compile Include="Entities\ToggleButtonBehavior.cs" />
     <Compile Include="Factories\ControlsFactory.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="Scenes\GameplaySceneBehavior.cs" />
@@ -70,7 +67,6 @@
     <Compile Include="Services\LevelDefinition.cs" />
     <Compile Include="Scenes\GameplayScene.cs" />
     <Compile Include="Components\PlayerController.cs" />
-    <Compile Include="Services\GameStorage.cs" />
     <Compile Include="Services\LevelInfoService.cs" />
     <Compile Include="Services\SimpleSoundService.cs" />
     <Compile Include="Resources.cs" />

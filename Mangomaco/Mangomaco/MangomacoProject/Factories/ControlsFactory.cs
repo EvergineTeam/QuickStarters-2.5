@@ -217,36 +217,7 @@ namespace MangomacoProject.Factories
             }
 
             return btn;
-        }
-
-        /// <summary>
-        /// Creates the mute button.
-        /// </summary>
-        /// <returns>ToggleButton entity</returns>
-        public static ToggleButton CreateMuteButton()
-        {
-            var gameStorage = Catalog.GetItem<GameStorage>();
-
-            var muteBtn = new ToggleButton()
-            {
-                IsBorder = false,
-                IsChecked = gameStorage.IsMuted,
-                CheckedImage = Resources.MusicBtnPressed,
-                CheckedPressedImage = Resources.MusicBtnPressed,
-                UncheckedImage = Resources.MusicBtn,
-                UncheckedPressedImage = Resources.MusicBtn,
-            };
-            muteBtn.Checked += (s, o) =>
-            {
-                var soundManager = WaveServices.GetService<SimpleSoundService>();
-
-                soundManager.PlaySound(SimpleSoundService.SoundType.Button);
-                soundManager.Mute = o.Value;
-                gameStorage.IsMuted = muteBtn.IsChecked;
-            };
-
-            return muteBtn;
-        }
+        }       
 
         /// <summary>
         /// Creates the pause bg panel.

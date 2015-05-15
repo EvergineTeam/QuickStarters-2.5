@@ -4035,7 +4035,7 @@
  <objectgroup color="#ff0000" name="Traps"/>
  <objectgroup color="#00ff00" name="CheckPoints">
   <object type="Start" x="64" y="256" width="16" height="16"/>
-  <object type="Finish" x="784" y="240" width="16" height="48"/>
+  <object type="Finish" x="784" y="208" width="15" height="79"/>
  </objectgroup>
  <objectgroup color="#999999" name="Collisions">
   <object x="-32" y="0" width="32" height="320"/>

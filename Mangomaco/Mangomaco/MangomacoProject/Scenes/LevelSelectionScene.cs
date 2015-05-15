@@ -44,8 +44,8 @@ namespace MangomacoProject.Scenes
                         .AddComponent(new Transform2D()
                         {
                             Origin = Vector2.Center,
-                            X = WaveServices.ViewportManager.ScreenWidth / 2,
-                            Y = WaveServices.ViewportManager.ScreenHeight / 2,
+                            X = WaveServices.ViewportManager.VirtualWidth / 2,
+                            Y = WaveServices.ViewportManager.VirtualHeight / 2,
                             DrawOrder = 10,
                         })
                         .AddComponent(new Sprite(Resources.MenuBackground))

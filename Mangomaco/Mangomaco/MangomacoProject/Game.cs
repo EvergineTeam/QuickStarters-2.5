@@ -27,9 +27,7 @@ namespace MangomacoProject
             base.Initialize(application);
 
             WaveServices.RegisterService(new SimpleSoundService());
-            WaveServices.RegisterService(new LevelInfoService());
-
-            this.LoadStorage();
+            WaveServices.RegisterService(new LevelInfoService());            
 
             // ViewportManager is used to automatically adapt resolution to fit screen size
             ViewportManager vm = WaveServices.ViewportManager;
@@ -37,37 +35,6 @@ namespace MangomacoProject
 
             ScreenContext screenContext = new ScreenContext("MainScene", new MainScene());
             WaveServices.ScreenContextManager.To(screenContext);
-        }
-
-        /// <summary>
-        /// Loads the storage.
-        /// </summary>
-        private void LoadStorage()
-        {
-            GameStorage gameStorage = null;
-
-            if(WaveServices.Storage.Exists<GameStorage>())
-            {
-                gameStorage = WaveServices.Storage.Read<GameStorage>();
-            }
-            else
-            {
-                gameStorage = new GameStorage();
-            }
-            
-            Catalog.RegisterItem(gameStorage);
-        }               
-
-        /// <summary>
-        /// Called when [deactivated].
-        /// </summary>
-        public override void OnDeactivated()
-        {                       
-            base.OnDeactivated();
-
-            // Save game storage
-            GameStorage gameStorage = Catalog.GetItem<GameStorage>();
-            WaveServices.Storage.Write<GameStorage>(gameStorage);
-        }
+        }       
     }
 }
