@@ -90,7 +90,7 @@ namespace MangomacoProject.Factories
         /// <returns>Crate entity</returns>
         public static Entity CreateCrate(string name, TiledMapObject mapObject, Tileset sceneTileSet, int tileId)
         {
-            var crateRectangle = GameEntitiesFactory.GetRectangleTileByID(sceneTileSet, 190);
+            var crateRectangle = GameEntitiesFactory.GetRectangleTileByID(sceneTileSet, tileId);
 
             return GameEntitiesFactory.CreateMapObjectEntity(name, "crate", mapObject)
                     .AddComponent(new Sprite(sceneTileSet.Image.AssetPath)
@@ -101,6 +101,7 @@ namespace MangomacoProject.Factories
                     .AddComponent(new RectangleCollider())
                     .AddComponent(new RigidBody2D()
                     {
+                        AllowSleep = false,
                         Mass = 0.003f
                     });
         }
