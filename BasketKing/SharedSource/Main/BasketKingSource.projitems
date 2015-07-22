@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>846d34c8-e537-4dc7-b646-cff649ce42e4</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>BasketKing</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Behaviors\BallBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Behaviors\ScaleCycleBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Behaviors\ShakeBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Behaviors\StretchBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commons\DebugSceneBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commons\Directories.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Components\FadeInFadeOutComponentcs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Drawables\BezierCurve2DDrawable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Drawables\NetDrawable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\ButtonOption.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\ComboPanel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\HighScorePanel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\MessagePanel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\ScoreboardPanel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\StadisticsPanel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Game.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GamePlayScene.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GamePlaySceneBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Managers\GameStorage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Managers\SoundsManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PauseScene.cs" />
+  </ItemGroup>
+</Project>
