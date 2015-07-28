@@ -1,0 +1,20 @@
+﻿<Asset xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="WaveEngine.Framework.Models">
+  <Id>cdaeb917-92f5-496e-a2e0-8a9185089463</Id>
+  <Asset xmlns:d2p1="WaveEngine.Framework.Models.Assets" i:type="d2p1:Font">
+    <d2p1:Profiles xmlns:d3p1="WaveEngine.Framework.Models.Profiles">
+      <d3p1:FontProfile>
+        <d3p1:Name i:nil="true" />
+        <d3p1:ZipCompress>true</d3p1:ZipCompress>
+        <d3p1:CharacterSet>ASCII</d3p1:CharacterSet>
+        <d3p1:CustomSet i:nil="true" />
+        <d3p1:DefaultCharacter i:nil="true" />
+        <d3p1:FontFamily>OCR A Extended</d3p1:FontFamily>
+        <d3p1:FontSize>20</d3p1:FontSize>
+        <d3p1:InnerSpacing>0</d3p1:InnerSpacing>
+        <d3p1:Spacing>0</d3p1:Spacing>
+      </d3p1:FontProfile>
+    </d2p1:Profiles>
+  </Asset>
+  <Thumbnail i:nil="true" />
+  <Version xmlns:d2p1="http://schemas.datacontract.org/2004/07/System" i:nil="true" />
+</Asset>
