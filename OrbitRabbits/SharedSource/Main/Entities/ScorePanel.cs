@@ -103,7 +103,7 @@ namespace OrbitRabbits.Entities
                           })
                           .AddComponent(new PanelControl(241, 104))
                           .AddComponent(new PanelControlRenderer())
-                           .AddChild(new Image(Directories.TexturePath + "scorePanel.wpk")
+                           .AddChild(new Image(WaveContent.Assets.Textures.scorePanel_png)
                            {
                                DrawOrder = 0.4f,
                            }.Entity);
@@ -111,7 +111,7 @@ namespace OrbitRabbits.Entities
              {
                  Width = 40,
                  Text = this.Scores.ToString(),
-                 //FontPath = Directories.FontsPath + "OCR A Std_20.wpk",
+                 FontPath = WaveContent.Assets.Fonts.OCR_A_Extended_16_TTF,
                  HorizontalAlignment = HorizontalAlignment.Right,
                  VerticalAlignment = VerticalAlignment.Top,
                  Margin = new Thickness(0, 15, 50, 0),
@@ -122,7 +122,7 @@ namespace OrbitRabbits.Entities
              {
                  Width = 40,
                  Text = this.gameStorage.BestScore.ToString(),
-                 //FontPath = Directories.FontsPath + "OCR A Std_20.wpk",
+                 FontPath = WaveContent.Assets.Fonts.OCR_A_Extended_16_TTF,
                  HorizontalAlignment = HorizontalAlignment.Right,
                  VerticalAlignment = VerticalAlignment.Bottom,
                  Margin = new Thickness(0, 0, 50, 5),

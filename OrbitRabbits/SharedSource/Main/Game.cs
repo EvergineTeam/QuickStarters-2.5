@@ -41,7 +41,7 @@ namespace OrbitRabbits
 			ScreenContext screenContext = new ScreenContext(new MainMenuScene());
 
             // Play background music
-            WaveServices.MusicPlayer.Play(new MusicInfo(Directories.SoundsPath + "bg_music.mp3")); 
+            WaveServices.MusicPlayer.Play(new MusicInfo(WaveContent.Assets.Sounds.bg_music_mp3)); 
             WaveServices.MusicPlayer.IsRepeat = true;
 
 			WaveServices.ScreenContextManager.To(screenContext);

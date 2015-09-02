@@ -46,8 +46,8 @@ namespace OrbitRabbits
                 IsBorder = false,
                 Width = 631,
                 Height = 639,
-                BackgroundImage = Directories.TexturePath + "moonRelease.png",
-                PressedBackgroundImage = Directories.TexturePath + "moonPressed.png",
+                BackgroundImage = WaveContent.Assets.Textures.moonRelease_png,
+                PressedBackgroundImage = WaveContent.Assets.Textures.moonRelease_png,
                 Margin = new Thickness(76, 425, 0, 0),
             };
 
@@ -70,7 +70,7 @@ namespace OrbitRabbits
             // Play Text
             TextBlock playText = new TextBlock()
             {
-                FontPath = Directories.FontsPath + "OCR A Extended_16.TTF",
+                FontPath = WaveContent.Assets.Fonts.OCR_A_Extended_16_TTF,
                 Foreground = new Color(119 / 255f, 250 / 255f, 255 / 255f),
                 Text = "Play",
                 VerticalAlignment = VerticalAlignment.Top,
@@ -82,7 +82,7 @@ namespace OrbitRabbits
             TextBlock bestScoreText = new TextBlock()
             {
                 Width = 200,
-                FontPath = Directories.FontsPath + "OCR A Extended_16.TTF",
+                FontPath = WaveContent.Assets.Fonts.OCR_A_Extended_16_TTF,
                 Foreground = new Color(119 / 255f, 250 / 255f, 255 / 255f),
                 Text = "YOUR BEST SCORE:",
                 Margin = new Thickness(
@@ -98,7 +98,7 @@ namespace OrbitRabbits
             GameStorage gameStorage = Catalog.GetItem<GameStorage>();
             TextBlock maxScore = new TextBlock()
             {
-                FontPath = Directories.FontsPath + "OCR A Extended_16.TTF",
+                FontPath = WaveContent.Assets.Fonts.OCR_A_Extended_16_TTF,
                 Foreground = Color.White,
                 Text = gameStorage.BestScore.ToString(),
                 Margin = new Thickness(
@@ -108,17 +108,6 @@ namespace OrbitRabbits
                     0)
             };
             EntityManager.Add(maxScore);
-
-            //// Earth
-            //Entity earth = new Entity()
-            //                .AddComponent(new Transform2D()
-            //                {
-            //                    X = 550,
-            //                    Y = 954,
-            //                })
-            //                .AddComponent(new SpriteAtlas(Directories.TexturePath + "game.wpk", "earth"))
-            //                .AddComponent(new SpriteAtlasRenderer(DefaultLayers.GUI));
-            //EntityManager.Add(earth);
         }
     }
 }

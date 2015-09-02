@@ -66,12 +66,12 @@ namespace OrbitRabbits.Managers
 
             this.sounds = new SoundInfo[(int)SOUNDS.Last];
 
-            this.LoadSound(SOUNDS.Impulse, Directories.SoundsPath + "impulse.wpk");
-            this.LoadSound(SOUNDS.Explosion, Directories.SoundsPath + "explosion.wpk");
-            this.LoadSound(SOUNDS.Click, Directories.SoundsPath + "click.wpk");
-            this.LoadSound(SOUNDS.Start, Directories.SoundsPath + "start.wpk");
-            this.LoadSound(SOUNDS.Fall, Directories.SoundsPath + "fall.wpk");
-            this.LoadSound(SOUNDS.brokenGlass, Directories.SoundsPath + "brokenGlass.wpk");
+            this.LoadSound(SOUNDS.Impulse, WaveContent.Assets.Sounds.impulse_wav);
+            this.LoadSound(SOUNDS.Explosion, WaveContent.Assets.Sounds.explosion_wav);
+            this.LoadSound(SOUNDS.Click, WaveContent.Assets.Sounds.click_wav);
+            this.LoadSound(SOUNDS.Start, WaveContent.Assets.Sounds.start_wav);
+            this.LoadSound(SOUNDS.Fall, WaveContent.Assets.Sounds.fall_wav);
+            this.LoadSound(SOUNDS.brokenGlass, WaveContent.Assets.Sounds.brokenGlass_wav);
         }
 
         /// <summary>

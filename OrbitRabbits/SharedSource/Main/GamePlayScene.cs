@@ -38,7 +38,7 @@ namespace OrbitRabbits
 
         protected override void CreateScene()
         {
-            this.Load(@"Content/Scenes/GamePlayScene.wscene");  
+            this.Load(WaveContent.Scenes.GamePlayScene);  
             this.CreateUI();
         }
 
@@ -49,8 +49,8 @@ namespace OrbitRabbits
             {
                 Text = string.Empty,
                 IsBorder = false,
-                BackgroundImage = Directories.TexturePath + "restartRelease.png",
-                PressedBackgroundImage = Directories.TexturePath + "restartPressed.png",
+                BackgroundImage = WaveContent.Assets.Textures.restartRelease_png,
+                PressedBackgroundImage = WaveContent.Assets.Textures.restartPressed_png,
                 Margin = new Thickness(10, WaveServices.ViewportManager.BottomEdge - 120, 0, 0)
             };
             EntityManager.Add(restart);

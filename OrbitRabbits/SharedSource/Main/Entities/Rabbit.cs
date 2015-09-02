@@ -77,14 +77,14 @@ namespace OrbitRabbits.Entities
                             })
                             .AddComponent(new RectangleCollider2D())
                             .AddComponent(new RabbitBehavior())
-                            .AddComponent(new SpriteAtlas(Directories.TexturePath + "game.png", "rabbit"))
+                            .AddComponent(new SpriteAtlas(WaveContent.Assets.Textures.game_spritesheet, WaveContent.Assets.Textures.game_spritesheet_TextureName.rabbit))
                             .AddComponent(new SpriteAtlasRenderer(DefaultLayers.Alpha));
 
             // Cached            
             this.rabbitBehavior = this.entity.FindComponent<RabbitBehavior>();
             this.collider = this.entity.FindComponent<RectangleCollider2D>();
              
-            var materialModel = assetsContainer.LoadModel<MaterialModel>(Directories.MaterialPath + "StarParticleMaterial.wmat");
+            var materialModel = assetsContainer.LoadModel<MaterialModel>(WaveContent.Assets.Materials.StarParticleMaterial);
 
             // Particles
             this.entity.AddChild(new Entity("rabbitParticles")

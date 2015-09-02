@@ -13,7 +13,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Behaviors\RabbitEmitterBehavior.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Behaviors\ScaleCycleBehavior.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Behaviors\StretchBehavior.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Commons\Directories.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commons\Utils.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Components\GamePlayManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\Rabbit.cs" />
@@ -24,5 +23,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)GamePlayScene.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Managers\ParticleFactory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Managers\SoundsManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WaveContent.cs" />
   </ItemGroup>
 </Project>
