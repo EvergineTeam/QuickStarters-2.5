@@ -193,7 +193,7 @@ namespace BasketKing.Entities
                                 .AddComponent(new Transform2D())
                                 .AddComponent(new PanelControl(345, 96))
                                 .AddComponent(new PanelControlRenderer())
-                                .AddChild(new Image(Directories.Textures + "scoreboard.wpk")
+                                .AddChild(new Image(WaveContent.Assets.Textures.scoreboard_PNG)
                                 {
                                     DrawOrder = 0.6f,
                                 }.Entity);
@@ -205,7 +205,7 @@ namespace BasketKing.Entities
             {
                 Width = 132,
                 Height = 42,
-                FontPath = Directories.Fonts + "spritefont_time.wpk",
+                FontPath = WaveContent.Assets.Fonts.spritefont_time_ttf,
                 Text = this.time.ToString(@"ss\:ff"),
                 Margin = new Thickness(34, 19, 0, 0),
                 Foreground = Color.LightGreen
@@ -217,21 +217,21 @@ namespace BasketKing.Entities
             {
                 Width = 132,
                 Height = 42,
-                FontPath = Directories.Fonts + "spritefont_time.wpk",
+                FontPath = WaveContent.Assets.Fonts.spritefont_time_ttf,
                 Text = string.Format("{0:0000}", this.scores),
                 Margin = new Thickness(207, 19, 0, 0),
             };
             this.entity.AddChild(this.scoreText.Entity);
 
             // Lights
-            this.timeIn = new Image(Directories.Textures + "scoreboard_timein.wpk")
+            this.timeIn = new Image(WaveContent.Assets.Textures.scoreboard_timein_PNG)
             {
                 DrawOrder = 0.45f,
                 Margin = new Thickness(162, 27, 0, 0),
             };
             this.entity.AddChild(this.timeIn.Entity);
 
-            this.timeOut = new Image(Directories.Textures + "scoreboard_timeout.wpk")
+            this.timeOut = new Image(WaveContent.Assets.Textures.scoreboard_timeout_PNG)
             {
                 DrawOrder = 0.45f,
                 Margin = new Thickness(162, 42, 0, 0),

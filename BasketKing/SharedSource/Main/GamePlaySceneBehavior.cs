@@ -24,7 +24,7 @@ namespace BasketKing
     public class GamePlaySceneBehavior : SceneBehavior
     {
         private static int ball_instances;
-        private static string[] ballTextures = { "ball.wpk", "ball2.wpk" };
+        private static string[] ballTextures = { WaveContent.Assets.Textures.ball_PNG, WaveContent.Assets.Textures.ball2_PNG };
 
         private const int FORCE = 80;
 
@@ -81,7 +81,7 @@ namespace BasketKing
                 DrawOrder = 0.4f,
             })
             .AddComponent(new CircleCollider2D())
-            .AddComponent(new Sprite(Directories.Textures + textureName)
+            .AddComponent(new Sprite(textureName)
             {
                 //TintColor = Color.Yellow,
             })

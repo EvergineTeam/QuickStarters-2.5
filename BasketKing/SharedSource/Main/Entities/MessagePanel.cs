@@ -132,13 +132,13 @@ namespace BasketKing.Entities
                                .AddComponent(new Transform2D())
                                .AddComponent(new PanelControl(1024, 320))
                                .AddComponent(new PanelControlRenderer())
-                               .AddChild(new Image(Directories.Textures + "bg_panel.wpk")
+                               .AddChild(new Image(WaveContent.Assets.Textures.bg_panel_PNG)
                                {
                                    DrawOrder = 0.6f,
                                }.Entity);
 
             // HurryUp
-            this.hurryUp = new Image(Directories.Textures + "betheking.wpk")
+            this.hurryUp = new Image(WaveContent.Assets.Textures.betheking_png)
             {
                 HorizontalAlignment = HorizontalAlignment.Center,
                 Margin = new Thickness(0, 165, 0, 0),
@@ -146,7 +146,7 @@ namespace BasketKing.Entities
             this.entity.AddChild(hurryUp.Entity);
 
             // Ready
-            this.ready = new Image(Directories.Textures + "ready.wpk")
+            this.ready = new Image(WaveContent.Assets.Textures.ready_png)
             {
                 HorizontalAlignment = HorizontalAlignment.Center,
                 Margin = new Thickness(0, 165, 0, 0),
@@ -154,7 +154,7 @@ namespace BasketKing.Entities
             this.entity.AddChild(ready.Entity);            
 
             // Timeout
-            this.timeOut = new Image(Directories.Textures + "timeover.wpk")
+            this.timeOut = new Image(WaveContent.Assets.Textures.timeover_PNG)
             {
                 HorizontalAlignment = HorizontalAlignment.Center,
                 Margin = new Thickness(0, 165, 0, 0),

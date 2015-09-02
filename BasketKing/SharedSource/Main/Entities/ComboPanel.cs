@@ -50,7 +50,7 @@ namespace BasketKing.Entities
             {
                 Width = 151,
                 Text = "",
-                FontPath = Directories.Fonts + "Gotham Bold_16.wpk",
+                FontPath = WaveContent.Assets.Fonts.Gotham_Bold_16_ttf,
                 TextAlignment = TextAlignment.Center,
             };
             var transform = this.comboText.Entity.FindComponent<Transform2D>();
@@ -69,7 +69,7 @@ namespace BasketKing.Entities
                             Origin = Vector2.Center
                         })
                         .AddComponent(new ShakeBehavior())
-                        .AddComponent(new Sprite(Directories.Textures + "bg_combo.wpk"))
+                        .AddComponent(new Sprite(WaveContent.Assets.Textures.bg_combo_PNG))
                         .AddComponent(new SpriteRenderer(DefaultLayers.Alpha))
                         .AddChild(this.comboText.Entity);
         }

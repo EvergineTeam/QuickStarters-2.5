@@ -77,8 +77,8 @@ namespace BasketKing
             this.AddSceneBehavior(new GamePlaySceneBehavior(), SceneBehavior.Order.PostUpdate);
 
             // Play background music
-            this.bg_music = new MusicInfo(Directories.Sounds + "bg_music.mp3");
-            this.bg_ambient = new MusicInfo(Directories.Sounds + "bg_ambient.mp3"); 
+            this.bg_music = new MusicInfo(WaveContent.Assets.Sounds.bg_music_mp3);
+            this.bg_ambient = new MusicInfo(WaveContent.Assets.Sounds.bg_ambient_mp3); 
 
             WaveServices.MusicPlayer.Play(this.bg_music);
             WaveServices.MusicPlayer.IsRepeat = true;
@@ -94,8 +94,8 @@ namespace BasketKing
             {
                 IsBorder = false,
                 Text = string.Empty,
-                BackgroundImage = Directories.Textures + "pause_bt.wpk",
-                PressedBackgroundImage = Directories.Textures + "pause_bt_pressed.wpk",
+                BackgroundImage = WaveContent.Assets.Textures.pause_bt_PNG,
+                PressedBackgroundImage = WaveContent.Assets.Textures.pause_bt_pressed_PNG,
                 HorizontalAlignment = HorizontalAlignment.Right,
                 VerticalAlignment = VerticalAlignment.Top,
                 Margin = new Thickness(0, WaveServices.ViewportManager.TopEdge + 10, 10, 0),

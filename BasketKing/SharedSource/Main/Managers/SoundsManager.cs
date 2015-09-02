@@ -68,17 +68,17 @@ namespace BasketKing.Managers
 
             this.sounds = new SoundInfo[(int)SOUNDS.Last];
 
-            this.LoadSound(SOUNDS.Hoop, Directories.Sounds + "hoop.wpk");
-            this.LoadSound(SOUNDS.Net, Directories.Sounds + "net.wpk");
-            this.LoadSound(SOUNDS.Tablet, Directories.Sounds + "tablet.wpk");
-            this.LoadSound(SOUNDS.Ready, Directories.Sounds + "ready.wpk");
-            this.LoadSound(SOUNDS.HurryUp, Directories.Sounds + "hurryUp.wpk");
-            this.LoadSound(SOUNDS.Go, Directories.Sounds + "go.wpk");
-            this.LoadSound(SOUNDS.TimeOver, Directories.Sounds + "timeOver.wpk");
-            this.LoadSound(SOUNDS.Button, Directories.Sounds + "button.wpk");
-            this.LoadSound(SOUNDS.Combo, Directories.Sounds + "yeah.wpk");
-            this.LoadSound(SOUNDS.Record, Directories.Sounds + "record.wpk");
-            this.LoadSound(SOUNDS.Digit, Directories.Sounds + "digit.wpk");
+            this.LoadSound(SOUNDS.Hoop, WaveContent.Assets.Sounds.hoop_wav);
+            this.LoadSound(SOUNDS.Net, WaveContent.Assets.Sounds.net_wav);
+            this.LoadSound(SOUNDS.Tablet, WaveContent.Assets.Sounds.tablet_wav);
+            this.LoadSound(SOUNDS.Ready, WaveContent.Assets.Sounds.ready_wav);
+            this.LoadSound(SOUNDS.HurryUp, WaveContent.Assets.Sounds.hurryUp_wav);
+            this.LoadSound(SOUNDS.Go, WaveContent.Assets.Sounds.go_wav);
+            this.LoadSound(SOUNDS.TimeOver, WaveContent.Assets.Sounds.timeOver_wav);
+            this.LoadSound(SOUNDS.Button, WaveContent.Assets.Sounds.button_wav);
+            this.LoadSound(SOUNDS.Combo, WaveContent.Assets.Sounds.yeah_wav);
+            this.LoadSound(SOUNDS.Record, WaveContent.Assets.Sounds.record_wav);
+            this.LoadSound(SOUNDS.Digit, WaveContent.Assets.Sounds.digit_wav);
         }
 
         /// <summary>

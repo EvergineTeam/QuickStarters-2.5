@@ -93,7 +93,7 @@ namespace BasketKing.Entities
                                 .AddComponent(new Transform2D())
                                 .AddComponent(new PanelControl(143, 63))
                                 .AddComponent(new PanelControlRenderer())
-                                .AddChild(new Image(Directories.Textures + "bg_highscore.wpk")
+                                .AddChild(new Image(WaveContent.Assets.Textures.bg_highscore_PNG)
                                 {
                                     DrawOrder = 0.6f,
                                 }.Entity);
@@ -102,7 +102,7 @@ namespace BasketKing.Entities
             {
                 Width = 132,
                 Height = 42,
-                FontPath = Directories.Fonts + "spritefont_time.wpk",
+                FontPath = WaveContent.Assets.Fonts.spritefont_time_ttf,
                 Text = string.Format("{0:0000}", this.scores),
                 Margin = new Thickness(20, 14, 0, 0),
             };

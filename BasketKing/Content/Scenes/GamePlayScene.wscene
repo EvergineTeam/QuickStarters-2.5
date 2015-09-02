@@ -46,7 +46,7 @@
             <d6p1:G>255</d6p1:G>
             <d6p1:R>255</d6p1:R>
           </d5p1:TintColor>
-          <d5p1:texturePath>Content/Assets/Textures/bg.wpk</d5p1:texturePath>
+          <d5p1:texturePath>Content/Assets/Textures/bg.PNG.wpk</d5p1:texturePath>
         </d2p1:Component>
         <d2p1:Component xmlns:d5p1="WaveEngine.Components.Graphics2D" i:type="d5p1:SpriteRenderer">
           <d2p1:IsVisible>true</d2p1:IsVisible>
@@ -175,7 +175,7 @@
             <d6p1:G>255</d6p1:G>
             <d6p1:R>255</d6p1:R>
           </d5p1:TintColor>
-          <d5p1:texturePath>Content/Assets/Textures/basket.wpk</d5p1:texturePath>
+          <d5p1:texturePath>Content/Assets/Textures/basket.PNG.wpk</d5p1:texturePath>
         </d2p1:Component>
         <d2p1:Component xmlns:d5p1="WaveEngine.Components.Graphics2D" i:type="d5p1:SpriteRenderer">
           <d2p1:IsVisible>true</d2p1:IsVisible>
@@ -232,7 +232,7 @@
             <d6p1:G>255</d6p1:G>
             <d6p1:R>255</d6p1:R>
           </d5p1:TintColor>
-          <d5p1:texturePath>Content/Assets/Textures/dummySprite.wpk</d5p1:texturePath>
+          <d5p1:texturePath>Content/Assets/Textures/dummySprite.png.wpk</d5p1:texturePath>
         </d2p1:Component>
         <d2p1:Component xmlns:d5p1="WaveEngine.Components.Graphics2D" i:type="d5p1:SpriteRenderer">
           <d2p1:IsVisible>false</d2p1:IsVisible>
@@ -348,7 +348,7 @@
             <d6p1:G>255</d6p1:G>
             <d6p1:R>255</d6p1:R>
           </d5p1:TintColor>
-          <d5p1:texturePath>Content/Assets/Textures/dummySprite.wpk</d5p1:texturePath>
+          <d5p1:texturePath>Content/Assets/Textures/dummySprite.png.wpk</d5p1:texturePath>
         </d2p1:Component>
         <d2p1:Component xmlns:d5p1="WaveEngine.Components.Graphics2D" i:type="d5p1:SpriteRenderer">
           <d2p1:IsVisible>false</d2p1:IsVisible>
@@ -464,7 +464,7 @@
             <d6p1:G>255</d6p1:G>
             <d6p1:R>255</d6p1:R>
           </d5p1:TintColor>
-          <d5p1:texturePath>Content/Assets/Textures/dummySprite.wpk</d5p1:texturePath>
+          <d5p1:texturePath>Content/Assets/Textures/dummySprite.png.wpk</d5p1:texturePath>
         </d2p1:Component>
         <d2p1:Component xmlns:d5p1="WaveEngine.Components.Graphics2D" i:type="d5p1:SpriteRenderer">
           <d2p1:IsVisible>false</d2p1:IsVisible>
@@ -580,7 +580,7 @@
             <d6p1:G>255</d6p1:G>
             <d6p1:R>255</d6p1:R>
           </d5p1:TintColor>
-          <d5p1:texturePath>Content/Assets/Textures/basket_piece_front.wpk</d5p1:texturePath>
+          <d5p1:texturePath>Content/Assets/Textures/basket_piece_front.PNG.wpk</d5p1:texturePath>
         </d2p1:Component>
         <d2p1:Component xmlns:d5p1="WaveEngine.Components.Graphics2D" i:type="d5p1:SpriteRenderer">
           <d2p1:IsVisible>true</d2p1:IsVisible>
@@ -637,7 +637,7 @@
             <d6p1:G>255</d6p1:G>
             <d6p1:R>255</d6p1:R>
           </d5p1:TintColor>
-          <d5p1:texturePath>Content/Assets/Textures/dummyPin.wpk</d5p1:texturePath>
+          <d5p1:texturePath>Content/Assets/Textures/dummyPin.png.wpk</d5p1:texturePath>
         </d2p1:Component>
         <d2p1:Component xmlns:d5p1="WaveEngine.Components.Graphics2D" i:type="d5p1:SpriteRenderer">
           <d2p1:IsVisible>false</d2p1:IsVisible>
@@ -745,7 +745,7 @@
             <d6p1:G>255</d6p1:G>
             <d6p1:R>255</d6p1:R>
           </d5p1:TintColor>
-          <d5p1:texturePath>Content/Assets/Textures/dummyPin.wpk</d5p1:texturePath>
+          <d5p1:texturePath>Content/Assets/Textures/dummyPin.png.wpk</d5p1:texturePath>
         </d2p1:Component>
         <d2p1:Component xmlns:d5p1="WaveEngine.Components.Graphics2D" i:type="d5p1:SpriteRenderer">
           <d2p1:IsVisible>false</d2p1:IsVisible>
@@ -874,7 +874,7 @@
             <d6p1:G>255</d6p1:G>
             <d6p1:R>255</d6p1:R>
           </d5p1:TintColor>
-          <d5p1:texturePath>Content/Assets/Textures/dummyPin.wpk</d5p1:texturePath>
+          <d5p1:texturePath>Content/Assets/Textures/dummyPin.png.wpk</d5p1:texturePath>
         </d2p1:Component>
         <d2p1:Component xmlns:d5p1="WaveEngine.Components.Graphics2D" i:type="d5p1:SpriteRenderer">
           <d2p1:IsVisible>false</d2p1:IsVisible>
@@ -1003,7 +1003,7 @@
             <d6p1:G>255</d6p1:G>
             <d6p1:R>255</d6p1:R>
           </d5p1:TintColor>
-          <d5p1:texturePath>Content/Assets/Textures/dummyPin.wpk</d5p1:texturePath>
+          <d5p1:texturePath>Content/Assets/Textures/dummyPin.png.wpk</d5p1:texturePath>
         </d2p1:Component>
         <d2p1:Component xmlns:d5p1="WaveEngine.Components.Graphics2D" i:type="d5p1:SpriteRenderer">
           <d2p1:IsVisible>false</d2p1:IsVisible>
@@ -1132,7 +1132,7 @@
             <d6p1:G>255</d6p1:G>
             <d6p1:R>255</d6p1:R>
           </d5p1:TintColor>
-          <d5p1:texturePath>Content/Assets/Textures/dummyPin.wpk</d5p1:texturePath>
+          <d5p1:texturePath>Content/Assets/Textures/dummyPin.png.wpk</d5p1:texturePath>
         </d2p1:Component>
         <d2p1:Component xmlns:d5p1="WaveEngine.Components.Graphics2D" i:type="d5p1:SpriteRenderer">
           <d2p1:IsVisible>false</d2p1:IsVisible>
@@ -1261,7 +1261,7 @@
             <d6p1:G>255</d6p1:G>
             <d6p1:R>255</d6p1:R>
           </d5p1:TintColor>
-          <d5p1:texturePath>Content/Assets/Textures/dummyPin.wpk</d5p1:texturePath>
+          <d5p1:texturePath>Content/Assets/Textures/dummyPin.png.wpk</d5p1:texturePath>
         </d2p1:Component>
         <d2p1:Component xmlns:d5p1="WaveEngine.Components.Graphics2D" i:type="d5p1:SpriteRenderer">
           <d2p1:IsVisible>false</d2p1:IsVisible>
@@ -1390,7 +1390,7 @@
             <d6p1:G>255</d6p1:G>
             <d6p1:R>255</d6p1:R>
           </d5p1:TintColor>
-          <d5p1:texturePath>Content/Assets/Textures/dummyPin.wpk</d5p1:texturePath>
+          <d5p1:texturePath>Content/Assets/Textures/dummyPin.png.wpk</d5p1:texturePath>
         </d2p1:Component>
         <d2p1:Component xmlns:d5p1="WaveEngine.Components.Graphics2D" i:type="d5p1:SpriteRenderer">
           <d2p1:IsVisible>false</d2p1:IsVisible>
@@ -1519,7 +1519,7 @@
             <d6p1:G>255</d6p1:G>
             <d6p1:R>255</d6p1:R>
           </d5p1:TintColor>
-          <d5p1:texturePath>Content/Assets/Textures/dummyPin.wpk</d5p1:texturePath>
+          <d5p1:texturePath>Content/Assets/Textures/dummyPin.png.wpk</d5p1:texturePath>
         </d2p1:Component>
         <d2p1:Component xmlns:d5p1="WaveEngine.Components.Graphics2D" i:type="d5p1:SpriteRenderer">
           <d2p1:IsVisible>false</d2p1:IsVisible>
@@ -1699,7 +1699,7 @@
             <d6p1:G>255</d6p1:G>
             <d6p1:R>255</d6p1:R>
           </d5p1:TintColor>
-          <d5p1:texturePath>Content/Assets/Textures/dummySprite.wpk</d5p1:texturePath>
+          <d5p1:texturePath>Content/Assets/Textures/dummySprite.png.wpk</d5p1:texturePath>
         </d2p1:Component>
         <d2p1:Component xmlns:d5p1="WaveEngine.Components.Graphics2D" i:type="d5p1:SpriteRenderer">
           <d2p1:IsVisible>false</d2p1:IsVisible>
@@ -1815,7 +1815,7 @@
             <d6p1:G>255</d6p1:G>
             <d6p1:R>255</d6p1:R>
           </d5p1:TintColor>
-          <d5p1:texturePath>Content/Assets/Textures/dummySprite.wpk</d5p1:texturePath>
+          <d5p1:texturePath>Content/Assets/Textures/dummySprite.png.wpk</d5p1:texturePath>
         </d2p1:Component>
         <d2p1:Component xmlns:d5p1="WaveEngine.Components.Graphics2D" i:type="d5p1:SpriteRenderer">
           <d2p1:IsVisible>false</d2p1:IsVisible>
@@ -1931,7 +1931,7 @@
             <d6p1:G>255</d6p1:G>
             <d6p1:R>255</d6p1:R>
           </d5p1:TintColor>
-          <d5p1:texturePath>Content/Assets/Textures/dummySprite.wpk</d5p1:texturePath>
+          <d5p1:texturePath>Content/Assets/Textures/dummySprite.png.wpk</d5p1:texturePath>
         </d2p1:Component>
         <d2p1:Component xmlns:d5p1="WaveEngine.Components.Graphics2D" i:type="d5p1:SpriteRenderer">
           <d2p1:IsVisible>false</d2p1:IsVisible>
@@ -2047,7 +2047,7 @@
             <d6p1:G>255</d6p1:G>
             <d6p1:R>255</d6p1:R>
           </d5p1:TintColor>
-          <d5p1:texturePath>Content/Assets/Textures/dummySprite.wpk</d5p1:texturePath>
+          <d5p1:texturePath>Content/Assets/Textures/dummySprite.png.wpk</d5p1:texturePath>
         </d2p1:Component>
         <d2p1:Component xmlns:d5p1="WaveEngine.Components.Graphics2D" i:type="d5p1:SpriteRenderer">
           <d2p1:IsVisible>false</d2p1:IsVisible>
@@ -2217,7 +2217,7 @@
             <d6p1:G>255</d6p1:G>
             <d6p1:R>255</d6p1:R>
           </d5p1:TintColor>
-          <d5p1:texturePath>Content/Assets/Textures/ball_target.wpk</d5p1:texturePath>
+          <d5p1:texturePath>Content/Assets/Textures/ball_target.PNG.wpk</d5p1:texturePath>
         </d2p1:Component>
         <d2p1:Component xmlns:d5p1="WaveEngine.Components.Graphics2D" i:type="d5p1:SpriteRenderer">
           <d2p1:IsVisible>true</d2p1:IsVisible>
@@ -2279,7 +2279,7 @@
                 <d8p1:G>255</d8p1:G>
                 <d8p1:R>255</d8p1:R>
               </d7p1:TintColor>
-              <d7p1:texturePath>Content/Assets/Textures/ball_shines.wpk</d7p1:texturePath>
+              <d7p1:texturePath>Content/Assets/Textures/ball_shines.PNG.wpk</d7p1:texturePath>
             </d2p1:Component>
             <d2p1:Component xmlns:d7p1="WaveEngine.Components.Graphics2D" i:type="d7p1:SpriteRenderer">
               <d2p1:IsVisible>true</d2p1:IsVisible>
@@ -2350,7 +2350,7 @@
             <d6p1:G>255</d6p1:G>
             <d6p1:R>255</d6p1:R>
           </d5p1:TintColor>
-          <d5p1:texturePath>Content/Assets/Textures/static_ball_shines.wpk</d5p1:texturePath>
+          <d5p1:texturePath>Content/Assets/Textures/static_ball_shines.PNG.wpk</d5p1:texturePath>
         </d2p1:Component>
         <d2p1:Component xmlns:d5p1="WaveEngine.Components.Graphics2D" i:type="d5p1:SpriteRenderer">
           <d2p1:IsVisible>true</d2p1:IsVisible>
@@ -2412,7 +2412,7 @@
                 <d8p1:G>255</d8p1:G>
                 <d8p1:R>255</d8p1:R>
               </d7p1:TintColor>
-              <d7p1:texturePath>Content/Assets/Textures/taptostart.wpk</d7p1:texturePath>
+              <d7p1:texturePath>Content/Assets/Textures/taptostart.png.wpk</d7p1:texturePath>
             </d2p1:Component>
             <d2p1:Component xmlns:d7p1="WaveEngine.Components.Graphics2D" i:type="d7p1:SpriteRenderer">
               <d2p1:IsVisible>true</d2p1:IsVisible>
@@ -2482,7 +2482,7 @@
                     <d10p1:R>255</d10p1:R>
                   </d9p1:TintColor>
                   <d9p1:isGlobalAsset>false</d9p1:isGlobalAsset>
-                  <d9p1:spriteSheetPath>Content/Assets/Textures/Fire.wpk</d9p1:spriteSheetPath>
+                  <d9p1:spriteSheetPath>Content/Assets/Textures/Fire.spritesheet.wpk</d9p1:spriteSheetPath>
                   <d9p1:textureName>Fire (06)</d9p1:textureName>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:SpriteAtlasRenderer">
@@ -2544,7 +2544,7 @@
                 <d8p1:G>255</d8p1:G>
                 <d8p1:R>255</d8p1:R>
               </d7p1:TintColor>
-              <d7p1:texturePath>Content/Assets/Textures/BK_logo.wpk</d7p1:texturePath>
+              <d7p1:texturePath>Content/Assets/Textures/BK_logo.PNG.wpk</d7p1:texturePath>
             </d2p1:Component>
             <d2p1:Component xmlns:d7p1="WaveEngine.Components.Graphics2D" i:type="d7p1:SpriteRenderer">
               <d2p1:IsVisible>true</d2p1:IsVisible>

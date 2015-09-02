@@ -30,5 +30,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Managers\GameStorage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Managers\SoundsManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)PauseScene.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WaveContent.cs" />
   </ItemGroup>
 </Project>

@@ -43,8 +43,8 @@ namespace BasketKing.Entities
             {
                 Text = string.Empty,
                 IsBorder = false,
-                BackgroundImage = Directories.Textures + option + "_bt.wpk",
-                PressedBackgroundImage = Directories.Textures + option + "_bt_pressed.wpk",
+                BackgroundImage = Directories.Textures + option + "_bt.png.wpk",
+                PressedBackgroundImage = Directories.Textures + option + "_bt_pressed.png.wpk",
                 VerticalAlignment = WaveEngine.Framework.UI.VerticalAlignment.Center,
                 HorizontalAlignment = WaveEngine.Framework.UI.HorizontalAlignment.Center,
             };
@@ -57,7 +57,7 @@ namespace BasketKing.Entities
             {
                 Width = 322, 
                 Height = 65,
-                FontPath = Directories.Fonts + "Gotham Bold_16.wpk",
+                FontPath = WaveContent.Assets.Fonts.Gotham_Bold_16_ttf,
                 Text = option.ToUpper(),
                 VerticalAlignment = WaveEngine.Framework.UI.VerticalAlignment.Center,
                 HorizontalAlignment = WaveEngine.Framework.UI.HorizontalAlignment.Center,
@@ -68,7 +68,7 @@ namespace BasketKing.Entities
             t_option.SetValue(GridControl.ColumnProperty, 1);
             grid.Add(t_option);
 
-            Image bg_option = new Image(Directories.Textures + "bg_options_pause.wpk")
+            Image bg_option = new Image(WaveContent.Assets.Textures.bg_options_pause_PNG)
             {
                 VerticalAlignment = WaveEngine.Framework.UI.VerticalAlignment.Center,
                 HorizontalAlignment = WaveEngine.Framework.UI.HorizontalAlignment.Center,

@@ -61,7 +61,7 @@ namespace BasketKing
             EntityManager.Add(dark);
 
             // Pause text
-            Image i_pausetext = new Image(Directories.Textures + "pause_text.wpk")
+            Image i_pausetext = new Image(WaveContent.Assets.Textures.pause_text_PNG)
             {
                 HorizontalAlignment = HorizontalAlignment.Center,
                 Margin = new Thickness(0,132,0,0),

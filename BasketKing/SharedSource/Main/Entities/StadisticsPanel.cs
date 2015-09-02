@@ -120,7 +120,7 @@ namespace BasketKing.Entities
                                 .AddComponent(new Transform2D())
                                 .AddComponent(new PanelControl(1024, 460))
                                 .AddComponent(new PanelControlRenderer())
-                                .AddChild(new Image(Directories.Textures + "bg_final_score.wpk")
+                                .AddChild(new Image(WaveContent.Assets.Textures.bg_final_score_PNG)
                                 {
                                     DrawOrder = 0.6f,
                                 }.Entity);
@@ -128,7 +128,7 @@ namespace BasketKing.Entities
             // Score text
             this.scoresText = new TextBlock()
             {
-                FontPath = Directories.Fonts + "Gotham Bold_16.wpk",
+                FontPath = WaveContent.Assets.Fonts.Gotham_Bold_16_ttf,
                 Width = 450,
                 Height = 80,
                 Text = "<rtf Foreground=\"#FECC56\">SCORES: </rtf>" + scores,
@@ -141,7 +141,7 @@ namespace BasketKing.Entities
             // Accuracy text
             this.accuracyText = new TextBlock()
             {
-                FontPath = Directories.Fonts + "Gotham Bold_16.wpk",
+                FontPath = WaveContent.Assets.Fonts.Gotham_Bold_16_ttf,
                 Width = 450,
                 Height = 80,
                 RichTextEnabled = true,
@@ -156,8 +156,8 @@ namespace BasketKing.Entities
             {
                 Text = string.Empty,
                 IsBorder = false,
-                BackgroundImage = Directories.Textures + "restart_bt.wpk",
-                PressedBackgroundImage = Directories.Textures + "restart_bt_pressed.wpk",
+                BackgroundImage = WaveContent.Assets.Textures.restart_bt_PNG,
+                PressedBackgroundImage = WaveContent.Assets.Textures.restart_bt_pressed_PNG,
                 Margin = new Thickness(351, 382, 0, 0),
             };
             restart.Click += (s, o) =>
@@ -174,8 +174,8 @@ namespace BasketKing.Entities
             {
                 Text = string.Empty,
                 IsBorder = false,
-                BackgroundImage = Directories.Textures + "exit_bt.wpk",
-                PressedBackgroundImage = Directories.Textures + "exit_bt_pressed.wpk",
+                BackgroundImage = WaveContent.Assets.Textures.exit_bt_PNG,
+                PressedBackgroundImage = WaveContent.Assets.Textures.exit_bt_pressed_PNG,
                 Margin = new Thickness(552, 382, 0, 0),
             };
             exit.Click += (s, o) =>
