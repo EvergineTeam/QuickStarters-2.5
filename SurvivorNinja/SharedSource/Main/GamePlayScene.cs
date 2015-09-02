@@ -49,7 +49,7 @@ namespace SurvivorNinja
             this.CreateUI();
 
             // Music
-            var musicInfo = new MusicInfo(Directories.Sounds + "ninjaMusic.mp3");
+            var musicInfo = new MusicInfo(WaveContent.Assets.Sounds.ninjaMusic_mp3);
             WaveServices.MusicPlayer.Play(musicInfo);
             WaveServices.MusicPlayer.Volume = 0.8f;
             WaveServices.MusicPlayer.IsRepeat = true;
@@ -77,7 +77,7 @@ namespace SurvivorNinja
             var bestScores = new TextBlock("BestScores")
             {
                 Width = 300,
-                FontPath = Directories.Fonts + "Coalition_16.wpk",
+                FontPath = WaveContent.Assets.Fonts.Coalition_16_ttf,
                 Text = string.Format("BestScores: {0}", 0),
                 HorizontalAlignment = HorizontalAlignment.Right,
                 VerticalAlignment = VerticalAlignment.Bottom,

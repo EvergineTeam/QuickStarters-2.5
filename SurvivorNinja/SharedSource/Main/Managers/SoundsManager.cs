@@ -45,12 +45,12 @@ namespace SurvivorNinja.Managers
 
             this.sounds = new SoundInfo[(int)SOUNDS.Last];
 
-            this.LoadSound(SOUNDS.Shoot, Directories.Sounds + "shoot.wpk");
-            this.LoadSound(SOUNDS.Impact, Directories.Sounds + "impact.wpk");
-            this.LoadSound(SOUNDS.EnemyDead, Directories.Sounds + "enemyDead.wpk");
-            this.LoadSound(SOUNDS.playerHurt, Directories.Sounds + "playerHurt.wpk");
-            this.LoadSound(SOUNDS.Ready, Directories.Sounds + "ready.wpk");
-            this.LoadSound(SOUNDS.GameOver, Directories.Sounds + "gameOver.wpk");
+            this.LoadSound(SOUNDS.Shoot, WaveContent.Assets.Sounds.shoot_wav);
+            this.LoadSound(SOUNDS.Impact, WaveContent.Assets.Sounds.impact_wav);
+            this.LoadSound(SOUNDS.EnemyDead, WaveContent.Assets.Sounds.enemyDead_wav);
+            this.LoadSound(SOUNDS.playerHurt, WaveContent.Assets.Sounds.playerHurt_wav);
+            this.LoadSound(SOUNDS.Ready, WaveContent.Assets.Sounds.ready_wav);
+            this.LoadSound(SOUNDS.GameOver, WaveContent.Assets.Sounds.gameOver_wav);
         }
 
         /// <summary>

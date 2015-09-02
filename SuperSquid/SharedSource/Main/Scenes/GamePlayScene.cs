@@ -1,5 +1,4 @@
 #region Using Statements
-using SuperSquid.Commons;
 using SuperSquid.Components;
 using SuperSquid.Entities;
 using System;
@@ -36,7 +35,7 @@ namespace SuperSquid.Scenes
 
         protected override void CreateScene()
         {
-            this.Load(@"Content/Scenes/GamePlayScene.wscene");
+            this.Load(WaveContent.Scenes.GamePlayScene);
             
             this.EntityManager.Find("defaultCamera2D").FindComponent<Camera2D>().CenterScreen();
 

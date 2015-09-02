@@ -20,7 +20,7 @@ namespace SuperSquid.Scenes
     {
         protected override void CreateScene()
         {
-            this.Load(@"Content/Scenes/BackgroundScene.wscene");
+            this.Load(WaveContent.Scenes.BackgroundScene);
             
             this.EntityManager.Find("defaultCamera2D").FindComponent<Camera2D>().CenterScreen();
 

@@ -56,7 +56,7 @@ namespace SurvivorNinja.Entities
                                 })
                                 .AddComponent(new CircleCollider2D() { Radius = 0.3f})
                                 .AddComponent(new EnemyBehavior())
-                                .AddComponent(new Sprite(Directories.Textures + "enemy.png"))
+                                .AddComponent(new Sprite(WaveContent.Assets.Textures.enemy_png))
                                 .AddComponent(new SpriteRenderer(DefaultLayers.Alpha));
 
             this.IsVisible = false;

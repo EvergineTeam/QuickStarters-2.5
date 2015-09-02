@@ -67,7 +67,7 @@ namespace SurvivorNinja.Entities
             grid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(1, GridUnitType.Proportional) });
             grid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(1, GridUnitType.Proportional) });
 
-            Image background = new Image(Directories.Textures + "hubBackground.wpk");
+            Image background = new Image(WaveContent.Assets.Textures.hubBackground_png);
             background.SetValue(GridControl.RowProperty, 0);
             background.SetValue(GridControl.ColumnProperty, 0);
             grid.Add(background);
@@ -92,7 +92,7 @@ namespace SurvivorNinja.Entities
             this.murdersText = new TextBlock()
             {
                 DrawOrder = -1,
-                FontPath = Directories.Fonts + "Coalition_16.wpk", 
+                FontPath = WaveContent.Assets.Fonts.Coalition_16_ttf, 
                 Text = "#00",
                 HorizontalAlignment = WaveEngine.Framework.UI.HorizontalAlignment.Center,
                 VerticalAlignment = WaveEngine.Framework.UI.VerticalAlignment.Bottom,

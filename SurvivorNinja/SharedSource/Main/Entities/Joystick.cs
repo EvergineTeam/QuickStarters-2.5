@@ -79,7 +79,7 @@ namespace SurvivorNinja.Entities
                                 Origin = Vector2.Center,
                                 DrawOrder = 0.2f,
                             })
-                            .AddComponent(new Sprite(Directories.Textures + "joystickBackground.wpk"))
+                            .AddComponent(new Sprite(WaveContent.Assets.Textures.joystickBackground_png))
                             .AddComponent(new SpriteRenderer(DefaultLayers.GUI));
             this.background.IsVisible = false;
             this.entity.AddChild(this.background);
@@ -91,7 +91,7 @@ namespace SurvivorNinja.Entities
                                 Origin = Vector2.Center,
                                 DrawOrder = 0.1f,
                             })
-                            .AddComponent(new Sprite(Directories.Textures + "joystickThumb.wpk"))
+                            .AddComponent(new Sprite(WaveContent.Assets.Textures.joystickThumb_png))
                             .AddComponent(new SpriteRenderer(DefaultLayers.GUI));
             this.thumb.IsVisible = false;
             this.entity.AddChild(this.thumb);

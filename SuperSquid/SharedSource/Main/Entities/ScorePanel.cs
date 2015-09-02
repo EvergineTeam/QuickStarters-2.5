@@ -8,7 +8,6 @@
 #endregion
 
 #region Using Statements
-using SuperSquid.Commons;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -57,7 +56,7 @@ namespace SuperSquid.Entities
             };
 
 
-            stack.Add(new Image(Directories.TexturePath + "starfish.wpk")
+            stack.Add(new Image(WaveContent.Assets.Textures.starfish_png)
             {
                 Width = 70,
                 Height = 70,
@@ -70,7 +69,7 @@ namespace SuperSquid.Entities
             this.scoreText = new TextBlock("scoresText")
             {
                 Width = 80,
-                FontPath = Directories.FontsPath + "Bulky Pixels_26.wpk",
+                FontPath = WaveContent.Assets.Fonts.Bulky_Pixels_26_TTF,
                 VerticalAlignment = VerticalAlignment.Center,
                 TextAlignment = WaveEngine.Components.UI.TextAlignment.Center,
                 Margin = new Thickness(5, 10, 5, 5),

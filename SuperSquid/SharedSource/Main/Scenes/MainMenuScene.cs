@@ -1,5 +1,4 @@
 #region Using Statements
-using SuperSquid.Commons;
 using SuperSquid.Managers;
 using System;
 using System.Collections.Generic;
@@ -30,7 +29,7 @@ namespace SuperSquid.Scenes
 
         protected override void CreateScene()
         {
-            this.Load(@"Content/Scenes/MainMenuScene.wscene");
+            this.Load(WaveContent.Scenes.MainMenuScene);
             
             this.EntityManager.Find("defaultCamera2D").FindComponent<Camera2D>().CenterScreen();
 
@@ -46,8 +45,8 @@ namespace SuperSquid.Scenes
             {
                 Text = string.Empty,
                 IsBorder = false,
-                BackgroundImage = Directories.TexturePath + "play.wpk",
-                PressedBackgroundImage = Directories.TexturePath + "playPressed.wpk",
+                BackgroundImage = WaveContent.Assets.Textures.play_png,
+                PressedBackgroundImage = WaveContent.Assets.Textures.playPressed_png,
                 Margin = new Thickness(244, 580, 0, 0),
             };
 
@@ -70,7 +69,7 @@ namespace SuperSquid.Scenes
             // Best Scores
             TextBlock bestScores = new TextBlock("BestScores")
             {
-                FontPath = Directories.FontsPath + "Bulky Pixels_16.wpk",
+                FontPath = WaveContent.Assets.Fonts.Bulky_Pixels_16_TTF,
                 Text = "your best score:",
                 Foreground = new Color(223 / 255f, 244 / 255f, 255 / 255f),
                 HorizontalAlignment = HorizontalAlignment.Left,
@@ -82,7 +81,7 @@ namespace SuperSquid.Scenes
             // Scores
             TextBlock scores = new TextBlock()
             {
-                FontPath = Directories.FontsPath + "Bulky Pixels_26.wpk",
+                FontPath = WaveContent.Assets.Fonts.Bulky_Pixels_26_TTF,
                 Text = this.gameStorage.BestScore.ToString(),
                 HorizontalAlignment = HorizontalAlignment.Left,
                 VerticalAlignment = VerticalAlignment.Bottom,

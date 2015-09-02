@@ -1,5 +1,4 @@
-﻿using SuperSquid.Commons;
-using SuperSquid.Entities;
+﻿using SuperSquid.Entities;
 using SuperSquid.Entities.Behaviors;
 using SuperSquid.Managers;
 using SuperSquid.Scenes;

@@ -1,5 +1,4 @@
 #region Using Statements
-using SuperSquid.Commons;
 using SuperSquid.Managers;
 using SuperSquid.Scenes;
 using System;
@@ -55,7 +54,7 @@ namespace SuperSquid
             WaveServices.ScreenContextManager.Push(mainContext);
 
             // Play music
-            WaveServices.MusicPlayer.Play(new MusicInfo(Directories.SoundsPath + "bg_music.mp3"));
+            WaveServices.MusicPlayer.Play(new MusicInfo(WaveContent.Assets.Sounds.bg_music_mp3));
             WaveServices.MusicPlayer.Volume = 1.0f;
             WaveServices.MusicPlayer.IsRepeat = true;
         }

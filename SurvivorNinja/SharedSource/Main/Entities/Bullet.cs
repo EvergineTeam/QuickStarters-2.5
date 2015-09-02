@@ -66,7 +66,7 @@ namespace SurvivorNinja.Entities
                                 })
                                 .AddComponent(new CircleCollider2D())
                                 .AddComponent(new BulletBehavior(this))
-                                .AddComponent(new Sprite(Directories.Textures + "bullet.png"))
+                                .AddComponent(new Sprite(WaveContent.Assets.Textures.bullet_png))
                                 .AddComponent(new SpriteRenderer(DefaultLayers.Alpha));
             this.direction = Vector2.Zero;
             this.position = Vector2.Zero;

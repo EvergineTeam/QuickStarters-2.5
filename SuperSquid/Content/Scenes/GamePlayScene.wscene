@@ -262,7 +262,7 @@
             <d6p1:R>255</d6p1:R>
           </d5p1:TintColor>
           <d5p1:isGlobalAsset>false</d5p1:isGlobalAsset>
-          <d5p1:spriteSheetPath>Content/Assets/Textures/squiddd.wpk</d5p1:spriteSheetPath>
+          <d5p1:spriteSheetPath>Content/Assets/Textures/squiddd.spritesheet.wpk</d5p1:spriteSheetPath>
           <d5p1:textureName>squid__00000</d5p1:textureName>
         </d2p1:Component>
         <d2p1:Component xmlns:d5p1="WaveEngine.Components.Graphics2D" i:type="d5p1:SpriteAtlasRenderer">
@@ -284,7 +284,7 @@
               <d7p1:R>255</d7p1:R>
             </d6p1:DebugLineColor>
             <d6p2:IsGlobalAsset>false</d6p2:IsGlobalAsset>
-            <d6p2:TexturePath>Content/Assets/Textures/squidCollider.wpk</d6p2:TexturePath>
+            <d6p2:TexturePath>Content/Assets/Textures/squidCollider.png.wpk</d6p2:TexturePath>
             <d6p2:threshold>0</d6p2:threshold>
           </collider2D>
           <d5p1:SamplerMode>LinearClamp</d5p1:SamplerMode>
@@ -312,7 +312,7 @@
             <d6p1:R>255</d6p1:R>
           </DebugLineColor>
           <d5p1:IsGlobalAsset>false</d5p1:IsGlobalAsset>
-          <d5p1:TexturePath>Content/Assets/Textures/squidCollider.wpk</d5p1:TexturePath>
+          <d5p1:TexturePath>Content/Assets/Textures/squidCollider.png.wpk</d5p1:TexturePath>
           <d5p1:threshold>0</d5p1:threshold>
         </d2p1:Component>
         <d2p1:Component xmlns:d5p1="SuperSquid.Entities.Behaviors" i:type="d5p1:SquidBehavior">
@@ -383,7 +383,7 @@
                     <d10p1:R>255</d10p1:R>
                   </d9p1:TintColor>
                   <d9p1:isGlobalAsset>false</d9p1:isGlobalAsset>
-                  <d9p1:spriteSheetPath>Content/Assets/Textures/jellyFishLittle.wpk</d9p1:spriteSheetPath>
+                  <d9p1:spriteSheetPath>Content/Assets/Textures/jellyFishLittle.spritesheet.wpk</d9p1:spriteSheetPath>
                   <d9p1:textureName>little jellyfish_00000</d9p1:textureName>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:SpriteAtlasRenderer">
@@ -405,7 +405,7 @@
                       <d11p1:R>255</d11p1:R>
                     </d10p1:DebugLineColor>
                     <d10p2:IsGlobalAsset>false</d10p2:IsGlobalAsset>
-                    <d10p2:TexturePath>Content/Assets/Textures/jellyFishLittleCollider.wpk</d10p2:TexturePath>
+                    <d10p2:TexturePath>Content/Assets/Textures/jellyFishLittleCollider.png.wpk</d10p2:TexturePath>
                     <d10p2:threshold>0</d10p2:threshold>
                   </collider2D>
                   <d9p1:SamplerMode>LinearClamp</d9p1:SamplerMode>
@@ -433,7 +433,7 @@
                     <d10p1:R>255</d10p1:R>
                   </DebugLineColor>
                   <d9p1:IsGlobalAsset>false</d9p1:IsGlobalAsset>
-                  <d9p1:TexturePath>Content/Assets/Textures/jellyFishLittleCollider.wpk</d9p1:TexturePath>
+                  <d9p1:TexturePath>Content/Assets/Textures/jellyFishLittleCollider.png.wpk</d9p1:TexturePath>
                   <d9p1:threshold>0</d9p1:threshold>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Framework.Animation" i:type="d9p1:AnimationUI">
@@ -493,7 +493,7 @@
                     <d10p1:G>255</d10p1:G>
                     <d10p1:R>255</d10p1:R>
                   </d9p1:TintColor>
-                  <d9p1:texturePath>Content/Assets/Textures/starfish.wpk</d9p1:texturePath>
+                  <d9p1:texturePath>Content/Assets/Textures/starfish.png.wpk</d9p1:texturePath>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:SpriteRenderer">
                   <d2p1:IsVisible>true</d2p1:IsVisible>
@@ -579,7 +579,7 @@
                     <d10p1:G>255</d10p1:G>
                     <d10p1:R>255</d10p1:R>
                   </d9p1:TintColor>
-                  <d9p1:texturePath>Content/Assets/Textures/starfish.wpk</d9p1:texturePath>
+                  <d9p1:texturePath>Content/Assets/Textures/starfish.png.wpk</d9p1:texturePath>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:SpriteRenderer">
                   <d2p1:IsVisible>true</d2p1:IsVisible>
@@ -664,7 +664,7 @@
                     <d10p1:R>255</d10p1:R>
                   </d9p1:TintColor>
                   <d9p1:isGlobalAsset>false</d9p1:isGlobalAsset>
-                  <d9p1:spriteSheetPath>Content/Assets/Textures/jellyFishLittle.wpk</d9p1:spriteSheetPath>
+                  <d9p1:spriteSheetPath>Content/Assets/Textures/jellyFishLittle.spritesheet.wpk</d9p1:spriteSheetPath>
                   <d9p1:textureName>little jellyfish_00000</d9p1:textureName>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:SpriteAtlasRenderer">
@@ -686,7 +686,7 @@
                       <d11p1:R>255</d11p1:R>
                     </d10p1:DebugLineColor>
                     <d10p2:IsGlobalAsset>false</d10p2:IsGlobalAsset>
-                    <d10p2:TexturePath>Content/Assets/Textures/jellyFishLittleCollider.wpk</d10p2:TexturePath>
+                    <d10p2:TexturePath>Content/Assets/Textures/jellyFishLittleCollider.png.wpk</d10p2:TexturePath>
                     <d10p2:threshold>0</d10p2:threshold>
                   </collider2D>
                   <d9p1:SamplerMode>LinearClamp</d9p1:SamplerMode>
@@ -714,7 +714,7 @@
                     <d10p1:R>255</d10p1:R>
                   </DebugLineColor>
                   <d9p1:IsGlobalAsset>false</d9p1:IsGlobalAsset>
-                  <d9p1:TexturePath>Content/Assets/Textures/jellyFishLittleCollider.wpk</d9p1:TexturePath>
+                  <d9p1:TexturePath>Content/Assets/Textures/jellyFishLittleCollider.png.wpk</d9p1:TexturePath>
                   <d9p1:threshold>0</d9p1:threshold>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Framework.Animation" i:type="d9p1:AnimationUI">
@@ -773,7 +773,7 @@
                     <d10p1:R>255</d10p1:R>
                   </d9p1:TintColor>
                   <d9p1:isGlobalAsset>false</d9p1:isGlobalAsset>
-                  <d9p1:spriteSheetPath>Content/Assets/Textures/jellyFish.wpk</d9p1:spriteSheetPath>
+                  <d9p1:spriteSheetPath>Content/Assets/Textures/jellyFish.spritesheet.wpk</d9p1:spriteSheetPath>
                   <d9p1:textureName>jelly animation_00000</d9p1:textureName>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:SpriteAtlasRenderer">
@@ -795,7 +795,7 @@
                       <d11p1:R>255</d11p1:R>
                     </d10p1:DebugLineColor>
                     <d10p2:IsGlobalAsset>false</d10p2:IsGlobalAsset>
-                    <d10p2:TexturePath>Content/Assets/Textures/jellyFishCollider.wpk</d10p2:TexturePath>
+                    <d10p2:TexturePath>Content/Assets/Textures/jellyFishCollider.png.wpk</d10p2:TexturePath>
                     <d10p2:threshold>0</d10p2:threshold>
                   </collider2D>
                   <d9p1:SamplerMode>LinearClamp</d9p1:SamplerMode>
@@ -823,7 +823,7 @@
                     <d10p1:R>255</d10p1:R>
                   </DebugLineColor>
                   <d9p1:IsGlobalAsset>false</d9p1:IsGlobalAsset>
-                  <d9p1:TexturePath>Content/Assets/Textures/jellyFishCollider.wpk</d9p1:TexturePath>
+                  <d9p1:TexturePath>Content/Assets/Textures/jellyFishCollider.png.wpk</d9p1:TexturePath>
                   <d9p1:threshold>0</d9p1:threshold>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Framework.Animation" i:type="d9p1:AnimationUI">
@@ -887,7 +887,7 @@
                         <d12p1:R>255</d12p1:R>
                       </d11p1:TintColor>
                       <d11p1:isGlobalAsset>false</d11p1:isGlobalAsset>
-                      <d11p1:spriteSheetPath>Content/Assets/Textures/seaweeds.wpk</d11p1:spriteSheetPath>
+                      <d11p1:spriteSheetPath>Content/Assets/Textures/seaweeds.spritesheet.wpk</d11p1:spriteSheetPath>
                       <d11p1:textureName>final seaweeds_00000</d11p1:textureName>
                     </d2p1:Component>
                     <d2p1:Component xmlns:d11p1="WaveEngine.Components.Graphics2D" i:type="d11p1:SpriteAtlasRenderer">
@@ -949,7 +949,7 @@
                     <d10p1:G>255</d10p1:G>
                     <d10p1:R>255</d10p1:R>
                   </d9p1:TintColor>
-                  <d9p1:texturePath>Content/Assets/Textures/rightRock.wpk</d9p1:texturePath>
+                  <d9p1:texturePath>Content/Assets/Textures/rightRock.png.wpk</d9p1:texturePath>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:SpriteRenderer">
                   <d2p1:IsVisible>true</d2p1:IsVisible>
@@ -970,7 +970,7 @@
                       <d11p1:R>255</d11p1:R>
                     </d10p1:DebugLineColor>
                     <d10p2:IsGlobalAsset>false</d10p2:IsGlobalAsset>
-                    <d10p2:TexturePath>Content/Assets/Textures/rightRockCollider.wpk</d10p2:TexturePath>
+                    <d10p2:TexturePath>Content/Assets/Textures/rightRockCollider.png.wpk</d10p2:TexturePath>
                     <d10p2:threshold>0</d10p2:threshold>
                   </collider2D>
                   <d9p1:SamplerMode>LinearClamp</d9p1:SamplerMode>
@@ -990,7 +990,7 @@
                     <d10p1:R>255</d10p1:R>
                   </DebugLineColor>
                   <d9p1:IsGlobalAsset>false</d9p1:IsGlobalAsset>
-                  <d9p1:TexturePath>Content/Assets/Textures/rightRockCollider.wpk</d9p1:TexturePath>
+                  <d9p1:TexturePath>Content/Assets/Textures/rightRockCollider.png.wpk</d9p1:TexturePath>
                   <d9p1:threshold>0</d9p1:threshold>
                 </d2p1:Component>
               </d2p1:SerializeComponents>
@@ -1045,7 +1045,7 @@
                         <d12p1:R>255</d12p1:R>
                       </d11p1:TintColor>
                       <d11p1:isGlobalAsset>false</d11p1:isGlobalAsset>
-                      <d11p1:spriteSheetPath>Content/Assets/Textures/seaweeds.wpk</d11p1:spriteSheetPath>
+                      <d11p1:spriteSheetPath>Content/Assets/Textures/seaweeds.spritesheet.wpk</d11p1:spriteSheetPath>
                       <d11p1:textureName>final seaweeds_00000</d11p1:textureName>
                     </d2p1:Component>
                     <d2p1:Component xmlns:d11p1="WaveEngine.Components.Graphics2D" i:type="d11p1:SpriteAtlasRenderer">
@@ -1107,7 +1107,7 @@
                     <d10p1:G>255</d10p1:G>
                     <d10p1:R>255</d10p1:R>
                   </d9p1:TintColor>
-                  <d9p1:texturePath>Content/Assets/Textures/leftRock.wpk</d9p1:texturePath>
+                  <d9p1:texturePath>Content/Assets/Textures/leftRock.png.wpk</d9p1:texturePath>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:SpriteRenderer">
                   <d2p1:IsVisible>true</d2p1:IsVisible>
@@ -1128,7 +1128,7 @@
                       <d11p1:R>255</d11p1:R>
                     </d10p1:DebugLineColor>
                     <d10p2:IsGlobalAsset>false</d10p2:IsGlobalAsset>
-                    <d10p2:TexturePath>Content/Assets/Textures/leftRockCollider.wpk</d10p2:TexturePath>
+                    <d10p2:TexturePath>Content/Assets/Textures/leftRockCollider.png.wpk</d10p2:TexturePath>
                     <d10p2:threshold>0</d10p2:threshold>
                   </collider2D>
                   <d9p1:SamplerMode>LinearClamp</d9p1:SamplerMode>
@@ -1148,7 +1148,7 @@
                     <d10p1:R>255</d10p1:R>
                   </DebugLineColor>
                   <d9p1:IsGlobalAsset>false</d9p1:IsGlobalAsset>
-                  <d9p1:TexturePath>Content/Assets/Textures/leftRockCollider.wpk</d9p1:TexturePath>
+                  <d9p1:TexturePath>Content/Assets/Textures/leftRockCollider.png.wpk</d9p1:TexturePath>
                   <d9p1:threshold>0</d9p1:threshold>
                 </d2p1:Component>
               </d2p1:SerializeComponents>
@@ -1239,7 +1239,7 @@
                     <d10p1:R>255</d10p1:R>
                   </d9p1:TintColor>
                   <d9p1:isGlobalAsset>false</d9p1:isGlobalAsset>
-                  <d9p1:spriteSheetPath>Content/Assets/Textures/jellyFishLittle.wpk</d9p1:spriteSheetPath>
+                  <d9p1:spriteSheetPath>Content/Assets/Textures/jellyFishLittle.spritesheet.wpk</d9p1:spriteSheetPath>
                   <d9p1:textureName>little jellyfish_00000</d9p1:textureName>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:SpriteAtlasRenderer">
@@ -1261,7 +1261,7 @@
                       <d11p1:R>255</d11p1:R>
                     </d10p1:DebugLineColor>
                     <d10p2:IsGlobalAsset>false</d10p2:IsGlobalAsset>
-                    <d10p2:TexturePath>Content/Assets/Textures/jellyFishLittleCollider.wpk</d10p2:TexturePath>
+                    <d10p2:TexturePath>Content/Assets/Textures/jellyFishLittleCollider.png.wpk</d10p2:TexturePath>
                     <d10p2:threshold>0</d10p2:threshold>
                   </collider2D>
                   <d9p1:SamplerMode>LinearClamp</d9p1:SamplerMode>
@@ -1289,7 +1289,7 @@
                     <d10p1:R>255</d10p1:R>
                   </DebugLineColor>
                   <d9p1:IsGlobalAsset>false</d9p1:IsGlobalAsset>
-                  <d9p1:TexturePath>Content/Assets/Textures/jellyFishLittleCollider.wpk</d9p1:TexturePath>
+                  <d9p1:TexturePath>Content/Assets/Textures/jellyFishLittleCollider.png.wpk</d9p1:TexturePath>
                   <d9p1:threshold>0</d9p1:threshold>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Framework.Animation" i:type="d9p1:AnimationUI">
@@ -1349,7 +1349,7 @@
                     <d10p1:G>255</d10p1:G>
                     <d10p1:R>255</d10p1:R>
                   </d9p1:TintColor>
-                  <d9p1:texturePath>Content/Assets/Textures/starfish.wpk</d9p1:texturePath>
+                  <d9p1:texturePath>Content/Assets/Textures/starfish.png.wpk</d9p1:texturePath>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:SpriteRenderer">
                   <d2p1:IsVisible>true</d2p1:IsVisible>
@@ -1435,7 +1435,7 @@
                     <d10p1:G>255</d10p1:G>
                     <d10p1:R>255</d10p1:R>
                   </d9p1:TintColor>
-                  <d9p1:texturePath>Content/Assets/Textures/starfish.wpk</d9p1:texturePath>
+                  <d9p1:texturePath>Content/Assets/Textures/starfish.png.wpk</d9p1:texturePath>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:SpriteRenderer">
                   <d2p1:IsVisible>true</d2p1:IsVisible>
@@ -1520,7 +1520,7 @@
                     <d10p1:R>255</d10p1:R>
                   </d9p1:TintColor>
                   <d9p1:isGlobalAsset>false</d9p1:isGlobalAsset>
-                  <d9p1:spriteSheetPath>Content/Assets/Textures/jellyFishLittle.wpk</d9p1:spriteSheetPath>
+                  <d9p1:spriteSheetPath>Content/Assets/Textures/jellyFishLittle.spritesheet.wpk</d9p1:spriteSheetPath>
                   <d9p1:textureName>little jellyfish_00000</d9p1:textureName>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:SpriteAtlasRenderer">
@@ -1542,7 +1542,7 @@
                       <d11p1:R>255</d11p1:R>
                     </d10p1:DebugLineColor>
                     <d10p2:IsGlobalAsset>false</d10p2:IsGlobalAsset>
-                    <d10p2:TexturePath>Content/Assets/Textures/jellyFishLittleCollider.wpk</d10p2:TexturePath>
+                    <d10p2:TexturePath>Content/Assets/Textures/jellyFishLittleCollider.png.wpk</d10p2:TexturePath>
                     <d10p2:threshold>0</d10p2:threshold>
                   </collider2D>
                   <d9p1:SamplerMode>LinearClamp</d9p1:SamplerMode>
@@ -1570,7 +1570,7 @@
                     <d10p1:R>255</d10p1:R>
                   </DebugLineColor>
                   <d9p1:IsGlobalAsset>false</d9p1:IsGlobalAsset>
-                  <d9p1:TexturePath>Content/Assets/Textures/jellyFishLittleCollider.wpk</d9p1:TexturePath>
+                  <d9p1:TexturePath>Content/Assets/Textures/jellyFishLittleCollider.png.wpk</d9p1:TexturePath>
                   <d9p1:threshold>0</d9p1:threshold>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Framework.Animation" i:type="d9p1:AnimationUI">
@@ -1629,7 +1629,7 @@
                     <d10p1:R>255</d10p1:R>
                   </d9p1:TintColor>
                   <d9p1:isGlobalAsset>false</d9p1:isGlobalAsset>
-                  <d9p1:spriteSheetPath>Content/Assets/Textures/jellyFish.wpk</d9p1:spriteSheetPath>
+                  <d9p1:spriteSheetPath>Content/Assets/Textures/jellyFish.spritesheet.wpk</d9p1:spriteSheetPath>
                   <d9p1:textureName>jelly animation_00000</d9p1:textureName>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:SpriteAtlasRenderer">
@@ -1651,7 +1651,7 @@
                       <d11p1:R>255</d11p1:R>
                     </d10p1:DebugLineColor>
                     <d10p2:IsGlobalAsset>false</d10p2:IsGlobalAsset>
-                    <d10p2:TexturePath>Content/Assets/Textures/jellyFishCollider.wpk</d10p2:TexturePath>
+                    <d10p2:TexturePath>Content/Assets/Textures/jellyFishCollider.png.wpk</d10p2:TexturePath>
                     <d10p2:threshold>0</d10p2:threshold>
                   </collider2D>
                   <d9p1:SamplerMode>LinearClamp</d9p1:SamplerMode>
@@ -1679,7 +1679,7 @@
                     <d10p1:R>255</d10p1:R>
                   </DebugLineColor>
                   <d9p1:IsGlobalAsset>false</d9p1:IsGlobalAsset>
-                  <d9p1:TexturePath>Content/Assets/Textures/jellyFishCollider.wpk</d9p1:TexturePath>
+                  <d9p1:TexturePath>Content/Assets/Textures/jellyFishCollider.png.wpk</d9p1:TexturePath>
                   <d9p1:threshold>0</d9p1:threshold>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Framework.Animation" i:type="d9p1:AnimationUI">
@@ -1743,7 +1743,7 @@
                         <d12p1:R>255</d12p1:R>
                       </d11p1:TintColor>
                       <d11p1:isGlobalAsset>false</d11p1:isGlobalAsset>
-                      <d11p1:spriteSheetPath>Content/Assets/Textures/seaweeds.wpk</d11p1:spriteSheetPath>
+                      <d11p1:spriteSheetPath>Content/Assets/Textures/seaweeds.spritesheet.wpk</d11p1:spriteSheetPath>
                       <d11p1:textureName>final seaweeds_00000</d11p1:textureName>
                     </d2p1:Component>
                     <d2p1:Component xmlns:d11p1="WaveEngine.Components.Graphics2D" i:type="d11p1:SpriteAtlasRenderer">
@@ -1805,7 +1805,7 @@
                     <d10p1:G>255</d10p1:G>
                     <d10p1:R>255</d10p1:R>
                   </d9p1:TintColor>
-                  <d9p1:texturePath>Content/Assets/Textures/rightRock.wpk</d9p1:texturePath>
+                  <d9p1:texturePath>Content/Assets/Textures/rightRock.png.wpk</d9p1:texturePath>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:SpriteRenderer">
                   <d2p1:IsVisible>true</d2p1:IsVisible>
@@ -1826,7 +1826,7 @@
                       <d11p1:R>255</d11p1:R>
                     </d10p1:DebugLineColor>
                     <d10p2:IsGlobalAsset>false</d10p2:IsGlobalAsset>
-                    <d10p2:TexturePath>Content/Assets/Textures/rightRockCollider.wpk</d10p2:TexturePath>
+                    <d10p2:TexturePath>Content/Assets/Textures/rightRockCollider.png.wpk</d10p2:TexturePath>
                     <d10p2:threshold>0</d10p2:threshold>
                   </collider2D>
                   <d9p1:SamplerMode>LinearClamp</d9p1:SamplerMode>
@@ -1846,7 +1846,7 @@
                     <d10p1:R>255</d10p1:R>
                   </DebugLineColor>
                   <d9p1:IsGlobalAsset>false</d9p1:IsGlobalAsset>
-                  <d9p1:TexturePath>Content/Assets/Textures/rightRockCollider.wpk</d9p1:TexturePath>
+                  <d9p1:TexturePath>Content/Assets/Textures/rightRockCollider.png.wpk</d9p1:TexturePath>
                   <d9p1:threshold>0</d9p1:threshold>
                 </d2p1:Component>
               </d2p1:SerializeComponents>
@@ -1937,7 +1937,7 @@
                     <d10p1:R>255</d10p1:R>
                   </d9p1:TintColor>
                   <d9p1:isGlobalAsset>false</d9p1:isGlobalAsset>
-                  <d9p1:spriteSheetPath>Content/Assets/Textures/jellyFishLittle.wpk</d9p1:spriteSheetPath>
+                  <d9p1:spriteSheetPath>Content/Assets/Textures/jellyFishLittle.spritesheet.wpk</d9p1:spriteSheetPath>
                   <d9p1:textureName>little jellyfish_00000</d9p1:textureName>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:SpriteAtlasRenderer">
@@ -1959,7 +1959,7 @@
                       <d11p1:R>255</d11p1:R>
                     </d10p1:DebugLineColor>
                     <d10p2:IsGlobalAsset>false</d10p2:IsGlobalAsset>
-                    <d10p2:TexturePath>Content/Assets/Textures/jellyFishLittleCollider.wpk</d10p2:TexturePath>
+                    <d10p2:TexturePath>Content/Assets/Textures/jellyFishLittleCollider.png.wpk</d10p2:TexturePath>
                     <d10p2:threshold>0</d10p2:threshold>
                   </collider2D>
                   <d9p1:SamplerMode>LinearClamp</d9p1:SamplerMode>
@@ -1987,7 +1987,7 @@
                     <d10p1:R>255</d10p1:R>
                   </DebugLineColor>
                   <d9p1:IsGlobalAsset>false</d9p1:IsGlobalAsset>
-                  <d9p1:TexturePath>Content/Assets/Textures/jellyFishLittleCollider.wpk</d9p1:TexturePath>
+                  <d9p1:TexturePath>Content/Assets/Textures/jellyFishLittleCollider.png.wpk</d9p1:TexturePath>
                   <d9p1:threshold>0</d9p1:threshold>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Framework.Animation" i:type="d9p1:AnimationUI">
@@ -2047,7 +2047,7 @@
                     <d10p1:G>255</d10p1:G>
                     <d10p1:R>255</d10p1:R>
                   </d9p1:TintColor>
-                  <d9p1:texturePath>Content/Assets/Textures/starfish.wpk</d9p1:texturePath>
+                  <d9p1:texturePath>Content/Assets/Textures/starfish.png.wpk</d9p1:texturePath>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:SpriteRenderer">
                   <d2p1:IsVisible>true</d2p1:IsVisible>
@@ -2133,7 +2133,7 @@
                     <d10p1:G>255</d10p1:G>
                     <d10p1:R>255</d10p1:R>
                   </d9p1:TintColor>
-                  <d9p1:texturePath>Content/Assets/Textures/starfish.wpk</d9p1:texturePath>
+                  <d9p1:texturePath>Content/Assets/Textures/starfish.png.wpk</d9p1:texturePath>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:SpriteRenderer">
                   <d2p1:IsVisible>true</d2p1:IsVisible>
@@ -2219,7 +2219,7 @@
                     <d10p1:G>255</d10p1:G>
                     <d10p1:R>255</d10p1:R>
                   </d9p1:TintColor>
-                  <d9p1:texturePath>Content/Assets/Textures/starfish.wpk</d9p1:texturePath>
+                  <d9p1:texturePath>Content/Assets/Textures/starfish.png.wpk</d9p1:texturePath>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:SpriteRenderer">
                   <d2p1:IsVisible>true</d2p1:IsVisible>
@@ -2304,7 +2304,7 @@
                     <d10p1:R>255</d10p1:R>
                   </d9p1:TintColor>
                   <d9p1:isGlobalAsset>false</d9p1:isGlobalAsset>
-                  <d9p1:spriteSheetPath>Content/Assets/Textures/jellyFishLittle.wpk</d9p1:spriteSheetPath>
+                  <d9p1:spriteSheetPath>Content/Assets/Textures/jellyFishLittle.spritesheet.wpk</d9p1:spriteSheetPath>
                   <d9p1:textureName>little jellyfish_00000</d9p1:textureName>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:SpriteAtlasRenderer">
@@ -2326,7 +2326,7 @@
                       <d11p1:R>255</d11p1:R>
                     </d10p1:DebugLineColor>
                     <d10p2:IsGlobalAsset>false</d10p2:IsGlobalAsset>
-                    <d10p2:TexturePath>Content/Assets/Textures/jellyFishLittleCollider.wpk</d10p2:TexturePath>
+                    <d10p2:TexturePath>Content/Assets/Textures/jellyFishLittleCollider.png.wpk</d10p2:TexturePath>
                     <d10p2:threshold>0</d10p2:threshold>
                   </collider2D>
                   <d9p1:SamplerMode>LinearClamp</d9p1:SamplerMode>
@@ -2354,7 +2354,7 @@
                     <d10p1:R>255</d10p1:R>
                   </DebugLineColor>
                   <d9p1:IsGlobalAsset>false</d9p1:IsGlobalAsset>
-                  <d9p1:TexturePath>Content/Assets/Textures/jellyFishLittleCollider.wpk</d9p1:TexturePath>
+                  <d9p1:TexturePath>Content/Assets/Textures/jellyFishLittleCollider.png.wpk</d9p1:TexturePath>
                   <d9p1:threshold>0</d9p1:threshold>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Framework.Animation" i:type="d9p1:AnimationUI">
@@ -2413,7 +2413,7 @@
                     <d10p1:R>255</d10p1:R>
                   </d9p1:TintColor>
                   <d9p1:isGlobalAsset>false</d9p1:isGlobalAsset>
-                  <d9p1:spriteSheetPath>Content/Assets/Textures/jellyFish.wpk</d9p1:spriteSheetPath>
+                  <d9p1:spriteSheetPath>Content/Assets/Textures/jellyFish.spritesheet.wpk</d9p1:spriteSheetPath>
                   <d9p1:textureName>jelly animation_00000</d9p1:textureName>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:SpriteAtlasRenderer">
@@ -2435,7 +2435,7 @@
                       <d11p1:R>255</d11p1:R>
                     </d10p1:DebugLineColor>
                     <d10p2:IsGlobalAsset>false</d10p2:IsGlobalAsset>
-                    <d10p2:TexturePath>Content/Assets/Textures/jellyFishCollider.wpk</d10p2:TexturePath>
+                    <d10p2:TexturePath>Content/Assets/Textures/jellyFishCollider.png.wpk</d10p2:TexturePath>
                     <d10p2:threshold>0</d10p2:threshold>
                   </collider2D>
                   <d9p1:SamplerMode>LinearClamp</d9p1:SamplerMode>
@@ -2463,7 +2463,7 @@
                     <d10p1:R>255</d10p1:R>
                   </DebugLineColor>
                   <d9p1:IsGlobalAsset>false</d9p1:IsGlobalAsset>
-                  <d9p1:TexturePath>Content/Assets/Textures/jellyFishCollider.wpk</d9p1:TexturePath>
+                  <d9p1:TexturePath>Content/Assets/Textures/jellyFishCollider.png.wpk</d9p1:TexturePath>
                   <d9p1:threshold>0</d9p1:threshold>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Framework.Animation" i:type="d9p1:AnimationUI">
@@ -2568,7 +2568,7 @@
                         <d12p1:R>255</d12p1:R>
                       </d11p1:TintColor>
                       <d11p1:isGlobalAsset>false</d11p1:isGlobalAsset>
-                      <d11p1:spriteSheetPath>Content/Assets/Textures/seaweeds.wpk</d11p1:spriteSheetPath>
+                      <d11p1:spriteSheetPath>Content/Assets/Textures/seaweeds.spritesheet.wpk</d11p1:spriteSheetPath>
                       <d11p1:textureName>final seaweeds_00000</d11p1:textureName>
                     </d2p1:Component>
                     <d2p1:Component xmlns:d11p1="WaveEngine.Components.Graphics2D" i:type="d11p1:SpriteAtlasRenderer">
@@ -2630,7 +2630,7 @@
                     <d10p1:G>255</d10p1:G>
                     <d10p1:R>255</d10p1:R>
                   </d9p1:TintColor>
-                  <d9p1:texturePath>Content/Assets/Textures/leftRock.wpk</d9p1:texturePath>
+                  <d9p1:texturePath>Content/Assets/Textures/leftRock.png.wpk</d9p1:texturePath>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:SpriteRenderer">
                   <d2p1:IsVisible>true</d2p1:IsVisible>
@@ -2651,7 +2651,7 @@
                       <d11p1:R>255</d11p1:R>
                     </d10p1:DebugLineColor>
                     <d10p2:IsGlobalAsset>false</d10p2:IsGlobalAsset>
-                    <d10p2:TexturePath>Content/Assets/Textures/leftRockCollider.wpk</d10p2:TexturePath>
+                    <d10p2:TexturePath>Content/Assets/Textures/leftRockCollider.png.wpk</d10p2:TexturePath>
                     <d10p2:threshold>0</d10p2:threshold>
                   </collider2D>
                   <d9p1:SamplerMode>LinearClamp</d9p1:SamplerMode>
@@ -2671,7 +2671,7 @@
                     <d10p1:R>255</d10p1:R>
                   </DebugLineColor>
                   <d9p1:IsGlobalAsset>false</d9p1:IsGlobalAsset>
-                  <d9p1:TexturePath>Content/Assets/Textures/leftRockCollider.wpk</d9p1:TexturePath>
+                  <d9p1:TexturePath>Content/Assets/Textures/leftRockCollider.png.wpk</d9p1:TexturePath>
                   <d9p1:threshold>0</d9p1:threshold>
                 </d2p1:Component>
               </d2p1:SerializeComponents>
@@ -2726,7 +2726,7 @@
                         <d12p1:R>255</d12p1:R>
                       </d11p1:TintColor>
                       <d11p1:isGlobalAsset>false</d11p1:isGlobalAsset>
-                      <d11p1:spriteSheetPath>Content/Assets/Textures/seaweeds.wpk</d11p1:spriteSheetPath>
+                      <d11p1:spriteSheetPath>Content/Assets/Textures/seaweeds.spritesheet.wpk</d11p1:spriteSheetPath>
                       <d11p1:textureName>final seaweeds_00000</d11p1:textureName>
                     </d2p1:Component>
                     <d2p1:Component xmlns:d11p1="WaveEngine.Components.Graphics2D" i:type="d11p1:SpriteAtlasRenderer">
@@ -2788,7 +2788,7 @@
                     <d10p1:G>255</d10p1:G>
                     <d10p1:R>255</d10p1:R>
                   </d9p1:TintColor>
-                  <d9p1:texturePath>Content/Assets/Textures/rightRock.wpk</d9p1:texturePath>
+                  <d9p1:texturePath>Content/Assets/Textures/rightRock.png.wpk</d9p1:texturePath>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:SpriteRenderer">
                   <d2p1:IsVisible>true</d2p1:IsVisible>
@@ -2809,7 +2809,7 @@
                       <d11p1:R>255</d11p1:R>
                     </d10p1:DebugLineColor>
                     <d10p2:IsGlobalAsset>false</d10p2:IsGlobalAsset>
-                    <d10p2:TexturePath>Content/Assets/Textures/rightRockCollider.wpk</d10p2:TexturePath>
+                    <d10p2:TexturePath>Content/Assets/Textures/rightRockCollider.png.wpk</d10p2:TexturePath>
                     <d10p2:threshold>0</d10p2:threshold>
                   </collider2D>
                   <d9p1:SamplerMode>LinearClamp</d9p1:SamplerMode>
@@ -2829,7 +2829,7 @@
                     <d10p1:R>255</d10p1:R>
                   </DebugLineColor>
                   <d9p1:IsGlobalAsset>false</d9p1:IsGlobalAsset>
-                  <d9p1:TexturePath>Content/Assets/Textures/rightRockCollider.wpk</d9p1:TexturePath>
+                  <d9p1:TexturePath>Content/Assets/Textures/rightRockCollider.png.wpk</d9p1:TexturePath>
                   <d9p1:threshold>0</d9p1:threshold>
                 </d2p1:Component>
               </d2p1:SerializeComponents>
@@ -2879,7 +2879,7 @@
                     <d10p1:R>255</d10p1:R>
                   </d9p1:TintColor>
                   <d9p1:isGlobalAsset>false</d9p1:isGlobalAsset>
-                  <d9p1:spriteSheetPath>Content/Assets/Textures/jellyFishLittle.wpk</d9p1:spriteSheetPath>
+                  <d9p1:spriteSheetPath>Content/Assets/Textures/jellyFishLittle.spritesheet.wpk</d9p1:spriteSheetPath>
                   <d9p1:textureName>little jellyfish_00000</d9p1:textureName>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:SpriteAtlasRenderer">
@@ -2901,7 +2901,7 @@
                       <d11p1:R>255</d11p1:R>
                     </d10p1:DebugLineColor>
                     <d10p2:IsGlobalAsset>false</d10p2:IsGlobalAsset>
-                    <d10p2:TexturePath>Content/Assets/Textures/jellyFishLittleCollider.wpk</d10p2:TexturePath>
+                    <d10p2:TexturePath>Content/Assets/Textures/jellyFishLittleCollider.png.wpk</d10p2:TexturePath>
                     <d10p2:threshold>0</d10p2:threshold>
                   </collider2D>
                   <d9p1:SamplerMode>LinearClamp</d9p1:SamplerMode>
@@ -2929,7 +2929,7 @@
                     <d10p1:R>255</d10p1:R>
                   </DebugLineColor>
                   <d9p1:IsGlobalAsset>false</d9p1:IsGlobalAsset>
-                  <d9p1:TexturePath>Content/Assets/Textures/jellyFishLittleCollider.wpk</d9p1:TexturePath>
+                  <d9p1:TexturePath>Content/Assets/Textures/jellyFishLittleCollider.png.wpk</d9p1:TexturePath>
                   <d9p1:threshold>0</d9p1:threshold>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Framework.Animation" i:type="d9p1:AnimationUI">
@@ -2989,7 +2989,7 @@
                     <d10p1:G>255</d10p1:G>
                     <d10p1:R>255</d10p1:R>
                   </d9p1:TintColor>
-                  <d9p1:texturePath>Content/Assets/Textures/starfish.wpk</d9p1:texturePath>
+                  <d9p1:texturePath>Content/Assets/Textures/starfish.png.wpk</d9p1:texturePath>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:SpriteRenderer">
                   <d2p1:IsVisible>true</d2p1:IsVisible>
@@ -3075,7 +3075,7 @@
                     <d10p1:G>255</d10p1:G>
                     <d10p1:R>255</d10p1:R>
                   </d9p1:TintColor>
-                  <d9p1:texturePath>Content/Assets/Textures/starfish.wpk</d9p1:texturePath>
+                  <d9p1:texturePath>Content/Assets/Textures/starfish.png.wpk</d9p1:texturePath>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:SpriteRenderer">
                   <d2p1:IsVisible>true</d2p1:IsVisible>
@@ -3161,7 +3161,7 @@
                     <d10p1:G>255</d10p1:G>
                     <d10p1:R>255</d10p1:R>
                   </d9p1:TintColor>
-                  <d9p1:texturePath>Content/Assets/Textures/starfish.wpk</d9p1:texturePath>
+                  <d9p1:texturePath>Content/Assets/Textures/starfish.png.wpk</d9p1:texturePath>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:SpriteRenderer">
                   <d2p1:IsVisible>true</d2p1:IsVisible>
@@ -3292,7 +3292,7 @@
                         <d12p1:R>255</d12p1:R>
                       </d11p1:TintColor>
                       <d11p1:isGlobalAsset>false</d11p1:isGlobalAsset>
-                      <d11p1:spriteSheetPath>Content/Assets/Textures/seaweeds.wpk</d11p1:spriteSheetPath>
+                      <d11p1:spriteSheetPath>Content/Assets/Textures/seaweeds.spritesheet.wpk</d11p1:spriteSheetPath>
                       <d11p1:textureName>final seaweeds_00000</d11p1:textureName>
                     </d2p1:Component>
                     <d2p1:Component xmlns:d11p1="WaveEngine.Components.Graphics2D" i:type="d11p1:SpriteAtlasRenderer">
@@ -3354,7 +3354,7 @@
                     <d10p1:G>255</d10p1:G>
                     <d10p1:R>255</d10p1:R>
                   </d9p1:TintColor>
-                  <d9p1:texturePath>Content/Assets/Textures/centralRock.wpk</d9p1:texturePath>
+                  <d9p1:texturePath>Content/Assets/Textures/centralRock.png.wpk</d9p1:texturePath>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:SpriteRenderer">
                   <d2p1:IsVisible>true</d2p1:IsVisible>
@@ -3375,7 +3375,7 @@
                       <d11p1:R>255</d11p1:R>
                     </d10p1:DebugLineColor>
                     <d10p2:IsGlobalAsset>false</d10p2:IsGlobalAsset>
-                    <d10p2:TexturePath>Content/Assets/Textures/centralRockCollider.wpk</d10p2:TexturePath>
+                    <d10p2:TexturePath>Content/Assets/Textures/centralRockCollider.png.wpk</d10p2:TexturePath>
                     <d10p2:threshold>0</d10p2:threshold>
                   </collider2D>
                   <d9p1:SamplerMode>LinearClamp</d9p1:SamplerMode>
@@ -3395,7 +3395,7 @@
                     <d10p1:R>255</d10p1:R>
                   </DebugLineColor>
                   <d9p1:IsGlobalAsset>false</d9p1:IsGlobalAsset>
-                  <d9p1:TexturePath>Content/Assets/Textures/centralRockCollider.wpk</d9p1:TexturePath>
+                  <d9p1:TexturePath>Content/Assets/Textures/centralRockCollider.png.wpk</d9p1:TexturePath>
                   <d9p1:threshold>0</d9p1:threshold>
                 </d2p1:Component>
               </d2p1:SerializeComponents>
@@ -3446,7 +3446,7 @@
                     <d10p1:G>255</d10p1:G>
                     <d10p1:R>255</d10p1:R>
                   </d9p1:TintColor>
-                  <d9p1:texturePath>Content/Assets/Textures/starfish.wpk</d9p1:texturePath>
+                  <d9p1:texturePath>Content/Assets/Textures/starfish.png.wpk</d9p1:texturePath>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:SpriteRenderer">
                   <d2p1:IsVisible>true</d2p1:IsVisible>
@@ -3531,7 +3531,7 @@
                     <d10p1:R>255</d10p1:R>
                   </d9p1:TintColor>
                   <d9p1:isGlobalAsset>false</d9p1:isGlobalAsset>
-                  <d9p1:spriteSheetPath>Content/Assets/Textures/jellyFish.wpk</d9p1:spriteSheetPath>
+                  <d9p1:spriteSheetPath>Content/Assets/Textures/jellyFish.spritesheet.wpk</d9p1:spriteSheetPath>
                   <d9p1:textureName>jelly animation_00000</d9p1:textureName>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:SpriteAtlasRenderer">
@@ -3553,7 +3553,7 @@
                       <d11p1:R>255</d11p1:R>
                     </d10p1:DebugLineColor>
                     <d10p2:IsGlobalAsset>false</d10p2:IsGlobalAsset>
-                    <d10p2:TexturePath>Content/Assets/Textures/jellyFishCollider.wpk</d10p2:TexturePath>
+                    <d10p2:TexturePath>Content/Assets/Textures/jellyFishCollider.png.wpk</d10p2:TexturePath>
                     <d10p2:threshold>0</d10p2:threshold>
                   </collider2D>
                   <d9p1:SamplerMode>LinearClamp</d9p1:SamplerMode>
@@ -3581,7 +3581,7 @@
                     <d10p1:R>255</d10p1:R>
                   </DebugLineColor>
                   <d9p1:IsGlobalAsset>false</d9p1:IsGlobalAsset>
-                  <d9p1:TexturePath>Content/Assets/Textures/jellyFishCollider.wpk</d9p1:TexturePath>
+                  <d9p1:TexturePath>Content/Assets/Textures/jellyFishCollider.png.wpk</d9p1:TexturePath>
                   <d9p1:threshold>0</d9p1:threshold>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Framework.Animation" i:type="d9p1:AnimationUI">
@@ -3641,7 +3641,7 @@
                     <d10p1:G>255</d10p1:G>
                     <d10p1:R>255</d10p1:R>
                   </d9p1:TintColor>
-                  <d9p1:texturePath>Content/Assets/Textures/starfish.wpk</d9p1:texturePath>
+                  <d9p1:texturePath>Content/Assets/Textures/starfish.png.wpk</d9p1:texturePath>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:SpriteRenderer">
                   <d2p1:IsVisible>true</d2p1:IsVisible>
@@ -3727,7 +3727,7 @@
                     <d10p1:G>255</d10p1:G>
                     <d10p1:R>255</d10p1:R>
                   </d9p1:TintColor>
-                  <d9p1:texturePath>Content/Assets/Textures/starfish.wpk</d9p1:texturePath>
+                  <d9p1:texturePath>Content/Assets/Textures/starfish.png.wpk</d9p1:texturePath>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:SpriteRenderer">
                   <d2p1:IsVisible>true</d2p1:IsVisible>
@@ -3858,7 +3858,7 @@
                         <d12p1:R>255</d12p1:R>
                       </d11p1:TintColor>
                       <d11p1:isGlobalAsset>false</d11p1:isGlobalAsset>
-                      <d11p1:spriteSheetPath>Content/Assets/Textures/seaweeds.wpk</d11p1:spriteSheetPath>
+                      <d11p1:spriteSheetPath>Content/Assets/Textures/seaweeds.spritesheet.wpk</d11p1:spriteSheetPath>
                       <d11p1:textureName>final seaweeds_00000</d11p1:textureName>
                     </d2p1:Component>
                     <d2p1:Component xmlns:d11p1="WaveEngine.Components.Graphics2D" i:type="d11p1:SpriteAtlasRenderer">
@@ -3920,7 +3920,7 @@
                     <d10p1:G>255</d10p1:G>
                     <d10p1:R>255</d10p1:R>
                   </d9p1:TintColor>
-                  <d9p1:texturePath>Content/Assets/Textures/centralRock.wpk</d9p1:texturePath>
+                  <d9p1:texturePath>Content/Assets/Textures/centralRock.png.wpk</d9p1:texturePath>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:SpriteRenderer">
                   <d2p1:IsVisible>true</d2p1:IsVisible>
@@ -3941,7 +3941,7 @@
                       <d11p1:R>255</d11p1:R>
                     </d10p1:DebugLineColor>
                     <d10p2:IsGlobalAsset>false</d10p2:IsGlobalAsset>
-                    <d10p2:TexturePath>Content/Assets/Textures/centralRockCollider.wpk</d10p2:TexturePath>
+                    <d10p2:TexturePath>Content/Assets/Textures/centralRockCollider.png.wpk</d10p2:TexturePath>
                     <d10p2:threshold>0</d10p2:threshold>
                   </collider2D>
                   <d9p1:SamplerMode>LinearClamp</d9p1:SamplerMode>
@@ -3961,7 +3961,7 @@
                     <d10p1:R>255</d10p1:R>
                   </DebugLineColor>
                   <d9p1:IsGlobalAsset>false</d9p1:IsGlobalAsset>
-                  <d9p1:TexturePath>Content/Assets/Textures/centralRockCollider.wpk</d9p1:TexturePath>
+                  <d9p1:TexturePath>Content/Assets/Textures/centralRockCollider.png.wpk</d9p1:TexturePath>
                   <d9p1:threshold>0</d9p1:threshold>
                 </d2p1:Component>
               </d2p1:SerializeComponents>
@@ -4016,7 +4016,7 @@
                         <d12p1:R>255</d12p1:R>
                       </d11p1:TintColor>
                       <d11p1:isGlobalAsset>false</d11p1:isGlobalAsset>
-                      <d11p1:spriteSheetPath>Content/Assets/Textures/seaweeds.wpk</d11p1:spriteSheetPath>
+                      <d11p1:spriteSheetPath>Content/Assets/Textures/seaweeds.spritesheet.wpk</d11p1:spriteSheetPath>
                       <d11p1:textureName>final seaweeds_00000</d11p1:textureName>
                     </d2p1:Component>
                     <d2p1:Component xmlns:d11p1="WaveEngine.Components.Graphics2D" i:type="d11p1:SpriteAtlasRenderer">
@@ -4078,7 +4078,7 @@
                     <d10p1:G>255</d10p1:G>
                     <d10p1:R>255</d10p1:R>
                   </d9p1:TintColor>
-                  <d9p1:texturePath>Content/Assets/Textures/centralRock.wpk</d9p1:texturePath>
+                  <d9p1:texturePath>Content/Assets/Textures/centralRock.png.wpk</d9p1:texturePath>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:SpriteRenderer">
                   <d2p1:IsVisible>true</d2p1:IsVisible>
@@ -4099,7 +4099,7 @@
                       <d11p1:R>255</d11p1:R>
                     </d10p1:DebugLineColor>
                     <d10p2:IsGlobalAsset>false</d10p2:IsGlobalAsset>
-                    <d10p2:TexturePath>Content/Assets/Textures/centralRockCollider.wpk</d10p2:TexturePath>
+                    <d10p2:TexturePath>Content/Assets/Textures/centralRockCollider.png.wpk</d10p2:TexturePath>
                     <d10p2:threshold>0</d10p2:threshold>
                   </collider2D>
                   <d9p1:SamplerMode>LinearClamp</d9p1:SamplerMode>
@@ -4119,7 +4119,7 @@
                     <d10p1:R>255</d10p1:R>
                   </DebugLineColor>
                   <d9p1:IsGlobalAsset>false</d9p1:IsGlobalAsset>
-                  <d9p1:TexturePath>Content/Assets/Textures/centralRockCollider.wpk</d9p1:TexturePath>
+                  <d9p1:TexturePath>Content/Assets/Textures/centralRockCollider.png.wpk</d9p1:TexturePath>
                   <d9p1:threshold>0</d9p1:threshold>
                 </d2p1:Component>
               </d2p1:SerializeComponents>
@@ -4170,7 +4170,7 @@
                     <d10p1:G>255</d10p1:G>
                     <d10p1:R>255</d10p1:R>
                   </d9p1:TintColor>
-                  <d9p1:texturePath>Content/Assets/Textures/starfish.wpk</d9p1:texturePath>
+                  <d9p1:texturePath>Content/Assets/Textures/starfish.png.wpk</d9p1:texturePath>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:SpriteRenderer">
                   <d2p1:IsVisible>true</d2p1:IsVisible>
@@ -4256,7 +4256,7 @@
                     <d10p1:G>255</d10p1:G>
                     <d10p1:R>255</d10p1:R>
                   </d9p1:TintColor>
-                  <d9p1:texturePath>Content/Assets/Textures/starfish.wpk</d9p1:texturePath>
+                  <d9p1:texturePath>Content/Assets/Textures/starfish.png.wpk</d9p1:texturePath>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:SpriteRenderer">
                   <d2p1:IsVisible>true</d2p1:IsVisible>
@@ -4387,7 +4387,7 @@
                         <d12p1:R>255</d12p1:R>
                       </d11p1:TintColor>
                       <d11p1:isGlobalAsset>false</d11p1:isGlobalAsset>
-                      <d11p1:spriteSheetPath>Content/Assets/Textures/seaweeds.wpk</d11p1:spriteSheetPath>
+                      <d11p1:spriteSheetPath>Content/Assets/Textures/seaweeds.spritesheet.wpk</d11p1:spriteSheetPath>
                       <d11p1:textureName>final seaweeds_00000</d11p1:textureName>
                     </d2p1:Component>
                     <d2p1:Component xmlns:d11p1="WaveEngine.Components.Graphics2D" i:type="d11p1:SpriteAtlasRenderer">
@@ -4449,7 +4449,7 @@
                     <d10p1:G>255</d10p1:G>
                     <d10p1:R>255</d10p1:R>
                   </d9p1:TintColor>
-                  <d9p1:texturePath>Content/Assets/Textures/leftRock.wpk</d9p1:texturePath>
+                  <d9p1:texturePath>Content/Assets/Textures/leftRock.png.wpk</d9p1:texturePath>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:SpriteRenderer">
                   <d2p1:IsVisible>true</d2p1:IsVisible>
@@ -4470,7 +4470,7 @@
                       <d11p1:R>255</d11p1:R>
                     </d10p1:DebugLineColor>
                     <d10p2:IsGlobalAsset>false</d10p2:IsGlobalAsset>
-                    <d10p2:TexturePath>Content/Assets/Textures/leftRockCollider.wpk</d10p2:TexturePath>
+                    <d10p2:TexturePath>Content/Assets/Textures/leftRockCollider.png.wpk</d10p2:TexturePath>
                     <d10p2:threshold>0</d10p2:threshold>
                   </collider2D>
                   <d9p1:SamplerMode>LinearClamp</d9p1:SamplerMode>
@@ -4490,7 +4490,7 @@
                     <d10p1:R>255</d10p1:R>
                   </DebugLineColor>
                   <d9p1:IsGlobalAsset>false</d9p1:IsGlobalAsset>
-                  <d9p1:TexturePath>Content/Assets/Textures/leftRockCollider.wpk</d9p1:TexturePath>
+                  <d9p1:TexturePath>Content/Assets/Textures/leftRockCollider.png.wpk</d9p1:TexturePath>
                   <d9p1:threshold>0</d9p1:threshold>
                 </d2p1:Component>
               </d2p1:SerializeComponents>
@@ -4545,7 +4545,7 @@
                         <d12p1:R>255</d12p1:R>
                       </d11p1:TintColor>
                       <d11p1:isGlobalAsset>false</d11p1:isGlobalAsset>
-                      <d11p1:spriteSheetPath>Content/Assets/Textures/seaweeds.wpk</d11p1:spriteSheetPath>
+                      <d11p1:spriteSheetPath>Content/Assets/Textures/seaweeds.spritesheet.wpk</d11p1:spriteSheetPath>
                       <d11p1:textureName>final seaweeds_00000</d11p1:textureName>
                     </d2p1:Component>
                     <d2p1:Component xmlns:d11p1="WaveEngine.Components.Graphics2D" i:type="d11p1:SpriteAtlasRenderer">
@@ -4607,7 +4607,7 @@
                     <d10p1:G>255</d10p1:G>
                     <d10p1:R>255</d10p1:R>
                   </d9p1:TintColor>
-                  <d9p1:texturePath>Content/Assets/Textures/rightRock.wpk</d9p1:texturePath>
+                  <d9p1:texturePath>Content/Assets/Textures/rightRock.png.wpk</d9p1:texturePath>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:SpriteRenderer">
                   <d2p1:IsVisible>true</d2p1:IsVisible>
@@ -4628,7 +4628,7 @@
                       <d11p1:R>255</d11p1:R>
                     </d10p1:DebugLineColor>
                     <d10p2:IsGlobalAsset>false</d10p2:IsGlobalAsset>
-                    <d10p2:TexturePath>Content/Assets/Textures/rightRockCollider.wpk</d10p2:TexturePath>
+                    <d10p2:TexturePath>Content/Assets/Textures/rightRockCollider.png.wpk</d10p2:TexturePath>
                     <d10p2:threshold>0</d10p2:threshold>
                   </collider2D>
                   <d9p1:SamplerMode>LinearClamp</d9p1:SamplerMode>
@@ -4648,7 +4648,7 @@
                     <d10p1:R>255</d10p1:R>
                   </DebugLineColor>
                   <d9p1:IsGlobalAsset>false</d9p1:IsGlobalAsset>
-                  <d9p1:TexturePath>Content/Assets/Textures/rightRockCollider.wpk</d9p1:TexturePath>
+                  <d9p1:TexturePath>Content/Assets/Textures/rightRockCollider.png.wpk</d9p1:TexturePath>
                   <d9p1:threshold>0</d9p1:threshold>
                 </d2p1:Component>
               </d2p1:SerializeComponents>
@@ -4698,7 +4698,7 @@
                     <d10p1:R>255</d10p1:R>
                   </d9p1:TintColor>
                   <d9p1:isGlobalAsset>false</d9p1:isGlobalAsset>
-                  <d9p1:spriteSheetPath>Content/Assets/Textures/jellyFishLittle.wpk</d9p1:spriteSheetPath>
+                  <d9p1:spriteSheetPath>Content/Assets/Textures/jellyFishLittle.spritesheet.wpk</d9p1:spriteSheetPath>
                   <d9p1:textureName>little jellyfish_00000</d9p1:textureName>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:SpriteAtlasRenderer">
@@ -4720,7 +4720,7 @@
                       <d11p1:R>255</d11p1:R>
                     </d10p1:DebugLineColor>
                     <d10p2:IsGlobalAsset>false</d10p2:IsGlobalAsset>
-                    <d10p2:TexturePath>Content/Assets/Textures/jellyFishLittleCollider.wpk</d10p2:TexturePath>
+                    <d10p2:TexturePath>Content/Assets/Textures/jellyFishLittleCollider.png.wpk</d10p2:TexturePath>
                     <d10p2:threshold>0</d10p2:threshold>
                   </collider2D>
                   <d9p1:SamplerMode>LinearClamp</d9p1:SamplerMode>
@@ -4748,7 +4748,7 @@
                     <d10p1:R>255</d10p1:R>
                   </DebugLineColor>
                   <d9p1:IsGlobalAsset>false</d9p1:IsGlobalAsset>
-                  <d9p1:TexturePath>Content/Assets/Textures/jellyFishLittleCollider.wpk</d9p1:TexturePath>
+                  <d9p1:TexturePath>Content/Assets/Textures/jellyFishLittleCollider.png.wpk</d9p1:TexturePath>
                   <d9p1:threshold>0</d9p1:threshold>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Framework.Animation" i:type="d9p1:AnimationUI">
@@ -4808,7 +4808,7 @@
                     <d10p1:G>255</d10p1:G>
                     <d10p1:R>255</d10p1:R>
                   </d9p1:TintColor>
-                  <d9p1:texturePath>Content/Assets/Textures/starfish.wpk</d9p1:texturePath>
+                  <d9p1:texturePath>Content/Assets/Textures/starfish.png.wpk</d9p1:texturePath>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:SpriteRenderer">
                   <d2p1:IsVisible>true</d2p1:IsVisible>
@@ -4894,7 +4894,7 @@
                     <d10p1:G>255</d10p1:G>
                     <d10p1:R>255</d10p1:R>
                   </d9p1:TintColor>
-                  <d9p1:texturePath>Content/Assets/Textures/starfish.wpk</d9p1:texturePath>
+                  <d9p1:texturePath>Content/Assets/Textures/starfish.png.wpk</d9p1:texturePath>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:SpriteRenderer">
                   <d2p1:IsVisible>true</d2p1:IsVisible>

@@ -8,7 +8,6 @@
 #endregion
 
 #region Using Statements
-using SuperSquid.Commons;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -53,11 +52,11 @@ namespace SuperSquid.Managers
 
             this.sounds = new SoundInfo[(int)SOUNDS.Last];
 
-            this.LoadSound(SOUNDS.SquidSwim1, Directories.SoundsPath + "squid_swim1.wpk");
-            this.LoadSound(SOUNDS.SquidSwim2, Directories.SoundsPath + "squid_swim2.wpk");
-            this.LoadSound(SOUNDS.JellyCrash, Directories.SoundsPath + "jellyCrash.wpk");
-            this.LoadSound(SOUNDS.RockCrash, Directories.SoundsPath + "rockCrash.wpk");
-            this.LoadSound(SOUNDS.Star, Directories.SoundsPath + "star.wpk");
+            this.LoadSound(SOUNDS.SquidSwim1, WaveContent.Assets.Sounds.squid_swim1_wav);
+            this.LoadSound(SOUNDS.SquidSwim2, WaveContent.Assets.Sounds.squid_swim2_wav);
+            this.LoadSound(SOUNDS.JellyCrash, WaveContent.Assets.Sounds.jellyCrash_wav);
+            this.LoadSound(SOUNDS.RockCrash, WaveContent.Assets.Sounds.rockCrash_wav);
+            this.LoadSound(SOUNDS.Star, WaveContent.Assets.Sounds.star_wav);
         }
 
         /// <summary>
