@@ -25,7 +25,7 @@ namespace BasketKing
             this.Width = 1280;
             this.Height = 720;
             this.FullScreen = false;
-            this.WindowTitle = "MangomacoProject";
+            this.WindowTitle = "BasketKing";
         }
 
         public override void Initialize()

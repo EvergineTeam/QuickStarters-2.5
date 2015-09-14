@@ -24,7 +24,7 @@ namespace BasketKing
 
 		public App ()
 		{
-			this.WindowTitle = "Sample Mac";
+			this.WindowTitle = "BasketKing";
 			this.Width = 1280;
 			this.Height = 720;
 		}

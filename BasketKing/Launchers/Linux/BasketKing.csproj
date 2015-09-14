@@ -118,4 +118,18 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\packages\WaveEngine.Adapter.1.9.12-beta-6\lib\Mono\OpenTK.dll.config">
+      <Link>OpenTK.dll.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\packages\WaveEngine.Adapter.1.9.12-beta-6\lib\Mono\SdlDotNet.dll.config">
+      <Link>SdlDotNet.dll.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\packages\WaveEngine.Adapter.1.9.12-beta-6\lib\Mono\Tao.Sdl.dll.config">
+      <Link>Tao.Sdl.dll.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 </Project>

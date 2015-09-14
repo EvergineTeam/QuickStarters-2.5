@@ -31,6 +31,7 @@
     <UseRefCounting>false</UseRefCounting>
     <CustomCommands>
       <CustomCommands>
+        <Command type="BeforeBuild" command="mono /Library/Frameworks/WaveEngine.framework/v2.0/Tools/VisualEditor/WaveConstantsCMD.exe -i $(SolutionDir)/$(ProjectName).weproj -o $(SolutionDir)/SharedSource/Main" workingdir="/Library/Frameworks/WaveEngine.framework/v2.0/Tools/VisualEditor"/>
         <Command type="AfterBuild" command="mono /Library/Frameworks/WaveEngine.framework/v2.0/Tools/VisualEditor/WaveExporterCMD.exe -m Project -t MacOS -i $(SolutionDir)/$(ProjectName).weproj -o $(SolutionDir)/Intermediate/Content/MacOS" workingdir="/Library/Frameworks/WaveEngine.framework/v2.0/Tools/VisualEditor"/>
         <Command type="AfterBuild" command="cp -r $(SolutionDir)/Intermediate/Content/MacOS /$(TargetDir)/$(ProjectName).app/Contents/Resources/Content/"/>
       </CustomCommands>
@@ -53,6 +54,7 @@
     <UseRefCounting>false</UseRefCounting>
     <CustomCommands>
       <CustomCommands>
+        <Command type="BeforeBuild" command="mono /Library/Frameworks/WaveEngine.framework/v2.0/Tools/VisualEditor/WaveConstantsCMD.exe -i $(SolutionDir)/$(ProjectName).weproj -o $(SolutionDir)/SharedSource/Main" workingdir="/Library/Frameworks/WaveEngine.framework/v2.0/Tools/VisualEditor"/>
         <Command type="AfterBuild" command="mono /Library/Frameworks/WaveEngine.framework/v2.0/Tools/VisualEditor/WaveExporterCMD.exe -m Project -t MacOS -i $(SolutionDir)/$(ProjectName).weproj -o $(SolutionDir)/Intermediate/Content/MacOS" workingdir="/Library/Frameworks/WaveEngine.framework/v2.0/Tools/VisualEditor"/>
         <Command type="AfterBuild" command="cp -r $(SolutionDir)/Intermediate/Content/MacOS /$(TargetDir)/$(ProjectName).app/Contents/Resources/Content/"/>
       </CustomCommands>
@@ -76,6 +78,7 @@
     <UseRefCounting>false</UseRefCounting>
     <CustomCommands>
       <CustomCommands>
+        <Command type="BeforeBuild" command="mono /Library/Frameworks/WaveEngine.framework/v2.0/Tools/VisualEditor/WaveConstantsCMD.exe -i $(SolutionDir)/$(ProjectName).weproj -o $(SolutionDir)/SharedSource/Main" workingdir="/Library/Frameworks/WaveEngine.framework/v2.0/Tools/VisualEditor"/>
         <Command type="AfterBuild" command="mono /Library/Frameworks/WaveEngine.framework/v2.0/Tools/VisualEditor/WaveExporterCMD.exe -m Project -t MacOS -i $(SolutionDir)/$(ProjectName).weproj -o $(SolutionDir)/Intermediate/Content/MacOS" workingdir="/Library/Frameworks/WaveEngine.framework/v2.0/Tools/VisualEditor"/>
         <Command type="AfterBuild" command="cp -r $(SolutionDir)/Intermediate/Content/MacOS /$(TargetDir)/$(ProjectName).app/Contents/Resources/Content/"/>
       </CustomCommands>
