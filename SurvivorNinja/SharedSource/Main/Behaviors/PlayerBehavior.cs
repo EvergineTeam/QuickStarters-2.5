@@ -120,6 +120,11 @@ namespace SurvivorNinja.Behaviors
         /// </remarks>
         protected override void Update(TimeSpan gameTime)
         {
+            if (this.leftJoystick == null || this.rightJoystick == null)
+            {
+                return;
+            }
+
             Input input = WaveServices.Input;
 
             // Player Move

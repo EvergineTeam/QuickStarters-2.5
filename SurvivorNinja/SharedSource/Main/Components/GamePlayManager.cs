@@ -43,7 +43,10 @@ namespace SurvivorNinja.Components
             get { return currentState; }
             set
             {
-                this.UpdateState(value);
+                if (!this.Owner.IsDisposed)
+                {
+                    this.UpdateState(value);
+                }
             }
         }
         #endregion
