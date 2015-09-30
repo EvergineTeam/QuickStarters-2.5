@@ -24,8 +24,7 @@ namespace BasketKing
             this.Width = 1024;
             this.Height = 768;
 			this.FullScreen = false;
-			this.WindowTitle = "BasketKing";
-            this.BorderStyle = System.Windows.Forms.FormBorderStyle.Sizable;
+			this.WindowTitle = "BasketKing";            
         }
 
         public override void Initialize()
