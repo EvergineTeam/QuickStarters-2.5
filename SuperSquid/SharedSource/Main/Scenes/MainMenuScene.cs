@@ -50,16 +50,27 @@ namespace SuperSquid.Scenes
                 Margin = new Thickness(244, 580, 0, 0),
             };
 
-            play.Click += (s, o) =>
+            play.Click +=
+#if ANDROID
+                async 
+#endif
+                (s, o) =>
             {
-                
-                var gameContext = new ScreenContext("GamePlay", new GamePlayScene())
+#if ANDROID
+                var logIn = await WaveServices.GetService<SocialService>().Login();
+                if(logIn)
                 {
-                    Behavior = ScreenContextBehaviors.DrawInBackground
-                };
+#endif
+                    var gameContext = new ScreenContext("GamePlay", new GamePlayScene())
+                    {
+                        Behavior = ScreenContextBehaviors.DrawInBackground
+                    };
 
-                WaveServices.ScreenContextManager.Pop();
-                WaveServices.ScreenContextManager.Push(gameContext, new CrossFadeTransition(TimeSpan.FromSeconds(1.5f)));
+                    WaveServices.ScreenContextManager.Pop();
+                    WaveServices.ScreenContextManager.Push(gameContext, new CrossFadeTransition(TimeSpan.FromSeconds(1.5f)));
+#if ANDROID
+            }
+#endif
             };
 
             play.Entity.FindChild("ImageEntity").FindComponent<Transform2D>().Origin = Vector2.Center;

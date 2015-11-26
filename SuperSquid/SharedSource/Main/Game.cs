@@ -22,6 +22,10 @@ namespace SuperSquid
             application.Adapter.DefaultOrientation = DisplayOrientation.Portrait;
             application.Adapter.SupportedOrientations = DisplayOrientation.Portrait;
 
+#if ANDROID
+            InitializeAndRegisterSocialService();
+#endif
+
             // Load storage game data
             GameStorage gameStorage;
             if (WaveServices.Storage.Exists<GameStorage>())
@@ -58,5 +62,15 @@ namespace SuperSquid
             WaveServices.MusicPlayer.Volume = 1.0f;
             WaveServices.MusicPlayer.IsRepeat = true;
         }
+
+#if ANDROID
+        private void InitializeAndRegisterSocialService()
+        {
+            var socialService = new SocialService();
+            socialService.Initialize(null);
+
+            WaveServices.RegisterService(socialService);
+        }
+#endif
     }
 }
