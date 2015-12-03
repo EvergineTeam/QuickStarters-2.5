@@ -28,10 +28,5 @@ namespace NewImpossibleGame.Enums
         /// The player falling state
         /// </summary>
         FALLING,
-
-        /// <summary>
-        /// The die state
-        /// </summary>
-        DIE,
     }
 }

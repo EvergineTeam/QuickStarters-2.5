@@ -14,7 +14,7 @@ namespace NewImpossibleGame
         {
             base.Initialize(application);
 
-			ScreenContext screenContext = new ScreenContext(new MyScene());	
+			ScreenContext screenContext = new ScreenContext(new Stage1Scene());	
 			WaveServices.ScreenContextManager.To(screenContext);
         }
     }

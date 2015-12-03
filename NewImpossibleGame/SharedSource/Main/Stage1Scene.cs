@@ -14,7 +14,7 @@ using WaveEngine.Framework.Services;
 
 namespace NewImpossibleGame
 {
-    public class MyScene : Scene
+    public class Stage1Scene : Scene
     {
         /// <summary>
         /// Creates the scene.
@@ -22,7 +22,7 @@ namespace NewImpossibleGame
         protected override void CreateScene()
         {
             //// this.RenderManager.DebugLines = true;
-            this.Load(WaveContent.Scenes.MyScene);
+            this.Load(WaveContent.Scenes.Stage1);
         }
     }
 }

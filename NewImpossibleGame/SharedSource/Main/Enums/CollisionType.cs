@@ -4,21 +4,24 @@ using System.Text;
 
 namespace NewImpossibleGame.Enums
 {
-    public enum GameState
+    /// <summary>
+    /// Collision Type enumeration
+    /// </summary>
+    public enum CollisionType
     {
         /// <summary>
-        /// The initialize state
+        /// The none
         /// </summary>
-        INIT,
+        NONE = 0,
 
         /// <summary>
-        /// The play state
+        /// The ok type
         /// </summary>
-        PLAY,
+        GROUND = 1,
 
         /// <summary>
-        /// The die state
+        /// The dead type
         /// </summary>
-        DIE,
+       KILLER = 2
     }
 }
