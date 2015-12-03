@@ -24,10 +24,18 @@ namespace SuperSquid.Scenes
 {
     public class GameOverScene : Scene
     {
+#if ANDROID
+        private readonly string LeaderboardCode = "CgkIus_C08cBEAIQAQ";
+#endif
+
         private GameStorage gameStorage;
         private GamePlayScene gameScene;
 
-        protected override void CreateScene()
+        protected
+#if ANDROID
+            async 
+#endif
+            override void CreateScene()
         {
             this.Load(WaveContent.Scenes.GameOverScene);            
             this.EntityManager.Find("defaultCamera2D").FindComponent<Camera2D>().CenterScreen();
@@ -44,6 +52,12 @@ namespace SuperSquid.Scenes
                 // Save storage game data
                 GameStorage gameStorage = Catalog.GetItem<GameStorage>();
                 WaveServices.Storage.Write<GameStorage>(gameStorage);
+
+#if ANDROID
+                await WaveServices.GetService<SocialService>().AddNewScore(LeaderboardCode, this.gameScene.CurrentScore);
+
+                await WaveServices.GetService<SocialService>().ShowAllLeaderboards();
+#endif
             }
 
             this.CreateUI();

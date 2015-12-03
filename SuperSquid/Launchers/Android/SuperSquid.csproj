@@ -27,30 +27,60 @@
     <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
     <AndroidUseLatestPlatformSdk>
     </AndroidUseLatestPlatformSdk>
-    <NuGetPackageImportStamp>0b6d0d7e</NuGetPackageImportStamp>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;ANDROID</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AndroidUseSharedRuntime>True</AndroidUseSharedRuntime>
     <AndroidLinkMode>None</AndroidLinkMode>
+    <AndroidLinkSkip />
+    <EmbedAssembliesIntoApk>False</EmbedAssembliesIntoApk>
+    <BundleAssemblies>False</BundleAssemblies>
+    <AndroidCreatePackagePerAbi>False</AndroidCreatePackagePerAbi>
+    <AndroidSupportedAbis>armeabi,armeabi-v7a,x86</AndroidSupportedAbis>
+    <AndroidStoreUncompressedFileExtensions />
+    <MandroidI18n />
+    <JavaMaximumHeapSize>1G</JavaMaximumHeapSize>
+    <Debugger>Xamarin</Debugger>
+    <AndroidEnableMultiDex>False</AndroidEnableMultiDex>
+    <DevInstrumentationEnabled>True</DevInstrumentationEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
+    <DefineConstants>TRACE;ANDROID</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AndroidUseSharedRuntime>False</AndroidUseSharedRuntime>
     <AndroidLinkMode>SdkOnly</AndroidLinkMode>
+    <AndroidLinkSkip />
+    <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
+    <BundleAssemblies>False</BundleAssemblies>
+    <AndroidCreatePackagePerAbi>False</AndroidCreatePackagePerAbi>
+    <AndroidSupportedAbis>armeabi</AndroidSupportedAbis>
+    <AndroidStoreUncompressedFileExtensions />
+    <MandroidI18n />
+    <JavaMaximumHeapSize>1G</JavaMaximumHeapSize>
+    <Debugger>Xamarin</Debugger>
+    <AotAssemblies>False</AotAssemblies>
+    <EnableLLVM>False</EnableLLVM>
+    <AndroidEnableMultiDex>False</AndroidEnableMultiDex>
+    <EnableProguard>False</EnableProguard>
+    <DevInstrumentationEnabled>False</DevInstrumentationEnabled>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DolbyAPI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\WaveEngine.Adapter.2.0.4.20\lib\MonoAndroid\DolbyAPI.dll</HintPath>
+    </Reference>
     <Reference Include="Mono.Android" />
     <Reference Include="mscorlib" />
     <Reference Include="OpenTK" />
@@ -60,19 +90,28 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="WaveEngine.Adapter">
-      <HintPath>..\..\packages\WaveEngine.Adapter.2.0.3.14\lib\MonoAndroid\WaveEngine.Adapter.dll</HintPath>
+      <HintPath>..\..\packages\WaveEngine.Adapter.2.0.4.20\lib\MonoAndroid\WaveEngine.Adapter.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="WaveEngine.Common">
-      <HintPath>..\..\packages\WaveEngine.Common.2.0.3.14\lib\MonoAndroid\WaveEngine.Common.dll</HintPath>
+      <HintPath>..\..\packages\WaveEngine.Common.2.0.4.20\lib\MonoAndroid\WaveEngine.Common.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="WaveEngine.Components">
-      <HintPath>..\..\packages\WaveEngine.Components.2.0.3.14\lib\MonoAndroid\WaveEngine.Components.dll</HintPath>
+      <HintPath>..\..\packages\WaveEngine.Components.2.0.4.20\lib\MonoAndroid\WaveEngine.Components.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="WaveEngine.Framework">
-      <HintPath>..\..\packages\WaveEngine.Framework.2.0.3.14\lib\MonoAndroid\WaveEngine.Framework.dll</HintPath>
+      <HintPath>..\..\packages\WaveEngine.Framework.2.0.4.20\lib\MonoAndroid\WaveEngine.Framework.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="WaveEngine.Materials">
-      <HintPath>..\..\packages\WaveEngine.Materials.2.0.3.14\lib\MonoAndroid\WaveEngine.Materials.dll</HintPath>
+      <HintPath>..\..\packages\WaveEngine.Materials.2.0.4.20\lib\MonoAndroid\WaveEngine.Materials.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WaveEngine.Social">
+      <HintPath>..\..\packages\WaveEngine.Social.2.0.4.20\lib\MonoAndroid\WaveEngine.Social.dll</HintPath>
+      <Private>True</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -88,16 +127,26 @@
     <AndroidResource Include="Resources\layout\Main.axml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Properties\AndroidManifest.xml" />
+    <Content Include="Properties\AndroidManifest.xml">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\strings.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="..\..\SharedSource\Main\SuperSquidSource.projitems" Label="Shared" Condition="Exists('..\..\SharedSource\Main\SuperSquidSource.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
-  <Import Project="..\..\packages\WaveEngine.2.0.3.14\build\MonoAndroid\WaveEngine.targets" Condition="Exists('..\..\packages\WaveEngine.2.0.3.14\build\MonoAndroid\WaveEngine.targets')" />
+  <Import Project="..\..\packages\WaveEngine.2.0.4.20\build\MonoAndroid\WaveEngine.targets" Condition="Exists('..\..\packages\WaveEngine.2.0.4.20\build\MonoAndroid\WaveEngine.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\..\packages\WaveEngine.2.0.3.14\build\MonoAndroid\WaveEngine.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\WaveEngine.2.0.3.14\build\MonoAndroid\WaveEngine.targets'))" />
+    <Error Condition="!Exists('..\..\packages\WaveEngine.2.0.4.20\build\MonoAndroid\WaveEngine.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\WaveEngine.2.0.4.20\build\MonoAndroid\WaveEngine.targets'))" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
      Other similar extension points exist, see Microsoft.Common.targets.
