@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// File generated on 03/12/2015 18:03:06
+// File generated on 20/01/2016 13:20:50
 namespace NewImpossibleGame
 {
     using System;
@@ -19,13 +19,6 @@ namespace NewImpossibleGame
         
         public sealed class Assets
         {
-            
-            public sealed class Levels
-            {
-                
-                /// <summary> Path to Content/Assets/Levels/level1A.level </summary>
-                public const string level1A_level = "Content/Assets/Levels/level1A.level";
-            }
             
             public sealed class Materials
             {
