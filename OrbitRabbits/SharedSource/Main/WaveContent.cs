@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// File generated on 24/09/2015 11:31:11
+// File generated on 20/01/2016 13:40:02
 namespace OrbitRabbits
 {
     using System;
@@ -16,9 +16,6 @@ namespace OrbitRabbits
     
     public sealed class WaveContent
     {
-        
-        /// <summary> Path to Content/generate.info </summary>
-        public const string generate_info = "Content/generate.info";
         
         public sealed class Assets
         {
