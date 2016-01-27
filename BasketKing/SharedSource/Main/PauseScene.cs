@@ -39,6 +39,8 @@ namespace BasketKing
         /// </remarks>
         protected override void CreateScene()
         {
+            this.VirtualScreenManager.Activate(1024, 728, WaveEngine.Framework.Managers.StretchMode.Uniform);
+
             FixedCamera2D camera2d = new FixedCamera2D("camera2d")
             {
                 ClearFlags = ClearFlags.DepthAndStencil,
@@ -49,14 +51,14 @@ namespace BasketKing
             Entity dark = new Entity()
                                 .AddComponent(new Transform2D()
                                 {
-                                    X = WaveServices.ViewportManager.LeftEdge,
-                                    Y = WaveServices.ViewportManager.TopEdge,
-                                    XScale = 1 / WaveServices.ViewportManager.RatioX,
-                                    YScale = 1 / WaveServices.ViewportManager.RatioY,
+                                    X = this.VirtualScreenManager.LeftEdge,
+                                    Y = this.VirtualScreenManager.TopEdge,
+                                    XScale = 1 / this.VirtualScreenManager.RatioX,
+                                    YScale = 1 / this.VirtualScreenManager.RatioY,
                                     Opacity = 0.4f,
                                     DrawOrder = 2f, 
                                 })
-                                .AddComponent(new ImageControl(Color.Black, (int)WaveServices.ViewportManager.ScreenWidth, (int)WaveServices.ViewportManager.ScreenHeight))
+                                .AddComponent(new ImageControl(Color.Black, (int)this.VirtualScreenManager.ScreenWidth, (int)this.VirtualScreenManager.ScreenHeight))
                                 .AddComponent(new ImageControlRenderer(DefaultLayers.GUI));
             EntityManager.Add(dark);
 

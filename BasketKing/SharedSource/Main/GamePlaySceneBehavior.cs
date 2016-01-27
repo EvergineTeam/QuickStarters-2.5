@@ -186,7 +186,7 @@ namespace BasketKing
                     {
                         // Target                   
                         this.touchPosition = input.TouchPanelState[0].Position;
-                        WaveServices.ViewportManager.RecoverPosition(ref this.touchPosition);
+                        //WaveServices.ViewportManager.RecoverPosition(ref this.touchPosition);
                         this.targetTransform.X = this.touchPosition.X;
                         this.targetTransform.Y = this.touchPosition.Y;
                         this.target.IsVisible = true;

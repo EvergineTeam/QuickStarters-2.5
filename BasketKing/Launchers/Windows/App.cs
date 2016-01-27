@@ -29,6 +29,7 @@ namespace BasketKing
 
         public override void Initialize()
         {
+            this.Form.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable;
             this.game = new BasketKing.Game();
             this.game.Initialize(this);
 			

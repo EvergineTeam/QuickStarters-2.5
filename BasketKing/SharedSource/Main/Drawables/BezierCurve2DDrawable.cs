@@ -213,7 +213,7 @@ namespace BasketKing.Drawables
 
             for (int i = 0; i < this.curve.Length - 1; i++)
             {
-                this.RenderManager.LineBatch2D.DrawLineVM(this.curve[i], this.curve[i + 1], Color.Red, 0f);
+                this.RenderManager.LineBatch2D.DrawLine(this.curve[i], this.curve[i + 1], Color.Red, 0f);
             }
         }
 

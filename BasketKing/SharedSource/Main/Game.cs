@@ -28,11 +28,8 @@ namespace BasketKing
 
             Catalog.RegisterItem(gameStorage);
 
-            ViewportManager vm = WaveServices.ViewportManager;
-            vm.Activate(1024, 768, ViewportManager.StretchMode.UniformToFill);
-
-            ScreenContext screenContext = new ScreenContext(new GamePlayScene()) { Behavior = ScreenContextBehaviors.DrawInBackground };	
-			WaveServices.ScreenContextManager.To(screenContext);
+            ScreenContext screenContext = new ScreenContext(new GamePlayScene()) { Behavior = ScreenContextBehaviors.DrawInBackground };
+            WaveServices.ScreenContextManager.To(screenContext);
         }
     }
 }

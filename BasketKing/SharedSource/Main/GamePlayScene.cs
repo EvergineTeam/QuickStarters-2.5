@@ -64,6 +64,7 @@ namespace BasketKing
 
         protected override void CreateScene()
         {
+            //this.RenderManager.DebugLines = true;
             this.Load(@"Content/Scenes/GamePlayScene.wscene");
 
             this.startBall = this.EntityManager.Find("BallStart");
@@ -98,7 +99,7 @@ namespace BasketKing
                 PressedBackgroundImage = WaveContent.Assets.Textures.pause_bt_pressed_PNG,
                 HorizontalAlignment = HorizontalAlignment.Right,
                 VerticalAlignment = VerticalAlignment.Top,
-                Margin = new Thickness(0, WaveServices.ViewportManager.TopEdge + 10, 10, 0),
+                Margin = new Thickness(0, this.VirtualScreenManager.TopEdge + 10, 10, 0),
             };
             this.b_pause.Click += (s, o) =>
             {
@@ -119,7 +120,7 @@ namespace BasketKing
             this.stadisticsPanel = new StadisticsPanel()
             {
                 HorizontalAlignment = HorizontalAlignment.Center,
-                Margin = new Thickness(0, WaveServices.ViewportManager.TopEdge, 0, 0),
+                Margin = new Thickness(0, this.VirtualScreenManager.TopEdge, 0, 0),
             };
             EntityManager.Add(this.stadisticsPanel);
 
@@ -132,7 +133,7 @@ namespace BasketKing
             EntityManager.Add(this.highScorePanel);
 
             // Combo
-            this.comboPanel = new ComboPanel(new Vector2(WaveServices.ViewportManager.VirtualWidth / 2, WaveServices.ViewportManager.TopEdge + 150));
+            this.comboPanel = new ComboPanel(new Vector2(this.VirtualScreenManager.VirtualWidth / 2, this.VirtualScreenManager.TopEdge + 150));
             EntityManager.Add(this.comboPanel);
 
             // Scoreboard
@@ -140,7 +141,7 @@ namespace BasketKing
             {
                 HorizontalAlignment = HorizontalAlignment.Center,
                 VerticalAlignment = VerticalAlignment.Top,
-                Margin = new Thickness(0, WaveServices.ViewportManager.TopEdge, 0, 0),
+                Margin = new Thickness(0, this.VirtualScreenManager.TopEdge, 0, 0),
             };
             EntityManager.Add(this.scoreboardPanel);
         }
