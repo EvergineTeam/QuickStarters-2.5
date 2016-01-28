@@ -27,10 +27,7 @@ namespace SurvivorNinja
                 gameStorage = new GameStorage();
             }
 
-            Catalog.RegisterItem(gameStorage);
-
-            ViewportManager vm = WaveServices.ViewportManager;
-            vm.Activate(1024, 768, ViewportManager.StretchMode.Uniform);
+            Catalog.RegisterItem(gameStorage);           
 
 			ScreenContext screenContext = new ScreenContext(new GamePlayScene());	
 			WaveServices.ScreenContextManager.To(screenContext);

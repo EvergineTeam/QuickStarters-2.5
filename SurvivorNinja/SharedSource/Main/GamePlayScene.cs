@@ -60,16 +60,16 @@ namespace SurvivorNinja
             // Left Joystick
             RectangleF leftArea = new RectangleF(0,
                                                   0,
-                                                  WaveServices.ViewportManager.VirtualWidth / 2f,
-                                                  WaveServices.ViewportManager.VirtualHeight);
+                                                  this.VirtualScreenManager.VirtualWidth / 2f,
+                                                  this.VirtualScreenManager.VirtualHeight);
             var leftJoystick = new Joystick("leftJoystick", leftArea);
             EntityManager.Add(leftJoystick);
 
             // Right Joystick
-            RectangleF rightArea = new RectangleF(WaveServices.ViewportManager.VirtualWidth / 2,
+            RectangleF rightArea = new RectangleF(this.VirtualScreenManager.VirtualWidth / 2,
                                                   0,
-                                                  WaveServices.ViewportManager.VirtualWidth / 2f,
-                                                  WaveServices.ViewportManager.VirtualHeight);
+                                                  this.VirtualScreenManager.VirtualWidth / 2f,
+                                                  this.VirtualScreenManager.VirtualHeight);
             var rightJoystick = new Joystick("rightJoystick", rightArea);
             EntityManager.Add(rightJoystick);
 

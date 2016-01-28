@@ -38,17 +38,9 @@ namespace SurvivorNinja.Components
             this.minCadence = TimeSpan.FromSeconds(0.5f);
             this.time = this.cadence;
 
-            var viewportManager = WaveServices.ViewportManager;
-            if (viewportManager.IsActivated)
-            {
-                this.center = new Vector2(viewportManager.VirtualWidth / 2, viewportManager.VirtualHeight / 2);
-            }
-            else
-            {
-                var platform = WaveServices.Platform;
-                this.center = new Vector2(platform.ScreenWidth / 2, platform.ScreenHeight / 2);
-            }
-
+            var virtualScreenManager = this.Owner.Scene.VirtualScreenManager;                       
+            this.center = new Vector2(virtualScreenManager.VirtualWidth / 2, virtualScreenManager.VirtualHeight / 2);
+            
             this.upVector = this.center + Vector2.UnitY * 500;
         }
 
