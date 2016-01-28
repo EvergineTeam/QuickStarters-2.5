@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// File generated on 20/01/2016 13:20:50
+// File generated on 1/28/2016 12:21:36 PM
 namespace NewImpossibleGame
 {
     using System;
@@ -23,8 +23,8 @@ namespace NewImpossibleGame
             public sealed class Materials
             {
                 
-                /// <summary> Path to Content/Assets/Materials/golfNormal.jpg </summary>
-                public const string golfNormal_jpg = "Content/Assets/Materials/golfNormal.jpg";
+                /// <summary> Path to Content/Assets/Materials/golfNormal.png </summary>
+                public const string golfNormal_png = "Content/Assets/Materials/golfNormal.png";
                 
                 /// <summary> Path to Content/Assets/Materials/BoxMaterial.wmat </summary>
                 public const string BoxMaterial = "Content/Assets/Materials/BoxMaterial.wmat";
@@ -57,8 +57,8 @@ namespace NewImpossibleGame
             public sealed class Textures
             {
                 
-                /// <summary> Path to Content/Assets/Textures/boxTexture.jpg </summary>
-                public const string boxTexture_jpg = "Content/Assets/Textures/boxTexture.jpg";
+                /// <summary> Path to Content/Assets/Textures/boxTexture.png </summary>
+                public const string boxTexture_png = "Content/Assets/Textures/boxTexture.png";
                 
                 /// <summary> Path to Content/Assets/Textures/floor.png </summary>
                 public const string floor_png = "Content/Assets/Textures/floor.png";
@@ -66,11 +66,11 @@ namespace NewImpossibleGame
                 /// <summary> Path to Content/Assets/Textures/nailBlock.png </summary>
                 public const string nailBlock_png = "Content/Assets/Textures/nailBlock.png";
                 
-                /// <summary> Path to Content/Assets/Textures/Speeder.jpg </summary>
-                public const string Speeder_jpg = "Content/Assets/Textures/Speeder.jpg";
+                /// <summary> Path to Content/Assets/Textures/Speeder.png </summary>
+                public const string Speeder_png = "Content/Assets/Textures/Speeder.png";
                 
-                /// <summary> Path to Content/Assets/Textures/SpikeTexture.jpg </summary>
-                public const string SpikeTexture_jpg = "Content/Assets/Textures/SpikeTexture.jpg";
+                /// <summary> Path to Content/Assets/Textures/SpikeTexture.png </summary>
+                public const string SpikeTexture_png = "Content/Assets/Textures/SpikeTexture.png";
                 
                 /// <summary> Path to Content/Assets/Textures/TopTube.png </summary>
                 public const string TopTube_png = "Content/Assets/Textures/TopTube.png";
