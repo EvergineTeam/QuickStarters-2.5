@@ -68,12 +68,6 @@
     <Reference Include="WaveEngine.ImageEffects">
       <HintPath>..\..\packages\WaveEngine.ImageEffects.2.0.5-alpha-20160128-158\lib\MonoAndroid\WaveEngine.ImageEffects.dll</HintPath>
     </Reference>
-    <Reference Include="WaveEngine.ImageEffects">
-      <HintPath>..\..\packages\WaveEngine.ImageEffects.2.0.5-alpha-20160128-158\lib\MonoAndroid\WaveEngine.ImageEffects.dll</HintPath>
-    </Reference>
-    <Reference Include="DolbyAPI">
-      <HintPath>..\..\packages\WaveEngine.Adapter.2.0.5-alpha-20160128-158\lib\MonoAndroid\DolbyAPI.dll</HintPath>
-    </Reference>
     <Reference Include="Mono.Android" />
     <Reference Include="mscorlib" />
     <Reference Include="OpenTK" />
