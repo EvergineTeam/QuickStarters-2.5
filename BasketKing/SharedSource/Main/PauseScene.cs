@@ -1,4 +1,5 @@
 ﻿#region Using Statements
+using BasketKing.Behaviors;
 using BasketKing.Commons;
 using BasketKing.Entities;
 using BasketKing.Managers;
@@ -9,9 +10,11 @@ using System.Text;
 using System.Threading.Tasks;
 using WaveEngine.Common.Graphics;
 using WaveEngine.Components.Cameras;
+using WaveEngine.Components.Graphics2D;
 using WaveEngine.Components.UI;
 using WaveEngine.Framework;
 using WaveEngine.Framework.Graphics;
+using WaveEngine.Framework.Resources;
 using WaveEngine.Framework.Services;
 using WaveEngine.Framework.UI;
 #endregion
@@ -41,25 +44,16 @@ namespace BasketKing
         {
             this.VirtualScreenManager.Activate(1024, 728, WaveEngine.Framework.Managers.StretchMode.Uniform);
 
-            FixedCamera2D camera2d = new FixedCamera2D("camera2d")
-            {
-                ClearFlags = ClearFlags.DepthAndStencil,
-            };
-            EntityManager.Add(camera2d);
-
             // Dark background
             Entity dark = new Entity()
-                                .AddComponent(new Transform2D()
-                                {
-                                    X = this.VirtualScreenManager.LeftEdge,
-                                    Y = this.VirtualScreenManager.TopEdge,
-                                    XScale = 1 / this.VirtualScreenManager.RatioX,
-                                    YScale = 1 / this.VirtualScreenManager.RatioY,
-                                    Opacity = 0.4f,
-                                    DrawOrder = 2f, 
-                                })
-                                .AddComponent(new ImageControl(Color.Black, (int)this.VirtualScreenManager.ScreenWidth, (int)this.VirtualScreenManager.ScreenHeight))
-                                .AddComponent(new ImageControlRenderer(DefaultLayers.GUI));
+            .AddComponent(new Transform2D()
+            {
+                Opacity = 0.4f,
+                DrawOrder = 2f,
+            })
+            .AddComponent(new Sprite(StaticResources.WhitePixel) { TintColor = Color.Black })
+            .AddComponent(new SpriteRenderer(DefaultLayers.Alpha))
+            .AddComponent(new StretchBehavior());
             EntityManager.Add(dark);
 
             // Pause text
@@ -122,6 +116,19 @@ namespace BasketKing
 
             // Scene behavior
             this.AddSceneBehavior(new DebugSceneBehavior(), SceneBehavior.Order.PostUpdate);
+        }
+
+        protected override void Start()
+        {
+            base.Start();
+
+            FixedCamera2D camera2d = new FixedCamera2D("camera2d")
+            {
+                ClearFlags = ClearFlags.DepthAndStencil,
+            };
+
+            EntityManager.Add(camera2d);
+            camera2d.Entity.FindComponent<Camera2D>().CenterScreen();
         }
     }
 }

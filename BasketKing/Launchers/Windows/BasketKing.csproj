@@ -43,25 +43,25 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
-    <Reference Include="WaveEngine.Adapter, Version=2.0.3.0, Culture=neutral, PublicKeyToken=6e72eaf7d6c3c55b, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files (x86)\WaveEngine\v2.0\Lib\Windows\WaveEngine.Adapter.dll</HintPath>
+    <Reference Include="WaveEngine.Adapter">
+      <HintPath>..\..\packages\WaveEngine.Adapter.2.0.5-alpha-20160126-153\lib\net45\WaveEngine.Adapter.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="WaveEngine.Common, Version=2.0.5.29595, Culture=neutral, PublicKeyToken=6e72eaf7d6c3c55b, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files (x86)\WaveEngine\v2.0\Lib\Windows\WaveEngine.Common.dll</HintPath>
+    <Reference Include="WaveEngine.Common">
+      <HintPath>..\..\packages\WaveEngine.Common.2.0.5-alpha-20160126-153\lib\net45\WaveEngine.Common.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="WaveEngine.Components, Version=2.0.5.29600, Culture=neutral, PublicKeyToken=6e72eaf7d6c3c55b, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files (x86)\WaveEngine\v2.0\Lib\Windows\WaveEngine.Components.dll</HintPath>
+    <Reference Include="WaveEngine.Components">
+      <HintPath>..\..\packages\WaveEngine.Components.2.0.5-alpha-20160126-153\lib\net45\WaveEngine.Components.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="WaveEngine.Framework, Version=2.0.5.29598, Culture=neutral, PublicKeyToken=6e72eaf7d6c3c55b, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files (x86)\WaveEngine\v2.0\Lib\Windows\WaveEngine.Framework.dll</HintPath>
+    <Reference Include="WaveEngine.Framework">
+      <HintPath>..\..\packages\WaveEngine.Framework.2.0.5-alpha-20160126-153\lib\net45\WaveEngine.Framework.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="WaveEngine.Materials, Version=2.0.5.29600, Culture=neutral, PublicKeyToken=6e72eaf7d6c3c55b, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files (x86)\WaveEngine\v2.0\Lib\Windows\WaveEngine.Materials.dll</HintPath>
+    <Reference Include="WaveEngine.Materials">
+      <HintPath>..\..\packages\WaveEngine.Materials.2.0.5-alpha-20160126-153\lib\net45\WaveEngine.Materials.dll</HintPath>
+      <Private>True</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
