@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using WaveEngine.Common.Math;
 using WaveEngine.Framework;
 using WaveEngine.Framework.Graphics;
+using WaveEngine.Framework.Managers;
 using WaveEngine.Framework.Physics2D;
 using WaveEngine.Framework.Services;
 #endregion
@@ -29,6 +30,7 @@ namespace SurvivorNinja.Behaviors
         private float rotationVelocity = MathHelper.ToRadians(15);
         private Bullet bullet;
         private HubPanel hubPanel;
+        private VirtualScreenManager virtualScreenManager;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="BulletBehavior" /> class.
@@ -47,6 +49,8 @@ namespace SurvivorNinja.Behaviors
             base.ResolveDependencies();
 
             this.hubPanel = EntityManager.Find<HubPanel>("HubPanel");
+
+            this.virtualScreenManager = this.Owner.Scene.VirtualScreenManager;
         }
 
         /// <summary>
@@ -70,8 +74,8 @@ namespace SurvivorNinja.Behaviors
             this.transform.Rotation += rotationVelocity * fps;
 
             // Limits
-            if (this.transform.X < WaveServices.ViewportManager.LeftEdge || this.transform.X > WaveServices.ViewportManager.RightEdge ||
-                this.transform.Y < WaveServices.ViewportManager.TopEdge || this.transform.Y > WaveServices.ViewportManager.BottomEdge)
+            if (this.transform.X < this.virtualScreenManager.LeftEdge || this.transform.X > this.virtualScreenManager.RightEdge ||
+                this.transform.Y < this.virtualScreenManager.TopEdge || this.transform.Y > this.virtualScreenManager.BottomEdge)
             {
                 this.Owner.IsVisible = false;
             }

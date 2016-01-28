@@ -14,6 +14,7 @@ using WaveEngine.Common.Math;
 using WaveEngine.Components.Graphics2D;
 using WaveEngine.Framework;
 using WaveEngine.Framework.Graphics;
+using WaveEngine.Framework.Managers;
 using WaveEngine.Framework.Services;
 #endregion
 
@@ -41,6 +42,7 @@ namespace SurvivorNinja.Behaviors
         private HubPanel hubPanel;
         
         private int borderMargin;
+        private VirtualScreenManager virtualScreenManager;
 
         /// <summary>
         /// Gets or sets the life.
@@ -88,7 +90,9 @@ namespace SurvivorNinja.Behaviors
             base.ResolveDependencies();
 
             this.leftJoystick = this.EntityManager.Find<Joystick>("leftJoystick");
-            this.rightJoystick = this.EntityManager.Find<Joystick>("rightJoystick");            
+            this.rightJoystick = this.EntityManager.Find<Joystick>("rightJoystick");
+
+            this.virtualScreenManager = this.Owner.Scene.VirtualScreenManager;        
         }
 
         protected override void Initialize()
@@ -147,10 +151,10 @@ namespace SurvivorNinja.Behaviors
             if (!float.IsNaN(moveDirection.X) && !float.IsNaN(moveDirection.Y))
             {
                 float x = this.transform.X + (moveDirection.X * velocity * 60 * (float)gameTime.TotalSeconds);
-                this.transform.X = MathHelper.Clamp(x, WaveServices.ViewportManager.LeftEdge + this.borderMargin, WaveServices.ViewportManager.RightEdge - borderMargin);
+                this.transform.X = MathHelper.Clamp(x, this.virtualScreenManager.LeftEdge + this.borderMargin, this.virtualScreenManager.RightEdge - borderMargin);
 
                 float y = this.transform.Y + (moveDirection.Y * velocity * 60 * (float)gameTime.TotalSeconds);
-                this.transform.Y = MathHelper.Clamp(y, WaveServices.ViewportManager.TopEdge + this.borderMargin, WaveServices.ViewportManager.BottomEdge - borderMargin);
+                this.transform.Y = MathHelper.Clamp(y, this.virtualScreenManager.TopEdge + this.borderMargin, this.virtualScreenManager.BottomEdge - borderMargin);
 
                 float rotation = Vector2.Angle(moveDirection, this.textureDirection);
                 if (float.IsNaN(rotation))
