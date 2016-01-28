@@ -67,6 +67,22 @@ namespace OrbitRabbits.Entities
         }
 
         /// <summary>
+        /// Gets or sets the Margin.
+        /// </summary>
+        public Thickness Margin
+        {
+            get
+            {
+                return this.entity.FindComponent<PanelControl>().Margin;
+            }
+
+            set
+            {
+                this.entity.FindComponent<PanelControl>().Margin = value;
+            }
+        }
+
+        /// <summary>
         /// Gets or sets the scores.
         /// </summary>
         public int Scores
@@ -97,10 +113,7 @@ namespace OrbitRabbits.Entities
             this.gameStorage = Catalog.GetItem<GameStorage>();
 
             this.entity = new Entity(name)
-                          .AddComponent(new Transform2D()
-                          {
-                              Y = WaveServices.ViewportManager.TopEdge
-                          })
+                          .AddComponent(new Transform2D())
                           .AddComponent(new PanelControl(241, 104))
                           .AddComponent(new PanelControlRenderer())
                            .AddChild(new Image(WaveContent.Assets.Textures.scorePanel_png)

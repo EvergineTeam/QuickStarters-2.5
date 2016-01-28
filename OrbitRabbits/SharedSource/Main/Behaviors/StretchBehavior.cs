@@ -9,6 +9,7 @@ using WaveEngine.Common.Helpers;
 using WaveEngine.Common.Math;
 using WaveEngine.Framework;
 using WaveEngine.Framework.Graphics;
+using WaveEngine.Framework.Managers;
 using WaveEngine.Framework.Services;
 using WaveEngine.Framework.UI;
 #endregion
@@ -23,8 +24,8 @@ namespace OrbitRabbits.Behaviors
 
         private bool dirtyFlag;
 
-        private ViewportManager viewportManager;
         private Platform platform;
+        private VirtualScreenManager viewportScreenManager;
 
         protected override void DefaultValues()
         {
@@ -36,9 +37,9 @@ namespace OrbitRabbits.Behaviors
         {
             base.ResolveDependencies();
 
-            this.viewportManager = WaveServices.ViewportManager;
             this.platform = WaveServices.Platform;
             this.platform.OnScreenSizeChanged += this.Platform_OnScreenSizeChanged;
+            this.viewportScreenManager = this.Owner.Scene.VirtualScreenManager;
         }
 
         protected override void DeleteDependencies()
@@ -58,22 +59,12 @@ namespace OrbitRabbits.Behaviors
             {
                 this.dirtyFlag = false;
 
-
                 this.transform.Origin = Vector2.Zero;
-                if (this.viewportManager.IsActivated)
-                {
-                    this.transform.X = this.viewportManager.LeftEdge;
-                    this.transform.Y = this.viewportManager.TopEdge;
-                    this.transform.XScale = ((this.viewportManager.ScreenWidth / this.transform.Rectangle.Width) / this.viewportManager.RatioX);
-                    this.transform.YScale = ((this.viewportManager.ScreenHeight / this.transform.Rectangle.Height) / this.viewportManager.RatioY);
-                }
-                else
-                {
-                    this.transform.X = this.RenderManager.ActiveCamera2D.Position.X - (this.platform.ScreenWidth / 2);
-                    this.transform.Y = this.RenderManager.ActiveCamera2D.Position.Y - (this.platform.ScreenHeight / 2);
-                    this.transform.XScale = ((this.platform.ScreenWidth / this.transform.Rectangle.Width));
-                    this.transform.YScale = ((this.platform.ScreenHeight / this.transform.Rectangle.Height));
-                }
+
+                this.transform.X = this.viewportScreenManager.LeftEdge;
+                this.transform.Y = this.viewportScreenManager.TopEdge;
+                this.transform.XScale = ((this.viewportScreenManager.ScreenWidth / this.transform.Rectangle.Width) / this.viewportScreenManager.RatioX);
+                this.transform.YScale = ((this.viewportScreenManager.ScreenHeight / this.transform.Rectangle.Height) / this.viewportScreenManager.RatioY);
             }
         }
     }

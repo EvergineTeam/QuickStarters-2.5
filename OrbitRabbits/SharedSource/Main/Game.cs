@@ -34,17 +34,13 @@ namespace OrbitRabbits
             application.Adapter.DefaultOrientation = DisplayOrientation.Portrait;
             application.Adapter.SupportedOrientations = DisplayOrientation.Portrait;
 
-            ViewportManager vm = WaveServices.ViewportManager;
-            vm.Activate(768, 1024, ViewportManager.StretchMode.Uniform);
-
-
-			ScreenContext screenContext = new ScreenContext(new MainMenuScene());
+            ScreenContext screenContext = new ScreenContext(new MainMenuScene());
 
             // Play background music
-            WaveServices.MusicPlayer.Play(new MusicInfo(WaveContent.Assets.Sounds.bg_music_mp3)); 
+            WaveServices.MusicPlayer.Play(new MusicInfo(WaveContent.Assets.Sounds.bg_music_mp3));
             WaveServices.MusicPlayer.IsRepeat = true;
 
-			WaveServices.ScreenContextManager.To(screenContext);
+            WaveServices.ScreenContextManager.To(screenContext);
         }
 
         /// <summary>

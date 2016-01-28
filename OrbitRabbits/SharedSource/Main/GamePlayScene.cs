@@ -51,15 +51,16 @@ namespace OrbitRabbits
                 IsBorder = false,
                 BackgroundImage = WaveContent.Assets.Textures.restartRelease_png,
                 PressedBackgroundImage = WaveContent.Assets.Textures.restartPressed_png,
-                Margin = new Thickness(10, WaveServices.ViewportManager.BottomEdge - 120, 0, 0)
+                Margin = new Thickness(10, -120, 0, 0)
             };
             EntityManager.Add(restart);
 
             // Score Panel            
             var scorePanel = new ScorePanel("ScorePanel")
             {
-                HorizontalAlignment = HorizontalAlignment.Right,
+                HorizontalAlignment = HorizontalAlignment.Center,
                 VerticalAlignment = VerticalAlignment.Top,
+                Margin = new Thickness(0, 0, -250, 0)
             };
 
             EntityManager.Add(scorePanel);

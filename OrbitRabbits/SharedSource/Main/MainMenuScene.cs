@@ -31,9 +31,6 @@ namespace OrbitRabbits
         protected override void CreateScene()
         {
             this.Load(@"Content/Scenes/MainMenuScene.wscene");
-
-            this.DetaultCamera2D.FindComponent<Camera2D>().CenterScreen();
-
             this.CreateUI();
         }
 
@@ -48,7 +45,8 @@ namespace OrbitRabbits
                 Height = 639,
                 BackgroundImage = WaveContent.Assets.Textures.moonRelease_png,
                 PressedBackgroundImage = WaveContent.Assets.Textures.moonRelease_png,
-                Margin = new Thickness(76, 425, 0, 0),
+                HorizontalAlignment = WaveEngine.Framework.UI.HorizontalAlignment.Center,
+                Margin = new Thickness(0, 425, 0, 0),
             };
 
             moonButton.Entity.AddComponent(new ScaleCycleBehavior()
@@ -58,7 +56,6 @@ namespace OrbitRabbits
                     Period = 0.3f
                 });
                         
-            moonButton.Entity.FindChild("ImageEntity").FindComponent<Transform2D>().Origin = Vector2.Center;
             moonButton.Click += (s, o) =>
             {
                 SoundsManager.Instance.PlaySound(SoundsManager.SOUNDS.Click);
@@ -74,7 +71,8 @@ namespace OrbitRabbits
                 Foreground = new Color(119 / 255f, 250 / 255f, 255 / 255f),
                 Text = "Play",
                 VerticalAlignment = VerticalAlignment.Top,
-                Margin = new Thickness(360, 885, 0, 0),
+                HorizontalAlignment = WaveEngine.Framework.UI.HorizontalAlignment.Center,
+                Margin = new Thickness(0, 885, 0, 0),
             };
             EntityManager.Add(playText);
 
@@ -87,7 +85,7 @@ namespace OrbitRabbits
                 Text = "YOUR BEST SCORE:",
                 Margin = new Thickness(
                     40,
-                    WaveServices.ViewportManager.BottomEdge - 40,
+                    -40,
                     0,
                     0),
             };
@@ -103,7 +101,7 @@ namespace OrbitRabbits
                 Text = gameStorage.BestScore.ToString(),
                 Margin = new Thickness(
                     300,
-                    WaveServices.ViewportManager.BottomEdge - 40,
+                    -40,
                     0,
                     0)
             };
