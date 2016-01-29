@@ -53,12 +53,12 @@ namespace SuperSquid.Scenes
                     .AddComponent(new Transform2D()
                     {
                         DrawOrder = 1f,
-                        X = WaveServices.ViewportManager.LeftEdge
+                        X = this.VirtualScreenManager.LeftEdge
                     })
                     .AddComponent(new ImageControl(
                         Color.Black,
-                        (int)-WaveServices.ViewportManager.LeftEdge,
-                        (int)WaveServices.ViewportManager.VirtualHeight))
+                        (int)-this.VirtualScreenManager.LeftEdge,
+                        (int)this.VirtualScreenManager.VirtualHeight))
                     .AddComponent(new ImageControlRenderer(DefaultLayers.GUI));
             EntityManager.Add(rightBlackpanel);
 
@@ -66,12 +66,12 @@ namespace SuperSquid.Scenes
                     .AddComponent(new Transform2D()
                     {
                         DrawOrder = 1f,
-                        X = WaveServices.ViewportManager.VirtualWidth
+                        X = this.VirtualScreenManager.VirtualWidth
                     })
                     .AddComponent(new ImageControl(
                         Color.Black,
-                        (int)-WaveServices.ViewportManager.LeftEdge,
-                        (int)WaveServices.ViewportManager.VirtualHeight))
+                        (int)-this.VirtualScreenManager.LeftEdge,
+                        (int)this.VirtualScreenManager.VirtualHeight))
                     .AddComponent(new ImageControlRenderer(DefaultLayers.GUI));
             EntityManager.Add(leftBlackpanel);
 

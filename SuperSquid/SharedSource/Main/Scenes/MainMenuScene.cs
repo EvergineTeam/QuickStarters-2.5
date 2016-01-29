@@ -114,7 +114,7 @@ namespace SuperSquid.Scenes
             float viewportWidthOverTwo = 768 / 2;
             Duration duration = TimeSpan.FromSeconds(1);
             superAppear = new SingleAnimation(-viewportWidthOverTwo, viewportWidthOverTwo, duration, EasingFunctions.Back);
-            squidAppear = new SingleAnimation(WaveServices.ViewportManager.VirtualWidth * 2, viewportWidthOverTwo, duration, EasingFunctions.Back);
+            squidAppear = new SingleAnimation(this.VirtualScreenManager.VirtualWidth * 2, viewportWidthOverTwo, duration, EasingFunctions.Back);
             playScaleAppear = new SingleAnimation(0.2f, 1f, TimeSpan.FromSeconds(2), EasingFunctions.Back);
             playOpacityAppear = new SingleAnimation(0, 1, duration, EasingFunctions.Cubic);
 

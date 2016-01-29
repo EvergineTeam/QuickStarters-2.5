@@ -24,13 +24,14 @@ using WaveEngine.Common.Math;
 using WaveEngine.Components.Transitions;
 using WaveEngine.Framework;
 using WaveEngine.Framework.Diagnostic;
+using WaveEngine.Framework.Managers;
 using WaveEngine.Framework.Physics2D;
 using WaveEngine.Framework.Services;
 #endregion
 
 namespace SuperSquid.Entities.Behaviors
 {
-    [DataContract(Namespace = "SuperSquid.Entities.Behaviors")] 
+    [DataContract(Namespace = "SuperSquid.Entities.Behaviors")]
     public class BlockBuilderBehavior : Behavior
     {
         private const int MAX_VISIBLE_BLOCKS = 2;
@@ -42,11 +43,12 @@ namespace SuperSquid.Entities.Behaviors
 
         private SoundManager soundManager;
 
-        private GamePlayManager gamePlayManager;        
+        private GamePlayManager gamePlayManager;
         private float scrollVelocity;
 
         public event EventHandler OnCollision;
         public event EventHandler OnStarCollected;
+        private VirtualScreenManager vm;
 
         protected override void DefaultValues()
         {
@@ -75,6 +77,8 @@ namespace SuperSquid.Entities.Behaviors
             {
                 this.gamePlayManager = gamePlayEntity.FindComponent<GamePlayManager>();
             }
+
+            this.vm = this.Owner.Scene.VirtualScreenManager;
         }
 
         /// <summary>
@@ -104,7 +108,7 @@ namespace SuperSquid.Entities.Behaviors
         /// </remarks>
         protected override void Update(TimeSpan gameTime)
         {
-            float virtualScreenHeight = WaveServices.ViewportManager.BottomEdge - WaveServices.ViewportManager.TopEdge;
+            float virtualScreenHeight = this.vm.BottomEdge - this.vm.TopEdge;
 
             foreach (RocksBlock block in this.visibleBlocks.ToList())
             {
@@ -112,8 +116,8 @@ namespace SuperSquid.Entities.Behaviors
 
                 if (block.CheckStarCollision(this.squidCollider))
                 {
-                    this.soundManager.PlaySound(SoundManager.SOUNDS.Star);                    
-                    if(this.OnStarCollected != null)
+                    this.soundManager.PlaySound(SoundManager.SOUNDS.Star);
+                    if (this.OnStarCollected != null)
                     {
                         this.OnStarCollected(this, null);
                     }
@@ -139,10 +143,10 @@ namespace SuperSquid.Entities.Behaviors
                         this.OnCollision(this, null);
                     }
 
-                    break; 
+                    break;
                 }
 
-                var diff = block.Transform2D.Y - WaveServices.ViewportManager.BottomEdge;
+                var diff = block.Transform2D.Y - this.vm.BottomEdge;
                 if (diff > 0)
                 {
                     // Remove this block
@@ -186,14 +190,7 @@ namespace SuperSquid.Entities.Behaviors
 
             float screenHeight;
 
-            if(WaveServices.ViewportManager.IsActivated)
-            {
-                screenHeight = WaveServices.ViewportManager.BottomEdge - WaveServices.ViewportManager.TopEdge;
-            }
-            else
-            {
-                screenHeight = WaveServices.Platform.ScreenHeight;
-            }
+            screenHeight = this.vm.BottomEdge - this.vm.TopEdge;
 
             // Add initial blocks
             for (int i = 0; i < MAX_VISIBLE_BLOCKS; i++)
