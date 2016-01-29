@@ -9,6 +9,7 @@ using WaveEngine.Common.Helpers;
 using WaveEngine.Common.Math;
 using WaveEngine.Framework;
 using WaveEngine.Framework.Graphics;
+using WaveEngine.Framework.Managers;
 using WaveEngine.Framework.Services;
 using WaveEngine.Framework.UI;
 #endregion
@@ -23,7 +24,7 @@ namespace SuperSquid.Behaviors
 
         private bool dirtyFlag;
 
-        private ViewportManager viewportManager;
+        private VirtualScreenManager virtualScreenManager;
         private Platform platform;
 
         protected override void DefaultValues()
@@ -36,7 +37,7 @@ namespace SuperSquid.Behaviors
         {
             base.ResolveDependencies();
 
-            this.viewportManager = WaveServices.ViewportManager;
+            this.virtualScreenManager = this.Owner.Scene.VirtualScreenManager;
             this.platform = WaveServices.Platform;
             this.platform.OnScreenSizeChanged += this.Platform_OnScreenSizeChanged;
         }
@@ -58,22 +59,11 @@ namespace SuperSquid.Behaviors
             {
                 this.dirtyFlag = false;
 
-
                 this.transform.Origin = Vector2.Zero;
-                if (this.viewportManager.IsActivated)
-                {
-                    this.transform.X = this.viewportManager.LeftEdge;
-                    this.transform.Y = this.viewportManager.TopEdge;
-                    this.transform.XScale = ((this.viewportManager.ScreenWidth / this.transform.Rectangle.Width) / this.viewportManager.RatioX);
-                    this.transform.YScale = ((this.viewportManager.ScreenHeight / this.transform.Rectangle.Height) / this.viewportManager.RatioY);
-                }
-                else
-                {
-                    this.transform.X = this.RenderManager.ActiveCamera2D.Position.X - (this.platform.ScreenWidth / 2);
-                    this.transform.Y = this.RenderManager.ActiveCamera2D.Position.Y - (this.platform.ScreenHeight / 2);
-                    this.transform.XScale = ((this.platform.ScreenWidth / this.transform.Rectangle.Width));
-                    this.transform.YScale = ((this.platform.ScreenHeight / this.transform.Rectangle.Height));
-                }
+                this.transform.X = this.virtualScreenManager.LeftEdge;
+                this.transform.Y = this.virtualScreenManager.TopEdge;
+                this.transform.XScale = ((this.virtualScreenManager.ScreenWidth / this.transform.Rectangle.Width) / this.virtualScreenManager.RatioX);
+                this.transform.YScale = ((this.virtualScreenManager.ScreenHeight / this.transform.Rectangle.Height) / this.virtualScreenManager.RatioY);
             }
         }
     }

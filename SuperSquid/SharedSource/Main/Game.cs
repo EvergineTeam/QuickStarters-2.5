@@ -40,11 +40,7 @@ namespace SuperSquid
             Catalog.RegisterItem(gameStorage);
 
             // Register the SoundManager service
-            WaveServices.RegisterService<SoundManager>(new SoundManager());
-
-            // Use ViewportManager to ensure scaling in all devices
-            ViewportManager vm = WaveServices.ViewportManager;
-            vm.Activate(768, 1024, ViewportManager.StretchMode.Uniform);
+            WaveServices.RegisterService<SoundManager>(new SoundManager());           
 
             var backContext = new ScreenContext("BackContext", new BackgroundScene())
             {

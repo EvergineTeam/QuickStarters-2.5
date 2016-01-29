@@ -24,6 +24,7 @@ using WaveEngine.Framework;
 using WaveEngine.Framework.Animation;
 using WaveEngine.Framework.Diagnostic;
 using WaveEngine.Framework.Graphics;
+using WaveEngine.Framework.Managers;
 using WaveEngine.Framework.Physics2D;
 using WaveEngine.Framework.Services;
 #endregion
@@ -51,7 +52,7 @@ namespace SuperSquid.Entities.Behaviors
 
         private Input inputManager;
         private TimerFactory timerFactory;
-        private ViewportManager viewportManager;
+        private VirtualScreenManager virtualScreenManager;
         private SoundManager soundManager;
 
         private float maxRotation;
@@ -65,8 +66,7 @@ namespace SuperSquid.Entities.Behaviors
 
             this.maxRotation = MathHelper.ToRadians(20);
             this.inputManager = WaveServices.Input;
-            this.timerFactory = WaveServices.TimerFactory;
-            this.viewportManager = WaveServices.ViewportManager;
+            this.timerFactory = WaveServices.TimerFactory;            
             this.soundManager = WaveServices.GetService<SoundManager>();
         }
 
@@ -90,6 +90,8 @@ namespace SuperSquid.Entities.Behaviors
             float gamePlayPosY = this.transform2D.Y;
             float initialPosY = gamePlayPosY + 400;
             this.appearAnim = new SingleAnimation(initialPosY, gamePlayPosY, TimeSpan.FromSeconds(1.5f), EasingFunctions.Cubic);
+
+            this.virtualScreenManager = this.Owner.Scene.VirtualScreenManager;
         }
 
         protected override void ResolveDependencies()
@@ -117,7 +119,7 @@ namespace SuperSquid.Entities.Behaviors
         /// </summary>
         public void Appear()
         {
-            this.transform2D.X = WaveServices.ViewportManager.VirtualWidth / 2;
+            this.transform2D.X = this.virtualScreenManager.VirtualWidth / 2;
             this.animationUI.BeginAnimation(Transform2D.YProperty, this.appearAnim);
 
         }
@@ -162,14 +164,7 @@ namespace SuperSquid.Entities.Behaviors
                 transform2D.X -= 0.25f * (float)gameTime.TotalMilliseconds;
             }
 
-            if (this.viewportManager.IsActivated)
-            {
-                this.transform2D.X = Math.Max(0, Math.Min(this.viewportManager.VirtualWidth, this.transform2D.X));
-            }
-            else
-            {
-                this.transform2D.X = Math.Max(0, Math.Min(WaveServices.Platform.ScreenWidth, this.transform2D.X));
-            }
+            this.transform2D.X = Math.Max(0, Math.Min(this.virtualScreenManager.VirtualWidth, this.transform2D.X));
 
             // Vectical impulse by Touch tap, Up key or Space key
             if (this.inputManager.TouchPanelState.Count > 0

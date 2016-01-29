@@ -47,7 +47,7 @@ namespace SuperSquid.Entities
         {
             StackPanel stack = new StackPanel(name)
             {
-                Width = (int)WaveServices.ViewportManager.VirtualWidth,
+                Width = (int)768,
                 Height = 76,
                 HorizontalAlignment = HorizontalAlignment.Right,
                 VerticalAlignment = VerticalAlignment.Bottom,

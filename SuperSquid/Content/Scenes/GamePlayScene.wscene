@@ -15,8 +15,8 @@
             <d6p1:Z>0</d6p1:Z>
           </d5p1:LocalOrientation>
           <d5p1:LocalPosition xmlns:d6p1="WaveEngine.Common.Math">
-            <d6p1:X>415.999481</d6p1:X>
-            <d6p1:Y>382.90094</d6p1:Y>
+            <d6p1:X>381</d6p1:X>
+            <d6p1:Y>512</d6p1:Y>
             <d6p1:Z>0</d6p1:Z>
           </d5p1:LocalPosition>
           <d5p1:LocalScale xmlns:d6p1="WaveEngine.Common.Math">
@@ -36,6 +36,11 @@
             <d6p1:X>0</d6p1:X>
             <d6p1:Y>0</d6p1:Y>
           </d5p1:origin>
+          <d5p1:screenPosition xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+            <d6p1:X>0</d6p1:X>
+            <d6p1:Y>0</d6p1:Y>
+          </d5p1:screenPosition>
+          <d5p1:transformMode>Standard</d5p1:transformMode>
         </d2p1:Component>
         <d2p1:Component xmlns:d5p1="WaveEngine.Framework.Graphics" i:type="d5p1:Camera2D">
           <d5p1:BackgroundColor xmlns:d6p1="WaveEngine.Common.Graphics">
@@ -64,6 +69,7 @@
             <d6p1:X>0</d6p1:X>
             <d6p1:Y>0</d6p1:Y>
           </d5p1:Viewport>
+          <d5p1:customVirtualScreen xmlns:d6p1="WaveEngine.Framework.Managers" i:nil="true" />
           <d5p1:distance>0</d5p1:distance>
           <d5p1:rotation>0</d5p1:rotation>
           <d5p1:vanishingPoint xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
@@ -113,6 +119,11 @@
             <d6p1:X>0</d6p1:X>
             <d6p1:Y>0</d6p1:Y>
           </d5p1:origin>
+          <d5p1:screenPosition xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+            <d6p1:X>0</d6p1:X>
+            <d6p1:Y>0</d6p1:Y>
+          </d5p1:screenPosition>
+          <d5p1:transformMode>Standard</d5p1:transformMode>
         </d2p1:Component>
         <d2p1:Component xmlns:d5p1="SuperSquid.Components" i:type="d5p1:GamePlayManager" />
       </d2p1:SerializeComponents>
@@ -158,6 +169,11 @@
                 <d8p1:X>0.5</d8p1:X>
                 <d8p1:Y>0.5</d8p1:Y>
               </d7p1:origin>
+              <d7p1:screenPosition xmlns:d8p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                <d8p1:X>0</d8p1:X>
+                <d8p1:Y>0</d8p1:Y>
+              </d7p1:screenPosition>
+              <d7p1:transformMode>Standard</d7p1:transformMode>
             </d2p1:Component>
             <d2p1:Component xmlns:d7p1="WaveEngine.Components.Graphics3D" i:type="d7p1:MaterialsMap">
               <d7p1:DefaultMaterialPath>Content/Assets/Materials/WaterParticleMaterial.wmat</d7p1:DefaultMaterialPath>
@@ -264,6 +280,11 @@
             <d6p1:X>0.5</d6p1:X>
             <d6p1:Y>0.22</d6p1:Y>
           </d5p1:origin>
+          <d5p1:screenPosition xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+            <d6p1:X>0</d6p1:X>
+            <d6p1:Y>0</d6p1:Y>
+          </d5p1:screenPosition>
+          <d5p1:transformMode>Standard</d5p1:transformMode>
         </d2p1:Component>
         <d2p1:Component xmlns:d5p1="WaveEngine.Components.Graphics2D" i:type="d5p1:SpriteAtlas">
           <d5p1:TintColor xmlns:d6p1="WaveEngine.Common.Graphics">
@@ -385,6 +406,11 @@
                     <d10p1:X>0.5</d10p1:X>
                     <d10p1:Y>0.5</d10p1:Y>
                   </d9p1:origin>
+                  <d9p1:screenPosition xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                    <d10p1:X>0</d10p1:X>
+                    <d10p1:Y>0</d10p1:Y>
+                  </d9p1:screenPosition>
+                  <d9p1:transformMode>Standard</d9p1:transformMode>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:SpriteAtlas">
                   <d9p1:TintColor xmlns:d10p1="WaveEngine.Common.Graphics">
@@ -494,6 +520,11 @@
                     <d10p1:X>0.5</d10p1:X>
                     <d10p1:Y>0.5</d10p1:Y>
                   </d9p1:origin>
+                  <d9p1:screenPosition xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                    <d10p1:X>0</d10p1:X>
+                    <d10p1:Y>0</d10p1:Y>
+                  </d9p1:screenPosition>
+                  <d9p1:transformMode>Standard</d9p1:transformMode>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:Sprite">
                   <d9p1:IsGlobalAsset>false</d9p1:IsGlobalAsset>
@@ -580,6 +611,11 @@
                     <d10p1:X>0.5</d10p1:X>
                     <d10p1:Y>0.5</d10p1:Y>
                   </d9p1:origin>
+                  <d9p1:screenPosition xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                    <d10p1:X>0</d10p1:X>
+                    <d10p1:Y>0</d10p1:Y>
+                  </d9p1:screenPosition>
+                  <d9p1:transformMode>Standard</d9p1:transformMode>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:Sprite">
                   <d9p1:IsGlobalAsset>false</d9p1:IsGlobalAsset>
@@ -666,6 +702,11 @@
                     <d10p1:X>0.5</d10p1:X>
                     <d10p1:Y>0.5</d10p1:Y>
                   </d9p1:origin>
+                  <d9p1:screenPosition xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                    <d10p1:X>0</d10p1:X>
+                    <d10p1:Y>0</d10p1:Y>
+                  </d9p1:screenPosition>
+                  <d9p1:transformMode>Standard</d9p1:transformMode>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:SpriteAtlas">
                   <d9p1:TintColor xmlns:d10p1="WaveEngine.Common.Graphics">
@@ -775,6 +816,11 @@
                     <d10p1:X>0.5</d10p1:X>
                     <d10p1:Y>0.5</d10p1:Y>
                   </d9p1:origin>
+                  <d9p1:screenPosition xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                    <d10p1:X>0</d10p1:X>
+                    <d10p1:Y>0</d10p1:Y>
+                  </d9p1:screenPosition>
+                  <d9p1:transformMode>Standard</d9p1:transformMode>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:SpriteAtlas">
                   <d9p1:TintColor xmlns:d10p1="WaveEngine.Common.Graphics">
@@ -889,6 +935,11 @@
                         <d12p1:X>0.5</d12p1:X>
                         <d12p1:Y>1</d12p1:Y>
                       </d11p1:origin>
+                      <d11p1:screenPosition xmlns:d12p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                        <d12p1:X>0</d12p1:X>
+                        <d12p1:Y>0</d12p1:Y>
+                      </d11p1:screenPosition>
+                      <d11p1:transformMode>Standard</d11p1:transformMode>
                     </d2p1:Component>
                     <d2p1:Component xmlns:d11p1="WaveEngine.Components.Graphics2D" i:type="d11p1:SpriteAtlas">
                       <d11p1:TintColor xmlns:d12p1="WaveEngine.Common.Graphics">
@@ -950,6 +1001,11 @@
                     <d10p1:X>1</d10p1:X>
                     <d10p1:Y>0</d10p1:Y>
                   </d9p1:origin>
+                  <d9p1:screenPosition xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                    <d10p1:X>0</d10p1:X>
+                    <d10p1:Y>0</d10p1:Y>
+                  </d9p1:screenPosition>
+                  <d9p1:transformMode>Standard</d9p1:transformMode>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:Sprite">
                   <d9p1:IsGlobalAsset>false</d9p1:IsGlobalAsset>
@@ -1047,6 +1103,11 @@
                         <d12p1:X>0.5</d12p1:X>
                         <d12p1:Y>1</d12p1:Y>
                       </d11p1:origin>
+                      <d11p1:screenPosition xmlns:d12p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                        <d12p1:X>0</d12p1:X>
+                        <d12p1:Y>0</d12p1:Y>
+                      </d11p1:screenPosition>
+                      <d11p1:transformMode>Standard</d11p1:transformMode>
                     </d2p1:Component>
                     <d2p1:Component xmlns:d11p1="WaveEngine.Components.Graphics2D" i:type="d11p1:SpriteAtlas">
                       <d11p1:TintColor xmlns:d12p1="WaveEngine.Common.Graphics">
@@ -1108,6 +1169,11 @@
                     <d10p1:X>0</d10p1:X>
                     <d10p1:Y>0</d10p1:Y>
                   </d9p1:origin>
+                  <d9p1:screenPosition xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                    <d10p1:X>0</d10p1:X>
+                    <d10p1:Y>0</d10p1:Y>
+                  </d9p1:screenPosition>
+                  <d9p1:transformMode>Standard</d9p1:transformMode>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:Sprite">
                   <d9p1:IsGlobalAsset>false</d9p1:IsGlobalAsset>
@@ -1196,6 +1262,11 @@
                 <d8p1:X>0</d8p1:X>
                 <d8p1:Y>0</d8p1:Y>
               </d7p1:origin>
+              <d7p1:screenPosition xmlns:d8p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                <d8p1:X>0</d8p1:X>
+                <d8p1:Y>0</d8p1:Y>
+              </d7p1:screenPosition>
+              <d7p1:transformMode>Standard</d7p1:transformMode>
             </d2p1:Component>
             <d2p1:Component xmlns:d7p1="SuperSquid.Components" i:type="d7p1:RocksBlock" />
           </d2p1:SerializeComponents>
@@ -1241,6 +1312,11 @@
                     <d10p1:X>0.5</d10p1:X>
                     <d10p1:Y>0.5</d10p1:Y>
                   </d9p1:origin>
+                  <d9p1:screenPosition xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                    <d10p1:X>0</d10p1:X>
+                    <d10p1:Y>0</d10p1:Y>
+                  </d9p1:screenPosition>
+                  <d9p1:transformMode>Standard</d9p1:transformMode>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:SpriteAtlas">
                   <d9p1:TintColor xmlns:d10p1="WaveEngine.Common.Graphics">
@@ -1350,6 +1426,11 @@
                     <d10p1:X>0.5</d10p1:X>
                     <d10p1:Y>0.5</d10p1:Y>
                   </d9p1:origin>
+                  <d9p1:screenPosition xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                    <d10p1:X>0</d10p1:X>
+                    <d10p1:Y>0</d10p1:Y>
+                  </d9p1:screenPosition>
+                  <d9p1:transformMode>Standard</d9p1:transformMode>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:Sprite">
                   <d9p1:IsGlobalAsset>false</d9p1:IsGlobalAsset>
@@ -1436,6 +1517,11 @@
                     <d10p1:X>0.5</d10p1:X>
                     <d10p1:Y>0.5</d10p1:Y>
                   </d9p1:origin>
+                  <d9p1:screenPosition xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                    <d10p1:X>0</d10p1:X>
+                    <d10p1:Y>0</d10p1:Y>
+                  </d9p1:screenPosition>
+                  <d9p1:transformMode>Standard</d9p1:transformMode>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:Sprite">
                   <d9p1:IsGlobalAsset>false</d9p1:IsGlobalAsset>
@@ -1522,6 +1608,11 @@
                     <d10p1:X>0.5</d10p1:X>
                     <d10p1:Y>0.5</d10p1:Y>
                   </d9p1:origin>
+                  <d9p1:screenPosition xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                    <d10p1:X>0</d10p1:X>
+                    <d10p1:Y>0</d10p1:Y>
+                  </d9p1:screenPosition>
+                  <d9p1:transformMode>Standard</d9p1:transformMode>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:SpriteAtlas">
                   <d9p1:TintColor xmlns:d10p1="WaveEngine.Common.Graphics">
@@ -1631,6 +1722,11 @@
                     <d10p1:X>0.5</d10p1:X>
                     <d10p1:Y>0.5</d10p1:Y>
                   </d9p1:origin>
+                  <d9p1:screenPosition xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                    <d10p1:X>0</d10p1:X>
+                    <d10p1:Y>0</d10p1:Y>
+                  </d9p1:screenPosition>
+                  <d9p1:transformMode>Standard</d9p1:transformMode>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:SpriteAtlas">
                   <d9p1:TintColor xmlns:d10p1="WaveEngine.Common.Graphics">
@@ -1745,6 +1841,11 @@
                         <d12p1:X>0.5</d12p1:X>
                         <d12p1:Y>1</d12p1:Y>
                       </d11p1:origin>
+                      <d11p1:screenPosition xmlns:d12p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                        <d12p1:X>0</d12p1:X>
+                        <d12p1:Y>0</d12p1:Y>
+                      </d11p1:screenPosition>
+                      <d11p1:transformMode>Standard</d11p1:transformMode>
                     </d2p1:Component>
                     <d2p1:Component xmlns:d11p1="WaveEngine.Components.Graphics2D" i:type="d11p1:SpriteAtlas">
                       <d11p1:TintColor xmlns:d12p1="WaveEngine.Common.Graphics">
@@ -1806,6 +1907,11 @@
                     <d10p1:X>1</d10p1:X>
                     <d10p1:Y>0</d10p1:Y>
                   </d9p1:origin>
+                  <d9p1:screenPosition xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                    <d10p1:X>0</d10p1:X>
+                    <d10p1:Y>0</d10p1:Y>
+                  </d9p1:screenPosition>
+                  <d9p1:transformMode>Standard</d9p1:transformMode>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:Sprite">
                   <d9p1:IsGlobalAsset>false</d9p1:IsGlobalAsset>
@@ -1894,6 +2000,11 @@
                 <d8p1:X>0</d8p1:X>
                 <d8p1:Y>0</d8p1:Y>
               </d7p1:origin>
+              <d7p1:screenPosition xmlns:d8p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                <d8p1:X>0</d8p1:X>
+                <d8p1:Y>0</d8p1:Y>
+              </d7p1:screenPosition>
+              <d7p1:transformMode>Standard</d7p1:transformMode>
             </d2p1:Component>
             <d2p1:Component xmlns:d7p1="SuperSquid.Components" i:type="d7p1:RocksBlock" />
           </d2p1:SerializeComponents>
@@ -1939,6 +2050,11 @@
                     <d10p1:X>0.5</d10p1:X>
                     <d10p1:Y>0.5</d10p1:Y>
                   </d9p1:origin>
+                  <d9p1:screenPosition xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                    <d10p1:X>0</d10p1:X>
+                    <d10p1:Y>0</d10p1:Y>
+                  </d9p1:screenPosition>
+                  <d9p1:transformMode>Standard</d9p1:transformMode>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:SpriteAtlas">
                   <d9p1:TintColor xmlns:d10p1="WaveEngine.Common.Graphics">
@@ -2048,6 +2164,11 @@
                     <d10p1:X>0.5</d10p1:X>
                     <d10p1:Y>0.5</d10p1:Y>
                   </d9p1:origin>
+                  <d9p1:screenPosition xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                    <d10p1:X>0</d10p1:X>
+                    <d10p1:Y>0</d10p1:Y>
+                  </d9p1:screenPosition>
+                  <d9p1:transformMode>Standard</d9p1:transformMode>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:Sprite">
                   <d9p1:IsGlobalAsset>false</d9p1:IsGlobalAsset>
@@ -2134,6 +2255,11 @@
                     <d10p1:X>0.5</d10p1:X>
                     <d10p1:Y>0.5</d10p1:Y>
                   </d9p1:origin>
+                  <d9p1:screenPosition xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                    <d10p1:X>0</d10p1:X>
+                    <d10p1:Y>0</d10p1:Y>
+                  </d9p1:screenPosition>
+                  <d9p1:transformMode>Standard</d9p1:transformMode>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:Sprite">
                   <d9p1:IsGlobalAsset>false</d9p1:IsGlobalAsset>
@@ -2220,6 +2346,11 @@
                     <d10p1:X>0.5</d10p1:X>
                     <d10p1:Y>0.5</d10p1:Y>
                   </d9p1:origin>
+                  <d9p1:screenPosition xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                    <d10p1:X>0</d10p1:X>
+                    <d10p1:Y>0</d10p1:Y>
+                  </d9p1:screenPosition>
+                  <d9p1:transformMode>Standard</d9p1:transformMode>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:Sprite">
                   <d9p1:IsGlobalAsset>false</d9p1:IsGlobalAsset>
@@ -2306,6 +2437,11 @@
                     <d10p1:X>0.5</d10p1:X>
                     <d10p1:Y>0.5</d10p1:Y>
                   </d9p1:origin>
+                  <d9p1:screenPosition xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                    <d10p1:X>0</d10p1:X>
+                    <d10p1:Y>0</d10p1:Y>
+                  </d9p1:screenPosition>
+                  <d9p1:transformMode>Standard</d9p1:transformMode>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:SpriteAtlas">
                   <d9p1:TintColor xmlns:d10p1="WaveEngine.Common.Graphics">
@@ -2415,6 +2551,11 @@
                     <d10p1:X>0.5</d10p1:X>
                     <d10p1:Y>0.5</d10p1:Y>
                   </d9p1:origin>
+                  <d9p1:screenPosition xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                    <d10p1:X>0</d10p1:X>
+                    <d10p1:Y>0</d10p1:Y>
+                  </d9p1:screenPosition>
+                  <d9p1:transformMode>Standard</d9p1:transformMode>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:SpriteAtlas">
                   <d9p1:TintColor xmlns:d10p1="WaveEngine.Common.Graphics">
@@ -2520,6 +2661,11 @@
                 <d8p1:X>0</d8p1:X>
                 <d8p1:Y>0</d8p1:Y>
               </d7p1:origin>
+              <d7p1:screenPosition xmlns:d8p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                <d8p1:X>0</d8p1:X>
+                <d8p1:Y>0</d8p1:Y>
+              </d7p1:screenPosition>
+              <d7p1:transformMode>Standard</d7p1:transformMode>
             </d2p1:Component>
             <d2p1:Component xmlns:d7p1="SuperSquid.Components" i:type="d7p1:RocksBlock" />
           </d2p1:SerializeComponents>
@@ -2570,6 +2716,11 @@
                         <d12p1:X>0.5</d12p1:X>
                         <d12p1:Y>1</d12p1:Y>
                       </d11p1:origin>
+                      <d11p1:screenPosition xmlns:d12p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                        <d12p1:X>0</d12p1:X>
+                        <d12p1:Y>0</d12p1:Y>
+                      </d11p1:screenPosition>
+                      <d11p1:transformMode>Standard</d11p1:transformMode>
                     </d2p1:Component>
                     <d2p1:Component xmlns:d11p1="WaveEngine.Components.Graphics2D" i:type="d11p1:SpriteAtlas">
                       <d11p1:TintColor xmlns:d12p1="WaveEngine.Common.Graphics">
@@ -2631,6 +2782,11 @@
                     <d10p1:X>0</d10p1:X>
                     <d10p1:Y>0</d10p1:Y>
                   </d9p1:origin>
+                  <d9p1:screenPosition xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                    <d10p1:X>0</d10p1:X>
+                    <d10p1:Y>0</d10p1:Y>
+                  </d9p1:screenPosition>
+                  <d9p1:transformMode>Standard</d9p1:transformMode>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:Sprite">
                   <d9p1:IsGlobalAsset>false</d9p1:IsGlobalAsset>
@@ -2728,6 +2884,11 @@
                         <d12p1:X>0.5</d12p1:X>
                         <d12p1:Y>1</d12p1:Y>
                       </d11p1:origin>
+                      <d11p1:screenPosition xmlns:d12p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                        <d12p1:X>0</d12p1:X>
+                        <d12p1:Y>0</d12p1:Y>
+                      </d11p1:screenPosition>
+                      <d11p1:transformMode>Standard</d11p1:transformMode>
                     </d2p1:Component>
                     <d2p1:Component xmlns:d11p1="WaveEngine.Components.Graphics2D" i:type="d11p1:SpriteAtlas">
                       <d11p1:TintColor xmlns:d12p1="WaveEngine.Common.Graphics">
@@ -2789,6 +2950,11 @@
                     <d10p1:X>1</d10p1:X>
                     <d10p1:Y>0</d10p1:Y>
                   </d9p1:origin>
+                  <d9p1:screenPosition xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                    <d10p1:X>0</d10p1:X>
+                    <d10p1:Y>0</d10p1:Y>
+                  </d9p1:screenPosition>
+                  <d9p1:transformMode>Standard</d9p1:transformMode>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:Sprite">
                   <d9p1:IsGlobalAsset>false</d9p1:IsGlobalAsset>
@@ -2881,6 +3047,11 @@
                     <d10p1:X>0.5</d10p1:X>
                     <d10p1:Y>0.5</d10p1:Y>
                   </d9p1:origin>
+                  <d9p1:screenPosition xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                    <d10p1:X>0</d10p1:X>
+                    <d10p1:Y>0</d10p1:Y>
+                  </d9p1:screenPosition>
+                  <d9p1:transformMode>Standard</d9p1:transformMode>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:SpriteAtlas">
                   <d9p1:TintColor xmlns:d10p1="WaveEngine.Common.Graphics">
@@ -2990,6 +3161,11 @@
                     <d10p1:X>0.5</d10p1:X>
                     <d10p1:Y>0.5</d10p1:Y>
                   </d9p1:origin>
+                  <d9p1:screenPosition xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                    <d10p1:X>0</d10p1:X>
+                    <d10p1:Y>0</d10p1:Y>
+                  </d9p1:screenPosition>
+                  <d9p1:transformMode>Standard</d9p1:transformMode>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:Sprite">
                   <d9p1:IsGlobalAsset>false</d9p1:IsGlobalAsset>
@@ -3076,6 +3252,11 @@
                     <d10p1:X>0.5</d10p1:X>
                     <d10p1:Y>0.5</d10p1:Y>
                   </d9p1:origin>
+                  <d9p1:screenPosition xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                    <d10p1:X>0</d10p1:X>
+                    <d10p1:Y>0</d10p1:Y>
+                  </d9p1:screenPosition>
+                  <d9p1:transformMode>Standard</d9p1:transformMode>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:Sprite">
                   <d9p1:IsGlobalAsset>false</d9p1:IsGlobalAsset>
@@ -3162,6 +3343,11 @@
                     <d10p1:X>0.5</d10p1:X>
                     <d10p1:Y>0.5</d10p1:Y>
                   </d9p1:origin>
+                  <d9p1:screenPosition xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                    <d10p1:X>0</d10p1:X>
+                    <d10p1:Y>0</d10p1:Y>
+                  </d9p1:screenPosition>
+                  <d9p1:transformMode>Standard</d9p1:transformMode>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:Sprite">
                   <d9p1:IsGlobalAsset>false</d9p1:IsGlobalAsset>
@@ -3244,6 +3430,11 @@
                 <d8p1:X>0</d8p1:X>
                 <d8p1:Y>0</d8p1:Y>
               </d7p1:origin>
+              <d7p1:screenPosition xmlns:d8p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                <d8p1:X>0</d8p1:X>
+                <d8p1:Y>0</d8p1:Y>
+              </d7p1:screenPosition>
+              <d7p1:transformMode>Standard</d7p1:transformMode>
             </d2p1:Component>
             <d2p1:Component xmlns:d7p1="SuperSquid.Components" i:type="d7p1:RocksBlock" />
           </d2p1:SerializeComponents>
@@ -3294,6 +3485,11 @@
                         <d12p1:X>0.5</d12p1:X>
                         <d12p1:Y>1</d12p1:Y>
                       </d11p1:origin>
+                      <d11p1:screenPosition xmlns:d12p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                        <d12p1:X>0</d12p1:X>
+                        <d12p1:Y>0</d12p1:Y>
+                      </d11p1:screenPosition>
+                      <d11p1:transformMode>Standard</d11p1:transformMode>
                     </d2p1:Component>
                     <d2p1:Component xmlns:d11p1="WaveEngine.Components.Graphics2D" i:type="d11p1:SpriteAtlas">
                       <d11p1:TintColor xmlns:d12p1="WaveEngine.Common.Graphics">
@@ -3355,6 +3551,11 @@
                     <d10p1:X>0.5</d10p1:X>
                     <d10p1:Y>0.5</d10p1:Y>
                   </d9p1:origin>
+                  <d9p1:screenPosition xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                    <d10p1:X>0</d10p1:X>
+                    <d10p1:Y>0</d10p1:Y>
+                  </d9p1:screenPosition>
+                  <d9p1:transformMode>Standard</d9p1:transformMode>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:Sprite">
                   <d9p1:IsGlobalAsset>false</d9p1:IsGlobalAsset>
@@ -3447,6 +3648,11 @@
                     <d10p1:X>0.5</d10p1:X>
                     <d10p1:Y>0.5</d10p1:Y>
                   </d9p1:origin>
+                  <d9p1:screenPosition xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                    <d10p1:X>0</d10p1:X>
+                    <d10p1:Y>0</d10p1:Y>
+                  </d9p1:screenPosition>
+                  <d9p1:transformMode>Standard</d9p1:transformMode>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:Sprite">
                   <d9p1:IsGlobalAsset>false</d9p1:IsGlobalAsset>
@@ -3533,6 +3739,11 @@
                     <d10p1:X>0.5</d10p1:X>
                     <d10p1:Y>0.5</d10p1:Y>
                   </d9p1:origin>
+                  <d9p1:screenPosition xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                    <d10p1:X>0</d10p1:X>
+                    <d10p1:Y>0</d10p1:Y>
+                  </d9p1:screenPosition>
+                  <d9p1:transformMode>Standard</d9p1:transformMode>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:SpriteAtlas">
                   <d9p1:TintColor xmlns:d10p1="WaveEngine.Common.Graphics">
@@ -3642,6 +3853,11 @@
                     <d10p1:X>0.5</d10p1:X>
                     <d10p1:Y>0.5</d10p1:Y>
                   </d9p1:origin>
+                  <d9p1:screenPosition xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                    <d10p1:X>0</d10p1:X>
+                    <d10p1:Y>0</d10p1:Y>
+                  </d9p1:screenPosition>
+                  <d9p1:transformMode>Standard</d9p1:transformMode>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:Sprite">
                   <d9p1:IsGlobalAsset>false</d9p1:IsGlobalAsset>
@@ -3728,6 +3944,11 @@
                     <d10p1:X>0.5</d10p1:X>
                     <d10p1:Y>0.5</d10p1:Y>
                   </d9p1:origin>
+                  <d9p1:screenPosition xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                    <d10p1:X>0</d10p1:X>
+                    <d10p1:Y>0</d10p1:Y>
+                  </d9p1:screenPosition>
+                  <d9p1:transformMode>Standard</d9p1:transformMode>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:Sprite">
                   <d9p1:IsGlobalAsset>false</d9p1:IsGlobalAsset>
@@ -3810,6 +4031,11 @@
                 <d8p1:X>0</d8p1:X>
                 <d8p1:Y>0</d8p1:Y>
               </d7p1:origin>
+              <d7p1:screenPosition xmlns:d8p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                <d8p1:X>0</d8p1:X>
+                <d8p1:Y>0</d8p1:Y>
+              </d7p1:screenPosition>
+              <d7p1:transformMode>Standard</d7p1:transformMode>
             </d2p1:Component>
             <d2p1:Component xmlns:d7p1="SuperSquid.Components" i:type="d7p1:RocksBlock" />
           </d2p1:SerializeComponents>
@@ -3860,6 +4086,11 @@
                         <d12p1:X>0.5</d12p1:X>
                         <d12p1:Y>1</d12p1:Y>
                       </d11p1:origin>
+                      <d11p1:screenPosition xmlns:d12p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                        <d12p1:X>0</d12p1:X>
+                        <d12p1:Y>0</d12p1:Y>
+                      </d11p1:screenPosition>
+                      <d11p1:transformMode>Standard</d11p1:transformMode>
                     </d2p1:Component>
                     <d2p1:Component xmlns:d11p1="WaveEngine.Components.Graphics2D" i:type="d11p1:SpriteAtlas">
                       <d11p1:TintColor xmlns:d12p1="WaveEngine.Common.Graphics">
@@ -3921,6 +4152,11 @@
                     <d10p1:X>0.5</d10p1:X>
                     <d10p1:Y>0.5</d10p1:Y>
                   </d9p1:origin>
+                  <d9p1:screenPosition xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                    <d10p1:X>0</d10p1:X>
+                    <d10p1:Y>0</d10p1:Y>
+                  </d9p1:screenPosition>
+                  <d9p1:transformMode>Standard</d9p1:transformMode>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:Sprite">
                   <d9p1:IsGlobalAsset>false</d9p1:IsGlobalAsset>
@@ -4018,6 +4254,11 @@
                         <d12p1:X>0.5</d12p1:X>
                         <d12p1:Y>1</d12p1:Y>
                       </d11p1:origin>
+                      <d11p1:screenPosition xmlns:d12p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                        <d12p1:X>0</d12p1:X>
+                        <d12p1:Y>0</d12p1:Y>
+                      </d11p1:screenPosition>
+                      <d11p1:transformMode>Standard</d11p1:transformMode>
                     </d2p1:Component>
                     <d2p1:Component xmlns:d11p1="WaveEngine.Components.Graphics2D" i:type="d11p1:SpriteAtlas">
                       <d11p1:TintColor xmlns:d12p1="WaveEngine.Common.Graphics">
@@ -4079,6 +4320,11 @@
                     <d10p1:X>0.5</d10p1:X>
                     <d10p1:Y>0.5</d10p1:Y>
                   </d9p1:origin>
+                  <d9p1:screenPosition xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                    <d10p1:X>0</d10p1:X>
+                    <d10p1:Y>0</d10p1:Y>
+                  </d9p1:screenPosition>
+                  <d9p1:transformMode>Standard</d9p1:transformMode>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:Sprite">
                   <d9p1:IsGlobalAsset>false</d9p1:IsGlobalAsset>
@@ -4171,6 +4417,11 @@
                     <d10p1:X>0.5</d10p1:X>
                     <d10p1:Y>0.5</d10p1:Y>
                   </d9p1:origin>
+                  <d9p1:screenPosition xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                    <d10p1:X>0</d10p1:X>
+                    <d10p1:Y>0</d10p1:Y>
+                  </d9p1:screenPosition>
+                  <d9p1:transformMode>Standard</d9p1:transformMode>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:Sprite">
                   <d9p1:IsGlobalAsset>false</d9p1:IsGlobalAsset>
@@ -4257,6 +4508,11 @@
                     <d10p1:X>0.5</d10p1:X>
                     <d10p1:Y>0.5</d10p1:Y>
                   </d9p1:origin>
+                  <d9p1:screenPosition xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                    <d10p1:X>0</d10p1:X>
+                    <d10p1:Y>0</d10p1:Y>
+                  </d9p1:screenPosition>
+                  <d9p1:transformMode>Standard</d9p1:transformMode>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:Sprite">
                   <d9p1:IsGlobalAsset>false</d9p1:IsGlobalAsset>
@@ -4339,6 +4595,11 @@
                 <d8p1:X>0</d8p1:X>
                 <d8p1:Y>0</d8p1:Y>
               </d7p1:origin>
+              <d7p1:screenPosition xmlns:d8p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                <d8p1:X>0</d8p1:X>
+                <d8p1:Y>0</d8p1:Y>
+              </d7p1:screenPosition>
+              <d7p1:transformMode>Standard</d7p1:transformMode>
             </d2p1:Component>
             <d2p1:Component xmlns:d7p1="SuperSquid.Components" i:type="d7p1:RocksBlock" />
           </d2p1:SerializeComponents>
@@ -4389,6 +4650,11 @@
                         <d12p1:X>0.5</d12p1:X>
                         <d12p1:Y>1</d12p1:Y>
                       </d11p1:origin>
+                      <d11p1:screenPosition xmlns:d12p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                        <d12p1:X>0</d12p1:X>
+                        <d12p1:Y>0</d12p1:Y>
+                      </d11p1:screenPosition>
+                      <d11p1:transformMode>Standard</d11p1:transformMode>
                     </d2p1:Component>
                     <d2p1:Component xmlns:d11p1="WaveEngine.Components.Graphics2D" i:type="d11p1:SpriteAtlas">
                       <d11p1:TintColor xmlns:d12p1="WaveEngine.Common.Graphics">
@@ -4450,6 +4716,11 @@
                     <d10p1:X>0</d10p1:X>
                     <d10p1:Y>0</d10p1:Y>
                   </d9p1:origin>
+                  <d9p1:screenPosition xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                    <d10p1:X>0</d10p1:X>
+                    <d10p1:Y>0</d10p1:Y>
+                  </d9p1:screenPosition>
+                  <d9p1:transformMode>Standard</d9p1:transformMode>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:Sprite">
                   <d9p1:IsGlobalAsset>false</d9p1:IsGlobalAsset>
@@ -4547,6 +4818,11 @@
                         <d12p1:X>0.5</d12p1:X>
                         <d12p1:Y>1</d12p1:Y>
                       </d11p1:origin>
+                      <d11p1:screenPosition xmlns:d12p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                        <d12p1:X>0</d12p1:X>
+                        <d12p1:Y>0</d12p1:Y>
+                      </d11p1:screenPosition>
+                      <d11p1:transformMode>Standard</d11p1:transformMode>
                     </d2p1:Component>
                     <d2p1:Component xmlns:d11p1="WaveEngine.Components.Graphics2D" i:type="d11p1:SpriteAtlas">
                       <d11p1:TintColor xmlns:d12p1="WaveEngine.Common.Graphics">
@@ -4608,6 +4884,11 @@
                     <d10p1:X>1</d10p1:X>
                     <d10p1:Y>0</d10p1:Y>
                   </d9p1:origin>
+                  <d9p1:screenPosition xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                    <d10p1:X>0</d10p1:X>
+                    <d10p1:Y>0</d10p1:Y>
+                  </d9p1:screenPosition>
+                  <d9p1:transformMode>Standard</d9p1:transformMode>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:Sprite">
                   <d9p1:IsGlobalAsset>false</d9p1:IsGlobalAsset>
@@ -4700,6 +4981,11 @@
                     <d10p1:X>0.5</d10p1:X>
                     <d10p1:Y>0.5</d10p1:Y>
                   </d9p1:origin>
+                  <d9p1:screenPosition xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                    <d10p1:X>0</d10p1:X>
+                    <d10p1:Y>0</d10p1:Y>
+                  </d9p1:screenPosition>
+                  <d9p1:transformMode>Standard</d9p1:transformMode>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:SpriteAtlas">
                   <d9p1:TintColor xmlns:d10p1="WaveEngine.Common.Graphics">
@@ -4809,6 +5095,11 @@
                     <d10p1:X>0.5</d10p1:X>
                     <d10p1:Y>0.5</d10p1:Y>
                   </d9p1:origin>
+                  <d9p1:screenPosition xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                    <d10p1:X>0</d10p1:X>
+                    <d10p1:Y>0</d10p1:Y>
+                  </d9p1:screenPosition>
+                  <d9p1:transformMode>Standard</d9p1:transformMode>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:Sprite">
                   <d9p1:IsGlobalAsset>false</d9p1:IsGlobalAsset>
@@ -4895,6 +5186,11 @@
                     <d10p1:X>0.5</d10p1:X>
                     <d10p1:Y>0.5</d10p1:Y>
                   </d9p1:origin>
+                  <d9p1:screenPosition xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                    <d10p1:X>0</d10p1:X>
+                    <d10p1:Y>0</d10p1:Y>
+                  </d9p1:screenPosition>
+                  <d9p1:transformMode>Standard</d9p1:transformMode>
                 </d2p1:Component>
                 <d2p1:Component xmlns:d9p1="WaveEngine.Components.Graphics2D" i:type="d9p1:Sprite">
                   <d9p1:IsGlobalAsset>false</d9p1:IsGlobalAsset>
@@ -4977,6 +5273,11 @@
                 <d8p1:X>0</d8p1:X>
                 <d8p1:Y>0</d8p1:Y>
               </d7p1:origin>
+              <d7p1:screenPosition xmlns:d8p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                <d8p1:X>0</d8p1:X>
+                <d8p1:Y>0</d8p1:Y>
+              </d7p1:screenPosition>
+              <d7p1:transformMode>Standard</d7p1:transformMode>
             </d2p1:Component>
             <d2p1:Component xmlns:d7p1="SuperSquid.Components" i:type="d7p1:RocksBlock" />
           </d2p1:SerializeComponents>
@@ -5013,6 +5314,11 @@
             <d6p1:X>0.5</d6p1:X>
             <d6p1:Y>0.5</d6p1:Y>
           </d5p1:origin>
+          <d5p1:screenPosition xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+            <d6p1:X>0</d6p1:X>
+            <d6p1:Y>0</d6p1:Y>
+          </d5p1:screenPosition>
+          <d5p1:transformMode>Standard</d5p1:transformMode>
         </d2p1:Component>
         <d2p1:Component xmlns:d5p1="SuperSquid.Entities.Behaviors" i:type="d5p1:BlockBuilderBehavior">
           <d2p1:Family>DefaultBehavior</d2p1:Family>
@@ -5038,6 +5344,16 @@
             <d6p1:Y>-9.8</d6p1:Y>
             <d6p1:Z>0</d6p1:Z>
           </d5p1:Gravity3D>
+        </d3p1:Value>
+      </d3p1:KeyValueOfstringanyType>
+      <d3p1:KeyValueOfstringanyType>
+        <d3p1:Key>VirtualScreen</d3p1:Key>
+        <d3p1:Value xmlns:d5p1="WaveEngine.Framework.Managers" i:type="d5p1:VirtualScreenManager">
+          <d5p1:Enabled>true</d5p1:Enabled>
+          <d5p1:Expand>true</d5p1:Expand>
+          <d5p1:Stretch>Uniform</d5p1:Stretch>
+          <d5p1:VirtualHeight>1024</d5p1:VirtualHeight>
+          <d5p1:VirtualWidth>768</d5p1:VirtualWidth>
         </d3p1:Value>
       </d3p1:KeyValueOfstringanyType>
     </d2p1:Categories>
