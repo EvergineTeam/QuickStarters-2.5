@@ -104,7 +104,7 @@
           </d5p1:LocalPosition>
           <d5p1:LocalScale xmlns:d6p1="WaveEngine.Common.Math">
             <d6p1:X>0.78</d6p1:X>
-            <d6p1:Y>0.9479167</d6p1:Y>
+            <d6p1:Y>0.578125</d6p1:Y>
             <d6p1:Z>1</d6p1:Z>
           </d5p1:LocalScale>
           <d5p1:Effect>None</d5p1:Effect>
@@ -514,7 +514,7 @@
         <d2p1:Component xmlns:d5p1="WaveEngine.Components.Graphics2D" i:type="d5p1:SpriteAtlasRenderer">
           <d2p1:IsVisible>true</d2p1:IsVisible>
           <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
-          <LayerTypeName xmlns="WaveEngine.Framework.Graphics">FlyingKite.Layers.KiteLayer,FlyingKite_6</LayerTypeName>
+          <LayerTypeName xmlns="WaveEngine.Framework.Graphics">FlyingKite.Layers.KiteLayer,FlyingKite_0</LayerTypeName>
           <collider2D xmlns:d6p1="WaveEngine.Framework.Physics2D" i:nil="true" xmlns="WaveEngine.Framework.Graphics" />
           <d5p1:SamplerMode>LinearClamp</d5p1:SamplerMode>
         </d2p1:Component>
@@ -592,7 +592,7 @@
           </d5p1:LocalPosition>
           <d5p1:LocalScale xmlns:d6p1="WaveEngine.Common.Math">
             <d6p1:X>1014</d6p1:X>
-            <d6p1:Y>728</d6p1:Y>
+            <d6p1:Y>444</d6p1:Y>
             <d6p1:Z>1</d6p1:Z>
           </d5p1:LocalScale>
           <d5p1:Effect>None</d5p1:Effect>
