@@ -125,7 +125,7 @@
           </d5p1:LocalOrientation>
           <d5p1:LocalPosition xmlns:d6p1="WaveEngine.Common.Math">
             <d6p1:X>511.5</d6p1:X>
-            <d6p1:Y>384</d6p1:Y>
+            <d6p1:Y>240.5</d6p1:Y>
             <d6p1:Z>10</d6p1:Z>
           </d5p1:LocalPosition>
           <d5p1:LocalScale xmlns:d6p1="WaveEngine.Common.Math">
