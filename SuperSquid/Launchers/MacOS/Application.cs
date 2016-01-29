@@ -25,8 +25,8 @@ namespace SuperSquid
 		public App ()
 		{
 			this.WindowTitle = "Sample Mac";
-			this.Width = 1280;
-			this.Height = 720;
+			this.Width = 768;
+            this.Height = 1024;
 		}
 
 		public override void Initialize ()

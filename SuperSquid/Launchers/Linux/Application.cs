@@ -22,8 +22,8 @@ namespace SuperSquid
 
         public App()
         {
-            this.Width = 1280;
-            this.Height = 720;
+            this.Width = 768;
+            this.Height = 1024;
             this.FullScreen = false;
             this.WindowTitle = "MangomacoProject";
         }
