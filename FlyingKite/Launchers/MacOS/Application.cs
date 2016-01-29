@@ -25,8 +25,8 @@ namespace FlyingKite
 		public App ()
 		{
 			this.WindowTitle = "FlyingKite";
-			this.Width = 1280;
-			this.Height = 720;
+			this.Width = 1024;
+            this.Height = 768;
 		}
 
 		public override void Initialize ()
@@ -91,7 +91,7 @@ namespace FlyingKite
 					#region WAVE SOFTWARE LICENSE AGREEMENT
 					WaveServices.GraphicsDevice.RenderTargets.SetRenderTarget (null);
 					WaveServices.GraphicsDevice.Clear (ref this.backgroundSplashColor, ClearFlags.Target, 1);
-					this.spriteBatch.DrawVM (this.splashScreen, this.position, Color.White);
+					this.spriteBatch.Draw(this.splashScreen, this.position, Color.White);
 					this.spriteBatch.Render ();
 					#endregion
 				} else {
