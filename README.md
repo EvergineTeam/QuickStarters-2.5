@@ -1,5 +1,5 @@
 # QuickStarters
-The collection of University Tour quickstarters
+The collection of Wave Engine Quickstarters.
 
 <table>
   <tr>
