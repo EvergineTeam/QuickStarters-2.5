@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "DeepSpaceSource", "SharedSource\Main\DeepSpaceSource.shproj", "{846D34C8-E537-4DC7-B646-CFF649CE42E4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeepSpace", "Launchers\MacOS\DeepSpace.csproj", "{24B87C78-E012-4BAD-9616-43F9BD6F6532}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeepSpace", "Launchers\MacOSProfile\DeepSpace.csproj", "{24B87C78-E012-4BAD-9616-43F9BD6F6532}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

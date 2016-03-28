@@ -1,4 +1,4 @@
-<Asset xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="WaveEngine.Framework.Models">
+﻿<Asset xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="WaveEngine.Framework.Models">
   <Id>5835a038-3ba0-4309-9f0e-9c27e8f9a739</Id>
   <Asset xmlns:d2p1="WaveEngine.Framework.Models.Assets" i:type="d2p1:Texture">
     <d2p1:Profiles xmlns:d3p1="WaveEngine.Framework.Models.Profiles">
@@ -9,7 +9,7 @@
         <d3p1:ScaledPercentage>100</d3p1:ScaledPercentage>
         <d3p1:ScaledWidth>2</d3p1:ScaledWidth>
         <d3p1:ScalingType>Percentage</d3p1:ScalingType>
-      </d3p1:ExportProfile>      
+      </d3p1:ExportProfile>
     </d2p1:Profiles>
     <d2p1:ZipCompress>true</d2p1:ZipCompress>
     <d2p1:AntialiasType>Smooth</d2p1:AntialiasType>
@@ -18,7 +18,7 @@
     <d2p1:PremultipliedAlpha>true</d2p1:PremultipliedAlpha>
     <d2p1:Width>2</d2p1:Width>
   </Asset>
-  <Thumbnail i:nil="true" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="WaveEngine.Framework.Models" />
+  <Thumbnail i:nil="true" />
   <Version xmlns:d2p1="http://schemas.datacontract.org/2004/07/System">
     <d2p1:_Build>0</d2p1:_Build>
     <d2p1:_Major>1</d2p1:_Major>

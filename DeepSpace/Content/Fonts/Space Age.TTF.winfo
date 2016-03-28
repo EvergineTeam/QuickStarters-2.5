@@ -1,4 +1,4 @@
-<Asset xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="WaveEngine.Framework.Models">
+﻿<Asset xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="WaveEngine.Framework.Models">
   <Id>4650efb2-92e3-48cc-9dc8-e68e8aaa2c60</Id>
   <Asset xmlns:d2p1="WaveEngine.Framework.Models.Assets" i:type="d2p1:Font">
     <d2p1:Profiles xmlns:d3p1="WaveEngine.Framework.Models.Profiles">
@@ -8,8 +8,8 @@
     </d2p1:Profiles>
     <d2p1:ZipCompress>true</d2p1:ZipCompress>
     <d2p1:CharacterSet>ASCII</d2p1:CharacterSet>
-    <d3p1:CustomSet i:nil="true" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:d3p1="WaveEngine.Framework.Models.Profiles" />
-    <d3p1:DefaultCharacter i:nil="true" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:d3p1="WaveEngine.Framework.Models.Profiles" />
+    <d2p1:CustomSet i:nil="true" />
+    <d2p1:DefaultCharacter i:nil="true" />
     <d2p1:FontFamily>Space Age</d2p1:FontFamily>
     <d2p1:FontSize>28</d2p1:FontSize>
     <d2p1:InnerSpacing>0</d2p1:InnerSpacing>

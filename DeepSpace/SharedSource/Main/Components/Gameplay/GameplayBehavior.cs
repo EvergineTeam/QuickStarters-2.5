@@ -220,7 +220,7 @@ namespace DeepSpace.Components.Gameplay
 
         private Entity CreateExplosion()
         {
-            var explode = new Entity()
+            var explode = new Entity() { IsSerializable = false }
                     .AddComponent(new Transform2D() { Origin = Vector2.Center, XScale = 2, YScale = 2 })
                     .AddComponent(new SpriteAtlas(WaveContent.Assets.ExplodeSprite_spritesheet))
                     .AddComponent(new SpriteAtlasRenderer() { LayerType = DefaultLayers.Additive })
@@ -370,7 +370,7 @@ namespace DeepSpace.Components.Gameplay
 
                 WaveServices.Storage.Write(this.gameStorage);
             }
-            
+
             WaveServices.ScreenContextManager.Push(new ScreenContext(new GameOverScene()), new ColorFadeTransition(Color.White, TimeSpan.FromSeconds(0.5f)));
         }
 

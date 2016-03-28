@@ -1,4 +1,4 @@
-<Project xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="WaveEngine.Framework.Models">
+﻿<Project xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="WaveEngine.Framework.Models">
   <Id>39fb227b-b39b-400c-8fd5-cd30972bad57</Id>
   <ResourcesPath>Content</ResourcesPath>
   <Settings xmlns:d2p1="WaveEngine.Framework.Models.Settings">
@@ -7,44 +7,25 @@
         <d3p1:Key>Profiles</d3p1:Key>
         <d3p1:Value xmlns:d5p1="WaveEngine.Framework.Models.Settings.Categories" i:type="d5p1:ProfilesData">
           <d5p1:Profiles>
-			<Profile>
-    <AlphaCompressionFormat>R8G8B8A8</AlphaCompressionFormat>
-    <Name>Android</Name>
-    <NonAlphaCompressionFormat>ETC1RGB8</NonAlphaCompressionFormat>
-    <Platform>Android</Platform>
-</Profile>
-<Profile>
-    <AlphaCompressionFormat>R8G8B8A8</AlphaCompressionFormat>
-    <Name>iOS</Name>
-    <NonAlphaCompressionFormat>R8G8B8A8</NonAlphaCompressionFormat>
-    <Platform>iOS</Platform>
-</Profile>
-<Profile>
-    <AlphaCompressionFormat>R8G8B8A8</AlphaCompressionFormat>
-    <Name>Linux</Name>
-    <NonAlphaCompressionFormat>R8G8B8A8</NonAlphaCompressionFormat>
-    <Platform>Linux</Platform>
-</Profile>
-<Profile>
-    <AlphaCompressionFormat>R8G8B8A8</AlphaCompressionFormat>
-    <Name>MacOS</Name>
-    <NonAlphaCompressionFormat>R8G8B8A8</NonAlphaCompressionFormat>
-    <Platform>MacOS</Platform>
-</Profile>
-<Profile>
-    <AlphaCompressionFormat>DXT1</AlphaCompressionFormat>
-    <Name>UWP</Name>
-    <NonAlphaCompressionFormat>DXT5</NonAlphaCompressionFormat>
-    <Platform>UWP</Platform>
-</Profile>
-<Profile>
-    <AlphaCompressionFormat>R8G8B8A8</AlphaCompressionFormat>
-    <Name>Windows</Name>
-    <NonAlphaCompressionFormat>R8G8B8A8</NonAlphaCompressionFormat>
-    <Platform>Windows</Platform>
-</Profile>
-
-		  </d5p1:Profiles>
+            <Profile>
+              <AlphaCompressionFormat>R8G8B8A8</AlphaCompressionFormat>
+              <Name>Windows</Name>
+              <NonAlphaCompressionFormat>R8G8B8A8</NonAlphaCompressionFormat>
+              <Platform>Windows</Platform>
+            </Profile>
+            <Profile>
+              <AlphaCompressionFormat>R8G8B8A8</AlphaCompressionFormat>
+              <Name>LinuxProfile</Name>
+              <NonAlphaCompressionFormat>R8G8B8A8</NonAlphaCompressionFormat>
+              <Platform>Linux</Platform>
+            </Profile>
+            <Profile>
+              <AlphaCompressionFormat>R8G8B8A8</AlphaCompressionFormat>
+              <Name>MacOSProfile</Name>
+              <NonAlphaCompressionFormat>R8G8B8A8</NonAlphaCompressionFormat>
+              <Platform>MacOS</Platform>
+            </Profile>
+          </d5p1:Profiles>
         </d3p1:Value>
       </d3p1:KeyValueOfstringanyType>
     </d2p1:Categories>
