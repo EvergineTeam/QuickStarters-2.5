@@ -66,7 +66,7 @@ namespace SuperSquid.Entities.Behaviors
 
             this.maxRotation = MathHelper.ToRadians(20);
             this.inputManager = WaveServices.Input;
-            this.timerFactory = WaveServices.TimerFactory;            
+            this.timerFactory = WaveServices.TimerFactory;
             this.soundManager = WaveServices.GetService<SoundManager>();
         }
 
@@ -141,15 +141,7 @@ namespace SuperSquid.Entities.Behaviors
             {
                 float accVal;
 
-                // Metro devices plays in landscape orientation mode
-                if (WaveServices.Platform.PlatformType == PlatformType.WindowsStore)
-                {
-                    accVal = -this.inputManager.AccelerometerState.SmoothAcceleration.Y * 1.5f;
-                }
-                else
-                {
-                    accVal = this.inputManager.AccelerometerState.SmoothAcceleration.X;
-                }
+                accVal = this.inputManager.AccelerometerState.SmoothAcceleration.X;
 
                 Labels.Add("Acc val", accVal.ToString());
 
