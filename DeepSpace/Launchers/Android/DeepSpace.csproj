@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -51,24 +51,24 @@
     <AndroidLinkMode>SdkOnly</AndroidLinkMode>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="WaveEngine.Adapter, Version=2.0.5.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\WaveEngine.Adapter.2.0.5-alpha-20160128-159\lib\MonoAndroid\WaveEngine.Adapter.dll</HintPath>
+    <Reference Include="WaveEngine.Adapter">
+      <HintPath>..\..\packages\WaveEngine.Adapter.2.0.7-alpha-20160323-204\lib\MonoAndroid\WaveEngine.Adapter.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="WaveEngine.Common, Version=2.0.5.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\WaveEngine.Common.2.0.5-alpha-20160128-159\lib\MonoAndroid\WaveEngine.Common.dll</HintPath>
+    <Reference Include="WaveEngine.Common">
+      <HintPath>..\..\packages\WaveEngine.Common.2.0.7-alpha-20160323-204\lib\MonoAndroid\WaveEngine.Common.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="WaveEngine.Components, Version=2.0.5.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\WaveEngine.Components.2.0.5-alpha-20160128-159\lib\MonoAndroid\WaveEngine.Components.dll</HintPath>
+    <Reference Include="WaveEngine.Components">
+      <HintPath>..\..\packages\WaveEngine.Components.2.0.7-alpha-20160323-204\lib\MonoAndroid\WaveEngine.Components.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="WaveEngine.Framework, Version=2.0.5.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\WaveEngine.Framework.2.0.5-alpha-20160128-159\lib\MonoAndroid\WaveEngine.Framework.dll</HintPath>
+    <Reference Include="WaveEngine.Framework">
+      <HintPath>..\..\packages\WaveEngine.Framework.2.0.7-alpha-20160323-204\lib\MonoAndroid\WaveEngine.Framework.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="WaveEngine.ImageEffects">
-      <HintPath>..\..\packages\WaveEngine.ImageEffects.2.0.3.14\lib\MonoAndroid\WaveEngine.ImageEffects.dll</HintPath>
+      <HintPath>..\..\packages\WaveEngine.ImageEffects.2.0.7-alpha-20160323-204\lib\MonoAndroid\WaveEngine.ImageEffects.dll</HintPath>
     </Reference>
     <Reference Include="DolbyAPI">
       <HintPath>..\..\packages\WaveEngine.Adapter.2.0.3.14\lib\MonoAndroid\DolbyAPI.dll</HintPath>
@@ -81,8 +81,8 @@
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="WaveEngine.Materials, Version=2.0.5.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\WaveEngine.Materials.2.0.5-alpha-20160128-159\lib\MonoAndroid\WaveEngine.Materials.dll</HintPath>
+    <Reference Include="WaveEngine.Materials">
+      <HintPath>..\..\packages\WaveEngine.Materials.2.0.7-alpha-20160323-204\lib\MonoAndroid\WaveEngine.Materials.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
@@ -112,11 +112,11 @@
   </Target>
   -->
   <ItemGroup />
-  <Import Project="..\..\packages\WaveEngine.2.0.5-alpha-20160128-159\build\MonoAndroid\WaveEngine.targets" Condition="Exists('..\..\packages\WaveEngine.2.0.5-alpha-20160128-159\build\MonoAndroid\WaveEngine.targets')" />
+  <Import Project="..\..\packages\WaveEngine.2.0.7-alpha-20160323-204\build\MonoAndroid\WaveEngine.targets" Condition="Exists('..\..\packages\WaveEngine.2.0.7-alpha-20160323-204\build\MonoAndroid\WaveEngine.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\..\packages\WaveEngine.2.0.5-alpha-20160128-159\build\MonoAndroid\WaveEngine.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\WaveEngine.2.0.5-alpha-20160128-159\build\MonoAndroid\WaveEngine.targets'))" />
+    <Error Condition="!Exists('..\..\packages\WaveEngine.2.0.7-alpha-20160323-204\build\MonoAndroid\WaveEngine.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\WaveEngine.2.0.7-alpha-20160323-204\build\MonoAndroid\WaveEngine.targets'))" />
   </Target>
 </Project>
