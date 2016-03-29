@@ -1,31 +1,30 @@
 using System;
-using System.Windows.Controls;
 using WaveEngine.Adapter;
-using WaveEngine.Common;
-using Windows.Foundation;
+using WaveEngine.Common.Input;
+using Windows.System.Display;
+using Windows.UI.Xaml.Controls;
 
 namespace SurvivorNinja
 {
     public class GameRenderer : Application
     {
-        public int Width { get; set; }
-        public int Height { get; set; }
+        private DisplayRequest displayRequest;
 
         private SurvivorNinja.Game game;
 
-        public GameRenderer(Size windowBounds, int scaleFactor, MediaElement element)
-            : base(windowBounds, scaleFactor, element)
+        public GameRenderer(SwapChainPanel panel)
+            : base(panel)
         {
+            this.FullScreen = true;
         }
 
         public override void Update(TimeSpan gameTime)
-        {
+        {  
             game.UpdateFrame(gameTime);
         }
 
-        public override void Draw(TimeSpan gameTime)//TargetBase render)
+        public override void Draw(TimeSpan gameTime)
         {
-            //Render
             game.DrawFrame(gameTime);
         }
 
@@ -33,19 +32,27 @@ namespace SurvivorNinja
         {
             base.Initialize();
 
-            // Initialize
+            this.Adapter.SupportedOrientations = DisplayOrientation.LandscapeLeft | DisplayOrientation.LandscapeRight;
+
+            this.displayRequest = new DisplayRequest();
+            this.displayRequest.RequestActive();
+
             game = new SurvivorNinja.Game();
             game.Initialize(this);
         }
 
         public override void OnResuming()
         {
+            base.OnResuming();
+
             game.OnActivated();
         }
 
         public override void OnSuspending()
         {
+            base.OnSuspending();
+
             game.OnDeactivated();
-        }      
+        }
     }
 }
