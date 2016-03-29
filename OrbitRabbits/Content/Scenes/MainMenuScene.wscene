@@ -143,6 +143,11 @@
           <collider2D xmlns:d6p1="WaveEngine.Framework.Physics2D" i:nil="true" xmlns="WaveEngine.Framework.Graphics" />
           <d5p1:SamplerMode>LinearClamp</d5p1:SamplerMode>
         </d2p1:Component>
+        <d2p1:Component xmlns:d5p1="OrbitRabbits.Behaviors" i:type="d5p1:StretchBehavior">
+          <d2p1:Family>DefaultBehavior</d2p1:Family>
+          <d2p1:IsActive>true</d2p1:IsActive>
+          <d2p1:UpdateOrder>0.5</d2p1:UpdateOrder>
+        </d2p1:Component>
       </d2p1:SerializeComponents>
       <d2p1:Tag i:nil="true" />
     </d2p1:Entity>
@@ -160,8 +165,8 @@
             <d6p1:Z>0</d6p1:Z>
           </d5p1:LocalOrientation>
           <d5p1:LocalPosition xmlns:d6p1="WaveEngine.Common.Math">
-            <d6p1:X>380</d6p1:X>
-            <d6p1:Y>90</d6p1:Y>
+            <d6p1:X>373.4001</d6p1:X>
+            <d6p1:Y>82.7803345</d6p1:Y>
             <d6p1:Z>0</d6p1:Z>
           </d5p1:LocalPosition>
           <d5p1:LocalScale xmlns:d6p1="WaveEngine.Common.Math">
@@ -179,13 +184,13 @@
           </d5p1:Rectangle>
           <d5p1:origin xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
             <d6p1:X>0.5</d6p1:X>
-            <d6p1:Y>0.5</d6p1:Y>
+            <d6p1:Y>0</d6p1:Y>
           </d5p1:origin>
           <d5p1:screenPosition xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
-            <d6p1:X>0</d6p1:X>
-            <d6p1:Y>0</d6p1:Y>
+            <d6p1:X>0.5</d6p1:X>
+            <d6p1:Y>0.05</d6p1:Y>
           </d5p1:screenPosition>
-          <d5p1:transformMode>Standard</d5p1:transformMode>
+          <d5p1:transformMode>Screen</d5p1:transformMode>
         </d2p1:Component>
         <d2p1:Component xmlns:d5p1="WaveEngine.Components.Graphics2D" i:type="d5p1:SpriteAtlas">
           <d5p1:TintColor xmlns:d6p1="WaveEngine.Common.Graphics">
@@ -222,8 +227,8 @@
             <d6p1:Z>0</d6p1:Z>
           </d5p1:LocalOrientation>
           <d5p1:LocalPosition xmlns:d6p1="WaveEngine.Common.Math">
-            <d6p1:X>384</d6p1:X>
-            <d6p1:Y>370</d6p1:Y>
+            <d6p1:X>373.4001</d6p1:X>
+            <d6p1:Y>114.812332</d6p1:Y>
             <d6p1:Z>0</d6p1:Z>
           </d5p1:LocalPosition>
           <d5p1:LocalScale xmlns:d6p1="WaveEngine.Common.Math">
@@ -241,13 +246,13 @@
           </d5p1:Rectangle>
           <d5p1:origin xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
             <d6p1:X>0.5</d6p1:X>
-            <d6p1:Y>0.5</d6p1:Y>
+            <d6p1:Y>0</d6p1:Y>
           </d5p1:origin>
           <d5p1:screenPosition xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
-            <d6p1:X>0</d6p1:X>
-            <d6p1:Y>0</d6p1:Y>
+            <d6p1:X>0.5</d6p1:X>
+            <d6p1:Y>0.07</d6p1:Y>
           </d5p1:screenPosition>
-          <d5p1:transformMode>Standard</d5p1:transformMode>
+          <d5p1:transformMode>Screen</d5p1:transformMode>
         </d2p1:Component>
         <d2p1:Component xmlns:d5p1="WaveEngine.Components.Graphics2D" i:type="d5p1:Sprite">
           <d5p1:IsGlobalAsset>false</d5p1:IsGlobalAsset>
@@ -284,8 +289,8 @@
             <d6p1:Z>0</d6p1:Z>
           </d5p1:LocalOrientation>
           <d5p1:LocalPosition xmlns:d6p1="WaveEngine.Common.Math">
-            <d6p1:X>476.9001</d6p1:X>
-            <d6p1:Y>831.600037</d6p1:Y>
+            <d6p1:X>1265.72009</d6p1:X>
+            <d6p1:Y>1604.30042</d6p1:Y>
             <d6p1:Z>0</d6p1:Z>
           </d5p1:LocalPosition>
           <d5p1:LocalScale xmlns:d6p1="WaveEngine.Common.Math">
@@ -302,14 +307,14 @@
             <d6p1:Y>0</d6p1:Y>
           </d5p1:Rectangle>
           <d5p1:origin xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
-            <d6p1:X>0</d6p1:X>
-            <d6p1:Y>0</d6p1:Y>
+            <d6p1:X>1</d6p1:X>
+            <d6p1:Y>0.5</d6p1:Y>
           </d5p1:origin>
           <d5p1:screenPosition xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
-            <d6p1:X>0</d6p1:X>
-            <d6p1:Y>0</d6p1:Y>
+            <d6p1:X>0.9</d6p1:X>
+            <d6p1:Y>1</d6p1:Y>
           </d5p1:screenPosition>
-          <d5p1:transformMode>Standard</d5p1:transformMode>
+          <d5p1:transformMode>Screen</d5p1:transformMode>
         </d2p1:Component>
         <d2p1:Component xmlns:d5p1="WaveEngine.Components.Graphics2D" i:type="d5p1:SpriteAtlas">
           <d5p1:TintColor xmlns:d6p1="WaveEngine.Common.Graphics">
@@ -346,8 +351,8 @@
             <d6p1:Z>0</d6p1:Z>
           </d5p1:LocalOrientation>
           <d5p1:LocalPosition xmlns:d6p1="WaveEngine.Common.Math">
-            <d6p1:X>0</d6p1:X>
-            <d6p1:Y>0</d6p1:Y>
+            <d6p1:X>-741.999939</d6p1:X>
+            <d6p1:Y>2.70034885</d6p1:Y>
             <d6p1:Z>0</d6p1:Z>
           </d5p1:LocalPosition>
           <d5p1:LocalScale xmlns:d6p1="WaveEngine.Common.Math">
@@ -371,7 +376,7 @@
             <d6p1:X>0</d6p1:X>
             <d6p1:Y>0</d6p1:Y>
           </d5p1:screenPosition>
-          <d5p1:transformMode>Standard</d5p1:transformMode>
+          <d5p1:transformMode>Screen</d5p1:transformMode>
         </d2p1:Component>
         <d2p1:Component xmlns:d5p1="WaveEngine.Components.Graphics2D" i:type="d5p1:SpriteAtlas">
           <d5p1:TintColor xmlns:d6p1="WaveEngine.Common.Graphics">

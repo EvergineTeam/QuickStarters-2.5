@@ -1,31 +1,31 @@
 using System;
 using WaveEngine.Adapter;
-using WaveEngine.Adapter.CommonDX;
 using WaveEngine.Common.Input;
+using Windows.System.Display;
 using Windows.UI.Xaml.Controls;
 
 namespace OrbitRabbits
 {
     public class GameRenderer : Application
     {
-        public int Width { get; set; }
-        public int Height { get; set; }
+        private DisplayRequest displayRequest;
 
         private OrbitRabbits.Game game;
 
-        public GameRenderer(SwapChainBackgroundPanel panel)
+        public GameRenderer(SwapChainPanel panel)
             : base(panel)
         {
+            this.FullScreen = true;
         }
 
         public override void Update(TimeSpan gameTime)
-        {
-            game.UpdateFrame(gameTime);
+        {  
+            this.game.UpdateFrame(gameTime);
         }
 
         public override void Draw(TimeSpan gameTime)
         {
-            game.DrawFrame(gameTime);
+            this.game.DrawFrame(gameTime);
         }
 
         public override void Initialize()
@@ -34,22 +34,23 @@ namespace OrbitRabbits
 
             this.Adapter.SupportedOrientations = DisplayOrientation.LandscapeLeft | DisplayOrientation.LandscapeRight;
 
-            game = new OrbitRabbits.Game();
-            game.Initialize(this);
+            this.displayRequest = new DisplayRequest();
+            this.displayRequest.RequestActive();
+
+            this.game = new OrbitRabbits.Game();
+            this.game.Initialize(this);
         }
 
         public override void OnResuming()
         {
             base.OnResuming();
-
-            game.OnActivated();
+            this.game.OnActivated();
         }
 
         public override void OnSuspending()
         {
             base.OnSuspending();
-
-            game.OnDeactivated();
-        }        
+            this.game.OnDeactivated();
+        }
     }
 }

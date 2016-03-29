@@ -58,7 +58,7 @@ namespace OrbitRabbits.Behaviors
             if (this.dirtyFlag)
             {
                 this.dirtyFlag = false;
-
+                
                 this.transform.Origin = Vector2.Zero;
 
                 this.transform.X = this.viewportScreenManager.LeftEdge;

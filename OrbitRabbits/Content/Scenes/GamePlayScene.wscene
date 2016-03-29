@@ -171,7 +171,7 @@
         </d2p1:Component>
         <d2p1:Component xmlns:d5p1="OrbitRabbits.Behaviors" i:type="d5p1:StretchBehavior">
           <d2p1:Family>DefaultBehavior</d2p1:Family>
-          <d2p1:IsActive>false</d2p1:IsActive>
+          <d2p1:IsActive>true</d2p1:IsActive>
           <d2p1:UpdateOrder>0.5</d2p1:UpdateOrder>
         </d2p1:Component>
         <d2p1:Component xmlns:d5p1="WaveEngine.Framework.Physics2D" i:type="d5p1:RectangleCollider2D">
@@ -221,8 +221,8 @@
             <d6p1:Z>0</d6p1:Z>
           </d5p1:LocalOrientation>
           <d5p1:LocalPosition xmlns:d6p1="WaveEngine.Common.Math">
-            <d6p1:X>15</d6p1:X>
-            <d6p1:Y>0</d6p1:Y>
+            <d6p1:X>-570.9998</d6p1:X>
+            <d6p1:Y>-410.399963</d6p1:Y>
             <d6p1:Z>0.95</d6p1:Z>
           </d5p1:LocalPosition>
           <d5p1:LocalScale xmlns:d6p1="WaveEngine.Common.Math">
@@ -239,14 +239,14 @@
             <d6p1:Y>0</d6p1:Y>
           </d5p1:Rectangle>
           <d5p1:origin xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
-            <d6p1:X>0</d6p1:X>
+            <d6p1:X>-0.07</d6p1:X>
             <d6p1:Y>0</d6p1:Y>
           </d5p1:origin>
           <d5p1:screenPosition xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
             <d6p1:X>0</d6p1:X>
             <d6p1:Y>0</d6p1:Y>
           </d5p1:screenPosition>
-          <d5p1:transformMode>Standard</d5p1:transformMode>
+          <d5p1:transformMode>Screen</d5p1:transformMode>
         </d2p1:Component>
         <d2p1:Component xmlns:d5p1="WaveEngine.Components.Graphics2D" i:type="d5p1:SpriteAtlas">
           <d5p1:TintColor xmlns:d6p1="WaveEngine.Common.Graphics">

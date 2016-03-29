@@ -11,7 +11,7 @@ using WaveEngine.Common.Attributes;
 [assembly: AssemblyProduct("OrbitRabbits")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyCopyright("Copyright © 2015")]
+[assembly: AssemblyCopyright("Copyright © 2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
