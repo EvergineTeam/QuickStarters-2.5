@@ -1,25 +1,25 @@
 using System;
 using WaveEngine.Adapter;
-using WaveEngine.Adapter.CommonDX;
 using WaveEngine.Common.Input;
+using Windows.System.Display;
 using Windows.UI.Xaml.Controls;
 
 namespace BasketKing
 {
     public class GameRenderer : Application
     {
-        public int Width { get; set; }
-        public int Height { get; set; }
+        private DisplayRequest displayRequest;
 
         private BasketKing.Game game;
 
-        public GameRenderer(SwapChainBackgroundPanel panel)
+        public GameRenderer(SwapChainPanel panel)
             : base(panel)
         {
+            this.FullScreen = true;
         }
 
         public override void Update(TimeSpan gameTime)
-        {
+        {  
             game.UpdateFrame(gameTime);
         }
 
@@ -33,6 +33,9 @@ namespace BasketKing
             base.Initialize();
 
             this.Adapter.SupportedOrientations = DisplayOrientation.LandscapeLeft | DisplayOrientation.LandscapeRight;
+
+            this.displayRequest = new DisplayRequest();
+            this.displayRequest.RequestActive();
 
             game = new BasketKing.Game();
             game.Initialize(this);
@@ -50,6 +53,6 @@ namespace BasketKing
             base.OnSuspending();
 
             game.OnDeactivated();
-        }        
+        }
     }
 }
