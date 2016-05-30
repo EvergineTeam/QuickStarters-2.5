@@ -24,10 +24,11 @@ namespace DeepSpace.Components.Bullets
 
         protected override void DefaultValues()
         {
+            base.DefaultValues();
             this.numBullets = 20;
             this.numEnemyBullets = 100;
         }
-
+        
         protected override void Initialize()
         {
             base.Initialize();

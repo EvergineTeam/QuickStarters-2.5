@@ -41,6 +41,7 @@ namespace DeepSpace.Components.Alignment
 
         protected override void DefaultValues()
         {
+            base.DefaultValues();
             this.UseTextureSize = true;
             this.VerticalAlignment = VerticalAlignment.Stretch;
             this.HorizontalAlignment = HorizontalAlignment.Stretch;

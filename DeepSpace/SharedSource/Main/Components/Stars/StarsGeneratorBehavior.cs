@@ -17,6 +17,11 @@ namespace DeepSpace.Components.Stars
         {
         }
 
+        protected override void DefaultValues()
+        {
+            base.DefaultValues();
+        }
+
         protected override void Update(TimeSpan gameTime)
         {
             if (!this.isStarsGenerated)

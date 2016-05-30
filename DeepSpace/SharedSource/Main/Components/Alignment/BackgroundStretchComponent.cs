@@ -19,6 +19,11 @@ namespace DeepSpace.Components.Alignment
         {
         }
 
+        protected override void DefaultValues()
+        {
+            base.DefaultValues();
+        }
+
         protected override void Initialize()
         {
             base.Initialize();

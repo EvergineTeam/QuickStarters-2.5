@@ -80,6 +80,7 @@ namespace DeepSpace.Components.Joystick
 
         protected override void DefaultValues()
         {
+            base.DefaultValues();
             this.offsetLimits = new Vector2(offset, offset);
         }
 

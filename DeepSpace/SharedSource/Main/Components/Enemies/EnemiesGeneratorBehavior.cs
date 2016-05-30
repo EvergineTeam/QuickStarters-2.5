@@ -25,6 +25,11 @@ namespace DeepSpace.Components.Enemies
         {
         }
 
+        protected override void DefaultValues()
+        {
+            base.DefaultValues();
+        }
+
         protected override void ResolveDependencies()
         {
             base.ResolveDependencies();

@@ -56,6 +56,7 @@ namespace DeepSpace.Components.Player
 
         protected override void DefaultValues()
         {
+            base.DefaultValues();
             this.speed = Vector2.Zero;
             this.shootRatio = TimeSpan.FromMilliseconds(250);
         }
