@@ -59,7 +59,6 @@
           <d4p1:IsVisible>true</d4p1:IsVisible>
           <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
           <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.OpaqueLayer,WaveEngine.Framework</LayerTypeName>
-          <collider2D xmlns:d6p1="WaveEngine.Framework.Physics2D" i:nil="true" xmlns="WaveEngine.Framework.Graphics" />
           <d5p1:SamplerMode>LinearClamp</d5p1:SamplerMode>
         </d4p1:Component>
         <d4p1:Component xmlns:d5p1="BasketKing.Behaviors" i:type="d5p1:StretchBehavior">
@@ -209,7 +208,6 @@
           <d4p1:IsVisible>true</d4p1:IsVisible>
           <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
           <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
-          <collider2D xmlns:d6p1="WaveEngine.Framework.Physics2D" i:nil="true" xmlns="WaveEngine.Framework.Graphics" />
           <d5p1:SamplerMode>LinearClamp</d5p1:SamplerMode>
         </d4p1:Component>
       </d2p1:SerializeComponents>
@@ -272,24 +270,6 @@
           <d4p1:IsVisible>false</d4p1:IsVisible>
           <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
           <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AdditiveLayer,WaveEngine.Framework</LayerTypeName>
-          <collider2D xmlns:d6p1="WaveEngine.Framework.Physics2D" i:type="d6p1:RectangleCollider2D" xmlns="WaveEngine.Framework.Graphics">
-            <d4p1:IsActive>true</d4p1:IsActive>
-            <d4p1:UpdateOrder>0.5</d4p1:UpdateOrder>
-            <d6p1:Center xmlns:d7p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
-              <d7p1:X>0</d7p1:X>
-              <d7p1:Y>0</d7p1:Y>
-            </d6p1:Center>
-            <d6p1:DebugLineColor xmlns:d7p1="WaveEngine.Common.Graphics">
-              <d7p1:A>255</d7p1:A>
-              <d7p1:B>0</d7p1:B>
-              <d7p1:G>165</d7p1:G>
-              <d7p1:R>255</d7p1:R>
-            </d6p1:DebugLineColor>
-            <d6p1:Size xmlns:d7p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
-              <d7p1:X>36.4000854</d7p1:X>
-              <d7p1:Y>14.9599915</d7p1:Y>
-            </d6p1:Size>
-          </collider2D>
           <d5p1:SamplerMode>LinearClamp</d5p1:SamplerMode>
         </d4p1:Component>
         <d4p1:Component xmlns:d5p1="WaveEngine.Framework.Physics2D" i:type="d5p1:RectangleCollider2D">
@@ -391,24 +371,6 @@
           <d4p1:IsVisible>false</d4p1:IsVisible>
           <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
           <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AdditiveLayer,WaveEngine.Framework</LayerTypeName>
-          <collider2D xmlns:d6p1="WaveEngine.Framework.Physics2D" i:type="d6p1:RectangleCollider2D" xmlns="WaveEngine.Framework.Graphics">
-            <d4p1:IsActive>true</d4p1:IsActive>
-            <d4p1:UpdateOrder>0.5</d4p1:UpdateOrder>
-            <d6p1:Center xmlns:d7p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
-              <d7p1:X>0</d7p1:X>
-              <d7p1:Y>0</d7p1:Y>
-            </d6p1:Center>
-            <d6p1:DebugLineColor xmlns:d7p1="WaveEngine.Common.Graphics">
-              <d7p1:A>255</d7p1:A>
-              <d7p1:B>0</d7p1:B>
-              <d7p1:G>165</d7p1:G>
-              <d7p1:R>255</d7p1:R>
-            </d6p1:DebugLineColor>
-            <d6p1:Size xmlns:d7p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
-              <d7p1:X>56.79998</d7p1:X>
-              <d7p1:Y>326.402161</d7p1:Y>
-            </d6p1:Size>
-          </collider2D>
           <d5p1:SamplerMode>LinearClamp</d5p1:SamplerMode>
         </d4p1:Component>
         <d4p1:Component xmlns:d5p1="WaveEngine.Framework.Physics2D" i:type="d5p1:RectangleCollider2D">
@@ -510,24 +472,6 @@
           <d4p1:IsVisible>false</d4p1:IsVisible>
           <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
           <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AdditiveLayer,WaveEngine.Framework</LayerTypeName>
-          <collider2D xmlns:d6p1="WaveEngine.Framework.Physics2D" i:type="d6p1:RectangleCollider2D" xmlns="WaveEngine.Framework.Graphics">
-            <d4p1:IsActive>true</d4p1:IsActive>
-            <d4p1:UpdateOrder>0.5</d4p1:UpdateOrder>
-            <d6p1:Center xmlns:d7p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
-              <d7p1:X>0</d7p1:X>
-              <d7p1:Y>0</d7p1:Y>
-            </d6p1:Center>
-            <d6p1:DebugLineColor xmlns:d7p1="WaveEngine.Common.Graphics">
-              <d7p1:A>255</d7p1:A>
-              <d7p1:B>0</d7p1:B>
-              <d7p1:G>165</d7p1:G>
-              <d7p1:R>255</d7p1:R>
-            </d6p1:DebugLineColor>
-            <d6p1:Size xmlns:d7p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
-              <d7p1:X>9.6</d7p1:X>
-              <d7p1:Y>14.96</d7p1:Y>
-            </d6p1:Size>
-          </collider2D>
           <d5p1:SamplerMode>LinearClamp</d5p1:SamplerMode>
         </d4p1:Component>
         <d4p1:Component xmlns:d5p1="WaveEngine.Framework.Physics2D" i:type="d5p1:RectangleCollider2D">
@@ -629,7 +573,6 @@
           <d4p1:IsVisible>true</d4p1:IsVisible>
           <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
           <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
-          <collider2D xmlns:d6p1="WaveEngine.Framework.Physics2D" i:nil="true" xmlns="WaveEngine.Framework.Graphics" />
           <d5p1:SamplerMode>LinearClamp</d5p1:SamplerMode>
         </d4p1:Component>
       </d2p1:SerializeComponents>
@@ -692,20 +635,6 @@
           <d4p1:IsVisible>false</d4p1:IsVisible>
           <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
           <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
-          <collider2D xmlns:d6p1="WaveEngine.Framework.Physics2D" xmlns:d6p2="WaveEngine.Framework.Physics3D" i:type="d6p2:CircleCollider2D" xmlns="WaveEngine.Framework.Graphics">
-            <d4p1:IsActive>true</d4p1:IsActive>
-            <d4p1:UpdateOrder>0.5</d4p1:UpdateOrder>
-            <d6p1:Center xmlns:d7p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
-              <d7p1:X>0</d7p1:X>
-              <d7p1:Y>0</d7p1:Y>
-            </d6p1:Center>
-            <d6p1:DebugLineColor xmlns:d7p1="WaveEngine.Common.Graphics">
-              <d7p1:A>255</d7p1:A>
-              <d7p1:B>0</d7p1:B>
-              <d7p1:G>0</d7p1:G>
-              <d7p1:R>255</d7p1:R>
-            </d6p1:DebugLineColor>
-          </collider2D>
           <d5p1:SamplerMode>LinearClamp</d5p1:SamplerMode>
         </d4p1:Component>
         <d4p1:Component xmlns:d5p1="WaveEngine.Framework.Physics3D" i:type="d5p1:CircleCollider2D">
@@ -803,20 +732,6 @@
           <d4p1:IsVisible>false</d4p1:IsVisible>
           <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
           <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
-          <collider2D xmlns:d6p1="WaveEngine.Framework.Physics2D" xmlns:d6p2="WaveEngine.Framework.Physics3D" i:type="d6p2:CircleCollider2D" xmlns="WaveEngine.Framework.Graphics">
-            <d4p1:IsActive>true</d4p1:IsActive>
-            <d4p1:UpdateOrder>0.5</d4p1:UpdateOrder>
-            <d6p1:Center xmlns:d7p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
-              <d7p1:X>0</d7p1:X>
-              <d7p1:Y>0</d7p1:Y>
-            </d6p1:Center>
-            <d6p1:DebugLineColor xmlns:d7p1="WaveEngine.Common.Graphics">
-              <d7p1:A>255</d7p1:A>
-              <d7p1:B>0</d7p1:B>
-              <d7p1:G>0</d7p1:G>
-              <d7p1:R>255</d7p1:R>
-            </d6p1:DebugLineColor>
-          </collider2D>
           <d5p1:SamplerMode>LinearClamp</d5p1:SamplerMode>
         </d4p1:Component>
         <d4p1:Component xmlns:d5p1="WaveEngine.Framework.Physics3D" i:type="d5p1:CircleCollider2D">
@@ -935,20 +850,6 @@
           <d4p1:IsVisible>false</d4p1:IsVisible>
           <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
           <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
-          <collider2D xmlns:d6p1="WaveEngine.Framework.Physics2D" xmlns:d6p2="WaveEngine.Framework.Physics3D" i:type="d6p2:CircleCollider2D" xmlns="WaveEngine.Framework.Graphics">
-            <d4p1:IsActive>true</d4p1:IsActive>
-            <d4p1:UpdateOrder>0.5</d4p1:UpdateOrder>
-            <d6p1:Center xmlns:d7p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
-              <d7p1:X>0</d7p1:X>
-              <d7p1:Y>0</d7p1:Y>
-            </d6p1:Center>
-            <d6p1:DebugLineColor xmlns:d7p1="WaveEngine.Common.Graphics">
-              <d7p1:A>255</d7p1:A>
-              <d7p1:B>0</d7p1:B>
-              <d7p1:G>0</d7p1:G>
-              <d7p1:R>255</d7p1:R>
-            </d6p1:DebugLineColor>
-          </collider2D>
           <d5p1:SamplerMode>LinearClamp</d5p1:SamplerMode>
         </d4p1:Component>
         <d4p1:Component xmlns:d5p1="WaveEngine.Framework.Physics3D" i:type="d5p1:CircleCollider2D">
@@ -1067,20 +968,6 @@
           <d4p1:IsVisible>false</d4p1:IsVisible>
           <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
           <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
-          <collider2D xmlns:d6p1="WaveEngine.Framework.Physics2D" xmlns:d6p2="WaveEngine.Framework.Physics3D" i:type="d6p2:CircleCollider2D" xmlns="WaveEngine.Framework.Graphics">
-            <d4p1:IsActive>true</d4p1:IsActive>
-            <d4p1:UpdateOrder>0.5</d4p1:UpdateOrder>
-            <d6p1:Center xmlns:d7p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
-              <d7p1:X>0</d7p1:X>
-              <d7p1:Y>0</d7p1:Y>
-            </d6p1:Center>
-            <d6p1:DebugLineColor xmlns:d7p1="WaveEngine.Common.Graphics">
-              <d7p1:A>255</d7p1:A>
-              <d7p1:B>0</d7p1:B>
-              <d7p1:G>0</d7p1:G>
-              <d7p1:R>255</d7p1:R>
-            </d6p1:DebugLineColor>
-          </collider2D>
           <d5p1:SamplerMode>LinearClamp</d5p1:SamplerMode>
         </d4p1:Component>
         <d4p1:Component xmlns:d5p1="WaveEngine.Framework.Physics3D" i:type="d5p1:CircleCollider2D">
@@ -1199,20 +1086,6 @@
           <d4p1:IsVisible>false</d4p1:IsVisible>
           <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
           <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
-          <collider2D xmlns:d6p1="WaveEngine.Framework.Physics2D" xmlns:d6p2="WaveEngine.Framework.Physics3D" i:type="d6p2:CircleCollider2D" xmlns="WaveEngine.Framework.Graphics">
-            <d4p1:IsActive>true</d4p1:IsActive>
-            <d4p1:UpdateOrder>0.5</d4p1:UpdateOrder>
-            <d6p1:Center xmlns:d7p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
-              <d7p1:X>0</d7p1:X>
-              <d7p1:Y>0</d7p1:Y>
-            </d6p1:Center>
-            <d6p1:DebugLineColor xmlns:d7p1="WaveEngine.Common.Graphics">
-              <d7p1:A>255</d7p1:A>
-              <d7p1:B>0</d7p1:B>
-              <d7p1:G>0</d7p1:G>
-              <d7p1:R>255</d7p1:R>
-            </d6p1:DebugLineColor>
-          </collider2D>
           <d5p1:SamplerMode>LinearClamp</d5p1:SamplerMode>
         </d4p1:Component>
         <d4p1:Component xmlns:d5p1="WaveEngine.Framework.Physics3D" i:type="d5p1:CircleCollider2D">
@@ -1331,20 +1204,6 @@
           <d4p1:IsVisible>false</d4p1:IsVisible>
           <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
           <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
-          <collider2D xmlns:d6p1="WaveEngine.Framework.Physics2D" xmlns:d6p2="WaveEngine.Framework.Physics3D" i:type="d6p2:CircleCollider2D" xmlns="WaveEngine.Framework.Graphics">
-            <d4p1:IsActive>true</d4p1:IsActive>
-            <d4p1:UpdateOrder>0.5</d4p1:UpdateOrder>
-            <d6p1:Center xmlns:d7p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
-              <d7p1:X>0</d7p1:X>
-              <d7p1:Y>0</d7p1:Y>
-            </d6p1:Center>
-            <d6p1:DebugLineColor xmlns:d7p1="WaveEngine.Common.Graphics">
-              <d7p1:A>255</d7p1:A>
-              <d7p1:B>0</d7p1:B>
-              <d7p1:G>0</d7p1:G>
-              <d7p1:R>255</d7p1:R>
-            </d6p1:DebugLineColor>
-          </collider2D>
           <d5p1:SamplerMode>LinearClamp</d5p1:SamplerMode>
         </d4p1:Component>
         <d4p1:Component xmlns:d5p1="WaveEngine.Framework.Physics3D" i:type="d5p1:CircleCollider2D">
@@ -1463,20 +1322,6 @@
           <d4p1:IsVisible>false</d4p1:IsVisible>
           <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
           <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
-          <collider2D xmlns:d6p1="WaveEngine.Framework.Physics2D" xmlns:d6p2="WaveEngine.Framework.Physics3D" i:type="d6p2:CircleCollider2D" xmlns="WaveEngine.Framework.Graphics">
-            <d4p1:IsActive>true</d4p1:IsActive>
-            <d4p1:UpdateOrder>0.5</d4p1:UpdateOrder>
-            <d6p1:Center xmlns:d7p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
-              <d7p1:X>0</d7p1:X>
-              <d7p1:Y>0</d7p1:Y>
-            </d6p1:Center>
-            <d6p1:DebugLineColor xmlns:d7p1="WaveEngine.Common.Graphics">
-              <d7p1:A>255</d7p1:A>
-              <d7p1:B>0</d7p1:B>
-              <d7p1:G>0</d7p1:G>
-              <d7p1:R>255</d7p1:R>
-            </d6p1:DebugLineColor>
-          </collider2D>
           <d5p1:SamplerMode>LinearClamp</d5p1:SamplerMode>
         </d4p1:Component>
         <d4p1:Component xmlns:d5p1="WaveEngine.Framework.Physics3D" i:type="d5p1:CircleCollider2D">
@@ -1595,20 +1440,6 @@
           <d4p1:IsVisible>false</d4p1:IsVisible>
           <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
           <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
-          <collider2D xmlns:d6p1="WaveEngine.Framework.Physics2D" xmlns:d6p2="WaveEngine.Framework.Physics3D" i:type="d6p2:CircleCollider2D" xmlns="WaveEngine.Framework.Graphics">
-            <d4p1:IsActive>true</d4p1:IsActive>
-            <d4p1:UpdateOrder>0.5</d4p1:UpdateOrder>
-            <d6p1:Center xmlns:d7p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
-              <d7p1:X>0</d7p1:X>
-              <d7p1:Y>0</d7p1:Y>
-            </d6p1:Center>
-            <d6p1:DebugLineColor xmlns:d7p1="WaveEngine.Common.Graphics">
-              <d7p1:A>255</d7p1:A>
-              <d7p1:B>0</d7p1:B>
-              <d7p1:G>0</d7p1:G>
-              <d7p1:R>255</d7p1:R>
-            </d6p1:DebugLineColor>
-          </collider2D>
           <d5p1:SamplerMode>LinearClamp</d5p1:SamplerMode>
         </d4p1:Component>
         <d4p1:Component xmlns:d5p1="WaveEngine.Framework.Physics3D" i:type="d5p1:CircleCollider2D">
@@ -1722,7 +1553,6 @@
           <d4p1:IsVisible>true</d4p1:IsVisible>
           <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
           <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
-          <collider2D xmlns:d6p1="WaveEngine.Framework.Physics2D" i:nil="true" xmlns="WaveEngine.Framework.Graphics" />
         </d4p1:Component>
       </d2p1:SerializeComponents>
     </d2p1:BaseEntityModel>
@@ -1784,24 +1614,6 @@
           <d4p1:IsVisible>false</d4p1:IsVisible>
           <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
           <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AdditiveLayer,WaveEngine.Framework</LayerTypeName>
-          <collider2D xmlns:d6p1="WaveEngine.Framework.Physics2D" i:type="d6p1:RectangleCollider2D" xmlns="WaveEngine.Framework.Graphics">
-            <d4p1:IsActive>true</d4p1:IsActive>
-            <d4p1:UpdateOrder>0.5</d4p1:UpdateOrder>
-            <d6p1:Center xmlns:d7p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
-              <d7p1:X>0</d7p1:X>
-              <d7p1:Y>0</d7p1:Y>
-            </d6p1:Center>
-            <d6p1:DebugLineColor xmlns:d7p1="WaveEngine.Common.Graphics">
-              <d7p1:A>255</d7p1:A>
-              <d7p1:B>0</d7p1:B>
-              <d7p1:G>165</d7p1:G>
-              <d7p1:R>255</d7p1:R>
-            </d6p1:DebugLineColor>
-            <d6p1:Size xmlns:d7p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
-              <d7p1:X>1835.59839</d7p1:X>
-              <d7p1:Y>80.20204</d7p1:Y>
-            </d6p1:Size>
-          </collider2D>
           <d5p1:SamplerMode>LinearClamp</d5p1:SamplerMode>
         </d4p1:Component>
         <d4p1:Component xmlns:d5p1="WaveEngine.Framework.Physics2D" i:type="d5p1:RectangleCollider2D">
@@ -1903,24 +1715,6 @@
           <d4p1:IsVisible>false</d4p1:IsVisible>
           <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
           <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AdditiveLayer,WaveEngine.Framework</LayerTypeName>
-          <collider2D xmlns:d6p1="WaveEngine.Framework.Physics2D" i:type="d6p1:RectangleCollider2D" xmlns="WaveEngine.Framework.Graphics">
-            <d4p1:IsActive>true</d4p1:IsActive>
-            <d4p1:UpdateOrder>0.5</d4p1:UpdateOrder>
-            <d6p1:Center xmlns:d7p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
-              <d7p1:X>0</d7p1:X>
-              <d7p1:Y>0</d7p1:Y>
-            </d6p1:Center>
-            <d6p1:DebugLineColor xmlns:d7p1="WaveEngine.Common.Graphics">
-              <d7p1:A>255</d7p1:A>
-              <d7p1:B>0</d7p1:B>
-              <d7p1:G>165</d7p1:G>
-              <d7p1:R>255</d7p1:R>
-            </d6p1:DebugLineColor>
-            <d6p1:Size xmlns:d7p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
-              <d7p1:X>1835.59839</d7p1:X>
-              <d7p1:Y>108.802177</d7p1:Y>
-            </d6p1:Size>
-          </collider2D>
           <d5p1:SamplerMode>LinearClamp</d5p1:SamplerMode>
         </d4p1:Component>
         <d4p1:Component xmlns:d5p1="WaveEngine.Framework.Physics2D" i:type="d5p1:RectangleCollider2D">
@@ -2022,24 +1816,6 @@
           <d4p1:IsVisible>false</d4p1:IsVisible>
           <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
           <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AdditiveLayer,WaveEngine.Framework</LayerTypeName>
-          <collider2D xmlns:d6p1="WaveEngine.Framework.Physics2D" i:type="d6p1:RectangleCollider2D" xmlns="WaveEngine.Framework.Graphics">
-            <d4p1:IsActive>true</d4p1:IsActive>
-            <d4p1:UpdateOrder>0.5</d4p1:UpdateOrder>
-            <d6p1:Center xmlns:d7p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
-              <d7p1:X>0</d7p1:X>
-              <d7p1:Y>0</d7p1:Y>
-            </d6p1:Center>
-            <d6p1:DebugLineColor xmlns:d7p1="WaveEngine.Common.Graphics">
-              <d7p1:A>255</d7p1:A>
-              <d7p1:B>0</d7p1:B>
-              <d7p1:G>165</d7p1:G>
-              <d7p1:R>255</d7p1:R>
-            </d6p1:DebugLineColor>
-            <d6p1:Size xmlns:d7p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
-              <d7p1:X>137.8009</d7p1:X>
-              <d7p1:Y>1414.00134</d7p1:Y>
-            </d6p1:Size>
-          </collider2D>
           <d5p1:SamplerMode>LinearClamp</d5p1:SamplerMode>
         </d4p1:Component>
         <d4p1:Component xmlns:d5p1="WaveEngine.Framework.Physics2D" i:type="d5p1:RectangleCollider2D">
@@ -2141,24 +1917,6 @@
           <d4p1:IsVisible>false</d4p1:IsVisible>
           <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
           <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AdditiveLayer,WaveEngine.Framework</LayerTypeName>
-          <collider2D xmlns:d6p1="WaveEngine.Framework.Physics2D" i:type="d6p1:RectangleCollider2D" xmlns="WaveEngine.Framework.Graphics">
-            <d4p1:IsActive>true</d4p1:IsActive>
-            <d4p1:UpdateOrder>0.5</d4p1:UpdateOrder>
-            <d6p1:Center xmlns:d7p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
-              <d7p1:X>0</d7p1:X>
-              <d7p1:Y>0</d7p1:Y>
-            </d6p1:Center>
-            <d6p1:DebugLineColor xmlns:d7p1="WaveEngine.Common.Graphics">
-              <d7p1:A>255</d7p1:A>
-              <d7p1:B>0</d7p1:B>
-              <d7p1:G>165</d7p1:G>
-              <d7p1:R>255</d7p1:R>
-            </d6p1:DebugLineColor>
-            <d6p1:Size xmlns:d7p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
-              <d7p1:X>140.400879</d7p1:X>
-              <d7p1:Y>1419.20178</d7p1:Y>
-            </d6p1:Size>
-          </collider2D>
           <d5p1:SamplerMode>LinearClamp</d5p1:SamplerMode>
         </d4p1:Component>
         <d4p1:Component xmlns:d5p1="WaveEngine.Framework.Physics2D" i:type="d5p1:RectangleCollider2D">
@@ -2257,7 +2015,6 @@
               <d6p1:IsVisible>true</d6p1:IsVisible>
               <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
               <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
-              <collider2D xmlns:d8p1="WaveEngine.Framework.Physics2D" i:nil="true" xmlns="WaveEngine.Framework.Graphics" />
               <d7p1:CurveWith>3.5</d7p1:CurveWith>
               <d7p1:DestinationEntity>BallStart</d7p1:DestinationEntity>
             </d6p1:Component>
@@ -2320,7 +2077,6 @@
           <d4p1:IsVisible>true</d4p1:IsVisible>
           <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
           <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
-          <collider2D xmlns:d6p1="WaveEngine.Framework.Physics2D" i:nil="true" xmlns="WaveEngine.Framework.Graphics" />
           <d5p1:SamplerMode>LinearClamp</d5p1:SamplerMode>
         </d4p1:Component>
       </d2p1:SerializeComponents>
@@ -2385,7 +2141,6 @@
               <d6p1:IsVisible>true</d6p1:IsVisible>
               <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
               <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
-              <collider2D xmlns:d8p1="WaveEngine.Framework.Physics2D" i:nil="true" xmlns="WaveEngine.Framework.Graphics" />
               <d7p1:SamplerMode>LinearClamp</d7p1:SamplerMode>
             </d6p1:Component>
             <d6p1:Component xmlns:d7p1="WaveEngine.Components.Graphics3D" i:type="d7p1:Spinner">
@@ -2463,7 +2218,6 @@
           <d4p1:IsVisible>true</d4p1:IsVisible>
           <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
           <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
-          <collider2D xmlns:d6p1="WaveEngine.Framework.Physics2D" i:nil="true" xmlns="WaveEngine.Framework.Graphics" />
           <d5p1:SamplerMode>LinearClamp</d5p1:SamplerMode>
         </d4p1:Component>
       </d2p1:SerializeComponents>
@@ -2528,7 +2282,6 @@
               <d6p1:IsVisible>true</d6p1:IsVisible>
               <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
               <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
-              <collider2D xmlns:d8p1="WaveEngine.Framework.Physics2D" i:nil="true" xmlns="WaveEngine.Framework.Graphics" />
               <d7p1:SamplerMode>LinearClamp</d7p1:SamplerMode>
             </d6p1:Component>
             <d6p1:Component xmlns:d7p1="WaveEngine.Framework.Animation" i:type="d7p1:AnimationUI">
@@ -2600,7 +2353,6 @@
                   <d8p1:IsVisible>true</d8p1:IsVisible>
                   <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
                   <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
-                  <collider2D xmlns:d10p1="WaveEngine.Framework.Physics2D" i:nil="true" xmlns="WaveEngine.Framework.Graphics" />
                   <d9p1:SamplerMode>LinearClamp</d9p1:SamplerMode>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="WaveEngine.Components.Animation" i:type="d9p1:Animation2D">
@@ -2669,7 +2421,6 @@
               <d6p1:IsVisible>true</d6p1:IsVisible>
               <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
               <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
-              <collider2D xmlns:d8p1="WaveEngine.Framework.Physics2D" i:nil="true" xmlns="WaveEngine.Framework.Graphics" />
               <d7p1:SamplerMode>LinearClamp</d7p1:SamplerMode>
             </d6p1:Component>
           </d2p1:SerializeComponents>

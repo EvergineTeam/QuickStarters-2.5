@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// File generated on 1/28/2016 12:21:36 PM
+// File generated on 14/06/2016 12:46:17
 namespace NewImpossibleGame
 {
     using System;

@@ -1,4 +1,4 @@
-<Project xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="WaveEngine.Framework.Models">
+﻿<Project xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="WaveEngine.Framework.Models">
   <Id>8e2bf658-d3ca-4f1f-9ed3-dc6a54f30284</Id>
   <ResourcesPath>Content</ResourcesPath>
   <Settings xmlns:d2p1="WaveEngine.Framework.Models.Settings">
@@ -9,30 +9,35 @@
           <d5p1:Profiles>
             <Profile>
               <AlphaCompressionFormat>R8G8B8A8</AlphaCompressionFormat>
+              <LauncherType i:nil="true" />
               <Name>Android</Name>
               <NonAlphaCompressionFormat>ETC1RGB8</NonAlphaCompressionFormat>
               <Platform>Android</Platform>
             </Profile>
             <Profile>
               <AlphaCompressionFormat>R8G8B8A8</AlphaCompressionFormat>
+              <LauncherType i:nil="true" />
               <Name>Linux</Name>
               <NonAlphaCompressionFormat>R8G8B8A8</NonAlphaCompressionFormat>
               <Platform>Linux</Platform>
             </Profile>
             <Profile>
               <AlphaCompressionFormat>R8G8B8A8</AlphaCompressionFormat>
+              <LauncherType i:nil="true" />
               <Name>MacOS</Name>
               <NonAlphaCompressionFormat>R8G8B8A8</NonAlphaCompressionFormat>
               <Platform>MacOS</Platform>
             </Profile>
             <Profile>
               <AlphaCompressionFormat>R8G8B8A8</AlphaCompressionFormat>
+              <LauncherType i:nil="true" />
               <Name>Windows</Name>
               <NonAlphaCompressionFormat>R8G8B8A8</NonAlphaCompressionFormat>
               <Platform>Windows</Platform>
             </Profile>
             <Profile>
               <AlphaCompressionFormat>DXT1</AlphaCompressionFormat>
+              <LauncherType i:nil="true" />
               <Name>UWPProfile</Name>
               <NonAlphaCompressionFormat>DXT5</NonAlphaCompressionFormat>
               <Platform>UWP</Platform>
@@ -48,5 +53,5 @@
     <d2p1:_Minor>0</d2p1:_Minor>
     <d2p1:_Revision>0</d2p1:_Revision>
   </Version>
-  <WaveVersion>2.2.0.26</WaveVersion>
+  <WaveVersion>2.2.1.27</WaveVersion>
 </Project>

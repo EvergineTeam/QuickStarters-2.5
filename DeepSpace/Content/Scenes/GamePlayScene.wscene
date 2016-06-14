@@ -143,7 +143,6 @@
           <d4p1:IsVisible>true</d4p1:IsVisible>
           <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
           <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
-          <collider2D xmlns:d6p1="WaveEngine.Framework.Physics2D" i:nil="true" xmlns="WaveEngine.Framework.Graphics" />
           <d5p1:SamplerMode>LinearClamp</d5p1:SamplerMode>
         </d4p1:Component>
         <d4p1:Component xmlns:d5p1="http://schemas.datacontract.org/2004/07/DeepSpace.Components.Alignment" i:type="d5p1:ViewportAligmentComponent">
@@ -221,23 +220,6 @@
           <d4p1:IsVisible>true</d4p1:IsVisible>
           <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
           <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
-          <collider2D xmlns:d6p1="WaveEngine.Framework.Physics2D" xmlns:d6p2="WaveEngine.Framework.Physics3D" i:type="d6p2:PerPixelCollider2D" xmlns="WaveEngine.Framework.Graphics">
-            <d4p1:IsActive>true</d4p1:IsActive>
-            <d4p1:UpdateOrder>0.5</d4p1:UpdateOrder>
-            <d6p1:Center xmlns:d7p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
-              <d7p1:X>0</d7p1:X>
-              <d7p1:Y>0</d7p1:Y>
-            </d6p1:Center>
-            <d6p1:DebugLineColor xmlns:d7p1="WaveEngine.Common.Graphics">
-              <d7p1:A>255</d7p1:A>
-              <d7p1:B>0</d7p1:B>
-              <d7p1:G>69</d7p1:G>
-              <d7p1:R>255</d7p1:R>
-            </d6p1:DebugLineColor>
-            <d6p2:IsGlobalAsset>false</d6p2:IsGlobalAsset>
-            <d6p2:TexturePath>Content/Assets/PlayerCollider.png.wpk</d6p2:TexturePath>
-            <d6p2:threshold>0</d6p2:threshold>
-          </collider2D>
           <d5p1:SamplerMode>LinearClamp</d5p1:SamplerMode>
         </d4p1:Component>
         <d4p1:Component xmlns:d5p1="WaveEngine.Framework.Physics3D" i:type="d5p1:PerPixelCollider2D">
@@ -326,7 +308,6 @@
               <d6p1:IsVisible>true</d6p1:IsVisible>
               <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
               <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
-              <collider2D xmlns:d8p1="WaveEngine.Framework.Physics2D" i:nil="true" xmlns="WaveEngine.Framework.Graphics" />
               <d7p1:SamplerMode>LinearClamp</d7p1:SamplerMode>
             </d6p1:Component>
           </d2p1:SerializeComponents>
@@ -389,7 +370,6 @@
               <d6p1:IsVisible>true</d6p1:IsVisible>
               <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
               <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
-              <collider2D xmlns:d8p1="WaveEngine.Framework.Physics2D" i:nil="true" xmlns="WaveEngine.Framework.Graphics" />
               <d7p1:SamplerMode>LinearClamp</d7p1:SamplerMode>
             </d6p1:Component>
           </d2p1:SerializeComponents>
@@ -524,7 +504,6 @@
               <d6p1:IsVisible>true</d6p1:IsVisible>
               <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
               <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
-              <collider2D xmlns:d8p1="WaveEngine.Framework.Physics2D" i:nil="true" xmlns="WaveEngine.Framework.Graphics" />
               <d7p1:SamplerMode>LinearClamp</d7p1:SamplerMode>
             </d6p1:Component>
           </d2p1:SerializeComponents>
@@ -803,7 +782,6 @@
           <d4p1:IsVisible>true</d4p1:IsVisible>
           <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
           <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
-          <collider2D xmlns:d6p1="WaveEngine.Framework.Physics2D" i:nil="true" xmlns="WaveEngine.Framework.Graphics" />
           <d5p1:SamplerMode>LinearClamp</d5p1:SamplerMode>
         </d4p1:Component>
         <d4p1:Component xmlns:d5p1="http://schemas.datacontract.org/2004/07/DeepSpace.Components.Alignment" i:type="d5p1:ViewportAligmentComponent">
@@ -887,7 +865,6 @@
           <d4p1:IsVisible>true</d4p1:IsVisible>
           <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
           <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
-          <collider2D xmlns:d6p1="WaveEngine.Framework.Physics2D" i:nil="true" xmlns="WaveEngine.Framework.Graphics" />
           <d5p1:SamplerMode>LinearClamp</d5p1:SamplerMode>
         </d4p1:Component>
         <d4p1:Component xmlns:d5p1="http://schemas.datacontract.org/2004/07/DeepSpace.Components.Alignment" i:type="d5p1:BackgroundStretchComponent" />
