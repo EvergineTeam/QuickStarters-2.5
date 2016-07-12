@@ -56,7 +56,7 @@ namespace SuperSquid.Scenes
 #if ANDROID
                 await WaveServices.GetService<SocialService>().AddNewScore(LeaderboardCode, this.gameScene.CurrentScore);
 
-                await WaveServices.GetService<SocialService>().ShowAllLeaderboards();
+                await WaveServices.GetService<SocialService>().ShowLeaderboard(LeaderboardCode);
 #endif
             }
 
