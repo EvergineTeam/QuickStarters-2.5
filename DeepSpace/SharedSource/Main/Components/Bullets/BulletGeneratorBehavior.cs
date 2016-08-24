@@ -85,7 +85,11 @@ namespace DeepSpace.Components.Bullets
                     Origin = Vector2.Center,
                     DrawOrder = 0.6f,
                 })
-                .AddComponent(new PerPixelCollider2D(player ? WaveContent.Assets.BulletCollider_png : WaveContent.Assets.EnemyBulletCollider_png, 0.5f))
+                .AddComponent(new PolygonCollider2D()
+                {
+                    TexturePath = player ? WaveContent.Assets.Bullet_png : WaveContent.Assets.EnemyBullet_png,
+                    Threshold = 0.5f,
+                })
                 .AddComponent(new Sprite(player ? WaveContent.Assets.Bullet_png : WaveContent.Assets.EnemyBullet_png))
                 .AddComponent(new BulletBehavior())
                 .AddComponent(new SpriteRenderer(DefaultLayers.Alpha));
