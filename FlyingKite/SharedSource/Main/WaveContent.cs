@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// File generated on 14/06/2016 12:44:42
+// File generated on 25/08/2016 12:30:40
 namespace FlyingKite
 {
     using System;
