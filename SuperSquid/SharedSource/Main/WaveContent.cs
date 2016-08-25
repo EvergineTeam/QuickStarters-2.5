@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// File generated on 14/06/2016 12:55:23
+// File generated on 25/08/2016 12:00:30
 namespace SuperSquid
 {
     using System;

@@ -171,7 +171,10 @@ namespace SuperSquid.Entities.Behaviors
 
                     // Play squid swim sound
                     var sound = WaveServices.Random.NextBool() ? SoundManager.SOUNDS.SquidSwim1 : SoundManager.SOUNDS.SquidSwim2;
-                    this.soundManager.PlaySound(sound);
+                    if (this.soundManager != null)
+                    {
+                        this.soundManager.PlaySound(sound);
+                    }
 
                     // Emit bubble particles
                     this.bubleParticles.Emit = true;
