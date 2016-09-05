@@ -27,7 +27,7 @@ namespace SuperSquid
 		public MainWindow (IntPtr handle) : base (handle)
 		{
 			this.WindowTitle = "SuperSquid";
-			this.ResizeScreen(1280, 720);
+			this.ResizeScreen(768, 1024);
 		}
 
 		[Export ("initWithCoder:")]
