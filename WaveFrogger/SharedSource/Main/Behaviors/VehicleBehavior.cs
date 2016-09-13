@@ -54,7 +54,11 @@ namespace WaveFrogger.Behaviors
                 var mustHorn = WaveServices.Random.NextBool(0.3f);
                 if (mustHorn)
                 {
-                    this.audioService.PlayRandom(Audio.Sfx.horn1_wav, Audio.Sfx.horn2_wav, Audio.Sfx.horn3_wav, Audio.Sfx.horn4_wav);
+                    if (this.audioService != null)
+                    {
+                        this.audioService.PlayRandom(Audio.Sfx.horn1_wav, Audio.Sfx.horn2_wav, Audio.Sfx.horn3_wav, Audio.Sfx.horn4_wav);
+                    }
+
                     this.hadHorn = true;
                 }
             }

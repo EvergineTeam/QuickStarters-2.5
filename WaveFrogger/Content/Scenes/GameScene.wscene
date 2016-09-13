@@ -332,7 +332,7 @@
               </d7p1:LocalOrientation>
               <d7p1:LocalPosition xmlns:d8p1="WaveEngine.Common.Math">
                 <d8p1:X>0</d8p1:X>
-                <d8p1:Y>-494.5</d8p1:Y>
+                <d8p1:Y>-481.3</d8p1:Y>
                 <d8p1:Z>0</d8p1:Z>
               </d7p1:LocalPosition>
               <d7p1:LocalScale xmlns:d8p1="WaveEngine.Common.Math">

@@ -99,7 +99,10 @@ namespace WaveFrogger.Behaviors
             {
                 this.desiredOrientation = this.upOrientation;
                 this.desiredPosition = targetPosition;
-                this.audioService.PlayRandom(jumpSounds);
+                if (this.audioService != null)
+                {
+                    this.audioService.PlayRandom(jumpSounds);
+                }
             }
         }
 
@@ -110,7 +113,10 @@ namespace WaveFrogger.Behaviors
             {
                 this.desiredOrientation = this.rightOrientation;
                 this.desiredPosition = targetPosition;
-                this.audioService.PlayRandom(jumpSounds);
+                if (this.audioService != null)
+                {
+                    this.audioService.PlayRandom(jumpSounds);
+                }
             }
         }
 
@@ -121,7 +127,10 @@ namespace WaveFrogger.Behaviors
             {
                 this.desiredOrientation = this.leftOrientation;
                 this.desiredPosition = targetPosition;
-                this.audioService.PlayRandom(jumpSounds);
+                if (this.audioService != null)
+                {
+                    this.audioService.PlayRandom(jumpSounds);
+                }
             }
         }
 
@@ -132,7 +141,10 @@ namespace WaveFrogger.Behaviors
             {
                 this.desiredOrientation = this.downOrientation;
                 this.desiredPosition = targetPosition;
-                this.audioService.PlayRandom(jumpSounds);
+                if (this.audioService != null)
+                {
+                    this.audioService.PlayRandom(jumpSounds);
+                }
             }
         }
 
@@ -238,35 +250,48 @@ namespace WaveFrogger.Behaviors
                         var vector = this.currentPosition - vehicle.FindComponent<Transform3D>().Position;
                         var angle = Vector2.Angle(Vector2.UnitX, new Vector2(vector.X, vector.Z));
 
-                        this.audioService.Play(Audio.Sfx.chicken1_wav);
-
-                        IGameAction animation = null;
-                        if (angle > MathHelper.PiOver4 && angle < 3 * MathHelper.PiOver4)
+                        if (this.audioService != null)
                         {
-                            // look up on this dead
-                            this.desiredOrientation = this.upOrientation;
-                            this.currentOrientation = this.desiredOrientation;
-                            this.transform.Orientation = this.currentOrientation;
-
-                            animation = animationService.CreateDeadAnimation(this.Owner, transform, new Vector3(2f, 1.2f, 0.2f));
-
-                            animation.Delay(TimeSpan.FromMilliseconds(250))
-                                .ContinueWithAction(()=> this.audioService.Play(Audio.Sfx.deadDrop1_wav))
-                                .ContinueWith(animationService.CreateFallAnimation(this.Owner, transform));
-                        }
-                        else
-                        {
-                            animation = animationService.CreateDeadAnimation(this.Owner, transform, new Vector3(2f, 0.2f, 1.2f));
+                            this.audioService.Play(Audio.Sfx.chicken1_wav);
                         }
 
-                        animation
-                            .Delay(TimeSpan.FromMilliseconds(1500))
-                            .ContinueWithAction(() =>
+                        if (this.animationService != null)
                         {
-                            this.BackToInitial();
-                        });
+                            IGameAction animation = null;
+                            if (angle > MathHelper.PiOver4 && angle < 3 * MathHelper.PiOver4)
+                            {
+                                // look up on this dead
+                                this.desiredOrientation = this.upOrientation;
+                                this.currentOrientation = this.desiredOrientation;
+                                this.transform.Orientation = this.currentOrientation;
 
-                        animation.Run();
+                                animation = animationService.CreateDeadAnimation(this.Owner, transform, new Vector3(2f, 1.2f, 0.2f));
+
+                                animation.Delay(TimeSpan.FromMilliseconds(250))
+                                    .ContinueWithAction(() =>
+                                    {
+                                        if (this.audioService != null)
+                                        {
+                                            this.audioService.Play(Audio.Sfx.deadDrop1_wav);
+                                        }
+                                    })
+                                    .ContinueWith(animationService.CreateFallAnimation(this.Owner, transform));
+                            }
+                            else
+                            {
+                                animation = animationService.CreateDeadAnimation(this.Owner, transform, new Vector3(2f, 0.2f, 1.2f));
+                            }
+
+                            animation
+                                .Delay(TimeSpan.FromMilliseconds(1500))
+                                .ContinueWithAction(() =>
+                            {
+                                this.BackToInitial();
+                            });
+
+                            animation.Run();
+                        }
+
                         this.isDeadAnimation = true;
                     }
                 }
