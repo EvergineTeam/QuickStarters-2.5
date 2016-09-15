@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// File generated on 14/06/2016 12:41:39
+// File generated on 8/29/2016 9:37:54 AM
 namespace DeepSpace
 {
     using System;
@@ -41,9 +41,6 @@ namespace DeepSpace
             /// <summary> Path to Content/Assets/Bullet.png </summary>
             public const string Bullet_png = "Content/Assets/Bullet.png";
             
-            /// <summary> Path to Content/Assets/BulletCollider.png </summary>
-            public const string BulletCollider_png = "Content/Assets/BulletCollider.png";
-            
             /// <summary> Path to Content/Assets/DeepSpace_logo.PNG </summary>
             public const string DeepSpace_logo_PNG = "Content/Assets/DeepSpace_logo.PNG";
             
@@ -52,12 +49,6 @@ namespace DeepSpace
             
             /// <summary> Path to Content/Assets/EnemyBullet.png </summary>
             public const string EnemyBullet_png = "Content/Assets/EnemyBullet.png";
-            
-            /// <summary> Path to Content/Assets/EnemyBulletCollider.png </summary>
-            public const string EnemyBulletCollider_png = "Content/Assets/EnemyBulletCollider.png";
-            
-            /// <summary> Path to Content/Assets/EnemyCollider.PNG </summary>
-            public const string EnemyCollider_PNG = "Content/Assets/EnemyCollider.PNG";
             
             /// <summary> Path to Content/Assets/explode0.wav </summary>
             public const string explode0_wav = "Content/Assets/explode0.wav";
@@ -82,9 +73,6 @@ namespace DeepSpace
             
             /// <summary> Path to Content/Assets/Player.png </summary>
             public const string Player_png = "Content/Assets/Player.png";
-            
-            /// <summary> Path to Content/Assets/PlayerCollider.png </summary>
-            public const string PlayerCollider_png = "Content/Assets/PlayerCollider.png";
             
             /// <summary> Path to Content/Assets/PressStart.PNG </summary>
             public const string PressStart_PNG = "Content/Assets/PressStart.PNG";

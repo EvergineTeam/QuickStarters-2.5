@@ -81,7 +81,11 @@ namespace DeepSpace.Components.Enemies
                                Origin = Vector2.Center,
                                DrawOrder = 0.5f
                            })
-                           .AddComponent(new PerPixelCollider2D(WaveContent.Assets.EnemyCollider_PNG, 0.5f))
+                           .AddComponent(new PolygonCollider2D()
+                           {
+                               TexturePath = WaveContent.Assets.Enemy_PNG,
+                               Threshold = 0.5f,
+                           })
                            .AddComponent(new EnemyBehavior() { GamePlayEntityPath = GamePlayEntityPath })
                            .AddComponent(new Sprite(WaveContent.Assets.Enemy_PNG))
                            .AddComponent(new SpriteRenderer(DefaultLayers.Alpha));
