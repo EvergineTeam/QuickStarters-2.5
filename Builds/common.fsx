@@ -76,8 +76,8 @@ let buildquickstarter (platform: string, configuration : string, architecture : 
     | _-> ()
 
 let buildquickstarters(platform: string) =
-	
-	let projects = Directory.GetFiles(rootFolder, String.Format("*{0}*.sln", platform), SearchOption.AllDirectories)           
+    
+    let projects = Directory.GetFiles(rootFolder, String.Format("*{0}*.sln", platform), SearchOption.AllDirectories)           
 
     for quickstarter in projects do
     
