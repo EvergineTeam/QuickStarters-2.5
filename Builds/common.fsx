@@ -76,7 +76,11 @@ let buildquickstarter (platform: string, configuration : string, architecture : 
     | _-> ()
 
 let buildquickstarters(platform: string) =
-    for quickstarter in Directory.GetFiles(rootFolder, ("*" + platform + ".sln"), SearchOption.AllDirectories) do
+	
+	let projects = Directory.GetFiles(rootFolder, String.Format("*{0}*.sln", platform), SearchOption.AllDirectories)           
+
+    for quickstarter in projects do
+    
         traceImportant ("Project " + quickstarter)
 
         let mutable flag = true
