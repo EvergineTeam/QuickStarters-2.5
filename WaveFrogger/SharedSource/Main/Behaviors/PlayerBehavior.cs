@@ -184,7 +184,12 @@ namespace WaveFrogger.Behaviors
             ScreenTransition transition = new CoverTransition(TimeSpan.FromMilliseconds(500), CoverTransition.EffectOptions.FromTop);
             transition.EaseFunction = new CubicEase() { EasingMode = EasingMode.EaseInOut };
 
-            WaveServices.TaskScheduler.CreateTask(() =>
+#if MAC
+			intialScene = new InitialScene();              
+			intialScene.Initialize(WaveServices.GraphicsDevice);
+			WaveServices.ScreenContextManager.To(new ScreenContext(intialScene), transition);
+#else
+			WaveServices.TaskScheduler.CreateTask(() =>
             {
                 intialScene = new InitialScene();
                 intialScene.Initialize(WaveServices.GraphicsDevice);
@@ -193,6 +198,7 @@ namespace WaveFrogger.Behaviors
             {
                 WaveServices.ScreenContextManager.To(new ScreenContext(intialScene), transition);
             });
+			#endif
         }
 
         protected override void Update(TimeSpan gameTime)
