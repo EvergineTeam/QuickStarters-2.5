@@ -10,6 +10,8 @@ open System.IO
 open System.Linq
 open Fake.AssemblyInfoFile
 
+exception BuildException of string
+
 let configuration = "Release"
 let architecture = "Any CPU"
 let rootFolder = "../"
@@ -67,6 +69,7 @@ let printReport (l : List<quickstarterReport>) =
     printfn "   Projects success: %i / %i" OkProjects l.Count
     traceImportant "---------------------------------------------------------------------"
     printfn ""
+    if (OkProjects < l.Count) then raise (BuildException("All starterkits not passed")) 
 
 let buildquickstarter (platform: string, configuration : string, architecture : string, quickstarter : string) = 
     match platform with
