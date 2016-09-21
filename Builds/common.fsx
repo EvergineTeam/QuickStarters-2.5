@@ -12,7 +12,7 @@ open Fake.AssemblyInfoFile
 
 exception BuildException of string
 
-let configuration = "Release"
+let configuration = "Debug"
 let architecture = "Any CPU"
 let rootFolder = "../"
 
