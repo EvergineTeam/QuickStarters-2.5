@@ -33,6 +33,7 @@ Target "mac-update-nightlypackages" (fun() ->
 
 Target "mac-quickstarters" (fun () ->
     buildquickstarters("MacOS")
+    reportartifact()
 )
 
 "mac-restore-tools"    

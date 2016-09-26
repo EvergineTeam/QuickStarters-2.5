@@ -37,6 +37,7 @@ Target "windows-update-nightlypackages" (fun() ->
 
 Target "windows-quickstarters" (fun () ->
     buildquickstarters("Windows")
+    reportartifact()
 )
 
 "windows-restore-tools"

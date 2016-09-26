@@ -30,6 +30,7 @@ Target "linux-update-nightlypackages" (fun() ->
 
 Target "linux-quickstarters" (fun () ->
     buildquickstarters("Linux")
+    reportartifact()
 )
 
 "linux-restore-tools"    

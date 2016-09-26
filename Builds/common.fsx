@@ -16,6 +16,7 @@ let configuration = "Debug"
 let architecture = "Any CPU"
 let rootFolder = "../"
 let deployDir = "../Deploy/"
+let artifactPath = deployDir + "report.txt"
 
 let getFolder solutionFile= Path.GetDirectoryName(solutionFile)
 
@@ -81,12 +82,8 @@ let printReport (l : List<quickstarterReport>) =
     printfn "%s" reportString
 
     // Create report file
-    Fake.FileHelper.CreateDir deployDir
-    let artifactPath = deployDir + "report.txt"
-    File.WriteAllText(artifactPath, reportString);
-
-    // Publish report in teamcity
-    TeamCityHelper.PublishArtifact (artifactPath)
+    Fake.FileHelper.CreateDir deployDir    
+    File.WriteAllText(artifactPath, reportString);   
 
     if (OkProjects < l.Count) then raise (BuildException("All starterkits not passed")) 
 
@@ -121,3 +118,8 @@ let buildquickstarters(platform: string) =
         processResults quickstarter flag
 
     printReport items
+
+// Publish reports
+let reportartifact () = 
+    TeamCityHelper.PublishArtifact (artifactPath)    
+
