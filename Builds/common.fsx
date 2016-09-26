@@ -121,5 +121,6 @@ let buildquickstarters(platform: string) =
 
 // Publish reports
 let reportartifact () = 
-    TeamCityHelper.PublishArtifact (artifactPath)    
+    let absoluteArtifactPath = System.IO.Path.GetFullPath(artifactPath)
+    TeamCityHelper.PublishArtifact (absoluteArtifactPath)    
 
