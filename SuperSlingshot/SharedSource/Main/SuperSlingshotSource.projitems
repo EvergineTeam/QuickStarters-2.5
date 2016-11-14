@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>846d34c8-e537-4dc7-b646-cff649ce42e4</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>SuperSlingshot</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Behaviors\BreakableBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Behaviors\Cameras\CameraBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Behaviors\Cameras\CurbCameraBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Behaviors\Cameras\FollowCameraBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Behaviors\DebugMovementBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Behaviors\MouseBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Components\BreakableComponent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Enums\BreakableState.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Enums\BreakableType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Game.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameConstants.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Scenes\GameScene.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Scenes\InitialScene.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Scenes\LevelSelectionScene.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\AnimationService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Audio.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\AudioService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\ScoreService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WaveContent.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Drawables\" />
+  </ItemGroup>
+</Project>
