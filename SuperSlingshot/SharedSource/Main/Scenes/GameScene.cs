@@ -1,6 +1,7 @@
 ﻿#region Using Statements
 using System;
 using SuperSlingshot.Behaviors;
+using SuperSlingshot.Components;
 using WaveEngine.Common.Math;
 using WaveEngine.Common.Physics2D;
 using WaveEngine.Framework;
@@ -17,7 +18,7 @@ namespace SuperSlingshot.Scenes
 
         private TiledMap tiledMap;
 
-        private Entity slingshotAnchorEntity;
+        public Entity SlingshotAnchorEntity { get; set; }
 
         public GameScene(string content) : base()
         {
@@ -35,7 +36,9 @@ namespace SuperSlingshot.Scenes
             this.SetCameraBounds();
             this.CreatePhysicScene();
 
-            this.PrepareToLaunch(this.EntityManager.Find("sprite"));
+            var player = this.EntityManager.Find("stone");
+            var component = player.FindComponent<PlayerComponent>();
+            component.PrepareToLaunch();
         }
 
         private void SetCameraBounds()
@@ -58,18 +61,8 @@ namespace SuperSlingshot.Scenes
 
         private void CreatePhysicScene()
         {
-            //Entity sample = new Entity()
-            //    .AddComponent(new Transform2D() { X = 200, Y = 1200 })
-            //    .AddComponent(new EdgeCollider2D()
-            //    {
-            //        Vertices = new Vector2[] { new Vector2(0, 0), new Vector2(100, 0), new Vector2(0, 100) },
-            //    })
-            //    .AddComponent(new RigidBody2D());
-            //this.EntityManager.Add(sample);
-
-
             // invisible slingshot anchor entity
-            this.slingshotAnchorEntity = new Entity()
+            this.SlingshotAnchorEntity = new Entity()
                 .AddComponent(new Transform2D()
                 {
                     Position = this.GetAnchorPosition(GameConstants.ANCHORSLINGSHOT),
@@ -78,7 +71,7 @@ namespace SuperSlingshot.Scenes
                 {
                     PhysicBodyType = RigidBodyType2D.Static
                 });
-            this.EntityManager.Add(this.slingshotAnchorEntity);
+            this.EntityManager.Add(this.SlingshotAnchorEntity);
 
             // invisible physic ground and walls
             var physicLayer = this.tiledMap.ObjectLayers[GameConstants.LAYERPHYSIC];
@@ -93,38 +86,11 @@ namespace SuperSlingshot.Scenes
                 {
                     collider.CollisionCategories = ColliderCategory2D.Cat3;
                     collider.CollidesWith = ColliderCategory2D.All;
+                    collider.Friction = 1.0f;
+                    collider.Restitution = 0.2f;
                 }
 
                 this.EntityManager.Add(colliderEntity);
-            }
-        }
-
-        private void PrepareToLaunch(Entity entity)
-        {
-            // Entity RigidBosy Restitution
-            // 0.858 golf ball
-            // 0.804 billiard ball
-            // 0.712 tennis ball
-            // 0.658 glass marble
-            // 0.597 steel ball bearing
-
-            var entityPath = entity.EntityPath;
-            var joint = new DistanceJoint2D()
-            {
-                Distance = 0.01f,
-                ConnectedEntityPath = entityPath,
-                FrequencyHz = 7.0f,
-                DampingRatio = 1f,
-                CollideConnected = false,
-            };
-
-            //entity.FindComponent<Transform2D>().Position = this.slingshotAnchorEntity.FindComponent<Transform2D>().Position;
-            //this.slingshotAnchorEntity.AddComponent(joint);
-
-            var cameraBehavior = this.RenderManager.ActiveCamera2D.Owner.FindComponent<CameraBehavior>(false);
-            if (cameraBehavior != null)
-            {
-                cameraBehavior.SetTarget(entityPath);
             }
         }
     }
