@@ -54,6 +54,8 @@ namespace SuperSlingshot.Behaviors
             this.BoundsMin = min;
             this.BoundsMax = max;
             this.RefreshCameraLimits();
+
+            this.transform.Scale = new Vector2(2.0f, 2.0f);
         }
 
         public void SetTarget(string entityPath)

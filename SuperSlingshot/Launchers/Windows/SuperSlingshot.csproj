@@ -42,29 +42,37 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
-    <Reference Include="WaveEngine.Adapter">
-      <HintPath>..\..\..\..\..\..\..\WaveEngine\v2.0\Lib\Windows\WaveEngine.Adapter.dll</HintPath>
+    <Reference Include="WaveEngine.Adapter, Version=2.3.0.0, Culture=neutral, PublicKeyToken=6e72eaf7d6c3c55b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\WaveEngine\v2.0\Lib\Windows\WaveEngine.Adapter.dll</HintPath>
     </Reference>
-    <Reference Include="WaveEngine.Box2D">
-      <HintPath>..\..\..\..\..\..\..\WaveEngine\v2.0\Lib\Windows\WaveEngine.Box2D.dll</HintPath>
+    <Reference Include="WaveEngine.Box2D, Version=2.3.0.0, Culture=neutral, PublicKeyToken=6e72eaf7d6c3c55b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\WaveEngine\v2.0\Lib\Windows\WaveEngine.Box2D.dll</HintPath>
     </Reference>
-    <Reference Include="WaveEngine.Common">
-      <HintPath>..\..\..\..\..\..\..\WaveEngine\v2.0\Lib\Windows\WaveEngine.Common.dll</HintPath>
+    <Reference Include="WaveEngine.Common, Version=2.3.0.0, Culture=neutral, PublicKeyToken=6e72eaf7d6c3c55b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\WaveEngine\v2.0\Lib\Windows\WaveEngine.Common.dll</HintPath>
     </Reference>
-    <Reference Include="WaveEngine.Components">
-      <HintPath>..\..\..\..\..\..\..\WaveEngine\v2.0\Lib\Windows\WaveEngine.Components.dll</HintPath>
+    <Reference Include="WaveEngine.Components, Version=2.3.0.0, Culture=neutral, PublicKeyToken=6e72eaf7d6c3c55b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\WaveEngine\v2.0\Lib\Windows\WaveEngine.Components.dll</HintPath>
     </Reference>
-    <Reference Include="WaveEngine.Framework">
-      <HintPath>..\..\..\..\..\..\..\WaveEngine\v2.0\Lib\Windows\WaveEngine.Framework.dll</HintPath>
+    <Reference Include="WaveEngine.Framework, Version=2.3.0.0, Culture=neutral, PublicKeyToken=6e72eaf7d6c3c55b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\WaveEngine\v2.0\Lib\Windows\WaveEngine.Framework.dll</HintPath>
     </Reference>
-    <Reference Include="WaveEngine.ImageEffects">
-      <HintPath>..\..\..\..\..\..\..\WaveEngine\v2.0\Lib\Windows\WaveEngine.ImageEffects.dll</HintPath>
+    <Reference Include="WaveEngine.ImageEffects, Version=2.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\WaveEngine\v2.0\Lib\Windows\WaveEngine.ImageEffects.dll</HintPath>
     </Reference>
-    <Reference Include="WaveEngine.Materials">
-      <HintPath>..\..\..\..\..\..\..\WaveEngine\v2.0\Lib\Windows\WaveEngine.Materials.dll</HintPath>
+    <Reference Include="WaveEngine.Materials, Version=2.3.0.0, Culture=neutral, PublicKeyToken=6e72eaf7d6c3c55b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\WaveEngine\v2.0\Lib\Windows\WaveEngine.Materials.dll</HintPath>
     </Reference>
-    <Reference Include="WaveEngine.TiledMap">
-      <HintPath>..\..\..\..\..\..\..\WaveEngine\v2.0\Lib\Windows\WaveEngine.TiledMap.dll</HintPath>
+    <Reference Include="WaveEngine.TiledMap, Version=2.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\WaveEngine\v2.0\Lib\Windows\WaveEngine.TiledMap.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

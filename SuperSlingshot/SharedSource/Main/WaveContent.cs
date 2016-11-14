@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// File generated on 14/11/2016 16:11:48
+// File generated on 14/11/2016 20:29:47
 namespace SuperSlingshot
 {
     using System;
@@ -296,6 +296,28 @@ namespace SuperSlingshot
                 
                 /// <summary> Path to Content/Assets/Other/particle1.png </summary>
                 public const string particle1_png = "Content/Assets/Other/particle1.png";
+            }
+            
+            public sealed class Stones
+            {
+                
+                /// <summary> Path to Content/Assets/Stones/Barney.png </summary>
+                public const string Barney_png = "Content/Assets/Stones/Barney.png";
+                
+                /// <summary> Path to Content/Assets/Stones/Farley.png </summary>
+                public const string Farley_png = "Content/Assets/Stones/Farley.png";
+                
+                /// <summary> Path to Content/Assets/Stones/InTheAir.png </summary>
+                public const string InTheAir_png = "Content/Assets/Stones/InTheAir.png";
+                
+                /// <summary> Path to Content/Assets/Stones/Prepared.png </summary>
+                public const string Prepared_png = "Content/Assets/Stones/Prepared.png";
+                
+                /// <summary> Path to Content/Assets/Stones/Puddin.png </summary>
+                public const string Puddin_png = "Content/Assets/Stones/Puddin.png";
+                
+                /// <summary> Path to Content/Assets/Stones/Stamped.png </summary>
+                public const string Stamped_png = "Content/Assets/Stones/Stamped.png";
             }
             
             public sealed class Tiles

@@ -1,6 +1,7 @@
 ﻿#region Using Statements
 using System;
 using System.Runtime.Serialization;
+using SuperSlingshot.Components;
 using WaveEngine.Common;
 using WaveEngine.Common.Graphics;
 using WaveEngine.Common.Input;
@@ -100,10 +101,8 @@ namespace SuperSlingshot.Behaviors
                     {
                         this.ConnectedEntity.RemoveComponent(this.mouseJoint);
 
-                        //var playerBehavior = this.ConnectedEntity.FindComponent<PlayerBehavior>();
-                        //playerBehavior.Launch();
-
-                        //this.ConnectedEntity.RemoveComponent<MouseBehavior>();
+                        var playerComponent = this.ConnectedEntity.FindComponent<PlayerComponent>();
+                        playerComponent.Launch();
                     }
 
                     this.mouseJoint = null;
