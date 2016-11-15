@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 using SuperSlingshot.Components;
+using SuperSlingshot.Scenes;
 using WaveEngine.Common.Input;
 using WaveEngine.Common.Math;
 using WaveEngine.Framework;
@@ -113,6 +114,12 @@ namespace SuperSlingshot.Behaviors
                    this.lastKeyboardState.IsKeyReleased(Keys.Space))
                 {
                     this.rigidBody.ApplyLinearImpulse(new Vector2(3, -4), Vector2.Zero, true);
+                }
+
+                if (currentKeyboardState.IsKeyPressed(Keys.Q) &&
+                    this.lastKeyboardState.IsKeyReleased(Keys.Q))
+                {
+                    WaveServices.ScreenContextManager.Push(new ScreenContext(new MenuScene()));
                 }
 
                 this.lastKeyboardState = currentKeyboardState;

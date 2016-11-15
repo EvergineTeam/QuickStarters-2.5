@@ -65,6 +65,7 @@
               <d7p1:Y>0</d7p1:Y>
               <d7p1:Z>0</d7p1:Z>
             </d6p1:EmitterSize>
+            <d6p1:EndDeltaScale>1</d6p1:EndDeltaScale>
             <d6p1:Gravity xmlns:d7p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
               <d7p1:X>0</d7p1:X>
               <d7p1:Y>0</d7p1:Y>
@@ -278,4 +279,5 @@
       </d3p1:Component>
     </d2p1:SerializeComponents>
   </EntityModel>
+  <EntityPointers xmlns:d2p1="http://schemas.datacontract.org/2004/07/WaveEngine.Framework.Models.Entities" />
 </Prefab>

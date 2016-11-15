@@ -6,7 +6,9 @@
         public static string ENTITYMAP = "tiledMap";
         public static string ENTITYCHILDPARTICLES = "childParticles";
         public static string ENTITYCHILDVISUAL = "childVisual";
+        public static string ENTITYCHILDBUTTONTEXT = "buttonText";
         public static string ENTITYFACE = "childface";
+        
 
         // LAYERS
         public static string LAYERPHYSIC = "PhysicLayer";

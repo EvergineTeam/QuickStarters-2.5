@@ -5,7 +5,7 @@ using WaveEngine.Framework;
 
 namespace SuperSlingshot.Managers
 {
-    public class GameManager : Behavior
+    public class GamePlayManager : Behavior
     {
 
         protected override void Update(TimeSpan gameTime)

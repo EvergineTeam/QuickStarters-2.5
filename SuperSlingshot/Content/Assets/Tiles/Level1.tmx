@@ -1,7 +1,213 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="80" height="35" tilewidth="70" tileheight="70" nextobjectid="38">
+ <properties>
+  <property name="LevelID" value="1-1"/>
+ </properties>
  <tileset firstgid="1" name="sheet" tilewidth="70" tileheight="70" tilecount="49" columns="7">
   <image source="grass.png" width="512" height="512"/>
+  <terraintypes>
+   <terrain name="SimpleTerrain" tile="-1"/>
+  </terraintypes>
+  <tile id="0">
+   <objectgroup draworder="index">
+    <object id="6" x="70" y="0">
+     <polyline points="0,0 -63,0 -70,7 -70,35 -64.5,40.125 0.25,40.25"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="2" terrain="0,,0,">
+   <objectgroup draworder="index">
+    <object id="1" x="70" y="0">
+     <polyline points="0,0 0,70"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="4">
+   <objectgroup draworder="index">
+    <object id="1" x="0" y="0">
+     <polyline points="0,0 70,70"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="7">
+   <objectgroup draworder="index">
+    <object id="2" x="0" y="7">
+     <polyline points="0,0 7,-7 63,-7 70,0 70,28 64.5,33.375 6.75,33.125 0,28 0,0"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="9" terrain=",0,,0">
+   <objectgroup draworder="index">
+    <object id="1" x="0" y="0">
+     <polyline points="0,0 0,70"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="10">
+   <objectgroup draworder="index">
+    <object id="1" x="0" y="7">
+     <polyline points="0,0 7,-7 63,-7 70,0 70,56 63,63 7,63 0,56 0,0"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="11">
+   <objectgroup draworder="index">
+    <object id="2" x="0" y="21">
+     <polyline points="0,0 0,-14 7,-21 63,-21 70,-14 70,0"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="14">
+   <objectgroup draworder="index">
+    <object id="3" x="-0.25" y="69.5">
+     <polyline points="0,0 12.25,-12.375 23.25,0.25 35.125,-12.125 46.75,-0.375 58.625,-12.375 70.5,0.375"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="15" terrain="0,,,">
+   <objectgroup draworder="index">
+    <object id="1" x="70" y="0">
+     <polyline points="0,0 0,70 -70,70"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="17">
+   <objectgroup draworder="index">
+    <object id="1" x="0" y="0">
+     <polyline points="0,0 63,0 70,7 70,21 64.375,43.125 49.625,57 14.375,68.625 0,70"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="18">
+   <objectgroup draworder="index">
+    <object id="1" x="0" y="0">
+     <polyline points="0,0 63,0 70,7 70,63 63,70 0,70"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="21">
+   <objectgroup draworder="index">
+    <object id="1" x="70" y="0.5">
+     <polyline points="0,-0.5 -14.25,21.875 -37.25,28.625 -46,55.125 -70,69.5"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="22" terrain=",0,,">
+   <objectgroup draworder="index">
+    <object id="1" x="0" y="0">
+     <polyline points="0,0 0,70 70,70"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="23">
+   <objectgroup draworder="index">
+    <object id="3" x="0" y="42">
+     <polyline points="0.25,-1.625 70.75,-1.625"/>
+    </object>
+    <object id="5" x="0" y="0">
+     <polyline points="0,0 70,0"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="24">
+   <objectgroup draworder="index">
+    <object id="1" x="70" y="0">
+     <polyline points="0,0 -63,0 -70,7 -70.25,25.75 -64.125,42.5 -49,56 -35,63 -7,70 0,70"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="25">
+   <objectgroup draworder="index">
+    <object id="1" x="0" y="0">
+     <polyline points="0,0 70,0"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="28">
+   <objectgroup draworder="index">
+    <object id="1" x="0" y="0">
+     <polyline points="0,0 14.75,22.625 37.5,28.875 46.25,55.25 70,70"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="30" terrain=",,0,">
+   <objectgroup draworder="index">
+    <object id="2" x="0" y="0">
+     <polyline points="0,0 70,0 70,70"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="31">
+   <objectgroup draworder="index">
+    <object id="2" x="0" y="0">
+     <polyline points="0,0 63,0 70,7 70.125,23.375 0,70"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="32">
+   <objectgroup draworder="index">
+    <object id="1" x="70" y="0">
+     <polyline points="0,0 -63,0 -70,7 -70,63 -63,70 0,70"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="35" terrain="0,0,0,0"/>
+  <tile id="36">
+   <objectgroup draworder="index">
+    <object id="1" x="0" y="0">
+     <polyline points="0,0 23,11.5 32.875,38.375 55.5,45.875 70,70"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="37" terrain=",,,0">
+   <objectgroup draworder="index">
+    <object id="1" x="0" y="70">
+     <polyline points="0,0 0,-70 70,-70"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="38">
+   <objectgroup draworder="index">
+    <object id="2" x="70" y="0">
+     <polyline points="0,0 -63,0 -70,7 -70,23.375 0,70"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="39">
+   <objectgroup draworder="index">
+    <object id="2" x="0" y="7">
+     <polyline points="0,0 3.5,-7 64.5,-6.875 70.125,-1.125 70,56 63,63 7,63 0,56 0,0"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="42" terrain="0,0,,">
+   <objectgroup draworder="index">
+    <object id="1" x="0" y="70">
+     <polyline points="0,0 70,0"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="43">
+   <objectgroup draworder="index">
+    <object id="1" x="70" y="0">
+     <polyline points="0,0 -24.5,14 -31.5,38.5 -56,45.5 -70,70"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="45">
+   <objectgroup draworder="index">
+    <object id="1" x="0" y="70">
+     <polyline points="0,0 70,-70"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="46">
+   <objectgroup draworder="index">
+    <object id="1" x="0" y="0">
+     <polyline points="0,0 63,0 70,7 70.125,33.625 65,40 0,40.25"/>
+    </object>
+   </objectgroup>
+  </tile>
  </tileset>
  <layer name="FrontLayer" width="80" height="35">
   <data encoding="csv">
@@ -124,21 +330,12 @@
   <object id="1" name="SlingshotAnchor" x="280" y="1960"/>
   <object id="2" name="TopLeftAnchor" x="0" y="280"/>
   <object id="3" name="BottomRightAnchor" x="5530" y="2450"/>
-  <object id="42" name="SlingshotAnchor" x="280" y="1960"/>
-  <object id="43" name="TopLeftAnchor" x="0" y="280"/>
-  <object id="44" name="BottomRightAnchor" x="5530" y="2450"/>
  </objectgroup>
  <objectgroup name="PhysicLayer">
   <object id="25" name="Ground" x="0" y="2450">
    <polyline points="0,0 0,-140 70,-210 3710,-210 4200,-700 5530,-700"/>
   </object>
   <object id="36" name="esge" x="1681.5" y="1541">
-   <polyline points="0,0 347.5,0.5 346.5,36 329.5,56 279,69.5 253,83 246.5,107 224,114.5 210.5,138.5 196,126.5 186,137 172.5,126.5 163.5,137.5 151.5,126 140,138 124.5,114.5 100,109.5 92.5,83.5 69.5,70 11.5,53 -1,35.5 -0.25,-0.125"/>
-  </object>
-  <object id="40" name="Ground" x="0" y="2450">
-   <polyline points="0,0 0,-140 70,-210 3710,-210 4200,-700 5530,-700"/>
-  </object>
-  <object id="41" name="esge" x="1681.5" y="1541">
    <polyline points="0,0 347.5,0.5 346.5,36 329.5,56 279,69.5 253,83 246.5,107 224,114.5 210.5,138.5 196,126.5 186,137 172.5,126.5 163.5,137.5 151.5,126 140,138 124.5,114.5 100,109.5 92.5,83.5 69.5,70 11.5,53 -1,35.5 -0.25,-0.125"/>
   </object>
  </objectgroup>

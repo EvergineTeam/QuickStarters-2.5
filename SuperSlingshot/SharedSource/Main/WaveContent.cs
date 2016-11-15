@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// File generated on 14/11/2016 20:29:47
+// File generated on 15/11/2016 17:30:47
 namespace SuperSlingshot
 {
     using System;
@@ -291,6 +291,44 @@ namespace SuperSlingshot
                 public const string wood3x2rb_png = "Content/Assets/Breakables/wood3x2rb.png";
             }
             
+            public sealed class Fonts
+            {
+                
+                /// <summary> Path to Content/Assets/Fonts/Get the fuck up_16.otf </summary>
+                public const string Get_the_fuck_up_16_otf = "Content/Assets/Fonts/Get the fuck up_16.otf";
+                
+                /// <summary> Path to Content/Assets/Fonts/Get the fuck up_30.otf </summary>
+                public const string Get_the_fuck_up_30_otf = "Content/Assets/Fonts/Get the fuck up_30.otf";
+                
+                /// <summary> Path to Content/Assets/Fonts/Get the fuck up_36.otf </summary>
+                public const string Get_the_fuck_up_36_otf = "Content/Assets/Fonts/Get the fuck up_36.otf";
+                
+                /// <summary> Path to Content/Assets/Fonts/sketches_36.ttf </summary>
+                public const string sketches_36_ttf = "Content/Assets/Fonts/sketches_36.ttf";
+                
+                /// <summary> Path to Content/Assets/Fonts/sketches_48.ttf </summary>
+                public const string sketches_48_ttf = "Content/Assets/Fonts/sketches_48.ttf";
+            }
+            
+            public sealed class Gui
+            {
+                
+                /// <summary> Path to Content/Assets/Gui/button_click.png </summary>
+                public const string button_click_png = "Content/Assets/Gui/button_click.png";
+                
+                /// <summary> Path to Content/Assets/Gui/button_hover.png </summary>
+                public const string button_hover_png = "Content/Assets/Gui/button_hover.png";
+                
+                /// <summary> Path to Content/Assets/Gui/button_normal.png </summary>
+                public const string button_normal_png = "Content/Assets/Gui/button_normal.png";
+                
+                /// <summary> Path to Content/Assets/Gui/menu_background.9.png </summary>
+                public const string menu_background_9_png = "Content/Assets/Gui/menu_background.9.png";
+                
+                /// <summary> Path to Content/Assets/Gui/menu_header.9.png </summary>
+                public const string menu_header_9_png = "Content/Assets/Gui/menu_header.9.png";
+            }
+            
             public sealed class Other
             {
                 
@@ -340,6 +378,9 @@ namespace SuperSlingshot
             /// <summary> Path to Content/Scenes/LevelSelectionScene.wscene </summary>
             public const string LevelSelectionScene = "Content/Scenes/LevelSelectionScene.wscene";
             
+            /// <summary> Path to Content/Scenes/MenuScene.wscene </summary>
+            public const string MenuScene = "Content/Scenes/MenuScene.wscene";
+            
             public sealed class Levels
             {
                 
@@ -360,6 +401,9 @@ namespace SuperSlingshot
         
         public sealed class Prefabs
         {
+            
+            /// <summary> Path to Content/Prefabs/menuButton.wpref </summary>
+            public const string menuButton = "Content/Prefabs/menuButton.wpref";
             
             /// <summary> Path to Content/Prefabs/wc1x1.wpref </summary>
             public const string wc1x1 = "Content/Prefabs/wc1x1.wpref";
