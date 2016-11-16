@@ -8,7 +8,9 @@
         public static string ENTITYCHILDVISUAL = "childVisual";
         public static string ENTITYCHILDBUTTONTEXT = "buttonText";
         public static string ENTITYFACE = "childface";
-        
+        public static string ENTITYMENURESUME = "menuEntity.buttonPanel.resumeButton";
+        public static string ENTITYMENURESTART = "menuEntity.buttonPanel.restartButton";
+        public static string ENTITYMENUEXIT = "menuEntity.buttonPanel.exitButton";
 
         // LAYERS
         public static string LAYERPHYSIC = "PhysicLayer";

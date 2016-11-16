@@ -1,6 +1,7 @@
 #region Using Statements
 using System;
 using SlingshotRampage.Services;
+using SuperSlingshot.Managers;
 using SuperSlingshot.Scenes;
 using WaveEngine.Common;
 using WaveEngine.Common.Graphics;
@@ -19,6 +20,7 @@ namespace SuperSlingshot
             WaveServices.RegisterService(new ScoreService());
             WaveServices.RegisterService(new AnimationService());
             WaveServices.RegisterService(new AudioService());
+            WaveServices.RegisterService(new GamePlayManager());
 
             ScreenContext screenContext = new ScreenContext(new GameScene(WaveContent.Scenes.Levels.Level1));
             //ScreenContext screenContext = new ScreenContext(new GameScene(WaveContent.Scenes.Levels.Level1));

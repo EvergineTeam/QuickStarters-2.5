@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 using SuperSlingshot.Components;
+using SuperSlingshot.Managers;
 using SuperSlingshot.Scenes;
 using WaveEngine.Common.Input;
 using WaveEngine.Common.Math;
@@ -119,7 +120,8 @@ namespace SuperSlingshot.Behaviors
                 if (currentKeyboardState.IsKeyPressed(Keys.Q) &&
                     this.lastKeyboardState.IsKeyReleased(Keys.Q))
                 {
-                    WaveServices.ScreenContextManager.Push(new ScreenContext(new MenuScene()));
+                    var manager = WaveServices.GetService<GamePlayManager>();
+                    manager.PauseGame();
                 }
 
                 this.lastKeyboardState = currentKeyboardState;
