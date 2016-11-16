@@ -12,11 +12,13 @@ namespace SuperSlingshot.Components
     [DataContract]
     public class ButtonComponent : Component
     {
+        public delegate void StateChangedEventArgs(object sender, ButtonState currentState, ButtonState lastState);
+
+        public event StateChangedEventArgs StateChanged;
+
         private TextComponent childTextComponent;
 
         private ButtonState state;
-
-        public event EventHandler<ButtonState> StateChanged;
 
         [RequiredComponent]
         private TouchGestures touchGestures { get; set; }
@@ -70,7 +72,9 @@ namespace SuperSlingshot.Components
 
         private void SetState(ButtonState state)
         {
+            var lastState = this.state;
             this.state = state;
+
             switch (this.state)
             {
                 case ButtonState.Release:
@@ -83,7 +87,12 @@ namespace SuperSlingshot.Components
                     break;
             }
 
-            this.StateChanged?.Invoke(this, this.state);
+            // TODO: C#6 
+            // this.StateChanged?.Invoke(this, this.state, lastState);
+            if (this.StateChanged != null)
+            {
+                this.StateChanged.Invoke(this, this.state, lastState);
+            }
         }
     }
 }

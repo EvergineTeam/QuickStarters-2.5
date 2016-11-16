@@ -1,5 +1,7 @@
 ﻿#region Using Statements
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using SuperSlingshot.Behaviors;
 using SuperSlingshot.Components;
 using WaveEngine.Common.Math;
@@ -7,6 +9,7 @@ using WaveEngine.Common.Physics2D;
 using WaveEngine.Framework;
 using WaveEngine.Framework.Graphics;
 using WaveEngine.Framework.Physics2D;
+using WaveEngine.ImageEffects;
 using WaveEngine.TiledMap;
 #endregion
 
@@ -15,14 +18,19 @@ namespace SuperSlingshot.Scenes
     public class GameScene : Scene
     {
         private readonly string content;
-
         private TiledMap tiledMap;
+        private string boulderOrder;
 
         public Entity SlingshotAnchorEntity { get; set; }
+
+        public string LevelID { get; private set; }
+
+        public Queue<Entity> Boulders { get; private set; }
 
         public GameScene(string content) : base()
         {
             this.content = content;
+            this.Boulders = new Queue<Entity>();
         }
 
         protected override void CreateScene()
@@ -35,10 +43,45 @@ namespace SuperSlingshot.Scenes
             base.Start();
             this.SetCameraBounds();
             this.CreatePhysicScene();
+            this.GetLevelProperties();
+            this.CreateBoulderEntities();
+        }
 
-            var player = this.EntityManager.Find("stone");
-            var component = player.FindComponent<PlayerComponent>();
-            component.PrepareToLaunch();
+        public void PrepareNextBoulder()
+        {
+            var boulder = this.Boulders.Dequeue();
+            this.EntityManager.Add(boulder);
+
+            var playerComponent = boulder.FindComponent<PlayerComponent>();
+            playerComponent.PrepareToLaunch();
+        }
+
+        public override void Pause()
+        {
+            base.Pause();
+            this.ConfigureLens(true);
+        }
+
+        public override void Resume()
+        {
+            base.Resume();
+            this.ConfigureLens(false);
+        }
+
+        private void ConfigureLens(bool enable)
+        {
+            this.SetLens<VignetteLens>(enable);
+            this.SetLens<GaussianBlurLens>(enable);
+        }
+
+        private void SetLens<T>(bool enable) where T : Lens
+        {
+            var camera = this.RenderManager.ActiveCamera2D.Owner;
+            var lens = camera.FindComponent<T>();
+            if (lens != null)
+            {
+                lens.Active = enable;
+            }
         }
 
         private void SetCameraBounds()
@@ -91,6 +134,48 @@ namespace SuperSlingshot.Scenes
                 }
 
                 this.EntityManager.Add(colliderEntity);
+            }
+        }
+
+        private void GetLevelProperties()
+        {
+            var props = this.tiledMap.Properties;
+            this.LevelID = props[GameConstants.PROPERTYLEVELID];
+            this.boulderOrder = props[GameConstants.PROPERTYBOULDERS];
+        }
+
+        private void CreateBoulderEntities()
+        {
+            int counter = 0;
+            foreach (var character in this.boulderOrder)
+            {
+                string assetPath = string.Empty;
+                switch (character)
+                {
+                    case GameConstants.BOULDERBARNEY:
+                        assetPath = WaveContent.Prefabs.Boulders.Barney;
+                        break;
+                    case GameConstants.BOULDERFARLEY:
+                        assetPath = WaveContent.Prefabs.Boulders.Farney;
+                        break;
+                    case GameConstants.BOULDERPUDDIN:
+                        assetPath = WaveContent.Prefabs.Boulders.Puddin;
+                        break;
+                    default:
+                        assetPath = WaveContent.Prefabs.Boulders.Barney;
+                        break;
+                }
+
+                
+                if(!string.IsNullOrEmpty(assetPath))
+                {
+                    var boulder = this.EntityManager.Instantiate(assetPath);
+                    
+                    // Must not collide names
+                    boulder.Name += counter++.ToString();
+
+                    this.Boulders.Enqueue(boulder);
+                }
             }
         }
     }

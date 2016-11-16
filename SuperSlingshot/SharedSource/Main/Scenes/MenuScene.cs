@@ -1,5 +1,7 @@
 ﻿using SuperSlingshot.Components;
 using SuperSlingshot.Managers;
+using WaveEngine.Common.Graphics;
+using WaveEngine.Common.Input;
 using WaveEngine.Components.UI;
 using WaveEngine.Framework;
 using WaveEngine.Framework.Services;
@@ -25,17 +27,31 @@ namespace SuperSlingshot.Scenes
             exitButton.FindComponent<ButtonComponent>().StateChanged += this.ExitButtonStateChanged;
         }
 
-        private void ResumeButtonStateChanged(object sender, WaveEngine.Common.Input.ButtonState e)
+        protected override void Start()
         {
-            this.gamePlayManager.ResumeGame();
+            base.Start();
         }
 
-        private void RestartButtonStateChanged(object sender, WaveEngine.Common.Input.ButtonState e)
+        private void ResumeButtonStateChanged(object sender, ButtonState currentState, ButtonState lastState)
         {
-        }
-        private void ExitButtonStateChanged(object sender, WaveEngine.Common.Input.ButtonState e)
-        {
+            if (currentState == ButtonState.Release && lastState == ButtonState.Pressed)
+            {
+                this.gamePlayManager.ResumeGame();
+            }
         }
 
+        private void RestartButtonStateChanged(object sender, ButtonState currentState, ButtonState lastState)
+        {
+            if (currentState == ButtonState.Release && lastState == ButtonState.Pressed)
+            {
+            }
+        }
+
+        private void ExitButtonStateChanged(object sender, ButtonState currentState, ButtonState lastState)
+        {
+            if (currentState == ButtonState.Release && lastState == ButtonState.Pressed)
+            {
+            }
+        }
     }
 }

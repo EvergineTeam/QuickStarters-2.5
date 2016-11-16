@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// File generated on 16/11/2016 8:30:43
+// File generated on 16/11/2016 23:47:23
 namespace SuperSlingshot
 {
     using System;
@@ -369,36 +369,6 @@ namespace SuperSlingshot
             }
         }
         
-        public sealed class Scenes
-        {
-            
-            /// <summary> Path to Content/Scenes/InitialScene.wscene </summary>
-            public const string InitialScene = "Content/Scenes/InitialScene.wscene";
-            
-            /// <summary> Path to Content/Scenes/LevelSelectionScene.wscene </summary>
-            public const string LevelSelectionScene = "Content/Scenes/LevelSelectionScene.wscene";
-            
-            /// <summary> Path to Content/Scenes/MenuScene.wscene </summary>
-            public const string MenuScene = "Content/Scenes/MenuScene.wscene";
-            
-            public sealed class Levels
-            {
-                
-                /// <summary> Path to Content/Scenes/Levels/Level1.wscene </summary>
-                public const string Level1 = "Content/Scenes/Levels/Level1.wscene";
-                
-                /// <summary> Path to Content/Scenes/Levels/TestLevel.wscene </summary>
-                public const string TestLevel = "Content/Scenes/Levels/TestLevel.wscene";
-            }
-        }
-        
-        public sealed class Materials
-        {
-            
-            /// <summary> Path to Content/Materials/SmokeMaterial.wmat </summary>
-            public const string SmokeMaterial = "Content/Materials/SmokeMaterial.wmat";
-        }
-        
         public sealed class Prefabs
         {
             
@@ -437,6 +407,52 @@ namespace SuperSlingshot
             
             /// <summary> Path to Content/Prefabs/wt2x1.wpref </summary>
             public const string wt2x1 = "Content/Prefabs/wt2x1.wpref";
+            
+            public sealed class Boulders
+            {
+                
+                /// <summary> Path to Content/Prefabs/Boulders/Barney.wpref </summary>
+                public const string Barney = "Content/Prefabs/Boulders/Barney.wpref";
+                
+                /// <summary> Path to Content/Prefabs/Boulders/Farney.wpref </summary>
+                public const string Farney = "Content/Prefabs/Boulders/Farney.wpref";
+                
+                /// <summary> Path to Content/Prefabs/Boulders/Puddin.wpref </summary>
+                public const string Puddin = "Content/Prefabs/Boulders/Puddin.wpref";
+            }
+        }
+        
+        public sealed class Scenes
+        {
+            
+            /// <summary> Path to Content/Scenes/InitialScene.wscene </summary>
+            public const string InitialScene = "Content/Scenes/InitialScene.wscene";
+            
+            /// <summary> Path to Content/Scenes/LevelSelectionScene.wscene </summary>
+            public const string LevelSelectionScene = "Content/Scenes/LevelSelectionScene.wscene";
+            
+            /// <summary> Path to Content/Scenes/MenuScene.wscene </summary>
+            public const string MenuScene = "Content/Scenes/MenuScene.wscene";
+            
+            public sealed class Levels
+            {
+                
+                /// <summary> Path to Content/Scenes/Levels/Level1.wscene </summary>
+                public const string Level1 = "Content/Scenes/Levels/Level1.wscene";
+                
+                /// <summary> Path to Content/Scenes/Levels/TestLevel.wscene </summary>
+                public const string TestLevel = "Content/Scenes/Levels/TestLevel.wscene";
+            }
+        }
+        
+        public sealed class Materials
+        {
+            
+            /// <summary> Path to Content/Materials/BackgroundMenuMaterial.wmat </summary>
+            public const string BackgroundMenuMaterial = "Content/Materials/BackgroundMenuMaterial.wmat";
+            
+            /// <summary> Path to Content/Materials/SmokeMaterial.wmat </summary>
+            public const string SmokeMaterial = "Content/Materials/SmokeMaterial.wmat";
         }
     }
 }

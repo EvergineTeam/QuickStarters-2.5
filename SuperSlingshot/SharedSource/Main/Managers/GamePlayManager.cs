@@ -32,7 +32,13 @@ namespace SuperSlingshot.Managers
             {
                 this.IsPaused = true;
                 var gameScene = WaveServices.ScreenContextManager.CurrentContext.FindScene<GameScene>();
-                gameScene?.Pause();
+
+                // TODO: C#6 
+                // gameScene?.Pause();
+                if (gameScene != null)
+                {
+                    gameScene.Pause();
+                }
 
                 WaveServices.ScreenContextManager.Push(new ScreenContext(this.menuScene));
             }
@@ -40,14 +46,38 @@ namespace SuperSlingshot.Managers
 
         public void ResumeGame()
         {
-            if(this.IsPaused)
+            if (this.IsPaused)
             {
                 this.IsPaused = false;
                 var gameScene = WaveServices.ScreenContextManager.CurrentContext.FindScene<GameScene>();
-                gameScene?.Resume();
+                // TODO: C#6 
+                // gameScene?.Resume();
+                if (gameScene != null)
+                {
+                    gameScene.Resume();
+                }
 
                 WaveServices.ScreenContextManager.Pop(false);
             }
+        }
+
+        public void NextBoulder()
+        {
+            if (!this.IsPaused)
+            {
+                var gameScene = WaveServices.ScreenContextManager.CurrentContext.FindScene<GameScene>();
+
+                // TODO: C#6 
+                // gameScene?.PrepareNextBoulder();
+                if (gameScene != null)
+                {
+                    gameScene.PrepareNextBoulder();
+                }
+            }
+        }
+
+        public void RestartLevel()
+        {
         }
     }
 }

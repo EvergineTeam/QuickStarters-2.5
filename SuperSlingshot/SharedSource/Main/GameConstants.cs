@@ -29,9 +29,13 @@
         public static string TAGDRAGGABLE = "draggable";
 
         // PROPERTIES
-        public static string PROPERTYBARNEY = "barney";
-        public static string PROPERTYFARLEY = "farley";
-        public static string PROPERTYPUDDIN = "puddin";
+        public static string PROPERTYLEVELID = "LevelID";
+        public static string PROPERTYBOULDERS = "Boulders";
+
+        // BOULDERS
+        public const char BOULDERBARNEY = 'B';
+        public const char BOULDERFARLEY = 'F';
+        public const char BOULDERPUDDIN = 'P';
         //public static string PROPERTYSTEWIE = "stewie";
         //public static string PROPERTYCHUCK = "chuck";
         //public static string PROPERTYDUDE = "dude";

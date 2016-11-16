@@ -40,6 +40,13 @@ namespace SuperSlingshot.Behaviors
             KeyboardState currentKeyboardState = this.input.KeyboardState;
             if (currentKeyboardState.IsConnected)
             {
+                if (currentKeyboardState.IsKeyPressed(Keys.N) &&
+                   this.lastKeyboardState.IsKeyReleased(Keys.N))
+                {
+                    var manager = WaveServices.GetService<GamePlayManager>();
+                    manager.NextBoulder();
+                }
+
                 if (currentKeyboardState.IsKeyPressed(Keys.O) &&
                    this.lastKeyboardState.IsKeyReleased(Keys.O))
                 {
@@ -51,6 +58,13 @@ namespace SuperSlingshot.Behaviors
                 {
                     this.diagnostics = !this.diagnostics;
                     WaveServices.ScreenContextManager.SetDiagnosticsActive(this.diagnostics);
+                }
+
+                if (currentKeyboardState.IsKeyPressed(Keys.Q) &&
+                    this.lastKeyboardState.IsKeyReleased(Keys.Q))
+                {
+                    var manager = WaveServices.GetService<GamePlayManager>();
+                    manager.PauseGame();
                 }
 
                 if (currentKeyboardState.IsKeyPressed(Keys.R) &&
@@ -115,13 +129,6 @@ namespace SuperSlingshot.Behaviors
                    this.lastKeyboardState.IsKeyReleased(Keys.Space))
                 {
                     this.rigidBody.ApplyLinearImpulse(new Vector2(3, -4), Vector2.Zero, true);
-                }
-
-                if (currentKeyboardState.IsKeyPressed(Keys.Q) &&
-                    this.lastKeyboardState.IsKeyReleased(Keys.Q))
-                {
-                    var manager = WaveServices.GetService<GamePlayManager>();
-                    manager.PauseGame();
                 }
 
                 this.lastKeyboardState = currentKeyboardState;
