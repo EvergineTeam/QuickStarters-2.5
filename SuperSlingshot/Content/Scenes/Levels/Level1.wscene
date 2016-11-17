@@ -21,8 +21,8 @@
             <d6p1:Z>-10</d6p1:Z>
           </d5p1:LocalPosition>
           <d5p1:LocalScale xmlns:d6p1="WaveEngine.Common.Math">
-            <d6p1:X>1</d6p1:X>
-            <d6p1:Y>1</d6p1:Y>
+            <d6p1:X>1.5</d6p1:X>
+            <d6p1:Y>1.5</d6p1:Y>
             <d6p1:Z>1</d6p1:Z>
           </d5p1:LocalScale>
           <d5p1:Effect>None</d5p1:Effect>
@@ -51,7 +51,7 @@
             <d6p1:R>100</d6p1:R>
           </d5p1:BackgroundColor>
           <d5p1:CameraOrder>0</d5p1:CameraOrder>
-          <d5p1:ClearFlags>All</d5p1:ClearFlags>
+          <d5p1:ClearFlags>DepthAndStencil</d5p1:ClearFlags>
           <d5p1:FarPlane>1000</d5p1:FarPlane>
           <d5p1:FieldOfView>0</d5p1:FieldOfView>
           <d5p1:IsActive>true</d5p1:IsActive>
@@ -78,15 +78,15 @@
             <d6p1:Y>0.5</d6p1:Y>
           </d5p1:vanishingPoint>
           <d5p1:zoom xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
-            <d6p1:X>1</d6p1:X>
-            <d6p1:Y>1</d6p1:Y>
+            <d6p1:X>1.5</d6p1:X>
+            <d6p1:Y>1.5</d6p1:Y>
           </d5p1:zoom>
         </d4p1:Component>
         <d4p1:Component xmlns:d5p1="http://schemas.datacontract.org/2004/07/SuperSlingshot.Behaviors" i:type="d5p1:CurbCameraBehavior">
           <d4p1:IsActive>true</d4p1:IsActive>
           <d4p1:UpdateOrder>0.5</d4p1:UpdateOrder>
           <d5p1:Follow>true</d5p1:Follow>
-          <d5p1:Speed>50</d5p1:Speed>
+          <d5p1:Speed>20</d5p1:Speed>
           <d5p1:BottomFrameSizePercent>0.2</d5p1:BottomFrameSizePercent>
           <d5p1:LeftFrameSizePercent>0.2</d5p1:LeftFrameSizePercent>
           <d5p1:RightFrameSizePercent>0.2</d5p1:RightFrameSizePercent>

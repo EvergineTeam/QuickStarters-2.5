@@ -130,7 +130,9 @@
         <d4p1:FaceInTheAirTexturePath>Content/Assets/Stones/InTheAir.png.wpk</d4p1:FaceInTheAirTexturePath>
         <d4p1:FacePreparedTexturePath>Content/Assets/Stones/Prepared.png.wpk</d4p1:FacePreparedTexturePath>
         <d4p1:FaceStampedTexturePath>Content/Assets/Stones/Stamped.png.wpk</d4p1:FaceStampedTexturePath>
+        <d4p1:MinimumVelocityToDeclareDead>2</d4p1:MinimumVelocityToDeclareDead>
         <d4p1:PlayerState>Prepared</d4p1:PlayerState>
+        <d4p1:TimeToDismiss>500</d4p1:TimeToDismiss>
       </d3p1:Component>
       <d3p1:Component xmlns:d4p1="WaveEngine.Framework.Physics2D" i:type="d4p1:RigidBody2D">
         <d3p1:IsActive>true</d3p1:IsActive>

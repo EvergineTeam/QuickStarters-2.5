@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// File generated on 16/11/2016 23:47:23
+// File generated on 18/11/2016 0:30:54
 namespace SuperSlingshot
 {
     using System;
@@ -19,9 +19,6 @@ namespace SuperSlingshot
         
         public sealed class Assets
         {
-            
-            /// <summary> Path to Content/Assets/alienBeige_round.png </summary>
-            public const string alienBeige_round_png = "Content/Assets/alienBeige_round.png";
             
             public sealed class Breakables
             {
@@ -332,6 +329,15 @@ namespace SuperSlingshot
             public sealed class Other
             {
                 
+                /// <summary> Path to Content/Assets/Other/cloud1.png </summary>
+                public const string cloud1_png = "Content/Assets/Other/cloud1.png";
+                
+                /// <summary> Path to Content/Assets/Other/cloud2.png </summary>
+                public const string cloud2_png = "Content/Assets/Other/cloud2.png";
+                
+                /// <summary> Path to Content/Assets/Other/cloud3.png </summary>
+                public const string cloud3_png = "Content/Assets/Other/cloud3.png";
+                
                 /// <summary> Path to Content/Assets/Other/particle1.png </summary>
                 public const string particle1_png = "Content/Assets/Other/particle1.png";
             }
@@ -420,6 +426,19 @@ namespace SuperSlingshot
                 /// <summary> Path to Content/Prefabs/Boulders/Puddin.wpref </summary>
                 public const string Puddin = "Content/Prefabs/Boulders/Puddin.wpref";
             }
+            
+            public sealed class Elements
+            {
+                
+                /// <summary> Path to Content/Prefabs/Elements/cloud01.wpref </summary>
+                public const string cloud01 = "Content/Prefabs/Elements/cloud01.wpref";
+                
+                /// <summary> Path to Content/Prefabs/Elements/cloud02.wpref </summary>
+                public const string cloud02 = "Content/Prefabs/Elements/cloud02.wpref";
+                
+                /// <summary> Path to Content/Prefabs/Elements/cloud03.wpref </summary>
+                public const string cloud03 = "Content/Prefabs/Elements/cloud03.wpref";
+            }
         }
         
         public sealed class Scenes
@@ -433,6 +452,13 @@ namespace SuperSlingshot
             
             /// <summary> Path to Content/Scenes/MenuScene.wscene </summary>
             public const string MenuScene = "Content/Scenes/MenuScene.wscene";
+            
+            public sealed class Backgrounds
+            {
+                
+                /// <summary> Path to Content/Scenes/Backgrounds/Background1.wscene </summary>
+                public const string Background1 = "Content/Scenes/Backgrounds/Background1.wscene";
+            }
             
             public sealed class Levels
             {

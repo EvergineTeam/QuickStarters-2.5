@@ -6,6 +6,7 @@ using WaveEngine.Common.Math;
 using WaveEngine.Framework;
 using WaveEngine.Framework.Graphics;
 using WaveEngine.Framework.Managers;
+using WaveEngine.Framework.Physics2D;
 using WaveEngine.Framework.Services;
 #endregion
 
@@ -44,6 +45,10 @@ namespace SuperSlingshot.Behaviors
         public Transform2D TargetTransform { get; private set; }
 
         [IgnoreDataMember]
+        public RigidBody2D TargetRigidBody { get; private set; }
+
+
+        [IgnoreDataMember]
         public Vector2 BoundsMin { get; private set; }
 
         [IgnoreDataMember]
@@ -55,7 +60,7 @@ namespace SuperSlingshot.Behaviors
             this.BoundsMax = max;
             this.RefreshCameraLimits();
 
-            this.transform.Scale = new Vector2(2.0f, 2.0f);
+            //this.transform.Scale = new Vector2(2.0f, 2.0f);
         }
 
         public void SetTarget(string entityPath)
@@ -73,6 +78,7 @@ namespace SuperSlingshot.Behaviors
                 if (this.TargetEntity != null)
                 {
                     this.TargetTransform = this.TargetEntity.FindComponent<Transform2D>();
+                    this.TargetRigidBody = this.TargetEntity.FindComponent<RigidBody2D>();
                 }
             }
         }
@@ -107,13 +113,13 @@ namespace SuperSlingshot.Behaviors
             this.pixelLimitMin.Y = this.BoundsMin.Y - (halfScreenSize.Y * this.transform.YScale);
 
             // when camera scale create an Y-axis inverse rectangle (this puts the bottom limit in the bottom camera edge)
-            if(this.pixelLimitMin.Y > this.pixelLimitMax.Y)
+            if (this.pixelLimitMin.Y > this.pixelLimitMax.Y)
             {
                 this.pixelLimitMin.Y = this.pixelLimitMax.Y;
             }
 
             // when camera zoom creates an X-axis inverse rectangle (selected zoom is big enought to show all the scene)
-            if(this.pixelLimitMin.X > this.pixelLimitMax.X)
+            if (this.pixelLimitMin.X > this.pixelLimitMax.X)
             {
                 var middle = (this.pixelLimitMin.X - this.pixelLimitMax.X) / 2;
                 this.pixelLimitMin.X = middle;

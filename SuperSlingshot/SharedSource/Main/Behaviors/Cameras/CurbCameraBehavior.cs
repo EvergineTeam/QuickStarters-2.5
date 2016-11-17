@@ -44,10 +44,10 @@ namespace SuperSlingshot.Behaviors
 
         protected override void CameraUpdate(TimeSpan gameTime)
         {
+            var floatGameTime = (float)gameTime.TotalSeconds;
+
             if (this.Follow && this.TargetTransform != null)
             {
-                var floatGameTime = (float)gameTime.TotalSeconds;
-
                 var delta = this.CalculateCameraDelta();
                 if (delta != Vector2.Zero)
                 {

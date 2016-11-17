@@ -2,9 +2,13 @@
 using System.Runtime.Serialization;
 using SuperSlingshot;
 using SuperSlingshot.Enums;
+using SuperSlingshot.Managers;
 using WaveEngine.Common.Attributes;
 using WaveEngine.Components.Graphics2D;
 using WaveEngine.Framework;
+using WaveEngine.Framework.Graphics;
+using WaveEngine.Framework.Physics2D;
+using WaveEngine.Framework.Services;
 
 namespace SuperSlingshot.Behaviors
 {
@@ -12,6 +16,11 @@ namespace SuperSlingshot.Behaviors
     public class PlayerBehavior : Behavior
     {
         private PlayerState state;
+        private TimeSpan timeToDismiss;
+        private GamePlayManager gamePlayManager;
+
+        [RequiredComponent]
+        private RigidBody2D rigidBody = null;
 
         [RequiredComponent]
         private Sprite bodySprite { get; set; }
@@ -31,6 +40,14 @@ namespace SuperSlingshot.Behaviors
         [DataMember]
         [RenderPropertyAsAsset(AssetType.Texture)]
         public string FaceStampedTexturePath { get; set; }
+
+        [DataMember]
+        [RenderPropertyAsFInput(MinLimit = 0, Tooltip = "millis")]
+        public float TimeToDismiss { get; set; }
+
+        [DataMember]
+        [RenderPropertyAsFInput(MinLimit = 0, Tooltip = "Velocity vector length squared")]
+        public float MinimumVelocityToDeclareDead { get; set; }
 
         [DataMember]
         public PlayerState PlayerState
@@ -55,6 +72,9 @@ namespace SuperSlingshot.Behaviors
 
             var childFace = this.Owner.FindChild(GameConstants.ENTITYFACE);
             this.faceSprite = childFace.FindComponent<Sprite>();
+            this.timeToDismiss = TimeSpan.FromMilliseconds(this.TimeToDismiss);
+
+            this.gamePlayManager = WaveServices.GetService<GamePlayManager>();
         }
 
         protected override void Initialize()
@@ -65,16 +85,30 @@ namespace SuperSlingshot.Behaviors
 
         protected override void Update(TimeSpan gameTime)
         {
-            if (PlayerState == PlayerState.Prepared)
+            switch (this.PlayerState)
             {
-            }
-            else if (PlayerState == PlayerState.InTheAir)
-            {
+                case PlayerState.Prepared:
+                    break;
+                case PlayerState.InTheAir:
+                    // Dead condition: Slept or out of game area
+                    if (this.rigidBody.Awake == false
+                        || this.rigidBody.LinearVelocity.LengthSquared() <= this.MinimumVelocityToDeclareDead)
+                    {
+                        this.PlayerState = PlayerState.Dead;
+                    }
+                    break;
+                case PlayerState.Stamped:
+                    break;
+                case PlayerState.Dead:
+                    this.timeToDismiss -= gameTime;
 
-            }
-            else
-            {
-
+                    if (this.timeToDismiss <= TimeSpan.Zero)
+                    {
+                        this.gamePlayManager.BoulderDead(this.Owner);
+                    }
+                    break;
+                default:
+                    break;
             }
         }
 
@@ -105,6 +139,7 @@ namespace SuperSlingshot.Behaviors
                         this.faceSprite.TexturePath = this.FaceStampedTexturePath;
                     }
                     break;
+                case PlayerState.Dead:
                 default:
                     break;
             }

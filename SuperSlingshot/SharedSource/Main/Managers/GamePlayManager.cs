@@ -61,6 +61,12 @@ namespace SuperSlingshot.Managers
             }
         }
 
+        private void FinishGame()
+        {
+            // TODO
+            this.PauseGame();
+        }
+
         public void NextBoulder()
         {
             if (!this.IsPaused)
@@ -78,6 +84,25 @@ namespace SuperSlingshot.Managers
 
         public void RestartLevel()
         {
+        }
+
+        public void BoulderDead(Entity boulderEntity)
+        {
+            var gameScene = WaveServices.ScreenContextManager.CurrentContext.FindScene<GameScene>();
+
+            if(gameScene!=null)
+            {
+                if(gameScene.HasNextBouder)
+                {
+                    gameScene.EntityManager.Remove(boulderEntity);
+                    gameScene.PrepareNextBoulder();
+                }
+                else
+                {
+                    // EndGame, show score and menu
+                    this.FinishGame();
+                }
+            }
         }
     }
 }

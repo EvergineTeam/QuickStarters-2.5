@@ -4,6 +4,7 @@
     {
         Prepared,
         InTheAir,
-        Stamped
+        Stamped,
+        Dead
     }
 }

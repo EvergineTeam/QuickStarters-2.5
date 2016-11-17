@@ -4,11 +4,13 @@ using System.Collections;
 using System.Collections.Generic;
 using SuperSlingshot.Behaviors;
 using SuperSlingshot.Components;
+using SuperSlingshot.Managers;
 using WaveEngine.Common.Math;
 using WaveEngine.Common.Physics2D;
 using WaveEngine.Framework;
 using WaveEngine.Framework.Graphics;
 using WaveEngine.Framework.Physics2D;
+using WaveEngine.Framework.Services;
 using WaveEngine.ImageEffects;
 using WaveEngine.TiledMap;
 #endregion
@@ -26,6 +28,14 @@ namespace SuperSlingshot.Scenes
         public string LevelID { get; private set; }
 
         public Queue<Entity> Boulders { get; private set; }
+
+        public bool HasNextBouder
+        {
+            get
+            {
+                return this.Boulders.Count > 0;
+            }
+        }
 
         public GameScene(string content) : base()
         {
@@ -45,6 +55,9 @@ namespace SuperSlingshot.Scenes
             this.CreatePhysicScene();
             this.GetLevelProperties();
             this.CreateBoulderEntities();
+
+            // Prepare to Play
+            WaveServices.GetService<GamePlayManager>().NextBoulder();
         }
 
         public void PrepareNextBoulder()
@@ -166,11 +179,11 @@ namespace SuperSlingshot.Scenes
                         break;
                 }
 
-                
-                if(!string.IsNullOrEmpty(assetPath))
+
+                if (!string.IsNullOrEmpty(assetPath))
                 {
                     var boulder = this.EntityManager.Instantiate(assetPath);
-                    
+
                     // Must not collide names
                     boulder.Name += counter++.ToString();
 

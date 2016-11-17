@@ -22,7 +22,12 @@ namespace SuperSlingshot
             WaveServices.RegisterService(new AudioService());
             WaveServices.RegisterService(new GamePlayManager());
 
-            ScreenContext screenContext = new ScreenContext(new GameScene(WaveContent.Scenes.Levels.Level1));
+            //ScreenContext screenContext = new ScreenContext(new GameScene(WaveContent.Scenes.Levels.Level1));
+
+            ScreenContext screenContext = new ScreenContext(
+                new BackgroundScene(WaveContent.Scenes.Backgrounds.Background1), 
+                new GameScene(WaveContent.Scenes.Levels.Level1));
+
             //ScreenContext screenContext = new ScreenContext(new GameScene(WaveContent.Scenes.Levels.Level1));
             //ScreenContext screenContext = new ScreenContext(new GameScene(WaveContent.Scenes.Levels.TestLevel));
             WaveServices.ScreenContextManager.To(screenContext);
