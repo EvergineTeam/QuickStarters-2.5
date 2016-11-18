@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// File generated on 18/11/2016 0:30:54
+// File generated on 18/11/2016 10:53:02
 namespace SuperSlingshot
 {
     using System;
@@ -337,6 +337,18 @@ namespace SuperSlingshot
                 
                 /// <summary> Path to Content/Assets/Other/cloud3.png </summary>
                 public const string cloud3_png = "Content/Assets/Other/cloud3.png";
+                
+                /// <summary> Path to Content/Assets/Other/cloud4.png </summary>
+                public const string cloud4_png = "Content/Assets/Other/cloud4.png";
+                
+                /// <summary> Path to Content/Assets/Other/cloud5.png </summary>
+                public const string cloud5_png = "Content/Assets/Other/cloud5.png";
+                
+                /// <summary> Path to Content/Assets/Other/cloud6.png </summary>
+                public const string cloud6_png = "Content/Assets/Other/cloud6.png";
+                
+                /// <summary> Path to Content/Assets/Other/cloud7.png </summary>
+                public const string cloud7_png = "Content/Assets/Other/cloud7.png";
                 
                 /// <summary> Path to Content/Assets/Other/particle1.png </summary>
                 public const string particle1_png = "Content/Assets/Other/particle1.png";
