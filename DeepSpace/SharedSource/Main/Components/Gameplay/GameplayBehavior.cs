@@ -37,13 +37,13 @@ namespace DeepSpace.Components.Gameplay
 
         private GameState state;
 
-        private PerPixelCollider2D playerCollider;
+        private PolygonCollider2D playerCollider;
 
-        private PerPixelCollider2D[] enemyColliders;
+        private PolygonCollider2D[] enemyColliders;
 
-        private PerPixelCollider2D[] bulletColliders;
+        private PolygonCollider2D[] bulletColliders;
 
-        private PerPixelCollider2D[] enemyBulletColliders;
+        private PolygonCollider2D[] enemyBulletColliders;
 
         private Entity player;
 
@@ -108,7 +108,7 @@ namespace DeepSpace.Components.Gameplay
             set
             {
                 this.player = value;
-                this.playerCollider = this.player.FindComponent<PerPixelCollider2D>();
+                this.playerCollider = this.player.FindComponent<PolygonCollider2D>();
             }
         }
 
@@ -123,11 +123,11 @@ namespace DeepSpace.Components.Gameplay
             {
                 enemies = value;
 
-                this.enemyColliders = new PerPixelCollider2D[value.Length];
+                this.enemyColliders = new PolygonCollider2D[value.Length];
 
                 for (int i = 0; i < value.Length; i++)
                 {
-                    this.enemyColliders[i] = value[i].FindComponent<PerPixelCollider2D>();
+                    this.enemyColliders[i] = value[i].FindComponent<PolygonCollider2D>();
                 }
             }
         }
@@ -143,11 +143,11 @@ namespace DeepSpace.Components.Gameplay
             {
                 bullets = value;
 
-                this.bulletColliders = new PerPixelCollider2D[value.Length];
+                this.bulletColliders = new PolygonCollider2D[value.Length];
 
                 for (int i = 0; i < value.Length; i++)
                 {
-                    this.bulletColliders[i] = value[i].FindComponent<PerPixelCollider2D>();
+                    this.bulletColliders[i] = value[i].FindComponent<PolygonCollider2D>();
                 }
             }
         }
@@ -163,11 +163,11 @@ namespace DeepSpace.Components.Gameplay
             {
                 enemyBullets = value;
 
-                this.enemyBulletColliders = new PerPixelCollider2D[value.Length];
+                this.enemyBulletColliders = new PolygonCollider2D[value.Length];
 
                 for (int i = 0; i < value.Length; i++)
                 {
-                    this.enemyBulletColliders[i] = value[i].FindComponent<PerPixelCollider2D>();
+                    this.enemyBulletColliders[i] = value[i].FindComponent<PolygonCollider2D>();
                 }
             }
         }
