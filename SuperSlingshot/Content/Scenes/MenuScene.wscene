@@ -106,8 +106,8 @@
                       <d10p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#Rectangle</d10p1:Key>
                       <d10p1:Value xmlns:d12p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math" i:type="d12p1:RectangleF">
                         <d12p1:Height>73</d12p1:Height>
-                        <d12p1:Width>165</d12p1:Width>
-                        <d12p1:X>-82.5</d12p1:X>
+                        <d12p1:Width>164</d12p1:Width>
+                        <d12p1:X>-82</d12p1:X>
                         <d12p1:Y>36.5</d12p1:Y>
                       </d10p1:Value>
                     </d10p1:KeyValueOfstringanyType>
@@ -164,8 +164,8 @@
                       <d10p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#Rectangle</d10p1:Key>
                       <d10p1:Value xmlns:d12p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math" i:type="d12p1:RectangleF">
                         <d12p1:Height>73</d12p1:Height>
-                        <d12p1:Width>302</d12p1:Width>
-                        <d12p1:X>-151</d12p1:X>
+                        <d12p1:Width>301</d12p1:Width>
+                        <d12p1:X>-150.5</d12p1:X>
                         <d12p1:Y>36.5</d12p1:Y>
                       </d10p1:Value>
                     </d10p1:KeyValueOfstringanyType>

@@ -1,5 +1,5 @@
 ﻿<Asset xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="WaveEngine.Framework.Models">
-  <Id>5fe69236-4cd2-44e7-94e7-3af489672949</Id>
+  <Id>3cdec578-76ae-4f0c-bf80-0013e83692e8</Id>
   <Asset xmlns:d2p1="WaveEngine.Framework.Models.Assets" i:type="d2p1:Texture">
     <d2p1:Profiles xmlns:d3p1="WaveEngine.Framework.Models.Profiles">
       <d3p1:ExportProfile i:type="d3p1:TextureProfile">

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// File generated on 18/11/2016 10:53:02
+// File generated on 21/11/2016 17:59:32
 namespace SuperSlingshot
 {
     using System;
@@ -379,11 +379,41 @@ namespace SuperSlingshot
             public sealed class Tiles
             {
                 
+                /// <summary> Path to Content/Assets/Tiles/desert adorners.png </summary>
+                public const string desert_adorners_png = "Content/Assets/Tiles/desert adorners.png";
+                
+                /// <summary> Path to Content/Assets/Tiles/desert background.png </summary>
+                public const string desert_background_png = "Content/Assets/Tiles/desert background.png";
+                
+                /// <summary> Path to Content/Assets/Tiles/desert small.png </summary>
+                public const string desert_small_png = "Content/Assets/Tiles/desert small.png";
+                
+                /// <summary> Path to Content/Assets/Tiles/desert.png </summary>
+                public const string desert_png = "Content/Assets/Tiles/desert.png";
+                
                 /// <summary> Path to Content/Assets/Tiles/grass.png </summary>
                 public const string grass_png = "Content/Assets/Tiles/grass.png";
                 
                 /// <summary> Path to Content/Assets/Tiles/Level1.tmx </summary>
                 public const string Level1_tmx = "Content/Assets/Tiles/Level1.tmx";
+                
+                /// <summary> Path to Content/Assets/Tiles/Level2.tmx </summary>
+                public const string Level2_tmx = "Content/Assets/Tiles/Level2.tmx";
+                
+                /// <summary> Path to Content/Assets/Tiles/Level3.tmx </summary>
+                public const string Level3_tmx = "Content/Assets/Tiles/Level3.tmx";
+                
+                /// <summary> Path to Content/Assets/Tiles/snow back adorners.png </summary>
+                public const string snow_back_adorners_png = "Content/Assets/Tiles/snow back adorners.png";
+                
+                /// <summary> Path to Content/Assets/Tiles/snow background.png </summary>
+                public const string snow_background_png = "Content/Assets/Tiles/snow background.png";
+                
+                /// <summary> Path to Content/Assets/Tiles/snow front adorners.png </summary>
+                public const string snow_front_adorners_png = "Content/Assets/Tiles/snow front adorners.png";
+                
+                /// <summary> Path to Content/Assets/Tiles/snow.png </summary>
+                public const string snow_png = "Content/Assets/Tiles/snow.png";
             }
         }
         
@@ -477,6 +507,9 @@ namespace SuperSlingshot
                 
                 /// <summary> Path to Content/Scenes/Levels/Level1.wscene </summary>
                 public const string Level1 = "Content/Scenes/Levels/Level1.wscene";
+                
+                /// <summary> Path to Content/Scenes/Levels/Level2.wscene </summary>
+                public const string Level2 = "Content/Scenes/Levels/Level2.wscene";
                 
                 /// <summary> Path to Content/Scenes/Levels/TestLevel.wscene </summary>
                 public const string TestLevel = "Content/Scenes/Levels/TestLevel.wscene";

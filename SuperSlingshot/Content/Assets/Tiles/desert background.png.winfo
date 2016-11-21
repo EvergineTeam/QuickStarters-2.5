@@ -1,22 +1,22 @@
 ﻿<Asset xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="WaveEngine.Framework.Models">
-  <Id>06c63494-bc66-4f44-9aa1-9d3f52027b03</Id>
+  <Id>524b0cc6-a128-4831-bbc0-1146755e0f9c</Id>
   <Asset xmlns:d2p1="WaveEngine.Framework.Models.Assets" i:type="d2p1:Texture">
     <d2p1:Profiles xmlns:d3p1="WaveEngine.Framework.Models.Profiles">
       <d3p1:ExportProfile i:type="d3p1:TextureProfile">
         <d3p1:Name i:nil="true" />
         <d3p1:OutputFormat>Color32Bit</d3p1:OutputFormat>
-        <d3p1:ScaledHeight>59</d3p1:ScaledHeight>
+        <d3p1:ScaledHeight>960</d3p1:ScaledHeight>
         <d3p1:ScaledPercentage>100</d3p1:ScaledPercentage>
-        <d3p1:ScaledWidth>70</d3p1:ScaledWidth>
+        <d3p1:ScaledWidth>1280</d3p1:ScaledWidth>
         <d3p1:ScalingType>Percentage</d3p1:ScalingType>
       </d3p1:ExportProfile>
     </d2p1:Profiles>
     <d2p1:ZipCompress>true</d2p1:ZipCompress>
     <d2p1:AntialiasType>Smooth</d2p1:AntialiasType>
     <d2p1:GenerateMipMaps>true</d2p1:GenerateMipMaps>
-    <d2p1:Height>59</d2p1:Height>
+    <d2p1:Height>960</d2p1:Height>
     <d2p1:PremultipliedAlpha>true</d2p1:PremultipliedAlpha>
-    <d2p1:Width>70</d2p1:Width>
+    <d2p1:Width>1280</d2p1:Width>
   </Asset>
   <Thumbnail i:nil="true" />
   <Version xmlns:d2p1="http://schemas.datacontract.org/2004/07/System">

@@ -59,9 +59,12 @@ namespace SuperSlingshot.Behaviors
                 {
                     this.TouchPosition = this.touchState[0].Position;
                     this.vsm.ToVirtualPosition(ref this.TouchPosition);
-                    this.RenderManager.ActiveCamera2D.Unproject(ref this.TouchPosition, out this.WorldPosition);
+                    //this.RenderManager.ActiveCamera2D.Unproject(ref this.TouchPosition, out this.WorldPosition);
+                    Ray r;
+                    this.RenderManager.ActiveCamera2D.CalculateRay(ref this.TouchPosition, out r);
+                    this.WorldPosition = r.IntersectionZPlane(0).ToVector2();
 
-                    Labels.Add("worldPosition", this.WorldPosition);
+                    //Labels.Add("worldPosition", this.WorldPosition);
 
                     foreach (Entity entity in this.Owner.Scene.EntityManager.FindAllByTag(GameConstants.TAGDRAGGABLE))
                     {
@@ -112,7 +115,10 @@ namespace SuperSlingshot.Behaviors
                 {
                     this.TouchPosition = this.touchState[0].Position;
                     this.vsm.ToVirtualPosition(ref this.TouchPosition);
-                    this.RenderManager.ActiveCamera2D.Unproject(ref this.TouchPosition, out this.WorldPosition);
+                    //this.RenderManager.ActiveCamera2D.Unproject(ref this.TouchPosition, out this.WorldPosition);
+                    Ray r;
+                    this.RenderManager.ActiveCamera2D.CalculateRay(ref this.TouchPosition, out r);
+                    this.WorldPosition = r.IntersectionZPlane(0).ToVector2();
                     this.mouseJoint.Target = this.WorldPosition;
 
                     Labels.Add("worldPosition", this.WorldPosition);
