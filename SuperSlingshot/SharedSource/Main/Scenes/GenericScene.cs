@@ -15,11 +15,11 @@ using WaveEngine.TiledMap;
 
 namespace SuperSlingshot.Scenes
 {
-    public class BackgroundScene : Scene
+    public class GenericScene : Scene
     {
         private readonly string content;
 
-        public BackgroundScene(string content) : base()
+        public GenericScene(string content) : base()
         {
             this.content = content;
         }

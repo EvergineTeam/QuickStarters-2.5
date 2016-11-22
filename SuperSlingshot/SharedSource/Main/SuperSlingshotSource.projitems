@@ -32,7 +32,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)NinePatch\NinePatchSprite.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)NinePatch\NinePatchSpriteAtlas.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)NinePatch\NinePatchTextureInfo.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Scenes\BackgroundScene.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Scenes\GenericScene.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Scenes\GameScene.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Scenes\InitialScene.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Scenes\LevelSelectionScene.cs" />

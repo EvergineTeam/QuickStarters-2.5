@@ -25,8 +25,10 @@ namespace SuperSlingshot
             //ScreenContext screenContext = new ScreenContext(new GameScene(WaveContent.Scenes.Levels.Level1));
 
             ScreenContext screenContext = new ScreenContext(
-                new BackgroundScene(WaveContent.Scenes.Backgrounds.Background1), 
-                new GameScene(WaveContent.Scenes.Levels.Level1));
+                //new GenericScene(WaveContent.Scenes.Backgrounds.Background1)
+                new GameScene(WaveContent.Scenes.Levels.Level3)
+                //new GenericScene(WaveContent.Scenes.Foregrounds.FrontScene)
+                );
 
             //ScreenContext screenContext = new ScreenContext(new GameScene(WaveContent.Scenes.Levels.Level1));
             //ScreenContext screenContext = new ScreenContext(new GameScene(WaveContent.Scenes.Levels.TestLevel));

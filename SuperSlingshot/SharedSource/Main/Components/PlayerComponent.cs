@@ -64,7 +64,7 @@ namespace SuperSlingshot.Components
             var anchorTransform = anchorEntity.FindComponent<Transform2D>();
             var anchorPosition = anchorTransform.Position;
 
-            var vector = (anchorPosition - this.transform.Position) / 15;
+            var vector = (anchorPosition - this.transform.Position) / 11;
 
             var joint = anchorEntity.FindComponent<DistanceJoint2D>();
             anchorEntity.RemoveComponent<DistanceJoint2D>();

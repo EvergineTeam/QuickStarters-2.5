@@ -5,8 +5,10 @@ using System.Collections.Generic;
 using SuperSlingshot.Behaviors;
 using SuperSlingshot.Components;
 using SuperSlingshot.Managers;
+using WaveEngine.Common.Graphics;
 using WaveEngine.Common.Math;
 using WaveEngine.Common.Physics2D;
+using WaveEngine.Components.Graphics2D;
 using WaveEngine.Framework;
 using WaveEngine.Framework.Graphics;
 using WaveEngine.Framework.Physics2D;
@@ -53,11 +55,41 @@ namespace SuperSlingshot.Scenes
             base.Start();
             this.SetCameraBounds();
             this.CreatePhysicScene();
+            this.CreateCratesScene();
             this.GetLevelProperties();
             this.CreateBoulderEntities();
 
             // Prepare to Play
             WaveServices.GetService<GamePlayManager>().NextBoulder();
+        }
+
+        private void CreateCratesScene()
+        {
+            // crates of the layer
+            var physicLayer = this.tiledMap.ObjectLayers[GameConstants.LAYERBOXPHYSICLAYER];
+            foreach (var physic in physicLayer.Objects)
+            {
+                var colliderEntity = TiledMapUtils.CollisionEntityFromObject(physic.Name, physic);
+                colliderEntity.Tag = GameConstants.TAGCOLLIDER;
+                colliderEntity.AddComponent(new RigidBody2D());
+
+                var collider = colliderEntity.FindComponent<Collider2D>(false);
+                if (collider != null)
+                {
+                    collider.CollisionCategories = ColliderCategory2D.Cat4;
+                    collider.CollidesWith = ColliderCategory2D.All;
+                    collider.Friction = 1.0f;
+                    collider.Restitution = 0.4f;
+                }
+
+                Sprite sprite = new Sprite(WaveContent.Assets.Other.crate_png);
+                SpriteRenderer spriteRenderer = new SpriteRenderer(DefaultLayers.Alpha, AddressMode.PointWrap);
+
+                colliderEntity.AddComponent(sprite);
+                colliderEntity.AddComponent(spriteRenderer);
+
+                this.EntityManager.Add(colliderEntity);
+            }
         }
 
         public void PrepareNextBoulder()

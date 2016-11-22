@@ -14,6 +14,7 @@
 
         // LAYERS
         public static string LAYERPHYSIC = "PhysicLayer";
+        public static string LAYERBOXPHYSICLAYER = "BoxPhysicLayer";
         public static string LAYERANCHOR = "AnchorLayer";
         public static string LAYERBACK = "BackLayer";
         public static string LAYERMIDDLE = "MiddleLayer";
