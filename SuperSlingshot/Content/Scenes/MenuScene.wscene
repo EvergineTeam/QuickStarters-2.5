@@ -18,7 +18,7 @@
           <d5p1:LocalPosition xmlns:d6p1="WaveEngine.Common.Math">
             <d6p1:X>0</d6p1:X>
             <d6p1:Y>0</d6p1:Y>
-            <d6p1:Z>10</d6p1:Z>
+            <d6p1:Z>42704.85</d6p1:Z>
           </d5p1:LocalPosition>
           <d5p1:LocalScale xmlns:d6p1="WaveEngine.Common.Math">
             <d6p1:X>1</d6p1:X>
@@ -71,7 +71,7 @@
             <d6p1:Y>0</d6p1:Y>
           </d5p1:Viewport>
           <d5p1:customVirtualScreen xmlns:d6p1="WaveEngine.Framework.Managers" i:nil="true" />
-          <d5p1:distance>0</d5p1:distance>
+          <d5p1:distance>42704.85</d5p1:distance>
           <d5p1:rotation>0</d5p1:rotation>
           <d5p1:vanishingPoint xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
             <d6p1:X>0.5</d6p1:X>
@@ -105,10 +105,10 @@
                     <d10p1:KeyValueOfstringanyType>
                       <d10p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#Rectangle</d10p1:Key>
                       <d10p1:Value xmlns:d12p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math" i:type="d12p1:RectangleF">
-                        <d12p1:Height>73</d12p1:Height>
-                        <d12p1:Width>164</d12p1:Width>
-                        <d12p1:X>-82</d12p1:X>
-                        <d12p1:Y>36.5</d12p1:Y>
+                        <d12p1:Height>21</d12p1:Height>
+                        <d12p1:Width>49</d12p1:Width>
+                        <d12p1:X>-24.5</d12p1:X>
+                        <d12p1:Y>10.5</d12p1:Y>
                       </d10p1:Value>
                     </d10p1:KeyValueOfstringanyType>
                     <d10p1:KeyValueOfstringanyType>
@@ -163,10 +163,10 @@
                     <d10p1:KeyValueOfstringanyType>
                       <d10p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#Rectangle</d10p1:Key>
                       <d10p1:Value xmlns:d12p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math" i:type="d12p1:RectangleF">
-                        <d12p1:Height>73</d12p1:Height>
-                        <d12p1:Width>301</d12p1:Width>
-                        <d12p1:X>-150.5</d12p1:X>
-                        <d12p1:Y>36.5</d12p1:Y>
+                        <d12p1:Height>21</d12p1:Height>
+                        <d12p1:Width>96</d12p1:Width>
+                        <d12p1:X>-48</d12p1:X>
+                        <d12p1:Y>10.5</d12p1:Y>
                       </d10p1:Value>
                     </d10p1:KeyValueOfstringanyType>
                     <d10p1:KeyValueOfstringanyType>
@@ -221,10 +221,10 @@
                     <d10p1:KeyValueOfstringanyType>
                       <d10p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#Rectangle</d10p1:Key>
                       <d10p1:Value xmlns:d12p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math" i:type="d12p1:RectangleF">
-                        <d12p1:Height>73</d12p1:Height>
-                        <d12p1:Width>267</d12p1:Width>
-                        <d12p1:X>-133.5</d12p1:X>
-                        <d12p1:Y>36.5</d12p1:Y>
+                        <d12p1:Height>21</d12p1:Height>
+                        <d12p1:Width>86</d12p1:Width>
+                        <d12p1:X>-43</d12p1:X>
+                        <d12p1:Y>10.5</d12p1:Y>
                       </d10p1:Value>
                     </d10p1:KeyValueOfstringanyType>
                     <d10p1:KeyValueOfstringanyType>
@@ -397,10 +397,10 @@
                   <d9p1:Effect>None</d9p1:Effect>
                   <d9p1:Opacity>1</d9p1:Opacity>
                   <d9p1:Rectangle xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
-                    <d10p1:Height>73</d10p1:Height>
-                    <d10p1:Width>170</d10p1:Width>
-                    <d10p1:X>-85</d10p1:X>
-                    <d10p1:Y>36.5</d10p1:Y>
+                    <d10p1:Height>21</d10p1:Height>
+                    <d10p1:Width>51</d10p1:Width>
+                    <d10p1:X>-25.5</d10p1:X>
+                    <d10p1:Y>10.5</d10p1:Y>
                   </d9p1:Rectangle>
                   <d9p1:origin xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:X>0.5</d10p1:X>
@@ -413,7 +413,7 @@
                   <d9p1:transformMode>Standard</d9p1:transformMode>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="WaveEngine.Components.Toolkit" i:type="d9p1:TextComponent">
-                  <d9p1:fontPath>Content/Assets/Fonts/sketches_48.ttf.wpk</d9p1:fontPath>
+                  <d9p1:fontPath i:nil="true" />
                   <d9p1:foreground xmlns:d10p1="WaveEngine.Common.Graphics">
                     <d10p1:A>255</d10p1:A>
                     <d10p1:B>149</d10p1:B>
