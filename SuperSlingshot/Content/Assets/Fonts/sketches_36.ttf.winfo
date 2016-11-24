@@ -1,6 +1,20 @@
 ﻿<Asset xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="WaveEngine.Framework.Models">
-  <Id>d882d86f-5ca5-4853-8baf-c8b34a10b365</Id>
-  <Asset xmlns:d2p1="WaveEngine.Framework.Models.Assets" i:nil="true" />
+  <Id>32da40c8-e9c6-4941-83db-fa5e9d03cc6d</Id>
+  <Asset xmlns:d2p1="WaveEngine.Framework.Models.Assets" i:type="d2p1:Font">
+    <d2p1:Profiles xmlns:d3p1="WaveEngine.Framework.Models.Profiles">
+      <d3p1:ExportProfile i:type="d3p1:FontProfile">
+        <d3p1:Name i:nil="true" />
+      </d3p1:ExportProfile>
+    </d2p1:Profiles>
+    <d2p1:ZipCompress>true</d2p1:ZipCompress>
+    <d2p1:CharacterSet>ASCII</d2p1:CharacterSet>
+    <d2p1:CustomSet i:nil="true" />
+    <d2p1:DefaultCharacter>42</d2p1:DefaultCharacter>
+    <d2p1:FontFamily>sketches</d2p1:FontFamily>
+    <d2p1:FontSize>36</d2p1:FontSize>
+    <d2p1:InnerSpacing>0</d2p1:InnerSpacing>
+    <d2p1:Spacing>0</d2p1:Spacing>
+  </Asset>
   <Thumbnail i:nil="true" />
   <Version xmlns:d2p1="http://schemas.datacontract.org/2004/07/System">
     <d2p1:_Build>0</d2p1:_Build>

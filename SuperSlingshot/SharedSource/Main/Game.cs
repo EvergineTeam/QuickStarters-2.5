@@ -17,22 +17,17 @@ namespace SuperSlingshot
         {
             base.Initialize(application);
 
+            var navigationManager = new NavigationManager();
+
             WaveServices.RegisterService(new ScoreService());
             WaveServices.RegisterService(new AnimationService());
             WaveServices.RegisterService(new AudioService());
             WaveServices.RegisterService(new GamePlayManager());
+            WaveServices.RegisterService(navigationManager);
 
-            //ScreenContext screenContext = new ScreenContext(new GameScene(WaveContent.Scenes.Levels.Level1));
+            ScreenContext screenContext = new ScreenContext(new LevelSelectionScene());
 
-            ScreenContext screenContext = new ScreenContext(
-                //new GenericScene(WaveContent.Scenes.Backgrounds.Background1)
-                new GameScene(WaveContent.Scenes.Levels.Level3)
-                //new GenericScene(WaveContent.Scenes.Foregrounds.FrontScene)
-                );
-
-            //ScreenContext screenContext = new ScreenContext(new GameScene(WaveContent.Scenes.Levels.Level1));
-            //ScreenContext screenContext = new ScreenContext(new GameScene(WaveContent.Scenes.Levels.TestLevel));
-            WaveServices.ScreenContextManager.To(screenContext);
+            navigationManager.NavigateToLevelSelection();
         }
     }
 }

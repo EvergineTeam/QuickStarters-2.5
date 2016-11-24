@@ -66,29 +66,32 @@ namespace SuperSlingshot.Scenes
         private void CreateCratesScene()
         {
             // crates of the layer
-            var physicLayer = this.tiledMap.ObjectLayers[GameConstants.LAYERBOXPHYSICLAYER];
-            foreach (var physic in physicLayer.Objects)
+            if (this.tiledMap.ObjectLayers.ContainsKey(GameConstants.LAYERBOXPHYSICLAYER))
             {
-                var colliderEntity = TiledMapUtils.CollisionEntityFromObject(physic.Name, physic);
-                colliderEntity.Tag = GameConstants.TAGCOLLIDER;
-                colliderEntity.AddComponent(new RigidBody2D());
-
-                var collider = colliderEntity.FindComponent<Collider2D>(false);
-                if (collider != null)
+                var physicLayer = this.tiledMap.ObjectLayers[GameConstants.LAYERBOXPHYSICLAYER];
+                foreach (var physic in physicLayer.Objects)
                 {
-                    collider.CollisionCategories = ColliderCategory2D.Cat4;
-                    collider.CollidesWith = ColliderCategory2D.All;
-                    collider.Friction = 1.0f;
-                    collider.Restitution = 0.4f;
+                    var colliderEntity = TiledMapUtils.CollisionEntityFromObject(physic.Name, physic);
+                    colliderEntity.Tag = GameConstants.TAGCOLLIDER;
+                    colliderEntity.AddComponent(new RigidBody2D());
+
+                    var collider = colliderEntity.FindComponent<Collider2D>(false);
+                    if (collider != null)
+                    {
+                        collider.CollisionCategories = ColliderCategory2D.Cat4;
+                        collider.CollidesWith = ColliderCategory2D.All;
+                        collider.Friction = 1.0f;
+                        collider.Restitution = 0.4f;
+                    }
+
+                    Sprite sprite = new Sprite(WaveContent.Assets.Other.crate_png);
+                    SpriteRenderer spriteRenderer = new SpriteRenderer(DefaultLayers.Alpha, AddressMode.PointWrap);
+
+                    colliderEntity.AddComponent(sprite);
+                    colliderEntity.AddComponent(spriteRenderer);
+
+                    this.EntityManager.Add(colliderEntity);
                 }
-
-                Sprite sprite = new Sprite(WaveContent.Assets.Other.crate_png);
-                SpriteRenderer spriteRenderer = new SpriteRenderer(DefaultLayers.Alpha, AddressMode.PointWrap);
-
-                colliderEntity.AddComponent(sprite);
-                colliderEntity.AddComponent(spriteRenderer);
-
-                this.EntityManager.Add(colliderEntity);
             }
         }
 

@@ -11,12 +11,14 @@ namespace SuperSlingshot.Scenes
     public class MenuScene : Scene
     {
         private GamePlayManager gamePlayManager;
+        private NavigationManager navigationManager;
 
         protected override void CreateScene()
         {
             this.Load(WaveContent.Scenes.MenuScene);
 
             this.gamePlayManager = WaveServices.GetService<GamePlayManager>();
+            this.navigationManager = WaveServices.GetService<NavigationManager>();
 
             var resumeButton = this.EntityManager.Find(GameConstants.ENTITYMENURESUME);
             var restartButton = this.EntityManager.Find(GameConstants.ENTITYMENURESTART);
@@ -51,6 +53,7 @@ namespace SuperSlingshot.Scenes
         {
             if (currentState == ButtonState.Release && lastState == ButtonState.Pressed)
             {
+                this.navigationManager.NavigateToLevelSelection();
             }
         }
     }

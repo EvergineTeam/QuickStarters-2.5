@@ -39,7 +39,14 @@ namespace SuperSlingshot.Components
         public string PressedButtonPath { get; set; }
 
         [DataMember]
+        [RenderPropertyAsAsset(AssetType.Texture)]
+        public string BlockedButtonPath { get; set; }
+
+        [DataMember]
         public string Text { get; set; }
+
+        [DataMember]
+        public bool IsBlocked { get; set; }
 
         protected override void ResolveDependencies()
         {
@@ -75,23 +82,30 @@ namespace SuperSlingshot.Components
             var lastState = this.state;
             this.state = state;
 
-            switch (this.state)
+            if (!this.IsBlocked)
             {
-                case ButtonState.Release:
-                    this.sprite.TexturePath = this.NormalButtonPath;
-                    break;
-                case ButtonState.Pressed:
-                    this.sprite.TexturePath = this.PressedButtonPath;
-                    break;
-                default:
-                    break;
-            }
+                switch (this.state)
+                {
+                    case ButtonState.Release:
+                        this.sprite.TexturePath = this.NormalButtonPath;
+                        break;
+                    case ButtonState.Pressed:
+                        this.sprite.TexturePath = this.PressedButtonPath;
+                        break;
+                    default:
+                        break;
+                }
 
-            // TODO: C#6 
-            // this.StateChanged?.Invoke(this, this.state, lastState);
-            if (this.StateChanged != null)
+                // TODO: C#6 
+                // this.StateChanged?.Invoke(this, this.state, lastState);
+                if (this.StateChanged != null)
+                {
+                    this.StateChanged.Invoke(this, this.state, lastState);
+                }
+            }
+            else
             {
-                this.StateChanged.Invoke(this, this.state, lastState);
+                this.sprite.TexturePath = this.BlockedButtonPath;
             }
         }
     }

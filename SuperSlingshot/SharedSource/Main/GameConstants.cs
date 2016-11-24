@@ -12,6 +12,10 @@
         public static string ENTITYMENURESTART = "menuEntity.buttonPanel.restartButton";
         public static string ENTITYMENUEXIT = "menuEntity.buttonPanel.exitButton";
 
+        public static string ENTITYLEVEL1BUTTON = "menuEntity.buttons.level1";
+        public static string ENTITYLEVEL2BUTTON = "menuEntity.buttons.level2";
+        public static string ENTITYLEVEL3BUTTON = "menuEntity.buttons.level3";
+
         // LAYERS
         public static string LAYERPHYSIC = "PhysicLayer";
         public static string LAYERBOXPHYSICLAYER = "BoxPhysicLayer";

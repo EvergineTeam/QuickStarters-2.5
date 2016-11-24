@@ -1,5 +1,5 @@
 ﻿<Prefab xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="WaveEngine.Framework.Models.Assets">
-  <Id xmlns="WaveEngine.Framework.Models">d92ef7bb-063d-4ba1-848c-52c0983b505b</Id>
+  <Id xmlns="WaveEngine.Framework.Models">1866567a-73c1-4bce-8084-45e250576be7</Id>
   <EntityModel xmlns:d2p1="WaveEngine.Framework.Models.Entities">
     <d2p1:SerializeChildrens>
       <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
@@ -17,8 +17,8 @@
               <d7p1:Z>0</d7p1:Z>
             </d6p1:LocalOrientation>
             <d6p1:LocalPosition xmlns:d7p1="WaveEngine.Common.Math">
-              <d7p1:X>0</d7p1:X>
-              <d7p1:Y>10</d7p1:Y>
+              <d7p1:X>7.9</d7p1:X>
+              <d7p1:Y>5.1</d7p1:Y>
               <d7p1:Z>-0.100000381</d7p1:Z>
             </d6p1:LocalPosition>
             <d6p1:LocalScale xmlns:d7p1="WaveEngine.Common.Math">
@@ -30,8 +30,8 @@
             <d6p1:Opacity>1</d6p1:Opacity>
             <d6p1:Rectangle xmlns:d7p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
               <d7p1:Height>73</d7p1:Height>
-              <d7p1:Width>220</d7p1:Width>
-              <d7p1:X>-110</d7p1:X>
+              <d7p1:Width>51</d7p1:Width>
+              <d7p1:X>-25.5</d7p1:X>
               <d7p1:Y>36.5</d7p1:Y>
             </d6p1:Rectangle>
             <d6p1:origin xmlns:d7p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
@@ -45,7 +45,7 @@
             <d6p1:transformMode>Standard</d6p1:transformMode>
           </d5p1:Component>
           <d5p1:Component xmlns:d6p1="WaveEngine.Components.Toolkit" i:type="d6p1:TextComponent">
-            <d6p1:fontPath i:nil="true" />
+            <d6p1:fontPath>Content/Assets/Fonts/sketches_48.ttf.wpk</d6p1:fontPath>
             <d6p1:foreground xmlns:d7p1="WaveEngine.Common.Graphics">
               <d7p1:A>255</d7p1:A>
               <d7p1:B>0</d7p1:B>
@@ -100,7 +100,7 @@
         <d4p1:Opacity>1</d4p1:Opacity>
         <d4p1:Rectangle xmlns:d5p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
           <d5p1:Height>178</d5p1:Height>
-          <d5p1:Width>363</d5p1:Width>
+          <d5p1:Width>177</d5p1:Width>
           <d5p1:X>0</d5p1:X>
           <d5p1:Y>0</d5p1:Y>
         </d4p1:Rectangle>
@@ -159,13 +159,14 @@
           <d5p1:R>255</d5p1:R>
         </d4p1:TintColor>
         <d4p1:materialPath i:nil="true" />
-        <d4p1:texturePath>Content/Assets/Gui/button_normal.png.wpk</d4p1:texturePath>
+        <d4p1:texturePath>Content/Assets/Gui/small_button_normal.png.wpk</d4p1:texturePath>
       </d3p1:Component>
       <d3p1:Component xmlns:d4p1="http://schemas.datacontract.org/2004/07/SuperSlingshot.Components" i:type="d4p1:ButtonComponent">
-        <d4p1:BlockedButtonPath>Content/Assets/Gui/button_blocked.png.wpk</d4p1:BlockedButtonPath>
-        <d4p1:HoverButtonPath>Content/Assets/Gui/button_hover.png.wpk</d4p1:HoverButtonPath>
-        <d4p1:NormalButtonPath>Content/Assets/Gui/button_normal.png.wpk</d4p1:NormalButtonPath>
-        <d4p1:PressedButtonPath>Content/Assets/Gui/button_click.png.wpk</d4p1:PressedButtonPath>
+        <d4p1:BlockedButtonPath>Content/Assets/Gui/small_button_blocked.png.wpk</d4p1:BlockedButtonPath>
+        <d4p1:HoverButtonPath>Content/Assets/Gui/small_button_hover.png.wpk</d4p1:HoverButtonPath>
+        <d4p1:IsBlocked>false</d4p1:IsBlocked>
+        <d4p1:NormalButtonPath>Content/Assets/Gui/small_button_normal.png.wpk</d4p1:NormalButtonPath>
+        <d4p1:PressedButtonPath>Content/Assets/Gui/small_button_click.png.wpk</d4p1:PressedButtonPath>
         <d4p1:Text i:nil="true" />
       </d3p1:Component>
       <d3p1:Component xmlns:d4p1="WaveEngine.Components.Graphics2D" i:type="d4p1:SpriteRenderer">
