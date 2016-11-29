@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using SuperSlingshot.Scenes;
+﻿using SuperSlingshot.Scenes;
 using WaveEngine.Common;
 using WaveEngine.Framework.Services;
 
@@ -11,16 +8,65 @@ namespace SuperSlingshot.Managers
     {
         public void NavigateToGameLevel(string level)
         {
-            ScreenContext screenContext = new ScreenContext(new GameScene(level));
-            WaveServices.ScreenContextManager.To(screenContext);
+            ScreenContext screenContext = new ScreenContext("GameLevelContext", new GameScene(level));
+            WaveServices.ScreenContextManager.Push(screenContext);
+        }
+
+        public void NavigateBack(bool doDispose = false)
+        {
+            WaveServices.ScreenContextManager.Pop(doDispose);
         }
 
         public void NavigateToLevelSelection()
         {
             ScreenContext screenContext = new ScreenContext(
-                new GenericScene(WaveContent.Scenes.Backgrounds.Background1),
-                new LevelSelectionScene());
+                "LevelSelectionContext",
+                new LevelSelectionScene())
+            {
+                Behavior = ScreenContextBehaviors.DrawInBackground 
+            };
+
             WaveServices.ScreenContextManager.To(screenContext);
+        }
+
+        public void InitialNavigation()
+        {
+            ScreenContext screenContext = new ScreenContext( 
+                "InitialSceneContext",
+                new GenericScene(WaveContent.Scenes.Backgrounds.Background1),
+                new InitialScene())
+            {
+                Behavior = ScreenContextBehaviors.DrawInBackground | ScreenContextBehaviors.UpdateInBackground
+            };
+
+            WaveServices.ScreenContextManager.Push(screenContext);
+        }
+
+        public void ChangeState(bool pause)
+        {
+            var gameScene = WaveServices.ScreenContextManager.FindContextByName("GameLevelContext").FindScene<GameScene>();
+
+            if(gameScene == null)
+            {
+                return;
+            }
+
+            ScreenContext screenContext = new ScreenContext(
+                "MenuContext",
+                new MenuScene());
+
+            if (pause)
+            { 
+                gameScene.Pause();
+
+                WaveServices.ScreenContextManager.Push(screenContext);
+            }
+            else
+            {
+                gameScene.Resume();
+
+                this.NavigateBack();
+            }
         }
     }
 }

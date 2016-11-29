@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Runtime.Serialization;
-using SuperSlingshot;
 using SuperSlingshot.Enums;
 using SuperSlingshot.Managers;
 using WaveEngine.Common.Attributes;
 using WaveEngine.Components.Graphics2D;
 using WaveEngine.Framework;
-using WaveEngine.Framework.Graphics;
 using WaveEngine.Framework.Physics2D;
 using WaveEngine.Framework.Services;
 

@@ -51,7 +51,7 @@
             <d6p1:R>100</d6p1:R>
           </d5p1:BackgroundColor>
           <d5p1:CameraOrder>0</d5p1:CameraOrder>
-          <d5p1:ClearFlags>DepthAndStencil</d5p1:ClearFlags>
+          <d5p1:ClearFlags>All</d5p1:ClearFlags>
           <d5p1:FarPlane>100</d5p1:FarPlane>
           <d5p1:FieldOfView>1.6</d5p1:FieldOfView>
           <d5p1:IsActive>true</d5p1:IsActive>
@@ -352,6 +352,10 @@
                 <d8p1:Z>0</d8p1:Z>
               </d6p1:Value>
             </d6p1:KeyValueOfstringanyType>
+            <d6p1:KeyValueOfstringanyType>
+              <d6p1:Key>WaveEngine.Components.Graphics2D.Sprite#0#materialPath</d6p1:Key>
+              <d6p1:Value i:nil="true" />
+            </d6p1:KeyValueOfstringanyType>
           </d2p1:modifiedProperties>
         </d2p1:BaseEntityModel>
         <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
@@ -392,6 +396,10 @@
                 <d8p1:Y>-330</d8p1:Y>
                 <d8p1:Z>0</d8p1:Z>
               </d6p1:Value>
+            </d6p1:KeyValueOfstringanyType>
+            <d6p1:KeyValueOfstringanyType>
+              <d6p1:Key>WaveEngine.Components.Graphics2D.Sprite#0#materialPath</d6p1:Key>
+              <d6p1:Value i:nil="true" />
             </d6p1:KeyValueOfstringanyType>
           </d2p1:modifiedProperties>
         </d2p1:BaseEntityModel>
@@ -434,6 +442,10 @@
                 <d8p1:Z>0</d8p1:Z>
               </d6p1:Value>
             </d6p1:KeyValueOfstringanyType>
+            <d6p1:KeyValueOfstringanyType>
+              <d6p1:Key>WaveEngine.Components.Graphics2D.Sprite#0#materialPath</d6p1:Key>
+              <d6p1:Value i:nil="true" />
+            </d6p1:KeyValueOfstringanyType>
           </d2p1:modifiedProperties>
         </d2p1:BaseEntityModel>
         <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
@@ -474,6 +486,10 @@
                 <d8p1:Y>-330</d8p1:Y>
                 <d8p1:Z>0</d8p1:Z>
               </d6p1:Value>
+            </d6p1:KeyValueOfstringanyType>
+            <d6p1:KeyValueOfstringanyType>
+              <d6p1:Key>WaveEngine.Components.Graphics2D.Sprite#0#materialPath</d6p1:Key>
+              <d6p1:Value i:nil="true" />
             </d6p1:KeyValueOfstringanyType>
           </d2p1:modifiedProperties>
         </d2p1:BaseEntityModel>
@@ -516,6 +532,10 @@
                 <d8p1:Z>0</d8p1:Z>
               </d6p1:Value>
             </d6p1:KeyValueOfstringanyType>
+            <d6p1:KeyValueOfstringanyType>
+              <d6p1:Key>WaveEngine.Components.Graphics2D.Sprite#0#materialPath</d6p1:Key>
+              <d6p1:Value i:nil="true" />
+            </d6p1:KeyValueOfstringanyType>
           </d2p1:modifiedProperties>
         </d2p1:BaseEntityModel>
         <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
@@ -557,6 +577,10 @@
                 <d8p1:Z>0</d8p1:Z>
               </d6p1:Value>
             </d6p1:KeyValueOfstringanyType>
+            <d6p1:KeyValueOfstringanyType>
+              <d6p1:Key>WaveEngine.Components.Graphics2D.Sprite#0#materialPath</d6p1:Key>
+              <d6p1:Value i:nil="true" />
+            </d6p1:KeyValueOfstringanyType>
           </d2p1:modifiedProperties>
         </d2p1:BaseEntityModel>
         <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
@@ -597,6 +621,10 @@
                 <d8p1:Y>-111</d8p1:Y>
                 <d8p1:Z>0</d8p1:Z>
               </d6p1:Value>
+            </d6p1:KeyValueOfstringanyType>
+            <d6p1:KeyValueOfstringanyType>
+              <d6p1:Key>WaveEngine.Components.Graphics2D.Sprite#0#materialPath</d6p1:Key>
+              <d6p1:Value i:nil="true" />
             </d6p1:KeyValueOfstringanyType>
           </d2p1:modifiedProperties>
         </d2p1:BaseEntityModel>
@@ -719,8 +747,8 @@
           <d5p1:Enabled>false</d5p1:Enabled>
           <d5p1:Expand>true</d5p1:Expand>
           <d5p1:Stretch>Uniform</d5p1:Stretch>
-          <d5p1:VirtualHeight>726</d5p1:VirtualHeight>
-          <d5p1:VirtualWidth>1014</d5p1:VirtualWidth>
+          <d5p1:VirtualHeight>730</d5p1:VirtualHeight>
+          <d5p1:VirtualWidth>1016</d5p1:VirtualWidth>
         </d3p1:Value>
       </d3p1:KeyValueOfstringanyType>
       <d3p1:KeyValueOfstringanyType>

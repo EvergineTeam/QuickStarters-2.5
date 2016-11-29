@@ -53,6 +53,8 @@ namespace SuperSlingshot.Scenes
         protected override void Start()
         {
             base.Start();
+
+            this.InitializeScene();
             this.SetCameraBounds();
             this.CreatePhysicScene();
             this.CreateCratesScene();
@@ -61,6 +63,11 @@ namespace SuperSlingshot.Scenes
 
             // Prepare to Play
             WaveServices.GetService<GamePlayManager>().NextBoulder();
+        }
+
+        private void InitializeScene()
+        {
+            WaveServices.GetService<GamePlayManager>().InitGame();
         }
 
         private void CreateCratesScene()

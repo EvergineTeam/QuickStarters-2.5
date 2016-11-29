@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using SuperSlingshot.Scenes;
+﻿using SuperSlingshot.Scenes;
 using WaveEngine.Common;
 using WaveEngine.Framework;
 using WaveEngine.Framework.Services;
@@ -10,6 +7,7 @@ namespace SuperSlingshot.Managers
 {
     public class GamePlayManager : Service
     {
+        private NavigationManager navigationManager;
         private Scene menuScene;
 
         public bool IsPaused { get; private set; }
@@ -23,6 +21,13 @@ namespace SuperSlingshot.Managers
         public override void OnActivated()
         {
             base.OnActivated();
+
+            this.IsPaused = false;
+        }
+
+
+        public void InitGame()
+        {
             this.IsPaused = false;
         }
 
@@ -31,16 +36,9 @@ namespace SuperSlingshot.Managers
             if (!this.IsPaused)
             {
                 this.IsPaused = true;
-                var gameScene = WaveServices.ScreenContextManager.CurrentContext.FindScene<GameScene>();
 
-                // TODO: C#6 
-                // gameScene?.Pause();
-                if (gameScene != null)
-                {
-                    gameScene.Pause();
-                }
-
-                WaveServices.ScreenContextManager.Push(new ScreenContext(this.menuScene));
+                this.navigationManager = WaveServices.GetService<NavigationManager>();
+                this.navigationManager.ChangeState(this.IsPaused);
             }
         }
 
@@ -49,15 +47,9 @@ namespace SuperSlingshot.Managers
             if (this.IsPaused)
             {
                 this.IsPaused = false;
-                var gameScene = WaveServices.ScreenContextManager.CurrentContext.FindScene<GameScene>();
-                // TODO: C#6 
-                // gameScene?.Resume();
-                if (gameScene != null)
-                {
-                    gameScene.Resume();
-                }
 
-                WaveServices.ScreenContextManager.Pop(false);
+                this.navigationManager = WaveServices.GetService<NavigationManager>();
+                this.navigationManager.ChangeState(this.IsPaused);
             }
         }
 

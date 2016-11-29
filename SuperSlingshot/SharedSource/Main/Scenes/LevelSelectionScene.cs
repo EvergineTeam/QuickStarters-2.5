@@ -43,6 +43,7 @@ namespace SuperSlingshot.Scenes
                 this.navigationManager.NavigateToGameLevel(WaveContent.Scenes.Levels.Level1);
             }
         }
+
         private void Level2StateChanged(object sender, ButtonState currentState, ButtonState lastState)
         {
             if (currentState == ButtonState.Release && lastState == ButtonState.Pressed)

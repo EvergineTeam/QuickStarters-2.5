@@ -15,6 +15,7 @@ namespace SuperSlingshot
     {
         public override void Initialize(IApplication application)
         {
+            SerializerFactory.DefaultSerializationType = SerializationType.DATACONTRACT;
             base.Initialize(application);
 
             var navigationManager = new NavigationManager();
@@ -25,9 +26,7 @@ namespace SuperSlingshot
             WaveServices.RegisterService(new GamePlayManager());
             WaveServices.RegisterService(navigationManager);
 
-            ScreenContext screenContext = new ScreenContext(new LevelSelectionScene());
-
-            navigationManager.NavigateToLevelSelection();
+            navigationManager.InitialNavigation();
         }
     }
 }

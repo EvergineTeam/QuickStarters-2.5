@@ -11,6 +11,7 @@
         public static string ENTITYMENURESUME = "menuEntity.buttonPanel.resumeButton";
         public static string ENTITYMENURESTART = "menuEntity.buttonPanel.restartButton";
         public static string ENTITYMENUEXIT = "menuEntity.buttonPanel.exitButton";
+        public static string ENTITYSTARTBUTTON = "startButton";
 
         public static string ENTITYLEVEL1BUTTON = "menuEntity.buttons.level1";
         public static string ENTITYLEVEL2BUTTON = "menuEntity.buttons.level2";

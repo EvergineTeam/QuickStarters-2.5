@@ -1,8 +1,6 @@
 ﻿using SuperSlingshot.Components;
 using SuperSlingshot.Managers;
-using WaveEngine.Common.Graphics;
 using WaveEngine.Common.Input;
-using WaveEngine.Components.UI;
 using WaveEngine.Framework;
 using WaveEngine.Framework.Services;
 
@@ -46,6 +44,7 @@ namespace SuperSlingshot.Scenes
         {
             if (currentState == ButtonState.Release && lastState == ButtonState.Pressed)
             {
+                // TODO:
             }
         }
 
@@ -53,7 +52,7 @@ namespace SuperSlingshot.Scenes
         {
             if (currentState == ButtonState.Release && lastState == ButtonState.Pressed)
             {
-                this.navigationManager.NavigateToLevelSelection();
+                this.navigationManager.InitialNavigation();
             }
         }
     }
