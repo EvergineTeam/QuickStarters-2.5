@@ -184,3 +184,4 @@ packages/
 #Wave Editor intermediate folder
 generate.info
 generate.winfo
+WaveContent.cs
