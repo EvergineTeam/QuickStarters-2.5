@@ -96,8 +96,11 @@ namespace SuperSlingshot.Components
         {
             base.DeleteDependencies();
 
-            this.collider.BeginCollision -= this.OnBeginCollision;
-            this.collider.EndCollision -= this.OnEndCollision;
+            if (this.collider != null)
+            {
+                this.collider.BeginCollision -= this.OnBeginCollision;
+                this.collider.EndCollision -= this.OnEndCollision;
+            }
         }
     }
 }

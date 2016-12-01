@@ -82,16 +82,23 @@ namespace SuperSlingshot.Managers
         {
             var gameScene = WaveServices.ScreenContextManager.CurrentContext.FindScene<GameScene>();
 
-            if(gameScene!=null)
+            if (gameScene != null)
             {
-                if(gameScene.HasNextBouder)
+                if(gameScene.HasBreakables())
                 {
-                    gameScene.EntityManager.Remove(boulderEntity);
-                    gameScene.PrepareNextBoulder();
+                    if (gameScene.HasNextBouder)
+                    {
+                        gameScene.EntityManager.Remove(boulderEntity);
+                        gameScene.PrepareNextBoulder();
+                    }
+                    else
+                    {
+                        // EndGame, show score and menu
+                        this.FinishGame();
+                    }
                 }
                 else
                 {
-                    // EndGame, show score and menu
                     this.FinishGame();
                 }
             }

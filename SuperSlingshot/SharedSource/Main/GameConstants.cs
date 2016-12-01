@@ -17,6 +17,14 @@
         public static string ENTITYLEVEL2BUTTON = "menuEntity.buttons.level2";
         public static string ENTITYLEVEL3BUTTON = "menuEntity.buttons.level3";
 
+        public static string ENTITYHOMEBUTTON = "buttonsEntity.bPlaceholder.homeButton";
+        public static string ENTITYMENUBUTTON = "buttonsEntity.bPlaceholder.menuButton";
+        public static string ENTITYREPLAYBUTTON= "buttonsEntity.bPlaceholder.replayButton";
+        public static string ENTITYNEXTBUTTON = "buttonsEntity.bPlaceholder.nextButton";
+        public static string ENTITYSCORETEXT = "scoreEntity.placeholder1.text";
+        public static string ENTITYGEMSTEXT = "scoreEntity.placeholder2.text";
+        public static string ENTITYRATINGSCORE = "ratingEntity";
+
         // LAYERS
         public static string LAYERPHYSIC = "PhysicLayer";
         public static string LAYERBOXPHYSICLAYER = "BoxPhysicLayer";
@@ -33,6 +41,7 @@
         // TAGS
         public static string TAGCOLLIDER = "collider";
         public static string TAGDRAGGABLE = "draggable";
+        public static string TAGBREAKABLE = "breakable";
 
         // PROPERTIES
         public static string PROPERTYLEVELID = "LevelID";

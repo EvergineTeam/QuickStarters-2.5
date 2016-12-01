@@ -44,6 +44,12 @@ namespace SuperSlingshot.Behaviors
         [RenderPropertyAsAsset(AssetType.Texture)]
         public string BrokenTexture { get; set; }
 
+        [DontRenderProperty]
+        public BreakableState State
+        {
+            get { return this.state; }
+        }
+
         protected override void Initialize()
         {
             base.Initialize();
@@ -100,7 +106,7 @@ namespace SuperSlingshot.Behaviors
             {
                 this.timeToEmit -= gameTime;
                 this.timeToRemove -= gameTime;
-                
+
                 // only an update loop
                 if (this.lastState != this.state)
                 {
@@ -118,7 +124,10 @@ namespace SuperSlingshot.Behaviors
 
                 if (this.timeToRemove <= TimeSpan.Zero)
                 {
-                    this.EntityManager.Remove(this.Owner);
+                    if (this.Owner.Parent != null)
+                    {
+                        this.Owner.Parent.RemoveChild(this.Owner.Name);
+                    }
                 }
             }
         }

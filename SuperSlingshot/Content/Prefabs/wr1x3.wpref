@@ -65,6 +65,7 @@
               <d7p1:Y>0</d7p1:Y>
               <d7p1:Z>0</d7p1:Z>
             </d6p1:EmitterSize>
+            <d6p1:EndDeltaScale>1</d6p1:EndDeltaScale>
             <d6p1:Gravity xmlns:d7p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
               <d7p1:X>0</d7p1:X>
               <d7p1:Y>0</d7p1:Y>
@@ -120,7 +121,7 @@
     <d2p1:isStatic>false</d2p1:isStatic>
     <d2p1:isVisible>true</d2p1:isVisible>
     <d2p1:name>breakableEntity</d2p1:name>
-    <d2p1:tag></d2p1:tag>
+    <d2p1:tag>breakable</d2p1:tag>
     <d2p1:SerializeComponents xmlns:d3p1="WaveEngine.Framework">
       <d3p1:Component xmlns:d4p1="WaveEngine.Framework.Graphics" i:type="d4p1:Transform2D">
         <d4p1:LocalOrientation xmlns:d5p1="WaveEngine.Common.Math">
@@ -209,116 +210,7 @@
         </d4p1:Size>
         <d4p1:TexturePath>Content/Assets/Breakables/wood1x3r.png.wpk</d4p1:TexturePath>
         <d4p1:detectHoles>false</d4p1:detectHoles>
-        <d4p1:internalData xmlns:d5p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
-          <d5p1:ArrayOfVector2>
-            <d5p1:Vector2>
-              <d5p1:X>30.5</d5p1:X>
-              <d5p1:Y>0.5</d5p1:Y>
-            </d5p1:Vector2>
-            <d5p1:Vector2>
-              <d5p1:X>47.5</d5p1:X>
-              <d5p1:Y>2.5</d5p1:Y>
-            </d5p1:Vector2>
-            <d5p1:Vector2>
-              <d5p1:X>56.5</d5p1:X>
-              <d5p1:Y>7.5</d5p1:Y>
-            </d5p1:Vector2>
-            <d5p1:Vector2>
-              <d5p1:X>62.5</d5p1:X>
-              <d5p1:Y>13.5</d5p1:Y>
-            </d5p1:Vector2>
-            <d5p1:Vector2>
-              <d5p1:X>68.5</d5p1:X>
-              <d5p1:Y>24.5</d5p1:Y>
-            </d5p1:Vector2>
-            <d5p1:Vector2>
-              <d5p1:X>68.5</d5p1:X>
-              <d5p1:Y>45.5</d5p1:Y>
-            </d5p1:Vector2>
-          </d5p1:ArrayOfVector2>
-          <d5p1:ArrayOfVector2>
-            <d5p1:Vector2>
-              <d5p1:X>68.5</d5p1:X>
-              <d5p1:Y>45.5</d5p1:Y>
-            </d5p1:Vector2>
-            <d5p1:Vector2>
-              <d5p1:X>64.5</d5p1:X>
-              <d5p1:Y>53.5</d5p1:Y>
-            </d5p1:Vector2>
-            <d5p1:Vector2>
-              <d5p1:X>56.5</d5p1:X>
-              <d5p1:Y>62.5</d5p1:Y>
-            </d5p1:Vector2>
-            <d5p1:Vector2>
-              <d5p1:X>48.5</d5p1:X>
-              <d5p1:Y>67.5</d5p1:Y>
-            </d5p1:Vector2>
-            <d5p1:Vector2>
-              <d5p1:X>41.5</d5p1:X>
-              <d5p1:Y>69.5</d5p1:Y>
-            </d5p1:Vector2>
-            <d5p1:Vector2>
-              <d5p1:X>30.5</d5p1:X>
-              <d5p1:Y>0.5</d5p1:Y>
-            </d5p1:Vector2>
-          </d5p1:ArrayOfVector2>
-          <d5p1:ArrayOfVector2>
-            <d5p1:Vector2>
-              <d5p1:X>41.5</d5p1:X>
-              <d5p1:Y>69.5</d5p1:Y>
-            </d5p1:Vector2>
-            <d5p1:Vector2>
-              <d5p1:X>30.5</d5p1:X>
-              <d5p1:Y>69.5</d5p1:Y>
-            </d5p1:Vector2>
-            <d5p1:Vector2>
-              <d5p1:X>21.5</d5p1:X>
-              <d5p1:Y>67.5</d5p1:Y>
-            </d5p1:Vector2>
-            <d5p1:Vector2>
-              <d5p1:X>13.5</d5p1:X>
-              <d5p1:Y>62.5</d5p1:Y>
-            </d5p1:Vector2>
-            <d5p1:Vector2>
-              <d5p1:X>7.5</d5p1:X>
-              <d5p1:Y>56.5</d5p1:Y>
-            </d5p1:Vector2>
-            <d5p1:Vector2>
-              <d5p1:X>1.5</d5p1:X>
-              <d5p1:Y>45.5</d5p1:Y>
-            </d5p1:Vector2>
-          </d5p1:ArrayOfVector2>
-          <d5p1:ArrayOfVector2>
-            <d5p1:Vector2>
-              <d5p1:X>1.5</d5p1:X>
-              <d5p1:Y>45.5</d5p1:Y>
-            </d5p1:Vector2>
-            <d5p1:Vector2>
-              <d5p1:X>1.5</d5p1:X>
-              <d5p1:Y>24.5</d5p1:Y>
-            </d5p1:Vector2>
-            <d5p1:Vector2>
-              <d5p1:X>5.5</d5p1:X>
-              <d5p1:Y>16.5</d5p1:Y>
-            </d5p1:Vector2>
-            <d5p1:Vector2>
-              <d5p1:X>12.5</d5p1:X>
-              <d5p1:Y>8.5</d5p1:Y>
-            </d5p1:Vector2>
-            <d5p1:Vector2>
-              <d5p1:X>20.5</d5p1:X>
-              <d5p1:Y>3.5</d5p1:Y>
-            </d5p1:Vector2>
-            <d5p1:Vector2>
-              <d5p1:X>30.5</d5p1:X>
-              <d5p1:Y>0.5</d5p1:Y>
-            </d5p1:Vector2>
-            <d5p1:Vector2>
-              <d5p1:X>41.5</d5p1:X>
-              <d5p1:Y>69.5</d5p1:Y>
-            </d5p1:Vector2>
-          </d5p1:ArrayOfVector2>
-        </d4p1:internalData>
+        <d4p1:internalData xmlns:d5p1="http://schemas.datacontract.org/2004/07/WaveEngine.Framework.Physics2D" />
         <d4p1:rotationOffset>0</d4p1:rotationOffset>
         <d4p1:threshold>0.5</d4p1:threshold>
         <d4p1:vertices xmlns:d5p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
@@ -420,4 +312,5 @@
       </d3p1:Component>
     </d2p1:SerializeComponents>
   </EntityModel>
+  <EntityPointers xmlns:d2p1="http://schemas.datacontract.org/2004/07/WaveEngine.Framework.Models.Entities" />
 </Prefab>

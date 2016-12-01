@@ -337,7 +337,7 @@
           <d2p1:isStatic>false</d2p1:isStatic>
           <d2p1:isVisible>true</d2p1:isVisible>
           <d2p1:name>wc1x</d2p1:name>
-          <d2p1:tag i:nil="true" />
+          <d2p1:tag>breakable</d2p1:tag>
           <d2p1:AdditionalComponents xmlns:d6p1="WaveEngine.Framework" />
           <d2p1:PrefabElem>breakableEntity</d2p1:PrefabElem>
           <d2p1:PrefabId>4c959917-cfb5-4a0b-b4cd-aff95f516e2c</d2p1:PrefabId>
@@ -371,18 +371,13 @@
               <d2p1:PrefabId>d31cfc3c-32f3-489b-9fcc-37d1e427bb8f</d2p1:PrefabId>
               <d2p1:PrefabPath>Content/Prefabs/wt2x1.wpref</d2p1:PrefabPath>
               <d2p1:RemovedComponents xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
-              <d2p1:modifiedProperties xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
-                <d8p1:KeyValueOfstringanyType>
-                  <d8p1:Key>WaveEngine.Components.Particles.ParticleSystem2D#0#EndDeltaScale</d8p1:Key>
-                  <d8p1:Value xmlns:d10p1="http://www.w3.org/2001/XMLSchema" i:type="d10p1:float">1</d8p1:Value>
-                </d8p1:KeyValueOfstringanyType>
-              </d2p1:modifiedProperties>
+              <d2p1:modifiedProperties xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
             </d2p1:BaseEntityModel>
           </d2p1:SerializeChildrens>
           <d2p1:isStatic>false</d2p1:isStatic>
           <d2p1:isVisible>true</d2p1:isVisible>
           <d2p1:name>wt2x01</d2p1:name>
-          <d2p1:tag i:nil="true" />
+          <d2p1:tag>breakable</d2p1:tag>
           <d2p1:AdditionalComponents xmlns:d6p1="WaveEngine.Framework" />
           <d2p1:PrefabElem>breakableEntity</d2p1:PrefabElem>
           <d2p1:PrefabId>d31cfc3c-32f3-489b-9fcc-37d1e427bb8f</d2p1:PrefabId>
@@ -416,18 +411,13 @@
               <d2p1:PrefabId>9e0e389a-ddd1-49c6-925c-22cbba541271</d2p1:PrefabId>
               <d2p1:PrefabPath>Content/Prefabs/wr1x3.wpref</d2p1:PrefabPath>
               <d2p1:RemovedComponents xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
-              <d2p1:modifiedProperties xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
-                <d8p1:KeyValueOfstringanyType>
-                  <d8p1:Key>WaveEngine.Components.Particles.ParticleSystem2D#0#EndDeltaScale</d8p1:Key>
-                  <d8p1:Value xmlns:d10p1="http://www.w3.org/2001/XMLSchema" i:type="d10p1:float">1</d8p1:Value>
-                </d8p1:KeyValueOfstringanyType>
-              </d2p1:modifiedProperties>
+              <d2p1:modifiedProperties xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
             </d2p1:BaseEntityModel>
           </d2p1:SerializeChildrens>
           <d2p1:isStatic>false</d2p1:isStatic>
           <d2p1:isVisible>true</d2p1:isVisible>
           <d2p1:name>wr1x01</d2p1:name>
-          <d2p1:tag i:nil="true" />
+          <d2p1:tag>breakable</d2p1:tag>
           <d2p1:AdditionalComponents xmlns:d6p1="WaveEngine.Framework" />
           <d2p1:PrefabElem>breakableEntity</d2p1:PrefabElem>
           <d2p1:PrefabId>9e0e389a-ddd1-49c6-925c-22cbba541271</d2p1:PrefabId>
@@ -461,18 +451,13 @@
               <d2p1:PrefabId>d31cfc3c-32f3-489b-9fcc-37d1e427bb8f</d2p1:PrefabId>
               <d2p1:PrefabPath>Content/Prefabs/wt2x1.wpref</d2p1:PrefabPath>
               <d2p1:RemovedComponents xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
-              <d2p1:modifiedProperties xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
-                <d8p1:KeyValueOfstringanyType>
-                  <d8p1:Key>WaveEngine.Components.Particles.ParticleSystem2D#0#EndDeltaScale</d8p1:Key>
-                  <d8p1:Value xmlns:d10p1="http://www.w3.org/2001/XMLSchema" i:type="d10p1:float">1</d8p1:Value>
-                </d8p1:KeyValueOfstringanyType>
-              </d2p1:modifiedProperties>
+              <d2p1:modifiedProperties xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
             </d2p1:BaseEntityModel>
           </d2p1:SerializeChildrens>
           <d2p1:isStatic>false</d2p1:isStatic>
           <d2p1:isVisible>true</d2p1:isVisible>
           <d2p1:name>wt2x</d2p1:name>
-          <d2p1:tag i:nil="true" />
+          <d2p1:tag>breakable</d2p1:tag>
           <d2p1:AdditionalComponents xmlns:d6p1="WaveEngine.Framework" />
           <d2p1:PrefabElem>breakableEntity</d2p1:PrefabElem>
           <d2p1:PrefabId>d31cfc3c-32f3-489b-9fcc-37d1e427bb8f</d2p1:PrefabId>
@@ -506,18 +491,13 @@
               <d2p1:PrefabId>bb64825e-d34c-4df5-a52a-5c64b94c5e7f</d2p1:PrefabId>
               <d2p1:PrefabPath>Content/Prefabs/wr3x1.wpref</d2p1:PrefabPath>
               <d2p1:RemovedComponents xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
-              <d2p1:modifiedProperties xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
-                <d8p1:KeyValueOfstringanyType>
-                  <d8p1:Key>WaveEngine.Components.Particles.ParticleSystem2D#0#EndDeltaScale</d8p1:Key>
-                  <d8p1:Value xmlns:d10p1="http://www.w3.org/2001/XMLSchema" i:type="d10p1:float">1</d8p1:Value>
-                </d8p1:KeyValueOfstringanyType>
-              </d2p1:modifiedProperties>
+              <d2p1:modifiedProperties xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
             </d2p1:BaseEntityModel>
           </d2p1:SerializeChildrens>
           <d2p1:isStatic>false</d2p1:isStatic>
           <d2p1:isVisible>true</d2p1:isVisible>
           <d2p1:name>wr3x01</d2p1:name>
-          <d2p1:tag i:nil="true" />
+          <d2p1:tag>breakable</d2p1:tag>
           <d2p1:AdditionalComponents xmlns:d6p1="WaveEngine.Framework" />
           <d2p1:PrefabElem>breakableEntity</d2p1:PrefabElem>
           <d2p1:PrefabId>bb64825e-d34c-4df5-a52a-5c64b94c5e7f</d2p1:PrefabId>
@@ -551,18 +531,13 @@
               <d2p1:PrefabId>bb64825e-d34c-4df5-a52a-5c64b94c5e7f</d2p1:PrefabId>
               <d2p1:PrefabPath>Content/Prefabs/wr3x1.wpref</d2p1:PrefabPath>
               <d2p1:RemovedComponents xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
-              <d2p1:modifiedProperties xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
-                <d8p1:KeyValueOfstringanyType>
-                  <d8p1:Key>WaveEngine.Components.Particles.ParticleSystem2D#0#EndDeltaScale</d8p1:Key>
-                  <d8p1:Value xmlns:d10p1="http://www.w3.org/2001/XMLSchema" i:type="d10p1:float">1</d8p1:Value>
-                </d8p1:KeyValueOfstringanyType>
-              </d2p1:modifiedProperties>
+              <d2p1:modifiedProperties xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
             </d2p1:BaseEntityModel>
           </d2p1:SerializeChildrens>
           <d2p1:isStatic>false</d2p1:isStatic>
           <d2p1:isVisible>true</d2p1:isVisible>
           <d2p1:name>wr3x</d2p1:name>
-          <d2p1:tag></d2p1:tag>
+          <d2p1:tag>breakable</d2p1:tag>
           <d2p1:AdditionalComponents xmlns:d6p1="WaveEngine.Framework" />
           <d2p1:PrefabElem>breakableEntity</d2p1:PrefabElem>
           <d2p1:PrefabId>bb64825e-d34c-4df5-a52a-5c64b94c5e7f</d2p1:PrefabId>
@@ -596,18 +571,13 @@
               <d2p1:PrefabId>9e0e389a-ddd1-49c6-925c-22cbba541271</d2p1:PrefabId>
               <d2p1:PrefabPath>Content/Prefabs/wr1x3.wpref</d2p1:PrefabPath>
               <d2p1:RemovedComponents xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
-              <d2p1:modifiedProperties xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
-                <d8p1:KeyValueOfstringanyType>
-                  <d8p1:Key>WaveEngine.Components.Particles.ParticleSystem2D#0#EndDeltaScale</d8p1:Key>
-                  <d8p1:Value xmlns:d10p1="http://www.w3.org/2001/XMLSchema" i:type="d10p1:float">1</d8p1:Value>
-                </d8p1:KeyValueOfstringanyType>
-              </d2p1:modifiedProperties>
+              <d2p1:modifiedProperties xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
             </d2p1:BaseEntityModel>
           </d2p1:SerializeChildrens>
           <d2p1:isStatic>false</d2p1:isStatic>
           <d2p1:isVisible>true</d2p1:isVisible>
           <d2p1:name>wr1x</d2p1:name>
-          <d2p1:tag></d2p1:tag>
+          <d2p1:tag>breakable</d2p1:tag>
           <d2p1:AdditionalComponents xmlns:d6p1="WaveEngine.Framework" />
           <d2p1:PrefabElem>breakableEntity</d2p1:PrefabElem>
           <d2p1:PrefabId>9e0e389a-ddd1-49c6-925c-22cbba541271</d2p1:PrefabId>

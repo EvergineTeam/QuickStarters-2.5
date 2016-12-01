@@ -41,6 +41,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Scenes\GenericScene.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Scenes\GameScene.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Scenes\InitialScene.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Scenes\ScoreScene.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Scenes\LevelSelectionScene.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Scenes\MenuScene.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\AnimationService.cs" />

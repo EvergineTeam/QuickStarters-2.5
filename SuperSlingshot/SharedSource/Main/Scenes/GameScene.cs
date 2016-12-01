@@ -15,6 +15,7 @@ using WaveEngine.Framework.Physics2D;
 using WaveEngine.Framework.Services;
 using WaveEngine.ImageEffects;
 using WaveEngine.TiledMap;
+using System.Linq;
 #endregion
 
 namespace SuperSlingshot.Scenes
@@ -100,6 +101,14 @@ namespace SuperSlingshot.Scenes
                     this.EntityManager.Add(colliderEntity);
                 }
             }
+        }
+
+        public bool HasBreakables()
+        {
+            var breakables = this.EntityManager.FindAllByTag(GameConstants.TAGBREAKABLE).OfType<Entity>().Select(b => b.FindComponent<BreakableBehavior>());
+            var count = breakables.Count(b => b.State != Enums.BreakableState.DEAD);
+            return count > 0;
+
         }
 
         public void PrepareNextBoulder()
