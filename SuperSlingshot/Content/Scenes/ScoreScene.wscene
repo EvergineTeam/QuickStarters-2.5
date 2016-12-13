@@ -18,7 +18,7 @@
           <d5p1:LocalPosition xmlns:d6p1="WaveEngine.Common.Math">
             <d6p1:X>0</d6p1:X>
             <d6p1:Y>0</d6p1:Y>
-            <d6p1:Z>42940.14</d6p1:Z>
+            <d6p1:Z>30175.7422</d6p1:Z>
           </d5p1:LocalPosition>
           <d5p1:LocalScale xmlns:d6p1="WaveEngine.Common.Math">
             <d6p1:X>1</d6p1:X>
@@ -71,7 +71,7 @@
             <d6p1:Y>0</d6p1:Y>
           </d5p1:Viewport>
           <d5p1:customVirtualScreen xmlns:d6p1="WaveEngine.Framework.Managers" i:nil="true" />
-          <d5p1:distance>42940.14</d5p1:distance>
+          <d5p1:distance>30175.7422</d5p1:distance>
           <d5p1:rotation>0</d5p1:rotation>
           <d5p1:vanishingPoint xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
             <d6p1:X>0.5</d6p1:X>
@@ -604,14 +604,6 @@
                   <d8p1:Value i:nil="true" />
                 </d8p1:KeyValueOfstringanyType>
                 <d8p1:KeyValueOfstringanyType>
-                  <d8p1:Key>WaveEngine.Components.Graphics2D.SpriteRenderer#0#IsVisible</d8p1:Key>
-                  <d8p1:Value xmlns:d10p1="http://www.w3.org/2001/XMLSchema" i:type="d10p1:boolean">true</d8p1:Value>
-                </d8p1:KeyValueOfstringanyType>
-                <d8p1:KeyValueOfstringanyType>
-                  <d8p1:Key>SuperSlingshot.Components.SwitchComponent#0#State</d8p1:Key>
-                  <d8p1:Value xmlns:d10p1="http://schemas.datacontract.org/2004/07/SuperSlingshot.Enums" i:type="d10p1:SwitchEnum">ON</d8p1:Value>
-                </d8p1:KeyValueOfstringanyType>
-                <d8p1:KeyValueOfstringanyType>
                   <d8p1:Key>SuperSlingshot.Components.SwitchComponent#0#UnCheckedTexturePath</d8p1:Key>
                   <d8p1:Value i:nil="true" />
                 </d8p1:KeyValueOfstringanyType>
@@ -686,14 +678,6 @@
                   <d8p1:Value i:nil="true" />
                 </d8p1:KeyValueOfstringanyType>
                 <d8p1:KeyValueOfstringanyType>
-                  <d8p1:Key>WaveEngine.Components.Graphics2D.SpriteRenderer#0#IsVisible</d8p1:Key>
-                  <d8p1:Value xmlns:d10p1="http://www.w3.org/2001/XMLSchema" i:type="d10p1:boolean">true</d8p1:Value>
-                </d8p1:KeyValueOfstringanyType>
-                <d8p1:KeyValueOfstringanyType>
-                  <d8p1:Key>SuperSlingshot.Components.SwitchComponent#0#State</d8p1:Key>
-                  <d8p1:Value xmlns:d10p1="http://schemas.datacontract.org/2004/07/SuperSlingshot.Enums" i:type="d10p1:SwitchEnum">ON</d8p1:Value>
-                </d8p1:KeyValueOfstringanyType>
-                <d8p1:KeyValueOfstringanyType>
                   <d8p1:Key>SuperSlingshot.Components.SwitchComponent#0#UnCheckedTexturePath</d8p1:Key>
                   <d8p1:Value i:nil="true" />
                 </d8p1:KeyValueOfstringanyType>
@@ -749,14 +733,6 @@
                 <d8p1:KeyValueOfstringanyType>
                   <d8p1:Key>WaveEngine.Components.Graphics2D.Sprite#0#materialPath</d8p1:Key>
                   <d8p1:Value i:nil="true" />
-                </d8p1:KeyValueOfstringanyType>
-                <d8p1:KeyValueOfstringanyType>
-                  <d8p1:Key>WaveEngine.Components.Graphics2D.SpriteRenderer#0#IsVisible</d8p1:Key>
-                  <d8p1:Value xmlns:d10p1="http://www.w3.org/2001/XMLSchema" i:type="d10p1:boolean">true</d8p1:Value>
-                </d8p1:KeyValueOfstringanyType>
-                <d8p1:KeyValueOfstringanyType>
-                  <d8p1:Key>SuperSlingshot.Components.SwitchComponent#0#State</d8p1:Key>
-                  <d8p1:Value xmlns:d10p1="http://schemas.datacontract.org/2004/07/SuperSlingshot.Enums" i:type="d10p1:SwitchEnum">ON</d8p1:Value>
                 </d8p1:KeyValueOfstringanyType>
                 <d8p1:KeyValueOfstringanyType>
                   <d8p1:Key>SuperSlingshot.Components.SwitchComponent#0#UnCheckedTexturePath</d8p1:Key>

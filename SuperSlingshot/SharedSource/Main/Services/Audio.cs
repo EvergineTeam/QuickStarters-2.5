@@ -8,10 +8,14 @@ namespace SlingshotRampage.Services
     {
         public enum Music : int
         {
+            backgroundmusic_mp3
         }
 
         public enum Sfx : int
         {
+            Launch_wav,
+            Crash_wav,
+            Rubber_wav
         }
     }
 }

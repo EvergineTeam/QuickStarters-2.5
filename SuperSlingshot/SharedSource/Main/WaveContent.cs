@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// File generated on 21/11/2016 17:59:32
+// File generated on 13/12/2016 17:42:05
 namespace SuperSlingshot
 {
     using System;
@@ -291,14 +291,8 @@ namespace SuperSlingshot
             public sealed class Fonts
             {
                 
-                /// <summary> Path to Content/Assets/Fonts/Get the fuck up_16.otf </summary>
-                public const string Get_the_fuck_up_16_otf = "Content/Assets/Fonts/Get the fuck up_16.otf";
-                
-                /// <summary> Path to Content/Assets/Fonts/Get the fuck up_30.otf </summary>
-                public const string Get_the_fuck_up_30_otf = "Content/Assets/Fonts/Get the fuck up_30.otf";
-                
-                /// <summary> Path to Content/Assets/Fonts/Get the fuck up_36.otf </summary>
-                public const string Get_the_fuck_up_36_otf = "Content/Assets/Fonts/Get the fuck up_36.otf";
+                /// <summary> Path to Content/Assets/Fonts/Komika Axis_36.ttf </summary>
+                public const string Komika_Axis_36_ttf = "Content/Assets/Fonts/Komika Axis_36.ttf";
                 
                 /// <summary> Path to Content/Assets/Fonts/sketches_36.ttf </summary>
                 public const string sketches_36_ttf = "Content/Assets/Fonts/sketches_36.ttf";
@@ -310,6 +304,12 @@ namespace SuperSlingshot
             public sealed class Gui
             {
                 
+                /// <summary> Path to Content/Assets/Gui/buttons_placeholder.png </summary>
+                public const string buttons_placeholder_png = "Content/Assets/Gui/buttons_placeholder.png";
+                
+                /// <summary> Path to Content/Assets/Gui/button_blocked.png </summary>
+                public const string button_blocked_png = "Content/Assets/Gui/button_blocked.png";
+                
                 /// <summary> Path to Content/Assets/Gui/button_click.png </summary>
                 public const string button_click_png = "Content/Assets/Gui/button_click.png";
                 
@@ -319,11 +319,104 @@ namespace SuperSlingshot
                 /// <summary> Path to Content/Assets/Gui/button_normal.png </summary>
                 public const string button_normal_png = "Content/Assets/Gui/button_normal.png";
                 
+                /// <summary> Path to Content/Assets/Gui/coin.png </summary>
+                public const string coin_png = "Content/Assets/Gui/coin.png";
+                
+                /// <summary> Path to Content/Assets/Gui/congrats.png </summary>
+                public const string congrats_png = "Content/Assets/Gui/congrats.png";
+                
+                /// <summary> Path to Content/Assets/Gui/crown.png </summary>
+                public const string crown_png = "Content/Assets/Gui/crown.png";
+                
+                /// <summary> Path to Content/Assets/Gui/gem.png </summary>
+                public const string gem_png = "Content/Assets/Gui/gem.png";
+                
+                /// <summary> Path to Content/Assets/Gui/home_small_button_blocked.png </summary>
+                public const string home_small_button_blocked_png = "Content/Assets/Gui/home_small_button_blocked.png";
+                
+                /// <summary> Path to Content/Assets/Gui/home_small_button_click.png </summary>
+                public const string home_small_button_click_png = "Content/Assets/Gui/home_small_button_click.png";
+                
+                /// <summary> Path to Content/Assets/Gui/home_small_button_hover.png </summary>
+                public const string home_small_button_hover_png = "Content/Assets/Gui/home_small_button_hover.png";
+                
+                /// <summary> Path to Content/Assets/Gui/home_small_button_normal.png </summary>
+                public const string home_small_button_normal_png = "Content/Assets/Gui/home_small_button_normal.png";
+                
                 /// <summary> Path to Content/Assets/Gui/menu_background.9.png </summary>
                 public const string menu_background_9_png = "Content/Assets/Gui/menu_background.9.png";
                 
                 /// <summary> Path to Content/Assets/Gui/menu_header.9.png </summary>
                 public const string menu_header_9_png = "Content/Assets/Gui/menu_header.9.png";
+                
+                /// <summary> Path to Content/Assets/Gui/menu_small_button_blocked.png </summary>
+                public const string menu_small_button_blocked_png = "Content/Assets/Gui/menu_small_button_blocked.png";
+                
+                /// <summary> Path to Content/Assets/Gui/menu_small_button_click.png </summary>
+                public const string menu_small_button_click_png = "Content/Assets/Gui/menu_small_button_click.png";
+                
+                /// <summary> Path to Content/Assets/Gui/menu_small_button_hover.png </summary>
+                public const string menu_small_button_hover_png = "Content/Assets/Gui/menu_small_button_hover.png";
+                
+                /// <summary> Path to Content/Assets/Gui/menu_small_button_normal.png </summary>
+                public const string menu_small_button_normal_png = "Content/Assets/Gui/menu_small_button_normal.png";
+                
+                /// <summary> Path to Content/Assets/Gui/next_small_button_blocked.png </summary>
+                public const string next_small_button_blocked_png = "Content/Assets/Gui/next_small_button_blocked.png";
+                
+                /// <summary> Path to Content/Assets/Gui/next_small_button_click.png </summary>
+                public const string next_small_button_click_png = "Content/Assets/Gui/next_small_button_click.png";
+                
+                /// <summary> Path to Content/Assets/Gui/next_small_button_hover.png </summary>
+                public const string next_small_button_hover_png = "Content/Assets/Gui/next_small_button_hover.png";
+                
+                /// <summary> Path to Content/Assets/Gui/next_small_button_normal.png </summary>
+                public const string next_small_button_normal_png = "Content/Assets/Gui/next_small_button_normal.png";
+                
+                /// <summary> Path to Content/Assets/Gui/play_small_button_blocked.png </summary>
+                public const string play_small_button_blocked_png = "Content/Assets/Gui/play_small_button_blocked.png";
+                
+                /// <summary> Path to Content/Assets/Gui/play_small_button_click.png </summary>
+                public const string play_small_button_click_png = "Content/Assets/Gui/play_small_button_click.png";
+                
+                /// <summary> Path to Content/Assets/Gui/play_small_button_hover.png </summary>
+                public const string play_small_button_hover_png = "Content/Assets/Gui/play_small_button_hover.png";
+                
+                /// <summary> Path to Content/Assets/Gui/play_small_button_normal.png </summary>
+                public const string play_small_button_normal_png = "Content/Assets/Gui/play_small_button_normal.png";
+                
+                /// <summary> Path to Content/Assets/Gui/replay_small_button_blocked.png </summary>
+                public const string replay_small_button_blocked_png = "Content/Assets/Gui/replay_small_button_blocked.png";
+                
+                /// <summary> Path to Content/Assets/Gui/replay_small_button_click.png </summary>
+                public const string replay_small_button_click_png = "Content/Assets/Gui/replay_small_button_click.png";
+                
+                /// <summary> Path to Content/Assets/Gui/replay_small_button_hover.png </summary>
+                public const string replay_small_button_hover_png = "Content/Assets/Gui/replay_small_button_hover.png";
+                
+                /// <summary> Path to Content/Assets/Gui/replay_small_button_normal.png </summary>
+                public const string replay_small_button_normal_png = "Content/Assets/Gui/replay_small_button_normal.png";
+                
+                /// <summary> Path to Content/Assets/Gui/score_paceholder.png </summary>
+                public const string score_paceholder_png = "Content/Assets/Gui/score_paceholder.png";
+                
+                /// <summary> Path to Content/Assets/Gui/small_button_blocked.png </summary>
+                public const string small_button_blocked_png = "Content/Assets/Gui/small_button_blocked.png";
+                
+                /// <summary> Path to Content/Assets/Gui/small_button_click.png </summary>
+                public const string small_button_click_png = "Content/Assets/Gui/small_button_click.png";
+                
+                /// <summary> Path to Content/Assets/Gui/small_button_hover.png </summary>
+                public const string small_button_hover_png = "Content/Assets/Gui/small_button_hover.png";
+                
+                /// <summary> Path to Content/Assets/Gui/small_button_normal.png </summary>
+                public const string small_button_normal_png = "Content/Assets/Gui/small_button_normal.png";
+                
+                /// <summary> Path to Content/Assets/Gui/star.png </summary>
+                public const string star_png = "Content/Assets/Gui/star.png";
+                
+                /// <summary> Path to Content/Assets/Gui/star_placeholder.png </summary>
+                public const string star_placeholder_png = "Content/Assets/Gui/star_placeholder.png";
             }
             
             public sealed class Other
@@ -350,8 +443,30 @@ namespace SuperSlingshot
                 /// <summary> Path to Content/Assets/Other/cloud7.png </summary>
                 public const string cloud7_png = "Content/Assets/Other/cloud7.png";
                 
+                /// <summary> Path to Content/Assets/Other/crate.png </summary>
+                public const string crate_png = "Content/Assets/Other/crate.png";
+                
                 /// <summary> Path to Content/Assets/Other/particle1.png </summary>
                 public const string particle1_png = "Content/Assets/Other/particle1.png";
+                
+                /// <summary> Path to Content/Assets/Other/snowparticle.png </summary>
+                public const string snowparticle_png = "Content/Assets/Other/snowparticle.png";
+            }
+            
+            public sealed class Sounds
+            {
+                
+                /// <summary> Path to Content/Assets/Sounds/backgroundmusic.mp3 </summary>
+                public const string backgroundmusic_mp3 = "Content/Assets/Sounds/backgroundmusic.mp3";
+                
+                /// <summary> Path to Content/Assets/Sounds/Crash.wav </summary>
+                public const string Crash_wav = "Content/Assets/Sounds/Crash.wav";
+                
+                /// <summary> Path to Content/Assets/Sounds/Launch.wav </summary>
+                public const string Launch_wav = "Content/Assets/Sounds/Launch.wav";
+                
+                /// <summary> Path to Content/Assets/Sounds/Rubber.wav </summary>
+                public const string Rubber_wav = "Content/Assets/Sounds/Rubber.wav";
             }
             
             public sealed class Stones
@@ -394,6 +509,15 @@ namespace SuperSlingshot
                 /// <summary> Path to Content/Assets/Tiles/grass.png </summary>
                 public const string grass_png = "Content/Assets/Tiles/grass.png";
                 
+                /// <summary> Path to Content/Assets/Tiles/initial background.png </summary>
+                public const string initial_background_png = "Content/Assets/Tiles/initial background.png";
+                
+                /// <summary> Path to Content/Assets/Tiles/Initial.tmx </summary>
+                public const string Initial_tmx = "Content/Assets/Tiles/Initial.tmx";
+                
+                /// <summary> Path to Content/Assets/Tiles/initialAssets.png </summary>
+                public const string initialAssets_png = "Content/Assets/Tiles/initialAssets.png";
+                
                 /// <summary> Path to Content/Assets/Tiles/Level1.tmx </summary>
                 public const string Level1_tmx = "Content/Assets/Tiles/Level1.tmx";
                 
@@ -422,6 +546,15 @@ namespace SuperSlingshot
             
             /// <summary> Path to Content/Prefabs/menuButton.wpref </summary>
             public const string menuButton = "Content/Prefabs/menuButton.wpref";
+            
+            /// <summary> Path to Content/Prefabs/menuScoreButton.wpref </summary>
+            public const string menuScoreButton = "Content/Prefabs/menuScoreButton.wpref";
+            
+            /// <summary> Path to Content/Prefabs/menuSmallButton.wpref </summary>
+            public const string menuSmallButton = "Content/Prefabs/menuSmallButton.wpref";
+            
+            /// <summary> Path to Content/Prefabs/star.wpref </summary>
+            public const string star = "Content/Prefabs/star.wpref";
             
             /// <summary> Path to Content/Prefabs/wc1x1.wpref </summary>
             public const string wc1x1 = "Content/Prefabs/wc1x1.wpref";
@@ -495,11 +628,21 @@ namespace SuperSlingshot
             /// <summary> Path to Content/Scenes/MenuScene.wscene </summary>
             public const string MenuScene = "Content/Scenes/MenuScene.wscene";
             
+            /// <summary> Path to Content/Scenes/ScoreScene.wscene </summary>
+            public const string ScoreScene = "Content/Scenes/ScoreScene.wscene";
+            
             public sealed class Backgrounds
             {
                 
                 /// <summary> Path to Content/Scenes/Backgrounds/Background1.wscene </summary>
                 public const string Background1 = "Content/Scenes/Backgrounds/Background1.wscene";
+            }
+            
+            public sealed class Foregrounds
+            {
+                
+                /// <summary> Path to Content/Scenes/Foregrounds/FrontScene.wscene </summary>
+                public const string FrontScene = "Content/Scenes/Foregrounds/FrontScene.wscene";
             }
             
             public sealed class Levels
@@ -510,6 +653,9 @@ namespace SuperSlingshot
                 
                 /// <summary> Path to Content/Scenes/Levels/Level2.wscene </summary>
                 public const string Level2 = "Content/Scenes/Levels/Level2.wscene";
+                
+                /// <summary> Path to Content/Scenes/Levels/Level3.wscene </summary>
+                public const string Level3 = "Content/Scenes/Levels/Level3.wscene";
                 
                 /// <summary> Path to Content/Scenes/Levels/TestLevel.wscene </summary>
                 public const string TestLevel = "Content/Scenes/Levels/TestLevel.wscene";
@@ -524,6 +670,9 @@ namespace SuperSlingshot
             
             /// <summary> Path to Content/Materials/SmokeMaterial.wmat </summary>
             public const string SmokeMaterial = "Content/Materials/SmokeMaterial.wmat";
+            
+            /// <summary> Path to Content/Materials/SnowMaterial.wmat </summary>
+            public const string SnowMaterial = "Content/Materials/SnowMaterial.wmat";
         }
     }
 }

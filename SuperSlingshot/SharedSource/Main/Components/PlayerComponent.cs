@@ -1,4 +1,5 @@
 ﻿using System.Runtime.Serialization;
+using SlingshotRampage.Services;
 using SuperSlingshot.Behaviors;
 using SuperSlingshot.Enums;
 using SuperSlingshot.Scenes;
@@ -6,6 +7,7 @@ using WaveEngine.Common.Math;
 using WaveEngine.Framework;
 using WaveEngine.Framework.Graphics;
 using WaveEngine.Framework.Physics2D;
+using WaveEngine.Framework.Services;
 
 namespace SuperSlingshot.Components
 {
@@ -73,6 +75,9 @@ namespace SuperSlingshot.Components
             this.behavior.PlayerState = PlayerState.InTheAir;
 
             this.Owner.FindComponent<MouseBehavior>().IsActive = false;
+
+            var audioService = WaveServices.GetService<AudioService>();
+            audioService.Play(Audio.Sfx.Launch_wav);
         }
     }
 }

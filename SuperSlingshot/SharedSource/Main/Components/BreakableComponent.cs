@@ -1,10 +1,12 @@
 ﻿using System.Runtime.Serialization;
+using SlingshotRampage.Services;
 using SuperSlingshot;
 using SuperSlingshot.Behaviors;
 using SuperSlingshot.Enums;
 using WaveEngine.Common.Physics2D;
 using WaveEngine.Framework;
 using WaveEngine.Framework.Physics2D;
+using WaveEngine.Framework.Services;
 
 namespace SuperSlingshot.Components
 {
@@ -44,7 +46,7 @@ namespace SuperSlingshot.Components
 
         private void OnBeginCollision(ICollisionInfo2D contact)
         {
-            // against floor
+            // Against floor
             if ((contact.ColliderB.CollisionCategories & ColliderCategory2D.Cat3) == ColliderCategory2D.Cat3)
             {
                 return;
@@ -56,12 +58,12 @@ namespace SuperSlingshot.Components
 
                 float damageMagnitude = 0;
 
-                // against other breakable
+                // Against other breakable
                 if ((contact.ColliderB.CollisionCategories & ColliderCategory2D.Cat2) == ColliderCategory2D.Cat2)
                 {
                     damageMagnitude = BREAKABLETOBREAKABLEDAMAGEMAGNITUDE;
                 }
-                // against player
+                // Against player
                 else
                 {
                     damageMagnitude = PLAYERTOBREAKABLEDAMAGEMAGNITUDE;
@@ -88,6 +90,9 @@ namespace SuperSlingshot.Components
             }
             else if (this.currentEnergy <= 0)
             {
+                var audioService = WaveServices.GetService<AudioService>();
+                audioService.Play(Audio.Sfx.Crash_wav);
+
                 this.behavior.SetState(BreakableState.DEAD);
             }
         }

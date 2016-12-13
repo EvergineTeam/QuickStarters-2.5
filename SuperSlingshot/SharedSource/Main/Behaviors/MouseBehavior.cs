@@ -1,6 +1,7 @@
 ﻿#region Using Statements
 using System;
 using System.Runtime.Serialization;
+using SlingshotRampage.Services;
 using SuperSlingshot.Components;
 using WaveEngine.Common;
 using WaveEngine.Common.Graphics;
@@ -88,7 +89,11 @@ namespace SuperSlingshot.Behaviors
                                             //DampingRatio = 0.5f,
                                             //FrequencyHz = 2000,
                                         };
+
                                         this.ConnectedEntity.AddComponent(mouseJoint);
+
+                                        var audioService = WaveServices.GetService<AudioService>();
+                                        audioService.Play(Audio.Sfx.Rubber_wav);
 
                                         break;
                                     }

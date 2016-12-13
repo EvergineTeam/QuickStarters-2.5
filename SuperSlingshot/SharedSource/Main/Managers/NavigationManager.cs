@@ -34,8 +34,8 @@ namespace SuperSlingshot.Managers
             ScreenContext screenContext = new ScreenContext(
                 "InitialSceneContext",
                 new GenericScene(WaveContent.Scenes.Backgrounds.Background1),
-                //new InitialScene(),
-                new ScoreScene(1000, 3, 5))
+                new InitialScene())
+                //new ScoreScene(1000, 3, 5))
             {
                 Behavior = ScreenContextBehaviors.DrawInBackground | ScreenContextBehaviors.UpdateInBackground
             };
