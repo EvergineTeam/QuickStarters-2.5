@@ -20,7 +20,7 @@ namespace SuperSlingshot
 
             var navigationManager = new NavigationManager();
 
-            WaveServices.RegisterService(new ScoreService());
+            WaveServices.RegisterService(new StorageService());
             WaveServices.RegisterService(new AnimationService());
             WaveServices.RegisterService(new AudioService());
             WaveServices.RegisterService(new GamePlayManager());

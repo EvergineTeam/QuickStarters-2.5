@@ -1,4 +1,5 @@
-﻿using SuperSlingshot.Scenes;
+﻿using System;
+using SuperSlingshot.Scenes;
 using WaveEngine.Common;
 using WaveEngine.Framework.Services;
 
@@ -8,8 +9,31 @@ namespace SuperSlingshot.Managers
     {
         public void NavigateToGameLevel(string level)
         {
-            ScreenContext screenContext = new ScreenContext("GameLevelContext", new GameScene(level));
+            ScreenContext screenContext = new ScreenContext(
+                "GameLevelContext",
+                new GameScene(level));
             WaveServices.ScreenContextManager.Push(screenContext);
+        }
+
+        public void NavigateToScore(string level)
+        {
+            var gameScene = WaveServices.ScreenContextManager.FindContextByName("GameLevelContext").FindScene<GameScene>();
+
+            if (gameScene == null)
+            {
+                return;
+            }
+
+            gameScene.Pause();
+
+            ScreenContext screenContext = new ScreenContext(
+                "ScoreContext",
+                new ScoreScene(level))
+            {
+                Behavior = ScreenContextBehaviors.DrawInBackground
+            };
+
+            WaveServices.ScreenContextManager.To(screenContext);
         }
 
         public void NavigateBack(bool doDispose = false)
@@ -23,7 +47,7 @@ namespace SuperSlingshot.Managers
                 "LevelSelectionContext",
                 new LevelSelectionScene())
             {
-                Behavior = ScreenContextBehaviors.DrawInBackground 
+                Behavior = ScreenContextBehaviors.DrawInBackground
             };
 
             WaveServices.ScreenContextManager.To(screenContext);
@@ -35,7 +59,7 @@ namespace SuperSlingshot.Managers
                 "InitialSceneContext",
                 new GenericScene(WaveContent.Scenes.Backgrounds.Background1),
                 new InitialScene())
-                //new ScoreScene(1000, 3, 5))
+            //new ScoreScene(1000, 3, 5))
             {
                 Behavior = ScreenContextBehaviors.DrawInBackground | ScreenContextBehaviors.UpdateInBackground
             };
@@ -47,7 +71,7 @@ namespace SuperSlingshot.Managers
         {
             var gameScene = WaveServices.ScreenContextManager.FindContextByName("GameLevelContext").FindScene<GameScene>();
 
-            if(gameScene == null)
+            if (gameScene == null)
             {
                 return;
             }
@@ -57,7 +81,7 @@ namespace SuperSlingshot.Managers
                 new MenuScene());
 
             if (pause)
-            { 
+            {
                 gameScene.Pause();
 
                 WaveServices.ScreenContextManager.Push(screenContext);

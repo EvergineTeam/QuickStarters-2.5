@@ -42,10 +42,15 @@
         public static string TAGCOLLIDER = "collider";
         public static string TAGDRAGGABLE = "draggable";
         public static string TAGBREAKABLE = "breakable";
+        public static string TAGBONUS = "bonus";
 
         // PROPERTIES
         public static string PROPERTYLEVELID = "LevelID";
         public static string PROPERTYBOULDERS = "Boulders";
+
+        public static string BLOCKDESTROYPOINTS = "BlockDestroyPoints";
+        public static string BLOCKHITPOINTS = "BlockHitPoints";
+        public static string GEMPOINTS = "GemPoints";
 
         // BOULDERS
         public const char BOULDERBARNEY = 'B';

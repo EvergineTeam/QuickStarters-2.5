@@ -1,18 +1,10 @@
 ﻿#region Using Statements
-using System;
+using SlingshotRampage.Services;
 using SuperSlingshot.Components;
 using SuperSlingshot.Managers;
-using WaveEngine.Common;
-using WaveEngine.Common.Graphics;
 using WaveEngine.Common.Input;
-using WaveEngine.Common.Math;
-using WaveEngine.Components.Cameras;
-using WaveEngine.Components.Graphics2D;
-using WaveEngine.Components.Graphics3D;
 using WaveEngine.Components.Toolkit;
 using WaveEngine.Framework;
-using WaveEngine.Framework.Graphics;
-using WaveEngine.Framework.Resources;
 using WaveEngine.Framework.Services;
 #endregion
 
@@ -21,21 +13,21 @@ namespace SuperSlingshot.Scenes
     public class ScoreScene : Scene
     {
         private NavigationManager navigationManager;
+        private string level;
 
-        private int points;
-        private int bonus;
-        private int rating;
+        private LevelScore score;
 
-        public ScoreScene(int points, int bonus, int rating)
+        public ScoreScene(string level)
         {
-            this.points = points;
-            this.bonus = bonus;
-            this.rating = rating;
+            this.level = level;
         }
 
         protected override void CreateScene()
         {
             this.Load(WaveContent.Scenes.ScoreScene);
+
+            var storageService = WaveServices.GetService<StorageService>();
+            this.score = storageService.ReadScore(this.level);
 
             // Buttons
             var home = this.EntityManager.Find(GameConstants.ENTITYHOMEBUTTON);
@@ -58,20 +50,20 @@ namespace SuperSlingshot.Scenes
             // Score
             var score = this.EntityManager.Find(GameConstants.ENTITYSCORETEXT);
             var gems = this.EntityManager.Find(GameConstants.ENTITYGEMSTEXT);
-            score.FindComponent<TextComponent>().Text = this.points.ToString();
-            gems.FindComponent<TextComponent>().Text = this.bonus.ToString();
+            score.FindComponent<TextComponent>().Text = this.score.Points.ToString();
+            gems.FindComponent<TextComponent>().Text = this.score.Gems.ToString();
 
             // Rating
             var rating = this.EntityManager.Find(GameConstants.ENTITYRATINGSCORE);
-            var res = MathHelper.Clamp(this.rating, 0, 3);
             var starComponent = rating.FindComponent<StarScoreComponent>();
-            starComponent.Score = (Enums.StarScoreEnum)res;
+            starComponent.Score = this.score.StarScore;
         }
 
         private void HomeStateChanged(object sender, ButtonState currentState, ButtonState lastState)
         {
             if (currentState == ButtonState.Release && lastState == ButtonState.Pressed)
             {
+                this.navigationManager.InitialNavigation();
             }
         }
 
@@ -79,6 +71,7 @@ namespace SuperSlingshot.Scenes
         {
             if (currentState == ButtonState.Release && lastState == ButtonState.Pressed)
             {
+                this.navigationManager.NavigateToLevelSelection();
             }
         }
 

@@ -1,6 +1,5 @@
 ﻿#region Using Statements
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using SuperSlingshot.Behaviors;
 using SuperSlingshot.Components;
@@ -22,9 +21,22 @@ namespace SuperSlingshot.Scenes
 {
     public class GameScene : Scene
     {
-        private readonly string content;
         private TiledMap tiledMap;
         private string boulderOrder;
+
+        public string Content { get; private set; }
+
+        public int BlockDestroyPoints { get; set; }
+
+        public int BlockHitPoints { get; set; }
+
+        public int GemPoints { get; set; }
+
+        public int NumBreakables { get; set; }
+
+        public int NumGems { get; set; }
+
+        public LevelScore Score { get; set; }
 
         public Entity SlingshotAnchorEntity { get; set; }
 
@@ -42,13 +54,14 @@ namespace SuperSlingshot.Scenes
 
         public GameScene(string content) : base()
         {
-            this.content = content;
+            this.Content = content;
             this.Boulders = new Queue<Entity>();
+            this.Score = new LevelScore();
         }
 
         protected override void CreateScene()
         {
-            this.Load(this.content);
+            this.Load(this.Content);
         }
 
         protected override void Start()
@@ -61,6 +74,9 @@ namespace SuperSlingshot.Scenes
             this.CreateCratesScene();
             this.GetLevelProperties();
             this.CreateBoulderEntities();
+
+            this.NumBreakables = this.EntityManager.FindAllByTag(GameConstants.TAGBREAKABLE).Count();
+            this.NumGems = this.EntityManager.FindAllByTag(GameConstants.TAGBONUS).Count();
 
             // Prepare to Play
             WaveServices.GetService<GamePlayManager>().NextBoulder();
@@ -206,6 +222,9 @@ namespace SuperSlingshot.Scenes
             var props = this.tiledMap.Properties;
             this.LevelID = props[GameConstants.PROPERTYLEVELID];
             this.boulderOrder = props[GameConstants.PROPERTYBOULDERS];
+            this.BlockHitPoints = Convert.ToInt32(props[GameConstants.BLOCKHITPOINTS]);
+            this.BlockDestroyPoints = Convert.ToInt32(props[GameConstants.BLOCKDESTROYPOINTS]);
+            this.GemPoints = Convert.ToInt32(props[GameConstants.GEMPOINTS]);
         }
 
         private void CreateBoulderEntities()

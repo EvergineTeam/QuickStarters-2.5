@@ -1,4 +1,7 @@
-﻿using SuperSlingshot.Scenes;
+﻿using System;
+using SlingshotRampage.Services;
+using SuperSlingshot.Enums;
+using SuperSlingshot.Scenes;
 using WaveEngine.Common;
 using WaveEngine.Framework;
 using WaveEngine.Framework.Services;
@@ -55,8 +58,25 @@ namespace SuperSlingshot.Managers
 
         private void FinishGame()
         {
-            // TODO
-            this.PauseGame();
+            var gameScene = WaveServices.ScreenContextManager.CurrentContext.FindScene<GameScene>();
+
+            // Calculate score
+            var score = gameScene.Score;
+            var maxPoint = (gameScene.NumBreakables * gameScene.BlockDestroyPoints) + 
+                (gameScene.GemPoints * gameScene.NumGems);
+            score.StarScore = this.CalculateStarRate(score, maxPoint);
+
+            // store score
+            var storageService = WaveServices.GetService<StorageService>();
+            storageService.WriteScore(score, gameScene.Content);
+
+            this.navigationManager = WaveServices.GetService<NavigationManager>();
+            this.navigationManager.NavigateToScore(gameScene.Content);
+        }
+
+        private StarScoreEnum CalculateStarRate(LevelScore score, int maxPoints)
+        {
+            return (StarScoreEnum)Math.Round((double)score.Points * 3 / maxPoints, 0);
         }
 
         public void NextBoulder()
@@ -84,7 +104,7 @@ namespace SuperSlingshot.Managers
 
             if (gameScene != null)
             {
-                if(gameScene.HasBreakables())
+                if (gameScene.HasBreakables())
                 {
                     if (gameScene.HasNextBouder)
                     {

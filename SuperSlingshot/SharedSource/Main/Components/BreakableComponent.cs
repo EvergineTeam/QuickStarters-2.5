@@ -1,8 +1,8 @@
 ﻿using System.Runtime.Serialization;
 using SlingshotRampage.Services;
-using SuperSlingshot;
 using SuperSlingshot.Behaviors;
 using SuperSlingshot.Enums;
+using SuperSlingshot.Managers;
 using WaveEngine.Common.Physics2D;
 using WaveEngine.Framework;
 using WaveEngine.Framework.Physics2D;
@@ -81,6 +81,9 @@ namespace SuperSlingshot.Components
 
         public void Hit(float damage)
         {
+            if (this.behavior.State == BreakableState.DEAD)
+                return;
+
             this.currentEnergy -= damage;
 
             if (this.currentEnergy <= this.middleEnergy

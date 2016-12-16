@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="50" height="40" tilewidth="128" tileheight="128" nextobjectid="13">
  <properties>
+  <property name="BlockDestroyPoints" type="int" value="1500"/>
+  <property name="BlockHitPoints" type="int" value="1000"/>
   <property name="Boulders" value="FFPPB"/>
+  <property name="GemPoints" type="int" value="5000"/>
   <property name="LevelID" value="1-2"/>
  </properties>
  <tileset firstgid="1" name="sheet" tilewidth="128" tileheight="128" tilecount="13" columns="13">

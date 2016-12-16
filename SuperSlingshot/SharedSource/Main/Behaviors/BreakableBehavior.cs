@@ -1,15 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Runtime.Serialization;
-using System.Text;
-using SuperSlingshot.Components;
 using SuperSlingshot.Enums;
+using SuperSlingshot.Managers;
+using SuperSlingshot.Scenes;
 using WaveEngine.Common.Attributes;
 using WaveEngine.Components.Graphics2D;
 using WaveEngine.Components.Particles;
 using WaveEngine.Framework;
-using WaveEngine.Framework.Diagnostic;
-using WaveEngine.Framework.Graphics;
 using WaveEngine.Framework.Physics2D;
 
 namespace SuperSlingshot.Behaviors
@@ -23,6 +20,8 @@ namespace SuperSlingshot.Behaviors
         private TimeSpan timeToRemove;
         private TimeSpan timeToEmit;
         private bool firstUpdated;
+        private LevelScore score;
+        private GameScene scene;
 
         [RequiredComponent]
         private PolygonCollider2D collider = null;
@@ -64,12 +63,24 @@ namespace SuperSlingshot.Behaviors
             this.timeToEmit = TimeSpan.FromSeconds(0.5);
             this.timeToRemove = TimeSpan.FromSeconds(5);
 
+            var scene = this.Owner.Scene as GameScene;
+            if (scene != null)
+            {
+                this.scene = scene;
+                this.score = scene.Score;
+            }
+
             // TODO: Workaround, remove when fixed (do not store EndDeltaScale in WaveEditor)
             this.childParticleSystem.EndDeltaScale = 1.0f;
         }
 
         public void SetState(BreakableState state)
         {
+            if (lastState == BreakableState.DEAD)
+            {
+                return;
+            }
+
             switch (state)
             {
                 case BreakableState.NORMAL:
@@ -82,6 +93,8 @@ namespace SuperSlingshot.Behaviors
                     break;
                 case BreakableState.DEAD:
                     this.childParticleSystem.Emit = true;
+
+                    this.score.Points += this.scene.BlockDestroyPoints;
                     break;
                 default:
                     break;
