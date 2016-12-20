@@ -75,12 +75,12 @@ namespace Match3.UI.NinePatch
 
             set
             {
+                this.isGlobalAsset = value;
+
                 if (this.isInitialized)
                 {
-                    throw new InvalidOperationException("Asset has already initialized.");
+                    this.RefreshTexture();
                 }
-
-                this.isGlobalAsset = value;
             }
         }
 

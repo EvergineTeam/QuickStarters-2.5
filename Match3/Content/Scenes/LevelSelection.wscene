@@ -1,0 +1,1342 @@
+﻿<Scene xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="WaveEngine.Framework.Models">
+  <Id>8978eee9-21c5-4799-a30b-7e380601f7f5</Id>
+  <Entities xmlns:d2p1="WaveEngine.Framework.Models.Entities">
+    <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
+      <d2p1:SerializeChildrens />
+      <d2p1:isStatic>false</d2p1:isStatic>
+      <d2p1:isVisible>true</d2p1:isVisible>
+      <d2p1:name>defaultCamera2D</d2p1:name>
+      <d2p1:tag i:nil="true" />
+      <d2p1:SerializeComponents xmlns:d4p1="WaveEngine.Framework">
+        <d4p1:Component xmlns:d5p1="WaveEngine.Framework.Graphics" i:type="d5p1:Transform2D">
+          <d5p1:LocalOrientation xmlns:d6p1="WaveEngine.Common.Math">
+            <d6p1:W>1</d6p1:W>
+            <d6p1:X>0</d6p1:X>
+            <d6p1:Y>0</d6p1:Y>
+            <d6p1:Z>0</d6p1:Z>
+          </d5p1:LocalOrientation>
+          <d5p1:LocalPosition xmlns:d6p1="WaveEngine.Common.Math">
+            <d6p1:X>540</d6p1:X>
+            <d6p1:Y>720</d6p1:Y>
+            <d6p1:Z>10</d6p1:Z>
+          </d5p1:LocalPosition>
+          <d5p1:LocalScale xmlns:d6p1="WaveEngine.Common.Math">
+            <d6p1:X>1</d6p1:X>
+            <d6p1:Y>1</d6p1:Y>
+            <d6p1:Z>1</d6p1:Z>
+          </d5p1:LocalScale>
+          <d5p1:Effect>None</d5p1:Effect>
+          <d5p1:Opacity>1</d5p1:Opacity>
+          <d5p1:Rectangle xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+            <d6p1:Height>0</d6p1:Height>
+            <d6p1:Width>0</d6p1:Width>
+            <d6p1:X>0</d6p1:X>
+            <d6p1:Y>0</d6p1:Y>
+          </d5p1:Rectangle>
+          <d5p1:origin xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+            <d6p1:X>0</d6p1:X>
+            <d6p1:Y>0</d6p1:Y>
+          </d5p1:origin>
+          <d5p1:screenPosition xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+            <d6p1:X>0</d6p1:X>
+            <d6p1:Y>0</d6p1:Y>
+          </d5p1:screenPosition>
+          <d5p1:transformMode>Standard</d5p1:transformMode>
+        </d4p1:Component>
+        <d4p1:Component xmlns:d5p1="WaveEngine.Framework.Graphics" i:type="d5p1:Camera2D">
+          <d5p1:BackgroundColor xmlns:d6p1="WaveEngine.Common.Graphics">
+            <d6p1:A>255</d6p1:A>
+            <d6p1:B>201</d6p1:B>
+            <d6p1:G>155</d6p1:G>
+            <d6p1:R>255</d6p1:R>
+          </d5p1:BackgroundColor>
+          <d5p1:CameraOrder>0</d5p1:CameraOrder>
+          <d5p1:ClearFlags>All</d5p1:ClearFlags>
+          <d5p1:FarPlane>1000</d5p1:FarPlane>
+          <d5p1:FieldOfView>0</d5p1:FieldOfView>
+          <d5p1:IsActive>true</d5p1:IsActive>
+          <d5p1:LayerMaskDefaultValue>true</d5p1:LayerMaskDefaultValue>
+          <d5p1:NearPlane>-1000</d5p1:NearPlane>
+          <d5p1:UpVector xmlns:d6p1="WaveEngine.Common.Math">
+            <d6p1:X>0</d6p1:X>
+            <d6p1:Y>1</d6p1:Y>
+            <d6p1:Z>0</d6p1:Z>
+          </d5p1:UpVector>
+          <d5p1:Viewport xmlns:d6p1="WaveEngine.Common.Graphics">
+            <d6p1:Height>1</d6p1:Height>
+            <d6p1:MaxDepth>1</d6p1:MaxDepth>
+            <d6p1:MinDepth>0</d6p1:MinDepth>
+            <d6p1:Width>1</d6p1:Width>
+            <d6p1:X>0</d6p1:X>
+            <d6p1:Y>0</d6p1:Y>
+          </d5p1:Viewport>
+          <d5p1:customVirtualScreen xmlns:d6p1="WaveEngine.Framework.Managers" i:nil="true" />
+          <d5p1:distance>0</d5p1:distance>
+          <d5p1:rotation>0</d5p1:rotation>
+          <d5p1:vanishingPoint xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+            <d6p1:X>0.5</d6p1:X>
+            <d6p1:Y>0.5</d6p1:Y>
+          </d5p1:vanishingPoint>
+          <d5p1:zoom xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+            <d6p1:X>1</d6p1:X>
+            <d6p1:Y>1</d6p1:Y>
+          </d5p1:zoom>
+        </d4p1:Component>
+      </d2p1:SerializeComponents>
+    </d2p1:BaseEntityModel>
+    <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
+      <d2p1:SerializeChildrens>
+        <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
+          <d2p1:SerializeChildrens>
+            <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
+              <d2p1:SerializeChildrens />
+              <d2p1:isStatic>false</d2p1:isStatic>
+              <d2p1:isVisible>true</d2p1:isVisible>
+              <d2p1:name>signText</d2p1:name>
+              <d2p1:tag i:nil="true" />
+              <d2p1:SerializeComponents xmlns:d8p1="WaveEngine.Framework">
+                <d8p1:Component xmlns:d9p1="WaveEngine.Framework.Graphics" i:type="d9p1:Transform2D">
+                  <d9p1:LocalOrientation xmlns:d10p1="WaveEngine.Common.Math">
+                    <d10p1:W>1</d10p1:W>
+                    <d10p1:X>0</d10p1:X>
+                    <d10p1:Y>0</d10p1:Y>
+                    <d10p1:Z>0</d10p1:Z>
+                  </d9p1:LocalOrientation>
+                  <d9p1:LocalPosition xmlns:d10p1="WaveEngine.Common.Math">
+                    <d10p1:X>0</d10p1:X>
+                    <d10p1:Y>-35</d10p1:Y>
+                    <d10p1:Z>-1</d10p1:Z>
+                  </d9p1:LocalPosition>
+                  <d9p1:LocalScale xmlns:d10p1="WaveEngine.Common.Math">
+                    <d10p1:X>1</d10p1:X>
+                    <d10p1:Y>1</d10p1:Y>
+                    <d10p1:Z>1</d10p1:Z>
+                  </d9p1:LocalScale>
+                  <d9p1:Effect>None</d9p1:Effect>
+                  <d9p1:Opacity>1</d9p1:Opacity>
+                  <d9p1:Rectangle xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                    <d10p1:Height>96.28</d10p1:Height>
+                    <d10p1:Width>364.37</d10p1:Width>
+                    <d10p1:X>-182.185</d10p1:X>
+                    <d10p1:Y>48.14</d10p1:Y>
+                  </d9p1:Rectangle>
+                  <d9p1:origin xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                    <d10p1:X>0.5</d10p1:X>
+                    <d10p1:Y>0.5</d10p1:Y>
+                  </d9p1:origin>
+                  <d9p1:screenPosition xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                    <d10p1:X>0</d10p1:X>
+                    <d10p1:Y>0</d10p1:Y>
+                  </d9p1:screenPosition>
+                  <d9p1:transformMode>Standard</d9p1:transformMode>
+                </d8p1:Component>
+                <d8p1:Component xmlns:d9p1="WaveEngine.Components.Toolkit" i:type="d9p1:TextComponent">
+                  <d9p1:fontPath>Content/Assets/Fonts/BradyBunchMedium.ttf.wpk</d9p1:fontPath>
+                  <d9p1:foreground xmlns:d10p1="WaveEngine.Common.Graphics">
+                    <d10p1:A>255</d10p1:A>
+                    <d10p1:B>255</d10p1:B>
+                    <d10p1:G>255</d10p1:G>
+                    <d10p1:R>255</d10p1:R>
+                  </d9p1:foreground>
+                  <d9p1:lineSpacing>0</d9p1:lineSpacing>
+                  <d9p1:origin xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                    <d10p1:X>0.5</d10p1:X>
+                    <d10p1:Y>0.5</d10p1:Y>
+                  </d9p1:origin>
+                  <d9p1:scale xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                    <d10p1:X>0.83</d10p1:X>
+                    <d10p1:Y>0.83</d10p1:Y>
+                  </d9p1:scale>
+                  <d9p1:text>level select</d9p1:text>
+                  <d9p1:textAlignment>Center</d9p1:textAlignment>
+                  <d9p1:textWrapping>true</d9p1:textWrapping>
+                  <d9p1:width>390</d9p1:width>
+                </d8p1:Component>
+                <d8p1:Component xmlns:d9p1="WaveEngine.Components.Toolkit" i:type="d9p1:TextRenderer2D">
+                  <d8p1:IsVisible>true</d8p1:IsVisible>
+                  <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
+                  <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
+                </d8p1:Component>
+              </d2p1:SerializeComponents>
+            </d2p1:BaseEntityModel>
+          </d2p1:SerializeChildrens>
+          <d2p1:isStatic>false</d2p1:isStatic>
+          <d2p1:isVisible>true</d2p1:isVisible>
+          <d2p1:name>Sign</d2p1:name>
+          <d2p1:tag i:nil="true" />
+          <d2p1:SerializeComponents xmlns:d6p1="WaveEngine.Framework">
+            <d6p1:Component xmlns:d7p1="WaveEngine.Framework.Graphics" i:type="d7p1:Transform2D">
+              <d7p1:LocalOrientation xmlns:d8p1="WaveEngine.Common.Math">
+                <d8p1:W>1</d8p1:W>
+                <d8p1:X>0</d8p1:X>
+                <d8p1:Y>0</d8p1:Y>
+                <d8p1:Z>0</d8p1:Z>
+              </d7p1:LocalOrientation>
+              <d7p1:LocalPosition xmlns:d8p1="WaveEngine.Common.Math">
+                <d8p1:X>-5</d8p1:X>
+                <d8p1:Y>-330</d8p1:Y>
+                <d8p1:Z>-1</d8p1:Z>
+              </d7p1:LocalPosition>
+              <d7p1:LocalScale xmlns:d8p1="WaveEngine.Common.Math">
+                <d8p1:X>1</d8p1:X>
+                <d8p1:Y>1</d8p1:Y>
+                <d8p1:Z>1</d8p1:Z>
+              </d7p1:LocalScale>
+              <d7p1:Effect>None</d7p1:Effect>
+              <d7p1:Opacity>1</d7p1:Opacity>
+              <d7p1:Rectangle xmlns:d8p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                <d8p1:Height>186</d8p1:Height>
+                <d8p1:Width>703</d8p1:Width>
+                <d8p1:X>0</d8p1:X>
+                <d8p1:Y>0</d8p1:Y>
+              </d7p1:Rectangle>
+              <d7p1:origin xmlns:d8p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                <d8p1:X>0.5</d8p1:X>
+                <d8p1:Y>0.5</d8p1:Y>
+              </d7p1:origin>
+              <d7p1:screenPosition xmlns:d8p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                <d8p1:X>0</d8p1:X>
+                <d8p1:Y>0</d8p1:Y>
+              </d7p1:screenPosition>
+              <d7p1:transformMode>Standard</d7p1:transformMode>
+            </d6p1:Component>
+            <d6p1:Component xmlns:d7p1="WaveEngine.Components.Graphics2D" i:type="d7p1:SpriteAtlas">
+              <d7p1:TintColor xmlns:d8p1="WaveEngine.Common.Graphics">
+                <d8p1:A>255</d8p1:A>
+                <d8p1:B>255</d8p1:B>
+                <d8p1:G>255</d8p1:G>
+                <d8p1:R>255</d8p1:R>
+              </d7p1:TintColor>
+              <d7p1:isGlobalAsset>false</d7p1:isGlobalAsset>
+              <d7p1:spriteSheetPath>Content/Assets/GUI/Panels.spritesheet.wpk</d7p1:spriteSheetPath>
+              <d7p1:textureName>SignBg</d7p1:textureName>
+            </d6p1:Component>
+            <d6p1:Component xmlns:d7p1="WaveEngine.Components.Graphics2D" i:type="d7p1:SpriteAtlasRenderer">
+              <d6p1:IsVisible>true</d6p1:IsVisible>
+              <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
+              <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
+              <d7p1:SamplerMode>LinearClamp</d7p1:SamplerMode>
+            </d6p1:Component>
+          </d2p1:SerializeComponents>
+        </d2p1:BaseEntityModel>
+        <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
+          <d2p1:SerializeChildrens>
+            <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
+              <d2p1:SerializeChildrens>
+                <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
+                  <d2p1:SerializeChildrens />
+                  <d2p1:isStatic>false</d2p1:isStatic>
+                  <d2p1:isVisible>true</d2p1:isVisible>
+                  <d2p1:name>Text</d2p1:name>
+                  <d2p1:tag i:nil="true" />
+                  <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
+                  <d2p1:PrefabElem>NumberBtn.Text</d2p1:PrefabElem>
+                  <d2p1:PrefabId>08e9382d-6cc7-4fd2-8737-d82fe5202dfe</d2p1:PrefabId>
+                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
+                  <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+                  <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+                    <d10p1:KeyValueOfstringanyType>
+                      <d10p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#Rectangle</d10p1:Key>
+                      <d10p1:Value xmlns:d12p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math" i:type="d12p1:RectangleF">
+                        <d12p1:Height>162.4</d12p1:Height>
+                        <d12p1:Width>77</d12p1:Width>
+                        <d12p1:X>-38.5</d12p1:X>
+                        <d12p1:Y>81.2</d12p1:Y>
+                      </d10p1:Value>
+                    </d10p1:KeyValueOfstringanyType>
+                    <d10p1:KeyValueOfstringanyType>
+                      <d10p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#LocalPosition</d10p1:Key>
+                      <d10p1:Value xmlns:d12p1="WaveEngine.Common.Math" i:type="d12p1:Vector3">
+                        <d12p1:X>-8.466416E-05</d12p1:X>
+                        <d12p1:Y>-17.000145</d12p1:Y>
+                        <d12p1:Z>-0.999997556</d12p1:Z>
+                      </d10p1:Value>
+                    </d10p1:KeyValueOfstringanyType>
+                    <d10p1:KeyValueOfstringanyType>
+                      <d10p1:Key>WaveEngine.Components.Toolkit.TextComponent#0#text</d10p1:Key>
+                      <d10p1:Value xmlns:d12p1="http://www.w3.org/2001/XMLSchema" i:type="d12p1:string">1</d10p1:Value>
+                    </d10p1:KeyValueOfstringanyType>
+                    <d10p1:KeyValueOfstringanyType>
+                      <d10p1:Key>WaveEngine.Components.Toolkit.TextComponent#0#width</d10p1:Key>
+                      <d10p1:Value xmlns:d12p1="http://www.w3.org/2001/XMLSchema" i:type="d12p1:float">100</d10p1:Value>
+                    </d10p1:KeyValueOfstringanyType>
+                  </d2p1:modifiedProperties>
+                </d2p1:BaseEntityModel>
+              </d2p1:SerializeChildrens>
+              <d2p1:isStatic>false</d2p1:isStatic>
+              <d2p1:isVisible>true</d2p1:isVisible>
+              <d2p1:name>Level1Btn</d2p1:name>
+              <d2p1:tag i:nil="true" />
+              <d2p1:AdditionalComponents xmlns:d8p1="WaveEngine.Framework" />
+              <d2p1:PrefabElem>NumberBtn</d2p1:PrefabElem>
+              <d2p1:PrefabId>08e9382d-6cc7-4fd2-8737-d82fe5202dfe</d2p1:PrefabId>
+              <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
+              <d2p1:RemovedComponents xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+              <d2p1:modifiedProperties xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+                <d8p1:KeyValueOfstringanyType>
+                  <d8p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#LocalPosition</d8p1:Key>
+                  <d8p1:Value xmlns:d10p1="WaveEngine.Common.Math" i:type="d10p1:Vector3">
+                    <d10p1:X>-162.00061</d10p1:X>
+                    <d10p1:Y>-120</d10p1:Y>
+                    <d10p1:Z>0</d10p1:Z>
+                  </d8p1:Value>
+                </d8p1:KeyValueOfstringanyType>
+                <d8p1:KeyValueOfstringanyType>
+                  <d8p1:Key>WaveEngine.Components.Gestures.TouchGestures#0#TouchOrder</d8p1:Key>
+                  <d8p1:Value xmlns:d10p1="http://www.w3.org/2001/XMLSchema" i:type="d10p1:int">500</d8p1:Value>
+                </d8p1:KeyValueOfstringanyType>
+              </d2p1:modifiedProperties>
+            </d2p1:BaseEntityModel>
+            <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
+              <d2p1:SerializeChildrens>
+                <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
+                  <d2p1:SerializeChildrens />
+                  <d2p1:isStatic>false</d2p1:isStatic>
+                  <d2p1:isVisible>true</d2p1:isVisible>
+                  <d2p1:name>Text</d2p1:name>
+                  <d2p1:tag i:nil="true" />
+                  <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
+                  <d2p1:PrefabElem>NumberBtn.Text</d2p1:PrefabElem>
+                  <d2p1:PrefabId>08e9382d-6cc7-4fd2-8737-d82fe5202dfe</d2p1:PrefabId>
+                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
+                  <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+                  <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+                    <d10p1:KeyValueOfstringanyType>
+                      <d10p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#LocalPosition</d10p1:Key>
+                      <d10p1:Value xmlns:d12p1="WaveEngine.Common.Math" i:type="d12p1:Vector3">
+                        <d12p1:X>2.61748846E-05</d12p1:X>
+                        <d12p1:Y>-17.000103</d12p1:Y>
+                        <d12p1:Z>-0.9999998</d12p1:Z>
+                      </d10p1:Value>
+                    </d10p1:KeyValueOfstringanyType>
+                  </d2p1:modifiedProperties>
+                </d2p1:BaseEntityModel>
+              </d2p1:SerializeChildrens>
+              <d2p1:isStatic>false</d2p1:isStatic>
+              <d2p1:isVisible>true</d2p1:isVisible>
+              <d2p1:name>Level2Btn</d2p1:name>
+              <d2p1:tag i:nil="true" />
+              <d2p1:AdditionalComponents xmlns:d8p1="WaveEngine.Framework" />
+              <d2p1:PrefabElem>NumberBtn</d2p1:PrefabElem>
+              <d2p1:PrefabId>08e9382d-6cc7-4fd2-8737-d82fe5202dfe</d2p1:PrefabId>
+              <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
+              <d2p1:RemovedComponents xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+              <d2p1:modifiedProperties xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+                <d8p1:KeyValueOfstringanyType>
+                  <d8p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#LocalPosition</d8p1:Key>
+                  <d8p1:Value xmlns:d10p1="WaveEngine.Common.Math" i:type="d10p1:Vector3">
+                    <d10p1:X>-10.00061</d10p1:X>
+                    <d10p1:Y>-120</d10p1:Y>
+                    <d10p1:Z>0</d10p1:Z>
+                  </d8p1:Value>
+                </d8p1:KeyValueOfstringanyType>
+                <d8p1:KeyValueOfstringanyType>
+                  <d8p1:Key>WaveEngine.Components.Gestures.TouchGestures#0#TouchOrder</d8p1:Key>
+                  <d8p1:Value xmlns:d10p1="http://www.w3.org/2001/XMLSchema" i:type="d10p1:int">500</d8p1:Value>
+                </d8p1:KeyValueOfstringanyType>
+              </d2p1:modifiedProperties>
+            </d2p1:BaseEntityModel>
+            <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
+              <d2p1:SerializeChildrens>
+                <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
+                  <d2p1:SerializeChildrens />
+                  <d2p1:isStatic>false</d2p1:isStatic>
+                  <d2p1:isVisible>true</d2p1:isVisible>
+                  <d2p1:name>Text</d2p1:name>
+                  <d2p1:tag i:nil="true" />
+                  <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
+                  <d2p1:PrefabElem>NumberBtn.Text</d2p1:PrefabElem>
+                  <d2p1:PrefabId>08e9382d-6cc7-4fd2-8737-d82fe5202dfe</d2p1:PrefabId>
+                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
+                  <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+                  <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+                    <d10p1:KeyValueOfstringanyType>
+                      <d10p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#Rectangle</d10p1:Key>
+                      <d10p1:Value xmlns:d12p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math" i:type="d12p1:RectangleF">
+                        <d12p1:Height>162.4</d12p1:Height>
+                        <d12p1:Width>93.7999954</d12p1:Width>
+                        <d12p1:X>-46.8999977</d12p1:X>
+                        <d12p1:Y>81.2</d12p1:Y>
+                      </d10p1:Value>
+                    </d10p1:KeyValueOfstringanyType>
+                    <d10p1:KeyValueOfstringanyType>
+                      <d10p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#LocalPosition</d10p1:Key>
+                      <d10p1:Value xmlns:d12p1="WaveEngine.Common.Math" i:type="d12p1:Vector3">
+                        <d12p1:X>-4.49845538E-05</d12p1:X>
+                        <d12p1:Y>-17.0001526</d12p1:Y>
+                        <d12p1:Z>-0.999999762</d12p1:Z>
+                      </d10p1:Value>
+                    </d10p1:KeyValueOfstringanyType>
+                    <d10p1:KeyValueOfstringanyType>
+                      <d10p1:Key>WaveEngine.Components.Toolkit.TextComponent#0#text</d10p1:Key>
+                      <d10p1:Value xmlns:d12p1="http://www.w3.org/2001/XMLSchema" i:type="d12p1:string">3</d10p1:Value>
+                    </d10p1:KeyValueOfstringanyType>
+                  </d2p1:modifiedProperties>
+                </d2p1:BaseEntityModel>
+              </d2p1:SerializeChildrens>
+              <d2p1:isStatic>false</d2p1:isStatic>
+              <d2p1:isVisible>true</d2p1:isVisible>
+              <d2p1:name>Level3Btn</d2p1:name>
+              <d2p1:tag i:nil="true" />
+              <d2p1:AdditionalComponents xmlns:d8p1="WaveEngine.Framework" />
+              <d2p1:PrefabElem>NumberBtn</d2p1:PrefabElem>
+              <d2p1:PrefabId>08e9382d-6cc7-4fd2-8737-d82fe5202dfe</d2p1:PrefabId>
+              <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
+              <d2p1:RemovedComponents xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+              <d2p1:modifiedProperties xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+                <d8p1:KeyValueOfstringanyType>
+                  <d8p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#LocalPosition</d8p1:Key>
+                  <d8p1:Value xmlns:d10p1="WaveEngine.Common.Math" i:type="d10p1:Vector3">
+                    <d10p1:X>139.999329</d10p1:X>
+                    <d10p1:Y>-120</d10p1:Y>
+                    <d10p1:Z>0</d10p1:Z>
+                  </d8p1:Value>
+                </d8p1:KeyValueOfstringanyType>
+                <d8p1:KeyValueOfstringanyType>
+                  <d8p1:Key>WaveEngine.Components.Gestures.TouchGestures#0#TouchOrder</d8p1:Key>
+                  <d8p1:Value xmlns:d10p1="http://www.w3.org/2001/XMLSchema" i:type="d10p1:int">500</d8p1:Value>
+                </d8p1:KeyValueOfstringanyType>
+              </d2p1:modifiedProperties>
+            </d2p1:BaseEntityModel>
+            <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
+              <d2p1:SerializeChildrens>
+                <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
+                  <d2p1:SerializeChildrens />
+                  <d2p1:isStatic>false</d2p1:isStatic>
+                  <d2p1:isVisible>true</d2p1:isVisible>
+                  <d2p1:name>Text</d2p1:name>
+                  <d2p1:tag i:nil="true" />
+                  <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
+                  <d2p1:PrefabElem>NumberBtn.Text</d2p1:PrefabElem>
+                  <d2p1:PrefabId>08e9382d-6cc7-4fd2-8737-d82fe5202dfe</d2p1:PrefabId>
+                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
+                  <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+                  <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+                    <d10p1:KeyValueOfstringanyType>
+                      <d10p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#LocalPosition</d10p1:Key>
+                      <d10p1:Value xmlns:d12p1="WaveEngine.Common.Math" i:type="d12p1:Vector3">
+                        <d12p1:X>-0.000162533339</d12p1:X>
+                        <d12p1:Y>-17.00013</d12p1:Y>
+                        <d12p1:Z>-0.9999997</d12p1:Z>
+                      </d10p1:Value>
+                    </d10p1:KeyValueOfstringanyType>
+                    <d10p1:KeyValueOfstringanyType>
+                      <d10p1:Key>WaveEngine.Components.Toolkit.TextComponent#0#text</d10p1:Key>
+                      <d10p1:Value xmlns:d12p1="http://www.w3.org/2001/XMLSchema" i:type="d12p1:string">4</d10p1:Value>
+                    </d10p1:KeyValueOfstringanyType>
+                  </d2p1:modifiedProperties>
+                </d2p1:BaseEntityModel>
+              </d2p1:SerializeChildrens>
+              <d2p1:isStatic>false</d2p1:isStatic>
+              <d2p1:isVisible>true</d2p1:isVisible>
+              <d2p1:name>Level4Btn</d2p1:name>
+              <d2p1:tag i:nil="true" />
+              <d2p1:AdditionalComponents xmlns:d8p1="WaveEngine.Framework" />
+              <d2p1:PrefabElem>NumberBtn</d2p1:PrefabElem>
+              <d2p1:PrefabId>08e9382d-6cc7-4fd2-8737-d82fe5202dfe</d2p1:PrefabId>
+              <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
+              <d2p1:RemovedComponents xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+              <d2p1:modifiedProperties xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+                <d8p1:KeyValueOfstringanyType>
+                  <d8p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#LocalPosition</d8p1:Key>
+                  <d8p1:Value xmlns:d10p1="WaveEngine.Common.Math" i:type="d10p1:Vector3">
+                    <d10p1:X>291.6985</d10p1:X>
+                    <d10p1:Y>-120</d10p1:Y>
+                    <d10p1:Z>0</d10p1:Z>
+                  </d8p1:Value>
+                </d8p1:KeyValueOfstringanyType>
+                <d8p1:KeyValueOfstringanyType>
+                  <d8p1:Key>WaveEngine.Components.Gestures.TouchGestures#0#TouchOrder</d8p1:Key>
+                  <d8p1:Value xmlns:d10p1="http://www.w3.org/2001/XMLSchema" i:type="d10p1:int">500</d8p1:Value>
+                </d8p1:KeyValueOfstringanyType>
+              </d2p1:modifiedProperties>
+            </d2p1:BaseEntityModel>
+            <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
+              <d2p1:SerializeChildrens>
+                <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
+                  <d2p1:SerializeChildrens />
+                  <d2p1:isStatic>false</d2p1:isStatic>
+                  <d2p1:isVisible>true</d2p1:isVisible>
+                  <d2p1:name>Text</d2p1:name>
+                  <d2p1:tag i:nil="true" />
+                  <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
+                  <d2p1:PrefabElem>NumberBtn.Text</d2p1:PrefabElem>
+                  <d2p1:PrefabId>08e9382d-6cc7-4fd2-8737-d82fe5202dfe</d2p1:PrefabId>
+                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
+                  <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+                  <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+                    <d10p1:KeyValueOfstringanyType>
+                      <d10p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#Rectangle</d10p1:Key>
+                      <d10p1:Value xmlns:d12p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math" i:type="d12p1:RectangleF">
+                        <d12p1:Height>162.4</d12p1:Height>
+                        <d12p1:Width>98</d12p1:Width>
+                        <d12p1:X>-49</d12p1:X>
+                        <d12p1:Y>81.2</d12p1:Y>
+                      </d10p1:Value>
+                    </d10p1:KeyValueOfstringanyType>
+                    <d10p1:KeyValueOfstringanyType>
+                      <d10p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#LocalPosition</d10p1:Key>
+                      <d10p1:Value xmlns:d12p1="WaveEngine.Common.Math" i:type="d12p1:Vector3">
+                        <d12p1:X>-0.000158011826</d12p1:X>
+                        <d12p1:Y>-17.00013</d12p1:Y>
+                        <d12p1:Z>-0.999999642</d12p1:Z>
+                      </d10p1:Value>
+                    </d10p1:KeyValueOfstringanyType>
+                    <d10p1:KeyValueOfstringanyType>
+                      <d10p1:Key>WaveEngine.Components.Toolkit.TextComponent#0#text</d10p1:Key>
+                      <d10p1:Value xmlns:d12p1="http://www.w3.org/2001/XMLSchema" i:type="d12p1:string">5</d10p1:Value>
+                    </d10p1:KeyValueOfstringanyType>
+                  </d2p1:modifiedProperties>
+                </d2p1:BaseEntityModel>
+              </d2p1:SerializeChildrens>
+              <d2p1:isStatic>false</d2p1:isStatic>
+              <d2p1:isVisible>true</d2p1:isVisible>
+              <d2p1:name>Level5Btn</d2p1:name>
+              <d2p1:tag i:nil="true" />
+              <d2p1:AdditionalComponents xmlns:d8p1="WaveEngine.Framework" />
+              <d2p1:PrefabElem>NumberBtn</d2p1:PrefabElem>
+              <d2p1:PrefabId>08e9382d-6cc7-4fd2-8737-d82fe5202dfe</d2p1:PrefabId>
+              <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
+              <d2p1:RemovedComponents xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+              <d2p1:modifiedProperties xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+                <d8p1:KeyValueOfstringanyType>
+                  <d8p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#LocalPosition</d8p1:Key>
+                  <d8p1:Value xmlns:d10p1="WaveEngine.Common.Math" i:type="d10p1:Vector3">
+                    <d10p1:X>441.9994</d10p1:X>
+                    <d10p1:Y>-120</d10p1:Y>
+                    <d10p1:Z>0</d10p1:Z>
+                  </d8p1:Value>
+                </d8p1:KeyValueOfstringanyType>
+                <d8p1:KeyValueOfstringanyType>
+                  <d8p1:Key>WaveEngine.Components.Gestures.TouchGestures#0#TouchOrder</d8p1:Key>
+                  <d8p1:Value xmlns:d10p1="http://www.w3.org/2001/XMLSchema" i:type="d10p1:int">500</d8p1:Value>
+                </d8p1:KeyValueOfstringanyType>
+              </d2p1:modifiedProperties>
+            </d2p1:BaseEntityModel>
+            <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
+              <d2p1:SerializeChildrens>
+                <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
+                  <d2p1:SerializeChildrens />
+                  <d2p1:isStatic>false</d2p1:isStatic>
+                  <d2p1:isVisible>true</d2p1:isVisible>
+                  <d2p1:name>Text</d2p1:name>
+                  <d2p1:tag i:nil="true" />
+                  <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
+                  <d2p1:PrefabElem>NumberBtn.Text</d2p1:PrefabElem>
+                  <d2p1:PrefabId>08e9382d-6cc7-4fd2-8737-d82fe5202dfe</d2p1:PrefabId>
+                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
+                  <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+                  <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+                    <d10p1:KeyValueOfstringanyType>
+                      <d10p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#Rectangle</d10p1:Key>
+                      <d10p1:Value xmlns:d12p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math" i:type="d12p1:RectangleF">
+                        <d12p1:Height>162.4</d12p1:Height>
+                        <d12p1:Width>95.2</d12p1:Width>
+                        <d12p1:X>-47.6</d12p1:X>
+                        <d12p1:Y>81.2</d12p1:Y>
+                      </d10p1:Value>
+                    </d10p1:KeyValueOfstringanyType>
+                    <d10p1:KeyValueOfstringanyType>
+                      <d10p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#LocalPosition</d10p1:Key>
+                      <d10p1:Value xmlns:d12p1="WaveEngine.Common.Math" i:type="d12p1:Vector3">
+                        <d12p1:X>-6.286589E-05</d12p1:X>
+                        <d12p1:Y>-17.0001831</d12p1:Y>
+                        <d12p1:Z>-0.999997556</d12p1:Z>
+                      </d10p1:Value>
+                    </d10p1:KeyValueOfstringanyType>
+                    <d10p1:KeyValueOfstringanyType>
+                      <d10p1:Key>WaveEngine.Components.Toolkit.TextComponent#0#text</d10p1:Key>
+                      <d10p1:Value xmlns:d12p1="http://www.w3.org/2001/XMLSchema" i:type="d12p1:string">6</d10p1:Value>
+                    </d10p1:KeyValueOfstringanyType>
+                  </d2p1:modifiedProperties>
+                </d2p1:BaseEntityModel>
+              </d2p1:SerializeChildrens>
+              <d2p1:isStatic>false</d2p1:isStatic>
+              <d2p1:isVisible>true</d2p1:isVisible>
+              <d2p1:name>Level6Btn</d2p1:name>
+              <d2p1:tag i:nil="true" />
+              <d2p1:AdditionalComponents xmlns:d8p1="WaveEngine.Framework" />
+              <d2p1:PrefabElem>NumberBtn</d2p1:PrefabElem>
+              <d2p1:PrefabId>08e9382d-6cc7-4fd2-8737-d82fe5202dfe</d2p1:PrefabId>
+              <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
+              <d2p1:RemovedComponents xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+              <d2p1:modifiedProperties xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+                <d8p1:KeyValueOfstringanyType>
+                  <d8p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#LocalPosition</d8p1:Key>
+                  <d8p1:Value xmlns:d10p1="WaveEngine.Common.Math" i:type="d10p1:Vector3">
+                    <d10p1:X>-162.00061</d10p1:X>
+                    <d10p1:Y>29.399353</d10p1:Y>
+                    <d10p1:Z>0</d10p1:Z>
+                  </d8p1:Value>
+                </d8p1:KeyValueOfstringanyType>
+                <d8p1:KeyValueOfstringanyType>
+                  <d8p1:Key>WaveEngine.Components.Gestures.TouchGestures#0#TouchOrder</d8p1:Key>
+                  <d8p1:Value xmlns:d10p1="http://www.w3.org/2001/XMLSchema" i:type="d10p1:int">500</d8p1:Value>
+                </d8p1:KeyValueOfstringanyType>
+              </d2p1:modifiedProperties>
+            </d2p1:BaseEntityModel>
+            <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
+              <d2p1:SerializeChildrens>
+                <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
+                  <d2p1:SerializeChildrens />
+                  <d2p1:isStatic>false</d2p1:isStatic>
+                  <d2p1:isVisible>true</d2p1:isVisible>
+                  <d2p1:name>Text</d2p1:name>
+                  <d2p1:tag i:nil="true" />
+                  <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
+                  <d2p1:PrefabElem>NumberBtn.Text</d2p1:PrefabElem>
+                  <d2p1:PrefabId>08e9382d-6cc7-4fd2-8737-d82fe5202dfe</d2p1:PrefabId>
+                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
+                  <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+                  <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+                    <d10p1:KeyValueOfstringanyType>
+                      <d10p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#Rectangle</d10p1:Key>
+                      <d10p1:Value xmlns:d12p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math" i:type="d12p1:RectangleF">
+                        <d12p1:Height>162.4</d12p1:Height>
+                        <d12p1:Width>85.4</d12p1:Width>
+                        <d12p1:X>-42.7</d12p1:X>
+                        <d12p1:Y>81.2</d12p1:Y>
+                      </d10p1:Value>
+                    </d10p1:KeyValueOfstringanyType>
+                    <d10p1:KeyValueOfstringanyType>
+                      <d10p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#LocalPosition</d10p1:Key>
+                      <d10p1:Value xmlns:d12p1="WaveEngine.Common.Math" i:type="d12p1:Vector3">
+                        <d12p1:X>-1.47734645E-05</d12p1:X>
+                        <d12p1:Y>-17.0001831</d12p1:Y>
+                        <d12p1:Z>-0.999999762</d12p1:Z>
+                      </d10p1:Value>
+                    </d10p1:KeyValueOfstringanyType>
+                    <d10p1:KeyValueOfstringanyType>
+                      <d10p1:Key>WaveEngine.Components.Toolkit.TextComponent#0#text</d10p1:Key>
+                      <d10p1:Value xmlns:d12p1="http://www.w3.org/2001/XMLSchema" i:type="d12p1:string">7</d10p1:Value>
+                    </d10p1:KeyValueOfstringanyType>
+                  </d2p1:modifiedProperties>
+                </d2p1:BaseEntityModel>
+              </d2p1:SerializeChildrens>
+              <d2p1:isStatic>false</d2p1:isStatic>
+              <d2p1:isVisible>true</d2p1:isVisible>
+              <d2p1:name>Level7Btn</d2p1:name>
+              <d2p1:tag i:nil="true" />
+              <d2p1:AdditionalComponents xmlns:d8p1="WaveEngine.Framework" />
+              <d2p1:PrefabElem>NumberBtn</d2p1:PrefabElem>
+              <d2p1:PrefabId>08e9382d-6cc7-4fd2-8737-d82fe5202dfe</d2p1:PrefabId>
+              <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
+              <d2p1:RemovedComponents xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+              <d2p1:modifiedProperties xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+                <d8p1:KeyValueOfstringanyType>
+                  <d8p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#LocalPosition</d8p1:Key>
+                  <d8p1:Value xmlns:d10p1="WaveEngine.Common.Math" i:type="d10p1:Vector3">
+                    <d10p1:X>-10.00061</d10p1:X>
+                    <d10p1:Y>29.399353</d10p1:Y>
+                    <d10p1:Z>0</d10p1:Z>
+                  </d8p1:Value>
+                </d8p1:KeyValueOfstringanyType>
+                <d8p1:KeyValueOfstringanyType>
+                  <d8p1:Key>WaveEngine.Components.Gestures.TouchGestures#0#TouchOrder</d8p1:Key>
+                  <d8p1:Value xmlns:d10p1="http://www.w3.org/2001/XMLSchema" i:type="d10p1:int">500</d8p1:Value>
+                </d8p1:KeyValueOfstringanyType>
+              </d2p1:modifiedProperties>
+            </d2p1:BaseEntityModel>
+            <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
+              <d2p1:SerializeChildrens>
+                <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
+                  <d2p1:SerializeChildrens />
+                  <d2p1:isStatic>false</d2p1:isStatic>
+                  <d2p1:isVisible>true</d2p1:isVisible>
+                  <d2p1:name>Text</d2p1:name>
+                  <d2p1:tag i:nil="true" />
+                  <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
+                  <d2p1:PrefabElem>NumberBtn.Text</d2p1:PrefabElem>
+                  <d2p1:PrefabId>08e9382d-6cc7-4fd2-8737-d82fe5202dfe</d2p1:PrefabId>
+                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
+                  <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+                  <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+                    <d10p1:KeyValueOfstringanyType>
+                      <d10p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#LocalPosition</d10p1:Key>
+                      <d10p1:Value xmlns:d12p1="WaveEngine.Common.Math" i:type="d12p1:Vector3">
+                        <d12p1:X>-0.000114738956</d12p1:X>
+                        <d12p1:Y>-17.0001831</d12p1:Y>
+                        <d12p1:Z>-0.9999997</d12p1:Z>
+                      </d10p1:Value>
+                    </d10p1:KeyValueOfstringanyType>
+                    <d10p1:KeyValueOfstringanyType>
+                      <d10p1:Key>WaveEngine.Components.Toolkit.TextComponent#0#text</d10p1:Key>
+                      <d10p1:Value xmlns:d12p1="http://www.w3.org/2001/XMLSchema" i:type="d12p1:string">8</d10p1:Value>
+                    </d10p1:KeyValueOfstringanyType>
+                  </d2p1:modifiedProperties>
+                </d2p1:BaseEntityModel>
+              </d2p1:SerializeChildrens>
+              <d2p1:isStatic>false</d2p1:isStatic>
+              <d2p1:isVisible>true</d2p1:isVisible>
+              <d2p1:name>Level8Btn</d2p1:name>
+              <d2p1:tag i:nil="true" />
+              <d2p1:AdditionalComponents xmlns:d8p1="WaveEngine.Framework" />
+              <d2p1:PrefabElem>NumberBtn</d2p1:PrefabElem>
+              <d2p1:PrefabId>08e9382d-6cc7-4fd2-8737-d82fe5202dfe</d2p1:PrefabId>
+              <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
+              <d2p1:RemovedComponents xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+              <d2p1:modifiedProperties xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+                <d8p1:KeyValueOfstringanyType>
+                  <d8p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#LocalPosition</d8p1:Key>
+                  <d8p1:Value xmlns:d10p1="WaveEngine.Common.Math" i:type="d10p1:Vector3">
+                    <d10p1:X>139.999329</d10p1:X>
+                    <d10p1:Y>29.399353</d10p1:Y>
+                    <d10p1:Z>0</d10p1:Z>
+                  </d8p1:Value>
+                </d8p1:KeyValueOfstringanyType>
+                <d8p1:KeyValueOfstringanyType>
+                  <d8p1:Key>WaveEngine.Components.Gestures.TouchGestures#0#TouchOrder</d8p1:Key>
+                  <d8p1:Value xmlns:d10p1="http://www.w3.org/2001/XMLSchema" i:type="d10p1:int">500</d8p1:Value>
+                </d8p1:KeyValueOfstringanyType>
+              </d2p1:modifiedProperties>
+            </d2p1:BaseEntityModel>
+            <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
+              <d2p1:SerializeChildrens>
+                <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
+                  <d2p1:SerializeChildrens />
+                  <d2p1:isStatic>false</d2p1:isStatic>
+                  <d2p1:isVisible>true</d2p1:isVisible>
+                  <d2p1:name>Text</d2p1:name>
+                  <d2p1:tag i:nil="true" />
+                  <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
+                  <d2p1:PrefabElem>NumberBtn.Text</d2p1:PrefabElem>
+                  <d2p1:PrefabId>08e9382d-6cc7-4fd2-8737-d82fe5202dfe</d2p1:PrefabId>
+                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
+                  <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+                  <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+                    <d10p1:KeyValueOfstringanyType>
+                      <d10p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#Rectangle</d10p1:Key>
+                      <d10p1:Value xmlns:d12p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math" i:type="d12p1:RectangleF">
+                        <d12p1:Height>162.4</d12p1:Height>
+                        <d12p1:Width>95.2</d12p1:Width>
+                        <d12p1:X>-47.6</d12p1:X>
+                        <d12p1:Y>81.2</d12p1:Y>
+                      </d10p1:Value>
+                    </d10p1:KeyValueOfstringanyType>
+                    <d10p1:KeyValueOfstringanyType>
+                      <d10p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#LocalPosition</d10p1:Key>
+                      <d10p1:Value xmlns:d12p1="WaveEngine.Common.Math" i:type="d12p1:Vector3">
+                        <d12p1:X>-0.000206129829</d12p1:X>
+                        <d12p1:Y>-17.0001831</d12p1:Y>
+                        <d12p1:Z>-0.999999642</d12p1:Z>
+                      </d10p1:Value>
+                    </d10p1:KeyValueOfstringanyType>
+                    <d10p1:KeyValueOfstringanyType>
+                      <d10p1:Key>WaveEngine.Components.Toolkit.TextComponent#0#text</d10p1:Key>
+                      <d10p1:Value xmlns:d12p1="http://www.w3.org/2001/XMLSchema" i:type="d12p1:string">9</d10p1:Value>
+                    </d10p1:KeyValueOfstringanyType>
+                  </d2p1:modifiedProperties>
+                </d2p1:BaseEntityModel>
+              </d2p1:SerializeChildrens>
+              <d2p1:isStatic>false</d2p1:isStatic>
+              <d2p1:isVisible>true</d2p1:isVisible>
+              <d2p1:name>Level9Btn</d2p1:name>
+              <d2p1:tag i:nil="true" />
+              <d2p1:AdditionalComponents xmlns:d8p1="WaveEngine.Framework" />
+              <d2p1:PrefabElem>NumberBtn</d2p1:PrefabElem>
+              <d2p1:PrefabId>08e9382d-6cc7-4fd2-8737-d82fe5202dfe</d2p1:PrefabId>
+              <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
+              <d2p1:RemovedComponents xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+              <d2p1:modifiedProperties xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+                <d8p1:KeyValueOfstringanyType>
+                  <d8p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#LocalPosition</d8p1:Key>
+                  <d8p1:Value xmlns:d10p1="WaveEngine.Common.Math" i:type="d10p1:Vector3">
+                    <d10p1:X>291.6985</d10p1:X>
+                    <d10p1:Y>29.399353</d10p1:Y>
+                    <d10p1:Z>0</d10p1:Z>
+                  </d8p1:Value>
+                </d8p1:KeyValueOfstringanyType>
+                <d8p1:KeyValueOfstringanyType>
+                  <d8p1:Key>WaveEngine.Components.Gestures.TouchGestures#0#TouchOrder</d8p1:Key>
+                  <d8p1:Value xmlns:d10p1="http://www.w3.org/2001/XMLSchema" i:type="d10p1:int">500</d8p1:Value>
+                </d8p1:KeyValueOfstringanyType>
+              </d2p1:modifiedProperties>
+            </d2p1:BaseEntityModel>
+            <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
+              <d2p1:SerializeChildrens>
+                <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
+                  <d2p1:SerializeChildrens />
+                  <d2p1:isStatic>false</d2p1:isStatic>
+                  <d2p1:isVisible>true</d2p1:isVisible>
+                  <d2p1:name>Text</d2p1:name>
+                  <d2p1:tag i:nil="true" />
+                  <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
+                  <d2p1:PrefabElem>NumberBtn.Text</d2p1:PrefabElem>
+                  <d2p1:PrefabId>08e9382d-6cc7-4fd2-8737-d82fe5202dfe</d2p1:PrefabId>
+                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
+                  <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+                  <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+                    <d10p1:KeyValueOfstringanyType>
+                      <d10p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#Rectangle</d10p1:Key>
+                      <d10p1:Value xmlns:d12p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math" i:type="d12p1:RectangleF">
+                        <d12p1:Height>162.4</d12p1:Height>
+                        <d12p1:Width>145.599991</d12p1:Width>
+                        <d12p1:X>-72.7999954</d12p1:X>
+                        <d12p1:Y>81.2</d12p1:Y>
+                      </d10p1:Value>
+                    </d10p1:KeyValueOfstringanyType>
+                    <d10p1:KeyValueOfstringanyType>
+                      <d10p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#LocalPosition</d10p1:Key>
+                      <d10p1:Value xmlns:d12p1="WaveEngine.Common.Math" i:type="d12p1:Vector3">
+                        <d12p1:X>-0.0003671561</d12p1:X>
+                        <d12p1:Y>-17.00027</d12p1:Y>
+                        <d12p1:Z>-0.9999995</d12p1:Z>
+                      </d10p1:Value>
+                    </d10p1:KeyValueOfstringanyType>
+                    <d10p1:KeyValueOfstringanyType>
+                      <d10p1:Key>WaveEngine.Components.Toolkit.TextComponent#0#text</d10p1:Key>
+                      <d10p1:Value xmlns:d12p1="http://www.w3.org/2001/XMLSchema" i:type="d12p1:string">10</d10p1:Value>
+                    </d10p1:KeyValueOfstringanyType>
+                    <d10p1:KeyValueOfstringanyType>
+                      <d10p1:Key>WaveEngine.Components.Toolkit.TextComponent#0#width</d10p1:Key>
+                      <d10p1:Value xmlns:d12p1="http://www.w3.org/2001/XMLSchema" i:type="d12p1:float">170</d10p1:Value>
+                    </d10p1:KeyValueOfstringanyType>
+                  </d2p1:modifiedProperties>
+                </d2p1:BaseEntityModel>
+              </d2p1:SerializeChildrens>
+              <d2p1:isStatic>false</d2p1:isStatic>
+              <d2p1:isVisible>true</d2p1:isVisible>
+              <d2p1:name>Level10Btn</d2p1:name>
+              <d2p1:tag i:nil="true" />
+              <d2p1:AdditionalComponents xmlns:d8p1="WaveEngine.Framework" />
+              <d2p1:PrefabElem>NumberBtn</d2p1:PrefabElem>
+              <d2p1:PrefabId>08e9382d-6cc7-4fd2-8737-d82fe5202dfe</d2p1:PrefabId>
+              <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
+              <d2p1:RemovedComponents xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+              <d2p1:modifiedProperties xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+                <d8p1:KeyValueOfstringanyType>
+                  <d8p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#LocalPosition</d8p1:Key>
+                  <d8p1:Value xmlns:d10p1="WaveEngine.Common.Math" i:type="d10p1:Vector3">
+                    <d10p1:X>441.9994</d10p1:X>
+                    <d10p1:Y>29.399353</d10p1:Y>
+                    <d10p1:Z>0</d10p1:Z>
+                  </d8p1:Value>
+                </d8p1:KeyValueOfstringanyType>
+                <d8p1:KeyValueOfstringanyType>
+                  <d8p1:Key>WaveEngine.Components.Gestures.TouchGestures#0#TouchOrder</d8p1:Key>
+                  <d8p1:Value xmlns:d10p1="http://www.w3.org/2001/XMLSchema" i:type="d10p1:int">500</d8p1:Value>
+                </d8p1:KeyValueOfstringanyType>
+              </d2p1:modifiedProperties>
+            </d2p1:BaseEntityModel>
+            <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
+              <d2p1:SerializeChildrens>
+                <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
+                  <d2p1:SerializeChildrens />
+                  <d2p1:isStatic>false</d2p1:isStatic>
+                  <d2p1:isVisible>true</d2p1:isVisible>
+                  <d2p1:name>Text</d2p1:name>
+                  <d2p1:tag i:nil="true" />
+                  <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
+                  <d2p1:PrefabElem>NumberBtn.Text</d2p1:PrefabElem>
+                  <d2p1:PrefabId>08e9382d-6cc7-4fd2-8737-d82fe5202dfe</d2p1:PrefabId>
+                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
+                  <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+                  <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+                    <d10p1:KeyValueOfstringanyType>
+                      <d10p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#Rectangle</d10p1:Key>
+                      <d10p1:Value xmlns:d12p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math" i:type="d12p1:RectangleF">
+                        <d12p1:Height>162.4</d12p1:Height>
+                        <d12p1:Width>116.2</d12p1:Width>
+                        <d12p1:X>-58.1</d12p1:X>
+                        <d12p1:Y>81.2</d12p1:Y>
+                      </d10p1:Value>
+                    </d10p1:KeyValueOfstringanyType>
+                    <d10p1:KeyValueOfstringanyType>
+                      <d10p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#LocalPosition</d10p1:Key>
+                      <d10p1:Value xmlns:d12p1="WaveEngine.Common.Math" i:type="d12p1:Vector3">
+                        <d12p1:X>-4.97188121E-05</d12p1:X>
+                        <d12p1:Y>-17.0001259</d12p1:Y>
+                        <d12p1:Z>-0.999997437</d12p1:Z>
+                      </d10p1:Value>
+                    </d10p1:KeyValueOfstringanyType>
+                    <d10p1:KeyValueOfstringanyType>
+                      <d10p1:Key>WaveEngine.Components.Toolkit.TextComponent#0#text</d10p1:Key>
+                      <d10p1:Value xmlns:d12p1="http://www.w3.org/2001/XMLSchema" i:type="d12p1:string">11</d10p1:Value>
+                    </d10p1:KeyValueOfstringanyType>
+                    <d10p1:KeyValueOfstringanyType>
+                      <d10p1:Key>WaveEngine.Components.Toolkit.TextComponent#0#width</d10p1:Key>
+                      <d10p1:Value xmlns:d12p1="http://www.w3.org/2001/XMLSchema" i:type="d12p1:float">140</d10p1:Value>
+                    </d10p1:KeyValueOfstringanyType>
+                  </d2p1:modifiedProperties>
+                </d2p1:BaseEntityModel>
+              </d2p1:SerializeChildrens>
+              <d2p1:isStatic>false</d2p1:isStatic>
+              <d2p1:isVisible>true</d2p1:isVisible>
+              <d2p1:name>Level11Btn</d2p1:name>
+              <d2p1:tag i:nil="true" />
+              <d2p1:AdditionalComponents xmlns:d8p1="WaveEngine.Framework" />
+              <d2p1:PrefabElem>NumberBtn</d2p1:PrefabElem>
+              <d2p1:PrefabId>08e9382d-6cc7-4fd2-8737-d82fe5202dfe</d2p1:PrefabId>
+              <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
+              <d2p1:RemovedComponents xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+              <d2p1:modifiedProperties xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+                <d8p1:KeyValueOfstringanyType>
+                  <d8p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#LocalPosition</d8p1:Key>
+                  <d8p1:Value xmlns:d10p1="WaveEngine.Common.Math" i:type="d10p1:Vector3">
+                    <d10p1:X>-162.8006</d10p1:X>
+                    <d10p1:Y>179.399353</d10p1:Y>
+                    <d10p1:Z>0</d10p1:Z>
+                  </d8p1:Value>
+                </d8p1:KeyValueOfstringanyType>
+                <d8p1:KeyValueOfstringanyType>
+                  <d8p1:Key>WaveEngine.Components.Gestures.TouchGestures#0#TouchOrder</d8p1:Key>
+                  <d8p1:Value xmlns:d10p1="http://www.w3.org/2001/XMLSchema" i:type="d10p1:int">500</d8p1:Value>
+                </d8p1:KeyValueOfstringanyType>
+              </d2p1:modifiedProperties>
+            </d2p1:BaseEntityModel>
+            <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
+              <d2p1:SerializeChildrens>
+                <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
+                  <d2p1:SerializeChildrens />
+                  <d2p1:isStatic>false</d2p1:isStatic>
+                  <d2p1:isVisible>true</d2p1:isVisible>
+                  <d2p1:name>Text</d2p1:name>
+                  <d2p1:tag i:nil="true" />
+                  <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
+                  <d2p1:PrefabElem>NumberBtn.Text</d2p1:PrefabElem>
+                  <d2p1:PrefabId>08e9382d-6cc7-4fd2-8737-d82fe5202dfe</d2p1:PrefabId>
+                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
+                  <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+                  <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+                    <d10p1:KeyValueOfstringanyType>
+                      <d10p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#Rectangle</d10p1:Key>
+                      <d10p1:Value xmlns:d12p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math" i:type="d12p1:RectangleF">
+                        <d12p1:Height>162.4</d12p1:Height>
+                        <d12p1:Width>131.599991</d12p1:Width>
+                        <d12p1:X>-65.7999954</d12p1:X>
+                        <d12p1:Y>81.2</d12p1:Y>
+                      </d10p1:Value>
+                    </d10p1:KeyValueOfstringanyType>
+                    <d10p1:KeyValueOfstringanyType>
+                      <d10p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#LocalPosition</d10p1:Key>
+                      <d10p1:Value xmlns:d12p1="WaveEngine.Common.Math" i:type="d12p1:Vector3">
+                        <d12p1:X>2.88911942E-05</d12p1:X>
+                        <d12p1:Y>-17.0001259</d12p1:Y>
+                        <d12p1:Z>-0.999999642</d12p1:Z>
+                      </d10p1:Value>
+                    </d10p1:KeyValueOfstringanyType>
+                    <d10p1:KeyValueOfstringanyType>
+                      <d10p1:Key>WaveEngine.Components.Toolkit.TextComponent#0#text</d10p1:Key>
+                      <d10p1:Value xmlns:d12p1="http://www.w3.org/2001/XMLSchema" i:type="d12p1:string">12</d10p1:Value>
+                    </d10p1:KeyValueOfstringanyType>
+                    <d10p1:KeyValueOfstringanyType>
+                      <d10p1:Key>WaveEngine.Components.Toolkit.TextComponent#0#width</d10p1:Key>
+                      <d10p1:Value xmlns:d12p1="http://www.w3.org/2001/XMLSchema" i:type="d12p1:float">170</d10p1:Value>
+                    </d10p1:KeyValueOfstringanyType>
+                  </d2p1:modifiedProperties>
+                </d2p1:BaseEntityModel>
+              </d2p1:SerializeChildrens>
+              <d2p1:isStatic>false</d2p1:isStatic>
+              <d2p1:isVisible>true</d2p1:isVisible>
+              <d2p1:name>Level12Btn</d2p1:name>
+              <d2p1:tag i:nil="true" />
+              <d2p1:AdditionalComponents xmlns:d8p1="WaveEngine.Framework" />
+              <d2p1:PrefabElem>NumberBtn</d2p1:PrefabElem>
+              <d2p1:PrefabId>08e9382d-6cc7-4fd2-8737-d82fe5202dfe</d2p1:PrefabId>
+              <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
+              <d2p1:RemovedComponents xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+              <d2p1:modifiedProperties xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+                <d8p1:KeyValueOfstringanyType>
+                  <d8p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#LocalPosition</d8p1:Key>
+                  <d8p1:Value xmlns:d10p1="WaveEngine.Common.Math" i:type="d10p1:Vector3">
+                    <d10p1:X>-10.8005981</d10p1:X>
+                    <d10p1:Y>179.399353</d10p1:Y>
+                    <d10p1:Z>0</d10p1:Z>
+                  </d8p1:Value>
+                </d8p1:KeyValueOfstringanyType>
+                <d8p1:KeyValueOfstringanyType>
+                  <d8p1:Key>WaveEngine.Components.Gestures.TouchGestures#0#TouchOrder</d8p1:Key>
+                  <d8p1:Value xmlns:d10p1="http://www.w3.org/2001/XMLSchema" i:type="d10p1:int">500</d8p1:Value>
+                </d8p1:KeyValueOfstringanyType>
+              </d2p1:modifiedProperties>
+            </d2p1:BaseEntityModel>
+            <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
+              <d2p1:SerializeChildrens>
+                <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
+                  <d2p1:SerializeChildrens />
+                  <d2p1:isStatic>false</d2p1:isStatic>
+                  <d2p1:isVisible>true</d2p1:isVisible>
+                  <d2p1:name>Text</d2p1:name>
+                  <d2p1:tag i:nil="true" />
+                  <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
+                  <d2p1:PrefabElem>NumberBtn.Text</d2p1:PrefabElem>
+                  <d2p1:PrefabId>08e9382d-6cc7-4fd2-8737-d82fe5202dfe</d2p1:PrefabId>
+                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
+                  <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+                  <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+                    <d10p1:KeyValueOfstringanyType>
+                      <d10p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#Rectangle</d10p1:Key>
+                      <d10p1:Value xmlns:d12p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math" i:type="d12p1:RectangleF">
+                        <d12p1:Height>162.4</d12p1:Height>
+                        <d12p1:Width>133</d12p1:Width>
+                        <d12p1:X>-66.5</d12p1:X>
+                        <d12p1:Y>81.2</d12p1:Y>
+                      </d10p1:Value>
+                    </d10p1:KeyValueOfstringanyType>
+                    <d10p1:KeyValueOfstringanyType>
+                      <d10p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#LocalPosition</d10p1:Key>
+                      <d10p1:Value xmlns:d12p1="WaveEngine.Common.Math" i:type="d12p1:Vector3">
+                        <d12p1:X>-7.10743E-05</d12p1:X>
+                        <d12p1:Y>-17.0001259</d12p1:Y>
+                        <d12p1:Z>-0.999999642</d12p1:Z>
+                      </d10p1:Value>
+                    </d10p1:KeyValueOfstringanyType>
+                    <d10p1:KeyValueOfstringanyType>
+                      <d10p1:Key>WaveEngine.Components.Toolkit.TextComponent#0#text</d10p1:Key>
+                      <d10p1:Value xmlns:d12p1="http://www.w3.org/2001/XMLSchema" i:type="d12p1:string">13</d10p1:Value>
+                    </d10p1:KeyValueOfstringanyType>
+                    <d10p1:KeyValueOfstringanyType>
+                      <d10p1:Key>WaveEngine.Components.Toolkit.TextComponent#0#width</d10p1:Key>
+                      <d10p1:Value xmlns:d12p1="http://www.w3.org/2001/XMLSchema" i:type="d12p1:float">170</d10p1:Value>
+                    </d10p1:KeyValueOfstringanyType>
+                  </d2p1:modifiedProperties>
+                </d2p1:BaseEntityModel>
+              </d2p1:SerializeChildrens>
+              <d2p1:isStatic>false</d2p1:isStatic>
+              <d2p1:isVisible>true</d2p1:isVisible>
+              <d2p1:name>Level13Btn</d2p1:name>
+              <d2p1:tag i:nil="true" />
+              <d2p1:AdditionalComponents xmlns:d8p1="WaveEngine.Framework" />
+              <d2p1:PrefabElem>NumberBtn</d2p1:PrefabElem>
+              <d2p1:PrefabId>08e9382d-6cc7-4fd2-8737-d82fe5202dfe</d2p1:PrefabId>
+              <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
+              <d2p1:RemovedComponents xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+              <d2p1:modifiedProperties xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+                <d8p1:KeyValueOfstringanyType>
+                  <d8p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#LocalPosition</d8p1:Key>
+                  <d8p1:Value xmlns:d10p1="WaveEngine.Common.Math" i:type="d10p1:Vector3">
+                    <d10p1:X>139.199341</d10p1:X>
+                    <d10p1:Y>179.399353</d10p1:Y>
+                    <d10p1:Z>0</d10p1:Z>
+                  </d8p1:Value>
+                </d8p1:KeyValueOfstringanyType>
+                <d8p1:KeyValueOfstringanyType>
+                  <d8p1:Key>WaveEngine.Components.Gestures.TouchGestures#0#TouchOrder</d8p1:Key>
+                  <d8p1:Value xmlns:d10p1="http://www.w3.org/2001/XMLSchema" i:type="d10p1:int">500</d8p1:Value>
+                </d8p1:KeyValueOfstringanyType>
+              </d2p1:modifiedProperties>
+            </d2p1:BaseEntityModel>
+            <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
+              <d2p1:SerializeChildrens>
+                <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
+                  <d2p1:SerializeChildrens />
+                  <d2p1:isStatic>false</d2p1:isStatic>
+                  <d2p1:isVisible>true</d2p1:isVisible>
+                  <d2p1:name>Text</d2p1:name>
+                  <d2p1:tag i:nil="true" />
+                  <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
+                  <d2p1:PrefabElem>NumberBtn.Text</d2p1:PrefabElem>
+                  <d2p1:PrefabId>08e9382d-6cc7-4fd2-8737-d82fe5202dfe</d2p1:PrefabId>
+                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
+                  <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+                  <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+                    <d10p1:KeyValueOfstringanyType>
+                      <d10p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#Rectangle</d10p1:Key>
+                      <d10p1:Value xmlns:d12p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math" i:type="d12p1:RectangleF">
+                        <d12p1:Height>162.4</d12p1:Height>
+                        <d12p1:Width>131.599991</d12p1:Width>
+                        <d12p1:X>-65.7999954</d12p1:X>
+                        <d12p1:Y>81.2</d12p1:Y>
+                      </d10p1:Value>
+                    </d10p1:KeyValueOfstringanyType>
+                    <d10p1:KeyValueOfstringanyType>
+                      <d10p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#LocalPosition</d10p1:Key>
+                      <d10p1:Value xmlns:d12p1="WaveEngine.Common.Math" i:type="d12p1:Vector3">
+                        <d12p1:X>-0.0003106934</d12p1:X>
+                        <d12p1:Y>-17.0001259</d12p1:Y>
+                        <d12p1:Z>-0.9999996</d12p1:Z>
+                      </d10p1:Value>
+                    </d10p1:KeyValueOfstringanyType>
+                    <d10p1:KeyValueOfstringanyType>
+                      <d10p1:Key>WaveEngine.Components.Toolkit.TextComponent#0#text</d10p1:Key>
+                      <d10p1:Value xmlns:d12p1="http://www.w3.org/2001/XMLSchema" i:type="d12p1:string">14</d10p1:Value>
+                    </d10p1:KeyValueOfstringanyType>
+                    <d10p1:KeyValueOfstringanyType>
+                      <d10p1:Key>WaveEngine.Components.Toolkit.TextComponent#0#width</d10p1:Key>
+                      <d10p1:Value xmlns:d12p1="http://www.w3.org/2001/XMLSchema" i:type="d12p1:float">170</d10p1:Value>
+                    </d10p1:KeyValueOfstringanyType>
+                  </d2p1:modifiedProperties>
+                </d2p1:BaseEntityModel>
+              </d2p1:SerializeChildrens>
+              <d2p1:isStatic>false</d2p1:isStatic>
+              <d2p1:isVisible>true</d2p1:isVisible>
+              <d2p1:name>Level14Btn</d2p1:name>
+              <d2p1:tag i:nil="true" />
+              <d2p1:AdditionalComponents xmlns:d8p1="WaveEngine.Framework" />
+              <d2p1:PrefabElem>NumberBtn</d2p1:PrefabElem>
+              <d2p1:PrefabId>08e9382d-6cc7-4fd2-8737-d82fe5202dfe</d2p1:PrefabId>
+              <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
+              <d2p1:RemovedComponents xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+              <d2p1:modifiedProperties xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+                <d8p1:KeyValueOfstringanyType>
+                  <d8p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#LocalPosition</d8p1:Key>
+                  <d8p1:Value xmlns:d10p1="WaveEngine.Common.Math" i:type="d10p1:Vector3">
+                    <d10p1:X>290.8985</d10p1:X>
+                    <d10p1:Y>179.399353</d10p1:Y>
+                    <d10p1:Z>0</d10p1:Z>
+                  </d8p1:Value>
+                </d8p1:KeyValueOfstringanyType>
+                <d8p1:KeyValueOfstringanyType>
+                  <d8p1:Key>WaveEngine.Components.Gestures.TouchGestures#0#TouchOrder</d8p1:Key>
+                  <d8p1:Value xmlns:d10p1="http://www.w3.org/2001/XMLSchema" i:type="d10p1:int">500</d8p1:Value>
+                </d8p1:KeyValueOfstringanyType>
+              </d2p1:modifiedProperties>
+            </d2p1:BaseEntityModel>
+            <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
+              <d2p1:SerializeChildrens>
+                <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
+                  <d2p1:SerializeChildrens />
+                  <d2p1:isStatic>false</d2p1:isStatic>
+                  <d2p1:isVisible>true</d2p1:isVisible>
+                  <d2p1:name>Text</d2p1:name>
+                  <d2p1:tag i:nil="true" />
+                  <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
+                  <d2p1:PrefabElem>NumberBtn.Text</d2p1:PrefabElem>
+                  <d2p1:PrefabId>08e9382d-6cc7-4fd2-8737-d82fe5202dfe</d2p1:PrefabId>
+                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
+                  <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+                  <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+                    <d10p1:KeyValueOfstringanyType>
+                      <d10p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#Rectangle</d10p1:Key>
+                      <d10p1:Value xmlns:d12p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math" i:type="d12p1:RectangleF">
+                        <d12p1:Height>162.4</d12p1:Height>
+                        <d12p1:Width>137.2</d12p1:Width>
+                        <d12p1:X>-68.6</d12p1:X>
+                        <d12p1:Y>81.2</d12p1:Y>
+                      </d10p1:Value>
+                    </d10p1:KeyValueOfstringanyType>
+                    <d10p1:KeyValueOfstringanyType>
+                      <d10p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#LocalPosition</d10p1:Key>
+                      <d10p1:Value xmlns:d12p1="WaveEngine.Common.Math" i:type="d12p1:Vector3">
+                        <d12p1:X>-0.000175263209</d12p1:X>
+                        <d12p1:Y>-17.0001259</d12p1:Y>
+                        <d12p1:Z>-0.9999996</d12p1:Z>
+                      </d10p1:Value>
+                    </d10p1:KeyValueOfstringanyType>
+                    <d10p1:KeyValueOfstringanyType>
+                      <d10p1:Key>WaveEngine.Components.Toolkit.TextComponent#0#text</d10p1:Key>
+                      <d10p1:Value xmlns:d12p1="http://www.w3.org/2001/XMLSchema" i:type="d12p1:string">15</d10p1:Value>
+                    </d10p1:KeyValueOfstringanyType>
+                    <d10p1:KeyValueOfstringanyType>
+                      <d10p1:Key>WaveEngine.Components.Toolkit.TextComponent#0#width</d10p1:Key>
+                      <d10p1:Value xmlns:d12p1="http://www.w3.org/2001/XMLSchema" i:type="d12p1:float">170</d10p1:Value>
+                    </d10p1:KeyValueOfstringanyType>
+                  </d2p1:modifiedProperties>
+                </d2p1:BaseEntityModel>
+              </d2p1:SerializeChildrens>
+              <d2p1:isStatic>false</d2p1:isStatic>
+              <d2p1:isVisible>true</d2p1:isVisible>
+              <d2p1:name>Level15Btn</d2p1:name>
+              <d2p1:tag i:nil="true" />
+              <d2p1:AdditionalComponents xmlns:d8p1="WaveEngine.Framework" />
+              <d2p1:PrefabElem>NumberBtn</d2p1:PrefabElem>
+              <d2p1:PrefabId>08e9382d-6cc7-4fd2-8737-d82fe5202dfe</d2p1:PrefabId>
+              <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
+              <d2p1:RemovedComponents xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+              <d2p1:modifiedProperties xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+                <d8p1:KeyValueOfstringanyType>
+                  <d8p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#LocalPosition</d8p1:Key>
+                  <d8p1:Value xmlns:d10p1="WaveEngine.Common.Math" i:type="d10p1:Vector3">
+                    <d10p1:X>441.1994</d10p1:X>
+                    <d10p1:Y>179.399353</d10p1:Y>
+                    <d10p1:Z>0</d10p1:Z>
+                  </d8p1:Value>
+                </d8p1:KeyValueOfstringanyType>
+                <d8p1:KeyValueOfstringanyType>
+                  <d8p1:Key>WaveEngine.Components.Gestures.TouchGestures#0#TouchOrder</d8p1:Key>
+                  <d8p1:Value xmlns:d10p1="http://www.w3.org/2001/XMLSchema" i:type="d10p1:int">500</d8p1:Value>
+                </d8p1:KeyValueOfstringanyType>
+              </d2p1:modifiedProperties>
+            </d2p1:BaseEntityModel>
+          </d2p1:SerializeChildrens>
+          <d2p1:isStatic>false</d2p1:isStatic>
+          <d2p1:isVisible>true</d2p1:isVisible>
+          <d2p1:name>LevelContent</d2p1:name>
+          <d2p1:tag i:nil="true" />
+          <d2p1:SerializeComponents xmlns:d6p1="WaveEngine.Framework">
+            <d6p1:Component xmlns:d7p1="WaveEngine.Framework.Graphics" i:type="d7p1:Transform2D">
+              <d7p1:LocalOrientation xmlns:d8p1="WaveEngine.Common.Math">
+                <d8p1:W>1</d8p1:W>
+                <d8p1:X>0</d8p1:X>
+                <d8p1:Y>0</d8p1:Y>
+                <d8p1:Z>0</d8p1:Z>
+              </d7p1:LocalOrientation>
+              <d7p1:LocalPosition xmlns:d8p1="WaveEngine.Common.Math">
+                <d8p1:X>-151.6991</d8p1:X>
+                <d8p1:Y>-35.39911</d8p1:Y>
+                <d8p1:Z>-1</d8p1:Z>
+              </d7p1:LocalPosition>
+              <d7p1:LocalScale xmlns:d8p1="WaveEngine.Common.Math">
+                <d8p1:X>1</d8p1:X>
+                <d8p1:Y>1</d8p1:Y>
+                <d8p1:Z>1</d8p1:Z>
+              </d7p1:LocalScale>
+              <d7p1:Effect>None</d7p1:Effect>
+              <d7p1:Opacity>1</d7p1:Opacity>
+              <d7p1:Rectangle xmlns:d8p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                <d8p1:Height>0</d8p1:Height>
+                <d8p1:Width>0</d8p1:Width>
+                <d8p1:X>0</d8p1:X>
+                <d8p1:Y>0</d8p1:Y>
+              </d7p1:Rectangle>
+              <d7p1:origin xmlns:d8p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                <d8p1:X>0.5</d8p1:X>
+                <d8p1:Y>0.5</d8p1:Y>
+              </d7p1:origin>
+              <d7p1:screenPosition xmlns:d8p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                <d8p1:X>0</d8p1:X>
+                <d8p1:Y>0</d8p1:Y>
+              </d7p1:screenPosition>
+              <d7p1:transformMode>Standard</d7p1:transformMode>
+            </d6p1:Component>
+          </d2p1:SerializeComponents>
+        </d2p1:BaseEntityModel>
+      </d2p1:SerializeChildrens>
+      <d2p1:isStatic>false</d2p1:isStatic>
+      <d2p1:isVisible>true</d2p1:isVisible>
+      <d2p1:name>Panel</d2p1:name>
+      <d2p1:tag i:nil="true" />
+      <d2p1:SerializeComponents xmlns:d4p1="WaveEngine.Framework">
+        <d4p1:Component xmlns:d5p1="WaveEngine.Framework.Graphics" i:type="d5p1:Transform2D">
+          <d5p1:LocalOrientation xmlns:d6p1="WaveEngine.Common.Math">
+            <d6p1:W>1</d6p1:W>
+            <d6p1:X>0</d6p1:X>
+            <d6p1:Y>0</d6p1:Y>
+            <d6p1:Z>0</d6p1:Z>
+          </d5p1:LocalOrientation>
+          <d5p1:LocalPosition xmlns:d6p1="WaveEngine.Common.Math">
+            <d6p1:X>540</d6p1:X>
+            <d6p1:Y>740</d6p1:Y>
+            <d6p1:Z>0</d6p1:Z>
+          </d5p1:LocalPosition>
+          <d5p1:LocalScale xmlns:d6p1="WaveEngine.Common.Math">
+            <d6p1:X>1</d6p1:X>
+            <d6p1:Y>1</d6p1:Y>
+            <d6p1:Z>1</d6p1:Z>
+          </d5p1:LocalScale>
+          <d5p1:Effect>None</d5p1:Effect>
+          <d5p1:Opacity>1</d5p1:Opacity>
+          <d5p1:Rectangle xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+            <d6p1:Height>650</d6p1:Height>
+            <d6p1:Width>927</d6p1:Width>
+            <d6p1:X>0</d6p1:X>
+            <d6p1:Y>0</d6p1:Y>
+          </d5p1:Rectangle>
+          <d5p1:origin xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+            <d6p1:X>0.5</d6p1:X>
+            <d6p1:Y>0.5</d6p1:Y>
+          </d5p1:origin>
+          <d5p1:screenPosition xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+            <d6p1:X>0</d6p1:X>
+            <d6p1:Y>0</d6p1:Y>
+          </d5p1:screenPosition>
+          <d5p1:transformMode>Standard</d5p1:transformMode>
+        </d4p1:Component>
+        <d4p1:Component xmlns:d5p1="http://schemas.datacontract.org/2004/07/Match3.UI.NinePatch" i:type="d5p1:NinePatchSpriteAtlas">
+          <d5p1:TintColor xmlns:d6p1="WaveEngine.Common.Graphics">
+            <d6p1:A>255</d6p1:A>
+            <d6p1:B>255</d6p1:B>
+            <d6p1:G>255</d6p1:G>
+            <d6p1:R>255</d6p1:R>
+          </d5p1:TintColor>
+          <d5p1:isGlobalAsset>true</d5p1:isGlobalAsset>
+          <d5p1:size xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+            <d6p1:X>927</d6p1:X>
+            <d6p1:Y>650</d6p1:Y>
+          </d5p1:size>
+          <d5p1:texturePath>Content/Assets/GUI/Panels.spritesheet.wpk</d5p1:texturePath>
+          <d5p1:textureName>PanelBg1</d5p1:textureName>
+        </d4p1:Component>
+        <d4p1:Component xmlns:d5p1="http://schemas.datacontract.org/2004/07/Match3.UI.NinePatch" i:type="d5p1:NinePatchRenderer">
+          <d4p1:IsVisible>true</d4p1:IsVisible>
+          <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
+          <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
+        </d4p1:Component>
+      </d2p1:SerializeComponents>
+    </d2p1:BaseEntityModel>
+    <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
+      <d2p1:SerializeChildrens />
+      <d2p1:isStatic>false</d2p1:isStatic>
+      <d2p1:isVisible>true</d2p1:isVisible>
+      <d2p1:name>BackBtn</d2p1:name>
+      <d2p1:tag i:nil="true" />
+      <d2p1:AdditionalComponents xmlns:d4p1="WaveEngine.Framework" />
+      <d2p1:PrefabElem>SquaredBtn</d2p1:PrefabElem>
+      <d2p1:PrefabId>96c73f2a-eb6b-4858-89f3-7d13226d83c4</d2p1:PrefabId>
+      <d2p1:PrefabPath>Content/Prefabs/Buttons/NavSquaredBtn.wpref</d2p1:PrefabPath>
+      <d2p1:RemovedComponents xmlns:d4p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <d2p1:modifiedProperties xmlns:d4p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+        <d4p1:KeyValueOfstringanyType>
+          <d4p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#Rectangle</d4p1:Key>
+          <d4p1:Value xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math" i:type="d6p1:RectangleF">
+            <d6p1:Height>191</d6p1:Height>
+            <d6p1:Width>182</d6p1:Width>
+            <d6p1:X>0</d6p1:X>
+            <d6p1:Y>0</d6p1:Y>
+          </d4p1:Value>
+        </d4p1:KeyValueOfstringanyType>
+        <d4p1:KeyValueOfstringanyType>
+          <d4p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#LocalPosition</d4p1:Key>
+          <d4p1:Value xmlns:d6p1="WaveEngine.Common.Math" i:type="d6p1:Vector3">
+            <d6p1:X>-113.8201</d6p1:X>
+            <d6p1:Y>1560.00012</d6p1:Y>
+            <d6p1:Z>0</d6p1:Z>
+          </d4p1:Value>
+        </d4p1:KeyValueOfstringanyType>
+        <d4p1:KeyValueOfstringanyType>
+          <d4p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#screenPosition</d4p1:Key>
+          <d4p1:Value xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math" i:type="d6p1:Vector2">
+            <d6p1:X>0.1</d6p1:X>
+            <d6p1:Y>0.9</d6p1:Y>
+          </d4p1:Value>
+        </d4p1:KeyValueOfstringanyType>
+        <d4p1:KeyValueOfstringanyType>
+          <d4p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#transformMode</d4p1:Key>
+          <d4p1:Value xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Framework.Graphics" i:type="d6p1:Transform2D.TransformMode">Screen</d4p1:Value>
+        </d4p1:KeyValueOfstringanyType>
+        <d4p1:KeyValueOfstringanyType>
+          <d4p1:Key>WaveEngine.Components.Graphics2D.SpriteAtlas#0#textureName</d4p1:Key>
+          <d4p1:Value xmlns:d6p1="http://www.w3.org/2001/XMLSchema" i:type="d6p1:string">Back</d4p1:Value>
+        </d4p1:KeyValueOfstringanyType>
+        <d4p1:KeyValueOfstringanyType>
+          <d4p1:Key>Match3.UI.ButtonComponent#0#releasedTextureName</d4p1:Key>
+          <d4p1:Value xmlns:d6p1="http://www.w3.org/2001/XMLSchema" i:type="d6p1:string">Back</d4p1:Value>
+        </d4p1:KeyValueOfstringanyType>
+        <d4p1:KeyValueOfstringanyType>
+          <d4p1:Key>Match3.UI.ButtonComponent#0#pressedTextureName</d4p1:Key>
+          <d4p1:Value xmlns:d6p1="http://www.w3.org/2001/XMLSchema" i:type="d6p1:string">BackPressed</d4p1:Value>
+        </d4p1:KeyValueOfstringanyType>
+      </d2p1:modifiedProperties>
+    </d2p1:BaseEntityModel>
+  </Entities>
+  <EntityPointers xmlns:d2p1="http://schemas.datacontract.org/2004/07/WaveEngine.Framework.Models.Entities" />
+  <Settings xmlns:d2p1="WaveEngine.Framework.Models.Settings">
+    <d2p1:Categories xmlns:d3p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+      <d3p1:KeyValueOfstringanyType>
+        <d3p1:Key>VirtualScreen</d3p1:Key>
+        <d3p1:Value xmlns:d5p1="WaveEngine.Framework.Managers" i:type="d5p1:VirtualScreenManager">
+          <d5p1:Enabled>true</d5p1:Enabled>
+          <d5p1:Expand>true</d5p1:Expand>
+          <d5p1:Stretch>Uniform</d5p1:Stretch>
+          <d5p1:VirtualHeight>1440</d5p1:VirtualHeight>
+          <d5p1:VirtualWidth>1080</d5p1:VirtualWidth>
+        </d3p1:Value>
+      </d3p1:KeyValueOfstringanyType>
+      <d3p1:KeyValueOfstringanyType>
+        <d3p1:Key>Physics</d3p1:Key>
+        <d3p1:Value xmlns:d5p1="WaveEngine.Framework.Models.Settings.Categories" i:type="d5p1:PhysicCategory">
+          <d5p1:AllowSleep>true</d5p1:AllowSleep>
+          <d5p1:Gravity2D xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+            <d6p1:X>0</d6p1:X>
+            <d6p1:Y>9.8</d6p1:Y>
+          </d5p1:Gravity2D>
+          <d5p1:Gravity3D xmlns:d6p1="WaveEngine.Common.Math">
+            <d6p1:X>0</d6p1:X>
+            <d6p1:Y>-9.8</d6p1:Y>
+            <d6p1:Z>0</d6p1:Z>
+          </d5p1:Gravity3D>
+        </d3p1:Value>
+      </d3p1:KeyValueOfstringanyType>
+    </d2p1:Categories>
+  </Settings>
+</Scene>

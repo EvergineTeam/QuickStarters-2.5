@@ -6,6 +6,7 @@ namespace Match3.Scenes
     {
         protected override void CreateScene()
         {
+            this.Load(WaveContent.Scenes.LevelSelection);
         }
     }
 }
