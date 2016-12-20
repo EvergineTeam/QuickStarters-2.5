@@ -62,9 +62,11 @@ namespace SuperSlingshot.Managers
 
             // Calculate score
             var score = gameScene.Score;
+
             var maxPoint = (gameScene.NumBreakables * gameScene.BlockDestroyPoints) + 
                 (gameScene.GemPoints * gameScene.NumGems);
-            score.StarScore = this.CalculateStarRate(score, maxPoint);
+
+            score.StarScore = this.CalculateStarRate(score, maxPoint, gameScene.GemPoints);
 
             // store score
             var storageService = WaveServices.GetService<StorageService>();
@@ -74,9 +76,12 @@ namespace SuperSlingshot.Managers
             this.navigationManager.NavigateToScore(gameScene.Content);
         }
 
-        private StarScoreEnum CalculateStarRate(LevelScore score, int maxPoints)
+        private StarScoreEnum CalculateStarRate(LevelScore score, int maxPoints, int bonusPoints)
         {
-            return (StarScoreEnum)Math.Round((double)score.Points * 3 / maxPoints, 0);
+            var points = score.Points;
+            var bonus = score.Gems * bonusPoints;
+
+            return (StarScoreEnum)Math.Round((double)(points + bonus) * 3 / maxPoints, 0);
         }
 
         public void NextBoulder()

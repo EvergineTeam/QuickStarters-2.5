@@ -18,6 +18,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Behaviors\DebugMovementBehavior.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Behaviors\MouseBehavior.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Behaviors\PlayerBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Components\BonusComponent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Components\BreakableComponent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Components\ButtonComponent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Components\PlayerComponent.cs" />

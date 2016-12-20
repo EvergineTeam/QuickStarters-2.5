@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="50" height="40" tilewidth="128" tileheight="128" nextobjectid="13">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="50" height="40" tilewidth="128" tileheight="128" nextobjectid="14">
  <properties>
   <property name="BlockDestroyPoints" type="int" value="1500"/>
   <property name="BlockHitPoints" type="int" value="1000"/>
@@ -413,5 +413,8 @@
   <object id="12" name="ground" x="6400" y="3968">
    <polyline points="0,0 -6400,0"/>
   </object>
+ </objectgroup>
+ <objectgroup color="#ff0000" name="BonusLayer">
+  <object id="13" name="Gem1" x="1792" y="2304" width="128" height="128"/>
  </objectgroup>
 </map>

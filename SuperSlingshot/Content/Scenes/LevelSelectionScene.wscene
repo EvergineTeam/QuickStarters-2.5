@@ -105,8 +105,20 @@
                       <d2p1:RemovedComponents xmlns:d12p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                       <d2p1:modifiedProperties xmlns:d12p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
                         <d12p1:KeyValueOfstringanyType>
+                          <d12p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#LocalPosition</d12p1:Key>
+                          <d12p1:Value xmlns:d14p1="WaveEngine.Common.Math" i:type="d14p1:Vector3">
+                            <d14p1:X>2.12533341E-05</d14p1:X>
+                            <d14p1:Y>1.307897E-05</d14p1:Y>
+                            <d14p1:Z>-0.099999994</d14p1:Z>
+                          </d12p1:Value>
+                        </d12p1:KeyValueOfstringanyType>
+                        <d12p1:KeyValueOfstringanyType>
                           <d12p1:Key>WaveEngine.Components.Graphics2D.Sprite#0#materialPath</d12p1:Key>
                           <d12p1:Value i:nil="true" />
+                        </d12p1:KeyValueOfstringanyType>
+                        <d12p1:KeyValueOfstringanyType>
+                          <d12p1:Key>WaveEngine.Components.Graphics2D.SpriteRenderer#0#IsVisible</d12p1:Key>
+                          <d12p1:Value xmlns:d14p1="http://www.w3.org/2001/XMLSchema" i:type="d14p1:boolean">false</d12p1:Value>
                         </d12p1:KeyValueOfstringanyType>
                         <d12p1:KeyValueOfstringanyType>
                           <d12p1:Key>SuperSlingshot.Components.SwitchComponent#0#UnCheckedTexturePath</d12p1:Key>
@@ -150,6 +162,10 @@
                           <d12p1:Value i:nil="true" />
                         </d12p1:KeyValueOfstringanyType>
                         <d12p1:KeyValueOfstringanyType>
+                          <d12p1:Key>WaveEngine.Components.Graphics2D.SpriteRenderer#0#IsVisible</d12p1:Key>
+                          <d12p1:Value xmlns:d14p1="http://www.w3.org/2001/XMLSchema" i:type="d14p1:boolean">false</d12p1:Value>
+                        </d12p1:KeyValueOfstringanyType>
+                        <d12p1:KeyValueOfstringanyType>
                           <d12p1:Key>SuperSlingshot.Components.SwitchComponent#0#UnCheckedTexturePath</d12p1:Key>
                           <d12p1:Value i:nil="true" />
                         </d12p1:KeyValueOfstringanyType>
@@ -189,6 +205,14 @@
                         <d12p1:KeyValueOfstringanyType>
                           <d12p1:Key>WaveEngine.Components.Graphics2D.Sprite#0#materialPath</d12p1:Key>
                           <d12p1:Value i:nil="true" />
+                        </d12p1:KeyValueOfstringanyType>
+                        <d12p1:KeyValueOfstringanyType>
+                          <d12p1:Key>WaveEngine.Components.Graphics2D.SpriteRenderer#0#IsVisible</d12p1:Key>
+                          <d12p1:Value xmlns:d14p1="http://www.w3.org/2001/XMLSchema" i:type="d14p1:boolean">false</d12p1:Value>
+                        </d12p1:KeyValueOfstringanyType>
+                        <d12p1:KeyValueOfstringanyType>
+                          <d12p1:Key>SuperSlingshot.Components.SwitchComponent#0#State</d12p1:Key>
+                          <d12p1:Value xmlns:d14p1="http://schemas.datacontract.org/2004/07/SuperSlingshot.Enums" i:type="d14p1:SwitchEnum">INDETERNINATE</d12p1:Value>
                         </d12p1:KeyValueOfstringanyType>
                         <d12p1:KeyValueOfstringanyType>
                           <d12p1:Key>SuperSlingshot.Components.SwitchComponent#0#UnCheckedTexturePath</d12p1:Key>
@@ -281,6 +305,10 @@
                           <d12p1:Value i:nil="true" />
                         </d12p1:KeyValueOfstringanyType>
                         <d12p1:KeyValueOfstringanyType>
+                          <d12p1:Key>WaveEngine.Components.Graphics2D.SpriteRenderer#0#IsVisible</d12p1:Key>
+                          <d12p1:Value xmlns:d14p1="http://www.w3.org/2001/XMLSchema" i:type="d14p1:boolean">false</d12p1:Value>
+                        </d12p1:KeyValueOfstringanyType>
+                        <d12p1:KeyValueOfstringanyType>
                           <d12p1:Key>SuperSlingshot.Components.SwitchComponent#0#UnCheckedTexturePath</d12p1:Key>
                           <d12p1:Value i:nil="true" />
                         </d12p1:KeyValueOfstringanyType>
@@ -322,6 +350,10 @@
                           <d12p1:Value i:nil="true" />
                         </d12p1:KeyValueOfstringanyType>
                         <d12p1:KeyValueOfstringanyType>
+                          <d12p1:Key>WaveEngine.Components.Graphics2D.SpriteRenderer#0#IsVisible</d12p1:Key>
+                          <d12p1:Value xmlns:d14p1="http://www.w3.org/2001/XMLSchema" i:type="d14p1:boolean">false</d12p1:Value>
+                        </d12p1:KeyValueOfstringanyType>
+                        <d12p1:KeyValueOfstringanyType>
                           <d12p1:Key>SuperSlingshot.Components.SwitchComponent#0#UnCheckedTexturePath</d12p1:Key>
                           <d12p1:Value i:nil="true" />
                         </d12p1:KeyValueOfstringanyType>
@@ -361,6 +393,14 @@
                         <d12p1:KeyValueOfstringanyType>
                           <d12p1:Key>WaveEngine.Components.Graphics2D.Sprite#0#materialPath</d12p1:Key>
                           <d12p1:Value i:nil="true" />
+                        </d12p1:KeyValueOfstringanyType>
+                        <d12p1:KeyValueOfstringanyType>
+                          <d12p1:Key>WaveEngine.Components.Graphics2D.SpriteRenderer#0#IsVisible</d12p1:Key>
+                          <d12p1:Value xmlns:d14p1="http://www.w3.org/2001/XMLSchema" i:type="d14p1:boolean">false</d12p1:Value>
+                        </d12p1:KeyValueOfstringanyType>
+                        <d12p1:KeyValueOfstringanyType>
+                          <d12p1:Key>SuperSlingshot.Components.SwitchComponent#0#State</d12p1:Key>
+                          <d12p1:Value xmlns:d14p1="http://schemas.datacontract.org/2004/07/SuperSlingshot.Enums" i:type="d14p1:SwitchEnum">INDETERNINATE</d12p1:Value>
                         </d12p1:KeyValueOfstringanyType>
                         <d12p1:KeyValueOfstringanyType>
                           <d12p1:Key>SuperSlingshot.Components.SwitchComponent#0#UnCheckedTexturePath</d12p1:Key>
@@ -453,6 +493,10 @@
                           <d12p1:Value i:nil="true" />
                         </d12p1:KeyValueOfstringanyType>
                         <d12p1:KeyValueOfstringanyType>
+                          <d12p1:Key>WaveEngine.Components.Graphics2D.SpriteRenderer#0#IsVisible</d12p1:Key>
+                          <d12p1:Value xmlns:d14p1="http://www.w3.org/2001/XMLSchema" i:type="d14p1:boolean">false</d12p1:Value>
+                        </d12p1:KeyValueOfstringanyType>
+                        <d12p1:KeyValueOfstringanyType>
                           <d12p1:Key>SuperSlingshot.Components.SwitchComponent#0#UnCheckedTexturePath</d12p1:Key>
                           <d12p1:Value i:nil="true" />
                         </d12p1:KeyValueOfstringanyType>
@@ -494,6 +538,10 @@
                           <d12p1:Value i:nil="true" />
                         </d12p1:KeyValueOfstringanyType>
                         <d12p1:KeyValueOfstringanyType>
+                          <d12p1:Key>WaveEngine.Components.Graphics2D.SpriteRenderer#0#IsVisible</d12p1:Key>
+                          <d12p1:Value xmlns:d14p1="http://www.w3.org/2001/XMLSchema" i:type="d14p1:boolean">false</d12p1:Value>
+                        </d12p1:KeyValueOfstringanyType>
+                        <d12p1:KeyValueOfstringanyType>
                           <d12p1:Key>SuperSlingshot.Components.SwitchComponent#0#UnCheckedTexturePath</d12p1:Key>
                           <d12p1:Value i:nil="true" />
                         </d12p1:KeyValueOfstringanyType>
@@ -533,6 +581,14 @@
                         <d12p1:KeyValueOfstringanyType>
                           <d12p1:Key>WaveEngine.Components.Graphics2D.Sprite#0#materialPath</d12p1:Key>
                           <d12p1:Value i:nil="true" />
+                        </d12p1:KeyValueOfstringanyType>
+                        <d12p1:KeyValueOfstringanyType>
+                          <d12p1:Key>WaveEngine.Components.Graphics2D.SpriteRenderer#0#IsVisible</d12p1:Key>
+                          <d12p1:Value xmlns:d14p1="http://www.w3.org/2001/XMLSchema" i:type="d14p1:boolean">false</d12p1:Value>
+                        </d12p1:KeyValueOfstringanyType>
+                        <d12p1:KeyValueOfstringanyType>
+                          <d12p1:Key>SuperSlingshot.Components.SwitchComponent#0#State</d12p1:Key>
+                          <d12p1:Value xmlns:d14p1="http://schemas.datacontract.org/2004/07/SuperSlingshot.Enums" i:type="d14p1:SwitchEnum">INDETERNINATE</d12p1:Value>
                         </d12p1:KeyValueOfstringanyType>
                         <d12p1:KeyValueOfstringanyType>
                           <d12p1:Key>SuperSlingshot.Components.SwitchComponent#0#UnCheckedTexturePath</d12p1:Key>

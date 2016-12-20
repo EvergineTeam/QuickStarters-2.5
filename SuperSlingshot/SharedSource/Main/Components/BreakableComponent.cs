@@ -47,7 +47,8 @@ namespace SuperSlingshot.Components
         private void OnBeginCollision(ICollisionInfo2D contact)
         {
             // Against floor
-            if ((contact.ColliderB.CollisionCategories & ColliderCategory2D.Cat3) == ColliderCategory2D.Cat3)
+            if ((contact.ColliderB.CollisionCategories 
+                & ColliderCategory2D.Cat3) == ColliderCategory2D.Cat3)
             {
                 return;
             }

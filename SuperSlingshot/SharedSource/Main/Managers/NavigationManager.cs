@@ -26,14 +26,14 @@ namespace SuperSlingshot.Managers
 
             gameScene.Pause();
 
+            WaveServices.ScreenContextManager.CurrentContext.Behavior = 
+                ScreenContextBehaviors.DrawInBackground;
+            
             ScreenContext screenContext = new ScreenContext(
                 "ScoreContext",
-                new ScoreScene(level))
-            {
-                Behavior = ScreenContextBehaviors.DrawInBackground
-            };
+                new ScoreScene(level));
 
-            WaveServices.ScreenContextManager.To(screenContext);
+            WaveServices.ScreenContextManager.Push(screenContext);
         }
 
         public void NavigateBack(bool doDispose = false)
@@ -59,7 +59,6 @@ namespace SuperSlingshot.Managers
                 "InitialSceneContext",
                 new GenericScene(WaveContent.Scenes.Backgrounds.Background1),
                 new InitialScene())
-            //new ScoreScene(1000, 3, 5))
             {
                 Behavior = ScreenContextBehaviors.DrawInBackground | ScreenContextBehaviors.UpdateInBackground
             };

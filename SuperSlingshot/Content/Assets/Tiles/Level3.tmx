@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="50" height="40" tilewidth="128" tileheight="128" nextobjectid="29">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="50" height="40" tilewidth="128" tileheight="128" nextobjectid="31">
  <properties>
   <property name="BlockDestroyPoints" type="int" value="2000"/>
   <property name="BlockHitPoints" type="int" value="1500"/>
@@ -19,7 +19,7 @@
  <tileset firstgid="18" name="desert adorners" tilewidth="128" tileheight="128" tilecount="3" columns="3">
   <image source="desert adorners.png" width="384" height="128"/>
  </tileset>
- <layer name="Background" width="50" height="40">
+ <layer name="Background" width="50" height="40" visible="0">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -222,5 +222,8 @@
   <object id="23" name="Box8" x="2756" y="2444" width="128" height="128"/>
   <object id="24" name="Box9" x="2894" y="2706" width="128" height="128"/>
   <object id="25" name="Box10" x="2892" y="2571" width="128" height="128"/>
+ </objectgroup>
+ <objectgroup color="#ff0000" name="BonusLayer">
+  <object id="29" name="Gem1" x="3026.87" y="2976.77" width="128" height="128"/>
  </objectgroup>
 </map>

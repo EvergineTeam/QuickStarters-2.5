@@ -25,6 +25,12 @@ namespace SlingshotRampage.Services
             return catalog.Scores[level];
         }
 
+        public Dictionary<string, LevelScore> ReadScores()
+        {
+            var catalog = Catalog.GetItem<GameStorage>();
+            return catalog.Scores;
+        }
+
         public bool WriteScore(LevelScore score, string level)
         {
             bool res = false;

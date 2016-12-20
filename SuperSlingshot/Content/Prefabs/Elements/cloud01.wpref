@@ -27,8 +27,8 @@
         <d4p1:Effect>None</d4p1:Effect>
         <d4p1:Opacity>1</d4p1:Opacity>
         <d4p1:Rectangle xmlns:d5p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
-          <d5p1:Height>134</d5p1:Height>
-          <d5p1:Width>400</d5p1:Width>
+          <d5p1:Height>156</d5p1:Height>
+          <d5p1:Width>263</d5p1:Width>
           <d5p1:X>0</d5p1:X>
           <d5p1:Y>0</d5p1:Y>
         </d4p1:Rectangle>

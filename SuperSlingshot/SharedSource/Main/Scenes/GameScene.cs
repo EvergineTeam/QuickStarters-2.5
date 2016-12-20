@@ -74,6 +74,7 @@ namespace SuperSlingshot.Scenes
             this.CreateCratesScene();
             this.GetLevelProperties();
             this.CreateBoulderEntities();
+            this.CreateGemsScene();
 
             this.NumBreakables = this.EntityManager.FindAllByTag(GameConstants.TAGBREAKABLE).Count();
             this.NumGems = this.EntityManager.FindAllByTag(GameConstants.TAGBONUS).Count();
@@ -119,12 +120,46 @@ namespace SuperSlingshot.Scenes
             }
         }
 
+        private void CreateGemsScene()
+        {
+            // crates of the layer
+            if (this.tiledMap.ObjectLayers.ContainsKey(GameConstants.LAYERBONUS))
+            {
+                var bonusLayer = this.tiledMap.ObjectLayers[GameConstants.LAYERBONUS];
+                foreach (var gem in bonusLayer.Objects)
+                {
+                    var colliderEntity = TiledMapUtils.CollisionEntityFromObject(gem.Name, gem);
+                    colliderEntity.Tag = GameConstants.TAGBONUS;
+                    colliderEntity.AddComponent(new RigidBody2D()
+                    {
+                        PhysicBodyType = RigidBodyType2D.Static
+                    });
+
+                    var collider = colliderEntity.FindComponent<Collider2D>(false);
+                    if (collider != null)
+                    {
+                        collider.IsSensor = true;
+                        collider.CollisionCategories = ColliderCategory2D.Cat5;
+                        collider.CollidesWith = ColliderCategory2D.All;
+                    }
+
+                    Sprite sprite = new Sprite(WaveContent.Assets.Gui.gem_png);
+                    SpriteRenderer spriteRenderer = new SpriteRenderer(DefaultLayers.Alpha, AddressMode.PointWrap);
+
+                    colliderEntity.AddComponent(sprite);
+                    colliderEntity.AddComponent(spriteRenderer);
+                    colliderEntity.AddComponent(new BonusComponent());
+                    
+                    this.EntityManager.Add(colliderEntity);
+                }
+            }
+        }
+
         public bool HasBreakables()
         {
             var breakables = this.EntityManager.FindAllByTag(GameConstants.TAGBREAKABLE).OfType<Entity>().Select(b => b.FindComponent<BreakableBehavior>());
             var count = breakables.Count(b => b.State != Enums.BreakableState.DEAD);
             return count > 0;
-
         }
 
         public void PrepareNextBoulder()

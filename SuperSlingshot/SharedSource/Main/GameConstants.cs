@@ -32,6 +32,7 @@
         public static string LAYERBACK = "BackLayer";
         public static string LAYERMIDDLE = "MiddleLayer";
         public static string LAYERFRONT = "FrontLayer";
+        public static string LAYERBONUS = "BonusLayer";
 
         // ANCHORS
         public static string ANCHORTOPLEFT = "TopLeftAnchor";
