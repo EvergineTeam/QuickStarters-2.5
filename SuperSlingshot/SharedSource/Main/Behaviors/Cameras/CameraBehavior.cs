@@ -54,6 +54,13 @@ namespace SuperSlingshot.Behaviors
         [IgnoreDataMember]
         public Vector2 BoundsMax { get; private set; }
 
+
+        [IgnoreDataMember]
+        public Vector2 PixelLimitMin { get { return this.pixelLimitMin; }  }
+
+        [IgnoreDataMember]
+        public Vector2 PixelLimitMax { get { return this.pixelLimitMax; } }
+
         public void SetLimits(Vector2 min, Vector2 max)
         {
             this.BoundsMin = min;

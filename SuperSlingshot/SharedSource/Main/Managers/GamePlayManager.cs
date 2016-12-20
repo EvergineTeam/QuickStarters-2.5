@@ -1,25 +1,22 @@
 ﻿using System;
 using SlingshotRampage.Services;
+using SuperSlingshot.Behaviors;
 using SuperSlingshot.Enums;
 using SuperSlingshot.Scenes;
 using WaveEngine.Common;
+using WaveEngine.Common.Math;
 using WaveEngine.Framework;
 using WaveEngine.Framework.Services;
+using WaveEngine.TiledMap;
 
 namespace SuperSlingshot.Managers
 {
     public class GamePlayManager : Service
     {
         private NavigationManager navigationManager;
-        private Scene menuScene;
+        private float limitLeft, limitBottom, limitRight;
 
         public bool IsPaused { get; private set; }
-
-        protected override void Initialize()
-        {
-            base.Initialize();
-            this.menuScene = new MenuScene();
-        }
 
         public override void OnActivated()
         {
@@ -28,10 +25,19 @@ namespace SuperSlingshot.Managers
             this.IsPaused = false;
         }
 
-
         public void InitGame()
         {
             this.IsPaused = false;
+
+            var gameScene = WaveServices.ScreenContextManager.CurrentContext.FindScene<GameScene>();
+            var tiledMap = gameScene.EntityManager.Find(GameConstants.ENTITYMAP).FindComponent<TiledMap>();
+            var anchorLayer = tiledMap.ObjectLayers[GameConstants.LAYERANCHOR];
+            var topLeftAnchor = anchorLayer.Objects.Find(o => o.Name == GameConstants.ANCHORTOPLEFT);
+            var bottomRightAnchor = anchorLayer.Objects.Find(o => o.Name == GameConstants.ANCHORBOTTOMRIGHT);
+
+            this.limitLeft = topLeftAnchor.X;
+            this.limitBottom = bottomRightAnchor.Y;
+            this.limitRight = bottomRightAnchor.X;
         }
 
         public void PauseGame()
@@ -63,7 +69,7 @@ namespace SuperSlingshot.Managers
             // Calculate score
             var score = gameScene.Score;
 
-            var maxPoint = (gameScene.NumBreakables * gameScene.BlockDestroyPoints) + 
+            var maxPoint = (gameScene.NumBreakables * gameScene.BlockDestroyPoints) +
                 (gameScene.GemPoints * gameScene.NumGems);
 
             score.StarScore = this.CalculateStarRate(score, maxPoint, gameScene.GemPoints);
@@ -128,5 +134,12 @@ namespace SuperSlingshot.Managers
                 }
             }
         }
+
+        public bool CheckBounds(Vector2 position)
+        {
+            return !(MathHelper.FloatInRange(position.X, limitLeft, limitRight)
+                    && MathHelper.FloatInRange(position.Y, limitBottom, float.MaxValue));
+        }
     }
 }
+

@@ -5,6 +5,7 @@ using SuperSlingshot.Managers;
 using WaveEngine.Common.Attributes;
 using WaveEngine.Components.Graphics2D;
 using WaveEngine.Framework;
+using WaveEngine.Framework.Graphics;
 using WaveEngine.Framework.Physics2D;
 using WaveEngine.Framework.Services;
 
@@ -19,6 +20,9 @@ namespace SuperSlingshot.Behaviors
 
         [RequiredComponent]
         private RigidBody2D rigidBody = null;
+
+        [RequiredComponent]
+        private Transform2D transform = null;
 
         [RequiredComponent]
         private Sprite bodySprite { get; set; }
@@ -91,6 +95,12 @@ namespace SuperSlingshot.Behaviors
                     // Dead condition: Slept or out of game area
                     if (this.rigidBody.Awake == false
                         || this.rigidBody.LinearVelocity.LengthSquared() <= this.MinimumVelocityToDeclareDead)
+                    {
+                        this.PlayerState = PlayerState.Dead;
+                    }
+
+                    var position = this.transform.Position;
+                    if(gamePlayManager.CheckBounds(position))
                     {
                         this.PlayerState = PlayerState.Dead;
                     }
