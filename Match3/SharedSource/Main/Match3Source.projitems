@@ -10,7 +10,27 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Game.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Scenes\Pause.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Scenes\Gameplay.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Scenes\Loading.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Scenes\LevelSelection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Scenes\Finish.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Scenes\ExitConfirmation.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Scenes\MainMenu.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Audio\AudioEnum.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Audio\AudioPlayer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\CustomServices.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Navigation\IAnimatedNavigationScene.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Navigation\INavigationService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Navigation\NavigateCommands.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Navigation\NavigationService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UI\ButtonComponent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UI\NinePatch\NinePatchBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UI\NinePatch\NinePatchRenderer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UI\NinePatch\NinePatchSprite.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UI\NinePatch\NinePatchSpriteAtlas.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UI\NinePatch\NinePatchTextureInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UI\ToggleButtonComponent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)WaveContent.cs" />
   </ItemGroup>
 </Project>

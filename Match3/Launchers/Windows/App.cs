@@ -1,3 +1,4 @@
+using Match3.Services.Navigation;
 using System;
 using System.IO;
 using System.Reflection;
@@ -18,6 +19,7 @@ namespace Match3
         TimeSpan time;
         Vector2 position;
         Color backgroundSplashColor;
+        KeyboardState lastKeyboardState;
 
         public App()
         {
@@ -73,7 +75,10 @@ namespace Match3
         {
             if (this.game != null && !this.game.HasExited)
             {
-                if (WaveServices.Input.KeyboardState.F10 == ButtonState.Pressed)
+                var keyboardState = WaveServices.Input.KeyboardState;
+
+                if (keyboardState.IsKeyReleased(Keys.F10) &&
+                    this.lastKeyboardState.IsKeyPressed(Keys.F10))
                 {
                     this.FullScreen = !this.FullScreen;
                 }
@@ -90,15 +95,23 @@ namespace Match3
                 }
                 else
                 {
-                    if (WaveServices.Input.KeyboardState.Escape == ButtonState.Pressed)
+                    if (keyboardState.IsKeyReleased(Keys.Escape) &&
+                        this.lastKeyboardState.IsKeyPressed(Keys.Escape))
                     {
-                        WaveServices.Platform.Exit();
+                        var navService = WaveServices.GetService<NavigationService>();
+
+                        if (navService.CanNavigate(NavigateCommands.Back))
+                        {
+                            navService.Navigate(NavigateCommands.Back);
+                        }
                     }
                     else
                     {
                         this.game.UpdateFrame(elapsedTime);
                     }
                 }
+
+                this.lastKeyboardState = keyboardState;
             }
         }
 
