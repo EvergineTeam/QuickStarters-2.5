@@ -255,6 +255,10 @@
           <d5p1:pressedTextureName>BgButtonPressed</d5p1:pressedTextureName>
           <d5p1:releasedTextureName>BgRedButton</d5p1:releasedTextureName>
         </d4p1:Component>
+        <d4p1:Component xmlns:d5p1="http://schemas.datacontract.org/2004/07/Match3.UI.Navigation" i:type="d5p1:NavigationComponent">
+          <d5p1:NavigationCommand>Play</d5p1:NavigationCommand>
+        </d4p1:Component>
+        <d4p1:Component xmlns:d5p1="http://schemas.datacontract.org/2004/07/Match3.UI.Navigation" i:type="d5p1:TouchNavigationComponent" />
       </d2p1:SerializeComponents>
     </d2p1:BaseEntityModel>
     <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
@@ -359,6 +363,7 @@
               <d7p1:releasedTextureName>SoundOn</d7p1:releasedTextureName>
               <d7p1:IsOn>false</d7p1:IsOn>
             </d6p1:Component>
+            <d6p1:Component xmlns:d7p1="http://schemas.datacontract.org/2004/07/Match3.UI" i:type="d7p1:MuteComponent" />
           </d2p1:SerializeComponents>
         </d2p1:BaseEntityModel>
         <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
@@ -460,6 +465,10 @@
               <d7p1:pressedTextureName>InfoPressed</d7p1:pressedTextureName>
               <d7p1:releasedTextureName>Info</d7p1:releasedTextureName>
             </d6p1:Component>
+            <d6p1:Component xmlns:d7p1="http://schemas.datacontract.org/2004/07/Match3.UI.Navigation" i:type="d7p1:NavigationComponent">
+              <d7p1:NavigationCommand>Back</d7p1:NavigationCommand>
+            </d6p1:Component>
+            <d6p1:Component xmlns:d7p1="http://schemas.datacontract.org/2004/07/Match3.UI.Navigation" i:type="d7p1:TouchNavigationComponent" />
           </d2p1:SerializeComponents>
         </d2p1:BaseEntityModel>
       </d2p1:SerializeChildrens>

@@ -25,6 +25,11 @@
     <Compile Include="$(MSBuildThisFileDirectory)Services\Navigation\NavigateCommands.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\Navigation\NavigationService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)UI\ButtonComponent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UI\MuteComponent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UI\Navigation\KeyboardNavigationComponent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UI\Navigation\NavigationComponent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UI\Navigation\TimerNavigationComponent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UI\Navigation\TouchNavigationComponent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)UI\NinePatch\NinePatchBase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)UI\NinePatch\NinePatchRenderer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)UI\NinePatch\NinePatchSprite.cs" />

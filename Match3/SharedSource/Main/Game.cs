@@ -1,4 +1,5 @@
 using Match3.Scenes;
+using Match3.Services;
 using WaveEngine.Common;
 using WaveEngine.Framework.Services;
 
@@ -10,8 +11,7 @@ namespace Match3
         {
             base.Initialize(application);
 
-            ScreenContext screenContext = new ScreenContext(new MainMenu());
-            WaveServices.ScreenContextManager.To(screenContext);
+            CustomServices.NavigationService.StartNavigation();
         }
     }
 }
