@@ -2,7 +2,6 @@
 using SlingshotRampage.Services;
 using SuperSlingshot.Behaviors;
 using SuperSlingshot.Enums;
-using SuperSlingshot.Managers;
 using WaveEngine.Common.Physics2D;
 using WaveEngine.Framework;
 using WaveEngine.Framework.Physics2D;

@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Runtime.Serialization;
-using System.Text;
+﻿using System.Runtime.Serialization;
 using SuperSlingshot.Enums;
-using WaveEngine.Common.Attributes;
 using WaveEngine.Framework;
 
 namespace SuperSlingshot.Components

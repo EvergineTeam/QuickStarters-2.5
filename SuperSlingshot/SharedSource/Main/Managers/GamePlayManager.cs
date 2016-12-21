@@ -1,6 +1,5 @@
 ﻿using System;
 using SlingshotRampage.Services;
-using SuperSlingshot.Behaviors;
 using SuperSlingshot.Enums;
 using SuperSlingshot.Scenes;
 using WaveEngine.Common;
@@ -38,6 +37,9 @@ namespace SuperSlingshot.Managers
             this.limitLeft = topLeftAnchor.X;
             this.limitBottom = bottomRightAnchor.Y;
             this.limitRight = bottomRightAnchor.X;
+
+            var virtualScreenManager = gameScene.VirtualScreenManager;
+            this.limitRight = virtualScreenManager.RightEdge;
         }
 
         public void PauseGame()

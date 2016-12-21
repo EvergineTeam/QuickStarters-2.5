@@ -1,5 +1,4 @@
-﻿using System;
-using SuperSlingshot.Scenes;
+﻿using SuperSlingshot.Scenes;
 using WaveEngine.Common;
 using WaveEngine.Framework.Services;
 
