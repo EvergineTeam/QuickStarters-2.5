@@ -21,8 +21,8 @@
             <d6p1:Z>354.493317</d6p1:Z>
           </d5p1:LocalPosition>
           <d5p1:LocalScale xmlns:d6p1="WaveEngine.Common.Math">
-            <d6p1:X>1</d6p1:X>
-            <d6p1:Y>1</d6p1:Y>
+            <d6p1:X>1.5</d6p1:X>
+            <d6p1:Y>1.5</d6p1:Y>
             <d6p1:Z>1</d6p1:Z>
           </d5p1:LocalScale>
           <d5p1:Effect>None</d5p1:Effect>
@@ -78,8 +78,8 @@
             <d6p1:Y>0.5</d6p1:Y>
           </d5p1:vanishingPoint>
           <d5p1:zoom xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
-            <d6p1:X>1</d6p1:X>
-            <d6p1:Y>1</d6p1:Y>
+            <d6p1:X>1.5</d6p1:X>
+            <d6p1:Y>1.5</d6p1:Y>
           </d5p1:zoom>
         </d4p1:Component>
         <d4p1:Component xmlns:d5p1="http://schemas.datacontract.org/2004/07/SuperSlingshot.Behaviors" i:type="d5p1:CurbCameraBehavior">
@@ -132,7 +132,7 @@
               <d7p1:LocalPosition xmlns:d8p1="WaveEngine.Common.Math">
                 <d8p1:X>0</d8p1:X>
                 <d8p1:Y>0</d8p1:Y>
-                <d8p1:Z>-100.100006</d8p1:Z>
+                <d8p1:Z>-33.33333</d8p1:Z>
               </d7p1:LocalPosition>
               <d7p1:LocalScale xmlns:d8p1="WaveEngine.Common.Math">
                 <d8p1:X>1</d8p1:X>
@@ -184,7 +184,7 @@
               <d7p1:LocalPosition xmlns:d8p1="WaveEngine.Common.Math">
                 <d8p1:X>0</d8p1:X>
                 <d8p1:Y>0</d8p1:Y>
-                <d8p1:Z>-0.05000305</d8p1:Z>
+                <d8p1:Z>0</d8p1:Z>
               </d7p1:LocalPosition>
               <d7p1:LocalScale xmlns:d8p1="WaveEngine.Common.Math">
                 <d8p1:X>1</d8p1:X>
@@ -311,7 +311,7 @@
         </d4p1:Component>
         <d4p1:Component xmlns:d5p1="http://schemas.datacontract.org/2004/07/WaveEngine.TiledMap" i:type="d5p1:TiledMap">
           <d5p1:maxLayerDrawOrder>100</d5p1:maxLayerDrawOrder>
-          <d5p1:minLayerDrawOrder>-100.1</d5p1:minLayerDrawOrder>
+          <d5p1:minLayerDrawOrder>-100</d5p1:minLayerDrawOrder>
           <d5p1:tmxPath>Content/Assets/Tiles/Level1.tmx</d5p1:tmxPath>
         </d4p1:Component>
       </d2p1:SerializeComponents>

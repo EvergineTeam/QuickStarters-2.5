@@ -25,6 +25,8 @@
         public static string ENTITYGEMSTEXT = "scoreEntity.placeholder2.text";
         public static string ENTITYRATINGSCORE = "ratingEntity";
 
+        public static string ENTITYTILEDMAP = "tiledMap";
+
         // LAYERS
         public static string LAYERPHYSIC = "PhysicLayer";
         public static string LAYERBOXPHYSICLAYER = "BoxPhysicLayer";

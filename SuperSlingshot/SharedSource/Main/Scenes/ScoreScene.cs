@@ -17,6 +17,8 @@ namespace SuperSlingshot.Scenes
 
         private LevelScore score;
 
+        private ButtonComponent nextLevelButtonComponent;
+
         public ScoreScene(string level)
         {
             this.level = level;
@@ -25,6 +27,8 @@ namespace SuperSlingshot.Scenes
         protected override void CreateScene()
         {
             this.Load(WaveContent.Scenes.ScoreScene);
+
+            this.navigationManager = WaveServices.GetService<NavigationManager>();
 
             var storageService = WaveServices.GetService<StorageService>();
             this.score = storageService.ReadScore(this.level);
@@ -38,9 +42,10 @@ namespace SuperSlingshot.Scenes
             home.FindComponent<ButtonComponent>().StateChanged += this.HomeStateChanged;
             menu.FindComponent<ButtonComponent>().StateChanged += this.MenuStateChanged;
             replay.FindComponent<ButtonComponent>().StateChanged += this.ReplayStateChanged;
-            next.FindComponent<ButtonComponent>().StateChanged += this.NextStateChanged;
 
-            this.navigationManager = WaveServices.GetService<NavigationManager>();
+            this.nextLevelButtonComponent = next.FindComponent<ButtonComponent>();
+            this.nextLevelButtonComponent.StateChanged += this.NextStateChanged;
+            this.nextLevelButtonComponent.IsBlocked = !this.navigationManager.HasNextLevel;
         }
 
         protected override void Start()
@@ -79,6 +84,7 @@ namespace SuperSlingshot.Scenes
         {
             if (currentState == ButtonState.Release && lastState == ButtonState.Pressed)
             {
+                this.navigationManager.ReplayLevel();
             }
         }
 
@@ -86,6 +92,7 @@ namespace SuperSlingshot.Scenes
         {
             if (currentState == ButtonState.Release && lastState == ButtonState.Pressed)
             {
+                this.navigationManager.NavigateToNextLevel();
             }
         }
     }

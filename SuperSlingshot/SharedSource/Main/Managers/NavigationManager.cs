@@ -1,4 +1,5 @@
-﻿using SuperSlingshot.Scenes;
+﻿using System.Collections.Generic;
+using SuperSlingshot.Scenes;
 using WaveEngine.Common;
 using WaveEngine.Framework.Services;
 
@@ -6,11 +7,63 @@ namespace SuperSlingshot.Managers
 {
     public class NavigationManager : Service
     {
-        public void NavigateToGameLevel(string level)
+        private string[] LevelOrder =
+{
+            WaveContent.Scenes.Levels.Level1,
+            WaveContent.Scenes.Levels.Level2,
+            WaveContent.Scenes.Levels.Level3
+        };
+
+        public string CurrentLevel
         {
+            get
+            {
+                return this.LevelOrder[this.CurrentLevelOrder];
+            }
+        }
+
+        public int CurrentLevelOrder
+        {
+            get;
+            private set;
+        }
+
+        public bool HasNextLevel
+        {
+            get
+            {
+                return this.CurrentLevelOrder < this.LevelOrder.Length - 1;
+            }
+        }
+
+        public bool HasPrevLevel
+        {
+            get
+            {
+                return this.CurrentLevelOrder > 0;
+            }
+        }
+
+        public void NavigateToNextLevel()
+        {
+            if (this.HasNextLevel)
+            {
+                this.NavigateToGameLevel(this.CurrentLevelOrder += 1);
+            }
+        }
+
+        public void ReplayLevel()
+        {
+            this.NavigateToGameLevel(this.CurrentLevelOrder);
+        }
+
+        public void NavigateToGameLevel(int level)
+        {
+            this.CurrentLevelOrder = level;
+
             ScreenContext screenContext = new ScreenContext(
                 "GameLevelContext",
-                new GameScene(level));
+                new GameScene(this.CurrentLevel));
             WaveServices.ScreenContextManager.Push(screenContext);
         }
 
@@ -25,9 +78,9 @@ namespace SuperSlingshot.Managers
 
             gameScene.Pause();
 
-            WaveServices.ScreenContextManager.CurrentContext.Behavior = 
+            WaveServices.ScreenContextManager.CurrentContext.Behavior =
                 ScreenContextBehaviors.DrawInBackground;
-            
+
             ScreenContext screenContext = new ScreenContext(
                 "ScoreContext",
                 new ScoreScene(level));

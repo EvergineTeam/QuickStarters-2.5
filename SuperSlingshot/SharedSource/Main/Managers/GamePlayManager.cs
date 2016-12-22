@@ -5,6 +5,7 @@ using SuperSlingshot.Scenes;
 using WaveEngine.Common;
 using WaveEngine.Common.Math;
 using WaveEngine.Framework;
+using WaveEngine.Framework.Diagnostic;
 using WaveEngine.Framework.Services;
 using WaveEngine.TiledMap;
 
@@ -37,9 +38,6 @@ namespace SuperSlingshot.Managers
             this.limitLeft = topLeftAnchor.X;
             this.limitBottom = bottomRightAnchor.Y;
             this.limitRight = bottomRightAnchor.X;
-
-            var virtualScreenManager = gameScene.VirtualScreenManager;
-            this.limitRight = virtualScreenManager.RightEdge;
         }
 
         public void PauseGame()
@@ -139,8 +137,16 @@ namespace SuperSlingshot.Managers
 
         public bool CheckBounds(Vector2 position)
         {
-            return !(MathHelper.FloatInRange(position.X, limitLeft, limitRight)
-                    && MathHelper.FloatInRange(position.Y, limitBottom, float.MaxValue));
+            var res = !(MathHelper.FloatInRange(position.X, limitLeft, limitRight)
+                    || MathHelper.FloatInRange(position.Y, limitBottom, float.MaxValue));
+
+            Labels.Add("Position", position);
+            Labels.Add("limitLeft", limitLeft);
+            Labels.Add("limitRight", limitRight);
+            Labels.Add("limitBottom", limitBottom);
+
+
+            return res;
         }
     }
 }

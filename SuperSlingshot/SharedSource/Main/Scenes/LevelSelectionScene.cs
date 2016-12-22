@@ -55,7 +55,7 @@ namespace SuperSlingshot.Scenes
         {
             if (currentState == ButtonState.Release && lastState == ButtonState.Pressed)
             {
-                this.navigationManager.NavigateToGameLevel(WaveContent.Scenes.Levels.Level1);
+                this.navigationManager.NavigateToGameLevel(0);
             }
         }
 
@@ -63,7 +63,7 @@ namespace SuperSlingshot.Scenes
         {
             if (currentState == ButtonState.Release && lastState == ButtonState.Pressed)
             {
-                this.navigationManager.NavigateToGameLevel(WaveContent.Scenes.Levels.Level2);
+                this.navigationManager.NavigateToGameLevel(1);
             }
         }
 
@@ -71,7 +71,7 @@ namespace SuperSlingshot.Scenes
         {
             if (currentState == ButtonState.Release && lastState == ButtonState.Pressed)
             {
-                this.navigationManager.NavigateToGameLevel(WaveContent.Scenes.Levels.Level3);
+                this.navigationManager.NavigateToGameLevel(2);
             }
         }
     }
