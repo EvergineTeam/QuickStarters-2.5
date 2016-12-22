@@ -59,7 +59,7 @@
                 <d8p1:texturePath>Content/Assets/Gui/star.png.wpk</d8p1:texturePath>
               </d7p1:Component>
               <d7p1:Component xmlns:d8p1="WaveEngine.Components.Graphics2D" i:type="d8p1:SpriteRenderer">
-                <d7p1:IsVisible>true</d7p1:IsVisible>
+                <d7p1:IsVisible>false</d7p1:IsVisible>
                 <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
                 <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
                 <d8p1:SamplerMode>LinearClamp</d8p1:SamplerMode>
@@ -189,7 +189,7 @@
                 <d8p1:texturePath>Content/Assets/Gui/star.png.wpk</d8p1:texturePath>
               </d7p1:Component>
               <d7p1:Component xmlns:d8p1="WaveEngine.Components.Graphics2D" i:type="d8p1:SpriteRenderer">
-                <d7p1:IsVisible>true</d7p1:IsVisible>
+                <d7p1:IsVisible>false</d7p1:IsVisible>
                 <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
                 <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
                 <d8p1:SamplerMode>LinearClamp</d8p1:SamplerMode>
@@ -319,14 +319,14 @@
                 <d8p1:texturePath>Content/Assets/Gui/star.png.wpk</d8p1:texturePath>
               </d7p1:Component>
               <d7p1:Component xmlns:d8p1="WaveEngine.Components.Graphics2D" i:type="d8p1:SpriteRenderer">
-                <d7p1:IsVisible>true</d7p1:IsVisible>
+                <d7p1:IsVisible>false</d7p1:IsVisible>
                 <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
                 <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
                 <d8p1:SamplerMode>LinearClamp</d8p1:SamplerMode>
               </d7p1:Component>
               <d7p1:Component xmlns:d8p1="http://schemas.datacontract.org/2004/07/SuperSlingshot.Components" i:type="d8p1:SwitchComponent">
                 <d8p1:CheckedTexturePath>Content/Assets/Gui/star.png.wpk</d8p1:CheckedTexturePath>
-                <d8p1:State>ON</d8p1:State>
+                <d8p1:State>INDETERNINATE</d8p1:State>
                 <d8p1:UnCheckedTexturePath i:nil="true" />
               </d7p1:Component>
             </d2p1:SerializeComponents>
@@ -435,7 +435,7 @@
             <d6p1:transformMode>Standard</d6p1:transformMode>
           </d5p1:Component>
           <d5p1:Component xmlns:d6p1="WaveEngine.Components.Toolkit" i:type="d6p1:TextComponent">
-            <d6p1:fontPath>Content/Assets/Fonts/sketches_48.ttf.wpk</d6p1:fontPath>
+            <d6p1:fontPath i:nil="true" />
             <d6p1:foreground xmlns:d7p1="WaveEngine.Common.Graphics">
               <d7p1:A>255</d7p1:A>
               <d7p1:B>0</d7p1:B>

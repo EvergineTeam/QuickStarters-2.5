@@ -45,7 +45,7 @@
             <d6p1:transformMode>Standard</d6p1:transformMode>
           </d5p1:Component>
           <d5p1:Component xmlns:d6p1="WaveEngine.Components.Toolkit" i:type="d6p1:TextComponent">
-            <d6p1:fontPath>Content/Assets/Fonts/sketches_48.ttf.wpk</d6p1:fontPath>
+            <d6p1:fontPath i:nil="true" />
             <d6p1:foreground xmlns:d7p1="WaveEngine.Common.Graphics">
               <d7p1:A>255</d7p1:A>
               <d7p1:B>0</d7p1:B>

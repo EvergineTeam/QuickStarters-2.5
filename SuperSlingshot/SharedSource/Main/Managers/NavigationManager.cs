@@ -11,7 +11,9 @@ namespace SuperSlingshot.Managers
 {
             WaveContent.Scenes.Levels.Level1,
             WaveContent.Scenes.Levels.Level2,
-            WaveContent.Scenes.Levels.Level3
+            WaveContent.Scenes.Levels.Level3,
+            WaveContent.Scenes.Levels.Level4
+
         };
 
         public string CurrentLevel

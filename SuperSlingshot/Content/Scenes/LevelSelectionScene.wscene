@@ -105,6 +105,215 @@
                       <d2p1:RemovedComponents xmlns:d12p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                       <d2p1:modifiedProperties xmlns:d12p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
                         <d12p1:KeyValueOfstringanyType>
+                          <d12p1:Key>WaveEngine.Components.Graphics2D.Sprite#0#materialPath</d12p1:Key>
+                          <d12p1:Value i:nil="true" />
+                        </d12p1:KeyValueOfstringanyType>
+                        <d12p1:KeyValueOfstringanyType>
+                          <d12p1:Key>SuperSlingshot.Components.SwitchComponent#0#UnCheckedTexturePath</d12p1:Key>
+                          <d12p1:Value i:nil="true" />
+                        </d12p1:KeyValueOfstringanyType>
+                      </d2p1:modifiedProperties>
+                    </d2p1:BaseEntityModel>
+                  </d2p1:SerializeChildrens>
+                  <d2p1:isStatic>false</d2p1:isStatic>
+                  <d2p1:isVisible>true</d2p1:isVisible>
+                  <d2p1:name>star1</d2p1:name>
+                  <d2p1:tag i:nil="true" />
+                  <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
+                  <d2p1:PrefabElem>menuScoreButton.star1</d2p1:PrefabElem>
+                  <d2p1:PrefabId>38d41eaf-ca44-4d07-bb2f-67190211348e</d2p1:PrefabId>
+                  <d2p1:PrefabPath>Content/Prefabs/menuScoreButton.wpref</d2p1:PrefabPath>
+                  <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+                  <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+                    <d10p1:KeyValueOfstringanyType>
+                      <d10p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#LocalPosition</d10p1:Key>
+                      <d10p1:Value xmlns:d12p1="WaveEngine.Common.Math" i:type="d12p1:Vector3">
+                        <d12p1:X>-60.0001068</d12p1:X>
+                        <d12p1:Y>99.99995</d12p1:Y>
+                        <d12p1:Z>-0.09999995</d12p1:Z>
+                      </d10p1:Value>
+                    </d10p1:KeyValueOfstringanyType>
+                    <d10p1:KeyValueOfstringanyType>
+                      <d10p1:Key>WaveEngine.Components.Graphics2D.Sprite#0#materialPath</d10p1:Key>
+                      <d10p1:Value i:nil="true" />
+                    </d10p1:KeyValueOfstringanyType>
+                  </d2p1:modifiedProperties>
+                </d2p1:BaseEntityModel>
+                <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
+                  <d2p1:SerializeChildrens>
+                    <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
+                      <d2p1:SerializeChildrens />
+                      <d2p1:isStatic>false</d2p1:isStatic>
+                      <d2p1:isVisible>true</d2p1:isVisible>
+                      <d2p1:name>content</d2p1:name>
+                      <d2p1:tag i:nil="true" />
+                      <d2p1:AdditionalComponents xmlns:d12p1="WaveEngine.Framework" />
+                      <d2p1:PrefabElem>menuScoreButton.star2.content</d2p1:PrefabElem>
+                      <d2p1:PrefabId>38d41eaf-ca44-4d07-bb2f-67190211348e</d2p1:PrefabId>
+                      <d2p1:PrefabPath>Content/Prefabs/menuScoreButton.wpref</d2p1:PrefabPath>
+                      <d2p1:RemovedComponents xmlns:d12p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+                      <d2p1:modifiedProperties xmlns:d12p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+                        <d12p1:KeyValueOfstringanyType>
+                          <d12p1:Key>WaveEngine.Components.Graphics2D.Sprite#0#materialPath</d12p1:Key>
+                          <d12p1:Value i:nil="true" />
+                        </d12p1:KeyValueOfstringanyType>
+                        <d12p1:KeyValueOfstringanyType>
+                          <d12p1:Key>SuperSlingshot.Components.SwitchComponent#0#UnCheckedTexturePath</d12p1:Key>
+                          <d12p1:Value i:nil="true" />
+                        </d12p1:KeyValueOfstringanyType>
+                      </d2p1:modifiedProperties>
+                    </d2p1:BaseEntityModel>
+                  </d2p1:SerializeChildrens>
+                  <d2p1:isStatic>false</d2p1:isStatic>
+                  <d2p1:isVisible>true</d2p1:isVisible>
+                  <d2p1:name>star2</d2p1:name>
+                  <d2p1:tag i:nil="true" />
+                  <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
+                  <d2p1:PrefabElem>menuScoreButton.star2</d2p1:PrefabElem>
+                  <d2p1:PrefabId>38d41eaf-ca44-4d07-bb2f-67190211348e</d2p1:PrefabId>
+                  <d2p1:PrefabPath>Content/Prefabs/menuScoreButton.wpref</d2p1:PrefabPath>
+                  <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+                  <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+                    <d10p1:KeyValueOfstringanyType>
+                      <d10p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#LocalPosition</d10p1:Key>
+                      <d10p1:Value xmlns:d12p1="WaveEngine.Common.Math" i:type="d12p1:Vector3">
+                        <d12p1:X>-6.416861E-05</d12p1:X>
+                        <d12p1:Y>99.9999542</d12p1:Y>
+                        <d12p1:Z>-0.0999999642</d12p1:Z>
+                      </d10p1:Value>
+                    </d10p1:KeyValueOfstringanyType>
+                    <d10p1:KeyValueOfstringanyType>
+                      <d10p1:Key>WaveEngine.Components.Graphics2D.Sprite#0#materialPath</d10p1:Key>
+                      <d10p1:Value i:nil="true" />
+                    </d10p1:KeyValueOfstringanyType>
+                  </d2p1:modifiedProperties>
+                </d2p1:BaseEntityModel>
+                <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
+                  <d2p1:SerializeChildrens>
+                    <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
+                      <d2p1:SerializeChildrens />
+                      <d2p1:isStatic>false</d2p1:isStatic>
+                      <d2p1:isVisible>true</d2p1:isVisible>
+                      <d2p1:name>content</d2p1:name>
+                      <d2p1:tag i:nil="true" />
+                      <d2p1:AdditionalComponents xmlns:d12p1="WaveEngine.Framework" />
+                      <d2p1:PrefabElem>menuScoreButton.star3.content</d2p1:PrefabElem>
+                      <d2p1:PrefabId>38d41eaf-ca44-4d07-bb2f-67190211348e</d2p1:PrefabId>
+                      <d2p1:PrefabPath>Content/Prefabs/menuScoreButton.wpref</d2p1:PrefabPath>
+                      <d2p1:RemovedComponents xmlns:d12p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+                      <d2p1:modifiedProperties xmlns:d12p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+                        <d12p1:KeyValueOfstringanyType>
+                          <d12p1:Key>WaveEngine.Components.Graphics2D.Sprite#0#materialPath</d12p1:Key>
+                          <d12p1:Value i:nil="true" />
+                        </d12p1:KeyValueOfstringanyType>
+                        <d12p1:KeyValueOfstringanyType>
+                          <d12p1:Key>SuperSlingshot.Components.SwitchComponent#0#UnCheckedTexturePath</d12p1:Key>
+                          <d12p1:Value i:nil="true" />
+                        </d12p1:KeyValueOfstringanyType>
+                      </d2p1:modifiedProperties>
+                    </d2p1:BaseEntityModel>
+                  </d2p1:SerializeChildrens>
+                  <d2p1:isStatic>false</d2p1:isStatic>
+                  <d2p1:isVisible>true</d2p1:isVisible>
+                  <d2p1:name>star3</d2p1:name>
+                  <d2p1:tag i:nil="true" />
+                  <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
+                  <d2p1:PrefabElem>menuScoreButton.star3</d2p1:PrefabElem>
+                  <d2p1:PrefabId>38d41eaf-ca44-4d07-bb2f-67190211348e</d2p1:PrefabId>
+                  <d2p1:PrefabPath>Content/Prefabs/menuScoreButton.wpref</d2p1:PrefabPath>
+                  <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+                  <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+                    <d10p1:KeyValueOfstringanyType>
+                      <d10p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#LocalPosition</d10p1:Key>
+                      <d10p1:Value xmlns:d12p1="WaveEngine.Common.Math" i:type="d12p1:Vector3">
+                        <d12p1:X>59.9999161</d12p1:X>
+                        <d12p1:Y>99.9999542</d12p1:Y>
+                        <d12p1:Z>-0.0999999642</d12p1:Z>
+                      </d10p1:Value>
+                    </d10p1:KeyValueOfstringanyType>
+                    <d10p1:KeyValueOfstringanyType>
+                      <d10p1:Key>WaveEngine.Components.Graphics2D.Sprite#0#materialPath</d10p1:Key>
+                      <d10p1:Value i:nil="true" />
+                    </d10p1:KeyValueOfstringanyType>
+                  </d2p1:modifiedProperties>
+                </d2p1:BaseEntityModel>
+                <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
+                  <d2p1:SerializeChildrens />
+                  <d2p1:isStatic>false</d2p1:isStatic>
+                  <d2p1:isVisible>true</d2p1:isVisible>
+                  <d2p1:name>buttonText</d2p1:name>
+                  <d2p1:tag i:nil="true" />
+                  <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
+                  <d2p1:PrefabElem>menuScoreButton.buttonText</d2p1:PrefabElem>
+                  <d2p1:PrefabId>38d41eaf-ca44-4d07-bb2f-67190211348e</d2p1:PrefabId>
+                  <d2p1:PrefabPath>Content/Prefabs/menuScoreButton.wpref</d2p1:PrefabPath>
+                  <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+                  <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+                    <d10p1:KeyValueOfstringanyType>
+                      <d10p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#Rectangle</d10p1:Key>
+                      <d10p1:Value xmlns:d12p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math" i:type="d12p1:RectangleF">
+                        <d12p1:Height>21</d12p1:Height>
+                        <d12p1:Width>16</d12p1:Width>
+                        <d12p1:X>-8</d12p1:X>
+                        <d12p1:Y>10.5</d12p1:Y>
+                      </d10p1:Value>
+                    </d10p1:KeyValueOfstringanyType>
+                    <d10p1:KeyValueOfstringanyType>
+                      <d10p1:Key>WaveEngine.Components.Toolkit.TextComponent#0#text</d10p1:Key>
+                      <d10p1:Value xmlns:d12p1="http://www.w3.org/2001/XMLSchema" i:type="d12p1:string">4</d10p1:Value>
+                    </d10p1:KeyValueOfstringanyType>
+                    <d10p1:KeyValueOfstringanyType>
+                      <d10p1:Key>WaveEngine.Components.Toolkit.TextComponent#0#fontPath</d10p1:Key>
+                      <d10p1:Value i:nil="true" />
+                    </d10p1:KeyValueOfstringanyType>
+                  </d2p1:modifiedProperties>
+                </d2p1:BaseEntityModel>
+              </d2p1:SerializeChildrens>
+              <d2p1:isStatic>false</d2p1:isStatic>
+              <d2p1:isVisible>true</d2p1:isVisible>
+              <d2p1:name>level4</d2p1:name>
+              <d2p1:tag i:nil="true" />
+              <d2p1:AdditionalComponents xmlns:d8p1="WaveEngine.Framework" />
+              <d2p1:PrefabElem>menuScoreButton</d2p1:PrefabElem>
+              <d2p1:PrefabId>38d41eaf-ca44-4d07-bb2f-67190211348e</d2p1:PrefabId>
+              <d2p1:PrefabPath>Content/Prefabs/menuScoreButton.wpref</d2p1:PrefabPath>
+              <d2p1:RemovedComponents xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+              <d2p1:modifiedProperties xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+                <d8p1:KeyValueOfstringanyType>
+                  <d8p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#LocalPosition</d8p1:Key>
+                  <d8p1:Value xmlns:d10p1="WaveEngine.Common.Math" i:type="d10p1:Vector3">
+                    <d10p1:X>100</d10p1:X>
+                    <d10p1:Y>0</d10p1:Y>
+                    <d10p1:Z>0</d10p1:Z>
+                  </d8p1:Value>
+                </d8p1:KeyValueOfstringanyType>
+                <d8p1:KeyValueOfstringanyType>
+                  <d8p1:Key>WaveEngine.Components.Graphics2D.Sprite#0#materialPath</d8p1:Key>
+                  <d8p1:Value i:nil="true" />
+                </d8p1:KeyValueOfstringanyType>
+                <d8p1:KeyValueOfstringanyType>
+                  <d8p1:Key>SuperSlingshot.Components.ButtonComponent#0#Text</d8p1:Key>
+                  <d8p1:Value xmlns:d10p1="http://www.w3.org/2001/XMLSchema" i:type="d10p1:string">4</d8p1:Value>
+                </d8p1:KeyValueOfstringanyType>
+              </d2p1:modifiedProperties>
+            </d2p1:BaseEntityModel>
+            <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
+              <d2p1:SerializeChildrens>
+                <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
+                  <d2p1:SerializeChildrens>
+                    <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
+                      <d2p1:SerializeChildrens />
+                      <d2p1:isStatic>false</d2p1:isStatic>
+                      <d2p1:isVisible>true</d2p1:isVisible>
+                      <d2p1:name>content</d2p1:name>
+                      <d2p1:tag i:nil="true" />
+                      <d2p1:AdditionalComponents xmlns:d12p1="WaveEngine.Framework" />
+                      <d2p1:PrefabElem>menuScoreButton.star1.content</d2p1:PrefabElem>
+                      <d2p1:PrefabId>38d41eaf-ca44-4d07-bb2f-67190211348e</d2p1:PrefabId>
+                      <d2p1:PrefabPath>Content/Prefabs/menuScoreButton.wpref</d2p1:PrefabPath>
+                      <d2p1:RemovedComponents xmlns:d12p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+                      <d2p1:modifiedProperties xmlns:d12p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+                        <d12p1:KeyValueOfstringanyType>
                           <d12p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#LocalPosition</d12p1:Key>
                           <d12p1:Value xmlns:d14p1="WaveEngine.Common.Math" i:type="d14p1:Vector3">
                             <d14p1:X>2.12533341E-05</d14p1:X>
@@ -115,10 +324,6 @@
                         <d12p1:KeyValueOfstringanyType>
                           <d12p1:Key>WaveEngine.Components.Graphics2D.Sprite#0#materialPath</d12p1:Key>
                           <d12p1:Value i:nil="true" />
-                        </d12p1:KeyValueOfstringanyType>
-                        <d12p1:KeyValueOfstringanyType>
-                          <d12p1:Key>WaveEngine.Components.Graphics2D.SpriteRenderer#0#IsVisible</d12p1:Key>
-                          <d12p1:Value xmlns:d14p1="http://www.w3.org/2001/XMLSchema" i:type="d14p1:boolean">false</d12p1:Value>
                         </d12p1:KeyValueOfstringanyType>
                         <d12p1:KeyValueOfstringanyType>
                           <d12p1:Key>SuperSlingshot.Components.SwitchComponent#0#UnCheckedTexturePath</d12p1:Key>
@@ -162,10 +367,6 @@
                           <d12p1:Value i:nil="true" />
                         </d12p1:KeyValueOfstringanyType>
                         <d12p1:KeyValueOfstringanyType>
-                          <d12p1:Key>WaveEngine.Components.Graphics2D.SpriteRenderer#0#IsVisible</d12p1:Key>
-                          <d12p1:Value xmlns:d14p1="http://www.w3.org/2001/XMLSchema" i:type="d14p1:boolean">false</d12p1:Value>
-                        </d12p1:KeyValueOfstringanyType>
-                        <d12p1:KeyValueOfstringanyType>
                           <d12p1:Key>SuperSlingshot.Components.SwitchComponent#0#UnCheckedTexturePath</d12p1:Key>
                           <d12p1:Value i:nil="true" />
                         </d12p1:KeyValueOfstringanyType>
@@ -207,14 +408,6 @@
                           <d12p1:Value i:nil="true" />
                         </d12p1:KeyValueOfstringanyType>
                         <d12p1:KeyValueOfstringanyType>
-                          <d12p1:Key>WaveEngine.Components.Graphics2D.SpriteRenderer#0#IsVisible</d12p1:Key>
-                          <d12p1:Value xmlns:d14p1="http://www.w3.org/2001/XMLSchema" i:type="d14p1:boolean">false</d12p1:Value>
-                        </d12p1:KeyValueOfstringanyType>
-                        <d12p1:KeyValueOfstringanyType>
-                          <d12p1:Key>SuperSlingshot.Components.SwitchComponent#0#State</d12p1:Key>
-                          <d12p1:Value xmlns:d14p1="http://schemas.datacontract.org/2004/07/SuperSlingshot.Enums" i:type="d14p1:SwitchEnum">INDETERNINATE</d12p1:Value>
-                        </d12p1:KeyValueOfstringanyType>
-                        <d12p1:KeyValueOfstringanyType>
                           <d12p1:Key>SuperSlingshot.Components.SwitchComponent#0#UnCheckedTexturePath</d12p1:Key>
                           <d12p1:Value i:nil="true" />
                         </d12p1:KeyValueOfstringanyType>
@@ -250,8 +443,21 @@
                   <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                   <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
                     <d10p1:KeyValueOfstringanyType>
+                      <d10p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#Rectangle</d10p1:Key>
+                      <d10p1:Value xmlns:d12p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math" i:type="d12p1:RectangleF">
+                        <d12p1:Height>21</d12p1:Height>
+                        <d12p1:Width>16</d12p1:Width>
+                        <d12p1:X>-8</d12p1:X>
+                        <d12p1:Y>10.5</d12p1:Y>
+                      </d10p1:Value>
+                    </d10p1:KeyValueOfstringanyType>
+                    <d10p1:KeyValueOfstringanyType>
                       <d10p1:Key>WaveEngine.Components.Toolkit.TextComponent#0#text</d10p1:Key>
                       <d10p1:Value xmlns:d12p1="http://www.w3.org/2001/XMLSchema" i:type="d12p1:string">1</d10p1:Value>
+                    </d10p1:KeyValueOfstringanyType>
+                    <d10p1:KeyValueOfstringanyType>
+                      <d10p1:Key>WaveEngine.Components.Toolkit.TextComponent#0#fontPath</d10p1:Key>
+                      <d10p1:Value i:nil="true" />
                     </d10p1:KeyValueOfstringanyType>
                   </d2p1:modifiedProperties>
                 </d2p1:BaseEntityModel>
@@ -305,10 +511,6 @@
                           <d12p1:Value i:nil="true" />
                         </d12p1:KeyValueOfstringanyType>
                         <d12p1:KeyValueOfstringanyType>
-                          <d12p1:Key>WaveEngine.Components.Graphics2D.SpriteRenderer#0#IsVisible</d12p1:Key>
-                          <d12p1:Value xmlns:d14p1="http://www.w3.org/2001/XMLSchema" i:type="d14p1:boolean">false</d12p1:Value>
-                        </d12p1:KeyValueOfstringanyType>
-                        <d12p1:KeyValueOfstringanyType>
                           <d12p1:Key>SuperSlingshot.Components.SwitchComponent#0#UnCheckedTexturePath</d12p1:Key>
                           <d12p1:Value i:nil="true" />
                         </d12p1:KeyValueOfstringanyType>
@@ -348,10 +550,6 @@
                         <d12p1:KeyValueOfstringanyType>
                           <d12p1:Key>WaveEngine.Components.Graphics2D.Sprite#0#materialPath</d12p1:Key>
                           <d12p1:Value i:nil="true" />
-                        </d12p1:KeyValueOfstringanyType>
-                        <d12p1:KeyValueOfstringanyType>
-                          <d12p1:Key>WaveEngine.Components.Graphics2D.SpriteRenderer#0#IsVisible</d12p1:Key>
-                          <d12p1:Value xmlns:d14p1="http://www.w3.org/2001/XMLSchema" i:type="d14p1:boolean">false</d12p1:Value>
                         </d12p1:KeyValueOfstringanyType>
                         <d12p1:KeyValueOfstringanyType>
                           <d12p1:Key>SuperSlingshot.Components.SwitchComponent#0#UnCheckedTexturePath</d12p1:Key>
@@ -395,14 +593,6 @@
                           <d12p1:Value i:nil="true" />
                         </d12p1:KeyValueOfstringanyType>
                         <d12p1:KeyValueOfstringanyType>
-                          <d12p1:Key>WaveEngine.Components.Graphics2D.SpriteRenderer#0#IsVisible</d12p1:Key>
-                          <d12p1:Value xmlns:d14p1="http://www.w3.org/2001/XMLSchema" i:type="d14p1:boolean">false</d12p1:Value>
-                        </d12p1:KeyValueOfstringanyType>
-                        <d12p1:KeyValueOfstringanyType>
-                          <d12p1:Key>SuperSlingshot.Components.SwitchComponent#0#State</d12p1:Key>
-                          <d12p1:Value xmlns:d14p1="http://schemas.datacontract.org/2004/07/SuperSlingshot.Enums" i:type="d14p1:SwitchEnum">INDETERNINATE</d12p1:Value>
-                        </d12p1:KeyValueOfstringanyType>
-                        <d12p1:KeyValueOfstringanyType>
                           <d12p1:Key>SuperSlingshot.Components.SwitchComponent#0#UnCheckedTexturePath</d12p1:Key>
                           <d12p1:Value i:nil="true" />
                         </d12p1:KeyValueOfstringanyType>
@@ -438,8 +628,21 @@
                   <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                   <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
                     <d10p1:KeyValueOfstringanyType>
+                      <d10p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#Rectangle</d10p1:Key>
+                      <d10p1:Value xmlns:d12p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math" i:type="d12p1:RectangleF">
+                        <d12p1:Height>21</d12p1:Height>
+                        <d12p1:Width>16</d12p1:Width>
+                        <d12p1:X>-8</d12p1:X>
+                        <d12p1:Y>10.5</d12p1:Y>
+                      </d10p1:Value>
+                    </d10p1:KeyValueOfstringanyType>
+                    <d10p1:KeyValueOfstringanyType>
                       <d10p1:Key>WaveEngine.Components.Toolkit.TextComponent#0#text</d10p1:Key>
                       <d10p1:Value xmlns:d12p1="http://www.w3.org/2001/XMLSchema" i:type="d12p1:string">2</d10p1:Value>
+                    </d10p1:KeyValueOfstringanyType>
+                    <d10p1:KeyValueOfstringanyType>
+                      <d10p1:Key>WaveEngine.Components.Toolkit.TextComponent#0#fontPath</d10p1:Key>
+                      <d10p1:Value i:nil="true" />
                     </d10p1:KeyValueOfstringanyType>
                   </d2p1:modifiedProperties>
                 </d2p1:BaseEntityModel>
@@ -493,10 +696,6 @@
                           <d12p1:Value i:nil="true" />
                         </d12p1:KeyValueOfstringanyType>
                         <d12p1:KeyValueOfstringanyType>
-                          <d12p1:Key>WaveEngine.Components.Graphics2D.SpriteRenderer#0#IsVisible</d12p1:Key>
-                          <d12p1:Value xmlns:d14p1="http://www.w3.org/2001/XMLSchema" i:type="d14p1:boolean">false</d12p1:Value>
-                        </d12p1:KeyValueOfstringanyType>
-                        <d12p1:KeyValueOfstringanyType>
                           <d12p1:Key>SuperSlingshot.Components.SwitchComponent#0#UnCheckedTexturePath</d12p1:Key>
                           <d12p1:Value i:nil="true" />
                         </d12p1:KeyValueOfstringanyType>
@@ -536,10 +735,6 @@
                         <d12p1:KeyValueOfstringanyType>
                           <d12p1:Key>WaveEngine.Components.Graphics2D.Sprite#0#materialPath</d12p1:Key>
                           <d12p1:Value i:nil="true" />
-                        </d12p1:KeyValueOfstringanyType>
-                        <d12p1:KeyValueOfstringanyType>
-                          <d12p1:Key>WaveEngine.Components.Graphics2D.SpriteRenderer#0#IsVisible</d12p1:Key>
-                          <d12p1:Value xmlns:d14p1="http://www.w3.org/2001/XMLSchema" i:type="d14p1:boolean">false</d12p1:Value>
                         </d12p1:KeyValueOfstringanyType>
                         <d12p1:KeyValueOfstringanyType>
                           <d12p1:Key>SuperSlingshot.Components.SwitchComponent#0#UnCheckedTexturePath</d12p1:Key>
@@ -583,14 +778,6 @@
                           <d12p1:Value i:nil="true" />
                         </d12p1:KeyValueOfstringanyType>
                         <d12p1:KeyValueOfstringanyType>
-                          <d12p1:Key>WaveEngine.Components.Graphics2D.SpriteRenderer#0#IsVisible</d12p1:Key>
-                          <d12p1:Value xmlns:d14p1="http://www.w3.org/2001/XMLSchema" i:type="d14p1:boolean">false</d12p1:Value>
-                        </d12p1:KeyValueOfstringanyType>
-                        <d12p1:KeyValueOfstringanyType>
-                          <d12p1:Key>SuperSlingshot.Components.SwitchComponent#0#State</d12p1:Key>
-                          <d12p1:Value xmlns:d14p1="http://schemas.datacontract.org/2004/07/SuperSlingshot.Enums" i:type="d14p1:SwitchEnum">INDETERNINATE</d12p1:Value>
-                        </d12p1:KeyValueOfstringanyType>
-                        <d12p1:KeyValueOfstringanyType>
                           <d12p1:Key>SuperSlingshot.Components.SwitchComponent#0#UnCheckedTexturePath</d12p1:Key>
                           <d12p1:Value i:nil="true" />
                         </d12p1:KeyValueOfstringanyType>
@@ -626,8 +813,21 @@
                   <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                   <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
                     <d10p1:KeyValueOfstringanyType>
+                      <d10p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#Rectangle</d10p1:Key>
+                      <d10p1:Value xmlns:d12p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math" i:type="d12p1:RectangleF">
+                        <d12p1:Height>21</d12p1:Height>
+                        <d12p1:Width>16</d12p1:Width>
+                        <d12p1:X>-8</d12p1:X>
+                        <d12p1:Y>10.5</d12p1:Y>
+                      </d10p1:Value>
+                    </d10p1:KeyValueOfstringanyType>
+                    <d10p1:KeyValueOfstringanyType>
                       <d10p1:Key>WaveEngine.Components.Toolkit.TextComponent#0#text</d10p1:Key>
                       <d10p1:Value xmlns:d12p1="http://www.w3.org/2001/XMLSchema" i:type="d12p1:string">3</d10p1:Value>
+                    </d10p1:KeyValueOfstringanyType>
+                    <d10p1:KeyValueOfstringanyType>
+                      <d10p1:Key>WaveEngine.Components.Toolkit.TextComponent#0#fontPath</d10p1:Key>
+                      <d10p1:Value i:nil="true" />
                     </d10p1:KeyValueOfstringanyType>
                   </d2p1:modifiedProperties>
                 </d2p1:BaseEntityModel>
@@ -676,6 +876,10 @@
                   <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
                     <d10p1:KeyValueOfstringanyType>
                       <d10p1:Key>WaveEngine.Components.Toolkit.TextComponent#0#text</d10p1:Key>
+                      <d10p1:Value i:nil="true" />
+                    </d10p1:KeyValueOfstringanyType>
+                    <d10p1:KeyValueOfstringanyType>
+                      <d10p1:Key>WaveEngine.Components.Toolkit.TextComponent#0#fontPath</d10p1:Key>
                       <d10p1:Value i:nil="true" />
                     </d10p1:KeyValueOfstringanyType>
                   </d2p1:modifiedProperties>
@@ -749,80 +953,6 @@
                   <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                   <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
                     <d10p1:KeyValueOfstringanyType>
-                      <d10p1:Key>WaveEngine.Components.Toolkit.TextComponent#0#text</d10p1:Key>
-                      <d10p1:Value xmlns:d12p1="http://www.w3.org/2001/XMLSchema" i:type="d12p1:string"></d10p1:Value>
-                    </d10p1:KeyValueOfstringanyType>
-                  </d2p1:modifiedProperties>
-                </d2p1:BaseEntityModel>
-              </d2p1:SerializeChildrens>
-              <d2p1:isStatic>false</d2p1:isStatic>
-              <d2p1:isVisible>true</d2p1:isVisible>
-              <d2p1:name>level4</d2p1:name>
-              <d2p1:tag i:nil="true" />
-              <d2p1:AdditionalComponents xmlns:d8p1="WaveEngine.Framework" />
-              <d2p1:PrefabElem>resumeButton</d2p1:PrefabElem>
-              <d2p1:PrefabId>1866567a-73c1-4bce-8084-45e250576be7</d2p1:PrefabId>
-              <d2p1:PrefabPath>Content/Prefabs/menuSmallButton.wpref</d2p1:PrefabPath>
-              <d2p1:RemovedComponents xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
-              <d2p1:modifiedProperties xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
-                <d8p1:KeyValueOfstringanyType>
-                  <d8p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#Rectangle</d8p1:Key>
-                  <d8p1:Value xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math" i:type="d10p1:RectangleF">
-                    <d10p1:Height>178</d10p1:Height>
-                    <d10p1:Width>176</d10p1:Width>
-                    <d10p1:X>0</d10p1:X>
-                    <d10p1:Y>0</d10p1:Y>
-                  </d8p1:Value>
-                </d8p1:KeyValueOfstringanyType>
-                <d8p1:KeyValueOfstringanyType>
-                  <d8p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#LocalPosition</d8p1:Key>
-                  <d8p1:Value xmlns:d10p1="WaveEngine.Common.Math" i:type="d10p1:Vector3">
-                    <d10p1:X>100</d10p1:X>
-                    <d10p1:Y>0</d10p1:Y>
-                    <d10p1:Z>0</d10p1:Z>
-                  </d8p1:Value>
-                </d8p1:KeyValueOfstringanyType>
-                <d8p1:KeyValueOfstringanyType>
-                  <d8p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#LocalScale</d8p1:Key>
-                  <d8p1:Value xmlns:d10p1="WaveEngine.Common.Math" i:type="d10p1:Vector3">
-                    <d10p1:X>0.7</d10p1:X>
-                    <d10p1:Y>0.7</d10p1:Y>
-                    <d10p1:Z>1</d10p1:Z>
-                  </d8p1:Value>
-                </d8p1:KeyValueOfstringanyType>
-                <d8p1:KeyValueOfstringanyType>
-                  <d8p1:Key>WaveEngine.Components.Graphics2D.Sprite#0#texturePath</d8p1:Key>
-                  <d8p1:Value xmlns:d10p1="http://www.w3.org/2001/XMLSchema" i:type="d10p1:string">Content/Assets/Gui/small_button_blocked.png.wpk</d8p1:Value>
-                </d8p1:KeyValueOfstringanyType>
-                <d8p1:KeyValueOfstringanyType>
-                  <d8p1:Key>WaveEngine.Components.Graphics2D.Sprite#0#materialPath</d8p1:Key>
-                  <d8p1:Value i:nil="true" />
-                </d8p1:KeyValueOfstringanyType>
-                <d8p1:KeyValueOfstringanyType>
-                  <d8p1:Key>SuperSlingshot.Components.ButtonComponent#0#Text</d8p1:Key>
-                  <d8p1:Value xmlns:d10p1="http://www.w3.org/2001/XMLSchema" i:type="d10p1:string"></d8p1:Value>
-                </d8p1:KeyValueOfstringanyType>
-                <d8p1:KeyValueOfstringanyType>
-                  <d8p1:Key>SuperSlingshot.Components.ButtonComponent#0#IsBlocked</d8p1:Key>
-                  <d8p1:Value xmlns:d10p1="http://www.w3.org/2001/XMLSchema" i:type="d10p1:boolean">true</d8p1:Value>
-                </d8p1:KeyValueOfstringanyType>
-              </d2p1:modifiedProperties>
-            </d2p1:BaseEntityModel>
-            <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
-              <d2p1:SerializeChildrens>
-                <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
-                  <d2p1:SerializeChildrens />
-                  <d2p1:isStatic>false</d2p1:isStatic>
-                  <d2p1:isVisible>true</d2p1:isVisible>
-                  <d2p1:name>buttonText</d2p1:name>
-                  <d2p1:tag i:nil="true" />
-                  <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
-                  <d2p1:PrefabElem>resumeButton.buttonText</d2p1:PrefabElem>
-                  <d2p1:PrefabId>1866567a-73c1-4bce-8084-45e250576be7</d2p1:PrefabId>
-                  <d2p1:PrefabPath>Content/Prefabs/menuSmallButton.wpref</d2p1:PrefabPath>
-                  <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
-                  <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
-                    <d10p1:KeyValueOfstringanyType>
                       <d10p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#LocalPosition</d10p1:Key>
                       <d10p1:Value xmlns:d12p1="WaveEngine.Common.Math" i:type="d12p1:Vector3">
                         <d12p1:X>7.90002441</d12p1:X>
@@ -841,6 +971,10 @@
                     <d10p1:KeyValueOfstringanyType>
                       <d10p1:Key>WaveEngine.Components.Toolkit.TextComponent#0#text</d10p1:Key>
                       <d10p1:Value xmlns:d12p1="http://www.w3.org/2001/XMLSchema" i:type="d12p1:string"></d10p1:Value>
+                    </d10p1:KeyValueOfstringanyType>
+                    <d10p1:KeyValueOfstringanyType>
+                      <d10p1:Key>WaveEngine.Components.Toolkit.TextComponent#0#fontPath</d10p1:Key>
+                      <d10p1:Value i:nil="true" />
                     </d10p1:KeyValueOfstringanyType>
                   </d2p1:modifiedProperties>
                 </d2p1:BaseEntityModel>
@@ -1033,10 +1167,10 @@
                   <d9p1:Effect>None</d9p1:Effect>
                   <d9p1:Opacity>1</d9p1:Opacity>
                   <d9p1:Rectangle xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
-                    <d10p1:Height>55</d10p1:Height>
-                    <d10p1:Width>335</d10p1:Width>
-                    <d10p1:X>-167.5</d10p1:X>
-                    <d10p1:Y>27.5</d10p1:Y>
+                    <d10p1:Height>21</d10p1:Height>
+                    <d10p1:Width>147</d10p1:Width>
+                    <d10p1:X>-73.5</d10p1:X>
+                    <d10p1:Y>10.5</d10p1:Y>
                   </d9p1:Rectangle>
                   <d9p1:origin xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:X>0.5</d10p1:X>
@@ -1049,7 +1183,7 @@
                   <d9p1:transformMode>Standard</d9p1:transformMode>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="WaveEngine.Components.Toolkit" i:type="d9p1:TextComponent">
-                  <d9p1:fontPath>Content/Assets/Fonts/sketches_36.ttf.wpk</d9p1:fontPath>
+                  <d9p1:fontPath i:nil="true" />
                   <d9p1:foreground xmlns:d10p1="WaveEngine.Common.Graphics">
                     <d10p1:A>255</d10p1:A>
                     <d10p1:B>255</d10p1:B>

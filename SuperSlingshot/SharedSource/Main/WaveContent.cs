@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// File generated on 22/12/2016 16:56:03
+// File generated on 22/12/2016 18:15:09
 namespace SuperSlingshot
 {
     using System;
@@ -509,6 +509,12 @@ namespace SuperSlingshot
                 /// <summary> Path to Content/Assets/Tiles/grass.png </summary>
                 public const string grass_png = "Content/Assets/Tiles/grass.png";
                 
+                /// <summary> Path to Content/Assets/Tiles/halloween background.png </summary>
+                public const string halloween_background_png = "Content/Assets/Tiles/halloween background.png";
+                
+                /// <summary> Path to Content/Assets/Tiles/halloween.png </summary>
+                public const string halloween_png = "Content/Assets/Tiles/halloween.png";
+                
                 /// <summary> Path to Content/Assets/Tiles/initial background.png </summary>
                 public const string initial_background_png = "Content/Assets/Tiles/initial background.png";
                 
@@ -526,6 +532,15 @@ namespace SuperSlingshot
                 
                 /// <summary> Path to Content/Assets/Tiles/Level3.tmx </summary>
                 public const string Level3_tmx = "Content/Assets/Tiles/Level3.tmx";
+                
+                /// <summary> Path to Content/Assets/Tiles/Level4.tmx </summary>
+                public const string Level4_tmx = "Content/Assets/Tiles/Level4.tmx";
+                
+                /// <summary> Path to Content/Assets/Tiles/SlingShotA.png </summary>
+                public const string SlingShotA_png = "Content/Assets/Tiles/SlingShotA.png";
+                
+                /// <summary> Path to Content/Assets/Tiles/SlingShotB.png </summary>
+                public const string SlingShotB_png = "Content/Assets/Tiles/SlingShotB.png";
                 
                 /// <summary> Path to Content/Assets/Tiles/snow back adorners.png </summary>
                 public const string snow_back_adorners_png = "Content/Assets/Tiles/snow back adorners.png";
@@ -656,6 +671,9 @@ namespace SuperSlingshot
                 
                 /// <summary> Path to Content/Scenes/Levels/Level3.wscene </summary>
                 public const string Level3 = "Content/Scenes/Levels/Level3.wscene";
+                
+                /// <summary> Path to Content/Scenes/Levels/Level4.wscene </summary>
+                public const string Level4 = "Content/Scenes/Levels/Level4.wscene";
                 
                 /// <summary> Path to Content/Scenes/Levels/TestLevel.wscene </summary>
                 public const string TestLevel = "Content/Scenes/Levels/TestLevel.wscene";

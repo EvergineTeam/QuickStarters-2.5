@@ -16,6 +16,7 @@
         public static string ENTITYLEVEL1BUTTON = "menuEntity.buttons.level1";
         public static string ENTITYLEVEL2BUTTON = "menuEntity.buttons.level2";
         public static string ENTITYLEVEL3BUTTON = "menuEntity.buttons.level3";
+        public static string ENTITYLEVEL4BUTTON = "menuEntity.buttons.level4";
 
         public static string ENTITYHOMEBUTTON = "buttonsEntity.bPlaceholder.homeButton";
         public static string ENTITYMENUBUTTON = "buttonsEntity.bPlaceholder.menuButton";
