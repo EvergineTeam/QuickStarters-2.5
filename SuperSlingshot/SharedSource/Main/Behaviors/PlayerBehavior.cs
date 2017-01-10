@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Runtime.Serialization;
+using SuperSlingshot.Drawables;
 using SuperSlingshot.Enums;
 using SuperSlingshot.Managers;
 using WaveEngine.Common.Attributes;
+using WaveEngine.Common.Math;
 using WaveEngine.Components.Graphics2D;
 using WaveEngine.Framework;
 using WaveEngine.Framework.Graphics;
@@ -23,6 +25,9 @@ namespace SuperSlingshot.Behaviors
 
         [RequiredComponent]
         private Transform2D transform = null;
+
+        [RequiredComponent]
+        protected Trajectory2DDrawable trajectoryDrawable;
 
         [RequiredComponent]
         private Sprite bodySprite { get; set; }
@@ -150,6 +155,18 @@ namespace SuperSlingshot.Behaviors
                 case PlayerState.Dead:
                 default:
                     break;
+            }
+        }
+
+        public void PreviewTrajectory(Vector2 shotImpulse)
+        {
+            if (shotImpulse == Vector2.Zero)
+            {
+                this.trajectoryDrawable.IsVisible = false;
+            }
+            else
+            {
+                this.trajectoryDrawable.IsVisible = true;
             }
         }
     }
