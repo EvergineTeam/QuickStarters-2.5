@@ -466,7 +466,7 @@
               <d7p1:releasedTextureName>Info</d7p1:releasedTextureName>
             </d6p1:Component>
             <d6p1:Component xmlns:d7p1="http://schemas.datacontract.org/2004/07/Match3.UI.Navigation" i:type="d7p1:NavigationComponent">
-              <d7p1:NavigationCommand>Back</d7p1:NavigationCommand>
+              <d7p1:NavigationCommand>About</d7p1:NavigationCommand>
             </d6p1:Component>
             <d6p1:Component xmlns:d7p1="http://schemas.datacontract.org/2004/07/Match3.UI.Navigation" i:type="d7p1:TouchNavigationComponent" />
           </d2p1:SerializeComponents>

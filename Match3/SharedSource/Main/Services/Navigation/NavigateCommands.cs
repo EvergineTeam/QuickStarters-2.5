@@ -3,6 +3,7 @@
     public enum NavigateCommands
     {
         Back = 0,
+        About,
         DefaultForward,
         Quit,
         Play,

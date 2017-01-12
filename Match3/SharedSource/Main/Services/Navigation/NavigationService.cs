@@ -18,6 +18,7 @@ namespace Match3.Services.Navigation
         {
             Undefined = 0,
             MainMenu,
+            About,
             ExitConfirmation,
             LevelSelection,
             Loading,
@@ -98,6 +99,10 @@ namespace Match3.Services.Navigation
                     if (command == NavigateCommands.Back)
                     {
                         newState = NavigationStates.ExitConfirmation;
+                    }
+                    if (command == NavigateCommands.About)
+                    {
+                        newState = NavigationStates.About;
                     }
                     else if (command == NavigateCommands.Play)
                     {
@@ -206,6 +211,10 @@ namespace Match3.Services.Navigation
 
                     case NavigationStates.MainMenu:
                         this.PreloadAndNavigateFoward(new MainMenu());
+                        break;
+
+                    case NavigationStates.About:
+                        this.PreloadAndNavigateFoward(new About(), isModal: true);
                         break;
 
                     case NavigationStates.ExitConfirmation:
