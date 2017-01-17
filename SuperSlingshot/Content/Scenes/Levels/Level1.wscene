@@ -53,7 +53,7 @@
           <d5p1:CameraOrder>0</d5p1:CameraOrder>
           <d5p1:ClearFlags>All</d5p1:ClearFlags>
           <d5p1:FarPlane>100</d5p1:FarPlane>
-          <d5p1:FieldOfView>1.6</d5p1:FieldOfView>
+          <d5p1:FieldOfView>0.1</d5p1:FieldOfView>
           <d5p1:IsActive>true</d5p1:IsActive>
           <d5p1:LayerMaskDefaultValue>true</d5p1:LayerMaskDefaultValue>
           <d5p1:NearPlane>-100</d5p1:NearPlane>

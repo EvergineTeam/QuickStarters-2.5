@@ -15,6 +15,8 @@ using WaveEngine.Framework.Services;
 using WaveEngine.ImageEffects;
 using WaveEngine.TiledMap;
 using System.Linq;
+using SuperSlingshot.Drawables;
+using WaveEngine.Components.Graphics3D;
 #endregion
 
 namespace SuperSlingshot.Scenes
@@ -23,6 +25,7 @@ namespace SuperSlingshot.Scenes
     {
         private TiledMap tiledMap;
         private string boulderOrder;
+        private Trajectory2DDrawable trajectoryDrawable;
 
         public string Content { get; private set; }
 
@@ -75,6 +78,7 @@ namespace SuperSlingshot.Scenes
             this.GetLevelProperties();
             this.CreateBoulderEntities();
             this.CreateGemsScene();
+            this.CreateTrajectory(this.SlingshotAnchorEntity);
 
             this.NumBreakables = this.EntityManager.FindAllByTag(GameConstants.TAGBREAKABLE).Count();
             this.NumGems = this.EntityManager.FindAllByTag(GameConstants.TAGBONUS).Count();
@@ -152,7 +156,7 @@ namespace SuperSlingshot.Scenes
                     colliderEntity.AddComponent(sprite);
                     colliderEntity.AddComponent(spriteRenderer);
                     colliderEntity.AddComponent(new BonusComponent());
-                    
+
                     this.EntityManager.Add(colliderEntity);
                 }
             }
@@ -211,6 +215,7 @@ namespace SuperSlingshot.Scenes
                     this.GetAnchorPosition(GameConstants.ANCHORBOTTOMRIGHT));
             }
         }
+
         private Vector2 GetAnchorPosition(string anchorName)
         {
             this.tiledMap = this.EntityManager.Find(GameConstants.ENTITYMAP).FindComponent<TiledMap>();
@@ -218,6 +223,32 @@ namespace SuperSlingshot.Scenes
             var anchorObject = anchorsLayer.Objects.Find(o => o.Name == anchorName);
             var anchorposition = new Vector2(anchorObject.X, anchorObject.Y);
             return anchorposition;
+        }
+
+        private void CreateTrajectory(Entity host)
+        {
+            this.trajectoryDrawable = new Trajectory2DDrawable()
+            {
+                IsVisible = false,
+                CurveWith = 6.0f
+            };
+
+            host.AddComponent(new MaterialsMap() { DefaultMaterialPath = WaveContent.Materials.TrajectoryMaterial });
+            host.AddComponent(this.trajectoryDrawable);
+
+        }
+
+        public void PreviewTrajectory(Vector2 shotImpulse)
+        {
+            this.trajectoryDrawable.DesiredVelocity = shotImpulse;
+            if (shotImpulse == Vector2.Zero)
+            {
+                this.trajectoryDrawable.IsVisible = false;
+            }
+            else
+            {
+                this.trajectoryDrawable.IsVisible = true;
+            }
         }
 
         private void CreatePhysicScene()
@@ -291,6 +322,8 @@ namespace SuperSlingshot.Scenes
                 if (!string.IsNullOrEmpty(assetPath))
                 {
                     var boulder = this.EntityManager.Instantiate(assetPath);
+                              
+                    boulder.FindComponent<Transform2D>().DrawOrder = 0;
 
                     // Must not collide names
                     boulder.Name += counter++.ToString();

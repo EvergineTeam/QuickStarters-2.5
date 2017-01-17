@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// File generated on 22/12/2016 18:15:09
+// File generated on 17/01/2017 17:44:24
 namespace SuperSlingshot
 {
     using System;
@@ -19,6 +19,9 @@ namespace SuperSlingshot
         
         public sealed class Assets
         {
+            
+            /// <summary> Path to Content/Assets/standard_line.png </summary>
+            public const string standard_line_png = "Content/Assets/standard_line.png";
             
             public sealed class Breakables
             {
@@ -536,6 +539,12 @@ namespace SuperSlingshot
                 /// <summary> Path to Content/Assets/Tiles/Level4.tmx </summary>
                 public const string Level4_tmx = "Content/Assets/Tiles/Level4.tmx";
                 
+                /// <summary> Path to Content/Assets/Tiles/SlingShot2A.png </summary>
+                public const string SlingShot2A_png = "Content/Assets/Tiles/SlingShot2A.png";
+                
+                /// <summary> Path to Content/Assets/Tiles/SlingShot2B.png </summary>
+                public const string SlingShot2B_png = "Content/Assets/Tiles/SlingShot2B.png";
+                
                 /// <summary> Path to Content/Assets/Tiles/SlingShotA.png </summary>
                 public const string SlingShotA_png = "Content/Assets/Tiles/SlingShotA.png";
                 
@@ -691,6 +700,9 @@ namespace SuperSlingshot
             
             /// <summary> Path to Content/Materials/SnowMaterial.wmat </summary>
             public const string SnowMaterial = "Content/Materials/SnowMaterial.wmat";
+            
+            /// <summary> Path to Content/Materials/TrajectoryMaterial.wmat </summary>
+            public const string TrajectoryMaterial = "Content/Materials/TrajectoryMaterial.wmat";
         }
     }
 }

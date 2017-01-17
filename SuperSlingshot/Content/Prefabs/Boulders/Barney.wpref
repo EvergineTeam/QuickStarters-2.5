@@ -177,6 +177,13 @@
         <d3p1:IsActive>true</d3p1:IsActive>
         <d3p1:UpdateOrder>0.5</d3p1:UpdateOrder>
       </d3p1:Component>
+      <d3p1:Component xmlns:d4p1="WaveEngine.Components.Graphics3D" i:type="d4p1:MaterialsMap">
+        <d4p1:DefaultMaterialPath i:nil="true" />
+        <d4p1:MaterialsPath xmlns:d5p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+        <d4p1:UseMaterialCopy>false</d4p1:UseMaterialCopy>
+        <d4p1:useDefaultMaterial>false</d4p1:useDefaultMaterial>
+        <d4p1:useDummyMaterial>true</d4p1:useDummyMaterial>
+      </d3p1:Component>
     </d2p1:SerializeComponents>
   </EntityModel>
   <EntityPointers xmlns:d2p1="http://schemas.datacontract.org/2004/07/WaveEngine.Framework.Models.Entities" />

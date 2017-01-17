@@ -16,6 +16,7 @@ using WaveEngine.Framework.Services;
 
 namespace SuperSlingshot.Drawables
 {
+    [DataContract]
     public class Trajectory2DDrawable : Drawable2D
     {
         private const int NUMBER_OF_POINTS = 70;
@@ -263,7 +264,7 @@ namespace SuperSlingshot.Drawables
 
         private Vector2 GetTrajectoryPoint(float n)
         {
-            const float physicConversionFactor = 100f;
+            const float physicConversionFactor = 6f;
 
             var startingPosition = this.transform2D.Position / physicConversionFactor;
             var startingVelocity = this.DesiredVelocity;
