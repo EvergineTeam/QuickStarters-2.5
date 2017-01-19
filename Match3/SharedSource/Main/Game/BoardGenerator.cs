@@ -33,6 +33,22 @@ namespace Match3.Game
             return boardStatus;
         }
 
+        public void Shuffle(Candy[][] boardStatus)
+        {
+            for (int i = 0; i < boardStatus.Length; i++)
+            {
+                for (int j = 0; j < boardStatus[i].Length; j++)
+                {
+                    var swapIIndex = this.random.Next(boardStatus.Length);
+                    var swapJIndex = this.random.Next(boardStatus[i].Length);
+                    var swapItem = boardStatus[swapIIndex][swapJIndex];
+
+                    boardStatus[swapIIndex][swapJIndex] = boardStatus[i][j];
+                    boardStatus[i][j] = swapItem;
+                }
+            }
+        }
+
         public CandyColors GetRandomCandyColor()
         {
             var randomColorIndex = this.random.Next(this.candyColors.Length);

@@ -1,4 +1,7 @@
-﻿namespace Match3.Game
+﻿using System;
+using System.Collections.Generic;
+
+namespace Match3.Game
 {
     public class Board
     {
@@ -25,7 +28,7 @@
         {
             while (!this.CurrentStatusIsValid())
             {
-                this.Shuffle();
+                this.generator.Shuffle(this.currentStatus);
             }
         }
 
@@ -36,25 +39,108 @@
 
         private bool HasMovements()
         {
-            // TODO Returns true if there are possible movements in the board
-            return true;
+            var boardStatus = this.currentStatus;
+            for (int i = 0; i < boardStatus.Length; i++)
+            {
+                for (int j = 0; j < boardStatus[i].Length; j++)
+                {
+                    var coordinate = new Coordinate { X = i, Y = j };
+                    var result = this.MoveHasOperations(coordinate, CandyMoves.Bottom);
+                    if (this.MoveHasOperations(coordinate, CandyMoves.Bottom) || this.MoveHasOperations(coordinate, CandyMoves.Right))
+                    {
+                        return true;
+                    }
+
+                }
+            }
+
+            return false;
         }
 
         private bool HasOperations()
         {
-            // TODO Returns true if the board has pending operations
-            return false;
-        }
-
-        private void Shuffle()
-        {
-            // TODO Shuffle the board
+            var result = this.GetCurrentOperations();
+            return result.Length > 0;
         }
 
         public object[] Move(Coordinate candyPosition, CandyMoves move)
         {
-            // TODO Move the candy and return the board operations
-            return null;
+            var result = new List<object>();
+
+            this.UpdateCandiesPosition(candyPosition, move);
+
+            object[] operations;
+            while ((operations = this.GetCurrentOperations()).Length > 0)
+            {
+                result.AddRange(operations);
+                this.ExecuteOperations(operations);
+            }
+
+            if (result.Count == 0)
+            {
+                this.UpdateCandiesPosition(candyPosition, this.ReverseMove(move));
+            }
+
+            return result.ToArray();
+        }
+
+        private bool MoveHasOperations(Coordinate candyPosition, CandyMoves move)
+        {
+            this.UpdateCandiesPosition(candyPosition, move);
+            var operations = this.GetCurrentOperations();
+            this.UpdateCandiesPosition(candyPosition, this.ReverseMove(move));
+            return operations.Length > 0;
+        }
+
+        private CandyMoves ReverseMove(CandyMoves move)
+        {
+            switch (move)
+            {
+                case CandyMoves.Left: return CandyMoves.Right;
+                case CandyMoves.Right: return CandyMoves.Left;
+                case CandyMoves.Top: return CandyMoves.Bottom;
+                case CandyMoves.Bottom: return CandyMoves.Top;
+                default:
+                    throw new ArgumentOutOfRangeException("The indicated candy move is not valid.");
+            }
+        }
+
+        private void UpdateCandiesPosition(Coordinate candyPosition, CandyMoves move)
+        {
+            var otherCandyXIndex = candyPosition.X;
+            var otherCandyYIndex = candyPosition.Y;
+            switch (move)
+            {
+                case CandyMoves.Left:
+                    otherCandyXIndex++;
+                    break;
+                case CandyMoves.Right:
+                    otherCandyXIndex--;
+                    break;
+                case CandyMoves.Top:
+                    otherCandyYIndex--;
+                    break;
+                case CandyMoves.Bottom:
+                    otherCandyYIndex++;
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException("The indicated candy move is not valid.");
+            }
+
+            var otherCandy = this.currentStatus[otherCandyXIndex][otherCandyYIndex];
+            this.currentStatus[otherCandyXIndex][otherCandyYIndex] = this.currentStatus[candyPosition.X][candyPosition.Y];
+            this.currentStatus[candyPosition.X][candyPosition.Y] = otherCandy;
+        }
+
+        private void ExecuteOperations(object[] operations)
+        {
+            // TODO
+        }
+
+        private object[] GetCurrentOperations()
+        {
+            // TODO
+            return new object[0];
         }
     }
 }
