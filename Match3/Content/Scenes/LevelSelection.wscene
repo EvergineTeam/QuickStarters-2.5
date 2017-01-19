@@ -232,7 +232,7 @@
                   <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
                   <d2p1:PrefabElem>Level1Btn.StarRight</d2p1:PrefabElem>
                   <d2p1:PrefabId>07e9387d-6cc4-4fd2-1337-d82fe5202dfe</d2p1:PrefabId>
-                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn_1.wpref</d2p1:PrefabPath>
+                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
                   <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                   <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                 </d2p1:BaseEntityModel>
@@ -245,14 +245,9 @@
                   <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
                   <d2p1:PrefabElem>Level1Btn.StarCenter</d2p1:PrefabElem>
                   <d2p1:PrefabId>07e9387d-6cc4-4fd2-1337-d82fe5202dfe</d2p1:PrefabId>
-                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn_1.wpref</d2p1:PrefabPath>
+                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
                   <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
-                  <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
-                    <d10p1:KeyValueOfstringanyType>
-                      <d10p1:Key>WaveEngine.Components.Graphics2D.SpriteAtlas#0#textureName</d10p1:Key>
-                      <d10p1:Value xmlns:d12p1="http://www.w3.org/2001/XMLSchema" i:type="d12p1:string">StarSmallGray</d10p1:Value>
-                    </d10p1:KeyValueOfstringanyType>
-                  </d2p1:modifiedProperties>
+                  <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                 </d2p1:BaseEntityModel>
                 <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
                   <d2p1:SerializeChildrens />
@@ -263,14 +258,9 @@
                   <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
                   <d2p1:PrefabElem>Level1Btn.StarLeft</d2p1:PrefabElem>
                   <d2p1:PrefabId>07e9387d-6cc4-4fd2-1337-d82fe5202dfe</d2p1:PrefabId>
-                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn_1.wpref</d2p1:PrefabPath>
+                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
                   <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
-                  <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
-                    <d10p1:KeyValueOfstringanyType>
-                      <d10p1:Key>WaveEngine.Components.Graphics2D.SpriteAtlas#0#textureName</d10p1:Key>
-                      <d10p1:Value xmlns:d12p1="http://www.w3.org/2001/XMLSchema" i:type="d12p1:string">StarSmallGray</d10p1:Value>
-                    </d10p1:KeyValueOfstringanyType>
-                  </d2p1:modifiedProperties>
+                  <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                 </d2p1:BaseEntityModel>
                 <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
                   <d2p1:SerializeChildrens />
@@ -281,7 +271,7 @@
                   <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
                   <d2p1:PrefabElem>Level1Btn.Text</d2p1:PrefabElem>
                   <d2p1:PrefabId>07e9387d-6cc4-4fd2-1337-d82fe5202dfe</d2p1:PrefabId>
-                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn_1.wpref</d2p1:PrefabPath>
+                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
                   <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                   <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                 </d2p1:BaseEntityModel>
@@ -293,7 +283,7 @@
               <d2p1:AdditionalComponents xmlns:d8p1="WaveEngine.Framework" />
               <d2p1:PrefabElem>Level1Btn</d2p1:PrefabElem>
               <d2p1:PrefabId>07e9387d-6cc4-4fd2-1337-d82fe5202dfe</d2p1:PrefabId>
-              <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn_1.wpref</d2p1:PrefabPath>
+              <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
               <d2p1:RemovedComponents xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
               <d2p1:modifiedProperties xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
                 <d8p1:KeyValueOfstringanyType>
@@ -317,7 +307,7 @@
                   <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
                   <d2p1:PrefabElem>Level1Btn.StarRight</d2p1:PrefabElem>
                   <d2p1:PrefabId>07e9387d-6cc4-4fd2-1337-d82fe5202dfe</d2p1:PrefabId>
-                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn_1.wpref</d2p1:PrefabPath>
+                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
                   <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                   <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                 </d2p1:BaseEntityModel>
@@ -330,7 +320,7 @@
                   <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
                   <d2p1:PrefabElem>Level1Btn.StarCenter</d2p1:PrefabElem>
                   <d2p1:PrefabId>07e9387d-6cc4-4fd2-1337-d82fe5202dfe</d2p1:PrefabId>
-                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn_1.wpref</d2p1:PrefabPath>
+                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
                   <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                   <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                 </d2p1:BaseEntityModel>
@@ -343,7 +333,7 @@
                   <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
                   <d2p1:PrefabElem>Level1Btn.StarLeft</d2p1:PrefabElem>
                   <d2p1:PrefabId>07e9387d-6cc4-4fd2-1337-d82fe5202dfe</d2p1:PrefabId>
-                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn_1.wpref</d2p1:PrefabPath>
+                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
                   <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                   <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                 </d2p1:BaseEntityModel>
@@ -356,7 +346,7 @@
                   <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
                   <d2p1:PrefabElem>Level1Btn.Text</d2p1:PrefabElem>
                   <d2p1:PrefabId>07e9387d-6cc4-4fd2-1337-d82fe5202dfe</d2p1:PrefabId>
-                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn_1.wpref</d2p1:PrefabPath>
+                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
                   <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                   <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
                     <d10p1:KeyValueOfstringanyType>
@@ -382,7 +372,7 @@
               <d2p1:AdditionalComponents xmlns:d8p1="WaveEngine.Framework" />
               <d2p1:PrefabElem>Level1Btn</d2p1:PrefabElem>
               <d2p1:PrefabId>07e9387d-6cc4-4fd2-1337-d82fe5202dfe</d2p1:PrefabId>
-              <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn_1.wpref</d2p1:PrefabPath>
+              <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
               <d2p1:RemovedComponents xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
               <d2p1:modifiedProperties xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
                 <d8p1:KeyValueOfstringanyType>
@@ -431,7 +421,7 @@
                   <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
                   <d2p1:PrefabElem>Level1Btn.StarRight</d2p1:PrefabElem>
                   <d2p1:PrefabId>07e9387d-6cc4-4fd2-1337-d82fe5202dfe</d2p1:PrefabId>
-                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn_1.wpref</d2p1:PrefabPath>
+                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
                   <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                   <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                 </d2p1:BaseEntityModel>
@@ -444,7 +434,7 @@
                   <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
                   <d2p1:PrefabElem>Level1Btn.StarCenter</d2p1:PrefabElem>
                   <d2p1:PrefabId>07e9387d-6cc4-4fd2-1337-d82fe5202dfe</d2p1:PrefabId>
-                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn_1.wpref</d2p1:PrefabPath>
+                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
                   <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                   <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                 </d2p1:BaseEntityModel>
@@ -457,7 +447,7 @@
                   <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
                   <d2p1:PrefabElem>Level1Btn.StarLeft</d2p1:PrefabElem>
                   <d2p1:PrefabId>07e9387d-6cc4-4fd2-1337-d82fe5202dfe</d2p1:PrefabId>
-                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn_1.wpref</d2p1:PrefabPath>
+                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
                   <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                   <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                 </d2p1:BaseEntityModel>
@@ -470,7 +460,7 @@
                   <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
                   <d2p1:PrefabElem>Level1Btn.Text</d2p1:PrefabElem>
                   <d2p1:PrefabId>07e9387d-6cc4-4fd2-1337-d82fe5202dfe</d2p1:PrefabId>
-                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn_1.wpref</d2p1:PrefabPath>
+                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
                   <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                   <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
                     <d10p1:KeyValueOfstringanyType>
@@ -496,7 +486,7 @@
               <d2p1:AdditionalComponents xmlns:d8p1="WaveEngine.Framework" />
               <d2p1:PrefabElem>Level1Btn</d2p1:PrefabElem>
               <d2p1:PrefabId>07e9387d-6cc4-4fd2-1337-d82fe5202dfe</d2p1:PrefabId>
-              <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn_1.wpref</d2p1:PrefabPath>
+              <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
               <d2p1:RemovedComponents xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
               <d2p1:modifiedProperties xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
                 <d8p1:KeyValueOfstringanyType>
@@ -545,7 +535,7 @@
                   <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
                   <d2p1:PrefabElem>Level1Btn.StarRight</d2p1:PrefabElem>
                   <d2p1:PrefabId>07e9387d-6cc4-4fd2-1337-d82fe5202dfe</d2p1:PrefabId>
-                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn_1.wpref</d2p1:PrefabPath>
+                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
                   <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                   <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                 </d2p1:BaseEntityModel>
@@ -558,7 +548,7 @@
                   <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
                   <d2p1:PrefabElem>Level1Btn.StarCenter</d2p1:PrefabElem>
                   <d2p1:PrefabId>07e9387d-6cc4-4fd2-1337-d82fe5202dfe</d2p1:PrefabId>
-                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn_1.wpref</d2p1:PrefabPath>
+                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
                   <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                   <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                 </d2p1:BaseEntityModel>
@@ -571,7 +561,7 @@
                   <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
                   <d2p1:PrefabElem>Level1Btn.StarLeft</d2p1:PrefabElem>
                   <d2p1:PrefabId>07e9387d-6cc4-4fd2-1337-d82fe5202dfe</d2p1:PrefabId>
-                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn_1.wpref</d2p1:PrefabPath>
+                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
                   <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                   <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                 </d2p1:BaseEntityModel>
@@ -584,7 +574,7 @@
                   <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
                   <d2p1:PrefabElem>Level1Btn.Text</d2p1:PrefabElem>
                   <d2p1:PrefabId>07e9387d-6cc4-4fd2-1337-d82fe5202dfe</d2p1:PrefabId>
-                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn_1.wpref</d2p1:PrefabPath>
+                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
                   <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                   <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
                     <d10p1:KeyValueOfstringanyType>
@@ -610,7 +600,7 @@
               <d2p1:AdditionalComponents xmlns:d8p1="WaveEngine.Framework" />
               <d2p1:PrefabElem>Level1Btn</d2p1:PrefabElem>
               <d2p1:PrefabId>07e9387d-6cc4-4fd2-1337-d82fe5202dfe</d2p1:PrefabId>
-              <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn_1.wpref</d2p1:PrefabPath>
+              <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
               <d2p1:RemovedComponents xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
               <d2p1:modifiedProperties xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
                 <d8p1:KeyValueOfstringanyType>
@@ -659,7 +649,7 @@
                   <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
                   <d2p1:PrefabElem>Level1Btn.StarRight</d2p1:PrefabElem>
                   <d2p1:PrefabId>07e9387d-6cc4-4fd2-1337-d82fe5202dfe</d2p1:PrefabId>
-                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn_1.wpref</d2p1:PrefabPath>
+                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
                   <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                   <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                 </d2p1:BaseEntityModel>
@@ -672,7 +662,7 @@
                   <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
                   <d2p1:PrefabElem>Level1Btn.StarCenter</d2p1:PrefabElem>
                   <d2p1:PrefabId>07e9387d-6cc4-4fd2-1337-d82fe5202dfe</d2p1:PrefabId>
-                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn_1.wpref</d2p1:PrefabPath>
+                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
                   <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                   <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                 </d2p1:BaseEntityModel>
@@ -685,7 +675,7 @@
                   <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
                   <d2p1:PrefabElem>Level1Btn.StarLeft</d2p1:PrefabElem>
                   <d2p1:PrefabId>07e9387d-6cc4-4fd2-1337-d82fe5202dfe</d2p1:PrefabId>
-                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn_1.wpref</d2p1:PrefabPath>
+                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
                   <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                   <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                 </d2p1:BaseEntityModel>
@@ -698,7 +688,7 @@
                   <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
                   <d2p1:PrefabElem>Level1Btn.Text</d2p1:PrefabElem>
                   <d2p1:PrefabId>07e9387d-6cc4-4fd2-1337-d82fe5202dfe</d2p1:PrefabId>
-                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn_1.wpref</d2p1:PrefabPath>
+                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
                   <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                   <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
                     <d10p1:KeyValueOfstringanyType>
@@ -724,7 +714,7 @@
               <d2p1:AdditionalComponents xmlns:d8p1="WaveEngine.Framework" />
               <d2p1:PrefabElem>Level1Btn</d2p1:PrefabElem>
               <d2p1:PrefabId>07e9387d-6cc4-4fd2-1337-d82fe5202dfe</d2p1:PrefabId>
-              <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn_1.wpref</d2p1:PrefabPath>
+              <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
               <d2p1:RemovedComponents xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
               <d2p1:modifiedProperties xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
                 <d8p1:KeyValueOfstringanyType>
@@ -773,7 +763,7 @@
                   <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
                   <d2p1:PrefabElem>Level1Btn.StarRight</d2p1:PrefabElem>
                   <d2p1:PrefabId>07e9387d-6cc4-4fd2-1337-d82fe5202dfe</d2p1:PrefabId>
-                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn_1.wpref</d2p1:PrefabPath>
+                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
                   <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                   <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                 </d2p1:BaseEntityModel>
@@ -786,7 +776,7 @@
                   <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
                   <d2p1:PrefabElem>Level1Btn.StarCenter</d2p1:PrefabElem>
                   <d2p1:PrefabId>07e9387d-6cc4-4fd2-1337-d82fe5202dfe</d2p1:PrefabId>
-                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn_1.wpref</d2p1:PrefabPath>
+                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
                   <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                   <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                 </d2p1:BaseEntityModel>
@@ -799,7 +789,7 @@
                   <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
                   <d2p1:PrefabElem>Level1Btn.StarLeft</d2p1:PrefabElem>
                   <d2p1:PrefabId>07e9387d-6cc4-4fd2-1337-d82fe5202dfe</d2p1:PrefabId>
-                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn_1.wpref</d2p1:PrefabPath>
+                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
                   <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                   <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                 </d2p1:BaseEntityModel>
@@ -812,7 +802,7 @@
                   <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
                   <d2p1:PrefabElem>Level1Btn.Text</d2p1:PrefabElem>
                   <d2p1:PrefabId>07e9387d-6cc4-4fd2-1337-d82fe5202dfe</d2p1:PrefabId>
-                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn_1.wpref</d2p1:PrefabPath>
+                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
                   <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                   <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
                     <d10p1:KeyValueOfstringanyType>
@@ -838,7 +828,7 @@
               <d2p1:AdditionalComponents xmlns:d8p1="WaveEngine.Framework" />
               <d2p1:PrefabElem>Level1Btn</d2p1:PrefabElem>
               <d2p1:PrefabId>07e9387d-6cc4-4fd2-1337-d82fe5202dfe</d2p1:PrefabId>
-              <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn_1.wpref</d2p1:PrefabPath>
+              <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
               <d2p1:RemovedComponents xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
               <d2p1:modifiedProperties xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
                 <d8p1:KeyValueOfstringanyType>
@@ -887,7 +877,7 @@
                   <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
                   <d2p1:PrefabElem>Level1Btn.StarRight</d2p1:PrefabElem>
                   <d2p1:PrefabId>07e9387d-6cc4-4fd2-1337-d82fe5202dfe</d2p1:PrefabId>
-                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn_1.wpref</d2p1:PrefabPath>
+                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
                   <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                   <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                 </d2p1:BaseEntityModel>
@@ -900,7 +890,7 @@
                   <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
                   <d2p1:PrefabElem>Level1Btn.StarCenter</d2p1:PrefabElem>
                   <d2p1:PrefabId>07e9387d-6cc4-4fd2-1337-d82fe5202dfe</d2p1:PrefabId>
-                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn_1.wpref</d2p1:PrefabPath>
+                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
                   <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                   <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                 </d2p1:BaseEntityModel>
@@ -913,7 +903,7 @@
                   <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
                   <d2p1:PrefabElem>Level1Btn.StarLeft</d2p1:PrefabElem>
                   <d2p1:PrefabId>07e9387d-6cc4-4fd2-1337-d82fe5202dfe</d2p1:PrefabId>
-                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn_1.wpref</d2p1:PrefabPath>
+                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
                   <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                   <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                 </d2p1:BaseEntityModel>
@@ -926,7 +916,7 @@
                   <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
                   <d2p1:PrefabElem>Level1Btn.Text</d2p1:PrefabElem>
                   <d2p1:PrefabId>07e9387d-6cc4-4fd2-1337-d82fe5202dfe</d2p1:PrefabId>
-                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn_1.wpref</d2p1:PrefabPath>
+                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
                   <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                   <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
                     <d10p1:KeyValueOfstringanyType>
@@ -952,7 +942,7 @@
               <d2p1:AdditionalComponents xmlns:d8p1="WaveEngine.Framework" />
               <d2p1:PrefabElem>Level1Btn</d2p1:PrefabElem>
               <d2p1:PrefabId>07e9387d-6cc4-4fd2-1337-d82fe5202dfe</d2p1:PrefabId>
-              <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn_1.wpref</d2p1:PrefabPath>
+              <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
               <d2p1:RemovedComponents xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
               <d2p1:modifiedProperties xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
                 <d8p1:KeyValueOfstringanyType>
@@ -1001,7 +991,7 @@
                   <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
                   <d2p1:PrefabElem>Level1Btn.StarRight</d2p1:PrefabElem>
                   <d2p1:PrefabId>07e9387d-6cc4-4fd2-1337-d82fe5202dfe</d2p1:PrefabId>
-                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn_1.wpref</d2p1:PrefabPath>
+                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
                   <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                   <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                 </d2p1:BaseEntityModel>
@@ -1014,7 +1004,7 @@
                   <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
                   <d2p1:PrefabElem>Level1Btn.StarCenter</d2p1:PrefabElem>
                   <d2p1:PrefabId>07e9387d-6cc4-4fd2-1337-d82fe5202dfe</d2p1:PrefabId>
-                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn_1.wpref</d2p1:PrefabPath>
+                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
                   <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                   <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                 </d2p1:BaseEntityModel>
@@ -1027,7 +1017,7 @@
                   <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
                   <d2p1:PrefabElem>Level1Btn.StarLeft</d2p1:PrefabElem>
                   <d2p1:PrefabId>07e9387d-6cc4-4fd2-1337-d82fe5202dfe</d2p1:PrefabId>
-                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn_1.wpref</d2p1:PrefabPath>
+                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
                   <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                   <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                 </d2p1:BaseEntityModel>
@@ -1040,7 +1030,7 @@
                   <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
                   <d2p1:PrefabElem>Level1Btn.Text</d2p1:PrefabElem>
                   <d2p1:PrefabId>07e9387d-6cc4-4fd2-1337-d82fe5202dfe</d2p1:PrefabId>
-                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn_1.wpref</d2p1:PrefabPath>
+                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
                   <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                   <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
                     <d10p1:KeyValueOfstringanyType>
@@ -1066,7 +1056,7 @@
               <d2p1:AdditionalComponents xmlns:d8p1="WaveEngine.Framework" />
               <d2p1:PrefabElem>Level1Btn</d2p1:PrefabElem>
               <d2p1:PrefabId>07e9387d-6cc4-4fd2-1337-d82fe5202dfe</d2p1:PrefabId>
-              <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn_1.wpref</d2p1:PrefabPath>
+              <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
               <d2p1:RemovedComponents xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
               <d2p1:modifiedProperties xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
                 <d8p1:KeyValueOfstringanyType>
@@ -1115,7 +1105,7 @@
                   <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
                   <d2p1:PrefabElem>Level1Btn.StarRight</d2p1:PrefabElem>
                   <d2p1:PrefabId>07e9387d-6cc4-4fd2-1337-d82fe5202dfe</d2p1:PrefabId>
-                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn_1.wpref</d2p1:PrefabPath>
+                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
                   <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                   <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                 </d2p1:BaseEntityModel>
@@ -1128,7 +1118,7 @@
                   <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
                   <d2p1:PrefabElem>Level1Btn.StarCenter</d2p1:PrefabElem>
                   <d2p1:PrefabId>07e9387d-6cc4-4fd2-1337-d82fe5202dfe</d2p1:PrefabId>
-                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn_1.wpref</d2p1:PrefabPath>
+                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
                   <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                   <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                 </d2p1:BaseEntityModel>
@@ -1141,7 +1131,7 @@
                   <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
                   <d2p1:PrefabElem>Level1Btn.StarLeft</d2p1:PrefabElem>
                   <d2p1:PrefabId>07e9387d-6cc4-4fd2-1337-d82fe5202dfe</d2p1:PrefabId>
-                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn_1.wpref</d2p1:PrefabPath>
+                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
                   <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                   <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                 </d2p1:BaseEntityModel>
@@ -1154,7 +1144,7 @@
                   <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
                   <d2p1:PrefabElem>Level1Btn.Text</d2p1:PrefabElem>
                   <d2p1:PrefabId>07e9387d-6cc4-4fd2-1337-d82fe5202dfe</d2p1:PrefabId>
-                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn_1.wpref</d2p1:PrefabPath>
+                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
                   <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                   <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
                     <d10p1:KeyValueOfstringanyType>
@@ -1180,7 +1170,7 @@
               <d2p1:AdditionalComponents xmlns:d8p1="WaveEngine.Framework" />
               <d2p1:PrefabElem>Level1Btn</d2p1:PrefabElem>
               <d2p1:PrefabId>07e9387d-6cc4-4fd2-1337-d82fe5202dfe</d2p1:PrefabId>
-              <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn_1.wpref</d2p1:PrefabPath>
+              <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
               <d2p1:RemovedComponents xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
               <d2p1:modifiedProperties xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
                 <d8p1:KeyValueOfstringanyType>
@@ -1229,7 +1219,7 @@
                   <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
                   <d2p1:PrefabElem>Level1Btn.StarRight</d2p1:PrefabElem>
                   <d2p1:PrefabId>07e9387d-6cc4-4fd2-1337-d82fe5202dfe</d2p1:PrefabId>
-                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn_1.wpref</d2p1:PrefabPath>
+                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
                   <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                   <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                 </d2p1:BaseEntityModel>
@@ -1242,7 +1232,7 @@
                   <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
                   <d2p1:PrefabElem>Level1Btn.StarCenter</d2p1:PrefabElem>
                   <d2p1:PrefabId>07e9387d-6cc4-4fd2-1337-d82fe5202dfe</d2p1:PrefabId>
-                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn_1.wpref</d2p1:PrefabPath>
+                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
                   <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                   <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                 </d2p1:BaseEntityModel>
@@ -1255,7 +1245,7 @@
                   <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
                   <d2p1:PrefabElem>Level1Btn.StarLeft</d2p1:PrefabElem>
                   <d2p1:PrefabId>07e9387d-6cc4-4fd2-1337-d82fe5202dfe</d2p1:PrefabId>
-                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn_1.wpref</d2p1:PrefabPath>
+                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
                   <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                   <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                 </d2p1:BaseEntityModel>
@@ -1268,7 +1258,7 @@
                   <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
                   <d2p1:PrefabElem>Level1Btn.Text</d2p1:PrefabElem>
                   <d2p1:PrefabId>07e9387d-6cc4-4fd2-1337-d82fe5202dfe</d2p1:PrefabId>
-                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn_1.wpref</d2p1:PrefabPath>
+                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
                   <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                   <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
                     <d10p1:KeyValueOfstringanyType>
@@ -1294,7 +1284,7 @@
               <d2p1:AdditionalComponents xmlns:d8p1="WaveEngine.Framework" />
               <d2p1:PrefabElem>Level1Btn</d2p1:PrefabElem>
               <d2p1:PrefabId>07e9387d-6cc4-4fd2-1337-d82fe5202dfe</d2p1:PrefabId>
-              <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn_1.wpref</d2p1:PrefabPath>
+              <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
               <d2p1:RemovedComponents xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
               <d2p1:modifiedProperties xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
                 <d8p1:KeyValueOfstringanyType>
@@ -1343,7 +1333,7 @@
                   <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
                   <d2p1:PrefabElem>Level1Btn.StarRight</d2p1:PrefabElem>
                   <d2p1:PrefabId>07e9387d-6cc4-4fd2-1337-d82fe5202dfe</d2p1:PrefabId>
-                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn_1.wpref</d2p1:PrefabPath>
+                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
                   <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                   <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                 </d2p1:BaseEntityModel>
@@ -1356,7 +1346,7 @@
                   <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
                   <d2p1:PrefabElem>Level1Btn.StarCenter</d2p1:PrefabElem>
                   <d2p1:PrefabId>07e9387d-6cc4-4fd2-1337-d82fe5202dfe</d2p1:PrefabId>
-                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn_1.wpref</d2p1:PrefabPath>
+                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
                   <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                   <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                 </d2p1:BaseEntityModel>
@@ -1369,7 +1359,7 @@
                   <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
                   <d2p1:PrefabElem>Level1Btn.StarLeft</d2p1:PrefabElem>
                   <d2p1:PrefabId>07e9387d-6cc4-4fd2-1337-d82fe5202dfe</d2p1:PrefabId>
-                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn_1.wpref</d2p1:PrefabPath>
+                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
                   <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                   <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                 </d2p1:BaseEntityModel>
@@ -1382,7 +1372,7 @@
                   <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
                   <d2p1:PrefabElem>Level1Btn.Text</d2p1:PrefabElem>
                   <d2p1:PrefabId>07e9387d-6cc4-4fd2-1337-d82fe5202dfe</d2p1:PrefabId>
-                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn_1.wpref</d2p1:PrefabPath>
+                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
                   <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                   <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
                     <d10p1:KeyValueOfstringanyType>
@@ -1408,7 +1398,7 @@
               <d2p1:AdditionalComponents xmlns:d8p1="WaveEngine.Framework" />
               <d2p1:PrefabElem>Level1Btn</d2p1:PrefabElem>
               <d2p1:PrefabId>07e9387d-6cc4-4fd2-1337-d82fe5202dfe</d2p1:PrefabId>
-              <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn_1.wpref</d2p1:PrefabPath>
+              <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
               <d2p1:RemovedComponents xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
               <d2p1:modifiedProperties xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
                 <d8p1:KeyValueOfstringanyType>
@@ -1457,7 +1447,7 @@
                   <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
                   <d2p1:PrefabElem>Level1Btn.StarRight</d2p1:PrefabElem>
                   <d2p1:PrefabId>07e9387d-6cc4-4fd2-1337-d82fe5202dfe</d2p1:PrefabId>
-                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn_1.wpref</d2p1:PrefabPath>
+                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
                   <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                   <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                 </d2p1:BaseEntityModel>
@@ -1470,7 +1460,7 @@
                   <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
                   <d2p1:PrefabElem>Level1Btn.StarCenter</d2p1:PrefabElem>
                   <d2p1:PrefabId>07e9387d-6cc4-4fd2-1337-d82fe5202dfe</d2p1:PrefabId>
-                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn_1.wpref</d2p1:PrefabPath>
+                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
                   <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                   <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                 </d2p1:BaseEntityModel>
@@ -1483,7 +1473,7 @@
                   <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
                   <d2p1:PrefabElem>Level1Btn.StarLeft</d2p1:PrefabElem>
                   <d2p1:PrefabId>07e9387d-6cc4-4fd2-1337-d82fe5202dfe</d2p1:PrefabId>
-                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn_1.wpref</d2p1:PrefabPath>
+                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
                   <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                   <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                 </d2p1:BaseEntityModel>
@@ -1496,7 +1486,7 @@
                   <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
                   <d2p1:PrefabElem>Level1Btn.Text</d2p1:PrefabElem>
                   <d2p1:PrefabId>07e9387d-6cc4-4fd2-1337-d82fe5202dfe</d2p1:PrefabId>
-                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn_1.wpref</d2p1:PrefabPath>
+                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
                   <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                   <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
                     <d10p1:KeyValueOfstringanyType>
@@ -1522,7 +1512,7 @@
               <d2p1:AdditionalComponents xmlns:d8p1="WaveEngine.Framework" />
               <d2p1:PrefabElem>Level1Btn</d2p1:PrefabElem>
               <d2p1:PrefabId>07e9387d-6cc4-4fd2-1337-d82fe5202dfe</d2p1:PrefabId>
-              <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn_1.wpref</d2p1:PrefabPath>
+              <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
               <d2p1:RemovedComponents xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
               <d2p1:modifiedProperties xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
                 <d8p1:KeyValueOfstringanyType>
@@ -1571,7 +1561,7 @@
                   <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
                   <d2p1:PrefabElem>Level1Btn.StarRight</d2p1:PrefabElem>
                   <d2p1:PrefabId>07e9387d-6cc4-4fd2-1337-d82fe5202dfe</d2p1:PrefabId>
-                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn_1.wpref</d2p1:PrefabPath>
+                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
                   <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                   <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                 </d2p1:BaseEntityModel>
@@ -1584,7 +1574,7 @@
                   <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
                   <d2p1:PrefabElem>Level1Btn.StarCenter</d2p1:PrefabElem>
                   <d2p1:PrefabId>07e9387d-6cc4-4fd2-1337-d82fe5202dfe</d2p1:PrefabId>
-                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn_1.wpref</d2p1:PrefabPath>
+                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
                   <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                   <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                 </d2p1:BaseEntityModel>
@@ -1597,7 +1587,7 @@
                   <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
                   <d2p1:PrefabElem>Level1Btn.StarLeft</d2p1:PrefabElem>
                   <d2p1:PrefabId>07e9387d-6cc4-4fd2-1337-d82fe5202dfe</d2p1:PrefabId>
-                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn_1.wpref</d2p1:PrefabPath>
+                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
                   <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                   <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                 </d2p1:BaseEntityModel>
@@ -1610,7 +1600,7 @@
                   <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
                   <d2p1:PrefabElem>Level1Btn.Text</d2p1:PrefabElem>
                   <d2p1:PrefabId>07e9387d-6cc4-4fd2-1337-d82fe5202dfe</d2p1:PrefabId>
-                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn_1.wpref</d2p1:PrefabPath>
+                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
                   <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                   <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
                     <d10p1:KeyValueOfstringanyType>
@@ -1636,7 +1626,7 @@
               <d2p1:AdditionalComponents xmlns:d8p1="WaveEngine.Framework" />
               <d2p1:PrefabElem>Level1Btn</d2p1:PrefabElem>
               <d2p1:PrefabId>07e9387d-6cc4-4fd2-1337-d82fe5202dfe</d2p1:PrefabId>
-              <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn_1.wpref</d2p1:PrefabPath>
+              <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
               <d2p1:RemovedComponents xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
               <d2p1:modifiedProperties xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
                 <d8p1:KeyValueOfstringanyType>
@@ -1685,7 +1675,7 @@
                   <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
                   <d2p1:PrefabElem>Level1Btn.StarRight</d2p1:PrefabElem>
                   <d2p1:PrefabId>07e9387d-6cc4-4fd2-1337-d82fe5202dfe</d2p1:PrefabId>
-                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn_1.wpref</d2p1:PrefabPath>
+                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
                   <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                   <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                 </d2p1:BaseEntityModel>
@@ -1698,7 +1688,7 @@
                   <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
                   <d2p1:PrefabElem>Level1Btn.StarCenter</d2p1:PrefabElem>
                   <d2p1:PrefabId>07e9387d-6cc4-4fd2-1337-d82fe5202dfe</d2p1:PrefabId>
-                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn_1.wpref</d2p1:PrefabPath>
+                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
                   <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                   <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                 </d2p1:BaseEntityModel>
@@ -1711,7 +1701,7 @@
                   <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
                   <d2p1:PrefabElem>Level1Btn.StarLeft</d2p1:PrefabElem>
                   <d2p1:PrefabId>07e9387d-6cc4-4fd2-1337-d82fe5202dfe</d2p1:PrefabId>
-                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn_1.wpref</d2p1:PrefabPath>
+                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
                   <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                   <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                 </d2p1:BaseEntityModel>
@@ -1724,7 +1714,7 @@
                   <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
                   <d2p1:PrefabElem>Level1Btn.Text</d2p1:PrefabElem>
                   <d2p1:PrefabId>07e9387d-6cc4-4fd2-1337-d82fe5202dfe</d2p1:PrefabId>
-                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn_1.wpref</d2p1:PrefabPath>
+                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
                   <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                   <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
                     <d10p1:KeyValueOfstringanyType>
@@ -1750,7 +1740,7 @@
               <d2p1:AdditionalComponents xmlns:d8p1="WaveEngine.Framework" />
               <d2p1:PrefabElem>Level1Btn</d2p1:PrefabElem>
               <d2p1:PrefabId>07e9387d-6cc4-4fd2-1337-d82fe5202dfe</d2p1:PrefabId>
-              <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn_1.wpref</d2p1:PrefabPath>
+              <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
               <d2p1:RemovedComponents xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
               <d2p1:modifiedProperties xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
                 <d8p1:KeyValueOfstringanyType>
@@ -1799,7 +1789,7 @@
                   <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
                   <d2p1:PrefabElem>Level1Btn.StarRight</d2p1:PrefabElem>
                   <d2p1:PrefabId>07e9387d-6cc4-4fd2-1337-d82fe5202dfe</d2p1:PrefabId>
-                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn_1.wpref</d2p1:PrefabPath>
+                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
                   <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                   <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                 </d2p1:BaseEntityModel>
@@ -1812,7 +1802,7 @@
                   <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
                   <d2p1:PrefabElem>Level1Btn.StarCenter</d2p1:PrefabElem>
                   <d2p1:PrefabId>07e9387d-6cc4-4fd2-1337-d82fe5202dfe</d2p1:PrefabId>
-                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn_1.wpref</d2p1:PrefabPath>
+                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
                   <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                   <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                 </d2p1:BaseEntityModel>
@@ -1825,7 +1815,7 @@
                   <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
                   <d2p1:PrefabElem>Level1Btn.StarLeft</d2p1:PrefabElem>
                   <d2p1:PrefabId>07e9387d-6cc4-4fd2-1337-d82fe5202dfe</d2p1:PrefabId>
-                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn_1.wpref</d2p1:PrefabPath>
+                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
                   <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                   <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                 </d2p1:BaseEntityModel>
@@ -1838,7 +1828,7 @@
                   <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
                   <d2p1:PrefabElem>Level1Btn.Text</d2p1:PrefabElem>
                   <d2p1:PrefabId>07e9387d-6cc4-4fd2-1337-d82fe5202dfe</d2p1:PrefabId>
-                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn_1.wpref</d2p1:PrefabPath>
+                  <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
                   <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                   <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
                     <d10p1:KeyValueOfstringanyType>
@@ -1864,7 +1854,7 @@
               <d2p1:AdditionalComponents xmlns:d8p1="WaveEngine.Framework" />
               <d2p1:PrefabElem>Level1Btn</d2p1:PrefabElem>
               <d2p1:PrefabId>07e9387d-6cc4-4fd2-1337-d82fe5202dfe</d2p1:PrefabId>
-              <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn_1.wpref</d2p1:PrefabPath>
+              <d2p1:PrefabPath>Content/Prefabs/Buttons/LevelBtn.wpref</d2p1:PrefabPath>
               <d2p1:RemovedComponents xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
               <d2p1:modifiedProperties xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
                 <d8p1:KeyValueOfstringanyType>
@@ -2032,8 +2022,8 @@
         <d4p1:KeyValueOfstringanyType>
           <d4p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#LocalPosition</d4p1:Key>
           <d4p1:Value xmlns:d6p1="WaveEngine.Common.Math" i:type="d6p1:Vector3">
-            <d6p1:X>134.560089</d6p1:X>
-            <d6p1:Y>695.0001</d6p1:Y>
+            <d6p1:X>-356.500244</d6p1:X>
+            <d6p1:Y>1020.70013</d6p1:Y>
             <d6p1:Z>0</d6p1:Z>
           </d4p1:Value>
         </d4p1:KeyValueOfstringanyType>

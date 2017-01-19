@@ -1,6 +1,8 @@
 ﻿using Match3.UI;
+using Match3.UI.Navigation;
 using System;
 using System.Runtime.Serialization;
+using WaveEngine.Components.Gestures;
 using WaveEngine.Components.Graphics2D;
 using WaveEngine.Components.Toolkit;
 using WaveEngine.Framework;
@@ -8,13 +10,19 @@ using WaveEngine.Framework;
 namespace Match3.Components.LevelSelection
 {
     [DataContract]
-    public class LevelButtonComponent : Component
+    public class LevelButtonComponent : Component, IDisposable
     {
         [RequiredComponent]
         protected SpriteAtlas spriteAtlas;
 
         [RequiredComponent]
         protected ButtonComponent buttonComponent;
+
+        [RequiredComponent]
+        protected NavigationComponent navComponent;
+        
+        [RequiredComponent]
+        protected TouchGestures touchGestures;
 
         protected TextComponent textComponent;
 
@@ -98,6 +106,9 @@ namespace Match3.Components.LevelSelection
             
             var starRightEntity = this.Owner.FindChild("StarRight");
             this.starRightSpriteAtlas = starRightEntity.FindComponent<SpriteAtlas>();
+
+            this.touchGestures.TouchTap -= this.TouchGestures_TouchTap;
+            this.touchGestures.TouchTap += this.TouchGestures_TouchTap;
         }
 
         protected override void Initialize()
@@ -105,6 +116,26 @@ namespace Match3.Components.LevelSelection
             base.Initialize();
 
             this.RefreshVisualState();
+        }
+
+        protected override void DeleteDependencies()
+        {
+            this.RemoveCustomDependencies();
+
+            base.DeleteDependencies();
+        }
+
+        public void Dispose()
+        {
+            this.RemoveCustomDependencies();
+        }
+
+        private void RemoveCustomDependencies()
+        {
+            if (this.touchGestures != null)
+            {
+                this.touchGestures.TouchTap -= this.TouchGestures_TouchTap;
+            }
         }
 
         private void RefreshVisualState()
@@ -144,6 +175,13 @@ namespace Match3.Components.LevelSelection
                 this.starCenterSpriteAtlas.Owner.IsVisible = false;
                 this.starRightSpriteAtlas.Owner.IsVisible = false;
             }
+        }
+        
+        private void TouchGestures_TouchTap(object sender, GestureEventArgs e)
+        {
+            //TODO: Update level in Game Service
+
+            this.navComponent.DoNavigation();
         }
     }
 }

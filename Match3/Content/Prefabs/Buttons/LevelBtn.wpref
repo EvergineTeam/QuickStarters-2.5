@@ -114,7 +114,7 @@
             </d6p1:TintColor>
             <d6p1:isGlobalAsset>false</d6p1:isGlobalAsset>
             <d6p1:spriteSheetPath>Content/Assets/GUI/Panels.spritesheet.wpk</d6p1:spriteSheetPath>
-            <d6p1:textureName>StarSmallColor</d6p1:textureName>
+            <d6p1:textureName>StarSmallGray</d6p1:textureName>
           </d5p1:Component>
           <d5p1:Component xmlns:d6p1="WaveEngine.Components.Graphics2D" i:type="d6p1:SpriteAtlasRenderer">
             <d5p1:IsVisible>true</d5p1:IsVisible>
@@ -175,7 +175,7 @@
             </d6p1:TintColor>
             <d6p1:isGlobalAsset>false</d6p1:isGlobalAsset>
             <d6p1:spriteSheetPath>Content/Assets/GUI/Panels.spritesheet.wpk</d6p1:spriteSheetPath>
-            <d6p1:textureName>StarSmallColor</d6p1:textureName>
+            <d6p1:textureName>StarSmallGray</d6p1:textureName>
           </d5p1:Component>
           <d5p1:Component xmlns:d6p1="WaveEngine.Components.Graphics2D" i:type="d6p1:SpriteAtlasRenderer">
             <d5p1:IsVisible>true</d5p1:IsVisible>
@@ -358,6 +358,9 @@
         <d4p1:isUnlocked>true</d4p1:isUnlocked>
         <d4p1:levelIndex>1</d4p1:levelIndex>
         <d4p1:starsCount>0</d4p1:starsCount>
+      </d3p1:Component>
+      <d3p1:Component xmlns:d4p1="http://schemas.datacontract.org/2004/07/Match3.UI.Navigation" i:type="d4p1:NavigationComponent">
+        <d4p1:NavigationCommand>Play</d4p1:NavigationCommand>
       </d3p1:Component>
     </d2p1:SerializeComponents>
   </EntityModel>
