@@ -67,18 +67,19 @@ namespace Match3.Gameboard
         {
             var result = new List<object>();
 
-            this.UpdateCandiesPosition(candyPosition, move);
-
-            object[] operations;
-            while ((operations = this.GetCurrentOperations()).Length > 0)
+            if (this.UpdateCandiesPosition(candyPosition, move))
             {
-                result.AddRange(operations);
-                this.ExecuteOperations(operations);
-            }
+                object[] operations;
+                while ((operations = this.GetCurrentOperations()).Length > 0)
+                {
+                    result.AddRange(operations);
+                    this.ExecuteOperations(operations);
+                }
 
-            if (result.Count == 0)
-            {
-                this.UpdateCandiesPosition(candyPosition, this.ReverseMove(move));
+                if (result.Count == 0)
+                {
+                    this.UpdateCandiesPosition(candyPosition, this.ReverseMove(move));
+                }
             }
 
             return result.ToArray();
@@ -86,10 +87,14 @@ namespace Match3.Gameboard
 
         private bool MoveHasOperations(Coordinate candyPosition, CandyMoves move)
         {
-            this.UpdateCandiesPosition(candyPosition, move);
-            var operations = this.GetCurrentOperations();
-            this.UpdateCandiesPosition(candyPosition, this.ReverseMove(move));
-            return operations.Length > 0;
+            if (this.UpdateCandiesPosition(candyPosition, move))
+            {
+                var operations = this.GetCurrentOperations();
+                this.UpdateCandiesPosition(candyPosition, this.ReverseMove(move));
+                return operations.Length > 0;
+            }
+
+            return false;
         }
 
         private CandyMoves ReverseMove(CandyMoves move)
@@ -105,31 +110,45 @@ namespace Match3.Gameboard
             }
         }
 
-        private void UpdateCandiesPosition(Coordinate candyPosition, CandyMoves move)
+        private bool UpdateCandiesPosition(Coordinate candyPosition, CandyMoves move)
         {
-            var otherCandyXIndex = candyPosition.X;
-            var otherCandyYIndex = candyPosition.Y;
-            switch (move)
+            if (this.ValidCoordinate(candyPosition))
             {
-                case CandyMoves.Left:
-                    otherCandyXIndex++;
-                    break;
-                case CandyMoves.Right:
-                    otherCandyXIndex--;
-                    break;
-                case CandyMoves.Top:
-                    otherCandyYIndex--;
-                    break;
-                case CandyMoves.Bottom:
-                    otherCandyYIndex++;
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException("The indicated candy move is not valid.");
+                var otherCandyPosition = candyPosition;
+                switch (move)
+                {
+                    case CandyMoves.Left:
+                        otherCandyPosition.X++;
+                        break;
+                    case CandyMoves.Right:
+                        otherCandyPosition.X--;
+                        break;
+                    case CandyMoves.Top:
+                        otherCandyPosition.Y--;
+                        break;
+                    case CandyMoves.Bottom:
+                        otherCandyPosition.Y++;
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException("The indicated candy move is not valid.");
+                }
+
+                if (this.ValidCoordinate(otherCandyPosition))
+                {
+                    var otherCandy = this.currentStatus[otherCandyPosition.X][otherCandyPosition.Y];
+                    this.currentStatus[otherCandyPosition.X][otherCandyPosition.Y] = this.currentStatus[candyPosition.X][candyPosition.Y];
+                    this.currentStatus[candyPosition.X][candyPosition.Y] = otherCandy;
+
+                    return true;
+                }
             }
 
-            var otherCandy = this.currentStatus[otherCandyXIndex][otherCandyYIndex];
-            this.currentStatus[otherCandyXIndex][otherCandyYIndex] = this.currentStatus[candyPosition.X][candyPosition.Y];
-            this.currentStatus[candyPosition.X][candyPosition.Y] = otherCandy;
+            return false;
+        }
+
+        private bool ValidCoordinate(Coordinate position)
+        {
+            return position.X >= 0 && position.Y >= 0 && position.X < this.currentStatus.Length && position.Y < this.currentStatus[0].Length;
         }
 
         private void ExecuteOperations(object[] operations)

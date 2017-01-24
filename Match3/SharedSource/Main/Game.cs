@@ -1,7 +1,5 @@
-using Match3.Scenes;
 using Match3.Services;
 using WaveEngine.Common;
-using WaveEngine.Framework.Services;
 
 namespace Match3
 {
