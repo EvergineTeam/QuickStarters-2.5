@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Match3.Game
+namespace Match3.Gameboard
 {
     public class Board
     {

@@ -1,6 +1,6 @@
-﻿namespace Match3.Game
+﻿namespace Match3.Gameboard
 {
-    public class Coordinate
+    public struct Coordinate
     {
         public int X { get; set; }
 

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Match3.Game
+namespace Match3.Gameboard
 {
     public class BoardGenerator
     {

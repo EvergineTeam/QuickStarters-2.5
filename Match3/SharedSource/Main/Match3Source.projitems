@@ -11,13 +11,13 @@
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Components\LevelSelection\LevelButtonComponent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Game.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Game\Board.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Game\BoardGenerator.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Game\Candy.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Game\CandyColors.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Game\CandyMoves.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Game\CandyTypes.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Game\Coordinate.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Gameboard\Board.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Gameboard\BoardGenerator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Gameboard\Candy.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Gameboard\CandyColors.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Gameboard\CandyMoves.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Gameboard\CandyTypes.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Gameboard\Coordinate.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Scenes\About.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Scenes\Pause.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Scenes\Gameplay.cs" />
