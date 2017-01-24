@@ -11,6 +11,7 @@ namespace SuperSlingshot.Behaviors
     {
         private Vector2 desiredPosition;
         private Vector2 currentPosition;
+
         protected override void Initialize()
         {
             base.Initialize();

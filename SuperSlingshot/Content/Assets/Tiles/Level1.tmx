@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="80" height="35" tilewidth="70" tileheight="70" nextobjectid="39">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="80" height="35" tilewidth="70" tileheight="70" nextobjectid="41">
  <properties>
   <property name="BlockDestroyPoints" type="int" value="1000"/>
   <property name="BlockHitPoints" type="int" value="500"/>
@@ -340,6 +340,8 @@
   <object id="1" name="SlingshotAnchor" x="710.5" y="1942.5"/>
   <object id="2" name="TopLeftAnchor" x="0" y="280"/>
   <object id="3" name="BottomRightAnchor" x="5530" y="2450"/>
+  <object id="39" name="FrontBandAnchor" x="647.5" y="1949.5" width="7" height="14"/>
+  <object id="40" name="BackBandAnchor" x="728" y="1928.5" width="7" height="14"/>
  </objectgroup>
  <objectgroup name="PhysicLayer">
   <object id="25" name="Ground" x="0" y="2450">

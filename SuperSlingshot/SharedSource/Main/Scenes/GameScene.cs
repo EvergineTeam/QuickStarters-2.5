@@ -26,6 +26,7 @@ namespace SuperSlingshot.Scenes
         private TiledMap tiledMap;
         private string boulderOrder;
         private Trajectory2DDrawable trajectoryDrawable;
+        private ElasticBandsDrawable bandDrawable;
 
         public string Content { get; private set; }
 
@@ -79,6 +80,7 @@ namespace SuperSlingshot.Scenes
             this.CreateBoulderEntities();
             this.CreateGemsScene();
             this.CreateTrajectory(this.SlingshotAnchorEntity);
+            this.CreateElasticBands(this.SlingshotAnchorEntity);
 
             this.NumBreakables = this.EntityManager.FindAllByTag(GameConstants.TAGBREAKABLE).Count();
             this.NumGems = this.EntityManager.FindAllByTag(GameConstants.TAGBONUS).Count();
@@ -235,7 +237,18 @@ namespace SuperSlingshot.Scenes
 
             host.AddComponent(new MaterialsMap() { DefaultMaterialPath = WaveContent.Materials.TrajectoryMaterial });
             host.AddComponent(this.trajectoryDrawable);
+        }
 
+        private void CreateElasticBands(Entity host)
+        {
+            this.bandDrawable = new ElasticBandsDrawable()
+            {
+                IsVisible = false,
+                FixedBackPoint = this.GetAnchorPosition(GameConstants.ANCHORFRONTBAND),
+                FixedFrontPoint = this.GetAnchorPosition(GameConstants.ANCHORBACKBAND)
+            };
+
+            host.AddComponent(this.bandDrawable);
         }
 
         public void PreviewTrajectory(Vector2 shotImpulse)
@@ -249,6 +262,13 @@ namespace SuperSlingshot.Scenes
             {
                 this.trajectoryDrawable.IsVisible = true;
             }
+        }
+
+        public void PreviewElasticBands(bool visible, Transform2D target)
+        {
+            this.bandDrawable.IsVisible = visible;
+            
+            this.bandDrawable.TargetTransform = target;
         }
 
         private void CreatePhysicScene()

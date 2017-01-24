@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="140" height="70" tilewidth="128" tileheight="128" nextobjectid="20">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="140" height="70" tilewidth="128" tileheight="128" nextobjectid="25">
  <properties>
   <property name="BlockDestroyPoints" value="1000"/>
   <property name="BlockHitPoints" value="500"/>
@@ -13,11 +13,11 @@
  <tileset firstgid="25" name="halloween background2" tilewidth="2000" tileheight="1143" tilecount="1" columns="1">
   <image source="halloween background.png" width="2000" height="1143"/>
  </tileset>
- <tileset firstgid="26" name="Slingshot1" tilewidth="174" tileheight="519" tilecount="1" columns="1">
-  <image source="SlingShotA.png" width="174" height="519"/>
+ <tileset firstgid="26" name="Slingshot1" tilewidth="174" tileheight="519" tilecount="0" columns="0">
+  <image source="SlingShotA.png" width="140" height="350"/>
  </tileset>
- <tileset firstgid="27" name="Slingshot2" tilewidth="109" tileheight="331" tilecount="1" columns="1">
-  <image source="SlingShotB.png" width="109" height="331"/>
+ <tileset firstgid="26" name="Slingshot2" tilewidth="109" tileheight="331" tilecount="1" columns="1">
+  <image source="SlingShotB.png" width="140" height="350"/>
  </tileset>
  <layer name="Background" width="140" height="70">
   <data encoding="csv">
@@ -393,6 +393,8 @@
   <object id="12" name="TopLeftAnchor" x="-16" y="112" width="144" height="160"/>
   <object id="13" name="BottomRightAnchor" x="17728" y="8656" width="160" height="176"/>
   <object id="14" name="SlingshotAnchor" x="1796" y="5768" width="112" height="108"/>
+  <object id="20" name="FrontBandAnchor" x="1721.6" y="5836.8" width="51.2" height="83.2"/>
+  <object id="24" name="BackBandAnchor" x="1920" y="5740.8" width="51.2" height="83.2"/>
  </objectgroup>
  <objectgroup color="#ff0000" name="BonusLayer">
   <object id="15" name="Gem1" x="6015.15" y="3584.85" width="127.273" height="121.212"/>

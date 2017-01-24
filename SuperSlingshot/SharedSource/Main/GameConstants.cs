@@ -41,6 +41,8 @@
         public static string ANCHORTOPLEFT = "TopLeftAnchor";
         public static string ANCHORBOTTOMRIGHT = "BottomRightAnchor";
         public static string ANCHORSLINGSHOT = "SlingshotAnchor";
+        public static string ANCHORFRONTBAND = "FrontBandAnchor";
+        public static string ANCHORBACKBAND = "BackBandAnchor";
 
         // TAGS
         public static string TAGCOLLIDER = "collider";

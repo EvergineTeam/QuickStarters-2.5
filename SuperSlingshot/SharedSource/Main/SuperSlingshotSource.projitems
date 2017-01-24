@@ -24,6 +24,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Components\PlayerComponent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Components\StarScoreComponent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Components\SwitchComponent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Drawables\ElasticBandsDrawable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Drawables\LinesDrawable.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Drawables\Trajectory2DDrawable.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Enums\BreakableState.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Enums\BreakableType.cs" />

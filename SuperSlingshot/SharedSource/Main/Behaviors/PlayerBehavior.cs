@@ -111,10 +111,12 @@ namespace SuperSlingshot.Behaviors
                         }
 
                         ((GameScene)this.Owner.Scene).PreviewTrajectory(impulse);
+                        ((GameScene)this.Owner.Scene).PreviewElasticBands(true, this.transform);
+
                     }
                     break;
                 case PlayerState.InTheAir:
-                    //((GameScene)this.Owner.Scene).PreviewTrajectory(Vector2.Zero);
+                    ((GameScene)this.Owner.Scene).PreviewElasticBands(false, this.transform);
                     // Dead condition: Slept or out of game area
                     if (this.rigidBody.Awake == false
                         || this.rigidBody.LinearVelocity.LengthSquared() <= this.MinimumVelocityToDeclareDead)
