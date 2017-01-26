@@ -14,12 +14,12 @@ namespace Match3.Gameboard
             this.random = new Random((int)DateTime.Now.Ticks);
         }
 
-        public Candy[][] Generate(int sizeN, int sizeM)
+        public Candy[][] Generate(int sizeM, int sizeN)
         {
-            var boardStatus = new Candy[sizeN][];
+            var boardStatus = new Candy[sizeM][];
             for (int i = 0; i < boardStatus.Length; i++)
             {
-                boardStatus[i] = new Candy[sizeM];
+                boardStatus[i] = new Candy[sizeN];
                 for (int j = 0; j < boardStatus[i].Length; j++)
                 {
                     boardStatus[i][j] = new Candy
