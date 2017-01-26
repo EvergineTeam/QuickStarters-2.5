@@ -2,6 +2,7 @@
 {
     public enum CandyTypes
     {
+        Empty,
         Regular,
         FourInLine,
         FourInSquare
