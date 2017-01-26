@@ -16,8 +16,6 @@ namespace Match3.Gameboard
             new Piece { M = 2, N = 2, AddCandy = CandyTypes.FourInSquare }
         };
 
-        private int[] pointsByStar;
-
         private BoardGenerator generator;
 
         private Candy[][] currentStatus;
@@ -26,10 +24,23 @@ namespace Match3.Gameboard
         {
             get { return this.currentStatus; }
         }
-
-        public Board(int sizeM, int sizeN, int[] pointsByStar)
+        
+        public int SizeM
         {
-            this.pointsByStar = pointsByStar;
+            get;
+            private set;
+        }
+
+        public int SizeN
+        {
+            get;
+            private set;
+        }
+
+        public Board(int sizeM, int sizeN)
+        {
+            this.SizeM = sizeM;
+            this.SizeN = sizeN;
             this.generator = new BoardGenerator();
             this.currentStatus = this.generator.Generate(sizeM, sizeN);
             this.ShuffleIfNecessary();
