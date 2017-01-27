@@ -320,13 +320,11 @@ namespace Match3.Gameboard
                         {
                             var resultOperation = new BoardOperation();
                             resultOperation.Type = OperationTypes.Remove;
-                            CandyColors color = CandyColors.Blue;
                             for (int pi = 0; pi < piece.M; pi++)
                             {
                                 for (int pj = 0; pj < piece.N; pj++)
                                 {
                                     var candy = boardStatus[i + pi][j + pj];
-                                    color = candy.Color;
                                     if (candy.Type == CandyTypes.FourInLine)
                                     {
                                         // TODO remove line
@@ -357,7 +355,7 @@ namespace Match3.Gameboard
                                     CandyProperties = new Candy
                                     {
                                         Type = piece.AddCandy.Value,
-                                        Color = color
+                                        Color = candyColor
                                     }
                                 });
 
