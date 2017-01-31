@@ -1,6 +1,5 @@
 using Match3.Components.Gameplay;
 using Match3.Gameboard;
-using Match3.Services;
 using WaveEngine.Framework;
 
 namespace Match3.Scenes

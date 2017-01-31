@@ -1,6 +1,7 @@
 ﻿using Match3.Gameboard;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 
 namespace Match3.Gameboard
@@ -103,7 +104,7 @@ namespace Match3.Gameboard
 
                 if (result.Count == 0)
                 {
-                    this.UpdateCandiesPosition(candyPosition, this.ReverseMove(move));
+                    this.UpdateCandiesPosition(candyPosition, move);
                 }
                 else if (this.ShuffleIfNecessary())
                 {
@@ -119,24 +120,11 @@ namespace Match3.Gameboard
             if (this.UpdateCandiesPosition(candyPosition, move))
             {
                 var operation = this.GetCurrentOperations();
-                this.UpdateCandiesPosition(candyPosition, this.ReverseMove(move));
+                this.UpdateCandiesPosition(candyPosition, move);
                 return operation.Any();
             }
 
             return false;
-        }
-
-        private CandyMoves ReverseMove(CandyMoves move)
-        {
-            switch (move)
-            {
-                case CandyMoves.Left: return CandyMoves.Right;
-                case CandyMoves.Right: return CandyMoves.Left;
-                case CandyMoves.Top: return CandyMoves.Bottom;
-                case CandyMoves.Bottom: return CandyMoves.Top;
-                default:
-                    throw new ArgumentOutOfRangeException("The indicated candy move is not valid.");
-            }
         }
 
         private bool UpdateCandiesPosition(Coordinate candyPosition, CandyMoves move)
@@ -147,10 +135,10 @@ namespace Match3.Gameboard
                 switch (move)
                 {
                     case CandyMoves.Left:
-                        otherCandyPosition.X++;
+                        otherCandyPosition.X--;
                         break;
                     case CandyMoves.Right:
-                        otherCandyPosition.X--;
+                        otherCandyPosition.X++;
                         break;
                     case CandyMoves.Top:
                         otherCandyPosition.Y--;
@@ -182,11 +170,15 @@ namespace Match3.Gameboard
 
         private void ExecuteOperation(IEnumerable<BoardOperation> operations)
         {
+            Debug.WriteLine($"Starting to execute board operations: {operations.Count()}");
+
             var boardStatus = this.currentStatus;
             foreach (var operation in operations)
             {
+                Debug.WriteLine($"Board operation: {operation.Type}");
                 foreach (var candyOperation in operation.CandyOperations)
                 {
+                    Debug.WriteLine($"- Candy operation: Previous={candyOperation.PreviousPosition}, Current={candyOperation.CurrentPosition}");
                     switch (operation.Type)
                     {
                         case OperationTypes.Remove:
@@ -197,8 +189,10 @@ namespace Match3.Gameboard
                             boardStatus[candyOperation.CurrentPosition.X][candyOperation.CurrentPosition.Y].Color = candyOperation.CandyProperties.Value.Color;
                             break;
                         case OperationTypes.Move:
-                            boardStatus[candyOperation.CurrentPosition.X][candyOperation.CurrentPosition.Y].Type = boardStatus[candyOperation.PreviousPosition.X][candyOperation.PreviousPosition.Y].Type;
-                            boardStatus[candyOperation.CurrentPosition.X][candyOperation.CurrentPosition.Y].Color = boardStatus[candyOperation.PreviousPosition.X][candyOperation.PreviousPosition.Y].Color;
+                            var current = boardStatus[candyOperation.CurrentPosition.X][candyOperation.CurrentPosition.Y];
+
+                            boardStatus[candyOperation.CurrentPosition.X][candyOperation.CurrentPosition.Y] = boardStatus[candyOperation.PreviousPosition.X][candyOperation.PreviousPosition.Y];
+                            boardStatus[candyOperation.PreviousPosition.X][candyOperation.PreviousPosition.Y] = current;
                             break;
                         default:
                             break;
@@ -226,9 +220,9 @@ namespace Match3.Gameboard
             var resultOperation = new BoardOperation();
             resultOperation.Type = OperationTypes.Add;
             var boardStatus = this.currentStatus;
-            for (int j = 0; j < boardStatus[0].Length; j++)
+            for (int i = 0; i < boardStatus.Length; i++)
             {
-                for (int i = 0; i < boardStatus.Length; i++)
+                for (int j = 0; j < boardStatus[0].Length; j++)
                 {
                     if (boardStatus[i][j].Type == CandyTypes.Empty)
                     {
@@ -264,10 +258,10 @@ namespace Match3.Gameboard
             var resultOperation = new BoardOperation();
             resultOperation.Type = OperationTypes.Move;
             var boardStatus = this.currentStatus;
-            for (int j = 0; j < boardStatus[0].Length; j++)
+            for (int i = 0; i < boardStatus.Length; i++)
             {
                 var empty = 0;
-                for (int i = boardStatus.Length - 1; i >= 0; i--)
+                for (int j = boardStatus[0].Length - 1; j >= 0; j--)
                 {
                     if (boardStatus[i][j].Type == CandyTypes.Empty)
                     {
@@ -278,7 +272,7 @@ namespace Match3.Gameboard
                         resultOperation.AddCandyOperation(new CandyOperation
                         {
                             PreviousPosition = new Coordinate { X = i, Y = j },
-                            CurrentPosition = new Coordinate { X = i, Y = j - empty }
+                            CurrentPosition = new Coordinate { X = i, Y = j + empty }
                         });
                     }
                 }
@@ -437,7 +431,9 @@ namespace Match3.Gameboard
 
             public void AddCandyOperation(CandyOperation operation)
             {
-                if (this.candyOperations.All(x => x.CurrentPosition.X != operation.CurrentPosition.X && x.CurrentPosition.Y != operation.CurrentPosition.Y))
+                if (!this.candyOperations.Any(x =>
+                    x.PreviousPosition.X == operation.PreviousPosition.X && x.PreviousPosition.Y == operation.PreviousPosition.Y
+                 && x.CurrentPosition.X == operation.CurrentPosition.X && x.CurrentPosition.Y == operation.CurrentPosition.Y))
                 {
                     this.candyOperations.Add(operation);
                 }

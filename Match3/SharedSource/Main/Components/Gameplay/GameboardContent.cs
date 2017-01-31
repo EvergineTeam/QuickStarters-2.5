@@ -22,6 +22,8 @@ namespace Match3.Components.Gameplay
         [RequiredComponent]
         protected Transform2D transform;
 
+        private Board board;
+
         protected override void Initialize()
         {
             base.Initialize();
@@ -29,11 +31,20 @@ namespace Match3.Components.Gameplay
 
         public void RegenerateGameboard(Board board)
         {
+            this.board = board;
+
             foreach (var child in this.Owner.ChildEntities.ToList())
             {
+                var candyTouch = child.FindComponent<CandyTouchComponent>();
+
+                if (candyTouch != null)
+                {
+                    candyTouch.OnMoveOperation -= this.CandyTouch_OnMoveOperation;
+                }
+
                 this.Owner.RemoveChild(child.Name);
             }
-            
+
             var mByTwo = (board.SizeM / 2f);
             var nByTwo = (board.SizeN / 2f);
 
@@ -43,6 +54,7 @@ namespace Match3.Components.Gameplay
                 int indexJ = 0;
                 for (float j = -nByTwo + 0.5f; j < nByTwo + 0.5f; j++)
                 {
+                    var coord = new Coordinate() { X = indexI, Y = indexJ };
                     var position = new Vector2(i * DistanceBtwItems, j * DistanceBtwItems);
                     var candy = board.CurrentStatus[indexI][indexJ];
 
@@ -54,11 +66,21 @@ namespace Match3.Components.Gameplay
 
                     var candyEntity = GameplayFactory.CreateCandy(this.Owner.Scene, position, candy.Type, candy.Color);
                     candyEntity.Name += indexI + "_" + indexJ;
+                    var candyTouch = new CandyTouchComponent() { Coordinate = coord };
+                    candyTouch.OnMoveOperation += this.CandyTouch_OnMoveOperation;
+                    candyEntity.AddComponent(candyTouch);
                     this.Owner.AddChild(candyEntity);
                     indexJ++;
                 }
                 indexI++;
             }
+        }
+
+        private void CandyTouch_OnMoveOperation(object sender, CandyMoves move)
+        {
+            var candyTouch = (CandyTouchComponent)sender;
+            this.board.Move(candyTouch.Coordinate, move);
+            this.RegenerateGameboard(this.board);
         }
     }
 }
