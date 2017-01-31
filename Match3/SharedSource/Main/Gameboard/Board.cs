@@ -24,7 +24,7 @@ namespace Match3.Gameboard
         {
             get { return this.currentStatus; }
         }
-        
+
         public int SizeM
         {
             get;
@@ -232,7 +232,7 @@ namespace Match3.Gameboard
                 {
                     if (boardStatus[i][j].Type == CandyTypes.Empty)
                     {
-                        resultOperation.CandyOperations.Add(new CandyOperation
+                        resultOperation.AddCandyOperation(new CandyOperation
                         {
                             PreviousPosition = new Coordinate { X = -1, Y = -1 },
                             CurrentPosition = new Coordinate { X = i, Y = j },
@@ -275,7 +275,7 @@ namespace Match3.Gameboard
                     }
                     else if (empty > 0)
                     {
-                        resultOperation.CandyOperations.Add(new CandyOperation
+                        resultOperation.AddCandyOperation(new CandyOperation
                         {
                             PreviousPosition = new Coordinate { X = i, Y = j },
                             CurrentPosition = new Coordinate { X = i, Y = j - empty }
@@ -327,14 +327,47 @@ namespace Match3.Gameboard
                                     var candy = boardStatus[i + pi][j + pj];
                                     if (candy.Type == CandyTypes.FourInLine)
                                     {
-                                        // TODO remove line
+                                        // Remove line
+                                        if (piece.M == 1)
+                                        {
+                                            for (int fi = 0; fi < boardStatus.Length; fi++)
+                                            {
+                                                resultOperation.AddCandyOperation(new CandyOperation
+                                                {
+                                                    PreviousPosition = new Coordinate { X = fi, Y = j + pj },
+                                                    CurrentPosition = new Coordinate { X = -1, Y = -1 }
+                                                });
+                                            }
+                                        }
+                                        else if (piece.N == 1)
+                                        {
+                                            for (int fj = 0; fj < boardStatus[0].Length; fj++)
+                                            {
+                                                resultOperation.AddCandyOperation(new CandyOperation
+                                                {
+                                                    PreviousPosition = new Coordinate { X = i + pi, Y = fj },
+                                                    CurrentPosition = new Coordinate { X = -1, Y = -1 }
+                                                });
+                                            }
+                                        }
                                     }
                                     if (candy.Type == CandyTypes.FourInSquare)
                                     {
-                                        // TODO remove box of 3x3
+                                        // Remove box of 4x4
+                                        for (int fi = -2; fi < 2; fi++)
+                                        {
+                                            for (int fj = -2; fj < 2; fj++)
+                                            {
+                                                resultOperation.AddCandyOperation(new CandyOperation
+                                                {
+                                                    PreviousPosition = new Coordinate { X = i + pi + fi, Y = j + pj + fj },
+                                                    CurrentPosition = new Coordinate { X = -1, Y = -1 }
+                                                });
+                                            }
+                                        }
                                     }
 
-                                    resultOperation.CandyOperations.Add(new CandyOperation
+                                    resultOperation.AddCandyOperation(new CandyOperation
                                     {
                                         PreviousPosition = new Coordinate { X = i + pi, Y = j + pj },
                                         CurrentPosition = new Coordinate { X = -1, Y = -1 }
@@ -348,7 +381,7 @@ namespace Match3.Gameboard
                             {
                                 var addOperation = new BoardOperation();
                                 addOperation.Type = OperationTypes.Add;
-                                addOperation.CandyOperations.Add(new CandyOperation
+                                addOperation.AddCandyOperation(new CandyOperation
                                 {
                                     PreviousPosition = new Coordinate { X = -1, Y = -1 },
                                     CurrentPosition = new Coordinate { X = i, Y = j },
@@ -391,13 +424,23 @@ namespace Match3.Gameboard
 
         public class BoardOperation
         {
+            private List<CandyOperation> candyOperations;
+
             public OperationTypes Type { get; set; }
 
-            public List<CandyOperation> CandyOperations { get; set; }
+            public IReadOnlyCollection<CandyOperation> CandyOperations { get { return this.candyOperations; } }
 
             public BoardOperation()
             {
-                this.CandyOperations = new List<CandyOperation>();
+                this.candyOperations = new List<CandyOperation>();
+            }
+
+            public void AddCandyOperation(CandyOperation operation)
+            {
+                if (this.candyOperations.All(x => x.CurrentPosition.X != operation.CurrentPosition.X && x.CurrentPosition.Y != operation.CurrentPosition.Y))
+                {
+                    this.candyOperations.Add(operation);
+                }
             }
         }
 
