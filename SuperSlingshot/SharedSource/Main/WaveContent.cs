@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// File generated on 24/01/2017 16:47:09
+// File generated on 31/01/2017 17:33:47
 namespace SuperSlingshot
 {
     using System;
@@ -19,6 +19,9 @@ namespace SuperSlingshot
         
         public sealed class Assets
         {
+            
+            /// <summary> Path to Content/Assets/elastic_line.png </summary>
+            public const string elastic_line_png = "Content/Assets/elastic_line.png";
             
             /// <summary> Path to Content/Assets/standard_line.png </summary>
             public const string standard_line_png = "Content/Assets/standard_line.png";
@@ -694,6 +697,9 @@ namespace SuperSlingshot
             
             /// <summary> Path to Content/Materials/BackgroundMenuMaterial.wmat </summary>
             public const string BackgroundMenuMaterial = "Content/Materials/BackgroundMenuMaterial.wmat";
+            
+            /// <summary> Path to Content/Materials/ElasticMaterial.wmat </summary>
+            public const string ElasticMaterial = "Content/Materials/ElasticMaterial.wmat";
             
             /// <summary> Path to Content/Materials/SmokeMaterial.wmat </summary>
             public const string SmokeMaterial = "Content/Materials/SmokeMaterial.wmat";

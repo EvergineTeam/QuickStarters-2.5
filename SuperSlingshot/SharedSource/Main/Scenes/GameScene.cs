@@ -232,7 +232,9 @@ namespace SuperSlingshot.Scenes
             this.trajectoryDrawable = new Trajectory2DDrawable()
             {
                 IsVisible = false,
-                CurveWith = 6.0f
+                NumberOfPoints = 70,
+                CurveWith = 6.0f,
+                VisibilityPercentage = 1,
             };
 
             host.AddComponent(new MaterialsMap() { DefaultMaterialPath = WaveContent.Materials.TrajectoryMaterial });
@@ -244,10 +246,13 @@ namespace SuperSlingshot.Scenes
             this.bandDrawable = new ElasticBandsDrawable()
             {
                 IsVisible = false,
-                FixedBackPoint = this.GetAnchorPosition(GameConstants.ANCHORFRONTBAND),
-                FixedFrontPoint = this.GetAnchorPosition(GameConstants.ANCHORBACKBAND)
+                FixedPoint = this.GetAnchorPosition(GameConstants.ANCHORFRONTBAND),
+                NumberOfPoints = 2,
+                Color = Color.Red,
+                ZOrder = 1
             };
 
+            // host.AddComponent(new MaterialsMap() { DefaultMaterialPath = WaveContent.Materials.ElasticMaterial });
             host.AddComponent(this.bandDrawable);
         }
 
@@ -267,7 +272,7 @@ namespace SuperSlingshot.Scenes
         public void PreviewElasticBands(bool visible, Transform2D target)
         {
             this.bandDrawable.IsVisible = visible;
-            
+
             this.bandDrawable.TargetTransform = target;
         }
 
@@ -342,7 +347,7 @@ namespace SuperSlingshot.Scenes
                 if (!string.IsNullOrEmpty(assetPath))
                 {
                     var boulder = this.EntityManager.Instantiate(assetPath);
-                              
+
                     boulder.FindComponent<Transform2D>().DrawOrder = 0;
 
                     // Must not collide names

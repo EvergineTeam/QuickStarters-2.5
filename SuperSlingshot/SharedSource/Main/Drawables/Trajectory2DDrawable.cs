@@ -1,67 +1,34 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Runtime.Serialization;
-using System.Text;
 using WaveEngine.Common;
 using WaveEngine.Common.Graphics;
 using WaveEngine.Common.Graphics.VertexFormats;
 using WaveEngine.Common.Math;
-using WaveEngine.Components.Graphics3D;
 using WaveEngine.Framework;
 using WaveEngine.Framework.Animation;
-using WaveEngine.Framework.Graphics;
 using WaveEngine.Framework.Physics2D;
 using WaveEngine.Framework.Resources;
-using WaveEngine.Framework.Services;
 
 namespace SuperSlingshot.Drawables
 {
     [DataContract]
-    public class Trajectory2DDrawable : Drawable2D
+    public class Trajectory2DDrawable : LinesDrawable
     {
-        private const int NUMBER_OF_POINTS = 70;
-
-        [RequiredComponent]
-        protected MaterialsMap materialsMap;
-
-        [RequiredComponent]
-        protected Transform2D transform2D;
-
         [RequiredComponent]
         protected RigidBody2D rigidBody2D;
 
-        private Vector2[] curve;
-
         private IEasingFunction ease;
-
-        private VertexPositionColorTexture[] vertices;
-        private Mesh mesh;
         private Vector2 point;
         private Vector2 nextPoint;
         private Vector2 unitaryPerpendicularVector;
-        private int vertexIndex;
-        private Platform platform;
+        
 
         private float visibilityPercentage;
         private int visibilityLength;
         private float opacityStep;
 
         [DataMember]
-        public float CurveWith
-        {
-            get;
-            set;
-        }
-
-        [DataMember]
         public Vector2 DesiredVelocity
-        {
-            get;
-            set;
-        }
-
-        [DataMember]
-        public Color DiffuseColor
         {
             get;
             set;
@@ -75,7 +42,7 @@ namespace SuperSlingshot.Drawables
             set
             {
                 this.visibilityPercentage = value;
-                this.visibilityLength = (int)(NUMBER_OF_POINTS * value);
+                this.visibilityLength = (int)(this.NumberOfPoints * value);
                 this.opacityStep = 1f / this.visibilityLength;
             }
         }
@@ -89,23 +56,6 @@ namespace SuperSlingshot.Drawables
             this.CurveWith = 3.5f;
             this.ease = new CubicEase();
             this.DiffuseColor = Color.White;
-        }
-
-        protected override void Initialize()
-        {
-            base.Initialize();
-
-            this.curve = new Vector2[NUMBER_OF_POINTS];
-            this.platform = WaveServices.Platform;
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (this.mesh != null)
-            {
-                this.GraphicsDevice.DestroyIndexBuffer(this.mesh.IndexBuffer);
-                this.GraphicsDevice.DestroyVertexBuffer(this.mesh.VertexBuffer);
-            }
         }
 
         public override void Draw(TimeSpan gameTime)
@@ -159,16 +109,6 @@ namespace SuperSlingshot.Drawables
                     vertexBuffer,
                     indexBuffer,
                     PrimitiveType.TriangleStrip);
-            }
-        }
-
-        protected override void DrawDebugLines()
-        {
-            base.DrawDebugLines();
-
-            for (int i = 0; i < this.curve.Length - 1; i++)
-            {
-                this.RenderManager.LineBatch2D.DrawLine(this.curve[i], this.curve[i + 1], Color.Red, 0f);
             }
         }
 

@@ -28,9 +28,6 @@ namespace SuperSlingshot.Behaviors
         [RequiredComponent]
         private Transform2D transform = null;
 
-        //[RequiredComponent]
-        //protected Trajectory2DDrawable trajectoryDrawable;
-
         [RequiredComponent]
         private Sprite bodySprite { get; set; }
 
