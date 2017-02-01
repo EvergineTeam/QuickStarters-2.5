@@ -10,11 +10,11 @@ namespace Match3.Gameboard
     {
         private static Piece[] pieces = new Piece[]
         {
-            new Piece { M = 1, N = 3 },
+            new Piece { M = 2, N = 2, AddCandy = CandyTypes.FourInSquare },
             new Piece { M = 1, N = 4, AddCandy = CandyTypes.FourInLine },
-            new Piece { M = 3, N = 1 },
             new Piece { M = 4, N = 1, AddCandy = CandyTypes.FourInLine },
-            new Piece { M = 2, N = 2, AddCandy = CandyTypes.FourInSquare }
+            new Piece { M = 1, N = 3 },
+            new Piece { M = 3, N = 1 }
         };
 
         private BoardGenerator generator;
@@ -182,17 +182,26 @@ namespace Match3.Gameboard
                     switch (operation.Type)
                     {
                         case OperationTypes.Remove:
-                            boardStatus[candyOperation.PreviousPosition.X][candyOperation.PreviousPosition.Y].Type = CandyTypes.Empty;
+                            if (this.ValidCoordinate(candyOperation.PreviousPosition))
+                            {
+                                boardStatus[candyOperation.PreviousPosition.X][candyOperation.PreviousPosition.Y].Type = CandyTypes.Empty;
+                            }
                             break;
                         case OperationTypes.Add:
-                            boardStatus[candyOperation.CurrentPosition.X][candyOperation.CurrentPosition.Y].Type = candyOperation.CandyProperties.Value.Type;
-                            boardStatus[candyOperation.CurrentPosition.X][candyOperation.CurrentPosition.Y].Color = candyOperation.CandyProperties.Value.Color;
+                            if (this.ValidCoordinate(candyOperation.CurrentPosition))
+                            {
+                                boardStatus[candyOperation.CurrentPosition.X][candyOperation.CurrentPosition.Y].Type = candyOperation.CandyProperties.Value.Type;
+                                boardStatus[candyOperation.CurrentPosition.X][candyOperation.CurrentPosition.Y].Color = candyOperation.CandyProperties.Value.Color;
+                            }
                             break;
                         case OperationTypes.Move:
-                            var current = boardStatus[candyOperation.CurrentPosition.X][candyOperation.CurrentPosition.Y];
+                            if (this.ValidCoordinate(candyOperation.PreviousPosition) && this.ValidCoordinate(candyOperation.CurrentPosition))
+                            {
+                                var current = boardStatus[candyOperation.CurrentPosition.X][candyOperation.CurrentPosition.Y];
 
-                            boardStatus[candyOperation.CurrentPosition.X][candyOperation.CurrentPosition.Y] = boardStatus[candyOperation.PreviousPosition.X][candyOperation.PreviousPosition.Y];
-                            boardStatus[candyOperation.PreviousPosition.X][candyOperation.PreviousPosition.Y] = current;
+                                boardStatus[candyOperation.CurrentPosition.X][candyOperation.CurrentPosition.Y] = boardStatus[candyOperation.PreviousPosition.X][candyOperation.PreviousPosition.Y];
+                                boardStatus[candyOperation.PreviousPosition.X][candyOperation.PreviousPosition.Y] = current;
+                            }
                             break;
                         default:
                             break;
