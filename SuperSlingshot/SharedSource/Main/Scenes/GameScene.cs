@@ -237,7 +237,11 @@ namespace SuperSlingshot.Scenes
                 VisibilityPercentage = 1,
             };
 
-            host.AddComponent(new MaterialsMap() { DefaultMaterialPath = WaveContent.Materials.TrajectoryMaterial });
+
+            var matsMap = new MaterialsMap() { DefaultMaterialPath = WaveContent.Materials.TrajectoryMaterial };
+            matsMap.MaterialsPath.Add("elastic", WaveContent.Materials.ElasticMaterial);
+            host.AddComponent(matsMap);
+
             host.AddComponent(this.trajectoryDrawable);
         }
 
@@ -249,7 +253,8 @@ namespace SuperSlingshot.Scenes
                 FixedPoint = this.GetAnchorPosition(GameConstants.ANCHORFRONTBAND),
                 NumberOfPoints = 2,
                 Color = Color.Red,
-                ZOrder = 1
+                CurveWith=60,
+                ZOrder = -1
             };
 
             // host.AddComponent(new MaterialsMap() { DefaultMaterialPath = WaveContent.Materials.ElasticMaterial });

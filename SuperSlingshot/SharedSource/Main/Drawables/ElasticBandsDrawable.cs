@@ -42,21 +42,26 @@ namespace SuperSlingshot.Drawables
             // WORKAROUND: Force spritebatch to start a new render command
             this.layer.SpriteBatch.Draw(StaticResources.WhitePixel, -Vector2.One, null, Color.White, 0.0f, Vector2.Zero, Vector2.One, SpriteEffects.None, this.mesh.ZOrder);
 
-            this.RenderManager.DrawMesh(this.mesh, this.materialsMap.DefaultMaterial, Matrix.Identity);
+            this.RenderManager.DrawMesh(this.mesh, this.materialsMap.Materials["elastic"], Matrix.Identity);
         }
 
         private void SetupPointsAndVertices()
         {
-            Vector3 initialA = curve[0].ToVector3(0) + Vector3.UnitY * this.CurveWith;
-            Vector3 initialB = curve[1].ToVector3(0) - Vector3.UnitY * this.CurveWith;
+            var diff = this.TargetTransform.Position - this.FixedPoint;
+            diff.Normalize();
+            var offset = diff * 40;
 
-            Vector3 finalA = this.TargetTransform.Position.ToVector3(0);
-            Vector3 finalB = this.TargetTransform.Position.ToVector3(0);
+            Vector3 initialA = this.FixedPoint.ToVector3(0) + Vector3.UnitY * this.CurveWith / 2;
+            Vector3 initialB = this.FixedPoint.ToVector3(0) - Vector3.UnitY * this.CurveWith / 2;
+
+            var final = this.TargetTransform.Position.ToVector3(0) + offset.ToVector3(0);
+            Vector3 finalA = final;
+            Vector3 finalB = final;
 
             this.SetVertice(0, initialA, Vector2.Zero);
             this.SetVertice(1, initialB, Vector2.UnitX);
-            this.SetVertice(2, finalA, Vector2.UnitY);
-            this.SetVertice(3, finalB, Vector2.One);
+            this.SetVertice(2, finalA, Vector2.One);
+            this.SetVertice(3, finalB, Vector2.UnitY);
         }
 
         private void SetVertice(int i, Vector3 position, Vector2 texCoord)
