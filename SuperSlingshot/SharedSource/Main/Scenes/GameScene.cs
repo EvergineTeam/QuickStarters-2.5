@@ -250,11 +250,12 @@ namespace SuperSlingshot.Scenes
             this.bandDrawable = new ElasticBandsDrawable()
             {
                 IsVisible = false,
-                FixedPoint = this.GetAnchorPosition(GameConstants.ANCHORFRONTBAND),
-                NumberOfPoints = 2,
-                Color = Color.Red,
-                CurveWith=60,
-                ZOrder = -1
+                FixedPointATop = this.GetAnchorPosition(GameConstants.ANCHORFRONTBANDTOP),
+                FixedPointABottom = this.GetAnchorPosition(GameConstants.ANCHORFRONTBANDBOTTOM),
+                FixedPointBTop = this.GetAnchorPosition(GameConstants.ANCHORBACKBANDTOP),
+                FixedPointBBottom = this.GetAnchorPosition(GameConstants.ANCHORBACKBANDBOTTOM),
+                ZOrderA = -100,
+                ZOrderB = 100
             };
 
             // host.AddComponent(new MaterialsMap() { DefaultMaterialPath = WaveContent.Materials.ElasticMaterial });

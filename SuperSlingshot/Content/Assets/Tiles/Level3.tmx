@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="50" height="40" tilewidth="128" tileheight="128" nextobjectid="34">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="50" height="40" tilewidth="128" tileheight="128" nextobjectid="37">
  <properties>
   <property name="BlockDestroyPoints" type="int" value="2000"/>
   <property name="BlockHitPoints" type="int" value="1500"/>
@@ -19,7 +19,7 @@
  <tileset firstgid="18" name="desert adorners" tilewidth="128" tileheight="128" tilecount="3" columns="3">
   <image source="desert adorners.png" width="384" height="128"/>
  </tileset>
- <layer name="Background" width="50" height="40" visible="0">
+ <layer name="Background" width="50" height="40">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -196,11 +196,13 @@
 </data>
  </layer>
  <objectgroup name="AnchorLayer">
-  <object id="1" name="SlingshotAnchor" x="616" y="3488" width="112" height="128"/>
+  <object id="1" name="SlingshotAnchor" x="616" y="3488" width="11.2" height="12.8"/>
   <object id="2" name="TopLeftAnchor" x="0" y="624" width="144" height="144"/>
   <object id="3" name="BottomRightAnchor" x="6259.2" y="4057.6" width="96" height="128"/>
-  <object id="31" name="FrontBandAnchor" x="563.2" y="3513.6" width="44.8" height="76.8"/>
-  <object id="33" name="BackBandAnchor" x="742.4" y="3449.6" width="44.8" height="76.8"/>
+  <object id="31" name="FrontBandAnchorTop" x="544" y="3449.6" width="12.8" height="12.8"/>
+  <object id="33" name="BackBandAnchorTop" x="684.8" y="3449.6" width="12.8" height="12.8"/>
+  <object id="34" name="FrontBandAnchorBottom" x="569.6" y="3571.2" width="12.8" height="12.8"/>
+  <object id="35" name="BackBandAnchorBottom" x="697.6" y="3520" width="12.8" height="12.8"/>
  </objectgroup>
  <objectgroup name="PhysicLayer">
   <object id="18" name="Crates" x="5478.4" y="3846.4">
@@ -211,6 +213,9 @@
   </object>
   <object id="28" name="Platform" x="2432" y="3110.4">
    <polyline points="0,0 1024,0 1024,44.8 979.2,51.2 928,83.2 89.6,83.2 44.8,51.2 0,44.8 0,6.4"/>
+  </object>
+  <object id="36" name="Spikes" x="2086.4" y="3833.6">
+   <polyline points="0,0 0,-51.2 -25.6,-57.6 -32,-89.6 -25.6,-108.8 -12.8,-102.4 12.8,-121.6 38.4,-115.2 51.2,-102.4 64,-89.6 83.2,-83.2 89.6,-57.6 76.8,-44.8 64,-32 51.2,-25.6 44.8,6.4"/>
   </object>
  </objectgroup>
  <objectgroup color="#00ff00" name="BoxPhysicLayer">
