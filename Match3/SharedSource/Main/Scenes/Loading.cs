@@ -29,6 +29,7 @@ namespace Match3.Scenes
         {
             WaveServices.TimerFactory.CreateTimer(TimeSpan.FromSeconds(0.2), () =>
             {
+                CustomServices.GameLogic.InitializeLevel();
                 CustomServices.NavigationService.Navigate(NavigateCommands.DefaultForward);
             }, false, this);
         }
