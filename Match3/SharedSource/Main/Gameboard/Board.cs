@@ -298,6 +298,7 @@ namespace Match3.Gameboard
 
         private bool TryGetRemoveOperation(ref List<BoardOperation> resultOperations)
         {
+            var addOperations = new List<BoardOperation>();
             var boardStatus = this.currentStatus;
             for (int p = 0; p < pieces.Length; p++)
             {
@@ -357,9 +358,9 @@ namespace Match3.Gameboard
                                     if (candy.Type == CandyTypes.FourInSquare)
                                     {
                                         // Remove box of 4x4
-                                        for (int fi = -2; fi < 2; fi++)
+                                        for (int fi = -1; fi < 2; fi++)
                                         {
-                                            for (int fj = -2; fj < 2; fj++)
+                                            for (int fj = -1; fj < 2; fj++)
                                             {
                                                 resultOperation.AddCandyOperation(new CandyOperation
                                                 {
@@ -395,17 +396,16 @@ namespace Match3.Gameboard
                                     }
                                 });
 
-                                resultOperations.Add(addOperation);
+                                addOperations.Add(addOperation);
                             }
-
-
-                            return true;
                         }
                     }
                 }
             }
 
-            return false;
+            resultOperations.AddRange(addOperations);
+
+            return resultOperations.Any();
         }
 
         public enum OperationTypes
