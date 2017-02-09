@@ -1,16 +1,13 @@
 ﻿using Match3.Factories;
 using Match3.Gameboard;
-using System;
-using System.Collections.Generic;
+using Match3.Services;
+using Match3.Services.Navigation;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.Serialization;
-using System.Text;
 using WaveEngine.Common.Math;
-using WaveEngine.Components.Graphics2D;
 using WaveEngine.Framework;
 using WaveEngine.Framework.Graphics;
-using WaveEngine.Framework.Models.Assets;
-using WaveEngine.Framework.Services;
 
 namespace Match3.Components.Gameplay
 {
@@ -22,17 +19,23 @@ namespace Match3.Components.Gameplay
         [RequiredComponent]
         protected Transform2D transform;
 
-        private Board board;
+        private bool isMoving;
+        private GameLogic gameLogic;
 
         protected override void Initialize()
         {
             base.Initialize();
+            this.gameLogic = CustomServices.GameLogic;
+            this.RegenerateGameboard();
         }
 
-        public void RegenerateGameboard(Board board)
+        private void GameLogicGameFinished(object sender, System.EventArgs e)
         {
-            this.board = board;
+            CustomServices.NavigationService.Navigate(NavigateCommands.DefaultForward);
+        }
 
+        public void RegenerateGameboard()
+        {
             foreach (var child in this.Owner.ChildEntities.ToList())
             {
                 var candyTouch = child.FindComponent<CandyTouchComponent>();
@@ -45,8 +48,9 @@ namespace Match3.Components.Gameplay
                 this.Owner.RemoveChild(child.Name);
             }
 
-            var mByTwo = (board.SizeM / 2f);
-            var nByTwo = (board.SizeN / 2f);
+            var currentCandies = this.gameLogic.CurrentCandies;
+            var mByTwo = (currentCandies.Length / 2f);
+            var nByTwo = (currentCandies[0].Length / 2f);
 
             int indexI = 0;
             for (float i = -mByTwo + 0.5f; i < mByTwo + 0.5f; i++)
@@ -56,7 +60,7 @@ namespace Match3.Components.Gameplay
                 {
                     var coord = new Coordinate() { X = indexI, Y = indexJ };
                     var position = new Vector2(i * DistanceBtwItems, j * DistanceBtwItems);
-                    var candy = board.CurrentStatus[indexI][indexJ];
+                    var candy = currentCandies[indexI][indexJ];
 
                     //        var random = WaveServices.Random;
                     //        var allTypes = Enum.GetValues(typeof(CandyTypes));
@@ -76,11 +80,23 @@ namespace Match3.Components.Gameplay
             }
         }
 
-        private void CandyTouch_OnMoveOperation(object sender, CandyMoves move)
+        private async void CandyTouch_OnMoveOperation(object sender, CandyMoves move)
         {
+            if (this.isMoving)
+            {
+                return;
+            }
+
+            this.isMoving = true;
             var candyTouch = (CandyTouchComponent)sender;
-            this.board.Move(candyTouch.Coordinate, move);
-            this.RegenerateGameboard(this.board);
+            foreach (var item in this.gameLogic.MoveIters(candyTouch.Coordinate, move))
+            {
+                this.RegenerateGameboard();
+                await System.Threading.Tasks.Task.Delay(1000);
+            }
+
+            Debug.WriteLine("MOVE END!");
+            this.isMoving = false;
         }
     }
 }

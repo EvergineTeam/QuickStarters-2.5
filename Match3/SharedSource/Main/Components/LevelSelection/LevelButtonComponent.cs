@@ -1,4 +1,5 @@
-﻿using Match3.UI;
+﻿using Match3.Services;
+using Match3.UI;
 using Match3.UI.Navigation;
 using System;
 using System.Runtime.Serialization;
@@ -179,7 +180,7 @@ namespace Match3.Components.LevelSelection
         
         private void TouchGestures_TouchTap(object sender, GestureEventArgs e)
         {
-            //TODO: Update level in Game Service
+            CustomServices.GameLogic.SelectLevel(this.LevelIndex);
 
             this.navComponent.DoNavigation();
         }

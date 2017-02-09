@@ -41,7 +41,9 @@ namespace Match3.Factories
                     typeString = "lollipop";
                     break;
                 default:
-                    throw new InvalidOperationException("Invalid candy type");
+                    typeString = "jelly";
+                    break;
+                    //throw new InvalidOperationException("Invalid candy type");
             }
 
             var colorString = candyColor.ToString().ToLowerInvariant();

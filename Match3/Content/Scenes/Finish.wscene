@@ -3,6 +3,7 @@
   <Entities xmlns:d2p1="WaveEngine.Framework.Models.Entities">
     <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
       <d2p1:SerializeChildrens />
+      <d2p1:isActive>true</d2p1:isActive>
       <d2p1:isStatic>false</d2p1:isStatic>
       <d2p1:isVisible>true</d2p1:isVisible>
       <d2p1:name>defaultCamera2D</d2p1:name>
@@ -45,13 +46,13 @@
         </d4p1:Component>
         <d4p1:Component xmlns:d5p1="WaveEngine.Framework.Graphics" i:type="d5p1:Camera2D">
           <d5p1:BackgroundColor xmlns:d6p1="WaveEngine.Common.Graphics">
-            <d6p1:A>255</d6p1:A>
-            <d6p1:B>201</d6p1:B>
-            <d6p1:G>155</d6p1:G>
-            <d6p1:R>255</d6p1:R>
+            <d6p1:A>0</d6p1:A>
+            <d6p1:B>0</d6p1:B>
+            <d6p1:G>0</d6p1:G>
+            <d6p1:R>0</d6p1:R>
           </d5p1:BackgroundColor>
           <d5p1:CameraOrder>0</d5p1:CameraOrder>
-          <d5p1:ClearFlags>All</d5p1:ClearFlags>
+          <d5p1:ClearFlags>DepthAndStencil</d5p1:ClearFlags>
           <d5p1:FarPlane>1000</d5p1:FarPlane>
           <d5p1:FieldOfView>0</d5p1:FieldOfView>
           <d5p1:IsActive>true</d5p1:IsActive>
@@ -90,6 +91,7 @@
           <d2p1:SerializeChildrens>
             <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
               <d2p1:SerializeChildrens />
+              <d2p1:isActive>true</d2p1:isActive>
               <d2p1:isStatic>false</d2p1:isStatic>
               <d2p1:isVisible>true</d2p1:isVisible>
               <d2p1:name>signText</d2p1:name>
@@ -160,6 +162,7 @@
               </d2p1:SerializeComponents>
             </d2p1:BaseEntityModel>
           </d2p1:SerializeChildrens>
+          <d2p1:isActive>true</d2p1:isActive>
           <d2p1:isStatic>false</d2p1:isStatic>
           <d2p1:isVisible>true</d2p1:isVisible>
           <d2p1:name>Sign</d2p1:name>
@@ -225,6 +228,7 @@
               <d2p1:SerializeChildrens>
                 <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
                   <d2p1:SerializeChildrens />
+                  <d2p1:isActive>true</d2p1:isActive>
                   <d2p1:isStatic>false</d2p1:isStatic>
                   <d2p1:isVisible>true</d2p1:isVisible>
                   <d2p1:name>inner</d2p1:name>
@@ -234,9 +238,19 @@
                   <d2p1:PrefabId>7369b0f1-f8f4-4077-ba71-efc5a1a02743</d2p1:PrefabId>
                   <d2p1:PrefabPath>Content/Prefabs/Panels/FillStar.wpref</d2p1:PrefabPath>
                   <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
-                  <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+                  <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+                    <d10p1:KeyValueOfstringanyType>
+                      <d10p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#LocalPosition</d10p1:Key>
+                      <d10p1:Value xmlns:d12p1="WaveEngine.Common.Math" i:type="d12p1:Vector3">
+                        <d12p1:X>-2.05039978E-05</d12p1:X>
+                        <d12p1:Y>5.99995136</d12p1:Y>
+                        <d12p1:Z>-1</d12p1:Z>
+                      </d10p1:Value>
+                    </d10p1:KeyValueOfstringanyType>
+                  </d2p1:modifiedProperties>
                 </d2p1:BaseEntityModel>
               </d2p1:SerializeChildrens>
+              <d2p1:isActive>true</d2p1:isActive>
               <d2p1:isStatic>false</d2p1:isStatic>
               <d2p1:isVisible>true</d2p1:isVisible>
               <d2p1:name>FillStar01</d2p1:name>
@@ -269,6 +283,7 @@
               <d2p1:SerializeChildrens>
                 <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
                   <d2p1:SerializeChildrens />
+                  <d2p1:isActive>true</d2p1:isActive>
                   <d2p1:isStatic>false</d2p1:isStatic>
                   <d2p1:isVisible>true</d2p1:isVisible>
                   <d2p1:name>inner</d2p1:name>
@@ -281,6 +296,7 @@
                   <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                 </d2p1:BaseEntityModel>
               </d2p1:SerializeChildrens>
+              <d2p1:isActive>true</d2p1:isActive>
               <d2p1:isStatic>false</d2p1:isStatic>
               <d2p1:isVisible>true</d2p1:isVisible>
               <d2p1:name>FillStar02</d2p1:name>
@@ -305,6 +321,7 @@
               <d2p1:SerializeChildrens>
                 <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
                   <d2p1:SerializeChildrens />
+                  <d2p1:isActive>true</d2p1:isActive>
                   <d2p1:isStatic>false</d2p1:isStatic>
                   <d2p1:isVisible>true</d2p1:isVisible>
                   <d2p1:name>inner</d2p1:name>
@@ -314,9 +331,19 @@
                   <d2p1:PrefabId>7369b0f1-f8f4-4077-ba71-efc5a1a02743</d2p1:PrefabId>
                   <d2p1:PrefabPath>Content/Prefabs/Panels/FillStar.wpref</d2p1:PrefabPath>
                   <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
-                  <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+                  <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+                    <d10p1:KeyValueOfstringanyType>
+                      <d10p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#LocalPosition</d10p1:Key>
+                      <d10p1:Value xmlns:d12p1="WaveEngine.Common.Math" i:type="d12p1:Vector3">
+                        <d12p1:X>-4.26769257E-05</d12p1:X>
+                        <d12p1:Y>5.99995136</d12p1:Y>
+                        <d12p1:Z>-1</d12p1:Z>
+                      </d10p1:Value>
+                    </d10p1:KeyValueOfstringanyType>
+                  </d2p1:modifiedProperties>
                 </d2p1:BaseEntityModel>
               </d2p1:SerializeChildrens>
+              <d2p1:isActive>true</d2p1:isActive>
               <d2p1:isStatic>false</d2p1:isStatic>
               <d2p1:isVisible>true</d2p1:isVisible>
               <d2p1:name>FillStar03</d2p1:name>
@@ -346,6 +373,7 @@
               </d2p1:modifiedProperties>
             </d2p1:BaseEntityModel>
           </d2p1:SerializeChildrens>
+          <d2p1:isActive>true</d2p1:isActive>
           <d2p1:isStatic>false</d2p1:isStatic>
           <d2p1:isVisible>true</d2p1:isVisible>
           <d2p1:name>Stars</d2p1:name>
@@ -389,10 +417,84 @@
           </d2p1:SerializeComponents>
         </d2p1:BaseEntityModel>
         <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
-          <d2p1:SerializeChildrens />
+          <d2p1:SerializeChildrens>
+            <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
+              <d2p1:SerializeChildrens />
+              <d2p1:isActive>true</d2p1:isActive>
+              <d2p1:isStatic>false</d2p1:isStatic>
+              <d2p1:isVisible>true</d2p1:isVisible>
+              <d2p1:name>ScoreText</d2p1:name>
+              <d2p1:tag i:nil="true" />
+              <d2p1:SerializeComponents xmlns:d8p1="WaveEngine.Framework">
+                <d8p1:Component xmlns:d9p1="WaveEngine.Framework.Graphics" i:type="d9p1:Transform2D">
+                  <d9p1:LocalOrientation xmlns:d10p1="WaveEngine.Common.Math">
+                    <d10p1:W>1</d10p1:W>
+                    <d10p1:X>0</d10p1:X>
+                    <d10p1:Y>0</d10p1:Y>
+                    <d10p1:Z>0</d10p1:Z>
+                  </d9p1:LocalOrientation>
+                  <d9p1:LocalPosition xmlns:d10p1="WaveEngine.Common.Math">
+                    <d10p1:X>15.0000019</d10p1:X>
+                    <d10p1:Y>6.10351563E-05</d10p1:Y>
+                    <d10p1:Z>-1</d10p1:Z>
+                  </d9p1:LocalPosition>
+                  <d9p1:LocalScale xmlns:d10p1="WaveEngine.Common.Math">
+                    <d10p1:X>1.53</d10p1:X>
+                    <d10p1:Y>1.53</d10p1:Y>
+                    <d10p1:Z>1</d10p1:Z>
+                  </d9p1:LocalScale>
+                  <d9p1:Effect>None</d9p1:Effect>
+                  <d9p1:Opacity>1</d9p1:Opacity>
+                  <d9p1:Rectangle xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                    <d10p1:Height>92.8</d10p1:Height>
+                    <d10p1:Width>146.400009</d10p1:Width>
+                    <d10p1:X>-73.2000046</d10p1:X>
+                    <d10p1:Y>46.4</d10p1:Y>
+                  </d9p1:Rectangle>
+                  <d9p1:origin xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                    <d10p1:X>0.5</d10p1:X>
+                    <d10p1:Y>0.5</d10p1:Y>
+                  </d9p1:origin>
+                  <d9p1:screenPosition xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                    <d10p1:X>0</d10p1:X>
+                    <d10p1:Y>0</d10p1:Y>
+                  </d9p1:screenPosition>
+                  <d9p1:transformMode>Standard</d9p1:transformMode>
+                </d8p1:Component>
+                <d8p1:Component xmlns:d9p1="WaveEngine.Components.Toolkit" i:type="d9p1:TextComponent">
+                  <d9p1:fontPath>Content/Assets/Fonts/BradyBunchMedium.ttf.wpk</d9p1:fontPath>
+                  <d9p1:foreground xmlns:d10p1="WaveEngine.Common.Graphics">
+                    <d10p1:A>255</d10p1:A>
+                    <d10p1:B>255</d10p1:B>
+                    <d10p1:G>255</d10p1:G>
+                    <d10p1:R>255</d10p1:R>
+                  </d9p1:foreground>
+                  <d9p1:lineSpacing>0</d9p1:lineSpacing>
+                  <d9p1:origin xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                    <d10p1:X>0.5</d10p1:X>
+                    <d10p1:Y>0.5</d10p1:Y>
+                  </d9p1:origin>
+                  <d9p1:scale xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                    <d10p1:X>0.8</d10p1:X>
+                    <d10p1:Y>0.8</d10p1:Y>
+                  </d9p1:scale>
+                  <d9p1:text>2424</d9p1:text>
+                  <d9p1:textAlignment>Center</d9p1:textAlignment>
+                  <d9p1:textWrapping>true</d9p1:textWrapping>
+                  <d9p1:width>75</d9p1:width>
+                </d8p1:Component>
+                <d8p1:Component xmlns:d9p1="WaveEngine.Components.Toolkit" i:type="d9p1:TextRenderer2D">
+                  <d8p1:IsVisible>true</d8p1:IsVisible>
+                  <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
+                  <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
+                </d8p1:Component>
+              </d2p1:SerializeComponents>
+            </d2p1:BaseEntityModel>
+          </d2p1:SerializeChildrens>
+          <d2p1:isActive>true</d2p1:isActive>
           <d2p1:isStatic>false</d2p1:isStatic>
           <d2p1:isVisible>true</d2p1:isVisible>
-          <d2p1:name>Points</d2p1:name>
+          <d2p1:name>ScorePanel</d2p1:name>
           <d2p1:tag i:nil="true" />
           <d2p1:SerializeComponents xmlns:d6p1="WaveEngine.Framework">
             <d6p1:Component xmlns:d7p1="WaveEngine.Framework.Graphics" i:type="d7p1:Transform2D">
@@ -454,6 +556,7 @@
         </d2p1:BaseEntityModel>
         <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
           <d2p1:SerializeChildrens />
+          <d2p1:isActive>true</d2p1:isActive>
           <d2p1:isStatic>false</d2p1:isStatic>
           <d2p1:isVisible>true</d2p1:isVisible>
           <d2p1:name>LevelsBtn</d2p1:name>
@@ -477,6 +580,10 @@
               <d6p1:Value xmlns:d8p1="http://www.w3.org/2001/XMLSchema" i:type="d8p1:string">Levels</d6p1:Value>
             </d6p1:KeyValueOfstringanyType>
             <d6p1:KeyValueOfstringanyType>
+              <d6p1:Key>WaveEngine.Components.Gestures.TouchGestures#0#TouchOrder</d6p1:Key>
+              <d6p1:Value xmlns:d8p1="http://www.w3.org/2001/XMLSchema" i:type="d8p1:int">600</d6p1:Value>
+            </d6p1:KeyValueOfstringanyType>
+            <d6p1:KeyValueOfstringanyType>
               <d6p1:Key>Match3.UI.ButtonComponent#0#releasedTextureName</d6p1:Key>
               <d6p1:Value xmlns:d8p1="http://www.w3.org/2001/XMLSchema" i:type="d8p1:string">Levels</d6p1:Value>
             </d6p1:KeyValueOfstringanyType>
@@ -484,10 +591,15 @@
               <d6p1:Key>Match3.UI.ButtonComponent#0#pressedTextureName</d6p1:Key>
               <d6p1:Value xmlns:d8p1="http://www.w3.org/2001/XMLSchema" i:type="d8p1:string">LevelsPressed</d6p1:Value>
             </d6p1:KeyValueOfstringanyType>
+            <d6p1:KeyValueOfstringanyType>
+              <d6p1:Key>Match3.UI.Navigation.NavigationComponent#0#NavigationCommand</d6p1:Key>
+              <d6p1:Value xmlns:d8p1="http://schemas.datacontract.org/2004/07/Match3.Services.Navigation" i:type="d8p1:NavigateCommands">ChooseLevel</d6p1:Value>
+            </d6p1:KeyValueOfstringanyType>
           </d2p1:modifiedProperties>
         </d2p1:BaseEntityModel>
         <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
           <d2p1:SerializeChildrens />
+          <d2p1:isActive>true</d2p1:isActive>
           <d2p1:isStatic>false</d2p1:isStatic>
           <d2p1:isVisible>true</d2p1:isVisible>
           <d2p1:name>NextBtn</d2p1:name>
@@ -520,6 +632,10 @@
               <d6p1:Value xmlns:d8p1="http://www.w3.org/2001/XMLSchema" i:type="d8p1:string">Play</d6p1:Value>
             </d6p1:KeyValueOfstringanyType>
             <d6p1:KeyValueOfstringanyType>
+              <d6p1:Key>WaveEngine.Components.Gestures.TouchGestures#0#TouchOrder</d6p1:Key>
+              <d6p1:Value xmlns:d8p1="http://www.w3.org/2001/XMLSchema" i:type="d8p1:int">600</d6p1:Value>
+            </d6p1:KeyValueOfstringanyType>
+            <d6p1:KeyValueOfstringanyType>
               <d6p1:Key>Match3.UI.ButtonComponent#0#releasedTextureName</d6p1:Key>
               <d6p1:Value xmlns:d8p1="http://www.w3.org/2001/XMLSchema" i:type="d8p1:string">Play</d6p1:Value>
             </d6p1:KeyValueOfstringanyType>
@@ -527,10 +643,15 @@
               <d6p1:Key>Match3.UI.ButtonComponent#0#pressedTextureName</d6p1:Key>
               <d6p1:Value xmlns:d8p1="http://www.w3.org/2001/XMLSchema" i:type="d8p1:string">PausePressed</d6p1:Value>
             </d6p1:KeyValueOfstringanyType>
+            <d6p1:KeyValueOfstringanyType>
+              <d6p1:Key>Match3.UI.Navigation.NavigationComponent#0#NavigationCommand</d6p1:Key>
+              <d6p1:Value xmlns:d8p1="http://schemas.datacontract.org/2004/07/Match3.Services.Navigation" i:type="d8p1:NavigateCommands">NextLevel</d6p1:Value>
+            </d6p1:KeyValueOfstringanyType>
           </d2p1:modifiedProperties>
         </d2p1:BaseEntityModel>
         <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
           <d2p1:SerializeChildrens />
+          <d2p1:isActive>true</d2p1:isActive>
           <d2p1:isStatic>false</d2p1:isStatic>
           <d2p1:isVisible>true</d2p1:isVisible>
           <d2p1:name>HomeBtn</d2p1:name>
@@ -563,6 +684,10 @@
               <d6p1:Value xmlns:d8p1="http://www.w3.org/2001/XMLSchema" i:type="d8p1:string">Home</d6p1:Value>
             </d6p1:KeyValueOfstringanyType>
             <d6p1:KeyValueOfstringanyType>
+              <d6p1:Key>WaveEngine.Components.Gestures.TouchGestures#0#TouchOrder</d6p1:Key>
+              <d6p1:Value xmlns:d8p1="http://www.w3.org/2001/XMLSchema" i:type="d8p1:int">600</d6p1:Value>
+            </d6p1:KeyValueOfstringanyType>
+            <d6p1:KeyValueOfstringanyType>
               <d6p1:Key>Match3.UI.ButtonComponent#0#releasedTextureName</d6p1:Key>
               <d6p1:Value xmlns:d8p1="http://www.w3.org/2001/XMLSchema" i:type="d8p1:string">Home</d6p1:Value>
             </d6p1:KeyValueOfstringanyType>
@@ -570,9 +695,14 @@
               <d6p1:Key>Match3.UI.ButtonComponent#0#pressedTextureName</d6p1:Key>
               <d6p1:Value xmlns:d8p1="http://www.w3.org/2001/XMLSchema" i:type="d8p1:string">HomePressed</d6p1:Value>
             </d6p1:KeyValueOfstringanyType>
+            <d6p1:KeyValueOfstringanyType>
+              <d6p1:Key>Match3.UI.Navigation.NavigationComponent#0#NavigationCommand</d6p1:Key>
+              <d6p1:Value xmlns:d8p1="http://schemas.datacontract.org/2004/07/Match3.Services.Navigation" i:type="d8p1:NavigateCommands">ReturnMainMenu</d6p1:Value>
+            </d6p1:KeyValueOfstringanyType>
           </d2p1:modifiedProperties>
         </d2p1:BaseEntityModel>
       </d2p1:SerializeChildrens>
+      <d2p1:isActive>true</d2p1:isActive>
       <d2p1:isStatic>false</d2p1:isStatic>
       <d2p1:isVisible>true</d2p1:isVisible>
       <d2p1:name>Panel</d2p1:name>
@@ -635,59 +765,68 @@
         </d4p1:Component>
       </d2p1:SerializeComponents>
     </d2p1:BaseEntityModel>
-    <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
+    <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
       <d2p1:SerializeChildrens />
+      <d2p1:isActive>true</d2p1:isActive>
       <d2p1:isStatic>false</d2p1:isStatic>
       <d2p1:isVisible>true</d2p1:isVisible>
-      <d2p1:name>BackBtn</d2p1:name>
+      <d2p1:name>blackPanel</d2p1:name>
       <d2p1:tag i:nil="true" />
-      <d2p1:AdditionalComponents xmlns:d4p1="WaveEngine.Framework" />
-      <d2p1:PrefabElem>SquaredBtn</d2p1:PrefabElem>
-      <d2p1:PrefabId>96c73f2a-eb6b-4858-89f3-7d13226d83c4</d2p1:PrefabId>
-      <d2p1:PrefabPath>Content/Prefabs/Buttons/NavSquaredBtn.wpref</d2p1:PrefabPath>
-      <d2p1:RemovedComponents xmlns:d4p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
-      <d2p1:modifiedProperties xmlns:d4p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
-        <d4p1:KeyValueOfstringanyType>
-          <d4p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#Rectangle</d4p1:Key>
-          <d4p1:Value xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math" i:type="d6p1:RectangleF">
-            <d6p1:Height>191</d6p1:Height>
-            <d6p1:Width>182</d6p1:Width>
+      <d2p1:SerializeComponents xmlns:d4p1="WaveEngine.Framework">
+        <d4p1:Component xmlns:d5p1="WaveEngine.Framework.Graphics" i:type="d5p1:Transform2D">
+          <d5p1:LocalOrientation xmlns:d6p1="WaveEngine.Common.Math">
+            <d6p1:W>1</d6p1:W>
             <d6p1:X>0</d6p1:X>
             <d6p1:Y>0</d6p1:Y>
-          </d4p1:Value>
-        </d4p1:KeyValueOfstringanyType>
-        <d4p1:KeyValueOfstringanyType>
-          <d4p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#LocalPosition</d4p1:Key>
-          <d4p1:Value xmlns:d6p1="WaveEngine.Common.Math" i:type="d6p1:Vector3">
-            <d6p1:X>-371.100922</d6p1:X>
-            <d6p1:Y>1238.00061</d6p1:Y>
             <d6p1:Z>0</d6p1:Z>
-          </d4p1:Value>
-        </d4p1:KeyValueOfstringanyType>
-        <d4p1:KeyValueOfstringanyType>
-          <d4p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#screenPosition</d4p1:Key>
-          <d4p1:Value xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math" i:type="d6p1:Vector2">
-            <d6p1:X>0.1</d6p1:X>
-            <d6p1:Y>0.9</d6p1:Y>
-          </d4p1:Value>
-        </d4p1:KeyValueOfstringanyType>
-        <d4p1:KeyValueOfstringanyType>
-          <d4p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#transformMode</d4p1:Key>
-          <d4p1:Value xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Framework.Graphics" i:type="d6p1:Transform2D.TransformMode">Screen</d4p1:Value>
-        </d4p1:KeyValueOfstringanyType>
-        <d4p1:KeyValueOfstringanyType>
-          <d4p1:Key>WaveEngine.Components.Graphics2D.SpriteAtlas#0#textureName</d4p1:Key>
-          <d4p1:Value xmlns:d6p1="http://www.w3.org/2001/XMLSchema" i:type="d6p1:string">Back</d4p1:Value>
-        </d4p1:KeyValueOfstringanyType>
-        <d4p1:KeyValueOfstringanyType>
-          <d4p1:Key>Match3.UI.ButtonComponent#0#releasedTextureName</d4p1:Key>
-          <d4p1:Value xmlns:d6p1="http://www.w3.org/2001/XMLSchema" i:type="d6p1:string">Back</d4p1:Value>
-        </d4p1:KeyValueOfstringanyType>
-        <d4p1:KeyValueOfstringanyType>
-          <d4p1:Key>Match3.UI.ButtonComponent#0#pressedTextureName</d4p1:Key>
-          <d4p1:Value xmlns:d6p1="http://www.w3.org/2001/XMLSchema" i:type="d6p1:string">BackPressed</d4p1:Value>
-        </d4p1:KeyValueOfstringanyType>
-      </d2p1:modifiedProperties>
+          </d5p1:LocalOrientation>
+          <d5p1:LocalPosition xmlns:d6p1="WaveEngine.Common.Math">
+            <d6p1:X>685.8997</d6p1:X>
+            <d6p1:Y>593.299866</d6p1:Y>
+            <d6p1:Z>5</d6p1:Z>
+          </d5p1:LocalPosition>
+          <d5p1:LocalScale xmlns:d6p1="WaveEngine.Common.Math">
+            <d6p1:X>6000</d6p1:X>
+            <d6p1:Y>6000</d6p1:Y>
+            <d6p1:Z>1</d6p1:Z>
+          </d5p1:LocalScale>
+          <d5p1:Effect>None</d5p1:Effect>
+          <d5p1:Opacity>0.4</d5p1:Opacity>
+          <d5p1:Rectangle xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+            <d6p1:Height>1</d6p1:Height>
+            <d6p1:Width>1</d6p1:Width>
+            <d6p1:X>0</d6p1:X>
+            <d6p1:Y>0</d6p1:Y>
+          </d5p1:Rectangle>
+          <d5p1:origin xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+            <d6p1:X>0.5</d6p1:X>
+            <d6p1:Y>0.5</d6p1:Y>
+          </d5p1:origin>
+          <d5p1:screenPosition xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+            <d6p1:X>0.5</d6p1:X>
+            <d6p1:Y>0.5</d6p1:Y>
+          </d5p1:screenPosition>
+          <d5p1:transformMode>Screen</d5p1:transformMode>
+        </d4p1:Component>
+        <d4p1:Component xmlns:d5p1="WaveEngine.Components.Graphics2D" i:type="d5p1:Sprite">
+          <d5p1:IsGlobalAsset>false</d5p1:IsGlobalAsset>
+          <d5p1:SourceRectangle xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math" i:nil="true" />
+          <d5p1:TintColor xmlns:d6p1="WaveEngine.Common.Graphics">
+            <d6p1:A>255</d6p1:A>
+            <d6p1:B>0</d6p1:B>
+            <d6p1:G>0</d6p1:G>
+            <d6p1:R>0</d6p1:R>
+          </d5p1:TintColor>
+          <d5p1:materialPath i:nil="true" />
+          <d5p1:texturePath>Content/Assets/GUI/WhitePixel.png.wpk</d5p1:texturePath>
+        </d4p1:Component>
+        <d4p1:Component xmlns:d5p1="WaveEngine.Components.Graphics2D" i:type="d5p1:SpriteRenderer">
+          <d4p1:IsVisible>true</d4p1:IsVisible>
+          <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
+          <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
+          <d5p1:SamplerMode>LinearClamp</d5p1:SamplerMode>
+        </d4p1:Component>
+      </d2p1:SerializeComponents>
     </d2p1:BaseEntityModel>
   </Entities>
   <EntityPointers xmlns:d2p1="http://schemas.datacontract.org/2004/07/WaveEngine.Framework.Models.Entities" />

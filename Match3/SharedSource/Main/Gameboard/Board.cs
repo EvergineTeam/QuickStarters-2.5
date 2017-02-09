@@ -115,6 +115,33 @@ namespace Match3.Gameboard
             return result.ToArray();
         }
 
+
+        public IEnumerable<BoardOperation[]> MoveIters(Coordinate candyPosition, CandyMoves move)
+        {
+            var result = new List<BoardOperation>();
+
+            if (this.UpdateCandiesPosition(candyPosition, move))
+            {
+                IEnumerable<BoardOperation> operations;
+                while ((operations = this.GetCurrentOperations()).Any())
+                {
+                    result.AddRange(operations);
+                    this.ExecuteOperation(operations);
+                    yield return operations.ToArray();
+                }
+
+                if (result.Count == 0)
+                {
+                    this.UpdateCandiesPosition(candyPosition, move);
+                }
+                else if (this.ShuffleIfNecessary())
+                {
+                    result.Add(new BoardOperation { Type = OperationTypes.Shuffle });
+                    yield return new BoardOperation[] { result.Last() };
+                }
+            }
+        }
+
         private bool MoveHasOperations(Coordinate candyPosition, CandyMoves move)
         {
             if (this.UpdateCandiesPosition(candyPosition, move))

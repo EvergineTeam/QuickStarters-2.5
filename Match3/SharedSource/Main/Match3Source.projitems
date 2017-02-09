@@ -32,6 +32,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Services\Audio\AudioEnum.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\Audio\AudioPlayer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\CustomServices.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\GameLogic.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\Navigation\IAnimatedNavigationScene.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\Navigation\INavigationService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\Navigation\NavigateCommands.cs" />
