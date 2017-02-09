@@ -6,6 +6,9 @@ using WaveEngine.Common.Math;
 
 namespace SuperSlingshot.Behaviors
 {
+    /// <summary>
+    /// Simple target-follow camera
+    /// </summary>
     [DataContract]
     public class FollowCameraBehavior : CameraBehavior
     {
@@ -23,7 +26,6 @@ namespace SuperSlingshot.Behaviors
             if (this.Follow && this.TargetTransform != null)
             {
                 this.desiredPosition = this.TargetTransform.Position;
-
                 this.transform.Position = Vector2.SmoothStep(this.currentPosition, this.desiredPosition, this.Speed * (float)gameTime.TotalSeconds);
                 this.currentPosition = this.transform.Position;
             }

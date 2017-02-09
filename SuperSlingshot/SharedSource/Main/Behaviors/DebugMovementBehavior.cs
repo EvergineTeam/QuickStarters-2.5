@@ -2,7 +2,6 @@
 using System.Runtime.Serialization;
 using SuperSlingshot.Components;
 using SuperSlingshot.Managers;
-using SuperSlingshot.Scenes;
 using WaveEngine.Common.Input;
 using WaveEngine.Common.Math;
 using WaveEngine.Framework;
@@ -13,6 +12,9 @@ using WaveEngine.Framework.Services;
 
 namespace SuperSlingshot.Behaviors
 {
+    /// <summary>
+    /// Debug behavior, controls the entity by keyboard
+    /// </summary>
     [DataContract]
     public class DebugMovementBehavior : Behavior
     {
@@ -30,6 +32,10 @@ namespace SuperSlingshot.Behaviors
         [DataMember]
         public float Speed { get; set; }
 
+        /// <summary>
+        /// Update method
+        /// </summary>
+        /// <param name="gameTime"></param>
         protected override void Update(TimeSpan gameTime)
         {
             this.input = WaveServices.Input;
@@ -134,10 +140,7 @@ namespace SuperSlingshot.Behaviors
                 this.lastKeyboardState = currentKeyboardState;
             }
 
-            //this.rigidBody.ApplyLinearImpulse(this.movement * 0.01f, Vector2.Zero, true);
             this.rigidBody.ApplyTorque(this.movement.X * this.Speed);
-            //this.rigidBody.Transform2D.Position += this.movement * this.Speed * (float)gameTime.TotalSeconds;
-            //this.transform.Position += this.movement * this.Speed * (float)gameTime.TotalSeconds;
 
             Labels.Add(this.Owner.Name + " transform position", this.transform.Position);
         }

@@ -226,9 +226,9 @@
                     <d10p1:KeyValueOfstringanyType>
                       <d10p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#LocalPosition</d10p1:Key>
                       <d10p1:Value xmlns:d12p1="WaveEngine.Common.Math" i:type="d12p1:Vector3">
-                        <d12p1:X>59.9999161</d12p1:X>
+                        <d12p1:X>59.999897</d12p1:X>
                         <d12p1:Y>99.9999542</d12p1:Y>
-                        <d12p1:Z>-0.0999999642</d12p1:Z>
+                        <d12p1:Z>-0.09999996</d12p1:Z>
                       </d10p1:Value>
                     </d10p1:KeyValueOfstringanyType>
                     <d10p1:KeyValueOfstringanyType>
@@ -259,6 +259,14 @@
                       </d10p1:Value>
                     </d10p1:KeyValueOfstringanyType>
                     <d10p1:KeyValueOfstringanyType>
+                      <d10p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#LocalPosition</d10p1:Key>
+                      <d10p1:Value xmlns:d12p1="WaveEngine.Common.Math" i:type="d12p1:Vector3">
+                        <d12p1:X>7.89993048</d12p1:X>
+                        <d12p1:Y>5.100006</d12p1:Y>
+                        <d12p1:Z>-0.100000374</d12p1:Z>
+                      </d10p1:Value>
+                    </d10p1:KeyValueOfstringanyType>
+                    <d10p1:KeyValueOfstringanyType>
                       <d10p1:Key>WaveEngine.Components.Toolkit.TextComponent#0#text</d10p1:Key>
                       <d10p1:Value xmlns:d12p1="http://www.w3.org/2001/XMLSchema" i:type="d12p1:string">4</d10p1:Value>
                     </d10p1:KeyValueOfstringanyType>
@@ -280,6 +288,15 @@
               <d2p1:RemovedComponents xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
               <d2p1:modifiedProperties xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
                 <d8p1:KeyValueOfstringanyType>
+                  <d8p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#Rectangle</d8p1:Key>
+                  <d8p1:Value xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math" i:type="d10p1:RectangleF">
+                    <d10p1:Height>178</d10p1:Height>
+                    <d10p1:Width>176</d10p1:Width>
+                    <d10p1:X>0</d10p1:X>
+                    <d10p1:Y>0</d10p1:Y>
+                  </d8p1:Value>
+                </d8p1:KeyValueOfstringanyType>
+                <d8p1:KeyValueOfstringanyType>
                   <d8p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#LocalPosition</d8p1:Key>
                   <d8p1:Value xmlns:d10p1="WaveEngine.Common.Math" i:type="d10p1:Vector3">
                     <d10p1:X>100</d10p1:X>
@@ -288,12 +305,20 @@
                   </d8p1:Value>
                 </d8p1:KeyValueOfstringanyType>
                 <d8p1:KeyValueOfstringanyType>
+                  <d8p1:Key>WaveEngine.Components.Graphics2D.Sprite#0#texturePath</d8p1:Key>
+                  <d8p1:Value xmlns:d10p1="http://www.w3.org/2001/XMLSchema" i:type="d10p1:string">Content/Assets/Gui/small_button_blocked.png.wpk</d8p1:Value>
+                </d8p1:KeyValueOfstringanyType>
+                <d8p1:KeyValueOfstringanyType>
                   <d8p1:Key>WaveEngine.Components.Graphics2D.Sprite#0#materialPath</d8p1:Key>
                   <d8p1:Value i:nil="true" />
                 </d8p1:KeyValueOfstringanyType>
                 <d8p1:KeyValueOfstringanyType>
                   <d8p1:Key>SuperSlingshot.Components.ButtonComponent#0#Text</d8p1:Key>
                   <d8p1:Value xmlns:d10p1="http://www.w3.org/2001/XMLSchema" i:type="d10p1:string">4</d8p1:Value>
+                </d8p1:KeyValueOfstringanyType>
+                <d8p1:KeyValueOfstringanyType>
+                  <d8p1:Key>SuperSlingshot.Components.ButtonComponent#0#IsBlocked</d8p1:Key>
+                  <d8p1:Value xmlns:d10p1="http://www.w3.org/2001/XMLSchema" i:type="d10p1:boolean">true</d8p1:Value>
                 </d8p1:KeyValueOfstringanyType>
               </d2p1:modifiedProperties>
             </d2p1:BaseEntityModel>

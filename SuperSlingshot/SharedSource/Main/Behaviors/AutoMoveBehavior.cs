@@ -18,6 +18,9 @@ using WaveEngine.TiledMap;
 
 namespace SuperSlingshot.Behaviors
 {
+    /// <summary>
+    /// Linear movement behavior
+    /// </summary>
     [DataContract]
     public class AutoMoveBehavior : Behavior
     {
@@ -57,6 +60,9 @@ namespace SuperSlingshot.Behaviors
         [DataMember]
         public float MaxY { get; set; }
 
+        /// <summary>
+        /// Resolve dependencies
+        /// </summary>
         protected override void ResolveDependencies()
         {
             base.ResolveDependencies();
@@ -65,6 +71,10 @@ namespace SuperSlingshot.Behaviors
             this.currentSpeed = this.MinSpeed + (speedDiff * (float)WaveServices.FastRandom.NextDouble());
         }
 
+        /// <summary>
+        /// Update method, calculates and applies displacement
+        /// </summary>
+        /// <param name="gameTime"></param>
         protected override void Update(TimeSpan gameTime)
         {
             var position = this.transform.LocalPosition;

@@ -1,5 +1,5 @@
 ﻿<Scene xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="WaveEngine.Framework.Models">
-  <Id>bb4f7181-4e0a-4876-a997-30d93d381348</Id>
+  <Id>f7c5d9a6-1087-4097-9d84-60fdb89608ff</Id>
   <Entities xmlns:d2p1="WaveEngine.Framework.Models.Entities">
     <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
       <d2p1:SerializeChildrens />
@@ -46,9 +46,9 @@
         <d4p1:Component xmlns:d5p1="WaveEngine.Framework.Graphics" i:type="d5p1:Camera2D">
           <d5p1:BackgroundColor xmlns:d6p1="WaveEngine.Common.Graphics">
             <d6p1:A>255</d6p1:A>
-            <d6p1:B>130</d6p1:B>
-            <d6p1:G>66</d6p1:G>
-            <d6p1:R>35</d6p1:R>
+            <d6p1:B>254</d6p1:B>
+            <d6p1:G>220</d6p1:G>
+            <d6p1:R>184</d6p1:R>
           </d5p1:BackgroundColor>
           <d5p1:CameraOrder>0</d5p1:CameraOrder>
           <d5p1:ClearFlags>All</d5p1:ClearFlags>
@@ -400,7 +400,7 @@
           </d5p1:LocalOrientation>
           <d5p1:LocalPosition xmlns:d6p1="WaveEngine.Common.Math">
             <d6p1:X>5000</d6p1:X>
-            <d6p1:Y>3970</d6p1:Y>
+            <d6p1:Y>3840</d6p1:Y>
             <d6p1:Z>0</d6p1:Z>
           </d5p1:LocalPosition>
           <d5p1:LocalScale xmlns:d6p1="WaveEngine.Common.Math">
@@ -501,7 +501,7 @@
           <d2p1:isStatic>false</d2p1:isStatic>
           <d2p1:isVisible>true</d2p1:isVisible>
           <d2p1:name>Background</d2p1:name>
-          <d2p1:tag>TileLayer_0</d2p1:tag>
+          <d2p1:tag>TileLayer</d2p1:tag>
           <d2p1:SerializeComponents xmlns:d6p1="WaveEngine.Framework">
             <d6p1:Component xmlns:d7p1="http://schemas.datacontract.org/2004/07/WaveEngine.TiledMap" i:type="d7p1:TiledMapLayer">
               <d7p1:tmxLayerName>Background</d7p1:tmxLayerName>
@@ -553,7 +553,7 @@
           <d2p1:isStatic>false</d2p1:isStatic>
           <d2p1:isVisible>true</d2p1:isVisible>
           <d2p1:name>FrontLayer</d2p1:name>
-          <d2p1:tag>TileLayer_1</d2p1:tag>
+          <d2p1:tag>TileLayer</d2p1:tag>
           <d2p1:SerializeComponents xmlns:d6p1="WaveEngine.Framework">
             <d6p1:Component xmlns:d7p1="http://schemas.datacontract.org/2004/07/WaveEngine.TiledMap" i:type="d7p1:TiledMapLayer">
               <d7p1:tmxLayerName>FrontLayer</d7p1:tmxLayerName>
@@ -568,7 +568,7 @@
               <d7p1:LocalPosition xmlns:d8p1="WaveEngine.Common.Math">
                 <d8p1:X>0</d8p1:X>
                 <d8p1:Y>0</d8p1:Y>
-                <d8p1:Z>-99.99999</d8p1:Z>
+                <d8p1:Z>33.3333359</d8p1:Z>
               </d7p1:LocalPosition>
               <d7p1:LocalScale xmlns:d8p1="WaveEngine.Common.Math">
                 <d8p1:X>1</d8p1:X>
@@ -605,7 +605,7 @@
           <d2p1:isStatic>false</d2p1:isStatic>
           <d2p1:isVisible>true</d2p1:isVisible>
           <d2p1:name>MiddleLayer</d2p1:name>
-          <d2p1:tag>TileLayer_2</d2p1:tag>
+          <d2p1:tag>TileLayer</d2p1:tag>
           <d2p1:SerializeComponents xmlns:d6p1="WaveEngine.Framework">
             <d6p1:Component xmlns:d7p1="http://schemas.datacontract.org/2004/07/WaveEngine.TiledMap" i:type="d7p1:TiledMapLayer">
               <d7p1:tmxLayerName>MiddleLayer</d7p1:tmxLayerName>
@@ -657,7 +657,7 @@
           <d2p1:isStatic>false</d2p1:isStatic>
           <d2p1:isVisible>true</d2p1:isVisible>
           <d2p1:name>BackLayer</d2p1:name>
-          <d2p1:tag>TileLayer_3</d2p1:tag>
+          <d2p1:tag>TileLayer</d2p1:tag>
           <d2p1:SerializeComponents xmlns:d6p1="WaveEngine.Framework">
             <d6p1:Component xmlns:d7p1="http://schemas.datacontract.org/2004/07/WaveEngine.TiledMap" i:type="d7p1:TiledMapLayer">
               <d7p1:tmxLayerName>BackLayer</d7p1:tmxLayerName>
@@ -672,7 +672,7 @@
               <d7p1:LocalPosition xmlns:d8p1="WaveEngine.Common.Math">
                 <d8p1:X>0</d8p1:X>
                 <d8p1:Y>0</d8p1:Y>
-                <d8p1:Z>33.3333359</d8p1:Z>
+                <d8p1:Z>-99.99999</d8p1:Z>
               </d7p1:LocalPosition>
               <d7p1:LocalScale xmlns:d8p1="WaveEngine.Common.Math">
                 <d8p1:X>1</d8p1:X>
@@ -708,7 +708,7 @@
       <d2p1:isStatic>false</d2p1:isStatic>
       <d2p1:isVisible>true</d2p1:isVisible>
       <d2p1:name>tiledMap</d2p1:name>
-      <d2p1:tag i:nil="true" />
+      <d2p1:tag></d2p1:tag>
       <d2p1:SerializeComponents xmlns:d4p1="WaveEngine.Framework">
         <d4p1:Component xmlns:d5p1="WaveEngine.Framework.Graphics" i:type="d5p1:Transform2D">
           <d5p1:LocalOrientation xmlns:d6p1="WaveEngine.Common.Math">
@@ -736,8 +736,8 @@
             <d6p1:Y>0</d6p1:Y>
           </d5p1:Rectangle>
           <d5p1:origin xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
-            <d6p1:X>0</d6p1:X>
-            <d6p1:Y>0</d6p1:Y>
+            <d6p1:X>0.5</d6p1:X>
+            <d6p1:Y>0.5</d6p1:Y>
           </d5p1:origin>
           <d5p1:screenPosition xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
             <d6p1:X>0</d6p1:X>
@@ -748,7 +748,7 @@
         <d4p1:Component xmlns:d5p1="http://schemas.datacontract.org/2004/07/WaveEngine.TiledMap" i:type="d5p1:TiledMap">
           <d5p1:maxLayerDrawOrder>100</d5p1:maxLayerDrawOrder>
           <d5p1:minLayerDrawOrder>-100</d5p1:minLayerDrawOrder>
-          <d5p1:tmxPath>Content/Assets/Tiles/Level2.tmx</d5p1:tmxPath>
+          <d5p1:tmxPath>Content/Assets/Tiles/Level3.tmx</d5p1:tmxPath>
         </d4p1:Component>
       </d2p1:SerializeComponents>
     </d2p1:BaseEntityModel>

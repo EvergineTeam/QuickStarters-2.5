@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// File generated on 07/02/2017 17:18:06
+// File generated on 09/02/2017 17:11:07
 namespace SuperSlingshot
 {
     using System;
@@ -292,19 +292,6 @@ namespace SuperSlingshot
                 
                 /// <summary> Path to Content/Assets/Breakables/wood3x2rb.png </summary>
                 public const string wood3x2rb_png = "Content/Assets/Breakables/wood3x2rb.png";
-            }
-            
-            public sealed class Fonts
-            {
-                
-                /// <summary> Path to Content/Assets/Fonts/Komika Axis_36.ttf </summary>
-                public const string Komika_Axis_36_ttf = "Content/Assets/Fonts/Komika Axis_36.ttf";
-                
-                /// <summary> Path to Content/Assets/Fonts/sketches_36.ttf </summary>
-                public const string sketches_36_ttf = "Content/Assets/Fonts/sketches_36.ttf";
-                
-                /// <summary> Path to Content/Assets/Fonts/sketches_48.ttf </summary>
-                public const string sketches_48_ttf = "Content/Assets/Fonts/sketches_48.ttf";
             }
             
             public sealed class Gui
@@ -683,9 +670,6 @@ namespace SuperSlingshot
                 
                 /// <summary> Path to Content/Scenes/Levels/Level3.wscene </summary>
                 public const string Level3 = "Content/Scenes/Levels/Level3.wscene";
-                
-                /// <summary> Path to Content/Scenes/Levels/Level4.wscene </summary>
-                public const string Level4 = "Content/Scenes/Levels/Level4.wscene";
                 
                 /// <summary> Path to Content/Scenes/Levels/TestLevel.wscene </summary>
                 public const string TestLevel = "Content/Scenes/Levels/TestLevel.wscene";

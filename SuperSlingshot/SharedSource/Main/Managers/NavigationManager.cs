@@ -8,12 +8,10 @@ namespace SuperSlingshot.Managers
     public class NavigationManager : Service
     {
         private string[] LevelOrder =
-{
+        {
             WaveContent.Scenes.Levels.Level1,
             WaveContent.Scenes.Levels.Level2,
-            WaveContent.Scenes.Levels.Level3,
-            WaveContent.Scenes.Levels.Level4
-
+            WaveContent.Scenes.Levels.Level3
         };
 
         public string CurrentLevel

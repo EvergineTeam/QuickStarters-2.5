@@ -101,6 +101,7 @@
             <d6p1:R>255</d6p1:R>
           </d5p1:Color>
           <d5p1:Intensity>1</d5p1:Intensity>
+          <d5p1:IsLightEnabled>true</d5p1:IsLightEnabled>
         </d4p1:Component>
       </d2p1:SerializeComponents>
     </d2p1:BaseEntityModel>

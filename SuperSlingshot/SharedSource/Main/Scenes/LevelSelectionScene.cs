@@ -1,5 +1,4 @@
 ﻿#region Using Statements
-using System;
 using System.Collections.Generic;
 using SlingshotRampage.Services;
 using SuperSlingshot.Components;
@@ -31,20 +30,16 @@ namespace SuperSlingshot.Scenes
             var level1 = this.EntityManager.Find(GameConstants.ENTITYLEVEL1BUTTON);
             var level2 = this.EntityManager.Find(GameConstants.ENTITYLEVEL2BUTTON);
             var level3 = this.EntityManager.Find(GameConstants.ENTITYLEVEL3BUTTON);
-            var level4 = this.EntityManager.Find(GameConstants.ENTITYLEVEL4BUTTON);
 
             level1.FindComponent<ButtonComponent>().StateChanged += this.Level1StateChanged;
             level2.FindComponent<ButtonComponent>().StateChanged += this.Level2StateChanged;
             level3.FindComponent<ButtonComponent>().StateChanged += this.Level3StateChanged;
-            level4.FindComponent<ButtonComponent>().StateChanged += this.Level4StateChanged;
 
             var scores = storageService.ReadScores();
 
             this.UpdateLevelScore(level1.FindComponent<StarScoreComponent>(), WaveContent.Scenes.Levels.Level1, scores);
             this.UpdateLevelScore(level2.FindComponent<StarScoreComponent>(), WaveContent.Scenes.Levels.Level2, scores);
             this.UpdateLevelScore(level3.FindComponent<StarScoreComponent>(), WaveContent.Scenes.Levels.Level3, scores);
-            this.UpdateLevelScore(level4.FindComponent<StarScoreComponent>(), WaveContent.Scenes.Levels.Level4, scores);
-
         }
 
         private void UpdateLevelScore(StarScoreComponent scoreComponent, string levelId, Dictionary<string, LevelScore> scores)
@@ -76,14 +71,6 @@ namespace SuperSlingshot.Scenes
             if (currentState == ButtonState.Release && lastState == ButtonState.Pressed)
             {
                 this.navigationManager.NavigateToGameLevel(2);
-            }
-        }
-
-        private void Level4StateChanged(object sender, ButtonState currentState, ButtonState lastState)
-        {
-            if (currentState == ButtonState.Release && lastState == ButtonState.Pressed)
-            {
-                this.navigationManager.NavigateToGameLevel(3);
             }
         }
     }
