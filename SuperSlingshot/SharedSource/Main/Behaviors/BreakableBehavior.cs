@@ -11,6 +11,9 @@ using WaveEngine.Framework.Physics2D;
 
 namespace SuperSlingshot.Behaviors
 {
+    /// <summary>
+    /// Behavior for breakable entities
+    /// </summary>
     [DataContract]
     public class BreakableBehavior : Behavior
     {
@@ -49,11 +52,17 @@ namespace SuperSlingshot.Behaviors
             get { return this.state; }
         }
 
+        /// <summary>
+        /// Initialize method
+        /// </summary>
         protected override void Initialize()
         {
             base.Initialize();
         }
 
+        /// <summary>
+        /// Resolve dependencies
+        /// </summary>
         protected override void ResolveDependencies()
         {
             base.ResolveDependencies();
@@ -74,6 +83,10 @@ namespace SuperSlingshot.Behaviors
             this.childParticleSystem.EndDeltaScale = 1.0f;
         }
 
+        /// <summary>
+        /// Set the state of the breakable entity
+        /// </summary>
+        /// <param name="state"></param>
         public void SetState(BreakableState state)
         {
             if (lastState == BreakableState.DEAD)
@@ -84,16 +97,18 @@ namespace SuperSlingshot.Behaviors
             switch (state)
             {
                 case BreakableState.NORMAL:
+                    // Normal state
                     this.sprite.TexturePath = this.NormalTexture;
                     this.childParticleSystem.Emit = false;
                     break;
                 case BreakableState.DAMAGED:
+                    // Damaged state
                     this.sprite.TexturePath = this.BrokenTexture;
                     this.childParticleSystem.Emit = false;
                     break;
                 case BreakableState.DEAD:
+                    // dead state, starts the particle system
                     this.childParticleSystem.Emit = true;
-
                     this.score.Points += this.scene.BlockDestroyPoints;
                     break;
                 default:
@@ -104,19 +119,22 @@ namespace SuperSlingshot.Behaviors
             this.state = state;
         }
 
+        /// <summary>
+        /// Update method
+        /// </summary>
+        /// <param name="gameTime"></param>
         protected override void Update(TimeSpan gameTime)
         {
-            //Labels.Add(this.childVisual.Name + " position", this.childVisual.FindComponent<Transform2D>().Position);
-            //Labels.Add(this.Owner.Name + " position", this.Owner.FindComponent<Transform2D>().Position);
-
             if (!this.firstUpdated)
             {
                 this.collider.TexturePath = this.sprite.TexturePath;
                 this.firstUpdated = true;
             }
 
+            // if entity is in Dead state will stop the particle system after a defined time and remove the entity.
             if (this.state == BreakableState.DEAD)
             {
+                // update counters
                 this.timeToEmit -= gameTime;
                 this.timeToRemove -= gameTime;
 

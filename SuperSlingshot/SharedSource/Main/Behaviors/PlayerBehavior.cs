@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Runtime.Serialization;
-using SuperSlingshot.Drawables;
 using SuperSlingshot.Enums;
 using SuperSlingshot.Managers;
 using SuperSlingshot.Scenes;
@@ -18,6 +17,7 @@ namespace SuperSlingshot.Behaviors
     [DataContract]
     public class PlayerBehavior : Behavior
     {
+        private Sprite faceSprite;
         private PlayerState state;
         private TimeSpan timeToDismiss;
         private GamePlayManager gamePlayManager;
@@ -70,8 +70,6 @@ namespace SuperSlingshot.Behaviors
             }
         }
 
-        private Sprite faceSprite;
-
         protected override void ResolveDependencies()
         {
             base.ResolveDependencies();
@@ -114,7 +112,7 @@ namespace SuperSlingshot.Behaviors
                     break;
                 case PlayerState.InTheAir:
                     ((GameScene)this.Owner.Scene).PreviewElasticBands(false, this.transform);
-                    // Dead condition: Slept or out of game area
+                    // Dead condition: body slept or out of game area
                     if (this.rigidBody.Awake == false
                         || this.rigidBody.LinearVelocity.LengthSquared() <= this.MinimumVelocityToDeclareDead)
                     {

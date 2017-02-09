@@ -14,9 +14,9 @@ namespace SuperSlingshot.Components
     {
         private const float PLAYERTOBREAKABLEDAMAGEMAGNITUDE = 0.5f;
         private const float BREAKABLETOBREAKABLEDAMAGEMAGNITUDE = 0.1f;
+        private float middleEnergy;
 
         public float currentEnergy;
-        private float middleEnergy;
 
         [RequiredComponent]
         private PolygonCollider2D collider = null;

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// File generated on 07/02/2017 17:18:06
+// File generated on 09/02/2017 17:13:23
 namespace SuperSlingshot
 {
     using System;
@@ -292,19 +292,6 @@ namespace SuperSlingshot
                 
                 /// <summary> Path to Content/Assets/Breakables/wood3x2rb.png </summary>
                 public const string wood3x2rb_png = "Content/Assets/Breakables/wood3x2rb.png";
-            }
-            
-            public sealed class Fonts
-            {
-                
-                /// <summary> Path to Content/Assets/Fonts/Komika Axis_36.ttf </summary>
-                public const string Komika_Axis_36_ttf = "Content/Assets/Fonts/Komika Axis_36.ttf";
-                
-                /// <summary> Path to Content/Assets/Fonts/sketches_36.ttf </summary>
-                public const string sketches_36_ttf = "Content/Assets/Fonts/sketches_36.ttf";
-                
-                /// <summary> Path to Content/Assets/Fonts/sketches_48.ttf </summary>
-                public const string sketches_48_ttf = "Content/Assets/Fonts/sketches_48.ttf";
             }
             
             public sealed class Gui

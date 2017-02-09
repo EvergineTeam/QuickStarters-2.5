@@ -61,15 +61,39 @@ namespace SuperSlingshot.Behaviors
         [IgnoreDataMember]
         public Vector2 PixelLimitMax { get { return this.pixelLimitMax; } }
 
+        /// <summary>
+        /// Initialize method
+        /// </summary>
+        protected override void Initialize()
+        {
+            base.Initialize();
+
+            this.virtualScreenManager = this.Owner.Scene.VirtualScreenManager;
+            this.platform = WaveServices.Platform;
+
+            this.platform.OnScreenSizeChanged += this.OnScreenSizeChanged;
+            this.RefreshCameraLimits();
+
+            this.camera2D = this.RenderManager.ActiveCamera2D;
+            this.vsm = camera2D.UsedVirtualScreen;
+        }
+
+        /// <summary>
+        /// Update camera bounds
+        /// </summary>
+        /// <param name="min"></param>
+        /// <param name="max"></param>
         public void SetLimits(Vector2 min, Vector2 max)
         {
             this.BoundsMin = min;
             this.BoundsMax = max;
             this.RefreshCameraLimits();
-
-            //this.transform.Scale = new Vector2(2.0f, 2.0f);
         }
 
+        /// <summary>
+        /// Sets the target to follow, empty parameter to unfollow
+        /// </summary>
+        /// <param name="entityPath"></param>
         public void SetTarget(string entityPath)
         {
             if (string.IsNullOrEmpty(entityPath))
@@ -90,25 +114,18 @@ namespace SuperSlingshot.Behaviors
             }
         }
 
+        /// <summary>
+        /// Dispose method.
+        /// </summary>
         public void Dispose()
         {
             this.platform.OnScreenSizeChanged -= OnScreenSizeChanged;
         }
 
-        protected override void Initialize()
-        {
-            base.Initialize();
 
-            this.virtualScreenManager = this.Owner.Scene.VirtualScreenManager;
-            this.platform = WaveServices.Platform;
-
-            this.platform.OnScreenSizeChanged += this.OnScreenSizeChanged;
-            this.RefreshCameraLimits();
-
-            this.camera2D = this.RenderManager.ActiveCamera2D;
-            this.vsm = camera2D.UsedVirtualScreen;
-        }
-
+        /// <summary>
+        /// Updates the camera limits on size changed
+        /// </summary>
         private void RefreshCameraLimits()
         {
             Vector2 halfScreenSize = new Vector2((this.virtualScreenManager.RightEdge - this.virtualScreenManager.LeftEdge) / 2,
@@ -136,21 +153,36 @@ namespace SuperSlingshot.Behaviors
             this.ChildRefreshCamera();
         }
 
+        /// <summary>
+        /// Update method, calls the children update.
+        /// </summary>
+        /// <param name="gameTime"></param>
         protected override void Update(TimeSpan gameTime)
         {
             this.CameraUpdate(gameTime);
         }
 
+        /// <summary>
+        /// Refresh method to implement in child class
+        /// </summary>
         protected virtual void ChildRefreshCamera()
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Update method to implement in child class
+        /// </summary>
         protected virtual void CameraUpdate(TimeSpan gameTime)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Raised when screen size changed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnScreenSizeChanged(object sender, SizeEventArgs e)
         {
             this.RefreshCameraLimits();

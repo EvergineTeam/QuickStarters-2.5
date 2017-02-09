@@ -7,10 +7,14 @@ using WaveEngine.Framework.Physics2D;
 
 namespace SuperSlingshot.Behaviors
 {
+    /// <summary>
+    /// Auto throwing behavior
+    /// </summary>
     [DataContract]
     public class AutoThrowBehavior : Behavior
     {
         private TimeSpan currentTime;
+        private bool slept;
 
         [DataMember]
         public float CountdownTime { get; set; }
@@ -30,15 +34,19 @@ namespace SuperSlingshot.Behaviors
         [RequiredComponent]
         private RigidBody2D rigidBody { get; set; }
 
-        private bool slept;
-
+        /// <summary>
+        /// Resolve dependencies
+        /// </summary>
         protected override void ResolveDependencies()
         {
             base.ResolveDependencies();
-
             this.currentTime = TimeSpan.FromSeconds(this.CountdownTime);
         }
 
+        /// <summary>
+        /// Update method. Counts the time to next throwing
+        /// </summary>
+        /// <param name="gameTime"></param>
         protected override void Update(TimeSpan gameTime)
         {
             this.currentTime -= gameTime;
@@ -56,6 +64,9 @@ namespace SuperSlingshot.Behaviors
             }
         }
 
+        /// <summary>
+        /// Respawn method
+        /// </summary>
         private void ReSpawn()
         {
             this.currentTime = TimeSpan.FromSeconds(this.CountdownTime);
@@ -63,6 +74,9 @@ namespace SuperSlingshot.Behaviors
             this.rigidBody.ApplyLinearImpulse(this.Impulse, Vector2.Zero, true);
         }
 
+        /// <summary>
+        /// Sleeps the rigid body
+        /// </summary>
         private void Sleep()
         {
             this.rigidBody.Awake = false;

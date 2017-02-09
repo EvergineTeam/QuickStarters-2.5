@@ -61,8 +61,17 @@ namespace SuperSlingshot.Drawables
             // WORKAROUND: Force spritebatch to start a new render command
             this.layer.SpriteBatch.Draw(StaticResources.WhitePixel, -Vector2.One, null, Color.White, 0.0f, Vector2.Zero, Vector2.One, SpriteEffects.None, this.mesh.ZOrder);
 
-            this.RenderManager.DrawMesh(this.mesh, this.materialsMap.Materials["elastic"], Matrix.Identity);
-            this.RenderManager.DrawMesh(this.secondaryMesh, this.materialsMap.Materials["elastic"], Matrix.Identity);
+            if (this.TargetTransform.Position.X > this.FixedPointBTop.X)
+            {
+                this.RenderManager.DrawMesh(this.secondaryMesh, this.materialsMap.Materials["elastic"], Matrix.Identity);
+                this.RenderManager.DrawMesh(this.mesh, this.materialsMap.Materials["elastic"], Matrix.Identity);
+                
+            }
+            else
+            {
+                this.RenderManager.DrawMesh(this.mesh, this.materialsMap.Materials["elastic"], Matrix.Identity);
+                this.RenderManager.DrawMesh(this.secondaryMesh, this.materialsMap.Materials["elastic"], Matrix.Identity);
+            }
         }
 
         private void SetupPointsAndVertices()
