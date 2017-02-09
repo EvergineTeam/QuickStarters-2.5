@@ -11,13 +11,11 @@ namespace SuperSlingshot.Components
     [DataContract]
     public class ButtonComponent : Component
     {
-        public delegate void StateChangedEventArgs(object sender, ButtonState currentState, ButtonState lastState);
-
-        public event StateChangedEventArgs StateChanged;
-
         private TextComponent childTextComponent;
-
         private ButtonState state;
+
+        public delegate void StateChangedEventArgs(object sender, ButtonState currentState, ButtonState lastState);
+        public event StateChangedEventArgs StateChanged;
 
         [RequiredComponent]
         private TouchGestures touchGestures { get; set; }

@@ -10,11 +10,10 @@ namespace SuperSlingshot.Components
     [DataContract]
     public class BonusComponent : Component
     {
+        private GameScene scene;
+
         [RequiredComponent(false)]
         private Collider2D collider = null;
-
-        private GameScene scene;
-        private LevelScore score;
 
         protected override void ResolveDependencies()
         {
@@ -28,7 +27,6 @@ namespace SuperSlingshot.Components
             if (scene != null)
             {
                 this.scene = scene;
-                this.score = scene.Score;
             }
         }
 
@@ -46,13 +44,12 @@ namespace SuperSlingshot.Components
 
                 this.scene.EntityManager.Remove(this.Owner);
 
-                this.score.Gems += 1;
+                this.scene.Score.Gems += 1;
             }
         }
 
         private void OnEndCollision(ICollisionInfo2D contact)
         {
-
         }
 
         protected override void DeleteDependencies()

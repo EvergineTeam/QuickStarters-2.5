@@ -3,11 +3,19 @@ using System;
 using System.Runtime.Serialization;
 using SlingshotRampage.Services;
 using SuperSlingshot.Components;
+using WaveEngine.Common;
+using WaveEngine.Common.Graphics;
 using WaveEngine.Common.Input;
 using WaveEngine.Common.Math;
+using WaveEngine.Components.Cameras;
+using WaveEngine.Components.Graphics2D;
+using WaveEngine.Components.Graphics3D;
 using WaveEngine.Framework;
+using WaveEngine.Framework.Diagnostic;
+using WaveEngine.Framework.Graphics;
 using WaveEngine.Framework.Managers;
 using WaveEngine.Framework.Physics2D;
+using WaveEngine.Framework.Resources;
 using WaveEngine.Framework.Services;
 #endregion
 
@@ -73,7 +81,7 @@ namespace SuperSlingshot.Behaviors
                     activeCamera2D.CalculateRay(ref this.TouchPosition, out r);
                     this.WorldPosition = r.IntersectionZPlane(0).ToVector2();
 
-                    /// Check collision with DRAGGABLE entities only
+                    /// check collision with DRAGGABLE entities only
                     foreach (Entity entity in this.Owner.Scene.EntityManager.FindAllByTag(GameConstants.TAGDRAGGABLE))
                     {
                         Collider2D collider = entity.FindComponent<Collider2D>(false);
