@@ -451,7 +451,7 @@
               </d7p1:TintColor>
               <d7p1:isGlobalAsset>false</d7p1:isGlobalAsset>
               <d7p1:spriteSheetPath>Content/Assets/GUI/Panels.spritesheet.wpk</d7p1:spriteSheetPath>
-              <d7p1:textureName>StarBigColor</d7p1:textureName>
+              <d7p1:textureName>StarMediumColor</d7p1:textureName>
             </d6p1:Component>
             <d6p1:Component xmlns:d7p1="WaveEngine.Components.Graphics2D" i:type="d7p1:SpriteAtlasRenderer">
               <d6p1:IsVisible>true</d6p1:IsVisible>
@@ -512,7 +512,7 @@
               </d7p1:TintColor>
               <d7p1:isGlobalAsset>false</d7p1:isGlobalAsset>
               <d7p1:spriteSheetPath>Content/Assets/GUI/Panels.spritesheet.wpk</d7p1:spriteSheetPath>
-              <d7p1:textureName>StarBigColor</d7p1:textureName>
+              <d7p1:textureName>StarMediumColor</d7p1:textureName>
             </d6p1:Component>
             <d6p1:Component xmlns:d7p1="WaveEngine.Components.Graphics2D" i:type="d7p1:SpriteAtlasRenderer">
               <d6p1:IsVisible>true</d6p1:IsVisible>
@@ -573,7 +573,7 @@
               </d7p1:TintColor>
               <d7p1:isGlobalAsset>false</d7p1:isGlobalAsset>
               <d7p1:spriteSheetPath>Content/Assets/GUI/Panels.spritesheet.wpk</d7p1:spriteSheetPath>
-              <d7p1:textureName>StarBigColor</d7p1:textureName>
+              <d7p1:textureName>StarMediumColor</d7p1:textureName>
             </d6p1:Component>
             <d6p1:Component xmlns:d7p1="WaveEngine.Components.Graphics2D" i:type="d7p1:SpriteAtlasRenderer">
               <d6p1:IsVisible>true</d6p1:IsVisible>
