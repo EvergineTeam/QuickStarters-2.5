@@ -1,26 +1,33 @@
 ﻿using Match3.Gameboard;
 using System;
-using System.Collections.Generic;
-using System.Diagnostics;
 using System.Runtime.Serialization;
-using System.Text;
 using WaveEngine.Common.Math;
 using WaveEngine.Components.Gestures;
 using WaveEngine.Framework;
+using WaveEngine.Framework.Graphics;
 
 namespace Match3.Components.Gameplay
 {
     [DataContract]
     public class CandyTouchComponent : Component, IDisposable
     {
-        private const int MinimumDisplacement = 10;
-        
+        private const int MinimumDisplacement = (int)(GameboardContent.DistanceBtwItems * 0.66);
+
+        [RequiredComponent]
+        protected Transform2D transform2D;
+
         [RequiredComponent]
         protected TouchGestures touchGestures;
 
+        private Vector2 initialCandyPosition;
+
         private Vector2 initialTouchPosition;
 
-        public Coordinate Coordinate { get; set; }
+        private Vector2 lastTouchPosition;
+        
+        private CandyMoves? detectedMove;
+
+        public bool IsPressed { get; private set; }
 
         public event EventHandler<CandyMoves> OnMoveOperation;
 
@@ -30,9 +37,11 @@ namespace Match3.Components.Gameplay
 
             this.touchGestures.TouchPressed -= this.TouchGestures_TouchPressed;
             this.touchGestures.TouchReleased -= this.TouchGestures_TouchReleased;
+            this.touchGestures.TouchMoved -= this.TouchGestures_TouchMoved;
 
             this.touchGestures.TouchPressed += this.TouchGestures_TouchPressed;
             this.touchGestures.TouchReleased += this.TouchGestures_TouchReleased;
+            this.touchGestures.TouchMoved += this.TouchGestures_TouchMoved;
         }
 
         protected override void DeleteDependencies()
@@ -53,47 +62,72 @@ namespace Match3.Components.Gameplay
             {
                 this.touchGestures.TouchPressed -= this.TouchGestures_TouchPressed;
                 this.touchGestures.TouchReleased -= this.TouchGestures_TouchReleased;
+                this.touchGestures.TouchMoved -= this.TouchGestures_TouchMoved;
             }
         }
 
         private void TouchGestures_TouchPressed(object sender, GestureEventArgs e)
         {
+            this.IsPressed = true;
             this.initialTouchPosition = e.GestureSample.Position;
-        }
+            this.lastTouchPosition = this.initialTouchPosition;
+            this.initialCandyPosition = this.transform2D.LocalPosition;
 
+            this.UpdateCandyPosition(e.GestureSample.Position);
+        }
 
         private void TouchGestures_TouchReleased(object sender, GestureEventArgs e)
         {
-            var diffPosition = e.GestureSample.Position - this.initialTouchPosition;
-
-            CandyMoves? detectedMove = null;
-
-            if (Math.Abs(diffPosition.X) > Math.Abs(diffPosition.Y))
+            if (this.detectedMove.HasValue)
             {
-                if (diffPosition.X > MinimumDisplacement)
+                this.OnMoveOperation?.Invoke(this, this.detectedMove.Value);
+                this.detectedMove = null;
+            }
+
+            this.UpdateCandyPosition(e.GestureSample.Position);
+
+            this.IsPressed = false;
+        }
+
+        private void TouchGestures_TouchMoved(object sender, GestureEventArgs e)
+        {
+            this.UpdateCandyPosition(e.GestureSample.Position);
+        }
+
+        private void UpdateCandyPosition(Vector2 newTouchPosition)
+        {
+            var candyPosition = this.initialCandyPosition;
+            var diffTouchPosition = newTouchPosition - this.initialTouchPosition;
+
+            this.detectedMove = null;
+            if (Math.Abs(diffTouchPosition.X) > Math.Abs(diffTouchPosition.Y))
+            {
+                candyPosition.X += Math.Max(-GameboardContent.DistanceBtwItems, Math.Min(GameboardContent.DistanceBtwItems, diffTouchPosition.X));
+
+                if (diffTouchPosition.X > MinimumDisplacement)
                 {
-                    detectedMove = CandyMoves.Right;
+                    this.detectedMove = CandyMoves.Right;
                 }
-                else if (diffPosition.X < -MinimumDisplacement)
+                else if (diffTouchPosition.X < -MinimumDisplacement)
                 {
-                    detectedMove = CandyMoves.Left;
+                    this.detectedMove = CandyMoves.Left;
                 }
             }
-            else if (diffPosition.Y > MinimumDisplacement)
+            else
             {
-                detectedMove = CandyMoves.Bottom;
-            }
-            else if (diffPosition.Y < -MinimumDisplacement)
-            {
-                detectedMove = CandyMoves.Top;
+                candyPosition.Y += Math.Max(-GameboardContent.DistanceBtwItems, Math.Min(GameboardContent.DistanceBtwItems, diffTouchPosition.Y));
+
+                if (diffTouchPosition.Y > MinimumDisplacement)
+                {
+                    this.detectedMove = CandyMoves.Bottom;
+                }
+                else if (diffTouchPosition.Y < -MinimumDisplacement)
+                {
+                    this.detectedMove = CandyMoves.Top;
+                }
             }
 
-            if(detectedMove.HasValue)
-            {
-                Debug.WriteLine("Move [{0},{1}] {2}!", this.Coordinate.X, this.Coordinate.Y, detectedMove.Value);
-
-                this.OnMoveOperation?.Invoke(this, detectedMove.Value);
-            }
+            this.transform2D.LocalPosition = candyPosition;
         }
     }
 }
