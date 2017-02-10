@@ -1,4 +1,5 @@
 ﻿using Match3.Gameboard;
+using Match3.Helpers;
 using System;
 using System.Runtime.Serialization;
 using WaveEngine.Common.Math;
@@ -9,9 +10,9 @@ using WaveEngine.Framework.Graphics;
 namespace Match3.Components.Gameplay
 {
     [DataContract]
-    public class CandyTouchComponent : Component, IDisposable
+    public class CandyTouchComponent : Component
     {
-        private const int MinimumDisplacement = (int)(GameboardContent.DistanceBtwItems * 0.66);
+        private const int MinimumDisplacement = (int)(GameLogicExtensions.DistanceBtwItems * 0.66);
 
         [RequiredComponent]
         protected Transform2D transform2D;
@@ -35,35 +36,9 @@ namespace Match3.Components.Gameplay
         {
             base.ResolveDependencies();
 
-            this.touchGestures.TouchPressed -= this.TouchGestures_TouchPressed;
-            this.touchGestures.TouchReleased -= this.TouchGestures_TouchReleased;
-            this.touchGestures.TouchMoved -= this.TouchGestures_TouchMoved;
-
             this.touchGestures.TouchPressed += this.TouchGestures_TouchPressed;
             this.touchGestures.TouchReleased += this.TouchGestures_TouchReleased;
             this.touchGestures.TouchMoved += this.TouchGestures_TouchMoved;
-        }
-
-        protected override void DeleteDependencies()
-        {
-            this.DeleteInternalDependencies();
-
-            base.DeleteDependencies();
-        }
-
-        public void Dispose()
-        {
-            this.DeleteInternalDependencies();
-        }
-
-        private void DeleteInternalDependencies()
-        {
-            if (this.touchGestures != null)
-            {
-                this.touchGestures.TouchPressed -= this.TouchGestures_TouchPressed;
-                this.touchGestures.TouchReleased -= this.TouchGestures_TouchReleased;
-                this.touchGestures.TouchMoved -= this.TouchGestures_TouchMoved;
-            }
         }
 
         private void TouchGestures_TouchPressed(object sender, GestureEventArgs e)
@@ -102,7 +77,7 @@ namespace Match3.Components.Gameplay
             this.detectedMove = null;
             if (Math.Abs(diffTouchPosition.X) > Math.Abs(diffTouchPosition.Y))
             {
-                candyPosition.X += Math.Max(-GameboardContent.DistanceBtwItems, Math.Min(GameboardContent.DistanceBtwItems, diffTouchPosition.X));
+                candyPosition.X += Math.Max(-GameLogicExtensions.DistanceBtwItems, Math.Min(GameLogicExtensions.DistanceBtwItems, diffTouchPosition.X));
 
                 if (diffTouchPosition.X > MinimumDisplacement)
                 {
@@ -115,7 +90,7 @@ namespace Match3.Components.Gameplay
             }
             else
             {
-                candyPosition.Y += Math.Max(-GameboardContent.DistanceBtwItems, Math.Min(GameboardContent.DistanceBtwItems, diffTouchPosition.Y));
+                candyPosition.Y += Math.Max(-GameLogicExtensions.DistanceBtwItems, Math.Min(GameLogicExtensions.DistanceBtwItems, diffTouchPosition.Y));
 
                 if (diffTouchPosition.Y > MinimumDisplacement)
                 {

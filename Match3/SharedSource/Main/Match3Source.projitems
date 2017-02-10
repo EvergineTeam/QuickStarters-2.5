@@ -23,6 +23,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Gameboard\CandyMoves.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Gameboard\CandyTypes.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Gameboard\Coordinate.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\GameLogicExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Scenes\About.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Scenes\Pause.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Scenes\Gameplay.cs" />

@@ -15,6 +15,22 @@ namespace Match3.Services
 
         public TimeSpan LeftTime { get { return this.levelTime - this.currentTimer.Interval; } }
 
+        public int BoardSizeM
+        {
+            get
+            {
+                return this.currentBoard.SizeM;
+            }
+        }
+
+        public int BoardSizeN
+        {
+            get
+            {
+                return this.currentBoard.SizeN;
+            }
+        }
+
         public Candy[][] CurrentCandies { get { return this.currentBoard.CurrentStatus; } }
 
         private Board currentBoard;

@@ -4,57 +4,56 @@ using Match3.Gameboard;
 using WaveEngine.Common.Math;
 using WaveEngine.Framework;
 using WaveEngine.Framework.Graphics;
+using Match3.Helpers;
+using Match3.Services;
 
 namespace Match3.Components.Gameplay
 {
     [DataContract]
-    public class CandyAnimationBehavior : Behavior, IDisposable
+    public class CandyAnimationBehavior : Behavior
     {
         [RequiredComponent]
         protected Transform2D transform2D;
 
         [RequiredComponent]
         protected CandyAttributesComponent candyAttributes;
-        
+
+        [RequiredComponent]
+        protected CandyTouchComponent candyTouchComponent;
+
         private Vector2 destinationPosition;
+
+        public bool IsAnimating
+        {
+            get
+            {
+                return this.destinationPosition != this.transform2D.LocalPosition && !this.candyTouchComponent.IsPressed;
+            }
+        }
 
         protected override void ResolveDependencies()
         {
             base.ResolveDependencies();
 
-            this.candyAttributes.OnCoordinateChanged -= this.CandyAttributes_OnCoordinateChanged;
             this.candyAttributes.OnCoordinateChanged += this.CandyAttributes_OnCoordinateChanged;
         }
 
-        protected override void DeleteDependencies()
+        protected override void Initialize()
         {
-            this.DeleteInternalDependencies();
+            base.Initialize();
 
-            base.DeleteDependencies();
+            this.destinationPosition = this.transform2D.LocalPosition;
         }
 
-        public void Dispose()
+        private void CandyAttributes_OnCoordinateChanged(object sender, Coordinate coordinate)
         {
-            this.DeleteInternalDependencies();
-        }
-
-        private void DeleteInternalDependencies()
-        {
-            if (this.candyAttributes != null)
-            {
-                this.candyAttributes.OnCoordinateChanged -= this.CandyAttributes_OnCoordinateChanged;
-                this.candyAttributes.OnCoordinateChanged += this.CandyAttributes_OnCoordinateChanged;
-            }
-        }
-        
-        private void CandyAttributes_OnCoordinateChanged(object sender, Coordinate e)
-        {
-            //this.destinationPosition = 
+            var gameLogic = CustomServices.GameLogic;
+            this.destinationPosition = gameLogic.CalculateCandyPostion(coordinate);
         }
 
         protected override void Update(TimeSpan gameTime)
         {
-            if (this.destinationPosition != this.transform2D.LocalPosition)
+            if (this.IsAnimating)
             {
                 this.transform2D.LocalPosition = Vector2.Lerp(this.transform2D.LocalPosition, this.destinationPosition, 0.5f);
             }

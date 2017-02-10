@@ -27,7 +27,7 @@ namespace Match3.Scenes
 
         private void LoadNextLevel()
         {
-            WaveServices.TimerFactory.CreateTimer(TimeSpan.FromSeconds(0.2), () =>
+            WaveServices.TimerFactory.CreateTimer(TimeSpan.FromSeconds(0.5), () =>
             {
                 CustomServices.GameLogic.InitializeLevel();
                 CustomServices.NavigationService.Navigate(NavigateCommands.DefaultForward);
