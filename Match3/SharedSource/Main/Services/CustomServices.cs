@@ -10,6 +10,7 @@ namespace Match3.Services
         {
             WaveServices.RegisterService(new AudioPlayer());
             WaveServices.RegisterService(new NavigationService());
+            WaveServices.RegisterService(new GameLogic());
         }
 
         public static AudioPlayer AudioPlayer
@@ -20,6 +21,11 @@ namespace Match3.Services
         public static NavigationService NavigationService
         {
             get { return WaveServices.GetService<NavigationService>(); }
+        }
+
+        public static GameLogic GameLogic
+        {
+            get { return WaveServices.GetService<GameLogic>(); }
         }
     }
 }

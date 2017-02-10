@@ -1,5 +1,7 @@
 ﻿using Match3.Factories;
 using Match3.Gameboard;
+using Match3.Services;
+using Match3.Services.Navigation;
 using System.Diagnostics;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -17,17 +19,23 @@ namespace Match3.Components.Gameplay
         [RequiredComponent]
         protected Transform2D transform;
 
-        private Board board;
+        private bool isMoving;
+        private GameLogic gameLogic;
 
         protected override void Initialize()
         {
             base.Initialize();
+            this.gameLogic = CustomServices.GameLogic;
+            this.RegenerateGameboard();
         }
 
-        public void RegenerateGameboard(Board board)
+        private void GameLogicGameFinished(object sender, System.EventArgs e)
         {
-            this.board = board;
+            CustomServices.NavigationService.Navigate(NavigateCommands.DefaultForward);
+        }
 
+        public void RegenerateGameboard()
+        {
             foreach (var child in this.Owner.ChildEntities.ToList())
             {
                 var candyTouch = child.FindComponent<CandyTouchComponent>();
@@ -40,6 +48,7 @@ namespace Match3.Components.Gameplay
                 this.Owner.RemoveChild(child.Name);
             }
 
+            var currentCandies = this.gameLogic.CurrentCandies;
             for (int i = 0; i < board.SizeM; i++)
             {
                 for (int j = 0; j < board.SizeN; j++)
@@ -69,6 +78,12 @@ namespace Match3.Components.Gameplay
 
         private void CandyTouch_OnMoveOperation(object sender, CandyMoves move)
         {
+            if (this.isMoving)
+            {
+                return;
+            }
+
+            this.isMoving = true;
             var candyTouch = (CandyTouchComponent)sender;
             var candyAttributes = candyTouch.Owner.FindComponent<CandyAttributesComponent>();
             var coordinate = candyAttributes.Coordinate;

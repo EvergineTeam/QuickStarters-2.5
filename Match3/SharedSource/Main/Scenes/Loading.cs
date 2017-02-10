@@ -16,9 +16,20 @@ namespace Match3.Scenes
         protected override void Start()
         {
             base.Start();
+            this.LoadNextLevel();
+        }
 
-            WaveServices.TimerFactory.CreateTimer(TimeSpan.FromSeconds(1), () =>
+        public override void Resume()
+        {
+            base.Resume();
+            this.LoadNextLevel();
+        }
+
+        private void LoadNextLevel()
+        {
+            WaveServices.TimerFactory.CreateTimer(TimeSpan.FromSeconds(0.2), () =>
             {
+                CustomServices.GameLogic.InitializeLevel();
                 CustomServices.NavigationService.Navigate(NavigateCommands.DefaultForward);
             }, false, this);
         }
