@@ -14,8 +14,9 @@ namespace Match3.Components.Gameplay
     public class ScoreComponent : Component
     {
         private GameLogic gameLogic;
-        private NinePatchRenderer scoreSlice;
+        private NinePatchSpriteAtlas scoreSlice;
         private Entity[] stars;
+        private float scoreSliceMax;
 
         protected override void ResolveDependencies()
         {
@@ -28,8 +29,10 @@ namespace Match3.Components.Gameplay
                 this.gameLogic.ScoreUpdated += GameLogic_ScoreUpdated;
 
                 this.stars = this.Owner.FindAllChildrenByTag("star").OrderBy(x => x.Name).ToArray();
-                this.scoreSlice = this.Owner.FindChild("ScoreSlice").FindComponent<NinePatchRenderer>();
+                this.scoreSlice = this.Owner.FindChild("ScoreSlice").FindComponent<NinePatchSpriteAtlas>();
+                this.scoreSliceMax = this.scoreSlice.Size.X;
                 this.UpdateStarsPosition();
+                this.UpdateCurrentScore();
             }
         }
 
@@ -42,9 +45,9 @@ namespace Match3.Components.Gameplay
             var starsSpace = lastStar.X - firstStar.X;
             for (int i = 0; i < this.gameLogic.StarsScores.Length - 1; i++)
             {
-                var scoreRatio = this.gameLogic.StarsScores[i] / (double)this.gameLogic.StarsScores[this.gameLogic.StarsScores.Length - 1];
+                var scoreRatio = this.gameLogic.StarsScores[i] / (float)this.gameLogic.StarsScores[this.gameLogic.StarsScores.Length - 1];
                 var starPosition = starsTransforms[i].LocalPosition;
-                starPosition.X = (int)(firstStar.X + (starsSpace * scoreRatio));
+                starPosition.X = firstStar.X + (starsSpace * scoreRatio);
                 starsTransforms[i].LocalPosition = starPosition;
             }
         }
@@ -60,10 +63,15 @@ namespace Match3.Components.Gameplay
 
         private void GameLogic_ScoreUpdated(object sender, EventArgs e)
         {
-            for (int i = 0; i < this.gameLogic.StarsScores.Length; i++)
-            {
+            this.UpdateCurrentScore();
+        }
 
-            }
+        private void UpdateCurrentScore()
+        {
+            var scoreRatio = this.gameLogic.CurrentScore / (float)this.gameLogic.StarsScores[this.gameLogic.StarsScores.Length - 1];
+            var scoreSlice = this.scoreSlice.Size;
+            scoreSlice.X = scoreRatio * this.scoreSliceMax;
+            this.scoreSlice.Size = scoreSlice;
         }
     }
 }
