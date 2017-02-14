@@ -4,6 +4,7 @@
     <d2p1:SerializeChildrens>
       <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
         <d2p1:SerializeChildrens />
+        <d2p1:isActive>true</d2p1:isActive>
         <d2p1:isStatic>false</d2p1:isStatic>
         <d2p1:isVisible>true</d2p1:isVisible>
         <d2p1:name>StarRight</d2p1:name>
@@ -65,6 +66,7 @@
       </d2p1:BaseEntityModel>
       <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
         <d2p1:SerializeChildrens />
+        <d2p1:isActive>true</d2p1:isActive>
         <d2p1:isStatic>false</d2p1:isStatic>
         <d2p1:isVisible>true</d2p1:isVisible>
         <d2p1:name>StarCenter</d2p1:name>
@@ -126,6 +128,7 @@
       </d2p1:BaseEntityModel>
       <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
         <d2p1:SerializeChildrens />
+        <d2p1:isActive>true</d2p1:isActive>
         <d2p1:isStatic>false</d2p1:isStatic>
         <d2p1:isVisible>true</d2p1:isVisible>
         <d2p1:name>StarLeft</d2p1:name>
@@ -187,6 +190,7 @@
       </d2p1:BaseEntityModel>
       <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
         <d2p1:SerializeChildrens />
+        <d2p1:isActive>true</d2p1:isActive>
         <d2p1:isStatic>false</d2p1:isStatic>
         <d2p1:isVisible>true</d2p1:isVisible>
         <d2p1:name>Text</d2p1:name>
@@ -257,6 +261,7 @@
         </d2p1:SerializeComponents>
       </d2p1:BaseEntityModel>
     </d2p1:SerializeChildrens>
+    <d2p1:isActive>true</d2p1:isActive>
     <d2p1:isStatic>false</d2p1:isStatic>
     <d2p1:isVisible>true</d2p1:isVisible>
     <d2p1:name>Level1Btn</d2p1:name>
