@@ -392,11 +392,11 @@
  <objectgroup name="AnchorLayer">
   <object id="12" name="TopLeftAnchor" x="-16" y="112" width="144" height="160"/>
   <object id="13" name="BottomRightAnchor" x="17728" y="8656" width="160" height="176"/>
-  <object id="14" name="SlingshotAnchor" x="1811.47" y="5991.07" width="15.2" height="11.2"/>
-  <object id="20" name="FrontBandAnchorTop" x="1713.6" y="5948.8" width="12.8" height="12.8"/>
-  <object id="24" name="BackBandAnchorTop" x="1870.27" y="5928.67" width="12.8" height="12.8"/>
-  <object id="25" name="FrontBandAnchorBottom" x="1748.13" y="6024.53" width="12.8" height="12.8"/>
-  <object id="26" name="BackBandAnchorBottom" x="1881.33" y="5998.13" width="12.8" height="12.8"/>
+  <object id="14" name="SlingshotAnchor" x="1731.47" y="6249.07" width="15.2" height="11.2"/>
+  <object id="20" name="FrontBandAnchorTop" x="1685.1" y="6234.3" width="12.8" height="12.8"/>
+  <object id="24" name="BackBandAnchorTop" x="1760.77" y="6221.67" width="12.8" height="12.8"/>
+  <object id="25" name="FrontBandAnchorBottom" x="1701.46" y="6276.36" width="12.8" height="12.8"/>
+  <object id="26" name="BackBandAnchorBottom" x="1768.33" y="6258.63" width="12.8" height="12.8"/>
  </objectgroup>
  <objectgroup color="#ff0000" name="BonusLayer">
   <object id="15" name="Gem1" x="6015.15" y="3584.85" width="127.273" height="121.212"/>

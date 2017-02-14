@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// File generated on 09/02/2017 17:13:23
+// File generated on 14/02/2017 16:03:46
 namespace SuperSlingshot
 {
     using System;
@@ -670,9 +670,6 @@ namespace SuperSlingshot
                 
                 /// <summary> Path to Content/Scenes/Levels/Level3.wscene </summary>
                 public const string Level3 = "Content/Scenes/Levels/Level3.wscene";
-                
-                /// <summary> Path to Content/Scenes/Levels/Level4.wscene </summary>
-                public const string Level4 = "Content/Scenes/Levels/Level4.wscene";
                 
                 /// <summary> Path to Content/Scenes/Levels/TestLevel.wscene </summary>
                 public const string TestLevel = "Content/Scenes/Levels/TestLevel.wscene";
