@@ -186,7 +186,7 @@ namespace SuperSlingshot.Drawables
             this.GraphicsDevice.BindVertexBuffer(this.mesh.VertexBuffer);
 
             // WORKAROUND: Force spritebatch to start a new render command
-            this.layer.SpriteBatch.Draw(StaticResources.WhitePixel, -Vector2.One, null, Color.White, 0.0f, Vector2.Zero, Vector2.One, SpriteEffects.None, this.mesh.ZOrder);
+            // this.layer.SpriteBatch.Draw(StaticResources.WhitePixel, -Vector2.One, null, Color.White, 0.0f, Vector2.Zero, Vector2.One, SpriteEffects.None, this.mesh.ZOrder);
 
             this.RenderManager.DrawMesh(this.mesh, this.materialsMap.DefaultMaterial, Matrix.Identity);
         }

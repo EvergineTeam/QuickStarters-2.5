@@ -89,29 +89,33 @@ namespace SuperSlingshot.Behaviors
 
         protected override void Update(TimeSpan gameTime)
         {
+            var gameScene = this.Owner.Scene as GameScene;
+            if (gameScene == null)
+            {
+                return;
+            }
+
             switch (this.PlayerState)
             {
                 case PlayerState.Prepared:
-                    if (this.Owner.Scene is GameScene)
+                    var anchorEntity = gameScene.SlingshotAnchorEntity;
+                    var anchorTransform = anchorEntity.FindComponent<Transform2D>();
+                    var anchorPosition = anchorTransform.Position;
+                    var impulse = anchorPosition - this.transform.Position;
+                    Labels.Add("Impulse", impulse);
+
+                    var showElasticBands = true;
+                    if (impulse.X == 0)
                     {
-                        var anchorEntity = ((GameScene)this.Owner.Scene).SlingshotAnchorEntity;
-                        var anchorTransform = anchorEntity.FindComponent<Transform2D>();
-                        var anchorPosition = anchorTransform.Position;
-                        var impulse = anchorPosition - this.transform.Position;
-                        Labels.Add("Impulse", impulse);
-
-                        if (impulse.X == 0)
-                        {
-                            impulse = Vector2.Zero;
-                        }
-
-                        ((GameScene)this.Owner.Scene).PreviewTrajectory(impulse);
-                        ((GameScene)this.Owner.Scene).PreviewElasticBands(true, this.transform);
-
+                        impulse = Vector2.Zero;
+                        showElasticBands = false;
                     }
+
+                    gameScene.PreviewTrajectory(impulse);
+                    gameScene.PreviewElasticBands(showElasticBands, this.transform);
                     break;
                 case PlayerState.InTheAir:
-                    ((GameScene)this.Owner.Scene).PreviewElasticBands(false, this.transform);
+                    gameScene.PreviewElasticBands(false, this.transform);
                     // Dead condition: body slept or out of game area
                     if (this.rigidBody.Awake == false
                         || this.rigidBody.LinearVelocity.LengthSquared() <= this.MinimumVelocityToDeclareDead)
@@ -120,7 +124,7 @@ namespace SuperSlingshot.Behaviors
                     }
 
                     var position = this.transform.Position;
-                    if(gamePlayManager.CheckBounds(position))
+                    if (gamePlayManager.CheckBounds(position))
                     {
                         this.PlayerState = PlayerState.Dead;
                     }

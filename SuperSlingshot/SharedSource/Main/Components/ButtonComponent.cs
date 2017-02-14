@@ -14,8 +14,8 @@ namespace SuperSlingshot.Components
         private TextComponent childTextComponent;
         private ButtonState state;
 
-        public delegate void StateChangedEventArgs(object sender, ButtonState currentState, ButtonState lastState);
         public event StateChangedEventArgs StateChanged;
+        public delegate void StateChangedEventArgs(object sender, ButtonState currentState, ButtonState lastState);
 
         [RequiredComponent]
         private TouchGestures touchGestures { get; set; }

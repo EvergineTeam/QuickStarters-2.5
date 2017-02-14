@@ -88,7 +88,7 @@ namespace SuperSlingshot.Scenes
             // Prepare to Play
             WaveServices.GetService<GamePlayManager>().NextBoulder();
 
-            // TODO: Workaround, remove when fixed (do not store LocalDrawOrder of layers in WaveEditor)
+            // TODO: Workaround, remove when fixed (do not stores LocalDrawOrder of layers in WaveEditor)
             this.EntityManager.Find(GameConstants.ENTITYTILEDMAP).FindChild(GameConstants.LAYERMIDDLE).FindComponent<Transform2D>().LocalDrawOrder = 0;
         }
 
