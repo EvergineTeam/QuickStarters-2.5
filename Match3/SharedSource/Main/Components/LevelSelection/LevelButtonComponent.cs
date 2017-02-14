@@ -180,6 +180,11 @@ namespace Match3.Components.LevelSelection
         
         private void TouchGestures_TouchTap(object sender, GestureEventArgs e)
         {
+            if (!this.isUnlocked)
+            {
+                return;
+            }
+
             CustomServices.GameLogic.SelectLevel(this.LevelIndex);
 
             this.navComponent.DoNavigation();
