@@ -202,13 +202,13 @@
 </data>
  </layer>
  <objectgroup name="AnchorLayer">
-  <object id="1" name="SlingshotAnchor" x="532" y="3310.67" width="11.2" height="12.8"/>
+  <object id="1" name="SlingshotAnchor" x="456.667" y="3568" width="11.2" height="12.8"/>
   <object id="2" name="TopLeftAnchor" x="0" y="624" width="144" height="144"/>
   <object id="3" name="BottomRightAnchor" x="6259.2" y="4057.6" width="96" height="128"/>
-  <object id="31" name="FrontBandAnchorTop" x="430.667" y="3266.93" width="12.8" height="12.8"/>
-  <object id="33" name="BackBandAnchorTop" x="591.467" y="3240.27" width="12.8" height="12.8"/>
-  <object id="34" name="FrontBandAnchorBottom" x="462.933" y="3339.2" width="12.8" height="12.8"/>
-  <object id="35" name="BackBandAnchorBottom" x="601.6" y="3306.67" width="12.8" height="12.8"/>
+  <object id="31" name="FrontBandAnchorTop" x="404" y="3547.6" width="12.8" height="12.8"/>
+  <object id="33" name="BackBandAnchorTop" x="481.467" y="3534.94" width="12.8" height="12.8"/>
+  <object id="34" name="FrontBandAnchorBottom" x="422.933" y="3584.53" width="12.8" height="12.8"/>
+  <object id="35" name="BackBandAnchorBottom" x="489.6" y="3570" width="12.8" height="12.8"/>
  </objectgroup>
  <objectgroup name="PhysicLayer">
   <object id="18" name="Crates" x="5478.4" y="3846.4">
