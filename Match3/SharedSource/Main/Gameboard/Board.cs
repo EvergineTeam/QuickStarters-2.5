@@ -258,13 +258,16 @@ namespace Match3.Gameboard
             var boardStatus = this.currentStatus;
             for (int i = 0; i < boardStatus.Length; i++)
             {
+                int yOffset = -1;
                 for (int j = 0; j < boardStatus[0].Length; j++)
                 {
                     if (boardStatus[i][j].Type == CandyTypes.Empty)
                     {
+                        yOffset++;
+
                         resultOperation.AddCandyOperation(new CandyOperation
                         {
-                            PreviousPosition = new Coordinate { X = -1, Y = -1 },
+                            PreviousPosition = new Coordinate { X = i, Y = -1 },
                             CurrentPosition = new Coordinate { X = i, Y = j },
                             CandyProperties = new Candy
                             {
@@ -275,6 +278,15 @@ namespace Match3.Gameboard
                     }
                     else
                     {
+                        var opCount = resultOperation.CandyOperations.Count;
+                        while (yOffset > 0)
+                        {
+                            var coord = resultOperation.CandyOperations[opCount - yOffset].PreviousPosition;
+                            coord.Y -= yOffset;
+                            resultOperation.CandyOperations[opCount - yOffset].PreviousPosition = coord;
+
+                            yOffset--;
+                        }
                         break;
                     }
                 }
@@ -414,7 +426,7 @@ namespace Match3.Gameboard
                                 addOperation.Type = OperationTypes.Add;
                                 addOperation.AddCandyOperation(new CandyOperation
                                 {
-                                    PreviousPosition = new Coordinate { X = -1, Y = -1 },
+                                    PreviousPosition = new Coordinate { X = i, Y = j },
                                     CurrentPosition = new Coordinate { X = i, Y = j },
                                     CandyProperties = new Candy
                                     {
@@ -454,24 +466,22 @@ namespace Match3.Gameboard
 
         public class BoardOperation
         {
-            private List<CandyOperation> candyOperations;
-
             public OperationTypes Type { get; set; }
 
-            public IReadOnlyCollection<CandyOperation> CandyOperations { get { return this.candyOperations; } }
+            public List<CandyOperation> CandyOperations { get; private set; }
 
             public BoardOperation()
             {
-                this.candyOperations = new List<CandyOperation>();
+                this.CandyOperations = new List<CandyOperation>();
             }
 
             public void AddCandyOperation(CandyOperation operation)
             {
-                if (!this.candyOperations.Any(x =>
+                if (!this.CandyOperations.Any(x =>
                     x.PreviousPosition.X == operation.PreviousPosition.X && x.PreviousPosition.Y == operation.PreviousPosition.Y
                  && x.CurrentPosition.X == operation.CurrentPosition.X && x.CurrentPosition.Y == operation.CurrentPosition.Y))
                 {
-                    this.candyOperations.Add(operation);
+                    this.CandyOperations.Add(operation);
                 }
             }
         }
