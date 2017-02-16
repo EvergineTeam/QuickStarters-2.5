@@ -5,8 +5,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
+using WaveEngine.Components.GameActions;
 using WaveEngine.Framework;
 using WaveEngine.Framework.Graphics;
+using WaveEngine.Framework.Services;
 
 namespace Match3.Components.Gameplay
 {
@@ -17,6 +19,8 @@ namespace Match3.Components.Gameplay
         private NinePatchSpriteAtlas scoreSlice;
         private Entity[] stars;
         private float scoreSliceMax;
+
+        private IGameAction updateScoreGameAction;
 
         protected override void ResolveDependencies()
         {
@@ -32,7 +36,7 @@ namespace Match3.Components.Gameplay
                 this.scoreSlice = this.Owner.FindChild("ScoreSlice").FindComponent<NinePatchSpriteAtlas>();
                 this.scoreSliceMax = this.scoreSlice.Size.X;
                 this.UpdateStarsPosition();
-                this.UpdateCurrentScore();
+                this.UpdateCurrentScore(this.gameLogic.CurrentScore);
             }
         }
 
@@ -61,14 +65,31 @@ namespace Match3.Components.Gameplay
             }
         }
 
-        private void GameLogic_ScoreUpdated(object sender, EventArgs e)
+        private void GameLogic_ScoreUpdated(object sender, ulong currentScore)
         {
-            this.UpdateCurrentScore();
+            if(updateScoreGameAction == null)
+            {
+                updateScoreGameAction = this.Owner.Scene.CreateEmptyGameAction();
+            }
+
+            updateScoreGameAction = updateScoreGameAction
+                .ContinueWith(this.Owner.Scene.CreateGameAction(() => 
+                {
+                    var scoreRatio = currentScore / (float)this.gameLogic.StarsScores[this.gameLogic.StarsScores.Length - 1];
+                    return new FloatAnimationGameAction(this.Owner, this.scoreSlice.Size.X, scoreRatio * this.scoreSliceMax, TimeSpan.FromSeconds(1), EaseFunction.QuarticInOutEase, x =>
+                    {
+                        var scoreSlice = this.scoreSlice.Size;
+                        scoreSlice.X = x;
+                        this.scoreSlice.Size = scoreSlice;
+                    });
+                }));
+
+            updateScoreGameAction.Run();
         }
 
-        private void UpdateCurrentScore()
+        private void UpdateCurrentScore(ulong score)
         {
-            var scoreRatio = this.gameLogic.CurrentScore / (float)this.gameLogic.StarsScores[this.gameLogic.StarsScores.Length - 1];
+            var scoreRatio = score / (float)this.gameLogic.StarsScores[this.gameLogic.StarsScores.Length - 1];
             var scoreSlice = this.scoreSlice.Size;
             scoreSlice.X = scoreRatio * this.scoreSliceMax;
             this.scoreSlice.Size = scoreSlice;

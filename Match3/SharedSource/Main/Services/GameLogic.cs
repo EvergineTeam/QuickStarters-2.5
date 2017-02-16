@@ -40,7 +40,7 @@ namespace Match3.Services
 
         public event EventHandler GameFinished;
 
-        public event EventHandler ScoreUpdated;
+        public event EventHandler<ulong> ScoreUpdated;
 
         public void SelectLevel(int level)
         {
@@ -87,13 +87,13 @@ namespace Match3.Services
         {
             foreach (var item in operations)
             {
-                if(item.Type == OperationTypes.Remove)
+                if (item.Type == OperationTypes.Remove)
                 {
-                    this.CurrentScore++;
+                    this.CurrentScore += (uint)item.CandyOperations.Count;
                 }
-            }
 
-            this.ScoreUpdated?.Invoke(this, EventArgs.Empty);
+                this.ScoreUpdated?.Invoke(this, this.CurrentScore);
+            }
         }
 
         public void Pause()
