@@ -211,6 +211,10 @@
               <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
               <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
             </d6p1:Component>
+            <d6p1:Component xmlns:d7p1="http://schemas.datacontract.org/2004/07/Match3.Components.Gameplay" i:type="d7p1:TimerBehavior">
+              <d6p1:IsActive>true</d6p1:IsActive>
+              <d6p1:UpdateOrder>0.5</d6p1:UpdateOrder>
+            </d6p1:Component>
           </d2p1:SerializeComponents>
         </d2p1:BaseEntityModel>
         <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
@@ -346,8 +350,8 @@
           <d2p1:isActive>true</d2p1:isActive>
           <d2p1:isStatic>false</d2p1:isStatic>
           <d2p1:isVisible>true</d2p1:isVisible>
-          <d2p1:name>TimerSlice</d2p1:name>
-          <d2p1:tag i:nil="true" />
+          <d2p1:name>ScoreSlice</d2p1:name>
+          <d2p1:tag></d2p1:tag>
           <d2p1:SerializeComponents xmlns:d6p1="WaveEngine.Framework">
             <d6p1:Component xmlns:d7p1="WaveEngine.Framework.Graphics" i:type="d7p1:Transform2D">
               <d7p1:LocalOrientation xmlns:d8p1="WaveEngine.Common.Math">
@@ -412,7 +416,7 @@
           <d2p1:isStatic>false</d2p1:isStatic>
           <d2p1:isVisible>true</d2p1:isVisible>
           <d2p1:name>star2</d2p1:name>
-          <d2p1:tag i:nil="true" />
+          <d2p1:tag>star</d2p1:tag>
           <d2p1:SerializeComponents xmlns:d6p1="WaveEngine.Framework">
             <d6p1:Component xmlns:d7p1="WaveEngine.Framework.Graphics" i:type="d7p1:Transform2D">
               <d7p1:LocalOrientation xmlns:d8p1="WaveEngine.Common.Math">
@@ -474,7 +478,7 @@
           <d2p1:isStatic>false</d2p1:isStatic>
           <d2p1:isVisible>true</d2p1:isVisible>
           <d2p1:name>star3</d2p1:name>
-          <d2p1:tag i:nil="true" />
+          <d2p1:tag>star</d2p1:tag>
           <d2p1:SerializeComponents xmlns:d6p1="WaveEngine.Framework">
             <d6p1:Component xmlns:d7p1="WaveEngine.Framework.Graphics" i:type="d7p1:Transform2D">
               <d7p1:LocalOrientation xmlns:d8p1="WaveEngine.Common.Math">
@@ -536,7 +540,7 @@
           <d2p1:isStatic>false</d2p1:isStatic>
           <d2p1:isVisible>true</d2p1:isVisible>
           <d2p1:name>star1</d2p1:name>
-          <d2p1:tag i:nil="true" />
+          <d2p1:tag>star</d2p1:tag>
           <d2p1:SerializeComponents xmlns:d6p1="WaveEngine.Framework">
             <d6p1:Component xmlns:d7p1="WaveEngine.Framework.Graphics" i:type="d7p1:Transform2D">
               <d7p1:LocalOrientation xmlns:d8p1="WaveEngine.Common.Math">
@@ -546,7 +550,7 @@
                 <d8p1:Z>0</d8p1:Z>
               </d7p1:LocalOrientation>
               <d7p1:LocalPosition xmlns:d8p1="WaveEngine.Common.Math">
-                <d8p1:X>430</d8p1:X>
+                <d8p1:X>17</d8p1:X>
                 <d8p1:Y>-17</d8p1:Y>
                 <d8p1:Z>-2</d8p1:Z>
               </d7p1:LocalPosition>
@@ -597,7 +601,7 @@
       <d2p1:isStatic>false</d2p1:isStatic>
       <d2p1:isVisible>true</d2p1:isVisible>
       <d2p1:name>ScorePanel</d2p1:name>
-      <d2p1:tag i:nil="true" />
+      <d2p1:tag></d2p1:tag>
       <d2p1:SerializeComponents xmlns:d4p1="WaveEngine.Framework">
         <d4p1:Component xmlns:d5p1="WaveEngine.Framework.Graphics" i:type="d5p1:Transform2D">
           <d5p1:LocalOrientation xmlns:d6p1="WaveEngine.Common.Math">
@@ -654,6 +658,7 @@
           <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
           <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
         </d4p1:Component>
+        <d4p1:Component xmlns:d5p1="http://schemas.datacontract.org/2004/07/Match3.Components.Gameplay" i:type="d5p1:ScoreComponent" />
       </d2p1:SerializeComponents>
     </d2p1:BaseEntityModel>
     <d2p1:BaseEntityModel i:type="d2p1:EntityModel">

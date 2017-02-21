@@ -13,6 +13,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Components\Gameplay\CandyAttributesComponent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Components\Gameplay\CandyTouchComponent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Components\Gameplay\GameboardContent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Components\Gameplay\ScoreComponent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Components\Gameplay\TimerBehavior.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Components\LevelSelection\LevelButtonComponent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Factories\GameplayFactory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Game.cs" />

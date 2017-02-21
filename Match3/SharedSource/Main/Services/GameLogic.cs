@@ -11,9 +11,9 @@ namespace Match3.Services
     {
         public ulong CurrentScore { get; private set; }
 
-        public ulong[] StartScores { get; private set; }
+        public ulong[] StarsScores { get; private set; }
 
-        public TimeSpan LeftTime { get { return this.levelTime - this.currentTimer.Interval; } }
+        public TimeSpan LeftTime { get { return this.currentTimer.Interval; } }
 
         public int BoardSizeM
         {
@@ -40,11 +40,13 @@ namespace Match3.Services
 
         public event EventHandler GameFinished;
 
+        public event EventHandler<ulong> ScoreUpdated;
+
         public void SelectLevel(int level)
         {
             //TODO Set level properties (max. score, time, etc.)
             this.levelTime = TimeSpan.FromMinutes(1.5);
-            this.StartScores = new ulong[] { 100, 500, 3000 };
+            this.StarsScores = new ulong[] { 60, 75, 100 };
         }
 
         public void InitializeLevel()
@@ -85,10 +87,12 @@ namespace Match3.Services
         {
             foreach (var item in operations)
             {
-                if(item.Type == OperationTypes.Remove)
+                if (item.Type == OperationTypes.Remove)
                 {
-                    this.CurrentScore++;
+                    this.CurrentScore += (uint)item.CandyOperations.Count;
                 }
+
+                this.ScoreUpdated?.Invoke(this, this.CurrentScore);
             }
         }
 
