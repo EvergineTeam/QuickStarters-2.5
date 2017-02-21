@@ -115,31 +115,9 @@ namespace Match3.Gameboard
             return result.ToArray();
         }
 
-
-        public IEnumerable<BoardOperation[]> MoveIters(Coordinate candyPosition, CandyMoves move)
+        public bool IsValidCoordinate(Coordinate position)
         {
-            var result = new List<BoardOperation>();
-
-            if (this.UpdateCandiesPosition(candyPosition, move))
-            {
-                IEnumerable<BoardOperation> operations;
-                while ((operations = this.GetCurrentOperations()).Any())
-                {
-                    result.AddRange(operations);
-                    this.ExecuteOperation(operations);
-                    yield return operations.ToArray();
-                }
-
-                if (result.Count == 0)
-                {
-                    this.UpdateCandiesPosition(candyPosition, move);
-                }
-                else if (this.ShuffleIfNecessary())
-                {
-                    result.Add(new BoardOperation { Type = OperationTypes.Shuffle });
-                    yield return new BoardOperation[] { result.Last() };
-                }
-            }
+            return position.X >= 0 && position.Y >= 0 && position.X < this.currentStatus.Length && position.Y < this.currentStatus[0].Length;
         }
 
         private bool MoveHasOperations(Coordinate candyPosition, CandyMoves move)
@@ -156,28 +134,11 @@ namespace Match3.Gameboard
 
         private bool UpdateCandiesPosition(Coordinate candyPosition, CandyMoves move)
         {
-            if (this.ValidCoordinate(candyPosition))
+            if (this.IsValidCoordinate(candyPosition))
             {
-                var otherCandyPosition = candyPosition;
-                switch (move)
-                {
-                    case CandyMoves.Left:
-                        otherCandyPosition.X--;
-                        break;
-                    case CandyMoves.Right:
-                        otherCandyPosition.X++;
-                        break;
-                    case CandyMoves.Top:
-                        otherCandyPosition.Y--;
-                        break;
-                    case CandyMoves.Bottom:
-                        otherCandyPosition.Y++;
-                        break;
-                    default:
-                        throw new ArgumentOutOfRangeException("The indicated candy move is not valid.");
-                }
+                var otherCandyPosition = candyPosition.Calculate(move);
 
-                if (this.ValidCoordinate(otherCandyPosition))
+                if (this.IsValidCoordinate(otherCandyPosition))
                 {
                     var otherCandy = this.currentStatus[otherCandyPosition.X][otherCandyPosition.Y];
                     this.currentStatus[otherCandyPosition.X][otherCandyPosition.Y] = this.currentStatus[candyPosition.X][candyPosition.Y];
@@ -188,11 +149,6 @@ namespace Match3.Gameboard
             }
 
             return false;
-        }
-
-        private bool ValidCoordinate(Coordinate position)
-        {
-            return position.X >= 0 && position.Y >= 0 && position.X < this.currentStatus.Length && position.Y < this.currentStatus[0].Length;
         }
 
         private void ExecuteOperation(IEnumerable<BoardOperation> operations)
@@ -209,20 +165,20 @@ namespace Match3.Gameboard
                     switch (operation.Type)
                     {
                         case OperationTypes.Remove:
-                            if (this.ValidCoordinate(candyOperation.PreviousPosition))
+                            if (this.IsValidCoordinate(candyOperation.PreviousPosition))
                             {
                                 boardStatus[candyOperation.PreviousPosition.X][candyOperation.PreviousPosition.Y].Type = CandyTypes.Empty;
                             }
                             break;
                         case OperationTypes.Add:
-                            if (this.ValidCoordinate(candyOperation.CurrentPosition))
+                            if (this.IsValidCoordinate(candyOperation.CurrentPosition))
                             {
                                 boardStatus[candyOperation.CurrentPosition.X][candyOperation.CurrentPosition.Y].Type = candyOperation.CandyProperties.Value.Type;
                                 boardStatus[candyOperation.CurrentPosition.X][candyOperation.CurrentPosition.Y].Color = candyOperation.CandyProperties.Value.Color;
                             }
                             break;
                         case OperationTypes.Move:
-                            if (this.ValidCoordinate(candyOperation.PreviousPosition) && this.ValidCoordinate(candyOperation.CurrentPosition))
+                            if (this.IsValidCoordinate(candyOperation.PreviousPosition) && this.IsValidCoordinate(candyOperation.CurrentPosition))
                             {
                                 var current = boardStatus[candyOperation.CurrentPosition.X][candyOperation.CurrentPosition.Y];
 
@@ -338,6 +294,7 @@ namespace Match3.Gameboard
         private bool TryGetRemoveOperation(ref List<BoardOperation> resultOperations)
         {
             var addOperations = new List<BoardOperation>();
+            var removedCoordinate = new List<Coordinate>();
             var boardStatus = this.currentStatus;
             for (int p = 0; p < pieces.Length; p++)
             {
@@ -352,7 +309,8 @@ namespace Match3.Gameboard
                         {
                             for (int pj = 0; pj < piece.N && matching; pj++)
                             {
-                                if (boardStatus[i + pi][j + pj].Color != candyColor)
+                                var currentCoordinate = new Coordinate() { X = i + pi, Y = j + pj };
+                                if (boardStatus[i + pi][j + pj].Color != candyColor || removedCoordinate.Contains(currentCoordinate))
                                 {
                                     matching = false;
                                 }
@@ -367,54 +325,7 @@ namespace Match3.Gameboard
                             {
                                 for (int pj = 0; pj < piece.N; pj++)
                                 {
-                                    var candy = boardStatus[i + pi][j + pj];
-                                    if (candy.Type == CandyTypes.FourInLine)
-                                    {
-                                        // Remove line
-                                        if (piece.M == 1)
-                                        {
-                                            for (int fi = 0; fi < boardStatus.Length; fi++)
-                                            {
-                                                resultOperation.AddCandyOperation(new CandyOperation
-                                                {
-                                                    PreviousPosition = new Coordinate { X = fi, Y = j + pj },
-                                                    CurrentPosition = new Coordinate { X = -1, Y = -1 }
-                                                });
-                                            }
-                                        }
-                                        else if (piece.N == 1)
-                                        {
-                                            for (int fj = 0; fj < boardStatus[0].Length; fj++)
-                                            {
-                                                resultOperation.AddCandyOperation(new CandyOperation
-                                                {
-                                                    PreviousPosition = new Coordinate { X = i + pi, Y = fj },
-                                                    CurrentPosition = new Coordinate { X = -1, Y = -1 }
-                                                });
-                                            }
-                                        }
-                                    }
-                                    if (candy.Type == CandyTypes.FourInSquare)
-                                    {
-                                        // Remove box of 4x4
-                                        for (int fi = -1; fi < 2; fi++)
-                                        {
-                                            for (int fj = -1; fj < 2; fj++)
-                                            {
-                                                resultOperation.AddCandyOperation(new CandyOperation
-                                                {
-                                                    PreviousPosition = new Coordinate { X = i + pi + fi, Y = j + pj + fj },
-                                                    CurrentPosition = new Coordinate { X = -1, Y = -1 }
-                                                });
-                                            }
-                                        }
-                                    }
-
-                                    resultOperation.AddCandyOperation(new CandyOperation
-                                    {
-                                        PreviousPosition = new Coordinate { X = i + pi, Y = j + pj },
-                                        CurrentPosition = new Coordinate { X = -1, Y = -1 }
-                                    });
+                                    this.CreateRemoveCandyOperation(removedCoordinate, boardStatus, piece, i + pi, j + pj, resultOperation);
                                 }
                             }
 
@@ -445,6 +356,53 @@ namespace Match3.Gameboard
             resultOperations.AddRange(addOperations);
 
             return resultOperations.Any();
+        }
+
+        private void CreateRemoveCandyOperation(List<Coordinate> removedCoordinates, Candy[][] boardStatus, Piece piece, int i, int j, BoardOperation resultOperation)
+        {
+            var coordinate = new Coordinate { X = i, Y = j };
+            if (removedCoordinates.Contains(coordinate) || !this.IsValidCoordinate(coordinate))
+            {
+                return;
+            }
+
+            removedCoordinates.Add(new Coordinate { X = i, Y = j });
+            resultOperation.AddCandyOperation(new CandyOperation
+            {
+                PreviousPosition = new Coordinate { X = i, Y = j },
+                CurrentPosition = new Coordinate { X = -1, Y = -1 }
+            });
+
+            var candy = boardStatus[i][j];
+            if (candy.Type == CandyTypes.FourInLine)
+            {
+                // Remove line
+                if (piece.M == 1)
+                {
+                    for (int fi = 0; fi < boardStatus.Length; fi++)
+                    {
+                        this.CreateRemoveCandyOperation(removedCoordinates, boardStatus, piece, fi, j, resultOperation);
+                    }
+                }
+                else if (piece.N == 1)
+                {
+                    for (int fj = 0; fj < boardStatus[0].Length; fj++)
+                    {
+                        this.CreateRemoveCandyOperation(removedCoordinates, boardStatus, piece, i, fj, resultOperation);
+                    }
+                }
+            }
+            if (candy.Type == CandyTypes.FourInSquare)
+            {
+                // Remove box of 4x4
+                for (int fi = -1; fi < 2; fi++)
+                {
+                    for (int fj = -1; fj < 2; fj++)
+                    {
+                        this.CreateRemoveCandyOperation(removedCoordinates, boardStatus, piece, i + fi, j + fj, resultOperation);
+                    }
+                }
+            }
         }
 
         public enum OperationTypes

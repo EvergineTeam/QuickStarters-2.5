@@ -73,14 +73,9 @@ namespace Match3.Services
             return result;
         }
 
-        public IEnumerable<BoardOperation[]> MoveIters(Coordinate candyPosition, CandyMoves move)
+        public bool IsValidCoordinate(Coordinate candyPosition)
         {
-            var result = this.currentBoard.MoveIters(candyPosition, move);
-            foreach (var item in result)
-            {
-                this.SumScore(item);
-                yield return item;
-            }
+            return this.currentBoard.IsValidCoordinate(candyPosition);
         }
 
         private void SumScore(BoardOperation[] operations)
