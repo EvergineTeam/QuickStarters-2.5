@@ -26,6 +26,8 @@ namespace Match3.Components.Gameplay
             }
         }
 
+        public bool IsAnimating { get; set; }
+
         public EventHandler<Coordinate> OnCoordinateChanged;
     }
 }

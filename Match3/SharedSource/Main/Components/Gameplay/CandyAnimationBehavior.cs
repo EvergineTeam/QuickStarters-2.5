@@ -22,14 +22,7 @@ namespace Match3.Components.Gameplay
         protected CandyTouchComponent candyTouchComponent;
 
         private Vector2 destinationPosition;
-
-        public bool IsAnimating
-        {
-            get
-            {
-                return this.destinationPosition != this.transform2D.LocalPosition && !this.candyTouchComponent.IsPressed;
-            }
-        }
+        
 
         protected override void ResolveDependencies()
         {
@@ -53,7 +46,10 @@ namespace Match3.Components.Gameplay
 
         protected override void Update(TimeSpan gameTime)
         {
-            if (this.IsAnimating)
+            var isAnimating = this.destinationPosition != this.transform2D.LocalPosition && !this.candyTouchComponent.IsPressed;
+            this.candyAttributes.IsAnimating = isAnimating;
+
+            if (isAnimating)
             {
                 this.transform2D.LocalPosition = Vector2.Lerp(this.transform2D.LocalPosition, this.destinationPosition, 0.5f);
             }

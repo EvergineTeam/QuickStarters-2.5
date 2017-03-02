@@ -112,6 +112,11 @@ namespace Match3.Components.Gameplay
             return this.currentCandies.FirstOrDefault(c => c.Coordinate == coord);
         }
 
+        public bool IsAnimating()
+        {
+            return this.currentCandies.Any(c => c.IsAnimating);
+        }
+
         private void CandyTouch_OnMoveOperation(object sender, CandyMoves move)
         {
             var candyTouch = (CandyTouchComponent)sender;

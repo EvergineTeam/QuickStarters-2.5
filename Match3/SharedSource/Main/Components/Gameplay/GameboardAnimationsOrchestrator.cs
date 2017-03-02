@@ -11,19 +11,19 @@ using WaveEngine.Common.Attributes;
 namespace Match3.Components.Gameplay
 {
     [DataContract]
-    public class GameboardAnimationsOrchestrator : Component
+    public class GameboardAnimationsOrchestrator : Behavior
     {
         [RequiredComponent]
         protected GameboardContent gameboardContent;
 
-        private List<GameAction> pendingAnimations;
+        private Queue<BoardOperation> pendingOperations;
 
         [DontRenderProperty]
         public bool IsAnimationInProgress
         {
             get
             {
-                return this.pendingAnimations.Count > 0;
+                return this.pendingOperations.Count > 0;
             }
         }
 
@@ -31,7 +31,7 @@ namespace Match3.Components.Gameplay
         {
             base.DefaultValues();
 
-            this.pendingAnimations = new List<GameAction>();
+            this.pendingOperations = new Queue<BoardOperation>();
         }
 
         protected override void ResolveDependencies()
@@ -47,42 +47,52 @@ namespace Match3.Components.Gameplay
             {
                 throw new InvalidOperationException("Previous operation must be finished before a new one start");
             }
-            
-            this.ProccessOperations(boardOperations);
+
+            this.EnqueueOperations(boardOperations);
         }
 
-        private async void ProccessOperations(BoardOperation[] boardOperations)
+        private void EnqueueOperations(BoardOperation[] boardOperations)
         {
             foreach (var boardOp in boardOperations)
             {
-                if (boardOp.Type == Board.OperationTypes.Remove)
-                {
-                    foreach (var candyOp in boardOp.CandyOperations)
-                    {
-                        this.gameboardContent.RemoveCandyEntity(candyOp.PreviousPosition);
-                    }
+                this.pendingOperations.Enqueue(boardOp);
+            }
+        }
 
-                    await System.Threading.Tasks.Task.Delay(1000);
-                }
-
-                if (boardOp.Type == Board.OperationTypes.Add)
+        private void ProccessOperation(BoardOperation boardOp)
+        {
+            if (boardOp.Type == Board.OperationTypes.Remove)
+            {
+                foreach (var candyOp in boardOp.CandyOperations)
                 {
-                    foreach (var candyOp in boardOp.CandyOperations)
-                    {
-                        this.gameboardContent.AddCandyEntity(candyOp.PreviousPosition, candyOp.CandyProperties.Value);
-                    }
-                    await System.Threading.Tasks.Task.Delay(1000);
+                    this.gameboardContent.RemoveCandyEntity(candyOp.PreviousPosition);
                 }
-
-                if (boardOp.Type != OperationTypes.Remove)
+            }
+            else if (boardOp.Type == Board.OperationTypes.Add)
+            {
+                foreach (var candyOp in boardOp.CandyOperations)
                 {
-                    foreach (var candyOp in boardOp.CandyOperations)
-                    {
-                        var candyAttr = this.gameboardContent.FindCandyAttributes(candyOp.PreviousPosition);
-                        candyAttr.Coordinate = candyOp.CurrentPosition;
-                    }
-                    await System.Threading.Tasks.Task.Delay(1000);
+                    this.gameboardContent.AddCandyEntity(candyOp.PreviousPosition, candyOp.CandyProperties.Value);
                 }
+            }
+
+            if (boardOp.Type != OperationTypes.Remove)
+            {
+                foreach (var candyOp in boardOp.CandyOperations)
+                {
+                    var candyAttr = this.gameboardContent.FindCandyAttributes(candyOp.PreviousPosition);
+                    candyAttr.Coordinate = candyOp.CurrentPosition;
+                }
+            }
+        }
+
+        protected override void Update(TimeSpan gameTime)
+        {
+            if (this.pendingOperations.Count > 0 &&
+                !this.gameboardContent.IsAnimating())
+            {
+                var nextOperation = this.pendingOperations.Dequeue();
+                this.ProccessOperation(nextOperation);
             }
         }
     }

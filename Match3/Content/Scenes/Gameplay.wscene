@@ -707,7 +707,10 @@
               <d7p1:transformMode>Standard</d7p1:transformMode>
             </d6p1:Component>
             <d6p1:Component xmlns:d7p1="http://schemas.datacontract.org/2004/07/Match3.Components.Gameplay" i:type="d7p1:GameboardContent" />
-            <d6p1:Component xmlns:d7p1="http://schemas.datacontract.org/2004/07/Match3.Components.Gameplay" i:type="d7p1:GameboardAnimationsOrchestrator" />
+            <d6p1:Component xmlns:d7p1="http://schemas.datacontract.org/2004/07/Match3.Components.Gameplay" i:type="d7p1:GameboardAnimationsOrchestrator">
+              <d6p1:IsActive>true</d6p1:IsActive>
+              <d6p1:UpdateOrder>0.5</d6p1:UpdateOrder>
+            </d6p1:Component>
           </d2p1:SerializeComponents>
         </d2p1:BaseEntityModel>
       </d2p1:SerializeChildrens>
