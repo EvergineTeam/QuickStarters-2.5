@@ -116,6 +116,9 @@ namespace Match3.Components.LevelSelection
         {
             base.Initialize();
 
+            this.IsUnlocked = CustomServices.GameLogic.IsLevelUnlocked(this.LevelIndex);
+            this.StarsCount = CustomServices.GameLogic.StarsInLevel(this.LevelIndex);
+
             this.RefreshVisualState();
         }
 
