@@ -253,7 +253,7 @@
                   <d9p1:Opacity>1</d9p1:Opacity>
                   <d9p1:Rectangle xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:Height>174</d10p1:Height>
-                    <d10p1:Width>387.5</d10p1:Width>
+                    <d10p1:Width>361</d10p1:Width>
                     <d10p1:X>-0</d10p1:X>
                     <d10p1:Y>0</d10p1:Y>
                   </d9p1:Rectangle>
@@ -284,7 +284,7 @@
                     <d10p1:X>0.5</d10p1:X>
                     <d10p1:Y>0.5</d10p1:Y>
                   </d9p1:scale>
-                  <d9p1:text>Match3 is a sample game made with love using</d9p1:text>
+                  <d9p1:text>Match3 is a starter kit made with love using</d9p1:text>
                   <d9p1:textAlignment>Center</d9p1:textAlignment>
                   <d9p1:textWrapping>true</d9p1:textWrapping>
                   <d9p1:width>400</d9p1:width>
@@ -551,8 +551,8 @@
             <d6p1:Z>0</d6p1:Z>
           </d5p1:LocalOrientation>
           <d5p1:LocalPosition xmlns:d6p1="WaveEngine.Common.Math">
-            <d6p1:X>525.9997</d6p1:X>
-            <d6p1:Y>516.1998</d6p1:Y>
+            <d6p1:X>743.6995</d6p1:X>
+            <d6p1:Y>768.0999</d6p1:Y>
             <d6p1:Z>5</d6p1:Z>
           </d5p1:LocalPosition>
           <d5p1:LocalScale xmlns:d6p1="WaveEngine.Common.Math">
