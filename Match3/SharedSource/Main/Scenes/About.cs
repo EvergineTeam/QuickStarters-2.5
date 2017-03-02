@@ -6,6 +6,7 @@ namespace Match3.Scenes
     {
         protected override void CreateScene()
         {
+            base.Load(WaveContent.Scenes.About);
         }
     }
 }

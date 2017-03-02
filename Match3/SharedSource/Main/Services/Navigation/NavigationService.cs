@@ -110,6 +110,13 @@ namespace Match3.Services.Navigation
                     }
                     break;
 
+                case NavigationStates.About:
+                    if (command == NavigateCommands.Back)
+                    {
+                        newState = NavigationStates.MainMenu;
+                    }
+                    break;
+
                 case NavigationStates.ExitConfirmation:
                     if (command == NavigateCommands.Back)
                     {
