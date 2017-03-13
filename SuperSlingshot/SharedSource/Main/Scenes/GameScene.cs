@@ -17,6 +17,7 @@ using WaveEngine.TiledMap;
 using System.Linq;
 using SuperSlingshot.Drawables;
 using WaveEngine.Components.Graphics3D;
+using WaveEngine.Components.GameActions;
 #endregion
 
 namespace SuperSlingshot.Scenes
@@ -88,7 +89,7 @@ namespace SuperSlingshot.Scenes
             // Prepare to Play
             WaveServices.GetService<GamePlayManager>().NextBoulder();
 
-            // TODO: Workaround, remove when fixed (do not stores LocalDrawOrder of layers in WaveEditor)
+            // TODO: Workaround, remove when fixed (do not stored LocalDrawOrder of layers in WaveEditor)
             this.EntityManager.Find(GameConstants.ENTITYTILEDMAP).FindChild(GameConstants.LAYERMIDDLE).FindComponent<Transform2D>().LocalDrawOrder = 0;
         }
 
@@ -175,9 +176,19 @@ namespace SuperSlingshot.Scenes
         {
             var boulder = this.Boulders.Dequeue();
             this.EntityManager.Add(boulder);
-
             var playerComponent = boulder.FindComponent<PlayerComponent>();
-            playerComponent.PrepareToLaunch();
+            var transform = boulder.FindComponent<Transform2D>();
+            
+            this.CreateGameActionFromAction(() =>
+            {
+                transform.Opacity = 0;
+                playerComponent.PrepareToLaunch();
+            })
+            .ContinueWith(new FloatAnimationGameAction(boulder, 0.0f, 1.0f, TimeSpan.FromSeconds(0.5f), EaseFunction.None, (f) =>
+            {
+                transform.Opacity = f;
+            }))
+            .Run();
         }
 
         public override void Pause()
@@ -258,27 +269,57 @@ namespace SuperSlingshot.Scenes
                 ZOrderB = 100
             };
 
-            // host.AddComponent(new MaterialsMap() { DefaultMaterialPath = WaveContent.Materials.ElasticMaterial });
             host.AddComponent(this.bandDrawable);
         }
 
         public void PreviewTrajectory(Vector2 shotImpulse)
         {
-            this.trajectoryDrawable.DesiredVelocity = shotImpulse;
+            var time = TimeSpan.FromSeconds(0.3f);
+            var transform = this.trajectoryDrawable.Owner.FindComponent<Transform2D>();
+            var currentAlpha = transform.Opacity;
+
             if (shotImpulse == Vector2.Zero)
             {
-                this.trajectoryDrawable.IsVisible = false;
+                if (this.trajectoryDrawable.IsVisible)
+                {
+                    this.CreateGameAction(new FloatAnimationGameAction(this.trajectoryDrawable.Owner, currentAlpha, 0.0f, time, EaseFunction.None, (f) =>
+                    {
+                        this.SetTransformAlpha(f, transform);
+                    }))
+                    .ContinueWithAction(() =>
+                    {
+                        this.trajectoryDrawable.IsVisible = false;
+                    })
+                    .Run();
+                }
             }
             else
             {
-                this.trajectoryDrawable.IsVisible = true;
+                this.trajectoryDrawable.DesiredVelocity = shotImpulse;
+
+                if (!this.trajectoryDrawable.IsVisible)
+                {
+                    this.CreateGameActionFromAction(() =>
+                    {
+                        this.trajectoryDrawable.IsVisible = true;
+                    })
+                    .ContinueWith(new FloatAnimationGameAction(this.trajectoryDrawable.Owner, currentAlpha, 1.0f, time, EaseFunction.None, (f) =>
+                    {
+                        this.SetTransformAlpha(f, transform);
+                    }))
+                    .Run();
+                }
             }
+        }
+
+        private void SetTransformAlpha(float amount, Transform2D transform)
+        {
+            transform.Opacity = amount;
         }
 
         public void PreviewElasticBands(bool visible, Transform2D target)
         {
             this.bandDrawable.IsVisible = visible;
-
             this.bandDrawable.TargetTransform = target;
         }
 

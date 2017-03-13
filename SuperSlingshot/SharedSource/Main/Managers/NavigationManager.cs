@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using SuperSlingshot.Scenes;
 using WaveEngine.Common;
+using WaveEngine.Framework;
 using WaveEngine.Framework.Services;
 
 namespace SuperSlingshot.Managers
@@ -57,14 +58,21 @@ namespace SuperSlingshot.Managers
             this.NavigateToGameLevel(this.CurrentLevelOrder);
         }
 
+        private ScreenContext CreateScreenContext(string name, Scene scene, ScreenContextBehaviors behaviors = ScreenContextBehaviors.None)
+        {
+            return new ScreenContext(name, scene)
+            {
+                Behavior = behaviors
+            };
+        }
+
         public void NavigateToGameLevel(int level)
         {
             this.CurrentLevelOrder = level;
 
-            ScreenContext screenContext = new ScreenContext(
-                "GameLevelContext",
-                new GameScene(this.CurrentLevel));
-            WaveServices.ScreenContextManager.Push(screenContext);
+            WaveServices.ScreenContextManager.Push(
+                this.CreateScreenContext("GameLevelContext",
+                                         new GameScene(this.CurrentLevel)));
         }
 
         public void NavigateToScore(string level)
@@ -81,11 +89,9 @@ namespace SuperSlingshot.Managers
             WaveServices.ScreenContextManager.CurrentContext.Behavior =
                 ScreenContextBehaviors.DrawInBackground;
 
-            ScreenContext screenContext = new ScreenContext(
-                "ScoreContext",
-                new ScoreScene(level));
-
-            WaveServices.ScreenContextManager.Push(screenContext);
+            WaveServices.ScreenContextManager.Push(
+                this.CreateScreenContext("ScoreContext",
+                                         new ScoreScene(level)));
         }
 
         public void NavigateBack(bool doDispose = false)
@@ -95,14 +101,9 @@ namespace SuperSlingshot.Managers
 
         public void NavigateToLevelSelection()
         {
-            ScreenContext screenContext = new ScreenContext(
-                "LevelSelectionContext",
-                new LevelSelectionScene())
-            {
-                Behavior = ScreenContextBehaviors.DrawInBackground
-            };
-
-            WaveServices.ScreenContextManager.To(screenContext);
+            WaveServices.ScreenContextManager.To(this.CreateScreenContext("LevelSelectionContext",
+                                                 new LevelSelectionScene(),
+                                                 ScreenContextBehaviors.DrawInBackground));
         }
 
         public void InitialNavigation()
@@ -127,20 +128,14 @@ namespace SuperSlingshot.Managers
                 return;
             }
 
-            ScreenContext screenContext = new ScreenContext(
-                "MenuContext",
-                new MenuScene());
-
             if (pause)
             {
                 gameScene.Pause();
-
-                WaveServices.ScreenContextManager.Push(screenContext);
+                WaveServices.ScreenContextManager.Push(this.CreateScreenContext("MenuContext", new MenuScene()));
             }
             else
             {
                 gameScene.Resume();
-
                 this.NavigateBack();
             }
         }

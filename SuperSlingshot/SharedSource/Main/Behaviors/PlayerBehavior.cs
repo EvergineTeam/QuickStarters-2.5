@@ -110,7 +110,7 @@ namespace SuperSlingshot.Behaviors
                         impulse = Vector2.Zero;
                         showElasticBands = false;
                     }
-
+                    
                     gameScene.PreviewTrajectory(impulse);
                     gameScene.PreviewElasticBands(showElasticBands, this.transform);
                     break;

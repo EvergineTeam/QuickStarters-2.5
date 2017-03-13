@@ -8,6 +8,7 @@ using WaveEngine.Framework;
 using WaveEngine.Framework.Animation;
 using WaveEngine.Framework.Physics2D;
 using WaveEngine.Framework.Resources;
+using WaveEngine.Materials;
 
 namespace SuperSlingshot.Drawables
 {
@@ -21,7 +22,7 @@ namespace SuperSlingshot.Drawables
         private Vector2 point;
         private Vector2 nextPoint;
         private Vector2 unitaryPerpendicularVector;
-        
+
 
         private float visibilityPercentage;
         private int visibilityLength;
@@ -122,7 +123,7 @@ namespace SuperSlingshot.Drawables
 
             if (i < this.visibilityLength)
             {
-                var amount = 1f - (this.opacityStep * i);
+                var amount = 1 - (this.opacityStep * i);
                 amount = (float)this.ease.Ease(amount);
 
                 pointColor = this.DiffuseColor * amount;
@@ -184,6 +185,12 @@ namespace SuperSlingshot.Drawables
             this.mesh.ZOrder = this.transform2D.DrawOrder + 0.1f;
             this.mesh.VertexBuffer.SetData(this.vertices, this.vertices.Length);
             this.GraphicsDevice.BindVertexBuffer(this.mesh.VertexBuffer);
+
+            ////var standard = this.materialsMap.DefaultMaterial as StandardMaterial;
+            ////if(standard != null)
+            ////{
+            ////    standard.Alpha = ;
+            ////}
 
             // WORKAROUND: Force spritebatch to start a new render command
             // this.layer.SpriteBatch.Draw(StaticResources.WhitePixel, -Vector2.One, null, Color.White, 0.0f, Vector2.Zero, Vector2.One, SpriteEffects.None, this.mesh.ZOrder);
