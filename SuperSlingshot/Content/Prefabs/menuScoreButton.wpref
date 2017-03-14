@@ -6,6 +6,7 @@
         <d2p1:SerializeChildrens>
           <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
             <d2p1:SerializeChildrens />
+            <d2p1:isDisabled>false</d2p1:isDisabled>
             <d2p1:isStatic>false</d2p1:isStatic>
             <d2p1:isVisible>true</d2p1:isVisible>
             <d2p1:name>content</d2p1:name>
@@ -72,6 +73,7 @@
             </d2p1:SerializeComponents>
           </d2p1:BaseEntityModel>
         </d2p1:SerializeChildrens>
+        <d2p1:isDisabled>false</d2p1:isDisabled>
         <d2p1:isStatic>false</d2p1:isStatic>
         <d2p1:isVisible>true</d2p1:isVisible>
         <d2p1:name>star1</d2p1:name>
@@ -136,6 +138,7 @@
         <d2p1:SerializeChildrens>
           <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
             <d2p1:SerializeChildrens />
+            <d2p1:isDisabled>false</d2p1:isDisabled>
             <d2p1:isStatic>false</d2p1:isStatic>
             <d2p1:isVisible>true</d2p1:isVisible>
             <d2p1:name>content</d2p1:name>
@@ -202,6 +205,7 @@
             </d2p1:SerializeComponents>
           </d2p1:BaseEntityModel>
         </d2p1:SerializeChildrens>
+        <d2p1:isDisabled>false</d2p1:isDisabled>
         <d2p1:isStatic>false</d2p1:isStatic>
         <d2p1:isVisible>true</d2p1:isVisible>
         <d2p1:name>star2</d2p1:name>
@@ -266,6 +270,7 @@
         <d2p1:SerializeChildrens>
           <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
             <d2p1:SerializeChildrens />
+            <d2p1:isDisabled>false</d2p1:isDisabled>
             <d2p1:isStatic>false</d2p1:isStatic>
             <d2p1:isVisible>true</d2p1:isVisible>
             <d2p1:name>content</d2p1:name>
@@ -332,6 +337,7 @@
             </d2p1:SerializeComponents>
           </d2p1:BaseEntityModel>
         </d2p1:SerializeChildrens>
+        <d2p1:isDisabled>false</d2p1:isDisabled>
         <d2p1:isStatic>false</d2p1:isStatic>
         <d2p1:isVisible>true</d2p1:isVisible>
         <d2p1:name>star3</d2p1:name>
@@ -394,6 +400,7 @@
       </d2p1:BaseEntityModel>
       <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
         <d2p1:SerializeChildrens />
+        <d2p1:isDisabled>false</d2p1:isDisabled>
         <d2p1:isStatic>false</d2p1:isStatic>
         <d2p1:isVisible>true</d2p1:isVisible>
         <d2p1:name>buttonText</d2p1:name>
@@ -407,9 +414,9 @@
               <d7p1:Z>0</d7p1:Z>
             </d6p1:LocalOrientation>
             <d6p1:LocalPosition xmlns:d7p1="WaveEngine.Common.Math">
-              <d7p1:X>7.899948</d7p1:X>
-              <d7p1:Y>5.10000658</d7p1:Y>
-              <d7p1:Z>-0.100000381</d7p1:Z>
+              <d7p1:X>19</d7p1:X>
+              <d7p1:Y>4.99999952</d7p1:Y>
+              <d7p1:Z>-0.100000367</d7p1:Z>
             </d6p1:LocalPosition>
             <d6p1:LocalScale xmlns:d7p1="WaveEngine.Common.Math">
               <d7p1:X>1</d7p1:X>
@@ -419,10 +426,10 @@
             <d6p1:Effect>None</d6p1:Effect>
             <d6p1:Opacity>1</d6p1:Opacity>
             <d6p1:Rectangle xmlns:d7p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
-              <d7p1:Height>73</d7p1:Height>
-              <d7p1:Width>51</d7p1:Width>
-              <d7p1:X>-25.5</d7p1:X>
-              <d7p1:Y>36.5</d7p1:Y>
+              <d7p1:Height>138.7</d7p1:Height>
+              <d7p1:Width>102</d7p1:Width>
+              <d7p1:X>-51</d7p1:X>
+              <d7p1:Y>69.35</d7p1:Y>
             </d6p1:Rectangle>
             <d6p1:origin xmlns:d7p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
               <d7p1:X>0.5</d7p1:X>
@@ -435,7 +442,7 @@
             <d6p1:transformMode>Standard</d6p1:transformMode>
           </d5p1:Component>
           <d5p1:Component xmlns:d6p1="WaveEngine.Components.Toolkit" i:type="d6p1:TextComponent">
-            <d6p1:fontPath i:nil="true" />
+            <d6p1:fontPath>Content/Assets/Fonts/sketches_48.ttf.wpk</d6p1:fontPath>
             <d6p1:foreground xmlns:d7p1="WaveEngine.Common.Graphics">
               <d7p1:A>255</d7p1:A>
               <d7p1:B>0</d7p1:B>
@@ -448,10 +455,10 @@
               <d7p1:Y>0.5</d7p1:Y>
             </d6p1:origin>
             <d6p1:scale xmlns:d7p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
-              <d7p1:X>1</d7p1:X>
-              <d7p1:Y>1</d7p1:Y>
+              <d7p1:X>2</d7p1:X>
+              <d7p1:Y>1.9</d7p1:Y>
             </d6p1:scale>
-            <d6p1:text i:nil="true" />
+            <d6p1:text></d6p1:text>
             <d6p1:textAlignment>Left</d6p1:textAlignment>
             <d6p1:textWrapping>false</d6p1:textWrapping>
             <d6p1:width>300</d6p1:width>
@@ -464,6 +471,7 @@
         </d2p1:SerializeComponents>
       </d2p1:BaseEntityModel>
     </d2p1:SerializeChildrens>
+    <d2p1:isDisabled>false</d2p1:isDisabled>
     <d2p1:isStatic>false</d2p1:isStatic>
     <d2p1:isVisible>true</d2p1:isVisible>
     <d2p1:name>menuScoreButton</d2p1:name>
@@ -557,7 +565,7 @@
         <d4p1:IsBlocked>false</d4p1:IsBlocked>
         <d4p1:NormalButtonPath>Content/Assets/Gui/small_button_normal.png.wpk</d4p1:NormalButtonPath>
         <d4p1:PressedButtonPath>Content/Assets/Gui/small_button_click.png.wpk</d4p1:PressedButtonPath>
-        <d4p1:Text i:nil="true" />
+        <d4p1:Text></d4p1:Text>
       </d3p1:Component>
       <d3p1:Component xmlns:d4p1="WaveEngine.Components.Graphics2D" i:type="d4p1:SpriteRenderer">
         <d3p1:IsVisible>true</d3p1:IsVisible>

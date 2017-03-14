@@ -1,4 +1,4 @@
-<Project xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="WaveEngine.Framework.Models">
+﻿<Project xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="WaveEngine.Framework.Models">
   <Id>4e6d5f5c-41b0-49f7-8a47-d8fdca9dee84</Id>
   <ResourcesPath>Content</ResourcesPath>
   <Settings xmlns:d2p1="WaveEngine.Framework.Models.Settings">
