@@ -63,7 +63,7 @@
         public const char BOULDERBARNEY = 'B';
         public const char BOULDERFARLEY = 'F';
         public const char BOULDERPUDDIN = 'P';
-        //public static string PROPERTYSTEWIE = "stewie";
+        //public static string PROPERTYMUDI = "mudi";
         //public static string PROPERTYCHUCK = "chuck";
         //public static string PROPERTYDUDE = "dude";
         //public static string PROPERTYCHEWIE = "chewie";
