@@ -13,7 +13,7 @@ using WaveEngine.Framework.Services;
 namespace Match3.Components.Gameplay
 {
     [DataContract]
-    public class ScoreComponent : Component
+    public class ScoreComponent : Component, IDisposable
     {
         private GameLogic gameLogic;
         private NinePatchSpriteAtlas scoreSlice;
@@ -40,6 +40,14 @@ namespace Match3.Components.Gameplay
             }
         }
 
+        public void Dispose()
+        {
+            if (this.gameLogic != null)
+            {
+                this.gameLogic.ScoreUpdated -= GameLogic_ScoreUpdated;
+            }
+        }
+
         private void UpdateStarsPosition()
         {
             var starsTransforms = this.stars.Select(x => x.FindComponent<Transform2D>()).ToArray();
@@ -53,15 +61,6 @@ namespace Match3.Components.Gameplay
                 var starPosition = starsTransforms[i].LocalPosition;
                 starPosition.X = firstStar.X + (starsSpace * scoreRatio);
                 starsTransforms[i].LocalPosition = starPosition;
-            }
-        }
-
-        protected override void DeleteDependencies()
-        {
-            base.DeleteDependencies();
-            if (this.gameLogic != null)
-            {
-                this.gameLogic.ScoreUpdated -= GameLogic_ScoreUpdated;
             }
         }
 
