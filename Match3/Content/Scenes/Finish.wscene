@@ -232,7 +232,7 @@
                   <d2p1:isStatic>false</d2p1:isStatic>
                   <d2p1:isVisible>true</d2p1:isVisible>
                   <d2p1:name>inner</d2p1:name>
-                  <d2p1:tag i:nil="true" />
+                  <d2p1:tag>innerStar</d2p1:tag>
                   <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
                   <d2p1:PrefabElem>fillStar.inner</d2p1:PrefabElem>
                   <d2p1:PrefabId>7369b0f1-f8f4-4077-ba71-efc5a1a02743</d2p1:PrefabId>
@@ -242,8 +242,8 @@
                     <d10p1:KeyValueOfstringanyType>
                       <d10p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#LocalPosition</d10p1:Key>
                       <d10p1:Value xmlns:d12p1="WaveEngine.Common.Math" i:type="d12p1:Vector3">
-                        <d12p1:X>-2.05039978E-05</d12p1:X>
-                        <d12p1:Y>5.99995136</d12p1:Y>
+                        <d12p1:X>-9.87542E-05</d12p1:X>
+                        <d12p1:Y>5.999795</d12p1:Y>
                         <d12p1:Z>-1</d12p1:Z>
                       </d10p1:Value>
                     </d10p1:KeyValueOfstringanyType>
@@ -254,7 +254,7 @@
               <d2p1:isStatic>false</d2p1:isStatic>
               <d2p1:isVisible>true</d2p1:isVisible>
               <d2p1:name>FillStar01</d2p1:name>
-              <d2p1:tag i:nil="true" />
+              <d2p1:tag>star</d2p1:tag>
               <d2p1:AdditionalComponents xmlns:d8p1="WaveEngine.Framework" />
               <d2p1:PrefabElem>fillStar</d2p1:PrefabElem>
               <d2p1:PrefabId>7369b0f1-f8f4-4077-ba71-efc5a1a02743</d2p1:PrefabId>
@@ -287,7 +287,7 @@
                   <d2p1:isStatic>false</d2p1:isStatic>
                   <d2p1:isVisible>true</d2p1:isVisible>
                   <d2p1:name>inner</d2p1:name>
-                  <d2p1:tag i:nil="true" />
+                  <d2p1:tag>innerStar</d2p1:tag>
                   <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
                   <d2p1:PrefabElem>fillStar.inner</d2p1:PrefabElem>
                   <d2p1:PrefabId>7369b0f1-f8f4-4077-ba71-efc5a1a02743</d2p1:PrefabId>
@@ -300,7 +300,7 @@
               <d2p1:isStatic>false</d2p1:isStatic>
               <d2p1:isVisible>true</d2p1:isVisible>
               <d2p1:name>FillStar02</d2p1:name>
-              <d2p1:tag i:nil="true" />
+              <d2p1:tag>star</d2p1:tag>
               <d2p1:AdditionalComponents xmlns:d8p1="WaveEngine.Framework" />
               <d2p1:PrefabElem>fillStar</d2p1:PrefabElem>
               <d2p1:PrefabId>7369b0f1-f8f4-4077-ba71-efc5a1a02743</d2p1:PrefabId>
@@ -325,7 +325,7 @@
                   <d2p1:isStatic>false</d2p1:isStatic>
                   <d2p1:isVisible>true</d2p1:isVisible>
                   <d2p1:name>inner</d2p1:name>
-                  <d2p1:tag i:nil="true" />
+                  <d2p1:tag>innerStar</d2p1:tag>
                   <d2p1:AdditionalComponents xmlns:d10p1="WaveEngine.Framework" />
                   <d2p1:PrefabElem>fillStar.inner</d2p1:PrefabElem>
                   <d2p1:PrefabId>7369b0f1-f8f4-4077-ba71-efc5a1a02743</d2p1:PrefabId>
@@ -335,8 +335,8 @@
                     <d10p1:KeyValueOfstringanyType>
                       <d10p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#LocalPosition</d10p1:Key>
                       <d10p1:Value xmlns:d12p1="WaveEngine.Common.Math" i:type="d12p1:Vector3">
-                        <d12p1:X>-4.26769257E-05</d12p1:X>
-                        <d12p1:Y>5.99995136</d12p1:Y>
+                        <d12p1:X>-0.000120927129</d12p1:X>
+                        <d12p1:Y>5.999873</d12p1:Y>
                         <d12p1:Z>-1</d12p1:Z>
                       </d10p1:Value>
                     </d10p1:KeyValueOfstringanyType>
@@ -347,7 +347,7 @@
               <d2p1:isStatic>false</d2p1:isStatic>
               <d2p1:isVisible>true</d2p1:isVisible>
               <d2p1:name>FillStar03</d2p1:name>
-              <d2p1:tag i:nil="true" />
+              <d2p1:tag>star</d2p1:tag>
               <d2p1:AdditionalComponents xmlns:d8p1="WaveEngine.Framework" />
               <d2p1:PrefabElem>fillStar</d2p1:PrefabElem>
               <d2p1:PrefabId>7369b0f1-f8f4-4077-ba71-efc5a1a02743</d2p1:PrefabId>
@@ -414,6 +414,7 @@
               </d7p1:screenPosition>
               <d7p1:transformMode>Standard</d7p1:transformMode>
             </d6p1:Component>
+            <d6p1:Component xmlns:d7p1="http://schemas.datacontract.org/2004/07/Match3.Components.Finish" i:type="d7p1:StarsComponent" />
           </d2p1:SerializeComponents>
         </d2p1:BaseEntityModel>
         <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
@@ -436,7 +437,7 @@
                   <d9p1:LocalPosition xmlns:d10p1="WaveEngine.Common.Math">
                     <d10p1:X>15.0000019</d10p1:X>
                     <d10p1:Y>6.10351563E-05</d10p1:Y>
-                    <d10p1:Z>-1</d10p1:Z>
+                    <d10p1:Z>-0.99999994</d10p1:Z>
                   </d9p1:LocalPosition>
                   <d9p1:LocalScale xmlns:d10p1="WaveEngine.Common.Math">
                     <d10p1:X>1.53</d10p1:X>
@@ -447,8 +448,8 @@
                   <d9p1:Opacity>1</d9p1:Opacity>
                   <d9p1:Rectangle xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:Height>92.8</d10p1:Height>
-                    <d10p1:Width>146.400009</d10p1:Width>
-                    <d10p1:X>-73.2000046</d10p1:X>
+                    <d10p1:Width>60.8</d10p1:Width>
+                    <d10p1:X>-30.4</d10p1:X>
                     <d10p1:Y>46.4</d10p1:Y>
                   </d9p1:Rectangle>
                   <d9p1:origin xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
@@ -478,7 +479,7 @@
                     <d10p1:X>0.8</d10p1:X>
                     <d10p1:Y>0.8</d10p1:Y>
                   </d9p1:scale>
-                  <d9p1:text>2424</d9p1:text>
+                  <d9p1:text>0</d9p1:text>
                   <d9p1:textAlignment>Center</d9p1:textAlignment>
                   <d9p1:textWrapping>true</d9p1:textWrapping>
                   <d9p1:width>75</d9p1:width>
@@ -488,6 +489,7 @@
                   <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
                   <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
                 </d8p1:Component>
+                <d8p1:Component xmlns:d9p1="http://schemas.datacontract.org/2004/07/Match3.Components.Finish" i:type="d9p1:ScoreComponent" />
               </d2p1:SerializeComponents>
             </d2p1:BaseEntityModel>
           </d2p1:SerializeChildrens>
@@ -781,8 +783,8 @@
             <d6p1:Z>0</d6p1:Z>
           </d5p1:LocalOrientation>
           <d5p1:LocalPosition xmlns:d6p1="WaveEngine.Common.Math">
-            <d6p1:X>0</d6p1:X>
-            <d6p1:Y>17</d6p1:Y>
+            <d6p1:X>372.000031</d6p1:X>
+            <d6p1:Y>503.900055</d6p1:Y>
             <d6p1:Z>5</d6p1:Z>
           </d5p1:LocalPosition>
           <d5p1:LocalScale xmlns:d6p1="WaveEngine.Common.Math">
