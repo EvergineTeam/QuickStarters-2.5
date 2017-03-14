@@ -167,9 +167,9 @@ namespace Match3.Services.Navigation
                     {
                         newState = NavigationStates.LevelSelection;
                     }
-                    else if (command == NavigateCommands.ReturnMainMenu)
+                    else if (command == NavigateCommands.ResetLevel)
                     {
-                        newState = NavigationStates.MainMenu;
+                        newState = NavigationStates.Loading;
                     }
                     break;
 
