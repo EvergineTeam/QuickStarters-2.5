@@ -3,7 +3,7 @@
   <Entities xmlns:d2p1="WaveEngine.Framework.Models.Entities">
     <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
       <d2p1:SerializeChildrens />
-      <d2p1:isActive>true</d2p1:isActive>
+      <d2p1:isDisabled>false</d2p1:isDisabled>
       <d2p1:isStatic>false</d2p1:isStatic>
       <d2p1:isVisible>true</d2p1:isVisible>
       <d2p1:name>defaultCamera2D</d2p1:name>
@@ -91,7 +91,7 @@
           <d2p1:SerializeChildrens>
             <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
               <d2p1:SerializeChildrens />
-              <d2p1:isActive>true</d2p1:isActive>
+              <d2p1:isDisabled>false</d2p1:isDisabled>
               <d2p1:isStatic>false</d2p1:isStatic>
               <d2p1:isVisible>true</d2p1:isVisible>
               <d2p1:name>signText</d2p1:name>
@@ -162,7 +162,7 @@
               </d2p1:SerializeComponents>
             </d2p1:BaseEntityModel>
           </d2p1:SerializeChildrens>
-          <d2p1:isActive>true</d2p1:isActive>
+          <d2p1:isDisabled>false</d2p1:isDisabled>
           <d2p1:isStatic>false</d2p1:isStatic>
           <d2p1:isVisible>true</d2p1:isVisible>
           <d2p1:name>Sign</d2p1:name>
@@ -226,7 +226,7 @@
           <d2p1:SerializeChildrens>
             <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
               <d2p1:SerializeChildrens />
-              <d2p1:isActive>true</d2p1:isActive>
+              <d2p1:isDisabled>false</d2p1:isDisabled>
               <d2p1:isStatic>false</d2p1:isStatic>
               <d2p1:isVisible>true</d2p1:isVisible>
               <d2p1:name>AboutText</d2p1:name>
@@ -298,7 +298,7 @@
             </d2p1:BaseEntityModel>
             <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
               <d2p1:SerializeChildrens />
-              <d2p1:isActive>true</d2p1:isActive>
+              <d2p1:isDisabled>false</d2p1:isDisabled>
               <d2p1:isStatic>false</d2p1:isStatic>
               <d2p1:isVisible>true</d2p1:isVisible>
               <d2p1:name>LogoSprite</d2p1:name>
@@ -360,7 +360,7 @@
               </d2p1:SerializeComponents>
             </d2p1:BaseEntityModel>
           </d2p1:SerializeChildrens>
-          <d2p1:isActive>true</d2p1:isActive>
+          <d2p1:isDisabled>false</d2p1:isDisabled>
           <d2p1:isStatic>false</d2p1:isStatic>
           <d2p1:isVisible>true</d2p1:isVisible>
           <d2p1:name>AboutPanel</d2p1:name>
@@ -425,7 +425,7 @@
         </d2p1:BaseEntityModel>
         <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
           <d2p1:SerializeChildrens />
-          <d2p1:isActive>true</d2p1:isActive>
+          <d2p1:isDisabled>false</d2p1:isDisabled>
           <d2p1:isStatic>false</d2p1:isStatic>
           <d2p1:isVisible>true</d2p1:isVisible>
           <d2p1:name>HomeBtn</d2p1:name>
@@ -472,7 +472,7 @@
           </d2p1:modifiedProperties>
         </d2p1:BaseEntityModel>
       </d2p1:SerializeChildrens>
-      <d2p1:isActive>true</d2p1:isActive>
+      <d2p1:isDisabled>false</d2p1:isDisabled>
       <d2p1:isStatic>false</d2p1:isStatic>
       <d2p1:isVisible>true</d2p1:isVisible>
       <d2p1:name>Panel</d2p1:name>
@@ -537,7 +537,7 @@
     </d2p1:BaseEntityModel>
     <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
       <d2p1:SerializeChildrens />
-      <d2p1:isActive>true</d2p1:isActive>
+      <d2p1:isDisabled>false</d2p1:isDisabled>
       <d2p1:isStatic>false</d2p1:isStatic>
       <d2p1:isVisible>true</d2p1:isVisible>
       <d2p1:name>blackPanel</d2p1:name>
@@ -551,8 +551,8 @@
             <d6p1:Z>0</d6p1:Z>
           </d5p1:LocalOrientation>
           <d5p1:LocalPosition xmlns:d6p1="WaveEngine.Common.Math">
-            <d6p1:X>743.6995</d6p1:X>
-            <d6p1:Y>768.0999</d6p1:Y>
+            <d6p1:X>372.000031</d6p1:X>
+            <d6p1:Y>503.900055</d6p1:Y>
             <d6p1:Z>5</d6p1:Z>
           </d5p1:LocalPosition>
           <d5p1:LocalScale xmlns:d6p1="WaveEngine.Common.Math">

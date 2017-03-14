@@ -3,7 +3,7 @@
   <Entities xmlns:d2p1="WaveEngine.Framework.Models.Entities">
     <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
       <d2p1:SerializeChildrens />
-      <d2p1:isActive>true</d2p1:isActive>
+      <d2p1:isDisabled>false</d2p1:isDisabled>
       <d2p1:isStatic>false</d2p1:isStatic>
       <d2p1:isVisible>true</d2p1:isVisible>
       <d2p1:name>defaultCamera2D</d2p1:name>
@@ -91,7 +91,7 @@
           <d2p1:SerializeChildrens>
             <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
               <d2p1:SerializeChildrens />
-              <d2p1:isActive>true</d2p1:isActive>
+              <d2p1:isDisabled>false</d2p1:isDisabled>
               <d2p1:isStatic>false</d2p1:isStatic>
               <d2p1:isVisible>true</d2p1:isVisible>
               <d2p1:name>signText</d2p1:name>
@@ -162,7 +162,7 @@
               </d2p1:SerializeComponents>
             </d2p1:BaseEntityModel>
           </d2p1:SerializeChildrens>
-          <d2p1:isActive>true</d2p1:isActive>
+          <d2p1:isDisabled>false</d2p1:isDisabled>
           <d2p1:isStatic>false</d2p1:isStatic>
           <d2p1:isVisible>true</d2p1:isVisible>
           <d2p1:name>Sign</d2p1:name>
@@ -228,7 +228,7 @@
               <d2p1:SerializeChildrens>
                 <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
                   <d2p1:SerializeChildrens />
-                  <d2p1:isActive>true</d2p1:isActive>
+                  <d2p1:isDisabled>false</d2p1:isDisabled>
                   <d2p1:isStatic>false</d2p1:isStatic>
                   <d2p1:isVisible>true</d2p1:isVisible>
                   <d2p1:name>StarRight</d2p1:name>
@@ -242,7 +242,7 @@
                 </d2p1:BaseEntityModel>
                 <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
                   <d2p1:SerializeChildrens />
-                  <d2p1:isActive>true</d2p1:isActive>
+                  <d2p1:isDisabled>false</d2p1:isDisabled>
                   <d2p1:isStatic>false</d2p1:isStatic>
                   <d2p1:isVisible>true</d2p1:isVisible>
                   <d2p1:name>StarCenter</d2p1:name>
@@ -256,7 +256,7 @@
                 </d2p1:BaseEntityModel>
                 <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
                   <d2p1:SerializeChildrens />
-                  <d2p1:isActive>true</d2p1:isActive>
+                  <d2p1:isDisabled>false</d2p1:isDisabled>
                   <d2p1:isStatic>false</d2p1:isStatic>
                   <d2p1:isVisible>true</d2p1:isVisible>
                   <d2p1:name>StarLeft</d2p1:name>
@@ -270,7 +270,7 @@
                 </d2p1:BaseEntityModel>
                 <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
                   <d2p1:SerializeChildrens />
-                  <d2p1:isActive>true</d2p1:isActive>
+                  <d2p1:isDisabled>false</d2p1:isDisabled>
                   <d2p1:isStatic>false</d2p1:isStatic>
                   <d2p1:isVisible>true</d2p1:isVisible>
                   <d2p1:name>Text</d2p1:name>
@@ -283,7 +283,7 @@
                   <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
                 </d2p1:BaseEntityModel>
               </d2p1:SerializeChildrens>
-              <d2p1:isActive>true</d2p1:isActive>
+              <d2p1:isDisabled>false</d2p1:isDisabled>
               <d2p1:isStatic>false</d2p1:isStatic>
               <d2p1:isVisible>true</d2p1:isVisible>
               <d2p1:name>LevelBtn_01</d2p1:name>
@@ -308,7 +308,7 @@
               <d2p1:SerializeChildrens>
                 <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
                   <d2p1:SerializeChildrens />
-                  <d2p1:isActive>true</d2p1:isActive>
+                  <d2p1:isDisabled>false</d2p1:isDisabled>
                   <d2p1:isStatic>false</d2p1:isStatic>
                   <d2p1:isVisible>true</d2p1:isVisible>
                   <d2p1:name>StarRight</d2p1:name>
@@ -322,7 +322,7 @@
                 </d2p1:BaseEntityModel>
                 <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
                   <d2p1:SerializeChildrens />
-                  <d2p1:isActive>true</d2p1:isActive>
+                  <d2p1:isDisabled>false</d2p1:isDisabled>
                   <d2p1:isStatic>false</d2p1:isStatic>
                   <d2p1:isVisible>true</d2p1:isVisible>
                   <d2p1:name>StarCenter</d2p1:name>
@@ -336,7 +336,7 @@
                 </d2p1:BaseEntityModel>
                 <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
                   <d2p1:SerializeChildrens />
-                  <d2p1:isActive>true</d2p1:isActive>
+                  <d2p1:isDisabled>false</d2p1:isDisabled>
                   <d2p1:isStatic>false</d2p1:isStatic>
                   <d2p1:isVisible>true</d2p1:isVisible>
                   <d2p1:name>StarLeft</d2p1:name>
@@ -350,7 +350,7 @@
                 </d2p1:BaseEntityModel>
                 <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
                   <d2p1:SerializeChildrens />
-                  <d2p1:isActive>true</d2p1:isActive>
+                  <d2p1:isDisabled>false</d2p1:isDisabled>
                   <d2p1:isStatic>false</d2p1:isStatic>
                   <d2p1:isVisible>true</d2p1:isVisible>
                   <d2p1:name>Text</d2p1:name>
@@ -377,7 +377,7 @@
                   </d2p1:modifiedProperties>
                 </d2p1:BaseEntityModel>
               </d2p1:SerializeChildrens>
-              <d2p1:isActive>true</d2p1:isActive>
+              <d2p1:isDisabled>false</d2p1:isDisabled>
               <d2p1:isStatic>false</d2p1:isStatic>
               <d2p1:isVisible>true</d2p1:isVisible>
               <d2p1:name>LevelBtn_13</d2p1:name>
@@ -427,7 +427,7 @@
               <d2p1:SerializeChildrens>
                 <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
                   <d2p1:SerializeChildrens />
-                  <d2p1:isActive>true</d2p1:isActive>
+                  <d2p1:isDisabled>false</d2p1:isDisabled>
                   <d2p1:isStatic>false</d2p1:isStatic>
                   <d2p1:isVisible>true</d2p1:isVisible>
                   <d2p1:name>StarRight</d2p1:name>
@@ -441,7 +441,7 @@
                 </d2p1:BaseEntityModel>
                 <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
                   <d2p1:SerializeChildrens />
-                  <d2p1:isActive>true</d2p1:isActive>
+                  <d2p1:isDisabled>false</d2p1:isDisabled>
                   <d2p1:isStatic>false</d2p1:isStatic>
                   <d2p1:isVisible>true</d2p1:isVisible>
                   <d2p1:name>StarCenter</d2p1:name>
@@ -455,7 +455,7 @@
                 </d2p1:BaseEntityModel>
                 <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
                   <d2p1:SerializeChildrens />
-                  <d2p1:isActive>true</d2p1:isActive>
+                  <d2p1:isDisabled>false</d2p1:isDisabled>
                   <d2p1:isStatic>false</d2p1:isStatic>
                   <d2p1:isVisible>true</d2p1:isVisible>
                   <d2p1:name>StarLeft</d2p1:name>
@@ -469,7 +469,7 @@
                 </d2p1:BaseEntityModel>
                 <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
                   <d2p1:SerializeChildrens />
-                  <d2p1:isActive>true</d2p1:isActive>
+                  <d2p1:isDisabled>false</d2p1:isDisabled>
                   <d2p1:isStatic>false</d2p1:isStatic>
                   <d2p1:isVisible>true</d2p1:isVisible>
                   <d2p1:name>Text</d2p1:name>
@@ -496,7 +496,7 @@
                   </d2p1:modifiedProperties>
                 </d2p1:BaseEntityModel>
               </d2p1:SerializeChildrens>
-              <d2p1:isActive>true</d2p1:isActive>
+              <d2p1:isDisabled>false</d2p1:isDisabled>
               <d2p1:isStatic>false</d2p1:isStatic>
               <d2p1:isVisible>true</d2p1:isVisible>
               <d2p1:name>LevelBtn_12</d2p1:name>
@@ -546,7 +546,7 @@
               <d2p1:SerializeChildrens>
                 <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
                   <d2p1:SerializeChildrens />
-                  <d2p1:isActive>true</d2p1:isActive>
+                  <d2p1:isDisabled>false</d2p1:isDisabled>
                   <d2p1:isStatic>false</d2p1:isStatic>
                   <d2p1:isVisible>true</d2p1:isVisible>
                   <d2p1:name>StarRight</d2p1:name>
@@ -560,7 +560,7 @@
                 </d2p1:BaseEntityModel>
                 <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
                   <d2p1:SerializeChildrens />
-                  <d2p1:isActive>true</d2p1:isActive>
+                  <d2p1:isDisabled>false</d2p1:isDisabled>
                   <d2p1:isStatic>false</d2p1:isStatic>
                   <d2p1:isVisible>true</d2p1:isVisible>
                   <d2p1:name>StarCenter</d2p1:name>
@@ -574,7 +574,7 @@
                 </d2p1:BaseEntityModel>
                 <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
                   <d2p1:SerializeChildrens />
-                  <d2p1:isActive>true</d2p1:isActive>
+                  <d2p1:isDisabled>false</d2p1:isDisabled>
                   <d2p1:isStatic>false</d2p1:isStatic>
                   <d2p1:isVisible>true</d2p1:isVisible>
                   <d2p1:name>StarLeft</d2p1:name>
@@ -588,7 +588,7 @@
                 </d2p1:BaseEntityModel>
                 <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
                   <d2p1:SerializeChildrens />
-                  <d2p1:isActive>true</d2p1:isActive>
+                  <d2p1:isDisabled>false</d2p1:isDisabled>
                   <d2p1:isStatic>false</d2p1:isStatic>
                   <d2p1:isVisible>true</d2p1:isVisible>
                   <d2p1:name>Text</d2p1:name>
@@ -615,7 +615,7 @@
                   </d2p1:modifiedProperties>
                 </d2p1:BaseEntityModel>
               </d2p1:SerializeChildrens>
-              <d2p1:isActive>true</d2p1:isActive>
+              <d2p1:isDisabled>false</d2p1:isDisabled>
               <d2p1:isStatic>false</d2p1:isStatic>
               <d2p1:isVisible>true</d2p1:isVisible>
               <d2p1:name>LevelBtn_11</d2p1:name>
@@ -665,7 +665,7 @@
               <d2p1:SerializeChildrens>
                 <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
                   <d2p1:SerializeChildrens />
-                  <d2p1:isActive>true</d2p1:isActive>
+                  <d2p1:isDisabled>false</d2p1:isDisabled>
                   <d2p1:isStatic>false</d2p1:isStatic>
                   <d2p1:isVisible>true</d2p1:isVisible>
                   <d2p1:name>StarRight</d2p1:name>
@@ -679,7 +679,7 @@
                 </d2p1:BaseEntityModel>
                 <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
                   <d2p1:SerializeChildrens />
-                  <d2p1:isActive>true</d2p1:isActive>
+                  <d2p1:isDisabled>false</d2p1:isDisabled>
                   <d2p1:isStatic>false</d2p1:isStatic>
                   <d2p1:isVisible>true</d2p1:isVisible>
                   <d2p1:name>StarCenter</d2p1:name>
@@ -693,7 +693,7 @@
                 </d2p1:BaseEntityModel>
                 <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
                   <d2p1:SerializeChildrens />
-                  <d2p1:isActive>true</d2p1:isActive>
+                  <d2p1:isDisabled>false</d2p1:isDisabled>
                   <d2p1:isStatic>false</d2p1:isStatic>
                   <d2p1:isVisible>true</d2p1:isVisible>
                   <d2p1:name>StarLeft</d2p1:name>
@@ -707,7 +707,7 @@
                 </d2p1:BaseEntityModel>
                 <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
                   <d2p1:SerializeChildrens />
-                  <d2p1:isActive>true</d2p1:isActive>
+                  <d2p1:isDisabled>false</d2p1:isDisabled>
                   <d2p1:isStatic>false</d2p1:isStatic>
                   <d2p1:isVisible>true</d2p1:isVisible>
                   <d2p1:name>Text</d2p1:name>
@@ -734,7 +734,7 @@
                   </d2p1:modifiedProperties>
                 </d2p1:BaseEntityModel>
               </d2p1:SerializeChildrens>
-              <d2p1:isActive>true</d2p1:isActive>
+              <d2p1:isDisabled>false</d2p1:isDisabled>
               <d2p1:isStatic>false</d2p1:isStatic>
               <d2p1:isVisible>true</d2p1:isVisible>
               <d2p1:name>LevelBtn_10</d2p1:name>
@@ -784,7 +784,7 @@
               <d2p1:SerializeChildrens>
                 <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
                   <d2p1:SerializeChildrens />
-                  <d2p1:isActive>true</d2p1:isActive>
+                  <d2p1:isDisabled>false</d2p1:isDisabled>
                   <d2p1:isStatic>false</d2p1:isStatic>
                   <d2p1:isVisible>true</d2p1:isVisible>
                   <d2p1:name>StarRight</d2p1:name>
@@ -798,7 +798,7 @@
                 </d2p1:BaseEntityModel>
                 <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
                   <d2p1:SerializeChildrens />
-                  <d2p1:isActive>true</d2p1:isActive>
+                  <d2p1:isDisabled>false</d2p1:isDisabled>
                   <d2p1:isStatic>false</d2p1:isStatic>
                   <d2p1:isVisible>true</d2p1:isVisible>
                   <d2p1:name>StarCenter</d2p1:name>
@@ -812,7 +812,7 @@
                 </d2p1:BaseEntityModel>
                 <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
                   <d2p1:SerializeChildrens />
-                  <d2p1:isActive>true</d2p1:isActive>
+                  <d2p1:isDisabled>false</d2p1:isDisabled>
                   <d2p1:isStatic>false</d2p1:isStatic>
                   <d2p1:isVisible>true</d2p1:isVisible>
                   <d2p1:name>StarLeft</d2p1:name>
@@ -826,7 +826,7 @@
                 </d2p1:BaseEntityModel>
                 <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
                   <d2p1:SerializeChildrens />
-                  <d2p1:isActive>true</d2p1:isActive>
+                  <d2p1:isDisabled>false</d2p1:isDisabled>
                   <d2p1:isStatic>false</d2p1:isStatic>
                   <d2p1:isVisible>true</d2p1:isVisible>
                   <d2p1:name>Text</d2p1:name>
@@ -853,7 +853,7 @@
                   </d2p1:modifiedProperties>
                 </d2p1:BaseEntityModel>
               </d2p1:SerializeChildrens>
-              <d2p1:isActive>true</d2p1:isActive>
+              <d2p1:isDisabled>false</d2p1:isDisabled>
               <d2p1:isStatic>false</d2p1:isStatic>
               <d2p1:isVisible>true</d2p1:isVisible>
               <d2p1:name>LevelBtn_09</d2p1:name>
@@ -903,7 +903,7 @@
               <d2p1:SerializeChildrens>
                 <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
                   <d2p1:SerializeChildrens />
-                  <d2p1:isActive>true</d2p1:isActive>
+                  <d2p1:isDisabled>false</d2p1:isDisabled>
                   <d2p1:isStatic>false</d2p1:isStatic>
                   <d2p1:isVisible>true</d2p1:isVisible>
                   <d2p1:name>StarRight</d2p1:name>
@@ -917,7 +917,7 @@
                 </d2p1:BaseEntityModel>
                 <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
                   <d2p1:SerializeChildrens />
-                  <d2p1:isActive>true</d2p1:isActive>
+                  <d2p1:isDisabled>false</d2p1:isDisabled>
                   <d2p1:isStatic>false</d2p1:isStatic>
                   <d2p1:isVisible>true</d2p1:isVisible>
                   <d2p1:name>StarCenter</d2p1:name>
@@ -931,7 +931,7 @@
                 </d2p1:BaseEntityModel>
                 <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
                   <d2p1:SerializeChildrens />
-                  <d2p1:isActive>true</d2p1:isActive>
+                  <d2p1:isDisabled>false</d2p1:isDisabled>
                   <d2p1:isStatic>false</d2p1:isStatic>
                   <d2p1:isVisible>true</d2p1:isVisible>
                   <d2p1:name>StarLeft</d2p1:name>
@@ -945,7 +945,7 @@
                 </d2p1:BaseEntityModel>
                 <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
                   <d2p1:SerializeChildrens />
-                  <d2p1:isActive>true</d2p1:isActive>
+                  <d2p1:isDisabled>false</d2p1:isDisabled>
                   <d2p1:isStatic>false</d2p1:isStatic>
                   <d2p1:isVisible>true</d2p1:isVisible>
                   <d2p1:name>Text</d2p1:name>
@@ -972,7 +972,7 @@
                   </d2p1:modifiedProperties>
                 </d2p1:BaseEntityModel>
               </d2p1:SerializeChildrens>
-              <d2p1:isActive>true</d2p1:isActive>
+              <d2p1:isDisabled>false</d2p1:isDisabled>
               <d2p1:isStatic>false</d2p1:isStatic>
               <d2p1:isVisible>true</d2p1:isVisible>
               <d2p1:name>LevelBtn_08</d2p1:name>
@@ -1022,7 +1022,7 @@
               <d2p1:SerializeChildrens>
                 <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
                   <d2p1:SerializeChildrens />
-                  <d2p1:isActive>true</d2p1:isActive>
+                  <d2p1:isDisabled>false</d2p1:isDisabled>
                   <d2p1:isStatic>false</d2p1:isStatic>
                   <d2p1:isVisible>true</d2p1:isVisible>
                   <d2p1:name>StarRight</d2p1:name>
@@ -1036,7 +1036,7 @@
                 </d2p1:BaseEntityModel>
                 <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
                   <d2p1:SerializeChildrens />
-                  <d2p1:isActive>true</d2p1:isActive>
+                  <d2p1:isDisabled>false</d2p1:isDisabled>
                   <d2p1:isStatic>false</d2p1:isStatic>
                   <d2p1:isVisible>true</d2p1:isVisible>
                   <d2p1:name>StarCenter</d2p1:name>
@@ -1050,7 +1050,7 @@
                 </d2p1:BaseEntityModel>
                 <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
                   <d2p1:SerializeChildrens />
-                  <d2p1:isActive>true</d2p1:isActive>
+                  <d2p1:isDisabled>false</d2p1:isDisabled>
                   <d2p1:isStatic>false</d2p1:isStatic>
                   <d2p1:isVisible>true</d2p1:isVisible>
                   <d2p1:name>StarLeft</d2p1:name>
@@ -1064,7 +1064,7 @@
                 </d2p1:BaseEntityModel>
                 <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
                   <d2p1:SerializeChildrens />
-                  <d2p1:isActive>true</d2p1:isActive>
+                  <d2p1:isDisabled>false</d2p1:isDisabled>
                   <d2p1:isStatic>false</d2p1:isStatic>
                   <d2p1:isVisible>true</d2p1:isVisible>
                   <d2p1:name>Text</d2p1:name>
@@ -1091,7 +1091,7 @@
                   </d2p1:modifiedProperties>
                 </d2p1:BaseEntityModel>
               </d2p1:SerializeChildrens>
-              <d2p1:isActive>true</d2p1:isActive>
+              <d2p1:isDisabled>false</d2p1:isDisabled>
               <d2p1:isStatic>false</d2p1:isStatic>
               <d2p1:isVisible>true</d2p1:isVisible>
               <d2p1:name>LevelBtn_07</d2p1:name>
@@ -1141,7 +1141,7 @@
               <d2p1:SerializeChildrens>
                 <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
                   <d2p1:SerializeChildrens />
-                  <d2p1:isActive>true</d2p1:isActive>
+                  <d2p1:isDisabled>false</d2p1:isDisabled>
                   <d2p1:isStatic>false</d2p1:isStatic>
                   <d2p1:isVisible>true</d2p1:isVisible>
                   <d2p1:name>StarRight</d2p1:name>
@@ -1155,7 +1155,7 @@
                 </d2p1:BaseEntityModel>
                 <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
                   <d2p1:SerializeChildrens />
-                  <d2p1:isActive>true</d2p1:isActive>
+                  <d2p1:isDisabled>false</d2p1:isDisabled>
                   <d2p1:isStatic>false</d2p1:isStatic>
                   <d2p1:isVisible>true</d2p1:isVisible>
                   <d2p1:name>StarCenter</d2p1:name>
@@ -1169,7 +1169,7 @@
                 </d2p1:BaseEntityModel>
                 <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
                   <d2p1:SerializeChildrens />
-                  <d2p1:isActive>true</d2p1:isActive>
+                  <d2p1:isDisabled>false</d2p1:isDisabled>
                   <d2p1:isStatic>false</d2p1:isStatic>
                   <d2p1:isVisible>true</d2p1:isVisible>
                   <d2p1:name>StarLeft</d2p1:name>
@@ -1183,7 +1183,7 @@
                 </d2p1:BaseEntityModel>
                 <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
                   <d2p1:SerializeChildrens />
-                  <d2p1:isActive>true</d2p1:isActive>
+                  <d2p1:isDisabled>false</d2p1:isDisabled>
                   <d2p1:isStatic>false</d2p1:isStatic>
                   <d2p1:isVisible>true</d2p1:isVisible>
                   <d2p1:name>Text</d2p1:name>
@@ -1210,7 +1210,7 @@
                   </d2p1:modifiedProperties>
                 </d2p1:BaseEntityModel>
               </d2p1:SerializeChildrens>
-              <d2p1:isActive>true</d2p1:isActive>
+              <d2p1:isDisabled>false</d2p1:isDisabled>
               <d2p1:isStatic>false</d2p1:isStatic>
               <d2p1:isVisible>true</d2p1:isVisible>
               <d2p1:name>LevelBtn_06</d2p1:name>
@@ -1260,7 +1260,7 @@
               <d2p1:SerializeChildrens>
                 <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
                   <d2p1:SerializeChildrens />
-                  <d2p1:isActive>true</d2p1:isActive>
+                  <d2p1:isDisabled>false</d2p1:isDisabled>
                   <d2p1:isStatic>false</d2p1:isStatic>
                   <d2p1:isVisible>true</d2p1:isVisible>
                   <d2p1:name>StarRight</d2p1:name>
@@ -1274,7 +1274,7 @@
                 </d2p1:BaseEntityModel>
                 <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
                   <d2p1:SerializeChildrens />
-                  <d2p1:isActive>true</d2p1:isActive>
+                  <d2p1:isDisabled>false</d2p1:isDisabled>
                   <d2p1:isStatic>false</d2p1:isStatic>
                   <d2p1:isVisible>true</d2p1:isVisible>
                   <d2p1:name>StarCenter</d2p1:name>
@@ -1288,7 +1288,7 @@
                 </d2p1:BaseEntityModel>
                 <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
                   <d2p1:SerializeChildrens />
-                  <d2p1:isActive>true</d2p1:isActive>
+                  <d2p1:isDisabled>false</d2p1:isDisabled>
                   <d2p1:isStatic>false</d2p1:isStatic>
                   <d2p1:isVisible>true</d2p1:isVisible>
                   <d2p1:name>StarLeft</d2p1:name>
@@ -1302,7 +1302,7 @@
                 </d2p1:BaseEntityModel>
                 <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
                   <d2p1:SerializeChildrens />
-                  <d2p1:isActive>true</d2p1:isActive>
+                  <d2p1:isDisabled>false</d2p1:isDisabled>
                   <d2p1:isStatic>false</d2p1:isStatic>
                   <d2p1:isVisible>true</d2p1:isVisible>
                   <d2p1:name>Text</d2p1:name>
@@ -1329,7 +1329,7 @@
                   </d2p1:modifiedProperties>
                 </d2p1:BaseEntityModel>
               </d2p1:SerializeChildrens>
-              <d2p1:isActive>true</d2p1:isActive>
+              <d2p1:isDisabled>false</d2p1:isDisabled>
               <d2p1:isStatic>false</d2p1:isStatic>
               <d2p1:isVisible>true</d2p1:isVisible>
               <d2p1:name>LevelBtn_05</d2p1:name>
@@ -1379,7 +1379,7 @@
               <d2p1:SerializeChildrens>
                 <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
                   <d2p1:SerializeChildrens />
-                  <d2p1:isActive>true</d2p1:isActive>
+                  <d2p1:isDisabled>false</d2p1:isDisabled>
                   <d2p1:isStatic>false</d2p1:isStatic>
                   <d2p1:isVisible>true</d2p1:isVisible>
                   <d2p1:name>StarRight</d2p1:name>
@@ -1393,7 +1393,7 @@
                 </d2p1:BaseEntityModel>
                 <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
                   <d2p1:SerializeChildrens />
-                  <d2p1:isActive>true</d2p1:isActive>
+                  <d2p1:isDisabled>false</d2p1:isDisabled>
                   <d2p1:isStatic>false</d2p1:isStatic>
                   <d2p1:isVisible>true</d2p1:isVisible>
                   <d2p1:name>StarCenter</d2p1:name>
@@ -1407,7 +1407,7 @@
                 </d2p1:BaseEntityModel>
                 <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
                   <d2p1:SerializeChildrens />
-                  <d2p1:isActive>true</d2p1:isActive>
+                  <d2p1:isDisabled>false</d2p1:isDisabled>
                   <d2p1:isStatic>false</d2p1:isStatic>
                   <d2p1:isVisible>true</d2p1:isVisible>
                   <d2p1:name>StarLeft</d2p1:name>
@@ -1421,7 +1421,7 @@
                 </d2p1:BaseEntityModel>
                 <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
                   <d2p1:SerializeChildrens />
-                  <d2p1:isActive>true</d2p1:isActive>
+                  <d2p1:isDisabled>false</d2p1:isDisabled>
                   <d2p1:isStatic>false</d2p1:isStatic>
                   <d2p1:isVisible>true</d2p1:isVisible>
                   <d2p1:name>Text</d2p1:name>
@@ -1448,7 +1448,7 @@
                   </d2p1:modifiedProperties>
                 </d2p1:BaseEntityModel>
               </d2p1:SerializeChildrens>
-              <d2p1:isActive>true</d2p1:isActive>
+              <d2p1:isDisabled>false</d2p1:isDisabled>
               <d2p1:isStatic>false</d2p1:isStatic>
               <d2p1:isVisible>true</d2p1:isVisible>
               <d2p1:name>LevelBtn_04</d2p1:name>
@@ -1498,7 +1498,7 @@
               <d2p1:SerializeChildrens>
                 <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
                   <d2p1:SerializeChildrens />
-                  <d2p1:isActive>true</d2p1:isActive>
+                  <d2p1:isDisabled>false</d2p1:isDisabled>
                   <d2p1:isStatic>false</d2p1:isStatic>
                   <d2p1:isVisible>true</d2p1:isVisible>
                   <d2p1:name>StarRight</d2p1:name>
@@ -1512,7 +1512,7 @@
                 </d2p1:BaseEntityModel>
                 <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
                   <d2p1:SerializeChildrens />
-                  <d2p1:isActive>true</d2p1:isActive>
+                  <d2p1:isDisabled>false</d2p1:isDisabled>
                   <d2p1:isStatic>false</d2p1:isStatic>
                   <d2p1:isVisible>true</d2p1:isVisible>
                   <d2p1:name>StarCenter</d2p1:name>
@@ -1526,7 +1526,7 @@
                 </d2p1:BaseEntityModel>
                 <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
                   <d2p1:SerializeChildrens />
-                  <d2p1:isActive>true</d2p1:isActive>
+                  <d2p1:isDisabled>false</d2p1:isDisabled>
                   <d2p1:isStatic>false</d2p1:isStatic>
                   <d2p1:isVisible>true</d2p1:isVisible>
                   <d2p1:name>StarLeft</d2p1:name>
@@ -1540,7 +1540,7 @@
                 </d2p1:BaseEntityModel>
                 <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
                   <d2p1:SerializeChildrens />
-                  <d2p1:isActive>true</d2p1:isActive>
+                  <d2p1:isDisabled>false</d2p1:isDisabled>
                   <d2p1:isStatic>false</d2p1:isStatic>
                   <d2p1:isVisible>true</d2p1:isVisible>
                   <d2p1:name>Text</d2p1:name>
@@ -1567,7 +1567,7 @@
                   </d2p1:modifiedProperties>
                 </d2p1:BaseEntityModel>
               </d2p1:SerializeChildrens>
-              <d2p1:isActive>true</d2p1:isActive>
+              <d2p1:isDisabled>false</d2p1:isDisabled>
               <d2p1:isStatic>false</d2p1:isStatic>
               <d2p1:isVisible>true</d2p1:isVisible>
               <d2p1:name>LevelBtn_14</d2p1:name>
@@ -1617,7 +1617,7 @@
               <d2p1:SerializeChildrens>
                 <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
                   <d2p1:SerializeChildrens />
-                  <d2p1:isActive>true</d2p1:isActive>
+                  <d2p1:isDisabled>false</d2p1:isDisabled>
                   <d2p1:isStatic>false</d2p1:isStatic>
                   <d2p1:isVisible>true</d2p1:isVisible>
                   <d2p1:name>StarRight</d2p1:name>
@@ -1631,7 +1631,7 @@
                 </d2p1:BaseEntityModel>
                 <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
                   <d2p1:SerializeChildrens />
-                  <d2p1:isActive>true</d2p1:isActive>
+                  <d2p1:isDisabled>false</d2p1:isDisabled>
                   <d2p1:isStatic>false</d2p1:isStatic>
                   <d2p1:isVisible>true</d2p1:isVisible>
                   <d2p1:name>StarCenter</d2p1:name>
@@ -1645,7 +1645,7 @@
                 </d2p1:BaseEntityModel>
                 <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
                   <d2p1:SerializeChildrens />
-                  <d2p1:isActive>true</d2p1:isActive>
+                  <d2p1:isDisabled>false</d2p1:isDisabled>
                   <d2p1:isStatic>false</d2p1:isStatic>
                   <d2p1:isVisible>true</d2p1:isVisible>
                   <d2p1:name>StarLeft</d2p1:name>
@@ -1659,7 +1659,7 @@
                 </d2p1:BaseEntityModel>
                 <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
                   <d2p1:SerializeChildrens />
-                  <d2p1:isActive>true</d2p1:isActive>
+                  <d2p1:isDisabled>false</d2p1:isDisabled>
                   <d2p1:isStatic>false</d2p1:isStatic>
                   <d2p1:isVisible>true</d2p1:isVisible>
                   <d2p1:name>Text</d2p1:name>
@@ -1686,7 +1686,7 @@
                   </d2p1:modifiedProperties>
                 </d2p1:BaseEntityModel>
               </d2p1:SerializeChildrens>
-              <d2p1:isActive>true</d2p1:isActive>
+              <d2p1:isDisabled>false</d2p1:isDisabled>
               <d2p1:isStatic>false</d2p1:isStatic>
               <d2p1:isVisible>true</d2p1:isVisible>
               <d2p1:name>LevelBtn_15</d2p1:name>
@@ -1736,7 +1736,7 @@
               <d2p1:SerializeChildrens>
                 <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
                   <d2p1:SerializeChildrens />
-                  <d2p1:isActive>true</d2p1:isActive>
+                  <d2p1:isDisabled>false</d2p1:isDisabled>
                   <d2p1:isStatic>false</d2p1:isStatic>
                   <d2p1:isVisible>true</d2p1:isVisible>
                   <d2p1:name>StarRight</d2p1:name>
@@ -1750,7 +1750,7 @@
                 </d2p1:BaseEntityModel>
                 <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
                   <d2p1:SerializeChildrens />
-                  <d2p1:isActive>true</d2p1:isActive>
+                  <d2p1:isDisabled>false</d2p1:isDisabled>
                   <d2p1:isStatic>false</d2p1:isStatic>
                   <d2p1:isVisible>true</d2p1:isVisible>
                   <d2p1:name>StarCenter</d2p1:name>
@@ -1764,7 +1764,7 @@
                 </d2p1:BaseEntityModel>
                 <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
                   <d2p1:SerializeChildrens />
-                  <d2p1:isActive>true</d2p1:isActive>
+                  <d2p1:isDisabled>false</d2p1:isDisabled>
                   <d2p1:isStatic>false</d2p1:isStatic>
                   <d2p1:isVisible>true</d2p1:isVisible>
                   <d2p1:name>StarLeft</d2p1:name>
@@ -1778,7 +1778,7 @@
                 </d2p1:BaseEntityModel>
                 <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
                   <d2p1:SerializeChildrens />
-                  <d2p1:isActive>true</d2p1:isActive>
+                  <d2p1:isDisabled>false</d2p1:isDisabled>
                   <d2p1:isStatic>false</d2p1:isStatic>
                   <d2p1:isVisible>true</d2p1:isVisible>
                   <d2p1:name>Text</d2p1:name>
@@ -1805,7 +1805,7 @@
                   </d2p1:modifiedProperties>
                 </d2p1:BaseEntityModel>
               </d2p1:SerializeChildrens>
-              <d2p1:isActive>true</d2p1:isActive>
+              <d2p1:isDisabled>false</d2p1:isDisabled>
               <d2p1:isStatic>false</d2p1:isStatic>
               <d2p1:isVisible>true</d2p1:isVisible>
               <d2p1:name>LevelBtn_03</d2p1:name>
@@ -1855,7 +1855,7 @@
               <d2p1:SerializeChildrens>
                 <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
                   <d2p1:SerializeChildrens />
-                  <d2p1:isActive>true</d2p1:isActive>
+                  <d2p1:isDisabled>false</d2p1:isDisabled>
                   <d2p1:isStatic>false</d2p1:isStatic>
                   <d2p1:isVisible>true</d2p1:isVisible>
                   <d2p1:name>StarRight</d2p1:name>
@@ -1869,7 +1869,7 @@
                 </d2p1:BaseEntityModel>
                 <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
                   <d2p1:SerializeChildrens />
-                  <d2p1:isActive>true</d2p1:isActive>
+                  <d2p1:isDisabled>false</d2p1:isDisabled>
                   <d2p1:isStatic>false</d2p1:isStatic>
                   <d2p1:isVisible>true</d2p1:isVisible>
                   <d2p1:name>StarCenter</d2p1:name>
@@ -1883,7 +1883,7 @@
                 </d2p1:BaseEntityModel>
                 <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
                   <d2p1:SerializeChildrens />
-                  <d2p1:isActive>true</d2p1:isActive>
+                  <d2p1:isDisabled>false</d2p1:isDisabled>
                   <d2p1:isStatic>false</d2p1:isStatic>
                   <d2p1:isVisible>true</d2p1:isVisible>
                   <d2p1:name>StarLeft</d2p1:name>
@@ -1897,7 +1897,7 @@
                 </d2p1:BaseEntityModel>
                 <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
                   <d2p1:SerializeChildrens />
-                  <d2p1:isActive>true</d2p1:isActive>
+                  <d2p1:isDisabled>false</d2p1:isDisabled>
                   <d2p1:isStatic>false</d2p1:isStatic>
                   <d2p1:isVisible>true</d2p1:isVisible>
                   <d2p1:name>Text</d2p1:name>
@@ -1924,7 +1924,7 @@
                   </d2p1:modifiedProperties>
                 </d2p1:BaseEntityModel>
               </d2p1:SerializeChildrens>
-              <d2p1:isActive>true</d2p1:isActive>
+              <d2p1:isDisabled>false</d2p1:isDisabled>
               <d2p1:isStatic>false</d2p1:isStatic>
               <d2p1:isVisible>true</d2p1:isVisible>
               <d2p1:name>LevelBtn_02</d2p1:name>
@@ -1971,7 +1971,7 @@
               </d2p1:modifiedProperties>
             </d2p1:BaseEntityModel>
           </d2p1:SerializeChildrens>
-          <d2p1:isActive>true</d2p1:isActive>
+          <d2p1:isDisabled>false</d2p1:isDisabled>
           <d2p1:isStatic>false</d2p1:isStatic>
           <d2p1:isVisible>true</d2p1:isVisible>
           <d2p1:name>LevelContent</d2p1:name>
@@ -2015,7 +2015,7 @@
           </d2p1:SerializeComponents>
         </d2p1:BaseEntityModel>
       </d2p1:SerializeChildrens>
-      <d2p1:isActive>true</d2p1:isActive>
+      <d2p1:isDisabled>false</d2p1:isDisabled>
       <d2p1:isStatic>false</d2p1:isStatic>
       <d2p1:isVisible>true</d2p1:isVisible>
       <d2p1:name>Panel</d2p1:name>
@@ -2080,7 +2080,7 @@
     </d2p1:BaseEntityModel>
     <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
       <d2p1:SerializeChildrens />
-      <d2p1:isActive>true</d2p1:isActive>
+      <d2p1:isDisabled>false</d2p1:isDisabled>
       <d2p1:isStatic>false</d2p1:isStatic>
       <d2p1:isVisible>true</d2p1:isVisible>
       <d2p1:name>BackBtn</d2p1:name>
@@ -2103,8 +2103,8 @@
         <d4p1:KeyValueOfstringanyType>
           <d4p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#LocalPosition</d4p1:Key>
           <d4p1:Value xmlns:d6p1="WaveEngine.Common.Math" i:type="d6p1:Vector3">
-            <d6p1:X>-542.899963</d6p1:X>
-            <d6p1:Y>1411.69983</d6p1:Y>
+            <d6p1:X>-894.0795</d6p1:X>
+            <d6p1:Y>392.759766</d6p1:Y>
             <d6p1:Z>0</d6p1:Z>
           </d4p1:Value>
         </d4p1:KeyValueOfstringanyType>
