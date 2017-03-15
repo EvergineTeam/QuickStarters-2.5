@@ -3,6 +3,7 @@
   <Entities xmlns:d2p1="WaveEngine.Framework.Models.Entities">
     <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
       <d2p1:SerializeChildrens />
+      <d2p1:isDisabled>false</d2p1:isDisabled>
       <d2p1:isStatic>false</d2p1:isStatic>
       <d2p1:isVisible>true</d2p1:isVisible>
       <d2p1:name>defaultCamera2D</d2p1:name>
@@ -93,6 +94,7 @@
     </d2p1:BaseEntityModel>
     <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
       <d2p1:SerializeChildrens />
+      <d2p1:isDisabled>false</d2p1:isDisabled>
       <d2p1:isStatic>false</d2p1:isStatic>
       <d2p1:isVisible>true</d2p1:isVisible>
       <d2p1:name>Background</d2p1:name>
@@ -194,6 +196,7 @@
     </d2p1:BaseEntityModel>
     <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
       <d2p1:SerializeChildrens />
+      <d2p1:isDisabled>false</d2p1:isDisabled>
       <d2p1:isStatic>false</d2p1:isStatic>
       <d2p1:isVisible>true</d2p1:isVisible>
       <d2p1:name>Logo</d2p1:name>
@@ -207,8 +210,8 @@
             <d6p1:Z>0</d6p1:Z>
           </d5p1:LocalOrientation>
           <d5p1:LocalPosition xmlns:d6p1="WaveEngine.Common.Math">
-            <d6p1:X>9.899934</d6p1:X>
-            <d6p1:Y>-250.90007</d6p1:Y>
+            <d6p1:X>-254.000061</d6p1:X>
+            <d6p1:Y>-182.500046</d6p1:Y>
             <d6p1:Z>0.95</d6p1:Z>
           </d5p1:LocalPosition>
           <d5p1:LocalScale xmlns:d6p1="WaveEngine.Common.Math">
@@ -255,6 +258,7 @@
     </d2p1:BaseEntityModel>
     <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
       <d2p1:SerializeChildrens />
+      <d2p1:isDisabled>false</d2p1:isDisabled>
       <d2p1:isStatic>false</d2p1:isStatic>
       <d2p1:isVisible>true</d2p1:isVisible>
       <d2p1:name>Gravity</d2p1:name>
@@ -316,6 +320,7 @@
     </d2p1:BaseEntityModel>
     <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
       <d2p1:SerializeChildrens />
+      <d2p1:isDisabled>false</d2p1:isDisabled>
       <d2p1:isStatic>false</d2p1:isStatic>
       <d2p1:isVisible>true</d2p1:isVisible>
       <d2p1:name>MoonBack</d2p1:name>
@@ -377,6 +382,7 @@
     </d2p1:BaseEntityModel>
     <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
       <d2p1:SerializeChildrens />
+      <d2p1:isDisabled>false</d2p1:isDisabled>
       <d2p1:isStatic>false</d2p1:isStatic>
       <d2p1:isVisible>true</d2p1:isVisible>
       <d2p1:name>TapHand</d2p1:name>
@@ -447,6 +453,7 @@
       <d2p1:SerializeChildrens>
         <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
           <d2p1:SerializeChildrens />
+          <d2p1:isDisabled>false</d2p1:isDisabled>
           <d2p1:isStatic>false</d2p1:isStatic>
           <d2p1:isVisible>true</d2p1:isVisible>
           <d2p1:name>explosion</d2p1:name>
@@ -515,6 +522,7 @@
                 <d8p1:Y>30</d8p1:Y>
                 <d8p1:Z>30</d8p1:Z>
               </d7p1:EmitterSize>
+              <d7p1:EndDeltaScale>0</d7p1:EndDeltaScale>
               <d7p1:Gravity xmlns:d8p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                 <d8p1:X>0</d8p1:X>
                 <d8p1:Y>0</d8p1:Y>
@@ -573,6 +581,7 @@
           </d2p1:SerializeComponents>
         </d2p1:BaseEntityModel>
       </d2p1:SerializeChildrens>
+      <d2p1:isDisabled>false</d2p1:isDisabled>
       <d2p1:isStatic>false</d2p1:isStatic>
       <d2p1:isVisible>true</d2p1:isVisible>
       <d2p1:name>RabbitEmitter</d2p1:name>
@@ -621,6 +630,7 @@
     </d2p1:BaseEntityModel>
     <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
       <d2p1:SerializeChildrens />
+      <d2p1:isDisabled>false</d2p1:isDisabled>
       <d2p1:isStatic>false</d2p1:isStatic>
       <d2p1:isVisible>true</d2p1:isVisible>
       <d2p1:name>GamePlayManager</d2p1:name>
@@ -665,6 +675,7 @@
       </d2p1:SerializeComponents>
     </d2p1:BaseEntityModel>
   </Entities>
+  <EntityPointers xmlns:d2p1="http://schemas.datacontract.org/2004/07/WaveEngine.Framework.Models.Entities" />
   <Settings xmlns:d2p1="WaveEngine.Framework.Models.Settings">
     <d2p1:Categories xmlns:d3p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
       <d3p1:KeyValueOfstringanyType>

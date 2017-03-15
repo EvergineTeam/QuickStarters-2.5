@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// File generated on 9/5/2016 11:04:01 AM
+// File generated on 3/14/2017 1:26:43 PM
 namespace SurvivorNinja
 {
     using System;
