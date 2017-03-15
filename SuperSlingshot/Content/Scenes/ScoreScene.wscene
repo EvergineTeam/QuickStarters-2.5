@@ -3,6 +3,7 @@
   <Entities xmlns:d2p1="WaveEngine.Framework.Models.Entities">
     <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
       <d2p1:SerializeChildrens />
+      <d2p1:isDisabled>false</d2p1:isDisabled>
       <d2p1:isStatic>false</d2p1:isStatic>
       <d2p1:isVisible>true</d2p1:isVisible>
       <d2p1:name>defaultCamera2D</d2p1:name>
@@ -90,6 +91,7 @@
           <d2p1:SerializeChildrens>
             <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
               <d2p1:SerializeChildrens />
+              <d2p1:isDisabled>false</d2p1:isDisabled>
               <d2p1:isStatic>false</d2p1:isStatic>
               <d2p1:isVisible>true</d2p1:isVisible>
               <d2p1:name>glow</d2p1:name>
@@ -161,6 +163,7 @@
             </d2p1:BaseEntityModel>
             <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
               <d2p1:SerializeChildrens />
+              <d2p1:isDisabled>false</d2p1:isDisabled>
               <d2p1:isStatic>false</d2p1:isStatic>
               <d2p1:isVisible>true</d2p1:isVisible>
               <d2p1:name>glow01</d2p1:name>
@@ -232,6 +235,7 @@
             </d2p1:BaseEntityModel>
             <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
               <d2p1:SerializeChildrens />
+              <d2p1:isDisabled>false</d2p1:isDisabled>
               <d2p1:isStatic>false</d2p1:isStatic>
               <d2p1:isVisible>true</d2p1:isVisible>
               <d2p1:name>crown</d2p1:name>
@@ -294,6 +298,7 @@
             </d2p1:BaseEntityModel>
             <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
               <d2p1:SerializeChildrens />
+              <d2p1:isDisabled>false</d2p1:isDisabled>
               <d2p1:isStatic>false</d2p1:isStatic>
               <d2p1:isVisible>true</d2p1:isVisible>
               <d2p1:name>headerBackground</d2p1:name>
@@ -357,6 +362,7 @@
             </d2p1:BaseEntityModel>
             <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
               <d2p1:SerializeChildrens />
+              <d2p1:isDisabled>false</d2p1:isDisabled>
               <d2p1:isStatic>false</d2p1:isStatic>
               <d2p1:isVisible>true</d2p1:isVisible>
               <d2p1:name>headerText</d2p1:name>
@@ -427,6 +433,7 @@
               </d2p1:SerializeComponents>
             </d2p1:BaseEntityModel>
           </d2p1:SerializeChildrens>
+          <d2p1:isDisabled>false</d2p1:isDisabled>
           <d2p1:isStatic>false</d2p1:isStatic>
           <d2p1:isVisible>true</d2p1:isVisible>
           <d2p1:name>header</d2p1:name>
@@ -471,6 +478,7 @@
         </d2p1:BaseEntityModel>
         <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
           <d2p1:SerializeChildrens />
+          <d2p1:isDisabled>false</d2p1:isDisabled>
           <d2p1:isStatic>false</d2p1:isStatic>
           <d2p1:isVisible>true</d2p1:isVisible>
           <d2p1:name>backgroundEntity</d2p1:name>
@@ -533,6 +541,7 @@
           </d2p1:SerializeComponents>
         </d2p1:BaseEntityModel>
       </d2p1:SerializeChildrens>
+      <d2p1:isDisabled>false</d2p1:isDisabled>
       <d2p1:isStatic>false</d2p1:isStatic>
       <d2p1:isVisible>true</d2p1:isVisible>
       <d2p1:name>menuEntity</d2p1:name>
@@ -581,6 +590,7 @@
           <d2p1:SerializeChildrens>
             <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
               <d2p1:SerializeChildrens />
+              <d2p1:isDisabled>false</d2p1:isDisabled>
               <d2p1:isStatic>false</d2p1:isStatic>
               <d2p1:isVisible>true</d2p1:isVisible>
               <d2p1:name>content</d2p1:name>
@@ -610,6 +620,7 @@
               </d2p1:modifiedProperties>
             </d2p1:BaseEntityModel>
           </d2p1:SerializeChildrens>
+          <d2p1:isDisabled>false</d2p1:isDisabled>
           <d2p1:isStatic>false</d2p1:isStatic>
           <d2p1:isVisible>true</d2p1:isVisible>
           <d2p1:name>star1</d2p1:name>
@@ -655,6 +666,7 @@
           <d2p1:SerializeChildrens>
             <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
               <d2p1:SerializeChildrens />
+              <d2p1:isDisabled>false</d2p1:isDisabled>
               <d2p1:isStatic>false</d2p1:isStatic>
               <d2p1:isVisible>true</d2p1:isVisible>
               <d2p1:name>content</d2p1:name>
@@ -684,6 +696,7 @@
               </d2p1:modifiedProperties>
             </d2p1:BaseEntityModel>
           </d2p1:SerializeChildrens>
+          <d2p1:isDisabled>false</d2p1:isDisabled>
           <d2p1:isStatic>false</d2p1:isStatic>
           <d2p1:isVisible>true</d2p1:isVisible>
           <d2p1:name>star2</d2p1:name>
@@ -712,6 +725,7 @@
           <d2p1:SerializeChildrens>
             <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
               <d2p1:SerializeChildrens />
+              <d2p1:isDisabled>false</d2p1:isDisabled>
               <d2p1:isStatic>false</d2p1:isStatic>
               <d2p1:isVisible>true</d2p1:isVisible>
               <d2p1:name>content</d2p1:name>
@@ -741,6 +755,7 @@
               </d2p1:modifiedProperties>
             </d2p1:BaseEntityModel>
           </d2p1:SerializeChildrens>
+          <d2p1:isDisabled>false</d2p1:isDisabled>
           <d2p1:isStatic>false</d2p1:isStatic>
           <d2p1:isVisible>true</d2p1:isVisible>
           <d2p1:name>star3</d2p1:name>
@@ -783,6 +798,7 @@
           </d2p1:modifiedProperties>
         </d2p1:BaseEntityModel>
       </d2p1:SerializeChildrens>
+      <d2p1:isDisabled>false</d2p1:isDisabled>
       <d2p1:isStatic>false</d2p1:isStatic>
       <d2p1:isVisible>true</d2p1:isVisible>
       <d2p1:name>ratingEntity</d2p1:name>
@@ -834,6 +850,7 @@
           <d2p1:SerializeChildrens>
             <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
               <d2p1:SerializeChildrens />
+              <d2p1:isDisabled>false</d2p1:isDisabled>
               <d2p1:isStatic>false</d2p1:isStatic>
               <d2p1:isVisible>true</d2p1:isVisible>
               <d2p1:name>text</d2p1:name>
@@ -905,6 +922,7 @@
             </d2p1:BaseEntityModel>
             <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
               <d2p1:SerializeChildrens />
+              <d2p1:isDisabled>false</d2p1:isDisabled>
               <d2p1:isStatic>false</d2p1:isStatic>
               <d2p1:isVisible>true</d2p1:isVisible>
               <d2p1:name>coin</d2p1:name>
@@ -966,6 +984,7 @@
               </d2p1:SerializeComponents>
             </d2p1:BaseEntityModel>
           </d2p1:SerializeChildrens>
+          <d2p1:isDisabled>false</d2p1:isDisabled>
           <d2p1:isStatic>false</d2p1:isStatic>
           <d2p1:isVisible>true</d2p1:isVisible>
           <d2p1:name>placeholder1</d2p1:name>
@@ -1030,6 +1049,7 @@
           <d2p1:SerializeChildrens>
             <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
               <d2p1:SerializeChildrens />
+              <d2p1:isDisabled>false</d2p1:isDisabled>
               <d2p1:isStatic>false</d2p1:isStatic>
               <d2p1:isVisible>true</d2p1:isVisible>
               <d2p1:name>text</d2p1:name>
@@ -1101,6 +1121,7 @@
             </d2p1:BaseEntityModel>
             <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
               <d2p1:SerializeChildrens />
+              <d2p1:isDisabled>false</d2p1:isDisabled>
               <d2p1:isStatic>false</d2p1:isStatic>
               <d2p1:isVisible>true</d2p1:isVisible>
               <d2p1:name>gem</d2p1:name>
@@ -1162,6 +1183,7 @@
               </d2p1:SerializeComponents>
             </d2p1:BaseEntityModel>
           </d2p1:SerializeChildrens>
+          <d2p1:isDisabled>false</d2p1:isDisabled>
           <d2p1:isStatic>false</d2p1:isStatic>
           <d2p1:isVisible>true</d2p1:isVisible>
           <d2p1:name>placeholder2</d2p1:name>
@@ -1223,6 +1245,7 @@
           </d2p1:SerializeComponents>
         </d2p1:BaseEntityModel>
       </d2p1:SerializeChildrens>
+      <d2p1:isDisabled>false</d2p1:isDisabled>
       <d2p1:isStatic>false</d2p1:isStatic>
       <d2p1:isVisible>true</d2p1:isVisible>
       <d2p1:name>scoreEntity</d2p1:name>
@@ -1273,6 +1296,7 @@
               <d2p1:SerializeChildrens>
                 <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
                   <d2p1:SerializeChildrens />
+                  <d2p1:isDisabled>false</d2p1:isDisabled>
                   <d2p1:isStatic>false</d2p1:isStatic>
                   <d2p1:isVisible>true</d2p1:isVisible>
                   <d2p1:name>buttonText</d2p1:name>
@@ -1299,13 +1323,10 @@
                         <d12p1:Z>1</d12p1:Z>
                       </d10p1:Value>
                     </d10p1:KeyValueOfstringanyType>
-                    <d10p1:KeyValueOfstringanyType>
-                      <d10p1:Key>WaveEngine.Components.Toolkit.TextComponent#0#text</d10p1:Key>
-                      <d10p1:Value i:nil="true" />
-                    </d10p1:KeyValueOfstringanyType>
                   </d2p1:modifiedProperties>
                 </d2p1:BaseEntityModel>
               </d2p1:SerializeChildrens>
+              <d2p1:isDisabled>false</d2p1:isDisabled>
               <d2p1:isStatic>false</d2p1:isStatic>
               <d2p1:isVisible>true</d2p1:isVisible>
               <d2p1:name>homeButton</d2p1:name>
@@ -1379,6 +1400,7 @@
               <d2p1:SerializeChildrens>
                 <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
                   <d2p1:SerializeChildrens />
+                  <d2p1:isDisabled>false</d2p1:isDisabled>
                   <d2p1:isStatic>false</d2p1:isStatic>
                   <d2p1:isVisible>true</d2p1:isVisible>
                   <d2p1:name>buttonText</d2p1:name>
@@ -1405,13 +1427,10 @@
                         <d12p1:Z>1</d12p1:Z>
                       </d10p1:Value>
                     </d10p1:KeyValueOfstringanyType>
-                    <d10p1:KeyValueOfstringanyType>
-                      <d10p1:Key>WaveEngine.Components.Toolkit.TextComponent#0#text</d10p1:Key>
-                      <d10p1:Value i:nil="true" />
-                    </d10p1:KeyValueOfstringanyType>
                   </d2p1:modifiedProperties>
                 </d2p1:BaseEntityModel>
               </d2p1:SerializeChildrens>
+              <d2p1:isDisabled>false</d2p1:isDisabled>
               <d2p1:isStatic>false</d2p1:isStatic>
               <d2p1:isVisible>true</d2p1:isVisible>
               <d2p1:name>menuButton</d2p1:name>
@@ -1485,6 +1504,7 @@
               <d2p1:SerializeChildrens>
                 <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
                   <d2p1:SerializeChildrens />
+                  <d2p1:isDisabled>false</d2p1:isDisabled>
                   <d2p1:isStatic>false</d2p1:isStatic>
                   <d2p1:isVisible>true</d2p1:isVisible>
                   <d2p1:name>buttonText</d2p1:name>
@@ -1511,13 +1531,10 @@
                         <d12p1:Z>1</d12p1:Z>
                       </d10p1:Value>
                     </d10p1:KeyValueOfstringanyType>
-                    <d10p1:KeyValueOfstringanyType>
-                      <d10p1:Key>WaveEngine.Components.Toolkit.TextComponent#0#text</d10p1:Key>
-                      <d10p1:Value i:nil="true" />
-                    </d10p1:KeyValueOfstringanyType>
                   </d2p1:modifiedProperties>
                 </d2p1:BaseEntityModel>
               </d2p1:SerializeChildrens>
+              <d2p1:isDisabled>false</d2p1:isDisabled>
               <d2p1:isStatic>false</d2p1:isStatic>
               <d2p1:isVisible>true</d2p1:isVisible>
               <d2p1:name>replayButton</d2p1:name>
@@ -1591,6 +1608,7 @@
               <d2p1:SerializeChildrens>
                 <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
                   <d2p1:SerializeChildrens />
+                  <d2p1:isDisabled>false</d2p1:isDisabled>
                   <d2p1:isStatic>false</d2p1:isStatic>
                   <d2p1:isVisible>true</d2p1:isVisible>
                   <d2p1:name>buttonText</d2p1:name>
@@ -1617,13 +1635,10 @@
                         <d12p1:Z>1</d12p1:Z>
                       </d10p1:Value>
                     </d10p1:KeyValueOfstringanyType>
-                    <d10p1:KeyValueOfstringanyType>
-                      <d10p1:Key>WaveEngine.Components.Toolkit.TextComponent#0#text</d10p1:Key>
-                      <d10p1:Value i:nil="true" />
-                    </d10p1:KeyValueOfstringanyType>
                   </d2p1:modifiedProperties>
                 </d2p1:BaseEntityModel>
               </d2p1:SerializeChildrens>
+              <d2p1:isDisabled>false</d2p1:isDisabled>
               <d2p1:isStatic>false</d2p1:isStatic>
               <d2p1:isVisible>true</d2p1:isVisible>
               <d2p1:name>nextButton</d2p1:name>
@@ -1694,6 +1709,7 @@
               </d2p1:modifiedProperties>
             </d2p1:BaseEntityModel>
           </d2p1:SerializeChildrens>
+          <d2p1:isDisabled>false</d2p1:isDisabled>
           <d2p1:isStatic>false</d2p1:isStatic>
           <d2p1:isVisible>true</d2p1:isVisible>
           <d2p1:name>bPlaceholder</d2p1:name>
@@ -1755,6 +1771,7 @@
           </d2p1:SerializeComponents>
         </d2p1:BaseEntityModel>
       </d2p1:SerializeChildrens>
+      <d2p1:isDisabled>false</d2p1:isDisabled>
       <d2p1:isStatic>false</d2p1:isStatic>
       <d2p1:isVisible>true</d2p1:isVisible>
       <d2p1:name>buttonsEntity</d2p1:name>

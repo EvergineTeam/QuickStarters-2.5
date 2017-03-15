@@ -414,9 +414,9 @@
               <d7p1:Z>0</d7p1:Z>
             </d6p1:LocalOrientation>
             <d6p1:LocalPosition xmlns:d7p1="WaveEngine.Common.Math">
-              <d7p1:X>19</d7p1:X>
-              <d7p1:Y>4.99999952</d7p1:Y>
-              <d7p1:Z>-0.100000367</d7p1:Z>
+              <d7p1:X>15.5</d7p1:X>
+              <d7p1:Y>4.99999857</d7p1:Y>
+              <d7p1:Z>-0.100000344</d7p1:Z>
             </d6p1:LocalPosition>
             <d6p1:LocalScale xmlns:d7p1="WaveEngine.Common.Math">
               <d7p1:X>1</d7p1:X>
@@ -446,8 +446,8 @@
             <d6p1:foreground xmlns:d7p1="WaveEngine.Common.Graphics">
               <d7p1:A>255</d7p1:A>
               <d7p1:B>0</d7p1:B>
-              <d7p1:G>185</d7p1:G>
-              <d7p1:R>142</d7p1:R>
+              <d7p1:G>140</d7p1:G>
+              <d7p1:R>108</d7p1:R>
             </d6p1:foreground>
             <d6p1:lineSpacing>0</d6p1:lineSpacing>
             <d6p1:origin xmlns:d7p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
@@ -459,7 +459,7 @@
               <d7p1:Y>1.9</d7p1:Y>
             </d6p1:scale>
             <d6p1:text></d6p1:text>
-            <d6p1:textAlignment>Left</d6p1:textAlignment>
+            <d6p1:textAlignment>Center</d6p1:textAlignment>
             <d6p1:textWrapping>false</d6p1:textWrapping>
             <d6p1:width>300</d6p1:width>
           </d5p1:Component>

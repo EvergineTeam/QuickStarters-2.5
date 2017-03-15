@@ -154,8 +154,8 @@
         <d4p1:KeyValueOfstringanyType>
           <d4p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#LocalPosition</d4p1:Key>
           <d4p1:Value xmlns:d6p1="WaveEngine.Common.Math" i:type="d6p1:Vector3">
-            <d6p1:X>-119.001984</d6p1:X>
-            <d6p1:Y>202.097855</d6p1:Y>
+            <d6p1:X>0</d6p1:X>
+            <d6p1:Y>199.4978</d6p1:Y>
             <d6p1:Z>-200</d6p1:Z>
           </d4p1:Value>
         </d4p1:KeyValueOfstringanyType>
@@ -699,8 +699,8 @@
             <d6p1:Z>0</d6p1:Z>
           </d5p1:LocalOrientation>
           <d5p1:LocalPosition xmlns:d6p1="WaveEngine.Common.Math">
-            <d6p1:X>-119.001984</d6p1:X>
-            <d6p1:Y>-381.8978</d6p1:Y>
+            <d6p1:X>0</d6p1:X>
+            <d6p1:Y>-165.4978</d6p1:Y>
             <d6p1:Z>0</d6p1:Z>
           </d5p1:LocalPosition>
           <d5p1:LocalScale xmlns:d6p1="WaveEngine.Common.Math">

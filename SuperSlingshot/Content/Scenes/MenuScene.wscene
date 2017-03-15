@@ -3,6 +3,7 @@
   <Entities xmlns:d2p1="WaveEngine.Framework.Models.Entities">
     <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
       <d2p1:SerializeChildrens />
+      <d2p1:isDisabled>false</d2p1:isDisabled>
       <d2p1:isStatic>false</d2p1:isStatic>
       <d2p1:isVisible>true</d2p1:isVisible>
       <d2p1:name>defaultCamera2D</d2p1:name>
@@ -92,6 +93,7 @@
               <d2p1:SerializeChildrens>
                 <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
                   <d2p1:SerializeChildrens />
+                  <d2p1:isDisabled>false</d2p1:isDisabled>
                   <d2p1:isStatic>false</d2p1:isStatic>
                   <d2p1:isVisible>true</d2p1:isVisible>
                   <d2p1:name>buttonText</d2p1:name>
@@ -105,10 +107,10 @@
                     <d10p1:KeyValueOfstringanyType>
                       <d10p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#Rectangle</d10p1:Key>
                       <d10p1:Value xmlns:d12p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math" i:type="d12p1:RectangleF">
-                        <d12p1:Height>73</d12p1:Height>
-                        <d12p1:Width>164</d12p1:Width>
-                        <d12p1:X>-82</d12p1:X>
-                        <d12p1:Y>36.5</d12p1:Y>
+                        <d12p1:Height>79</d12p1:Height>
+                        <d12p1:Width>126</d12p1:Width>
+                        <d12p1:X>-63</d12p1:X>
+                        <d12p1:Y>39.5</d12p1:Y>
                       </d10p1:Value>
                     </d10p1:KeyValueOfstringanyType>
                     <d10p1:KeyValueOfstringanyType>
@@ -126,6 +128,7 @@
                   </d2p1:modifiedProperties>
                 </d2p1:BaseEntityModel>
               </d2p1:SerializeChildrens>
+              <d2p1:isDisabled>false</d2p1:isDisabled>
               <d2p1:isStatic>false</d2p1:isStatic>
               <d2p1:isVisible>true</d2p1:isVisible>
               <d2p1:name>exitButton</d2p1:name>
@@ -158,6 +161,7 @@
               <d2p1:SerializeChildrens>
                 <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
                   <d2p1:SerializeChildrens />
+                  <d2p1:isDisabled>false</d2p1:isDisabled>
                   <d2p1:isStatic>false</d2p1:isStatic>
                   <d2p1:isVisible>true</d2p1:isVisible>
                   <d2p1:name>buttonText</d2p1:name>
@@ -171,10 +175,10 @@
                     <d10p1:KeyValueOfstringanyType>
                       <d10p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#Rectangle</d10p1:Key>
                       <d10p1:Value xmlns:d12p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math" i:type="d12p1:RectangleF">
-                        <d12p1:Height>73</d12p1:Height>
-                        <d12p1:Width>301</d12p1:Width>
-                        <d12p1:X>-150.5</d12p1:X>
-                        <d12p1:Y>36.5</d12p1:Y>
+                        <d12p1:Height>79</d12p1:Height>
+                        <d12p1:Width>242</d12p1:Width>
+                        <d12p1:X>-121</d12p1:X>
+                        <d12p1:Y>39.5</d12p1:Y>
                       </d10p1:Value>
                     </d10p1:KeyValueOfstringanyType>
                     <d10p1:KeyValueOfstringanyType>
@@ -192,6 +196,7 @@
                   </d2p1:modifiedProperties>
                 </d2p1:BaseEntityModel>
               </d2p1:SerializeChildrens>
+              <d2p1:isDisabled>false</d2p1:isDisabled>
               <d2p1:isStatic>false</d2p1:isStatic>
               <d2p1:isVisible>true</d2p1:isVisible>
               <d2p1:name>restartButton</d2p1:name>
@@ -224,6 +229,7 @@
               <d2p1:SerializeChildrens>
                 <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
                   <d2p1:SerializeChildrens />
+                  <d2p1:isDisabled>false</d2p1:isDisabled>
                   <d2p1:isStatic>false</d2p1:isStatic>
                   <d2p1:isVisible>true</d2p1:isVisible>
                   <d2p1:name>buttonText</d2p1:name>
@@ -237,10 +243,10 @@
                     <d10p1:KeyValueOfstringanyType>
                       <d10p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#Rectangle</d10p1:Key>
                       <d10p1:Value xmlns:d12p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math" i:type="d12p1:RectangleF">
-                        <d12p1:Height>73</d12p1:Height>
-                        <d12p1:Width>267</d12p1:Width>
-                        <d12p1:X>-133.5</d12p1:X>
-                        <d12p1:Y>36.5</d12p1:Y>
+                        <d12p1:Height>79</d12p1:Height>
+                        <d12p1:Width>213</d12p1:Width>
+                        <d12p1:X>-106.5</d12p1:X>
+                        <d12p1:Y>39.5</d12p1:Y>
                       </d10p1:Value>
                     </d10p1:KeyValueOfstringanyType>
                     <d10p1:KeyValueOfstringanyType>
@@ -258,6 +264,7 @@
                   </d2p1:modifiedProperties>
                 </d2p1:BaseEntityModel>
               </d2p1:SerializeChildrens>
+              <d2p1:isDisabled>false</d2p1:isDisabled>
               <d2p1:isStatic>false</d2p1:isStatic>
               <d2p1:isVisible>true</d2p1:isVisible>
               <d2p1:name>resumeButton</d2p1:name>
@@ -287,6 +294,7 @@
               </d2p1:modifiedProperties>
             </d2p1:BaseEntityModel>
           </d2p1:SerializeChildrens>
+          <d2p1:isDisabled>false</d2p1:isDisabled>
           <d2p1:isStatic>false</d2p1:isStatic>
           <d2p1:isVisible>true</d2p1:isVisible>
           <d2p1:name>buttonPanel</d2p1:name>
@@ -333,6 +341,7 @@
           <d2p1:SerializeChildrens>
             <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
               <d2p1:SerializeChildrens />
+              <d2p1:isDisabled>false</d2p1:isDisabled>
               <d2p1:isStatic>false</d2p1:isStatic>
               <d2p1:isVisible>true</d2p1:isVisible>
               <d2p1:name>headerBackground</d2p1:name>
@@ -396,6 +405,7 @@
             </d2p1:BaseEntityModel>
             <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
               <d2p1:SerializeChildrens />
+              <d2p1:isDisabled>false</d2p1:isDisabled>
               <d2p1:isStatic>false</d2p1:isStatic>
               <d2p1:isVisible>true</d2p1:isVisible>
               <d2p1:name>headerText</d2p1:name>
@@ -466,6 +476,7 @@
               </d2p1:SerializeComponents>
             </d2p1:BaseEntityModel>
           </d2p1:SerializeChildrens>
+          <d2p1:isDisabled>false</d2p1:isDisabled>
           <d2p1:isStatic>false</d2p1:isStatic>
           <d2p1:isVisible>true</d2p1:isVisible>
           <d2p1:name>header</d2p1:name>
@@ -510,6 +521,7 @@
         </d2p1:BaseEntityModel>
         <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
           <d2p1:SerializeChildrens />
+          <d2p1:isDisabled>false</d2p1:isDisabled>
           <d2p1:isStatic>false</d2p1:isStatic>
           <d2p1:isVisible>true</d2p1:isVisible>
           <d2p1:name>backgroundEntity</d2p1:name>
@@ -572,6 +584,7 @@
           </d2p1:SerializeComponents>
         </d2p1:BaseEntityModel>
       </d2p1:SerializeChildrens>
+      <d2p1:isDisabled>false</d2p1:isDisabled>
       <d2p1:isStatic>false</d2p1:isStatic>
       <d2p1:isVisible>true</d2p1:isVisible>
       <d2p1:name>menuEntity</d2p1:name>
