@@ -6,6 +6,8 @@ using WaveEngine.Common.Input;
 using WaveEngine.Components.Toolkit;
 using WaveEngine.Framework;
 using WaveEngine.Framework.Services;
+using WaveEngine.Components.GameActions;
+using System;
 #endregion
 
 namespace SuperSlingshot.Scenes
@@ -55,8 +57,20 @@ namespace SuperSlingshot.Scenes
             // Score
             var score = this.EntityManager.Find(GameConstants.ENTITYSCORETEXT);
             var gems = this.EntityManager.Find(GameConstants.ENTITYGEMSTEXT);
-            score.FindComponent<TextComponent>().Text = this.score.Points.ToString();
-            gems.FindComponent<TextComponent>().Text = this.score.Gems.ToString();
+            var scoreComponent = score.FindComponent<TextComponent>();
+            var gemsComponent = gems.FindComponent<TextComponent>();
+
+            this.CreateParallelGameActions(
+                new FloatAnimationGameAction(score, 0.0f, this.score.Points, TimeSpan.FromSeconds(2f), EaseFunction.None, (f) =>
+                {
+                    scoreComponent.Text = Math.Round(f).ToString();
+                }),
+                new FloatAnimationGameAction(gems, 0.0f, this.score.Gems, TimeSpan.FromSeconds(2f), EaseFunction.None, (f) =>
+                {
+                    gemsComponent.Text = Math.Round(f).ToString();
+                }))
+                .WaitAll()
+                .Run();
 
             // Rating
             var rating = this.EntityManager.Find(GameConstants.ENTITYRATINGSCORE);

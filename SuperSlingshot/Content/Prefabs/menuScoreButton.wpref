@@ -87,9 +87,9 @@
               <d7p1:Z>0</d7p1:Z>
             </d6p1:LocalOrientation>
             <d6p1:LocalPosition xmlns:d7p1="WaveEngine.Common.Math">
-              <d7p1:X>-60.0001068</d7p1:X>
+              <d7p1:X>-60.0001</d7p1:X>
               <d7p1:Y>99.9999542</d7p1:Y>
-              <d7p1:Z>-0.09999996</d7p1:Z>
+              <d7p1:Z>-0.09999995</d7p1:Z>
             </d6p1:LocalPosition>
             <d6p1:LocalScale xmlns:d7p1="WaveEngine.Common.Math">
               <d7p1:X>0.3125</d7p1:X>

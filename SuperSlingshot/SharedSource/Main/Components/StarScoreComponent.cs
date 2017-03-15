@@ -1,6 +1,11 @@
 ﻿using System.Runtime.Serialization;
 using SuperSlingshot.Enums;
 using WaveEngine.Framework;
+using WaveEngine.Components.GameActions;
+using System;
+using WaveEngine.Common.Math;
+using WaveEngine.Framework.Services;
+using WaveEngine.Framework.Graphics;
 
 namespace SuperSlingshot.Components
 {
@@ -77,20 +82,67 @@ namespace SuperSlingshot.Components
 
         private void SetStates(SwitchEnum star1, SwitchEnum star2, SwitchEnum star3)
         {
+            float delay = 0;
+            float delta = 0.5f;
+
+            IGameAction animations = null;
+
+            if (this.Owner != null && this.Owner.Scene != null)
+            {
+                animations = this.Owner.Scene.CreateEmptyGameAction();
+            }
+
             if (this.star1Component != null)
             {
                 this.star1Component.State = star1;
+
+                if (star1 == SwitchEnum.ON)
+                {
+                    delay += delta;
+                    animations.ContinueWith(this.CreateStarAnimation(this.star1Component.Owner, delay));
+                }
             }
 
             if (this.star2Component != null)
             {
                 this.star2Component.State = star2;
+
+                if (star2 == SwitchEnum.ON)
+                {
+                    delay += delta;
+                    animations.ContinueWith(this.CreateStarAnimation(this.star2Component.Owner, delay));
+                }
             }
 
             if (this.star3Component != null)
             {
                 this.star3Component.State = star3;
+
+                if (star3 == SwitchEnum.ON)
+                {
+                    delay += delta;
+                    animations.ContinueWith(this.CreateStarAnimation(this.star3Component.Owner, delay));
+                }
             }
+
+            if (animations != null)
+            {
+                animations.Run();
+            }
+        }
+
+        private IGameAction CreateStarAnimation(Entity entity, float delayTime = 0)
+        {
+            return this.Owner.Scene.CreateGameActionFromAction(() =>
+            {
+                var transform = entity.FindComponent<Transform2D>();
+                if (transform != null)
+                {
+                    transform.Scale = Vector2.Zero;
+                }
+            })
+            .Delay(TimeSpan.FromSeconds(delayTime))
+            .ContinueWith(new ScaleTo2DGameAction(entity, Vector2.One, TimeSpan.FromSeconds(0.6f), EaseFunction.BounceOutEase, true));
         }
     }
 }

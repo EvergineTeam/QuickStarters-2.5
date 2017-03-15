@@ -5,12 +5,14 @@ using WaveEngine.Components.Gestures;
 using WaveEngine.Components.Graphics2D;
 using WaveEngine.Components.Toolkit;
 using WaveEngine.Framework;
+using WaveEngine.Framework.Graphics;
 
 namespace SuperSlingshot.Components
 {
     [DataContract]
     public class ButtonComponent : Component
     {
+        private Entity textEntity;
         private TextComponent childTextComponent;
         private ButtonState state;
 
@@ -49,10 +51,10 @@ namespace SuperSlingshot.Components
         {
             base.ResolveDependencies();
 
-            var textEntity = this.Owner.FindChild(GameConstants.ENTITYCHILDBUTTONTEXT);
-            if (textEntity != null)
+            this.textEntity = this.Owner.FindChild(GameConstants.ENTITYCHILDBUTTONTEXT);
+            if (this.textEntity != null)
             {
-                this.childTextComponent = textEntity.FindComponent<TextComponent>();
+                this.childTextComponent = this.textEntity.FindComponent<TextComponent>();
                 if (childTextComponent != null)
                 {
                     this.childTextComponent.Text = this.Text;
@@ -81,6 +83,8 @@ namespace SuperSlingshot.Components
 
             if (!this.IsBlocked)
             {
+                this.textEntity.FindComponent<Transform2D>().Opacity = 1.0f;
+
                 switch (this.state)
                 {
                     case ButtonState.Release:
@@ -103,6 +107,7 @@ namespace SuperSlingshot.Components
             else
             {
                 this.sprite.TexturePath = this.BlockedButtonPath;
+                this.textEntity.FindComponent<Transform2D>().Opacity = 0.0f;
             }
         }
     }
