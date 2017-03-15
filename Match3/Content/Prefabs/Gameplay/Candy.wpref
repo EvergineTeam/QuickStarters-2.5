@@ -63,7 +63,7 @@
             <d6p1:SamplerMode>LinearClamp</d6p1:SamplerMode>
           </d5p1:Component>
           <d5p1:Component xmlns:d6p1="WaveEngine.Components.Animation" i:type="d6p1:Animation2D">
-            <d5p1:IsActive>false</d5p1:IsActive>
+            <d5p1:IsActive>true</d5p1:IsActive>
             <d5p1:UpdateOrder>0.5</d5p1:UpdateOrder>
             <d6p1:CurrentAnimation>ExplosionBlue</d6p1:CurrentAnimation>
             <d6p1:PlayAutomatically>false</d6p1:PlayAutomatically>

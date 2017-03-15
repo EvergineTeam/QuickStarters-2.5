@@ -20,6 +20,9 @@ namespace Match3.Components.Gameplay
         [RequiredComponent]
         protected TouchGestures touchGestures;
 
+        [RequiredComponent]
+        protected CandyAnimationBehavior animator;
+
         private Vector2 initialCandyPosition;
 
         private Vector2 initialTouchPosition;
@@ -57,6 +60,10 @@ namespace Match3.Components.Gameplay
             {
                 this.OnMoveOperation?.Invoke(this, this.detectedMove.Value);
                 this.detectedMove = null;
+            }
+            else
+            {
+                this.animator.RefreshPositionAnimation();
             }
 
             this.UpdateCandyPosition(e.GestureSample.Position);

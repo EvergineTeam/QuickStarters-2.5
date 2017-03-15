@@ -6,28 +6,18 @@ namespace Match3.Components.Gameplay
 {
     public class CandyAttributesComponent : Component
     {
-        private Coordinate coordinate;
-
-        public Coordinate Coordinate
+        public CandyAnimationBehavior Animator
         {
             get
             {
-                return this.coordinate;
-            }
-
-            set
-            {
-                if (this.coordinate != value)
-                {
-                    this.coordinate = value;
-
-                    this.OnCoordinateChanged?.Invoke(this, this.coordinate);
-                }
+                return this.Owner?.FindComponent<CandyAnimationBehavior>();
             }
         }
 
-        public bool IsAnimating { get; set; }
+        public Coordinate Coordinate { get; set; }
+        
+        public CandyTypes Type { get; set; }
 
-        public EventHandler<Coordinate> OnCoordinateChanged;
+        public CandyColors Color { get; set; }
     }
 }

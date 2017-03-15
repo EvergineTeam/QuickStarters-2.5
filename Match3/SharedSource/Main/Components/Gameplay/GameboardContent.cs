@@ -79,10 +79,10 @@ namespace Match3.Components.Gameplay
             }
         }
 
-        public void AddCandyEntity(Coordinate coord, Candy properties)
+        public CandyAttributesComponent AddCandyEntity(Coordinate coord, Candy properties)
         {
             Vector2 position = this.gameLogic.CalculateCandyPostion(coord);
-            
+
             var candyEntity = GameplayFactory.CreateCandy(this.Owner.Scene, position, properties.Type, properties.Color);
             candyEntity.Name += "_" + this.candyCounter;
             var candyTouch = new CandyTouchComponent();
@@ -96,12 +96,14 @@ namespace Match3.Components.Gameplay
             this.candyCounter++;
 
             this.currentCandies.Add(candyAttributes);
+
+            return candyAttributes;
         }
 
         public void RemoveCandyEntity(Coordinate coord)
         {
             Debug.WriteLine("Remove {0}", coord);
-            
+
             var candyAttributes = this.FindCandyAttributes(coord);
             this.currentCandies.Remove(candyAttributes);
             this.Owner.RemoveChild(candyAttributes.Owner.Name);
@@ -114,7 +116,7 @@ namespace Match3.Components.Gameplay
 
         public bool IsAnimating()
         {
-            return this.currentCandies.Any(c => c.IsAnimating);
+            return this.currentCandies.Any(c => c.Animator.IsAnimating);
         }
 
         private void CandyTouch_OnMoveOperation(object sender, CandyMoves move)
@@ -126,14 +128,19 @@ namespace Match3.Components.Gameplay
             Debug.WriteLine("Move [{0},{1}] {2}!", coordinate.X, coordinate.Y, move);
             var boardOperations = this.gameLogic.Move(coordinate, move);
 
-            if(boardOperations.Any())
+            if (boardOperations.Any())
             {
                 var destCoord = coordinate.Calculate(move);
                 var destCandyAttribute = this.FindCandyAttributes(destCoord);
-                destCandyAttribute.Coordinate = coordinate;                
+                destCandyAttribute.Coordinate = coordinate;
                 candyAttributes.Coordinate = destCoord;
+                destCandyAttribute.Animator.RefreshPositionAnimation();
 
                 this.OnBoardOperation?.Invoke(this, boardOperations);
+            }
+            else
+            {
+                candyAttributes.Animator.RefreshPositionAnimation();
             }
         }
     }

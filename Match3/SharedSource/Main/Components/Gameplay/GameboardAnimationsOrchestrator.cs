@@ -16,7 +16,7 @@ namespace Match3.Components.Gameplay
         [RequiredComponent]
         protected GameboardContent gameboardContent;
 
-        private Queue<BoardOperation> pendingOperations;
+        private Queue<Action> pendingOperations;
 
         [DontRenderProperty]
         public bool IsAnimationInProgress
@@ -31,7 +31,7 @@ namespace Match3.Components.Gameplay
         {
             base.DefaultValues();
 
-            this.pendingOperations = new Queue<BoardOperation>();
+            this.pendingOperations = new Queue<Action>();
         }
 
         protected override void ResolveDependencies()
@@ -48,14 +48,9 @@ namespace Match3.Components.Gameplay
                 throw new InvalidOperationException("Previous operation must be finished before a new one start");
             }
 
-            this.EnqueueOperations(boardOperations);
-        }
-
-        private void EnqueueOperations(BoardOperation[] boardOperations)
-        {
             foreach (var boardOp in boardOperations)
             {
-                this.pendingOperations.Enqueue(boardOp);
+                this.ProccessOperation(boardOp);
             }
         }
 
@@ -63,26 +58,50 @@ namespace Match3.Components.Gameplay
         {
             if (boardOp.Type == Board.OperationTypes.Remove)
             {
-                foreach (var candyOp in boardOp.CandyOperations)
+                this.pendingOperations.Enqueue(() =>
                 {
-                    this.gameboardContent.RemoveCandyEntity(candyOp.PreviousPosition);
-                }
+                    foreach (var candyOp in boardOp.CandyOperations)
+                    {
+                        var candyAttr = this.gameboardContent.FindCandyAttributes(candyOp.PreviousPosition);
+                        candyAttr.Animator.SetDisappearAnimation();
+                    }
+                });
+
+                this.pendingOperations.Enqueue(() =>
+                {
+                    foreach (var candyOp in boardOp.CandyOperations)
+                    {
+                        this.gameboardContent.RemoveCandyEntity(candyOp.PreviousPosition);
+                    }
+                });
             }
             else if (boardOp.Type == Board.OperationTypes.Add)
             {
-                foreach (var candyOp in boardOp.CandyOperations)
+                this.pendingOperations.Enqueue(() =>
                 {
-                    this.gameboardContent.AddCandyEntity(candyOp.PreviousPosition, candyOp.CandyProperties.Value);
-                }
+                    foreach (var candyOp in boardOp.CandyOperations)
+                    {
+                        var candyAttr = this.gameboardContent.AddCandyEntity(candyOp.PreviousPosition, candyOp.CandyProperties.Value);
+
+                        if (candyOp.PreviousPosition.Y >= 0)
+                        {
+                            candyAttr.Animator.SetAppearAnimation();
+                        }
+                    }
+                });
             }
 
             if (boardOp.Type != OperationTypes.Remove)
             {
-                foreach (var candyOp in boardOp.CandyOperations)
+                this.pendingOperations.Enqueue(() =>
                 {
-                    var candyAttr = this.gameboardContent.FindCandyAttributes(candyOp.PreviousPosition);
-                    candyAttr.Coordinate = candyOp.CurrentPosition;
-                }
+                    foreach (var candyOp in boardOp.CandyOperations)
+                    {
+                        var candyAttr = this.gameboardContent.FindCandyAttributes(candyOp.PreviousPosition);
+                        candyAttr.Coordinate = candyOp.CurrentPosition;
+                        candyAttr.Animator.RefreshPositionAnimation();
+                    }
+                });
             }
         }
 
@@ -92,7 +111,7 @@ namespace Match3.Components.Gameplay
                 !this.gameboardContent.IsAnimating())
             {
                 var nextOperation = this.pendingOperations.Dequeue();
-                this.ProccessOperation(nextOperation);
+                nextOperation();
             }
         }
     }
