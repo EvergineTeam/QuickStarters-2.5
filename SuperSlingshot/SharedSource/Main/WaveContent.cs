@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// File generated on 15/03/2017 16:40:25
+// File generated on 15/03/2017 17:36:39
 namespace SuperSlingshot
 {
     using System;
@@ -381,6 +381,18 @@ namespace SuperSlingshot
                 
                 /// <summary> Path to Content/Assets/Gui/next_small_button_normal.png </summary>
                 public const string next_small_button_normal_png = "Content/Assets/Gui/next_small_button_normal.png";
+                
+                /// <summary> Path to Content/Assets/Gui/pause_small_button_blocked.png </summary>
+                public const string pause_small_button_blocked_png = "Content/Assets/Gui/pause_small_button_blocked.png";
+                
+                /// <summary> Path to Content/Assets/Gui/pause_small_button_click.png </summary>
+                public const string pause_small_button_click_png = "Content/Assets/Gui/pause_small_button_click.png";
+                
+                /// <summary> Path to Content/Assets/Gui/pause_small_button_hover.png </summary>
+                public const string pause_small_button_hover_png = "Content/Assets/Gui/pause_small_button_hover.png";
+                
+                /// <summary> Path to Content/Assets/Gui/pause_small_button_normal.png </summary>
+                public const string pause_small_button_normal_png = "Content/Assets/Gui/pause_small_button_normal.png";
                 
                 /// <summary> Path to Content/Assets/Gui/play_small_button_blocked.png </summary>
                 public const string play_small_button_blocked_png = "Content/Assets/Gui/play_small_button_blocked.png";

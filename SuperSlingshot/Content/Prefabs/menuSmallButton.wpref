@@ -62,7 +62,7 @@
               <d7p1:X>1</d7p1:X>
               <d7p1:Y>1</d7p1:Y>
             </d6p1:scale>
-            <d6p1:text></d6p1:text>
+            <d6p1:text i:nil="true" />
             <d6p1:textAlignment>Left</d6p1:textAlignment>
             <d6p1:textWrapping>false</d6p1:textWrapping>
             <d6p1:width>300</d6p1:width>

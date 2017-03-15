@@ -117,7 +117,7 @@
                       <d10p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#LocalPosition</d10p1:Key>
                       <d10p1:Value xmlns:d12p1="WaveEngine.Common.Math" i:type="d12p1:Vector3">
                         <d12p1:X>5</d12p1:X>
-                        <d12p1:Y>2</d12p1:Y>
+                        <d12p1:Y>-7</d12p1:Y>
                         <d12p1:Z>-0.100000381</d12p1:Z>
                       </d10p1:Value>
                     </d10p1:KeyValueOfstringanyType>
@@ -185,7 +185,7 @@
                       <d10p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#LocalPosition</d10p1:Key>
                       <d10p1:Value xmlns:d12p1="WaveEngine.Common.Math" i:type="d12p1:Vector3">
                         <d12p1:X>8</d12p1:X>
-                        <d12p1:Y>2</d12p1:Y>
+                        <d12p1:Y>-7</d12p1:Y>
                         <d12p1:Z>-0.100000381</d12p1:Z>
                       </d10p1:Value>
                     </d10p1:KeyValueOfstringanyType>
@@ -253,7 +253,7 @@
                       <d10p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#LocalPosition</d10p1:Key>
                       <d10p1:Value xmlns:d12p1="WaveEngine.Common.Math" i:type="d12p1:Vector3">
                         <d12p1:X>6</d12p1:X>
-                        <d12p1:Y>2.00000763</d12p1:Y>
+                        <d12p1:Y>-7</d12p1:Y>
                         <d12p1:Z>-0.100000381</d12p1:Z>
                       </d10p1:Value>
                     </d10p1:KeyValueOfstringanyType>

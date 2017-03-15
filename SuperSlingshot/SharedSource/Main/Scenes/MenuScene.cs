@@ -10,6 +10,9 @@ namespace SuperSlingshot.Scenes
     {
         private GamePlayManager gamePlayManager;
         private NavigationManager navigationManager;
+        private ButtonComponent resumeComponent;
+        private ButtonComponent restartComponent;
+        private ButtonComponent exitComponent;
 
         protected override void CreateScene()
         {
@@ -18,18 +21,27 @@ namespace SuperSlingshot.Scenes
             this.gamePlayManager = WaveServices.GetService<GamePlayManager>();
             this.navigationManager = WaveServices.GetService<NavigationManager>();
 
-            var resumeButton = this.EntityManager.Find(GameConstants.ENTITYMENURESUME);
-            var restartButton = this.EntityManager.Find(GameConstants.ENTITYMENURESTART);
-            var exitButton = this.EntityManager.Find(GameConstants.ENTITYMENUEXIT);
+            this.resumeComponent = this.EntityManager.Find(GameConstants.ENTITYMENURESUME).FindComponent<ButtonComponent>();
+            this.restartComponent = this.EntityManager.Find(GameConstants.ENTITYMENURESTART).FindComponent<ButtonComponent>();
+            this.exitComponent = this.EntityManager.Find(GameConstants.ENTITYMENUEXIT).FindComponent<ButtonComponent>();
 
-            resumeButton.FindComponent<ButtonComponent>().StateChanged += this.ResumeButtonStateChanged;
-            restartButton.FindComponent<ButtonComponent>().StateChanged += this.RestartButtonStateChanged;
-            exitButton.FindComponent<ButtonComponent>().StateChanged += this.ExitButtonStateChanged;
+            this.resumeComponent.StateChanged += this.ResumeButtonStateChanged;
+            this.restartComponent.StateChanged += this.RestartButtonStateChanged;
+            this.exitComponent.StateChanged += this.ExitButtonStateChanged;
         }
 
         protected override void Start()
         {
             base.Start();
+        }
+
+        protected override void End()
+        {
+            base.End();
+
+            this.resumeComponent.StateChanged -= this.ResumeButtonStateChanged;
+            this.restartComponent.StateChanged -= this.RestartButtonStateChanged;
+            this.exitComponent.StateChanged -= this.ExitButtonStateChanged;
         }
 
         private void ResumeButtonStateChanged(object sender, ButtonState currentState, ButtonState lastState)

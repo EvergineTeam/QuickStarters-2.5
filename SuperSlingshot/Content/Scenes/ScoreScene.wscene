@@ -610,6 +610,14 @@
                   </d8p1:Value>
                 </d8p1:KeyValueOfstringanyType>
                 <d8p1:KeyValueOfstringanyType>
+                  <d8p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#LocalScale</d8p1:Key>
+                  <d8p1:Value xmlns:d10p1="WaveEngine.Common.Math" i:type="d10p1:Vector3">
+                    <d10p1:X>0</d10p1:X>
+                    <d10p1:Y>0</d10p1:Y>
+                    <d10p1:Z>1</d10p1:Z>
+                  </d8p1:Value>
+                </d8p1:KeyValueOfstringanyType>
+                <d8p1:KeyValueOfstringanyType>
                   <d8p1:Key>WaveEngine.Components.Graphics2D.Sprite#0#materialPath</d8p1:Key>
                   <d8p1:Value i:nil="true" />
                 </d8p1:KeyValueOfstringanyType>
@@ -686,6 +694,14 @@
                   </d8p1:Value>
                 </d8p1:KeyValueOfstringanyType>
                 <d8p1:KeyValueOfstringanyType>
+                  <d8p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#LocalScale</d8p1:Key>
+                  <d8p1:Value xmlns:d10p1="WaveEngine.Common.Math" i:type="d10p1:Vector3">
+                    <d10p1:X>0</d10p1:X>
+                    <d10p1:Y>0</d10p1:Y>
+                    <d10p1:Z>1</d10p1:Z>
+                  </d8p1:Value>
+                </d8p1:KeyValueOfstringanyType>
+                <d8p1:KeyValueOfstringanyType>
                   <d8p1:Key>WaveEngine.Components.Graphics2D.Sprite#0#materialPath</d8p1:Key>
                   <d8p1:Value i:nil="true" />
                 </d8p1:KeyValueOfstringanyType>
@@ -742,6 +758,14 @@
                     <d10p1:X>6.7949295E-06</d10p1:X>
                     <d10p1:Y>-2.38418579E-06</d10p1:Y>
                     <d10p1:Z>-3</d10p1:Z>
+                  </d8p1:Value>
+                </d8p1:KeyValueOfstringanyType>
+                <d8p1:KeyValueOfstringanyType>
+                  <d8p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#LocalScale</d8p1:Key>
+                  <d8p1:Value xmlns:d10p1="WaveEngine.Common.Math" i:type="d10p1:Vector3">
+                    <d10p1:X>0</d10p1:X>
+                    <d10p1:Y>0</d10p1:Y>
+                    <d10p1:Z>1</d10p1:Z>
                   </d8p1:Value>
                 </d8p1:KeyValueOfstringanyType>
                 <d8p1:KeyValueOfstringanyType>

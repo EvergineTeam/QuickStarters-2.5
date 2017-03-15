@@ -469,7 +469,12 @@
                   <d2p1:PrefabId>38d41eaf-ca44-4d07-bb2f-67190211348e</d2p1:PrefabId>
                   <d2p1:PrefabPath>Content/Prefabs/menuScoreButton.wpref</d2p1:PrefabPath>
                   <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
-                  <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+                  <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+                    <d10p1:KeyValueOfstringanyType>
+                      <d10p1:Key>WaveEngine.Components.Toolkit.TextComponent#0#text</d10p1:Key>
+                      <d10p1:Value xmlns:d12p1="http://www.w3.org/2001/XMLSchema" i:type="d12p1:string">1</d10p1:Value>
+                    </d10p1:KeyValueOfstringanyType>
+                  </d2p1:modifiedProperties>
                 </d2p1:BaseEntityModel>
               </d2p1:SerializeChildrens>
               <d2p1:isDisabled>false</d2p1:isDisabled>
@@ -644,7 +649,12 @@
                   <d2p1:PrefabId>38d41eaf-ca44-4d07-bb2f-67190211348e</d2p1:PrefabId>
                   <d2p1:PrefabPath>Content/Prefabs/menuScoreButton.wpref</d2p1:PrefabPath>
                   <d2p1:RemovedComponents xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
-                  <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+                  <d2p1:modifiedProperties xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+                    <d10p1:KeyValueOfstringanyType>
+                      <d10p1:Key>WaveEngine.Components.Toolkit.TextComponent#0#text</d10p1:Key>
+                      <d10p1:Value xmlns:d12p1="http://www.w3.org/2001/XMLSchema" i:type="d12p1:string">2</d10p1:Value>
+                    </d10p1:KeyValueOfstringanyType>
+                  </d2p1:modifiedProperties>
                 </d2p1:BaseEntityModel>
               </d2p1:SerializeChildrens>
               <d2p1:isDisabled>false</d2p1:isDisabled>

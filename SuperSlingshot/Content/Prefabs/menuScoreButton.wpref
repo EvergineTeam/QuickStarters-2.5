@@ -25,8 +25,8 @@
                   <d9p1:Z>-0.1</d9p1:Z>
                 </d8p1:LocalPosition>
                 <d8p1:LocalScale xmlns:d9p1="WaveEngine.Common.Math">
-                  <d9p1:X>1</d9p1:X>
-                  <d9p1:Y>1</d9p1:Y>
+                  <d9p1:X>0</d9p1:X>
+                  <d9p1:Y>0</d9p1:Y>
                   <d9p1:Z>1</d9p1:Z>
                 </d8p1:LocalScale>
                 <d8p1:Effect>None</d8p1:Effect>
@@ -157,8 +157,8 @@
                   <d9p1:Z>-0.1</d9p1:Z>
                 </d8p1:LocalPosition>
                 <d8p1:LocalScale xmlns:d9p1="WaveEngine.Common.Math">
-                  <d9p1:X>1</d9p1:X>
-                  <d9p1:Y>1</d9p1:Y>
+                  <d9p1:X>0</d9p1:X>
+                  <d9p1:Y>0</d9p1:Y>
                   <d9p1:Z>1</d9p1:Z>
                 </d8p1:LocalScale>
                 <d8p1:Effect>None</d8p1:Effect>
@@ -289,8 +289,8 @@
                   <d9p1:Z>-0.1</d9p1:Z>
                 </d8p1:LocalPosition>
                 <d8p1:LocalScale xmlns:d9p1="WaveEngine.Common.Math">
-                  <d9p1:X>1</d9p1:X>
-                  <d9p1:Y>1</d9p1:Y>
+                  <d9p1:X>0</d9p1:X>
+                  <d9p1:Y>0</d9p1:Y>
                   <d9p1:Z>1</d9p1:Z>
                 </d8p1:LocalScale>
                 <d8p1:Effect>None</d8p1:Effect>

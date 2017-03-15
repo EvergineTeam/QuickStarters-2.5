@@ -84,7 +84,7 @@ namespace SuperSlingshot.Components
             if (!this.IsBlocked)
             {
                 this.textEntity.FindComponent<Transform2D>().Opacity = 1.0f;
-
+                
                 switch (this.state)
                 {
                     case ButtonState.Release:
@@ -107,7 +107,6 @@ namespace SuperSlingshot.Components
             else
             {
                 this.sprite.TexturePath = this.BlockedButtonPath;
-                this.textEntity.FindComponent<Transform2D>().Opacity = 0.0f;
             }
         }
     }

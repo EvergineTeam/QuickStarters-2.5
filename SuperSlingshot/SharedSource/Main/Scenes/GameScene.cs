@@ -18,6 +18,7 @@ using System.Linq;
 using SuperSlingshot.Drawables;
 using WaveEngine.Components.Graphics3D;
 using WaveEngine.Components.GameActions;
+using WaveEngine.Common.Input;
 #endregion
 
 namespace SuperSlingshot.Scenes
@@ -28,6 +29,7 @@ namespace SuperSlingshot.Scenes
         private string boulderOrder;
         private Trajectory2DDrawable trajectoryDrawable;
         private ElasticBandsDrawable bandDrawable;
+        private ButtonComponent buttonComponent;
 
         public string Content { get; private set; }
 
@@ -75,6 +77,7 @@ namespace SuperSlingshot.Scenes
 
             this.InitializeScene();
             this.SetCameraBounds();
+            this.CreateGUI();
             this.CreatePhysicScene();
             this.CreateCratesScene();
             this.GetLevelProperties();
@@ -91,6 +94,46 @@ namespace SuperSlingshot.Scenes
 
             // TODO: Workaround, remove when fixed (do not stored LocalDrawOrder of layers in WaveEditor)
             this.EntityManager.Find(GameConstants.ENTITYTILEDMAP).FindChild(GameConstants.LAYERMIDDLE).FindComponent<Transform2D>().LocalDrawOrder = 0;
+        }
+
+        private void CreateGUI()
+        {
+            var entity = this.EntityManager.Instantiate(WaveContent.Prefabs.menuSmallButton);
+            this.buttonComponent = entity.FindComponent<ButtonComponent>();
+            this.buttonComponent.NormalButtonPath = WaveContent.Assets.Gui.pause_small_button_normal_png;
+            this.buttonComponent.HoverButtonPath = WaveContent.Assets.Gui.pause_small_button_hover_png;
+            this.buttonComponent.PressedButtonPath = WaveContent.Assets.Gui.pause_small_button_click_png;
+            this.buttonComponent.BlockedButtonPath = WaveContent.Assets.Gui.play_small_button_blocked_png;
+
+            entity.EntityInitialized += (s, o) =>
+            {
+                var transform = entity.FindComponent<Transform2D>();
+                transform.Scale = Vector2.One * 0.5f;
+                transform.TranformMode = Transform2D.TransformMode.Screen;
+                transform.ScreenPosition = new Vector2(0.95f, 0.07f);
+
+                this.buttonComponent.StateChanged += this.PauseButtonStateChanged;
+            };
+
+            this.EntityManager.Add(entity);
+        }
+
+        private void PauseButtonStateChanged(object sender, WaveEngine.Common.Input.ButtonState currentState, WaveEngine.Common.Input.ButtonState lastState)
+        {
+            if (currentState == ButtonState.Release && lastState == ButtonState.Pressed)
+            {
+                var manager = WaveServices.GetService<GamePlayManager>();
+                if (!manager.IsPaused)
+                {
+                    manager.PauseGame();
+                }
+            }
+        }
+
+        protected override void End()
+        {
+            base.End();
+            buttonComponent.StateChanged -= this.PauseButtonStateChanged;
         }
 
         private void InitializeScene()
@@ -178,7 +221,7 @@ namespace SuperSlingshot.Scenes
             this.EntityManager.Add(boulder);
             var playerComponent = boulder.FindComponent<PlayerComponent>();
             var transform = boulder.FindComponent<Transform2D>();
-            
+
             this.CreateGameActionFromAction(() =>
             {
                 transform.Opacity = 0;
