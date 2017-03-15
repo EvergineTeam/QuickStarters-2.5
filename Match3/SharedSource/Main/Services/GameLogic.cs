@@ -88,6 +88,7 @@ namespace Match3.Services
 
         public void InitializeLevel()
         {
+            this.CurrentScore = 0;
             this.currentBoard = new Board(6, 6);
         }
 

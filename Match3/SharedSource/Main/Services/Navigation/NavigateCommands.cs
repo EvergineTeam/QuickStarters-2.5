@@ -11,5 +11,6 @@
         ChooseLevel,
         NextLevel,
         ReturnMainMenu,
+        ResetLevel,
     }
 }
