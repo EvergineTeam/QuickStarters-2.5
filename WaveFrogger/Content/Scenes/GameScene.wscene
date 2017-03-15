@@ -3,6 +3,7 @@
   <Entities xmlns:d2p1="WaveEngine.Framework.Models.Entities">
     <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
       <d2p1:SerializeChildrens />
+      <d2p1:isDisabled>false</d2p1:isDisabled>
       <d2p1:isStatic>false</d2p1:isStatic>
       <d2p1:isVisible>true</d2p1:isVisible>
       <d2p1:name>defaultCamera3D</d2p1:name>
@@ -86,6 +87,7 @@
     </d2p1:BaseEntityModel>
     <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
       <d2p1:SerializeChildrens />
+      <d2p1:isDisabled>false</d2p1:isDisabled>
       <d2p1:isStatic>false</d2p1:isStatic>
       <d2p1:isVisible>true</d2p1:isVisible>
       <d2p1:name>defaultLight</d2p1:name>
@@ -117,6 +119,7 @@
             <d6p1:R>255</d6p1:R>
           </d5p1:Color>
           <d5p1:Intensity>1</d5p1:Intensity>
+          <d5p1:IsLightEnabled>true</d5p1:IsLightEnabled>
         </d4p1:Component>
         <d4p1:Component xmlns:d5p1="WaveEngine.Framework.Graphics" i:type="d5p1:DirectionalLightRenderer">
           <d4p1:IsVisible>true</d4p1:IsVisible>
@@ -126,6 +129,7 @@
     </d2p1:BaseEntityModel>
     <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
       <d2p1:SerializeChildrens />
+      <d2p1:isDisabled>false</d2p1:isDisabled>
       <d2p1:isStatic>false</d2p1:isStatic>
       <d2p1:isVisible>true</d2p1:isVisible>
       <d2p1:name>defaultCamera2D</d2p1:name>
@@ -209,6 +213,7 @@
     </d2p1:BaseEntityModel>
     <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
       <d2p1:SerializeChildrens />
+      <d2p1:isDisabled>false</d2p1:isDisabled>
       <d2p1:isStatic>false</d2p1:isStatic>
       <d2p1:isVisible>true</d2p1:isVisible>
       <d2p1:name>player</d2p1:name>
@@ -276,6 +281,7 @@
     </d2p1:BaseEntityModel>
     <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
       <d2p1:SerializeChildrens />
+      <d2p1:isDisabled>false</d2p1:isDisabled>
       <d2p1:isStatic>false</d2p1:isStatic>
       <d2p1:isVisible>true</d2p1:isVisible>
       <d2p1:name>GameController</d2p1:name>
@@ -318,6 +324,7 @@
       <d2p1:SerializeChildrens>
         <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
           <d2p1:SerializeChildrens />
+          <d2p1:isDisabled>false</d2p1:isDisabled>
           <d2p1:isStatic>false</d2p1:isStatic>
           <d2p1:isVisible>true</d2p1:isVisible>
           <d2p1:name>currentscore</d2p1:name>
@@ -332,7 +339,7 @@
               </d7p1:LocalOrientation>
               <d7p1:LocalPosition xmlns:d8p1="WaveEngine.Common.Math">
                 <d8p1:X>0</d8p1:X>
-                <d8p1:Y>-481.3</d8p1:Y>
+                <d8p1:Y>-328.5</d8p1:Y>
                 <d8p1:Z>0</d8p1:Z>
               </d7p1:LocalPosition>
               <d7p1:LocalScale xmlns:d8p1="WaveEngine.Common.Math">
@@ -389,6 +396,7 @@
           </d2p1:SerializeComponents>
         </d2p1:BaseEntityModel>
       </d2p1:SerializeChildrens>
+      <d2p1:isDisabled>false</d2p1:isDisabled>
       <d2p1:isStatic>false</d2p1:isStatic>
       <d2p1:isVisible>true</d2p1:isVisible>
       <d2p1:name>GUI</d2p1:name>
@@ -432,6 +440,7 @@
       </d2p1:SerializeComponents>
     </d2p1:BaseEntityModel>
   </Entities>
+  <EntityPointers xmlns:d2p1="http://schemas.datacontract.org/2004/07/WaveEngine.Framework.Models.Entities" />
   <Settings xmlns:d2p1="WaveEngine.Framework.Models.Settings">
     <d2p1:Categories xmlns:d3p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
       <d3p1:KeyValueOfstringanyType>

@@ -6,9 +6,9 @@
     <ProjectTypeGuids>{A3F8F2AB-B479-4A4A-A458-A89E7DC349F1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <ProjectGuid>{F3CC4527-43AF-41CB-94C1-BFF310D5726A}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>OrbitRabbits</RootNamespace>
+    <RootNamespace>WaveFrogger</RootNamespace>
     <MonoMacResourcePrefix>Resources</MonoMacResourcePrefix>
-    <AssemblyName>OrbitRabbits</AssemblyName>
+    <AssemblyName>WaveFrogger</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <UseXamMacFullFramework>true</UseXamMacFullFramework>
     <ProductVersion>8.0.30703</ProductVersion>
@@ -19,7 +19,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug</OutputPath>
-    <DefineConstants>DEBUG;</DefineConstants>
+    <DefineConstants>__UNIFIED__;DEBUG; MAC;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
@@ -34,9 +34,11 @@
     <XamMacArch>x86_64</XamMacArch>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>full</DebugType>
+    <DebugType>
+    </DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release</OutputPath>
+    <DefineConstants>__UNIFIED__; MAC;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
@@ -112,7 +114,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\Icon.icns" />
   </ItemGroup>
-  <Import Project="..\..\SharedSource\Main\OrbitRabbitsSource.projitems" Label="Shared" Condition="Exists('..\..\SharedSource\Main\OrbitRabbitsSource.projitems')" />
+  <Import Project="..\..\SharedSource\Main\WaveFroggerSource.projitems" Label="Shared" Condition="Exists('..\..\SharedSource\Main\WaveFroggerSource.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
   <Import Project="..\..\packages\WaveEngine.2.3.1-alpha-20170314-461\build\Xamarin.Mac\WaveEngine.targets" Condition="Exists('..\..\packages\WaveEngine.2.3.1-alpha-20170314-461\build\Xamarin.Mac\WaveEngine.targets')" />
   <Import Project="..\..\packages\WaveEngine.Box2D.2.3.1-alpha-20170314-461\build\Xamarin.Mac\WaveEngine.Box2D.targets" Condition="Exists('..\..\packages\WaveEngine.Box2D.2.3.1-alpha-20170314-461\build\Xamarin.Mac\WaveEngine.Box2D.targets')" />
