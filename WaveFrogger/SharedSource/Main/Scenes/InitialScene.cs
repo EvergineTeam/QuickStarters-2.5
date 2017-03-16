@@ -59,15 +59,21 @@ namespace WaveFrogger.Scenes
                 var animationService = WaveServices.GetService<AnimationService>();
                 animationService.CreatePulseAnimation(this.loadingEntity, 1000).Run();
 
-                WaveServices.TaskScheduler.CreateTask(() =>
-                {
+				#if MAC               	
                     gameScene = new GameScene();
-                    gameScene.Initialize(WaveServices.GraphicsDevice);
-                })
-                .ContinueWith(() =>
-                {
-                    WaveServices.ScreenContextManager.To(new ScreenContext(gameScene), transition);
-                });
+                    gameScene.Initialize(WaveServices.GraphicsDevice);                
+                    WaveServices.ScreenContextManager.To(new ScreenContext(gameScene), transition);                
+				#else
+				WaveServices.TaskScheduler.CreateTask(() =>
+				{
+					gameScene = new GameScene();
+					gameScene.Initialize(WaveServices.GraphicsDevice);
+				})
+				.ContinueWith(() =>
+				{
+					WaveServices.ScreenContextManager.To(new ScreenContext(gameScene), transition);
+				});
+				#endif
             }
         }
 
