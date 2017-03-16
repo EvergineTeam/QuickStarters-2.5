@@ -110,16 +110,23 @@ namespace Match3.Components.LevelSelection
 
             this.touchGestures.TouchTap -= this.TouchGestures_TouchTap;
             this.touchGestures.TouchTap += this.TouchGestures_TouchTap;
+
+            this.Owner.Scene.Resumed += this.SceneResumed;
         }
 
         protected override void Initialize()
         {
             base.Initialize();
 
-            this.IsUnlocked = CustomServices.GameLogic.IsLevelUnlocked(this.LevelIndex);
-            this.StarsCount = CustomServices.GameLogic.StarsInLevel(this.LevelIndex);
+            this.SceneResumed(null, EventArgs.Empty);
 
             this.RefreshVisualState();
+        }
+
+        private void SceneResumed(object sender, EventArgs e)
+        {
+            this.IsUnlocked = CustomServices.GameLogic.IsLevelUnlocked(this.LevelIndex);
+            this.StarsCount = CustomServices.GameLogic.StarsInLevel(this.LevelIndex);
         }
 
         protected override void DeleteDependencies()
@@ -138,6 +145,7 @@ namespace Match3.Components.LevelSelection
         {
             if (this.touchGestures != null)
             {
+                this.Owner.Scene.Resumed -= this.SceneResumed;
                 this.touchGestures.TouchTap -= this.TouchGestures_TouchTap;
             }
         }

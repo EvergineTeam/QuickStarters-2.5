@@ -1,6 +1,5 @@
 using System;
 using Match3.Components.Gameplay;
-using Match3.Gameboard;
 using Match3.Services;
 using WaveEngine.Framework;
 using Match3.Services.Navigation;
