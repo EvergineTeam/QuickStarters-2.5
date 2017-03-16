@@ -10,7 +10,7 @@ using WaveEngine.Framework.Graphics;
 namespace Match3.Components.Gameplay
 {
     [DataContract]
-    public class CandyTouchComponent : Component
+    public class CandyTouchComponent : Component, IDisposable
     {
         private const int MinimumDisplacement = (int)(GameLogicExtensions.DistanceBtwItems * 0.66);
 
@@ -22,6 +22,8 @@ namespace Match3.Components.Gameplay
 
         [RequiredComponent]
         protected CandyAnimationBehavior animator;
+
+        protected GameboardAnimationsOrchestrator gameboardOrchestrator;
 
         private Vector2 initialCandyPosition;
 
@@ -39,41 +41,61 @@ namespace Match3.Components.Gameplay
         {
             base.ResolveDependencies();
 
+            this.gameboardOrchestrator = this.Owner.Parent.FindComponent<GameboardAnimationsOrchestrator>();
+
             this.touchGestures.TouchPressed += this.TouchGestures_TouchPressed;
             this.touchGestures.TouchReleased += this.TouchGestures_TouchReleased;
             this.touchGestures.TouchMoved += this.TouchGestures_TouchMoved;
         }
+        
+        public void Dispose()
+        {
+            this.gameboardOrchestrator = null;
+
+            this.touchGestures.TouchPressed -= this.TouchGestures_TouchPressed;
+            this.touchGestures.TouchReleased -= this.TouchGestures_TouchReleased;
+            this.touchGestures.TouchMoved -= this.TouchGestures_TouchMoved;
+        }
 
         private void TouchGestures_TouchPressed(object sender, GestureEventArgs e)
         {
-            this.IsPressed = true;
-            this.initialTouchPosition = e.GestureSample.Position;
-            this.lastTouchPosition = this.initialTouchPosition;
-            this.initialCandyPosition = this.transform2D.LocalPosition;
+            if (!this.gameboardOrchestrator.IsAnimationInProgress)
+            {
+                this.IsPressed = true;
+                this.initialTouchPosition = e.GestureSample.Position;
+                this.lastTouchPosition = this.initialTouchPosition;
+                this.initialCandyPosition = this.transform2D.LocalPosition;
 
-            this.UpdateCandyPosition(e.GestureSample.Position);
+                this.UpdateCandyPosition(e.GestureSample.Position);
+            }
         }
 
         private void TouchGestures_TouchReleased(object sender, GestureEventArgs e)
         {
-            if (this.detectedMove.HasValue)
+            if (this.IsPressed)
             {
-                this.OnMoveOperation?.Invoke(this, this.detectedMove.Value);
-                this.detectedMove = null;
-            }
-            else
-            {
-                this.animator.RefreshPositionAnimation();
-            }
+                if (this.detectedMove.HasValue)
+                {
+                    this.OnMoveOperation?.Invoke(this, this.detectedMove.Value);
+                    this.detectedMove = null;
+                }
+                else
+                {
+                    this.animator.RefreshPositionAnimation();
+                }
 
-            this.UpdateCandyPosition(e.GestureSample.Position);
+                this.UpdateCandyPosition(e.GestureSample.Position);
 
-            this.IsPressed = false;
+                this.IsPressed = false;
+            }
         }
 
         private void TouchGestures_TouchMoved(object sender, GestureEventArgs e)
         {
-            this.UpdateCandyPosition(e.GestureSample.Position);
+            if (this.IsPressed)
+            {
+                this.UpdateCandyPosition(e.GestureSample.Position);
+            }
         }
 
         private void UpdateCandyPosition(Vector2 newTouchPosition)

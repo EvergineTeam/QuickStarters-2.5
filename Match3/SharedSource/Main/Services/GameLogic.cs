@@ -107,9 +107,16 @@ namespace Match3.Services
 
         public BoardOperation[] Move(Coordinate candyPosition, CandyMoves move)
         {
-            var result = this.currentBoard.Move(candyPosition, move);
-            this.SumScore(result);
-            return result;
+            if (this.LeftTime > TimeSpan.Zero)
+            {
+                var result = this.currentBoard.Move(candyPosition, move);
+                this.SumScore(result);
+                return result;
+            }
+            else
+            {
+                return new BoardOperation[0];
+            }
         }
 
         public bool IsValidCoordinate(Coordinate candyPosition)

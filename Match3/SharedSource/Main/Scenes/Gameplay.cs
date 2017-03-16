@@ -4,6 +4,7 @@ using Match3.Gameboard;
 using Match3.Services;
 using WaveEngine.Framework;
 using Match3.Services.Navigation;
+using WaveEngine.Components.GameActions;
 
 namespace Match3.Scenes
 {
@@ -11,9 +12,14 @@ namespace Match3.Scenes
     {
         private GameLogic gameLogic;
 
+        private GameboardAnimationsOrchestrator gameboardOrchestrator;
+
         protected override void CreateScene()
         {
             this.Load(WaveContent.Scenes.Gameplay);
+
+            var gameboardEntity = this.EntityManager.Find("Panel.Content");
+            this.gameboardOrchestrator = gameboardEntity.FindComponent<GameboardAnimationsOrchestrator>();
 
             this.gameLogic = CustomServices.GameLogic;
             this.gameLogic.GameFinished -= this.GameLogicGameFinished;
@@ -40,7 +46,11 @@ namespace Match3.Scenes
 
         private void GameLogicGameFinished(object sender, EventArgs e)
         {
-            CustomServices.NavigationService.Navigate(NavigateCommands.DefaultForward);
+            this.gameLogic.GameFinished -= this.GameLogicGameFinished;
+
+            this.CreateWaitConditionGameAction(() => !this.gameboardOrchestrator.IsAnimationInProgress)
+                .ContinueWithAction(() => CustomServices.NavigationService.Navigate(NavigateCommands.DefaultForward))
+                .Run();
         }
     }
 }
