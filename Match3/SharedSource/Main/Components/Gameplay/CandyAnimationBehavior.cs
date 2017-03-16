@@ -112,5 +112,17 @@ namespace Match3.Components.Gameplay
             this.explisionAnimation2D.PlayAnimation(animationName, loop: false);
             this.animationState = AnimationStates.Disappear;
         }
+
+        public void AnimateToShuffle()
+        {
+            this.destinationPosition = Vector2.Zero;
+            this.animationState = AnimationStates.Moving;
+        }
+
+        public void AnimateFromShuffle()
+        {
+            this.transform2D.LocalPosition = Vector2.Zero;
+            this.RefreshPositionAnimation();
+        }
     }
 }

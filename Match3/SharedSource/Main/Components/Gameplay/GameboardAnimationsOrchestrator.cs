@@ -67,7 +67,7 @@ namespace Match3.Components.Gameplay
                 this.score.CurrentScore += (float)operationScore;
             });
 
-            if (boardOp.Type == Board.OperationTypes.Remove)
+            if (boardOp.Type == OperationTypes.Remove)
             {
                 this.pendingOperations.Enqueue(() =>
                 {
@@ -86,7 +86,7 @@ namespace Match3.Components.Gameplay
                     }
                 });
             }
-            else if (boardOp.Type == Board.OperationTypes.Add)
+            else if (boardOp.Type == OperationTypes.Add)
             {
                 this.pendingOperations.Enqueue(() =>
                 {
@@ -97,6 +97,33 @@ namespace Match3.Components.Gameplay
                         if (candyOp.PreviousPosition.Y >= 0)
                         {
                             candyAttr.Animator.SetAppearAnimation();
+                        }
+                    }
+                });
+            }
+            else if (boardOp.Type == OperationTypes.Shuffle)
+            {
+                this.pendingOperations.Enqueue(() =>
+                {
+                    for (int i = 0; i < this.gameLogic.BoardSizeM; i++)
+                    {
+                        for (int j = 0; j < this.gameLogic.BoardSizeM; j++)
+                        {
+                            var candyAttr = this.gameboardContent.FindCandyAttributes(new Coordinate { X = i, Y = j });
+                            candyAttr.Animator.AnimateToShuffle();
+                        }
+                    }
+                });
+                this.pendingOperations.Enqueue(() =>
+                {
+                    for (int i = 0; i < this.gameLogic.BoardSizeM; i++)
+                    {
+                        for (int j = 0; j < this.gameLogic.BoardSizeM; j++)
+                        {
+                            var cord = new Coordinate { X = i, Y = j };
+                            this.gameboardContent.RemoveCandyEntity(cord);
+                            var candyAttr = this.gameboardContent.AddCandyEntity(cord, this.gameLogic.CurrentCandies[i][j]);
+                            candyAttr.Animator.AnimateFromShuffle();
                         }
                     }
                 });
