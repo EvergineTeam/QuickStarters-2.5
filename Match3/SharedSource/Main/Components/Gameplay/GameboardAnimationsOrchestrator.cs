@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
-using System.Text;
 using Match3.Gameboard;
 using WaveEngine.Framework;
-using static Match3.Gameboard.Board;
-using WaveEngine.Components.GameActions;
 using WaveEngine.Common.Attributes;
+using Match3.Services;
+using static Match3.Gameboard.Board;
 
 namespace Match3.Components.Gameplay
 {
@@ -15,6 +14,9 @@ namespace Match3.Components.Gameplay
     {
         [RequiredComponent]
         protected GameboardContent gameboardContent;
+
+        private GameLogic gameLogic;
+        private ScoreComponent score;
 
         private Queue<Action> pendingOperations;
 
@@ -38,7 +40,10 @@ namespace Match3.Components.Gameplay
         {
             base.ResolveDependencies();
 
+            this.gameLogic = CustomServices.GameLogic;
             this.gameboardContent.OnBoardOperation += this.GameboardContent_OnBoardOperation;
+
+            this.score = this.EntityManager.Find("ScorePanel").FindComponent<ScoreComponent>();
         }
 
         private void GameboardContent_OnBoardOperation(object sender, BoardOperation[] boardOperations)
@@ -56,6 +61,12 @@ namespace Match3.Components.Gameplay
 
         private void ProccessOperation(BoardOperation boardOp)
         {
+            this.pendingOperations.Enqueue(() =>
+            {
+                var operationScore = this.gameLogic.OperationScore(boardOp);
+                this.score.CurrentScore += (float)operationScore;
+            });
+
             if (boardOp.Type == Board.OperationTypes.Remove)
             {
                 this.pendingOperations.Enqueue(() =>

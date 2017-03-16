@@ -1,6 +1,7 @@
 ﻿using Match3.Gameboard;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.Serialization;
 using WaveEngine.Common;
 using WaveEngine.Framework.Services;
@@ -45,8 +46,6 @@ namespace Match3.Services
 
         public event EventHandler GameFinished;
 
-        public event EventHandler<ulong> ScoreUpdated;
-        
         protected override void Initialize()
         {
             base.Initialize();
@@ -110,7 +109,7 @@ namespace Match3.Services
             if (this.LeftTime > TimeSpan.Zero)
             {
                 var result = this.currentBoard.Move(candyPosition, move);
-                this.SumScore(result);
+                this.CurrentScore += (ulong)result.Sum(this.OperationScore);
                 return result;
             }
             else
@@ -124,17 +123,14 @@ namespace Match3.Services
             return this.currentBoard.IsValidCoordinate(candyPosition);
         }
 
-        private void SumScore(BoardOperation[] operations)
+        public int OperationScore(BoardOperation operation)
         {
-            foreach (var item in operations)
+            if (operation.Type == OperationTypes.Remove)
             {
-                if (item.Type == OperationTypes.Remove)
-                {
-                    this.CurrentScore += (uint)item.CandyOperations.Count;
-                }
-
-                this.ScoreUpdated?.Invoke(this, this.CurrentScore);
+                return operation.CandyOperations.Count;
             }
+
+            return 0;
         }
 
         public void Pause()
