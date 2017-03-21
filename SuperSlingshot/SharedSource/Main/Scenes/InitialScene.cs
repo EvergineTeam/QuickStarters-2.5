@@ -77,7 +77,7 @@ namespace SuperSlingshot.Scenes
 
         private void StartStateChanged(object sender, ButtonState currentState, ButtonState lastState)
         {
-            if (currentState == ButtonState.Release && lastState == ButtonState.Pressed)
+            if (currentState == ButtonState.Released && lastState == ButtonState.Pressed)
             {
                 this.navigationManager.NavigateToLevelSelection();
             }

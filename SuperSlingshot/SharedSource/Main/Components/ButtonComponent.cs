@@ -63,12 +63,12 @@ namespace SuperSlingshot.Components
 
             this.touchGestures.TouchPressed += this.TouchGesturesTouchPressed;
             this.touchGestures.TouchReleased += this.TouchGesturesTouchReleased;
-            this.SetState(ButtonState.Release);
+            this.SetState(ButtonState.Released);
         }
 
         private void TouchGesturesTouchReleased(object sender, GestureEventArgs e)
         {
-            this.SetState(ButtonState.Release);
+            this.SetState(ButtonState.Released);
         }
 
         private void TouchGesturesTouchPressed(object sender, GestureEventArgs e)
@@ -87,7 +87,7 @@ namespace SuperSlingshot.Components
                 
                 switch (this.state)
                 {
-                    case ButtonState.Release:
+                    case ButtonState.Released:
                         this.sprite.TexturePath = this.NormalButtonPath;
                         break;
                     case ButtonState.Pressed:

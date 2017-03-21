@@ -52,7 +52,7 @@ namespace SuperSlingshot.Scenes
 
         private void Level1StateChanged(object sender, ButtonState currentState, ButtonState lastState)
         {
-            if (currentState == ButtonState.Release && lastState == ButtonState.Pressed)
+            if (currentState == ButtonState.Released && lastState == ButtonState.Pressed)
             {
                 this.navigationManager.NavigateToGameLevel(0);
             }
@@ -60,7 +60,7 @@ namespace SuperSlingshot.Scenes
 
         private void Level2StateChanged(object sender, ButtonState currentState, ButtonState lastState)
         {
-            if (currentState == ButtonState.Release && lastState == ButtonState.Pressed)
+            if (currentState == ButtonState.Released && lastState == ButtonState.Pressed)
             {
                 this.navigationManager.NavigateToGameLevel(1);
             }
@@ -68,7 +68,7 @@ namespace SuperSlingshot.Scenes
 
         private void Level3StateChanged(object sender, ButtonState currentState, ButtonState lastState)
         {
-            if (currentState == ButtonState.Release && lastState == ButtonState.Pressed)
+            if (currentState == ButtonState.Released && lastState == ButtonState.Pressed)
             {
                 this.navigationManager.NavigateToGameLevel(2);
             }
