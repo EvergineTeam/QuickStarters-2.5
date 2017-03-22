@@ -9,6 +9,7 @@
     <Import_RootNamespace>Match3</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Components\BackgroundElemEmitter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Components\Finish\ScoreComponent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Components\Finish\StarsComponent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Components\Gameplay\CandyAnimationBehavior.cs" />
@@ -30,6 +31,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Gameboard\CandyTypes.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Gameboard\Coordinate.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\GameLogicExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Scenes\MenuBackground.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Scenes\About.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Scenes\Pause.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Scenes\Gameplay.cs" />
