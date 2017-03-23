@@ -8,5 +8,11 @@ namespace Match3.Scenes
         {
             base.Load(WaveContent.Scenes.MenuBackground);
         }
+
+        public override void Pause()
+        {
+            // This scene never should be paused
+            //base.Pause();
+        }
     }
 }

@@ -48,6 +48,8 @@ namespace Match3.Services.Navigation
 
         private bool isGlobalAssetsLoaded;
 
+        private Scene backgroundMenu;
+
         public bool IsPerformingNavigation
         {
             get;
@@ -58,10 +60,12 @@ namespace Match3.Services.Navigation
         {
             if (this.CurrentNavigationState != NavigationStates.Undefined)
             {
-                throw new InvalidOperationException("Navegation has been started");
+                throw new InvalidOperationException("Navigation has been started");
             }
 
             this.stateHistory = new List<NavigationStates>();
+
+            this.backgroundMenu = new MenuBackground();
 
             this.ChangeNavigationState(NavigationStates.MainMenu);
         }
@@ -302,7 +306,16 @@ namespace Match3.Services.Navigation
         {
             var transitionDuration = TimeSpan.FromSeconds(0.2f);
             ScreenTransition transition = null;
-            var nextConxtext = new ScreenContext(nextScene.Name, nextScene);
+            ScreenContext nextConxtext;
+
+            if (isModal)
+            {
+                nextConxtext = new ScreenContext(nextScene);
+            }
+            else
+            {
+                nextConxtext = new ScreenContext(this.backgroundMenu, nextScene);
+            }
 
             var transitionAction = GameActionFactory.CreateGameActionFromAction(null, () =>
             {
@@ -328,18 +341,21 @@ namespace Match3.Services.Navigation
 
             var scenesInitialized = false;
 
-			var preloadAction = new Action(() =>
-			{ 
-				this.PreloadGlobalAssets();
+            var preloadAction = new Action(() =>
+            {
+                this.PreloadGlobalAssets();
 
-				for (int i = 0; i < nextScreenConxtext.Count; i++)
-				{
-					var contextScene = nextScreenConxtext[i];
-					contextScene.Initialize(WaveServices.GraphicsDevice);
-				}
+                for (int i = 0; i < nextScreenConxtext.Count; i++)
+                {
+                    var contextScene = nextScreenConxtext[i];
+                    if (!contextScene.IsInitialized)
+                    {
+                        contextScene.Initialize(WaveServices.GraphicsDevice);
+                    }
+                }
 
-				scenesInitialized = true;
-			});
+                scenesInitialized = true;
+            });
 
 #if UWP
 			System.Threading.Tasks.Task.Factory.StartNew(preloadAction);
