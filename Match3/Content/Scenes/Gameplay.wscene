@@ -52,7 +52,7 @@
             <d6p1:R>255</d6p1:R>
           </d5p1:BackgroundColor>
           <d5p1:CameraOrder>0</d5p1:CameraOrder>
-          <d5p1:ClearFlags>All</d5p1:ClearFlags>
+          <d5p1:ClearFlags>DepthAndStencil</d5p1:ClearFlags>
           <d5p1:FarPlane>1000</d5p1:FarPlane>
           <d5p1:FieldOfView>0</d5p1:FieldOfView>
           <d5p1:IsActive>true</d5p1:IsActive>
@@ -374,7 +374,7 @@
               <d7p1:Opacity>1</d7p1:Opacity>
               <d7p1:Rectangle xmlns:d8p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                 <d8p1:Height>55</d8p1:Height>
-                <d8p1:Width>955</d8p1:Width>
+                <d8p1:Width>0</d8p1:Width>
                 <d8p1:X>0</d8p1:X>
                 <d8p1:Y>0</d8p1:Y>
               </d7p1:Rectangle>
@@ -397,7 +397,7 @@
               </d7p1:TintColor>
               <d7p1:isGlobalAsset>true</d7p1:isGlobalAsset>
               <d7p1:size xmlns:d8p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
-                <d8p1:X>955</d8p1:X>
+                <d8p1:X>0</d8p1:X>
                 <d8p1:Y>55</d8p1:Y>
               </d7p1:size>
               <d7p1:texturePath>Content/Assets/GUI/Panels.spritesheet.wpk</d7p1:texturePath>
@@ -659,8 +659,8 @@
           <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
         </d4p1:Component>
         <d4p1:Component xmlns:d5p1="http://schemas.datacontract.org/2004/07/Match3.Components.Gameplay" i:type="d5p1:ScoreComponent">
-            <d4p1:IsActive>true</d4p1:IsActive>
-            <d4p1:UpdateOrder>0.5</d4p1:UpdateOrder>
+          <d4p1:IsActive>true</d4p1:IsActive>
+          <d4p1:UpdateOrder>0.5</d4p1:UpdateOrder>
         </d4p1:Component>
       </d2p1:SerializeComponents>
     </d2p1:BaseEntityModel>
