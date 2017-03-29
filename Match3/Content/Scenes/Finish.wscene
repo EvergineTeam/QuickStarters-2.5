@@ -478,10 +478,10 @@
                     <d10p1:Y>0.5</d10p1:Y>
                   </d9p1:origin>
                   <d9p1:scale xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
-                    <d10p1:X>0.8</d10p1:X>
-                    <d10p1:Y>0.8</d10p1:Y>
+                    <d10p1:X>1.5</d10p1:X>
+                    <d10p1:Y>1.5</d10p1:Y>
                   </d9p1:scale>
-                  <d9p1:text>0</d9p1:text>
+                  <d9p1:text>250</d9p1:text>
                   <d9p1:textAlignment>Center</d9p1:textAlignment>
                   <d9p1:textWrapping>true</d9p1:textWrapping>
                   <d9p1:width>75</d9p1:width>
