@@ -16,6 +16,8 @@ namespace Match3.Components.Gameplay
         [RequiredComponent]
         protected TextComponent textComponent;
 
+        private TimeSpan lastLeftTime; 
+
         protected override void ResolveDependencies()
         {
             base.ResolveDependencies();
@@ -25,7 +27,16 @@ namespace Match3.Components.Gameplay
 
         protected override void Update(TimeSpan gameTime)
         {
-            this.textComponent.Text = this.gameLogic.LeftTime.ToString("mm\\:ss");
+            if ((int)this.lastLeftTime.TotalSeconds != (int)this.gameLogic.LeftTime.TotalSeconds)
+            {
+                this.lastLeftTime = this.gameLogic.LeftTime;
+                this.textComponent.Text = this.gameLogic.LeftTime.ToString("mm\\:ss");
+
+                if(this.lastLeftTime.TotalSeconds < 10)
+                {
+                    CustomServices.AudioPlayer.PlaySound(Services.Audio.Sounds.CountDown);
+                }
+            }
         }
     }
 }

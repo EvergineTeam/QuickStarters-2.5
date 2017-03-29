@@ -7,6 +7,7 @@
         InvalidMovement,
         ComboAppear,
         ComboAppear2,
+        CountDown,
         CandyBoom
     };
 

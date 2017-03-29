@@ -19,5 +19,12 @@ namespace Match3.Components.Gameplay
         public CandyTypes Type { get; set; }
 
         public CandyColors Color { get; set; }
+
+        public CandyAttributesComponent(Coordinate coord, Candy properties)
+        {
+            this.Coordinate = coord;
+            this.Type = properties.Type;
+            this.Color = properties.Color;
+        }
     }
 }

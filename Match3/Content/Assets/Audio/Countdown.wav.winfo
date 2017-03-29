@@ -1,5 +1,5 @@
 ﻿<Asset xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="WaveEngine.Framework.Models">
-  <Id>839dc7d8-deae-4097-947b-50c011b99699</Id>
+  <Id>80d883b5-b4dc-4640-b80b-b27627f88508</Id>
   <AsRaw>false</AsRaw>
   <Asset xmlns:d2p1="WaveEngine.Framework.Models.Assets" i:type="d2p1:Sound">
     <d2p1:Profiles xmlns:d3p1="WaveEngine.Framework.Models.Profiles">
@@ -12,7 +12,7 @@
     <d2p1:ZipCompress>true</d2p1:ZipCompress>
     <d2p1:Bits>16</d2p1:Bits>
     <d2p1:Channels>2</d2p1:Channels>
-    <d2p1:Duration>PT0.88S</d2p1:Duration>
+    <d2p1:Duration>PT0.24S</d2p1:Duration>
     <d2p1:SampleRate>44100</d2p1:SampleRate>
   </Asset>
   <Thumbnail i:nil="true" />

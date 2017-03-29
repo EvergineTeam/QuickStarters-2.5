@@ -47,9 +47,10 @@ namespace Match3.Services.Audio
 
             var soundCount = Enum.GetValues(typeof(Sounds)).Length;
             this.sounds = new SoundInfo[soundCount];
-            this.LoadSound(Sounds.Button, WaveContent.Assets.Audio.button_wav);
+            this.LoadSound(Sounds.Button, WaveContent.Assets.Audio.Button_wav);
             this.LoadSound(Sounds.ComboAppear, WaveContent.Assets.Audio.ComboAppear_wav);
             this.LoadSound(Sounds.ComboAppear2, WaveContent.Assets.Audio.ComboAppear2_wav);
+            this.LoadSound(Sounds.CountDown, WaveContent.Assets.Audio.Countdown_wav);
             this.LoadSound(Sounds.InvalidMovement, WaveContent.Assets.Audio.InvalidMovement_wav);
             this.LoadSound(Sounds.ValidMovement, WaveContent.Assets.Audio.ValidMovement_wav);
             this.LoadSound(Sounds.CandyBoom, WaveContent.Assets.Audio.CandyBoom_wav);
@@ -165,7 +166,7 @@ namespace Match3.Services.Audio
                 this.currentSong = song;
 
                 this.musicPlayer.Play(musicInfo);
-                this.musicPlayer.Volume = 1f;
+                this.musicPlayer.Volume = 0.5f;
                 this.musicPlayer.IsRepeat = true;
             }
         }

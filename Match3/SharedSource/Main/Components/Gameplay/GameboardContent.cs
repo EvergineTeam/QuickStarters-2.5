@@ -86,7 +86,7 @@ namespace Match3.Components.Gameplay
             var candyEntity = GameplayFactory.CreateCandy(this.Owner.Scene, position, properties.Type, properties.Color);
             candyEntity.Name += "_" + this.candyCounter;
             var candyTouch = new CandyTouchComponent();
-            var candyAttributes = new CandyAttributesComponent() { Coordinate = coord };
+            var candyAttributes = new CandyAttributesComponent(coord, properties);
             candyTouch.OnMoveOperation += this.CandyTouch_OnMoveOperation;
             candyEntity.AddComponent(candyTouch)
                        .AddComponent(candyAttributes)
