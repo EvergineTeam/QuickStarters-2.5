@@ -1,4 +1,5 @@
 using Match3.Services;
+using Match3.Services.Audio;
 using WaveEngine.Common;
 
 namespace Match3
@@ -9,6 +10,7 @@ namespace Match3
         {
             base.Initialize(application);
 
+            CustomServices.AudioPlayer.PlayMusic(Songs.Menu);
             CustomServices.NavigationService.StartNavigation();
         }
     }

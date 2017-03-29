@@ -48,10 +48,15 @@ namespace Match3.Services.Audio
             var soundCount = Enum.GetValues(typeof(Sounds)).Length;
             this.sounds = new SoundInfo[soundCount];
             this.LoadSound(Sounds.Button, WaveContent.Assets.Audio.button_wav);
+            this.LoadSound(Sounds.ComboAppear, WaveContent.Assets.Audio.ComboAppear_wav);
+            this.LoadSound(Sounds.ComboAppear2, WaveContent.Assets.Audio.ComboAppear2_wav);
+            this.LoadSound(Sounds.InvalidMovement, WaveContent.Assets.Audio.InvalidMovement_wav);
+            this.LoadSound(Sounds.ValidMovement, WaveContent.Assets.Audio.ValidMovement_wav);
+            this.LoadSound(Sounds.CandyBoom, WaveContent.Assets.Audio.CandyBoom_wav);
 
-            this.songs = new Dictionary<Songs, MusicInfo>();
-            //this.songs.Add(Songs.Menu, new MusicInfo(WaveContent.Assets.Sounds.bg_music_mp3));
-            //this.songs.Add(Songs.Gameplay, new MusicInfo(WaveContent.Assets.Sounds.bg_ambient_mp3));
+            var songCount = Enum.GetValues(typeof(Songs)).Length;
+            this.songs = new Dictionary<Songs, MusicInfo>(songCount);
+            this.songs.Add(Songs.Menu, new MusicInfo(WaveContent.Assets.Audio.bgMusic_mp3));
         }
 
         protected override void Terminate()

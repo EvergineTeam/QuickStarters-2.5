@@ -16,8 +16,8 @@ namespace Match3.Components.Finish
             var childStars = this.Owner.FindChildrenByTag("star").OrderBy(x => x.Name).Select(x => x.FindChild("inner")).ToArray();
             for (int i = 0; i < childStars.Length; i++)
             {
-                childStars[i].IsVisible = i < gameLogic.StarsScores.Length 
-                                       && gameLogic.StarsScores[i] <= gameLogic.CurrentScore;
+                childStars[i].IsVisible = i < (gameLogic.StarsScores?.Length ?? 0)
+                                       && (gameLogic.StarsScores?[i] ?? 0) <= gameLogic.CurrentScore;
             }
         }
     }

@@ -71,6 +71,7 @@ namespace Match3.Components.Gameplay
             {
                 this.pendingOperations.Enqueue(() =>
                 {
+                    CustomServices.AudioPlayer.PlaySound(Services.Audio.Sounds.CandyBoom);
                     foreach (var candyOp in boardOp.CandyOperations)
                     {
                         var candyAttr = this.gameboardContent.FindCandyAttributes(candyOp.PreviousPosition);
@@ -97,6 +98,14 @@ namespace Match3.Components.Gameplay
                         if (candyOp.PreviousPosition.Y >= 0)
                         {
                             candyAttr.Animator.SetAppearAnimation();
+                            if (candyAttr.Type == CandyTypes.FourInLine)
+                            {
+                                CustomServices.AudioPlayer.PlaySound(Services.Audio.Sounds.ComboAppear);
+                            }
+                            else
+                            {
+                                CustomServices.AudioPlayer.PlaySound(Services.Audio.Sounds.ComboAppear2);
+                            }
                         }
                     }
                 });

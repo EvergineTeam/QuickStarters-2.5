@@ -136,10 +136,12 @@ namespace Match3.Components.Gameplay
                 candyAttributes.Coordinate = destCoord;
                 destCandyAttribute.Animator.RefreshPositionAnimation();
 
+                CustomServices.AudioPlayer.PlaySound(Services.Audio.Sounds.ValidMovement);
                 this.OnBoardOperation?.Invoke(this, boardOperations);
             }
             else
             {
+                CustomServices.AudioPlayer.PlaySound(Services.Audio.Sounds.InvalidMovement);
                 candyAttributes.Animator.RefreshPositionAnimation();
             }
         }

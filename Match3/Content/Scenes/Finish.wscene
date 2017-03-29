@@ -133,6 +133,7 @@
                   <d9p1:transformMode>Standard</d9p1:transformMode>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="WaveEngine.Components.Toolkit" i:type="d9p1:TextComponent">
+                  <d9p1:alpha>1</d9p1:alpha>
                   <d9p1:fontPath>Content/Assets/Fonts/BradyBunchMedium.ttf.wpk</d9p1:fontPath>
                   <d9p1:foreground xmlns:d10p1="WaveEngine.Common.Graphics">
                     <d10p1:A>255</d10p1:A>
@@ -463,6 +464,7 @@
                   <d9p1:transformMode>Standard</d9p1:transformMode>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="WaveEngine.Components.Toolkit" i:type="d9p1:TextComponent">
+                  <d9p1:alpha>1</d9p1:alpha>
                   <d9p1:fontPath>Content/Assets/Fonts/BradyBunchMedium.ttf.wpk</d9p1:fontPath>
                   <d9p1:foreground xmlns:d10p1="WaveEngine.Common.Graphics">
                     <d10p1:A>255</d10p1:A>

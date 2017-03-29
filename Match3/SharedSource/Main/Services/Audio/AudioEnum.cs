@@ -2,13 +2,17 @@
 {
     public enum Sounds
     {
-        Button
+        Button,
+        ValidMovement,
+        InvalidMovement,
+        ComboAppear,
+        ComboAppear2,
+        CandyBoom
     };
 
     public enum Songs
     {
         None,
-        Menu,
-        Gameplay
+        Menu
     }
 }

@@ -133,6 +133,7 @@
                   <d9p1:transformMode>Standard</d9p1:transformMode>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="WaveEngine.Components.Toolkit" i:type="d9p1:TextComponent">
+                  <d9p1:alpha>1</d9p1:alpha>
                   <d9p1:fontPath>Content/Assets/Fonts/BradyBunchMedium.ttf.wpk</d9p1:fontPath>
                   <d9p1:foreground xmlns:d10p1="WaveEngine.Common.Graphics">
                     <d10p1:A>255</d10p1:A>
@@ -240,7 +241,7 @@
                     <d10p1:Z>0</d10p1:Z>
                   </d9p1:LocalOrientation>
                   <d9p1:LocalPosition xmlns:d10p1="WaveEngine.Common.Math">
-                    <d10p1:X>-195</d10p1:X>
+                    <d10p1:X>-200</d10p1:X>
                     <d10p1:Y>-195</d10p1:Y>
                     <d10p1:Z>-1</d10p1:Z>
                   </d9p1:LocalPosition>
@@ -252,8 +253,8 @@
                   <d9p1:Effect>None</d9p1:Effect>
                   <d9p1:Opacity>1</d9p1:Opacity>
                   <d9p1:Rectangle xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
-                    <d10p1:Height>174</d10p1:Height>
-                    <d10p1:Width>361</d10p1:Width>
+                    <d10p1:Height>92.8</d10p1:Height>
+                    <d10p1:Width>418.4</d10p1:Width>
                     <d10p1:X>-0</d10p1:X>
                     <d10p1:Y>0</d10p1:Y>
                   </d9p1:Rectangle>
@@ -268,6 +269,7 @@
                   <d9p1:transformMode>Standard</d9p1:transformMode>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="WaveEngine.Components.Toolkit" i:type="d9p1:TextComponent">
+                  <d9p1:alpha>1</d9p1:alpha>
                   <d9p1:fontPath>Content/Assets/Fonts/BradyBunchMedium.ttf.wpk</d9p1:fontPath>
                   <d9p1:foreground xmlns:d10p1="WaveEngine.Common.Graphics">
                     <d10p1:A>255</d10p1:A>
@@ -281,13 +283,86 @@
                     <d10p1:Y>0</d10p1:Y>
                   </d9p1:origin>
                   <d9p1:scale xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
-                    <d10p1:X>0.5</d10p1:X>
-                    <d10p1:Y>0.5</d10p1:Y>
+                    <d10p1:X>0.4</d10p1:X>
+                    <d10p1:Y>0.4</d10p1:Y>
                   </d9p1:scale>
                   <d9p1:text>Match3 is a starter kit made with love using</d9p1:text>
                   <d9p1:textAlignment>Center</d9p1:textAlignment>
                   <d9p1:textWrapping>true</d9p1:textWrapping>
-                  <d9p1:width>400</d9p1:width>
+                  <d9p1:width>420</d9p1:width>
+                </d8p1:Component>
+                <d8p1:Component xmlns:d9p1="WaveEngine.Components.Toolkit" i:type="d9p1:TextRenderer2D">
+                  <d8p1:IsVisible>true</d8p1:IsVisible>
+                  <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
+                  <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
+                </d8p1:Component>
+              </d2p1:SerializeComponents>
+            </d2p1:BaseEntityModel>
+            <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
+              <d2p1:SerializeChildrens />
+              <d2p1:isDisabled>false</d2p1:isDisabled>
+              <d2p1:isStatic>false</d2p1:isStatic>
+              <d2p1:isVisible>true</d2p1:isVisible>
+              <d2p1:name>Attributions</d2p1:name>
+              <d2p1:tag i:nil="true" />
+              <d2p1:SerializeComponents xmlns:d8p1="WaveEngine.Framework">
+                <d8p1:Component xmlns:d9p1="WaveEngine.Framework.Graphics" i:type="d9p1:Transform2D">
+                  <d9p1:LocalOrientation xmlns:d10p1="WaveEngine.Common.Math">
+                    <d10p1:W>1</d10p1:W>
+                    <d10p1:X>0</d10p1:X>
+                    <d10p1:Y>0</d10p1:Y>
+                    <d10p1:Z>0</d10p1:Z>
+                  </d9p1:LocalOrientation>
+                  <d9p1:LocalPosition xmlns:d10p1="WaveEngine.Common.Math">
+                    <d10p1:X>-200</d10p1:X>
+                    <d10p1:Y>110</d10p1:Y>
+                    <d10p1:Z>-1</d10p1:Z>
+                  </d9p1:LocalPosition>
+                  <d9p1:LocalScale xmlns:d10p1="WaveEngine.Common.Math">
+                    <d10p1:X>1</d10p1:X>
+                    <d10p1:Y>1</d10p1:Y>
+                    <d10p1:Z>1</d10p1:Z>
+                  </d9p1:LocalScale>
+                  <d9p1:Effect>None</d9p1:Effect>
+                  <d9p1:Opacity>1</d9p1:Opacity>
+                  <d9p1:Rectangle xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                    <d10p1:Height>104.4</d10p1:Height>
+                    <d10p1:Width>375</d10p1:Width>
+                    <d10p1:X>-0</d10p1:X>
+                    <d10p1:Y>0</d10p1:Y>
+                  </d9p1:Rectangle>
+                  <d9p1:origin xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                    <d10p1:X>0</d10p1:X>
+                    <d10p1:Y>0</d10p1:Y>
+                  </d9p1:origin>
+                  <d9p1:screenPosition xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                    <d10p1:X>0</d10p1:X>
+                    <d10p1:Y>0</d10p1:Y>
+                  </d9p1:screenPosition>
+                  <d9p1:transformMode>Standard</d9p1:transformMode>
+                </d8p1:Component>
+                <d8p1:Component xmlns:d9p1="WaveEngine.Components.Toolkit" i:type="d9p1:TextComponent">
+                  <d9p1:alpha>1</d9p1:alpha>
+                  <d9p1:fontPath>Content/Assets/Fonts/BradyBunchMedium.ttf.wpk</d9p1:fontPath>
+                  <d9p1:foreground xmlns:d10p1="WaveEngine.Common.Graphics">
+                    <d10p1:A>255</d10p1:A>
+                    <d10p1:B>255</d10p1:B>
+                    <d10p1:G>255</d10p1:G>
+                    <d10p1:R>255</d10p1:R>
+                  </d9p1:foreground>
+                  <d9p1:lineSpacing>0</d9p1:lineSpacing>
+                  <d9p1:origin xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                    <d10p1:X>0</d10p1:X>
+                    <d10p1:Y>0</d10p1:Y>
+                  </d9p1:origin>
+                  <d9p1:scale xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+                    <d10p1:X>0.3</d10p1:X>
+                    <d10p1:Y>0.3</d10p1:Y>
+                  </d9p1:scale>
+                  <d9p1:text>Some of the sounds in this project were created by ViRiX Dreamcore soundcloud.com/virix</d9p1:text>
+                  <d9p1:textAlignment>Center</d9p1:textAlignment>
+                  <d9p1:textWrapping>true</d9p1:textWrapping>
+                  <d9p1:width>420</d9p1:width>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="WaveEngine.Components.Toolkit" i:type="d9p1:TextRenderer2D">
                   <d8p1:IsVisible>true</d8p1:IsVisible>
@@ -313,12 +388,12 @@
                   </d9p1:LocalOrientation>
                   <d9p1:LocalPosition xmlns:d10p1="WaveEngine.Common.Math">
                     <d10p1:X>0</d10p1:X>
-                    <d10p1:Y>95</d10p1:Y>
+                    <d10p1:Y>10</d10p1:Y>
                     <d10p1:Z>0</d10p1:Z>
                   </d9p1:LocalPosition>
                   <d9p1:LocalScale xmlns:d10p1="WaveEngine.Common.Math">
-                    <d10p1:X>1</d10p1:X>
-                    <d10p1:Y>1</d10p1:Y>
+                    <d10p1:X>0.7</d10p1:X>
+                    <d10p1:Y>0.7</d10p1:Y>
                     <d10p1:Z>1</d10p1:Z>
                   </d9p1:LocalScale>
                   <d9p1:Effect>None</d9p1:Effect>
@@ -552,7 +627,7 @@
           </d5p1:LocalOrientation>
           <d5p1:LocalPosition xmlns:d6p1="WaveEngine.Common.Math">
             <d6p1:X>372.000031</d6p1:X>
-            <d6p1:Y>503.900055</d6p1:Y>
+            <d6p1:Y>594.9</d6p1:Y>
             <d6p1:Z>5</d6p1:Z>
           </d5p1:LocalPosition>
           <d5p1:LocalScale xmlns:d6p1="WaveEngine.Common.Math">
