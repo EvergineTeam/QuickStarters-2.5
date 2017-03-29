@@ -14,13 +14,16 @@ namespace Match3.Components.Gameplay
     public class ScoreComponent : Behavior
     {
         private GameLogic gameLogic;
-        private NinePatchSpriteAtlas scoreSlice;
+        private Transform2D scoreSliceTransform;
+        private NinePatchSpriteAtlas scoreSliceNinePatch;
         private Entity[] stars;
         private SpriteAtlas[] starsSprite;
         private float scoreSliceMax;
 
         private float currentScore;
         private float desiredScore;
+
+        private bool firstUpdateDone;
 
         public float CurrentScore
         {
@@ -35,6 +38,8 @@ namespace Match3.Components.Gameplay
             }
         }
 
+        private float minScoreSliceX;
+        private float maxScoreSliceX;
         private float currentScoreSliceX;
         private float desiredScoreSliceX;
 
@@ -47,14 +52,18 @@ namespace Match3.Components.Gameplay
             {
                 this.stars = this.Owner.FindAllChildrenByTag("star").OrderBy(x => x.Name).ToArray();
                 this.starsSprite = this.stars.Select(x => x.FindComponent<SpriteAtlas>()).ToArray();
-                this.scoreSlice = this.Owner.FindChild("ScoreSlice").FindComponent<NinePatchSpriteAtlas>();
-                this.scoreSliceMax = this.scoreSlice.Size.X;
+                var scoreSliceEntity = this.Owner.FindChild("ScoreSlice");
+                this.scoreSliceTransform = scoreSliceEntity.FindComponent<Transform2D>();
+                this.scoreSliceNinePatch = scoreSliceEntity.FindComponent<NinePatchSpriteAtlas>();
+                this.scoreSliceMax = this.scoreSliceNinePatch.Size.X;
             }
         }
 
         protected override void Initialize()
         {
             base.Initialize();
+
+            this.maxScoreSliceX = this.scoreSliceNinePatch.Size.X;
             this.currentScoreSliceX = this.desiredScoreSliceX = 0;
             this.UpdateSliceSize();
             this.UpdateStarsPosition();
@@ -89,6 +98,14 @@ namespace Match3.Components.Gameplay
 
         protected override void Update(TimeSpan gameTime)
         {
+            if (!this.firstUpdateDone)
+            {
+                this.firstUpdateDone = true;
+
+                this.minScoreSliceX = this.scoreSliceNinePatch.TextureSize.X;
+                this.UpdateSliceSize();
+            }
+
             if (this.desiredScoreSliceX != this.currentScoreSliceX)
             {
                 this.currentScore = MathHelper.SmoothStep(this.currentScore, this.desiredScore, 0.1f);
@@ -111,9 +128,12 @@ namespace Match3.Components.Gameplay
 
         private void UpdateSliceSize()
         {
-            var scoreSlice = this.scoreSlice.Size;
-            scoreSlice.X = this.currentScoreSliceX;
-            this.scoreSlice.Size = scoreSlice;
+            var scoreSlice = this.scoreSliceNinePatch.Size;
+            scoreSlice.X = Math.Max(this.minScoreSliceX, Math.Min(this.currentScoreSliceX, this.maxScoreSliceX));
+            this.scoreSliceNinePatch.Size = scoreSlice;
+
+            var xScale = Math.Min(1.0, this.currentScoreSliceX / this.minScoreSliceX);
+            this.scoreSliceTransform.LocalXScale = (float)xScale;
         }
     }
 }

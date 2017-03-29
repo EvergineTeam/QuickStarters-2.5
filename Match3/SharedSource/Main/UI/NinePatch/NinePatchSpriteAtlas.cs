@@ -22,7 +22,12 @@ namespace Match3.UI.NinePatch
         /// The texture index.
         /// </summary>
         private int textureIndex;
-        
+
+        /// <summary>
+        /// The texture size.
+        /// </summary>
+        private Vector2 textureSize;
+
         #region Properties
         /// <summary>
         ///     Gets or sets the path to the atlas.
@@ -96,6 +101,21 @@ namespace Match3.UI.NinePatch
                 return null;
             }
         }
+
+        /// <summary>
+        /// Gets the selected texture size.
+        /// </summary>
+        /// <value>
+        /// The texture size.
+        /// </value>
+        [DontRenderProperty]
+        public Vector2 TextureSize
+        {
+            get
+            {
+                return this.textureSize;
+            }
+        }
         #endregion
 
         protected override void Initialize()
@@ -112,27 +132,30 @@ namespace Match3.UI.NinePatch
         {
             if (this.SpriteSheet != null)
             {
+                SpriteSheetResource resource = null;
                 bool setDefaultIndex = true;
 
                 if (!string.IsNullOrEmpty(this.textureName))
                 {
-                    SpriteSheetResource resource;
                     setDefaultIndex = !this.SpriteSheet.SpriteDictionary.TryGetValue(this.textureName, out resource);
 
                     if (!setDefaultIndex)
                     {
                         this.textureIndex = resource.Index;
-                        this.textureName = this.SpriteSheet.Sprites[this.textureIndex].Name;
                     }
                 }
 
                 if (setDefaultIndex)
                 {
                     this.textureIndex = 0;
-                    this.textureName = this.SpriteSheet.Sprites[this.textureIndex].Name;
+                    resource = this.SpriteSheet.Sprites[this.textureIndex];
                 }
 
-                this.RefreshSourceRectangle(refreshInnerTexture);
+                var rectangle = resource.Rectangle;
+                this.textureSize = new Vector2(rectangle.Width, rectangle.Height);
+                this.textureName = resource.Name;
+
+                this.RefreshSourceRectangle(refreshInnerTexture, rectangle);
             }
         }
 
@@ -140,23 +163,16 @@ namespace Match3.UI.NinePatch
         /// Refresh the source rectangle of the sprite transform 2D.
         /// </summary>
         /// <exception cref="System.ObjectDisposedException">SpriteAtlas has been disposed.</exception>
-        private void RefreshSourceRectangle(bool refreshInnerTexture)
+        private void RefreshSourceRectangle(bool refreshInnerTexture, Rectangle rectangle)
         {
             if (this.SpriteSheet != null
              && this.SpriteSheet.Sprites.Length > 0)
             {
-                if (this.textureIndex >= this.SpriteSheet.Sprites.Length)
-                {
-                    this.textureIndex = this.SpriteSheet.Sprites.Length - 1;
-                }
-
-                var sourceRectangle = this.SpriteSheet.Sprites[this.textureIndex].Rectangle;
-
                 if (refreshInnerTexture)
                 {
                     var textureId = this.TexturePath + this.textureName;
 
-                    this.RefreshInnerTexture(textureId, this.SpriteSheet.Texture, sourceRectangle);
+                    this.RefreshInnerTexture(textureId, this.SpriteSheet.Texture, rectangle);
                 }
             }
         }
