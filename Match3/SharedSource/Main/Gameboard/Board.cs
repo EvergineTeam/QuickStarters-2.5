@@ -153,15 +153,11 @@ namespace Match3.Gameboard
 
         private void ExecuteOperation(IEnumerable<BoardOperation> operations)
         {
-            Debug.WriteLine($"Starting to execute board operations: {operations.Count()}");
-
             var boardStatus = this.currentStatus;
             foreach (var operation in operations)
             {
-                Debug.WriteLine($"Board operation: {operation.Type}");
                 foreach (var candyOperation in operation.CandyOperations)
                 {
-                    Debug.WriteLine($"- Candy operation: Previous={candyOperation.PreviousPosition}, Current={candyOperation.CurrentPosition}");
                     switch (operation.Type)
                     {
                         case OperationTypes.Remove:
@@ -404,46 +400,7 @@ namespace Match3.Gameboard
                 }
             }
         }
-
-        public enum OperationTypes
-        {
-            Remove,
-            Add,
-            Move,
-            Shuffle
-        }
-
-        public class CandyOperation
-        {
-            public Coordinate PreviousPosition { get; set; }
-
-            public Coordinate CurrentPosition { get; set; }
-
-            public Candy? CandyProperties { get; set; }
-        }
-
-        public class BoardOperation
-        {
-            public OperationTypes Type { get; set; }
-
-            public List<CandyOperation> CandyOperations { get; private set; }
-
-            public BoardOperation()
-            {
-                this.CandyOperations = new List<CandyOperation>();
-            }
-
-            public void AddCandyOperation(CandyOperation operation)
-            {
-                if (!this.CandyOperations.Any(x =>
-                    x.PreviousPosition.X == operation.PreviousPosition.X && x.PreviousPosition.Y == operation.PreviousPosition.Y
-                 && x.CurrentPosition.X == operation.CurrentPosition.X && x.CurrentPosition.Y == operation.CurrentPosition.Y))
-                {
-                    this.CandyOperations.Add(operation);
-                }
-            }
-        }
-
+        
         private struct Piece
         {
             public int M;

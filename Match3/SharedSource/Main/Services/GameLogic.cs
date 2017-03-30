@@ -15,6 +15,14 @@ namespace Match3.Services
 
         public ulong CurrentScore { get; private set; }
 
+        public int CurrentUnlockedStars
+        {
+            get
+            {
+                return this.UnlockedStartsByScore(this.CurrentScore);
+            }
+        }
+
         public ulong[] StarsScores { get; private set; }
 
         public TimeSpan LeftTime { get { return this.currentTimer.Interval; } }
@@ -84,6 +92,24 @@ namespace Match3.Services
 
             this.CurrentLevel = level;
         }
+        
+        public int UnlockedStartsByScore(ulong score)
+        {
+            if (this.StarsScores != null)
+            {
+                for (int i = 0; i < this.StarsScores.Length; i++)
+                {
+                    if (score < this.StarsScores[i])
+                    {
+                        return i;
+                    }
+                }
+
+                return this.StarsScores.Length;
+            }
+
+            return 0;
+        }
 
         public void InitializeLevel()
         {
@@ -93,8 +119,7 @@ namespace Match3.Services
 
         public void Start()
         {
-            this.currentTimer = WaveServices.TimerFactory.CreateTimer(this.levelTime, this.EndGame);
-            this.currentTimer.Looped = false;
+            this.currentTimer = WaveServices.TimerFactory.CreateTimer(this.levelTime, this.EndGame, false);
         }
 
         private void EndGame()

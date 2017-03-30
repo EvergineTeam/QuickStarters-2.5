@@ -10,18 +10,12 @@ namespace Match3.Scenes
     public class Gameplay : Scene
     {
         private GameLogic gameLogic;
-
-        private GameboardAnimationsOrchestrator gameboardOrchestrator;
-
+        
         protected override void CreateScene()
         {
             this.Load(WaveContent.Scenes.Gameplay);
-
-            var gameboardEntity = this.EntityManager.Find("Panel.Content");
-            this.gameboardOrchestrator = gameboardEntity.FindComponent<GameboardAnimationsOrchestrator>();
-
+            
             this.gameLogic = CustomServices.GameLogic;
-            this.gameLogic.GameFinished -= this.GameLogicGameFinished;
             this.gameLogic.GameFinished += this.GameLogicGameFinished;
         }
 
@@ -47,9 +41,22 @@ namespace Match3.Scenes
         {
             this.gameLogic.GameFinished -= this.GameLogicGameFinished;
 
-            this.CreateWaitConditionGameAction(() => !this.gameboardOrchestrator.IsAnimationInProgress)
+            var gameboardEntity = this.EntityManager.Find("Panel.Content");
+            var gameboardOrchestrator = gameboardEntity.FindComponent<GameboardAnimationsOrchestrator>();
+
+            this.CreateWaitConditionGameAction(() => !gameboardOrchestrator.IsAnimationInProgress)
                 .ContinueWithAction(() => CustomServices.NavigationService.Navigate(NavigateCommands.DefaultForward))
                 .Run();
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
+
+            if (this.gameLogic != null)
+            {
+                this.gameLogic.GameFinished -= this.GameLogicGameFinished;
+            }
         }
     }
 }

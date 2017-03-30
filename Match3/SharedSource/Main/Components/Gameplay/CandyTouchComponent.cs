@@ -10,7 +10,7 @@ using WaveEngine.Framework.Graphics;
 namespace Match3.Components.Gameplay
 {
     [DataContract]
-    public class CandyTouchComponent : Component, IDisposable
+    public class CandyTouchComponent : Component
     {
         private const int MinimumDisplacement = (int)(GameLogicExtensions.DistanceBtwItems * 0.66);
 
@@ -47,14 +47,17 @@ namespace Match3.Components.Gameplay
             this.touchGestures.TouchReleased += this.TouchGestures_TouchReleased;
             this.touchGestures.TouchMoved += this.TouchGestures_TouchMoved;
         }
-        
-        public void Dispose()
-        {
-            this.gameboardOrchestrator = null;
 
-            this.touchGestures.TouchPressed -= this.TouchGestures_TouchPressed;
-            this.touchGestures.TouchReleased -= this.TouchGestures_TouchReleased;
-            this.touchGestures.TouchMoved -= this.TouchGestures_TouchMoved;
+        protected override void DeleteDependencies()
+        {
+            if (this.touchGestures != null)
+            {
+                this.touchGestures.TouchPressed -= this.TouchGestures_TouchPressed;
+                this.touchGestures.TouchReleased -= this.TouchGestures_TouchReleased;
+                this.touchGestures.TouchMoved -= this.TouchGestures_TouchMoved;
+            }
+
+            base.DeleteDependencies();
         }
 
         private void TouchGestures_TouchPressed(object sender, GestureEventArgs e)

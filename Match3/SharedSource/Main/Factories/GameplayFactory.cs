@@ -1,7 +1,5 @@
 ﻿using Match3.Gameboard;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using WaveEngine.Common.Math;
 using WaveEngine.Components.Animation;
 using WaveEngine.Components.Graphics2D;
@@ -59,9 +57,7 @@ namespace Match3.Factories
                     typeString = "lollipop";
                     break;
                 default:
-                    typeString = "jelly";
-                    break;
-                    //throw new InvalidOperationException("Invalid candy type");
+                    throw new InvalidOperationException("Invalid candy type");
             }
 
             var colorString = candyColor.ToString().ToLowerInvariant();

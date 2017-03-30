@@ -5,13 +5,11 @@ using Match3.Services;
 using Match3.Services.Navigation;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Runtime.Serialization;
 using WaveEngine.Common.Math;
 using WaveEngine.Framework;
 using WaveEngine.Framework.Graphics;
-using static Match3.Gameboard.Board;
 
 namespace Match3.Components.Gameplay
 {
@@ -32,12 +30,6 @@ namespace Match3.Components.Gameplay
         {
             base.ResolveDependencies();
             this.gameLogic = CustomServices.GameLogic;
-        }
-
-        protected override void DeleteDependencies()
-        {
-            base.DeleteDependencies();
-            this.gameLogic = null;
         }
 
         protected override void Initialize()
@@ -102,8 +94,6 @@ namespace Match3.Components.Gameplay
 
         public void RemoveCandyEntity(Coordinate coord)
         {
-            Debug.WriteLine("Remove {0}", coord);
-
             var candyAttributes = this.FindCandyAttributes(coord);
             this.currentCandies.Remove(candyAttributes);
             this.Owner.RemoveChild(candyAttributes.Owner.Name);
@@ -124,8 +114,7 @@ namespace Match3.Components.Gameplay
             var candyTouch = (CandyTouchComponent)sender;
             var candyAttributes = candyTouch.Owner.FindComponent<CandyAttributesComponent>();
             var coordinate = candyAttributes.Coordinate;
-
-            Debug.WriteLine("Move [{0},{1}] {2}!", coordinate.X, coordinate.Y, move);
+            
             var boardOperations = this.gameLogic.Move(coordinate, move);
 
             if (boardOperations.Any())

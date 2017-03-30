@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Runtime.Serialization;
-using Match3.Gameboard;
 using WaveEngine.Common.Math;
 using WaveEngine.Framework;
 using WaveEngine.Framework.Graphics;
 using Match3.Helpers;
 using Match3.Services;
 using WaveEngine.Components.Animation;
-using System.Linq;
 using WaveEngine.Framework.Animation;
 
 namespace Match3.Components.Gameplay
@@ -15,6 +13,8 @@ namespace Match3.Components.Gameplay
     [DataContract]
     public class CandyAnimationBehavior : Behavior
     {
+        private const int SmoothSpeed = 33;
+
         private enum AnimationStates
         {
             None,
@@ -50,22 +50,16 @@ namespace Match3.Components.Gameplay
             base.ResolveDependencies();
 
             this.explisionAnimation2D = this.Owner.FindChild("Particles")
-                      .FindComponent<Animation2D>();
+                                                  .FindComponent<Animation2D>();
         }
-
-        protected override void Initialize()
-        {
-            base.Initialize();
-        }
-
+        
         protected override void Update(TimeSpan gameTime)
         {
             var timeFactor = (float)gameTime.TotalSeconds;
-            var amount = MathHelper.Clamp(timeFactor * 33, 0, 1);
 
             if (this.animationState == AnimationStates.Moving)
             {
-                this.transform2D.LocalPosition = Vector2.Lerp(this.transform2D.LocalPosition, this.destinationPosition, amount);
+                this.transform2D.LocalPosition = Vector2.SmoothStep(this.transform2D.LocalPosition, this.destinationPosition, timeFactor * SmoothSpeed);
 
                 if (this.destinationPosition == this.transform2D.LocalPosition)
                 {
@@ -74,7 +68,7 @@ namespace Match3.Components.Gameplay
             }
             else if (this.animationState == AnimationStates.Appear)
             {
-                this.transform2D.LocalScale = Vector2.Lerp(this.transform2D.LocalScale, this.destinationScale, amount); ;
+                this.transform2D.LocalScale = Vector2.SmoothStep(this.transform2D.LocalScale, this.destinationScale, timeFactor * SmoothSpeed);
 
                 if (this.destinationScale == this.transform2D.LocalScale)
                 {

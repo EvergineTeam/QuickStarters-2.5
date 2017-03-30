@@ -5,12 +5,11 @@ using Match3.Gameboard;
 using WaveEngine.Framework;
 using WaveEngine.Common.Attributes;
 using Match3.Services;
-using static Match3.Gameboard.Board;
 
 namespace Match3.Components.Gameplay
 {
     [DataContract]
-    public class GameboardAnimationsOrchestrator : Behavior
+    public class GameboardAnimationsOrchestrator : Behavior, IDisposable
     {
         [RequiredComponent]
         protected GameboardContent gameboardContent;
@@ -46,6 +45,25 @@ namespace Match3.Components.Gameplay
             this.score = this.EntityManager.Find("ScorePanel").FindComponent<ScoreComponent>();
         }
 
+        protected override void DeleteDependencies()
+        {
+            this.RemoveCustomDependencies();
+            base.DeleteDependencies();
+        }
+
+        public void Dispose()
+        {
+            this.RemoveCustomDependencies();
+        }
+
+        private void RemoveCustomDependencies()
+        {
+            if (this.gameboardContent != null)
+            {
+                this.gameboardContent.OnBoardOperation -= this.GameboardContent_OnBoardOperation;
+            }
+        }
+
         private void GameboardContent_OnBoardOperation(object sender, BoardOperation[] boardOperations)
         {
             if (this.IsAnimationInProgress)
@@ -69,73 +87,15 @@ namespace Match3.Components.Gameplay
 
             if (boardOp.Type == OperationTypes.Remove)
             {
-                this.pendingOperations.Enqueue(() =>
-                {
-                    CustomServices.AudioPlayer.PlaySound(Services.Audio.Sounds.CandyBoom);
-                    foreach (var candyOp in boardOp.CandyOperations)
-                    {
-                        var candyAttr = this.gameboardContent.FindCandyAttributes(candyOp.PreviousPosition);
-                        candyAttr.Animator.SetDisappearAnimation();
-                    }
-                });
-
-                this.pendingOperations.Enqueue(() =>
-                {
-                    foreach (var candyOp in boardOp.CandyOperations)
-                    {
-                        this.gameboardContent.RemoveCandyEntity(candyOp.PreviousPosition);
-                    }
-                });
+                this.ProccessRemoveOperation(boardOp);
             }
             else if (boardOp.Type == OperationTypes.Add)
             {
-                this.pendingOperations.Enqueue(() =>
-                {
-                    foreach (var candyOp in boardOp.CandyOperations)
-                    {
-                        var candyAttr = this.gameboardContent.AddCandyEntity(candyOp.PreviousPosition, candyOp.CandyProperties.Value);
-
-                        if (candyOp.PreviousPosition.Y >= 0)
-                        {
-                            candyAttr.Animator.SetAppearAnimation();
-                            if (candyAttr.Type == CandyTypes.FourInLine)
-                            {
-                                CustomServices.AudioPlayer.PlaySound(Services.Audio.Sounds.ComboAppear);
-                            }
-                            else
-                            {
-                                CustomServices.AudioPlayer.PlaySound(Services.Audio.Sounds.ComboAppear2);
-                            }
-                        }
-                    }
-                });
+                this.ProccessAddOperation(boardOp);
             }
             else if (boardOp.Type == OperationTypes.Shuffle)
             {
-                this.pendingOperations.Enqueue(() =>
-                {
-                    for (int i = 0; i < this.gameLogic.BoardSizeM; i++)
-                    {
-                        for (int j = 0; j < this.gameLogic.BoardSizeM; j++)
-                        {
-                            var candyAttr = this.gameboardContent.FindCandyAttributes(new Coordinate { X = i, Y = j });
-                            candyAttr.Animator.AnimateToShuffle();
-                        }
-                    }
-                });
-                this.pendingOperations.Enqueue(() =>
-                {
-                    for (int i = 0; i < this.gameLogic.BoardSizeM; i++)
-                    {
-                        for (int j = 0; j < this.gameLogic.BoardSizeM; j++)
-                        {
-                            var cord = new Coordinate { X = i, Y = j };
-                            this.gameboardContent.RemoveCandyEntity(cord);
-                            var candyAttr = this.gameboardContent.AddCandyEntity(cord, this.gameLogic.CurrentCandies[i][j]);
-                            candyAttr.Animator.AnimateFromShuffle();
-                        }
-                    }
-                });
+                this.ProccessShuffleOperation();
             }
 
             if (boardOp.Type != OperationTypes.Remove)
@@ -150,6 +110,79 @@ namespace Match3.Components.Gameplay
                     }
                 });
             }
+        }
+
+        private void ProccessShuffleOperation()
+        {
+            this.pendingOperations.Enqueue(() =>
+            {
+                for (int i = 0; i < this.gameLogic.BoardSizeM; i++)
+                {
+                    for (int j = 0; j < this.gameLogic.BoardSizeM; j++)
+                    {
+                        var candyAttr = this.gameboardContent.FindCandyAttributes(new Coordinate { X = i, Y = j });
+                        candyAttr.Animator.AnimateToShuffle();
+                    }
+                }
+            });
+            this.pendingOperations.Enqueue(() =>
+            {
+                for (int i = 0; i < this.gameLogic.BoardSizeM; i++)
+                {
+                    for (int j = 0; j < this.gameLogic.BoardSizeM; j++)
+                    {
+                        var cord = new Coordinate { X = i, Y = j };
+                        this.gameboardContent.RemoveCandyEntity(cord);
+                        var candyAttr = this.gameboardContent.AddCandyEntity(cord, this.gameLogic.CurrentCandies[i][j]);
+                        candyAttr.Animator.AnimateFromShuffle();
+                    }
+                }
+            });
+        }
+
+        private void ProccessAddOperation(BoardOperation boardOp)
+        {
+            this.pendingOperations.Enqueue(() =>
+            {
+                foreach (var candyOp in boardOp.CandyOperations)
+                {
+                    var candyAttr = this.gameboardContent.AddCandyEntity(candyOp.PreviousPosition, candyOp.CandyProperties.Value);
+
+                    if (candyOp.PreviousPosition.Y >= 0)
+                    {
+                        candyAttr.Animator.SetAppearAnimation();
+                        if (candyAttr.Type == CandyTypes.FourInLine)
+                        {
+                            CustomServices.AudioPlayer.PlaySound(Services.Audio.Sounds.ComboAppear);
+                        }
+                        else
+                        {
+                            CustomServices.AudioPlayer.PlaySound(Services.Audio.Sounds.ComboAppear2);
+                        }
+                    }
+                }
+            });
+        }
+
+        private void ProccessRemoveOperation(BoardOperation boardOp)
+        {
+            this.pendingOperations.Enqueue(() =>
+            {
+                CustomServices.AudioPlayer.PlaySound(Services.Audio.Sounds.CandyBoom);
+                foreach (var candyOp in boardOp.CandyOperations)
+                {
+                    var candyAttr = this.gameboardContent.FindCandyAttributes(candyOp.PreviousPosition);
+                    candyAttr.Animator.SetDisappearAnimation();
+                }
+            });
+
+            this.pendingOperations.Enqueue(() =>
+            {
+                foreach (var candyOp in boardOp.CandyOperations)
+                {
+                    this.gameboardContent.RemoveCandyEntity(candyOp.PreviousPosition);
+                }
+            });
         }
 
         protected override void Update(TimeSpan gameTime)

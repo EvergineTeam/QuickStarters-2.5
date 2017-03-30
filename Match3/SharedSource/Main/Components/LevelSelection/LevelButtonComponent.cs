@@ -11,7 +11,7 @@ using WaveEngine.Framework;
 namespace Match3.Components.LevelSelection
 {
     [DataContract]
-    public class LevelButtonComponent : Component, IDisposable
+    public class LevelButtonComponent : Component
     {
         [RequiredComponent]
         protected SpriteAtlas spriteAtlas;
@@ -21,7 +21,7 @@ namespace Match3.Components.LevelSelection
 
         [RequiredComponent]
         protected NavigationComponent navComponent;
-        
+
         [RequiredComponent]
         protected TouchGestures touchGestures;
 
@@ -46,12 +46,12 @@ namespace Match3.Components.LevelSelection
         {
             get
             {
-                return levelIndex;
+                return this.levelIndex;
             }
 
             set
             {
-                levelIndex = value;
+                this.levelIndex = value;
                 this.RefreshVisualState();
             }
         }
@@ -60,12 +60,12 @@ namespace Match3.Components.LevelSelection
         {
             get
             {
-                return starsCount;
+                return this.starsCount;
             }
 
             set
             {
-                starsCount = value;
+                this.starsCount = value;
                 this.RefreshVisualState();
             }
         }
@@ -74,12 +74,12 @@ namespace Match3.Components.LevelSelection
         {
             get
             {
-                return isUnlocked;
+                return this.isUnlocked;
             }
 
             set
             {
-                isUnlocked = value;
+                this.isUnlocked = value;
                 this.RefreshVisualState();
             }
         }
@@ -101,10 +101,10 @@ namespace Match3.Components.LevelSelection
 
             var starLeftEntity = this.Owner.FindChild("StarLeft");
             this.starLeftSpriteAtlas = starLeftEntity.FindComponent<SpriteAtlas>();
-            
+
             var starCenterEntity = this.Owner.FindChild("StarCenter");
             this.starCenterSpriteAtlas = starCenterEntity.FindComponent<SpriteAtlas>();
-            
+
             var starRightEntity = this.Owner.FindChild("StarRight");
             this.starRightSpriteAtlas = starRightEntity.FindComponent<SpriteAtlas>();
 
@@ -131,23 +131,9 @@ namespace Match3.Components.LevelSelection
 
         protected override void DeleteDependencies()
         {
-            this.RemoveCustomDependencies();
-
+            this.Owner.Scene.Resumed -= this.SceneResumed;
+            this.touchGestures.TouchTap -= this.TouchGestures_TouchTap;
             base.DeleteDependencies();
-        }
-
-        public void Dispose()
-        {
-            this.RemoveCustomDependencies();
-        }
-
-        private void RemoveCustomDependencies()
-        {
-            if (this.touchGestures != null)
-            {
-                this.Owner.Scene.Resumed -= this.SceneResumed;
-                this.touchGestures.TouchTap -= this.TouchGestures_TouchTap;
-            }
         }
 
         private void RefreshVisualState()
@@ -163,8 +149,7 @@ namespace Match3.Components.LevelSelection
                 this.starCenterSpriteAtlas.Owner.IsVisible = true;
                 this.starRightSpriteAtlas.Owner.IsVisible = true;
 
-
-                this.starLeftSpriteAtlas.TextureName = this.starsCount < 1 ? 
+                this.starLeftSpriteAtlas.TextureName = this.starsCount < 1 ?
                     WaveContent.Assets.GUI.Panels_spritesheet_TextureName.StarSmallGray :
                     WaveContent.Assets.GUI.Panels_spritesheet_TextureName.StarSmallColor;
 
@@ -188,7 +173,7 @@ namespace Match3.Components.LevelSelection
                 this.starRightSpriteAtlas.Owner.IsVisible = false;
             }
         }
-        
+
         private void TouchGestures_TouchTap(object sender, GestureEventArgs e)
         {
             if (!this.isUnlocked)

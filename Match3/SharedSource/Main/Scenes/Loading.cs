@@ -1,13 +1,14 @@
 using Match3.Services;
 using Match3.Services.Navigation;
-using System;
+using WaveEngine.Components.GameActions;
 using WaveEngine.Framework;
-using WaveEngine.Framework.Services;
 
 namespace Match3.Scenes
 {
     public class Loading : Scene
     {
+        private const double LoadingTime = 0.5;
+
         protected override void CreateScene()
         {
             this.Load(WaveContent.Scenes.Loading);
@@ -27,11 +28,13 @@ namespace Match3.Scenes
 
         private void LoadNextLevel()
         {
-            WaveServices.TimerFactory.CreateTimer(TimeSpan.FromSeconds(0.5), () =>
-            {
-                CustomServices.GameLogic.InitializeLevel();
-                CustomServices.NavigationService.Navigate(NavigateCommands.DefaultForward);
-            }, false, this);
+            this.CreateWaitConditionGameAction(() => !CustomServices.NavigationService.IsPerformingNavigation)
+                .ContinueWithAction(() =>
+                {
+                    CustomServices.GameLogic.InitializeLevel();
+                    CustomServices.NavigationService.Navigate(NavigateCommands.DefaultForward);
+                })
+                .Run();
         }
     }
 }

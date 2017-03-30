@@ -7,7 +7,6 @@ using WaveEngine.Components.Graphics2D;
 using WaveEngine.Components.Graphics3D;
 using WaveEngine.Framework;
 using WaveEngine.Framework.Graphics;
-using WaveEngine.Framework.Managers;
 using WaveEngine.Framework.Services;
 
 namespace Match3.Components
