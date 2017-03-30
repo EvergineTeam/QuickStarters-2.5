@@ -608,7 +608,9 @@
           <d2p1:isVisible>true</d2p1:isVisible>
           <d2p1:name>NextBtn</d2p1:name>
           <d2p1:tag i:nil="true" />
-          <d2p1:AdditionalComponents xmlns:d6p1="WaveEngine.Framework" />
+          <d2p1:AdditionalComponents xmlns:d6p1="WaveEngine.Framework">
+            <d6p1:Component xmlns:d7p1="http://schemas.datacontract.org/2004/07/Match3.UI.Navigation" i:type="d7p1:NextLevelComponent" />
+          </d2p1:AdditionalComponents>
           <d2p1:PrefabElem>SquaredBtn</d2p1:PrefabElem>
           <d2p1:PrefabId>96c73f2a-eb6b-4858-89f3-7d13226d83c4</d2p1:PrefabId>
           <d2p1:PrefabPath>Content/Prefabs/Buttons/NavSquaredBtn.wpref</d2p1:PrefabPath>
@@ -645,7 +647,7 @@
             </d6p1:KeyValueOfstringanyType>
             <d6p1:KeyValueOfstringanyType>
               <d6p1:Key>Match3.UI.ButtonComponent#0#pressedTextureName</d6p1:Key>
-              <d6p1:Value xmlns:d8p1="http://www.w3.org/2001/XMLSchema" i:type="d8p1:string">PausePressed</d6p1:Value>
+              <d6p1:Value xmlns:d8p1="http://www.w3.org/2001/XMLSchema" i:type="d8p1:string">PlayPressed</d6p1:Value>
             </d6p1:KeyValueOfstringanyType>
             <d6p1:KeyValueOfstringanyType>
               <d6p1:Key>Match3.UI.Navigation.NavigationComponent#0#NavigationCommand</d6p1:Key>

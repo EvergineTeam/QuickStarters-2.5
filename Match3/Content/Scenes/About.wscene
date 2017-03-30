@@ -389,7 +389,7 @@
                   <d9p1:LocalPosition xmlns:d10p1="WaveEngine.Common.Math">
                     <d10p1:X>0</d10p1:X>
                     <d10p1:Y>10</d10p1:Y>
-                    <d10p1:Z>0</d10p1:Z>
+                    <d10p1:Z>-1</d10p1:Z>
                   </d9p1:LocalPosition>
                   <d9p1:LocalScale xmlns:d10p1="WaveEngine.Common.Math">
                     <d10p1:X>0.7</d10p1:X>
