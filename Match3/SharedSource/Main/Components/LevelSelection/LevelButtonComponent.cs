@@ -107,8 +107,7 @@ namespace Match3.Components.LevelSelection
 
             var starRightEntity = this.Owner.FindChild("StarRight");
             this.starRightSpriteAtlas = starRightEntity.FindComponent<SpriteAtlas>();
-
-            this.touchGestures.TouchTap -= this.TouchGestures_TouchTap;
+            
             this.touchGestures.TouchTap += this.TouchGestures_TouchTap;
 
             this.Owner.Scene.Resumed += this.SceneResumed;
@@ -131,8 +130,16 @@ namespace Match3.Components.LevelSelection
 
         protected override void DeleteDependencies()
         {
-            this.Owner.Scene.Resumed -= this.SceneResumed;
-            this.touchGestures.TouchTap -= this.TouchGestures_TouchTap;
+            if (this.Owner.Scene != null)
+            {
+                this.Owner.Scene.Resumed -= this.SceneResumed;
+            }
+
+            if (this.touchGestures != null)
+            {
+                this.touchGestures.TouchTap -= this.TouchGestures_TouchTap;
+            }
+
             base.DeleteDependencies();
         }
 

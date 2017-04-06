@@ -16,9 +16,8 @@ namespace Match3.Gameboard
 
         public void AddCandyOperation(CandyOperation operation)
         {
-            if (!this.CandyOperations.Any(x =>
-                x.PreviousPosition.X == operation.PreviousPosition.X && x.PreviousPosition.Y == operation.PreviousPosition.Y
-             && x.CurrentPosition.X == operation.CurrentPosition.X && x.CurrentPosition.Y == operation.CurrentPosition.Y))
+            if (!this.CandyOperations.Any(x => x.PreviousPosition == operation.PreviousPosition &&
+                                               x.CurrentPosition == operation.CurrentPosition))
             {
                 this.CandyOperations.Add(operation);
             }

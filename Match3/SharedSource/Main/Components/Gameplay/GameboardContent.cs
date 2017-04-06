@@ -16,6 +16,8 @@ namespace Match3.Components.Gameplay
     [DataContract]
     public class GameboardContent : Component
     {
+        public const int DistanceBtwCandies = 150;
+
         [RequiredComponent]
         protected Transform2D transform;
 

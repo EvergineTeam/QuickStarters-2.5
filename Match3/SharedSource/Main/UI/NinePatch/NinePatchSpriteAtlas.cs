@@ -165,8 +165,8 @@ namespace Match3.UI.NinePatch
         /// <exception cref="System.ObjectDisposedException">SpriteAtlas has been disposed.</exception>
         private void RefreshSourceRectangle(bool refreshInnerTexture, Rectangle rectangle)
         {
-            if (this.SpriteSheet != null
-             && this.SpriteSheet.Sprites.Length > 0)
+            if (this.SpriteSheet != null &&
+                this.SpriteSheet.Sprites.Length > 0)
             {
                 if (refreshInnerTexture)
                 {

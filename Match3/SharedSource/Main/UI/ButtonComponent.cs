@@ -1,15 +1,12 @@
-﻿#region Using Statements
-using Match3.Services;
+﻿using Match3.Services;
 using Match3.Services.Audio;
 using System;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
-using System.Text;
 using WaveEngine.Common.Attributes;
 using WaveEngine.Components.Gestures;
 using WaveEngine.Components.Graphics2D;
 using WaveEngine.Framework;
-#endregion
 
 namespace Match3.UI
 {
@@ -114,8 +111,7 @@ namespace Match3.UI
 
         protected virtual void TouchGestures_TouchReleased(object sender, GestureEventArgs e)
         {
-            if (this.IsActive
-             && this.isPressed)
+            if (this.IsActive && this.isPressed)
             {
                 this.isPressed = false;
 
@@ -138,8 +134,7 @@ namespace Match3.UI
 
         protected virtual void TouchGestures_TouchPressed(object sender, GestureEventArgs e)
         {
-            if (this.IsActive
-             && e.GestureSample.IsNew)
+            if (this.IsActive && e.GestureSample.IsNew)
             {
                 this.isPressed = true;
 

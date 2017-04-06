@@ -269,8 +269,8 @@ namespace Match3.UI.NinePatch
 
         private void LoadTexture()
         {
-            if (this.ninePatchTexture == null
-             && !string.IsNullOrEmpty(this.texturePath))
+            if (this.ninePatchTexture == null &&
+                !string.IsNullOrEmpty(this.texturePath))
             {
                 Texture2D sourceTexture;
                 Rectangle sourceRecangle;

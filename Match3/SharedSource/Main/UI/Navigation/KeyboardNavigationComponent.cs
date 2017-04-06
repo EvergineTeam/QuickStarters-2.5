@@ -1,10 +1,8 @@
-﻿#region Using Statements
-using System;
+﻿using System;
 using System.Runtime.Serialization;
 using WaveEngine.Common.Input;
 using WaveEngine.Framework;
 using WaveEngine.Framework.Services;
-#endregion
 
 namespace Match3.UI.Navigation
 {

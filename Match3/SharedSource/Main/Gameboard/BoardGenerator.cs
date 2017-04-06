@@ -1,4 +1,6 @@
 ﻿using System;
+using WaveEngine.Framework.Services;
+using Random = WaveEngine.Framework.Services.Random;
 
 namespace Match3.Gameboard
 {
@@ -11,7 +13,7 @@ namespace Match3.Gameboard
         public BoardGenerator()
         {
             this.candyColors = (CandyColors[])Enum.GetValues(typeof(CandyColors));
-            this.random = new Random((int)DateTime.Now.Ticks);
+            this.random = WaveServices.Random;
         }
 
         public Candy[][] Generate(int sizeM, int sizeN)

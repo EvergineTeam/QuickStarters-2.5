@@ -4,8 +4,6 @@ using WaveEngine.Common.Media;
 using WaveEngine.Framework.Services;
 using WaveEngine.Framework.Sound;
 using System;
-using WaveEngine.Components.GameActions;
-using WaveEngine.Framework;
 
 namespace Match3.Services.Audio
 {
@@ -20,7 +18,7 @@ namespace Match3.Services.Audio
         private MusicPlayer musicPlayer;
         private Songs currentSong;
         private Dictionary<Songs, MusicInfo> songs;
-        
+
         public bool IsMuted
         {
             get { return this.isMuted; }
@@ -77,15 +75,15 @@ namespace Match3.Services.Audio
             this.sounds[soundIndex] = new SoundInfo(file);
             this.soundsBank.Add(this.sounds[soundIndex]);
         }
-        
+
         private SoundInfo GetSoundInfo(Sounds sound)
         {
             SoundInfo result = null;
 
             var soundIndex = (int)sound;
 
-            if (soundIndex >= 0
-             && soundIndex < this.sounds.Length)
+            if (soundIndex >= 0 &&
+                soundIndex < this.sounds.Length)
             {
                 result = this.sounds[soundIndex];
             }
@@ -99,44 +97,6 @@ namespace Match3.Services.Audio
             sound.Pitch = this.Speed - 1;
         }
 
-        /// <summary>
-        /// Returns a IGameAction for the sound.
-        /// </summary>
-        /// <param name="sound">The sound.</param>
-        /// <param name="scene">The scene.</param>
-        /// <param name="volume">The volume.</param>
-        /// <param name="loop">if set to <c>true</c> [loop].</param>
-        /// <returns></returns>
-        public IGameAction CreatePlaySoundAction(Sounds sound, Scene scene, float volume = 1f, bool loop = false)
-        {
-            IGameAction result;
-
-            var soundInfo = this.GetSoundInfo(sound);
-
-            if (soundInfo != null)
-            {
-                var playSoundAction = new PlaySoundGameAction(soundInfo, scene, volume, loop);
-                var addRunningSoundAction = scene.CreateGameActionFromAction(() => this.runningSoundInstances.Add(playSoundAction.SoundInstance));
-                result = scene.CreateParallelGameActions(
-                                    playSoundAction,
-                                    addRunningSoundAction)
-                              .WaitAll();
-            }
-            else
-            {
-                result = scene.CreateEmptyGameAction();
-            }
-
-            return result;
-        }
-
-        /// <summary>
-        /// Plays the sound.
-        /// </summary>
-        /// <param name="sound">The sound.</param>
-        /// <param name="volume">The volume.</param>
-        /// <param name="loop">if set to <c>true</c> [loop].</param>
-        /// <returns></returns>
         public SoundInstance PlaySound(Sounds sound, float volume = 1f, bool loop = false)
         {
             SoundInstance result = null;

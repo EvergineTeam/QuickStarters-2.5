@@ -5,7 +5,6 @@ using System.Linq;
 using System.Runtime.Serialization;
 using WaveEngine.Common;
 using WaveEngine.Framework.Services;
-using static Match3.Gameboard.Board;
 
 namespace Match3.Services
 {
@@ -15,33 +14,15 @@ namespace Match3.Services
 
         public ulong CurrentScore { get; private set; }
 
-        public int CurrentUnlockedStars
-        {
-            get
-            {
-                return this.UnlockedStartsByScore(this.CurrentScore);
-            }
-        }
-
         public ulong[] StarsScores { get; private set; }
+
+        public int CurrentUnlockedStars { get { return this.UnlockedStartsByScore(this.CurrentScore); } }
 
         public TimeSpan LeftTime { get { return this.currentTimer.Interval; } }
 
-        public int BoardSizeM
-        {
-            get
-            {
-                return this.currentBoard.SizeM;
-            }
-        }
+        public int BoardSizeM { get { return this.currentBoard.SizeM; } }
 
-        public int BoardSizeN
-        {
-            get
-            {
-                return this.currentBoard.SizeN;
-            }
-        }
+        public int BoardSizeN { get { return this.currentBoard.SizeN; } }
 
         public Candy[][] CurrentCandies { get { return this.currentBoard.CurrentStatus; } }
 
@@ -92,7 +73,7 @@ namespace Match3.Services
 
             this.CurrentLevel = level;
         }
-        
+
         public int UnlockedStartsByScore(ulong score)
         {
             if (this.StarsScores != null)

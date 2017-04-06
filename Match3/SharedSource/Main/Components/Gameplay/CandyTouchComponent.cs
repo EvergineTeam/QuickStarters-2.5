@@ -12,7 +12,7 @@ namespace Match3.Components.Gameplay
     [DataContract]
     public class CandyTouchComponent : Component
     {
-        private const int MinimumDisplacement = (int)(GameLogicExtensions.DistanceBtwItems * 0.66);
+        private const int MinimumDisplacement = (int)(GameboardContent.DistanceBtwCandies * 0.66);
 
         [RequiredComponent]
         protected Transform2D transform2D;
@@ -109,7 +109,7 @@ namespace Match3.Components.Gameplay
             this.detectedMove = null;
             if (Math.Abs(diffTouchPosition.X) > Math.Abs(diffTouchPosition.Y))
             {
-                candyPosition.X += Math.Max(-GameLogicExtensions.DistanceBtwItems, Math.Min(GameLogicExtensions.DistanceBtwItems, diffTouchPosition.X));
+                candyPosition.X += Math.Max(-GameboardContent.DistanceBtwCandies, Math.Min(GameboardContent.DistanceBtwCandies, diffTouchPosition.X));
 
                 if (diffTouchPosition.X > MinimumDisplacement)
                 {
@@ -122,7 +122,7 @@ namespace Match3.Components.Gameplay
             }
             else
             {
-                candyPosition.Y += Math.Max(-GameLogicExtensions.DistanceBtwItems, Math.Min(GameLogicExtensions.DistanceBtwItems, diffTouchPosition.Y));
+                candyPosition.Y += Math.Max(-GameboardContent.DistanceBtwCandies, Math.Min(GameboardContent.DistanceBtwCandies, diffTouchPosition.Y));
 
                 if (diffTouchPosition.Y > MinimumDisplacement)
                 {

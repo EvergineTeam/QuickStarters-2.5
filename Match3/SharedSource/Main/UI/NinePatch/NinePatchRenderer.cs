@@ -86,17 +86,17 @@ namespace Match3.UI.NinePatch
         /// </remarks>
         public override void Draw(TimeSpan gameTime)
         {
-            if (this.lastTransformRectangleCenter != this.transform2D.Rectangle.Center
-                 || this.lastTransformOpacity != this.transform2D.GlobalOpacity
-                 || this.lastTexturePath != this.ninePatch.TexturePath)
+            if (this.lastTransformRectangleCenter != this.transform2D.Rectangle.Center || 
+                this.lastTransformOpacity != this.transform2D.GlobalOpacity || 
+                this.lastTexturePath != this.ninePatch.TexturePath)
             {
                 this.RefreshMesh();
             }
 
             this.ninePatch.Material.LayerType = this.LayerType;
 
-            if (this.transform2D.GlobalOpacity > 0
-             && this.mesh != null)
+            if (this.transform2D.GlobalOpacity > 0 &&
+                this.mesh != null)
             {
                 this.mesh.ZOrder = this.transform2D.DrawOrder;
                 Matrix worldTransform = this.transform2D.WorldTransform;
@@ -113,8 +113,8 @@ namespace Match3.UI.NinePatch
         {
             base.DrawDebugLines();
 
-            if (this.transform2D.GlobalOpacity > 0
-             && this.mesh != null)
+            if (this.transform2D.GlobalOpacity > 0 &&
+                this.mesh != null)
             {
                 foreach (var vertex in this.vertices)
                 {

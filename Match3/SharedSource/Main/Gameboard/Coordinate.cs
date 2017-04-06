@@ -13,6 +13,16 @@ namespace Match3.Gameboard
             return $"[X={this.X}, Y={this.Y}]";
         }
 
+        public override bool Equals(object obj)
+        {
+            return obj is Coordinate && this == (Coordinate)obj;
+        }
+
+        public override int GetHashCode()
+        {
+            return (this.X + this.Y).GetHashCode();
+        }
+
         public static bool operator ==(Coordinate c1, Coordinate c2)
         {
             return c1.X == c2.X && 

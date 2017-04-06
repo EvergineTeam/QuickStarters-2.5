@@ -1,14 +1,6 @@
-﻿#region Using Statements
-using Match3.Services;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Runtime.Serialization;
-using System.Text;
-using WaveEngine.Common.Attributes;
 using WaveEngine.Components.Gestures;
-using WaveEngine.Components.Graphics2D;
-using WaveEngine.Framework;
-#endregion
 
 namespace Match3.UI
 {
@@ -34,20 +26,17 @@ namespace Match3.UI
 
         private void RaiseStateChanged()
         {
-            if (this.OnStateChanged != null)
-            {
-                this.OnStateChanged(this, this.isPressed);
-            }
+            this.OnStateChanged?.Invoke(this, this.isPressed);
         }
 
         protected override void TouchGestures_TouchPressed(object sender, GestureEventArgs e)
         {
+            // Intentionally blank
         }
 
         protected override void TouchGestures_TouchReleased(object sender, GestureEventArgs e)
         {
-            if (this.IsActive
-             && e.GestureSample.IsNew)
+            if (this.IsActive && e.GestureSample.IsNew)
             {
                 this.SwitchValue();
             }

@@ -1,7 +1,4 @@
-﻿using Match3.Gameboard;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
+﻿using System.Collections.Generic;
 using System.Linq;
 
 namespace Match3.Gameboard
@@ -18,25 +15,13 @@ namespace Match3.Gameboard
         };
 
         private BoardGenerator generator;
-
         private Candy[][] currentStatus;
 
-        public Candy[][] CurrentStatus
-        {
-            get { return this.currentStatus; }
-        }
+        public Candy[][] CurrentStatus { get { return this.currentStatus; } }
 
-        public int SizeM
-        {
-            get;
-            private set;
-        }
+        public int SizeM { get; private set; }
 
-        public int SizeN
-        {
-            get;
-            private set;
-        }
+        public int SizeN { get; private set; }
 
         public Board(int sizeM, int sizeN)
         {
@@ -72,7 +57,8 @@ namespace Match3.Gameboard
                 for (int j = 0; j < boardStatus[i].Length; j++)
                 {
                     var coordinate = new Coordinate { X = i, Y = j };
-                    if (this.MoveHasOperations(coordinate, CandyMoves.Bottom) || this.MoveHasOperations(coordinate, CandyMoves.Right))
+                    if (this.MoveHasOperations(coordinate, CandyMoves.Bottom) ||
+                        this.MoveHasOperations(coordinate, CandyMoves.Right))
                     {
                         return true;
                     }
@@ -192,18 +178,18 @@ namespace Match3.Gameboard
         private IEnumerable<BoardOperation> GetCurrentOperations()
         {
             var resultOperations = new List<BoardOperation>();
-            if (!this.TryGetAddOperation(ref resultOperations))
+            if (!this.TryIncludeAddOperation(resultOperations))
             {
-                if (!this.TryGetMoveOperation(ref resultOperations))
+                if (!this.TryIncludeMoveOperation(resultOperations))
                 {
-                    this.TryGetRemoveOperation(ref resultOperations);
+                    this.TryIncludeRemoveOperation(resultOperations);
                 }
             }
 
             return resultOperations;
         }
 
-        private bool TryGetAddOperation(ref List<BoardOperation> resultOperations)
+        private bool TryIncludeAddOperation(List<BoardOperation> resultOperations)
         {
             var resultOperation = new BoardOperation();
             resultOperation.Type = OperationTypes.Add;
@@ -253,7 +239,7 @@ namespace Match3.Gameboard
             return false;
         }
 
-        private bool TryGetMoveOperation(ref List<BoardOperation> resultOperations)
+        private bool TryIncludeMoveOperation(List<BoardOperation> resultOperations)
         {
             var resultOperation = new BoardOperation();
             resultOperation.Type = OperationTypes.Move;
@@ -287,7 +273,7 @@ namespace Match3.Gameboard
             return false;
         }
 
-        private bool TryGetRemoveOperation(ref List<BoardOperation> resultOperations)
+        private bool TryIncludeRemoveOperation(List<BoardOperation> resultOperations)
         {
             var addOperations = new List<BoardOperation>();
             var removedCoordinate = new List<Coordinate>();
@@ -400,7 +386,7 @@ namespace Match3.Gameboard
                 }
             }
         }
-        
+
         private struct Piece
         {
             public int M;
