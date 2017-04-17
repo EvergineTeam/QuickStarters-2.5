@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>846d34c8-e537-4dc7-b646-cff649ce42e4</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>MultiplayerTopDownTank</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Behaviors\CameraBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Behaviors\TankBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Components\GamePlayManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\Joystick.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Game.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameConstants.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Managers\NavigationManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Scenes\GameScene.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Scenes\LobbyScene.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Scenes\MenuScene.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Scenes\ScoreScene.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\AudioService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WaveContent.cs" />
+  </ItemGroup>
+</Project>
