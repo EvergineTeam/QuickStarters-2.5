@@ -27,7 +27,7 @@ namespace Match3
 		public MainWindow (IntPtr handle) : base (handle)
 		{
 			this.WindowTitle = "Match3";
-			this.ResizeScreen(1280, 720);
+			this.ResizeScreen(720, 960);
 		}
 
 		[Export ("initWithCoder:")]
