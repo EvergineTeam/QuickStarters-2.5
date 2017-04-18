@@ -23,13 +23,15 @@ namespace MultiplayerTopDownTank.Behaviors
         private TimeSpan shootCadence;
         private VirtualScreenManager virtualScreenManager;
 
+        private Transform2D barrelTransform = null;
+
         /// <summary>
         /// Sets the default values
         /// </summary>
         protected override void DefaultValues()
         {
             this.shootCadence = TimeSpan.FromMilliseconds(500);
-            this.velocity = 5;
+            this.velocity = 2;
             this.textureDirection = new Vector2(0, -1);
 
             base.DefaultValues();
@@ -45,6 +47,9 @@ namespace MultiplayerTopDownTank.Behaviors
             this.leftJoystick = this.EntityManager.Find<Joystick>("leftJoystick");
             this.rightJoystick = this.EntityManager.Find<Joystick>("rightJoystick");
             this.virtualScreenManager = this.Owner.Scene.VirtualScreenManager;
+
+            var barrelEntity = this.Owner.FindChild(GameConstants.PlayerBarrel);
+            this.barrelTransform = barrelEntity.FindComponent<Transform2D>();
         }
 
         protected override void Update(TimeSpan gameTime)
@@ -87,7 +92,8 @@ namespace MultiplayerTopDownTank.Behaviors
 
                 if (float.IsNaN(rotation))
                 {
-                    this.transform.Rotation = 0;
+                    // Tank does not change its rotation when player do not move
+                    // this.transform.Rotation = 0;
                 }
                 else
                 {
@@ -113,6 +119,16 @@ namespace MultiplayerTopDownTank.Behaviors
             }
 
             #endregion
+
+            if (!float.IsNaN(rightJoyDirection.X) && !float.IsNaN(rightJoyDirection.Y))
+            {
+                float rotation = Vector2.Angle(rightJoyDirection, this.textureDirection);
+
+                if (!float.IsNaN(rotation))
+                { 
+                    this.barrelTransform.Rotation = rotation;
+                }
+            }
         }
     }
 }
