@@ -32,7 +32,7 @@ namespace Match3
         {
             base.Initialize();
 
-            this.Adapter.SupportedOrientations = DisplayOrientation.LandscapeLeft | DisplayOrientation.LandscapeRight;
+            this.Adapter.SupportedOrientations = DisplayOrientation.Portrait;
 
             this.displayRequest = new DisplayRequest();
             this.displayRequest.RequestActive();
