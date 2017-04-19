@@ -46,13 +46,11 @@ namespace Match3.Components
 
         private float numElements;
 
-        bool firstUpdate;
+        private float maxElementDistance;
 
         protected override void DefaultValues()
         {
             base.DefaultValues();
-
-            this.firstUpdate = true;
 
             this.lastAparitionCounter = TimeSpan.Zero;
             this.availableEntities = new List<Transform2D>(PoolSize);
@@ -72,6 +70,14 @@ namespace Match3.Components
             this.FillPool();
 
             this.CalculateGenerationParameters();
+
+            this.Owner.EntityInitialized += this.Owner_EntityInitialized;
+        }
+
+        private void Owner_EntityInitialized(object sender, EventArgs e)
+        {
+            this.Owner.EntityInitialized -= this.Owner_EntityInitialized;
+            this.RefillScreen();
         }
 
         private void CalculateGenerationParameters()
@@ -80,13 +86,16 @@ namespace Match3.Components
 
             var virtualScreen = this.Owner.Scene.VirtualScreenManager;
             var origin = new Vector2(virtualScreen.LeftEdge, virtualScreen.TopEdge) - new Vector2(this.ElementRadius);
+            var rightBottomCorner = new Vector2(virtualScreen.RightEdge, virtualScreen.BottomEdge) + new Vector2(this.ElementRadius);
             var rightCorner = new Vector2(virtualScreen.RightEdge, origin.Y);
             var bottomCorner = new Vector2(origin.X, virtualScreen.BottomEdge);
 
-            var perperdicular = new Vector2(LinearVelocity.Y, -LinearVelocity.X);
+            var perperdicular = new Vector2(this.LinearVelocity.Y, -this.LinearVelocity.X);
             perperdicular.Normalize();
-            this.endPoint = Vector2.Dot(rightCorner - origin, perperdicular) * perperdicular;
-            this.startPoint = Vector2.Dot(bottomCorner - origin, perperdicular) * perperdicular;
+            this.endPoint = (Vector2.Dot(rightCorner - origin, perperdicular) * perperdicular) + origin;
+            this.startPoint = (Vector2.Dot(bottomCorner - origin, perperdicular) * perperdicular) + origin;
+            
+            this.maxElementDistance = (rightBottomCorner - origin).Length();
 
             this.numElements = (int)((this.endPoint - this.startPoint).Length() / (2f * (this.ElementsPadding + this.ElementRadius)));
         }
@@ -118,12 +127,6 @@ namespace Match3.Components
 
         protected override void Update(TimeSpan gameTime)
         {
-            if (this.firstUpdate)
-            {
-                this.firstUpdate = false;
-                this.RefillScreen();
-            }
-
             var deltaTime = (float)gameTime.TotalSeconds;
 
             foreach (var elementTransform in this.onSceenEntities.ToList())
@@ -161,10 +164,8 @@ namespace Match3.Components
             }
 
             // Fill screen with elements
-            var virtualScreen = this.Owner.Scene.VirtualScreenManager;
-            var maxDistance = Math.Max(virtualScreen.VirtualWidth, virtualScreen.VirtualHeight);
             var maxAdvanceVelocity = Math.Max(this.LinearVelocity.X, this.LinearVelocity.Y);
-            float totalSecondsAmount = maxDistance / maxAdvanceVelocity;
+            float totalSecondsAmount = this.maxElementDistance / maxAdvanceVelocity;
             var steps = Math.Ceiling(totalSecondsAmount / this.apparitionInterval.TotalSeconds);
 
             for (int i = 0; i < steps; i++)
