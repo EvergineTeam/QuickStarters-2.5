@@ -23,8 +23,8 @@ namespace Match3
 
         public App()
         {
-            this.Width = 1280;
-            this.Height = 720;
+            this.Width = 720;
+            this.Height = 960;
             this.FullScreen = false;
             this.WindowTitle = "Match3";
         }
