@@ -1,64 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="64" height="48" tilewidth="128" tileheight="128" nextobjectid="1">
- <tileset firstgid="1" name="Environment" tilewidth="256" tileheight="256" tilecount="7" columns="0">
+ <tileset firstgid="1" name="Environment" tilewidth="128" tileheight="128" tilecount="1" columns="0">
   <tile id="0">
    <image width="128" height="128" source="../Textures/Environment/dirt.png"/>
   </tile>
-  <tile id="1">
-   <image width="128" height="128" source="../Textures/Environment/grass.png"/>
-  </tile>
-  <tile id="2">
-   <image width="256" height="256" source="../Textures/Environment/multipletrees.png"/>
-  </tile>
-  <tile id="3">
-   <image width="128" height="128" source="../Textures/Environment/sand.png"/>
-  </tile>
-  <tile id="4">
-   <image width="128" height="128" source="../Textures/Environment/semidirt.png"/>
-  </tile>
-  <tile id="5">
-   <image width="98" height="107" source="../Textures/Environment/treeLarge.png"/>
-  </tile>
-  <tile id="6">
-   <image width="87" height="87" source="../Textures/Environment/treeSmall.png"/>
-  </tile>
  </tileset>
- <tileset firstgid="8" name="Obstacles" tilewidth="128" tileheight="128" tilecount="12" columns="0">
-  <tile id="0">
-   <image width="44" height="62" source="../Textures/Obstacles/barrelGreen_side.png"/>
-  </tile>
-  <tile id="1">
-   <image width="44" height="62" source="../Textures/Obstacles/barrelGreen_side_damaged.png"/>
-  </tile>
-  <tile id="2">
-   <image width="48" height="48" source="../Textures/Obstacles/barrelGreen_up.png"/>
-  </tile>
-  <tile id="3">
-   <image width="44" height="62" source="../Textures/Obstacles/barrelGrey_sde_rust.png"/>
-  </tile>
-  <tile id="4">
-   <image width="44" height="62" source="../Textures/Obstacles/barrelGrey_side.png"/>
-  </tile>
-  <tile id="5">
-   <image width="48" height="48" source="../Textures/Obstacles/barrelGrey_up.png"/>
-  </tile>
-  <tile id="6">
-   <image width="44" height="62" source="../Textures/Obstacles/barrelRed_side.png"/>
-  </tile>
-  <tile id="7">
-   <image width="48" height="48" source="../Textures/Obstacles/barrelRed_up.png"/>
-  </tile>
+ <tileset firstgid="8" name="Obstacles" tilewidth="128" tileheight="128" tilecount="1" columns="0">
   <tile id="8">
    <image width="128" height="128" source="../Textures/Obstacles/bigSandbagBrown.png"/>
-  </tile>
-  <tile id="9">
-   <image width="96" height="96" source="../Textures/Obstacles/oil.png"/>
-  </tile>
-  <tile id="10">
-   <image width="66" height="44" source="../Textures/Obstacles/sandbagBeige.png"/>
-  </tile>
-  <tile id="11">
-   <image width="66" height="44" source="../Textures/Obstacles/sandbagBrown.png"/>
   </tile>
  </tileset>
  <tileset firstgid="20" name="Adorners" tilewidth="128" tileheight="128" tilecount="3" columns="0">
