@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// File generated on 25/04/2017 15:59:53
+// File generated on 25/04/2017 16:38:40
 namespace MultiplayerTopDownTank
 {
     using System;
@@ -445,6 +445,19 @@ namespace MultiplayerTopDownTank
             public sealed class Textures
             {
                 
+                public sealed class Adorners
+                {
+                    
+                    /// <summary> Path to Content/Assets/Textures/Adorners/adorner01.png </summary>
+                    public const string adorner01_png = "Content/Assets/Textures/Adorners/adorner01.png";
+                    
+                    /// <summary> Path to Content/Assets/Textures/Adorners/adorner02.png </summary>
+                    public const string adorner02_png = "Content/Assets/Textures/Adorners/adorner02.png";
+                    
+                    /// <summary> Path to Content/Assets/Textures/Adorners/adorner03.png </summary>
+                    public const string adorner03_png = "Content/Assets/Textures/Adorners/adorner03.png";
+                }
+                
                 public sealed class Bullets
                 {
                     
@@ -530,8 +543,14 @@ namespace MultiplayerTopDownTank
                     /// <summary> Path to Content/Assets/Textures/Environment/grass.png </summary>
                     public const string grass_png = "Content/Assets/Textures/Environment/grass.png";
                     
+                    /// <summary> Path to Content/Assets/Textures/Environment/multipletrees.png </summary>
+                    public const string multipletrees_png = "Content/Assets/Textures/Environment/multipletrees.png";
+                    
                     /// <summary> Path to Content/Assets/Textures/Environment/sand.png </summary>
                     public const string sand_png = "Content/Assets/Textures/Environment/sand.png";
+                    
+                    /// <summary> Path to Content/Assets/Textures/Environment/semidirt.png </summary>
+                    public const string semidirt_png = "Content/Assets/Textures/Environment/semidirt.png";
                     
                     /// <summary> Path to Content/Assets/Textures/Environment/treeLarge.png </summary>
                     public const string treeLarge_png = "Content/Assets/Textures/Environment/treeLarge.png";
@@ -566,6 +585,9 @@ namespace MultiplayerTopDownTank
                     
                     /// <summary> Path to Content/Assets/Textures/Obstacles/barrelRed_up.png </summary>
                     public const string barrelRed_up_png = "Content/Assets/Textures/Obstacles/barrelRed_up.png";
+                    
+                    /// <summary> Path to Content/Assets/Textures/Obstacles/bigSandbagBrown.png </summary>
+                    public const string bigSandbagBrown_png = "Content/Assets/Textures/Obstacles/bigSandbagBrown.png";
                     
                     /// <summary> Path to Content/Assets/Textures/Obstacles/oil.png </summary>
                     public const string oil_png = "Content/Assets/Textures/Obstacles/oil.png";
@@ -783,6 +805,13 @@ namespace MultiplayerTopDownTank
                     /// <summary> Path to Content/Assets/Textures/Tanks/tracksSmall.png </summary>
                     public const string tracksSmall_png = "Content/Assets/Textures/Tanks/tracksSmall.png";
                 }
+            }
+            
+            public sealed class Tiles
+            {
+                
+                /// <summary> Path to Content/Assets/Tiles/Map.tmx </summary>
+                public const string Map_tmx = "Content/Assets/Tiles/Map.tmx";
             }
         }
         
