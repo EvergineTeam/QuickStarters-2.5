@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// File generated on 3/14/2017 1:26:43 PM
+// File generated on 27/04/2017 16:46:18
 namespace SurvivorNinja
 {
     using System;
@@ -16,6 +16,9 @@ namespace SurvivorNinja
     
     public sealed class WaveContent
     {
+        
+        /// <summary> Path to  </summary>
+        public const string GameInfo = null;
         
         public sealed class Assets
         {

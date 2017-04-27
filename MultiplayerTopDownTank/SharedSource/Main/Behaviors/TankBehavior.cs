@@ -1,4 +1,5 @@
-﻿using MultiplayerTopDownTank.Entities;
+﻿using MultiplayerTopDownTank.Components;
+using MultiplayerTopDownTank.Entities;
 using System;
 using System.Runtime.Serialization;
 using WaveEngine.Common.Input;
@@ -13,24 +14,29 @@ namespace MultiplayerTopDownTank.Behaviors
     [DataContract]
     public class TankBehavior : Behavior
     {
-        [RequiredComponent]
-        private Transform2D transform = null;
-
         private Joystick leftJoystick, rightJoystick;
         private int life;
         private float velocity;
         private Vector2 textureDirection;
+        private TimeSpan time;
         private TimeSpan shootCadence;
         private VirtualScreenManager virtualScreenManager;
-
         private Transform2D barrelTransform = null;
+
+        [RequiredComponent]
+        private Transform2D transform = null;
+
+        [RequiredComponent]
+        private BulletEmitter bulletEmitter = null;
 
         /// <summary>
         /// Sets the default values
         /// </summary>
         protected override void DefaultValues()
         {
-            this.shootCadence = TimeSpan.FromMilliseconds(500);
+            this.shootCadence = TimeSpan.FromMilliseconds(150);
+            this.time = this.shootCadence;
+            this.life = 100;
             this.velocity = 2;
             this.textureDirection = new Vector2(0, -1);
 
@@ -100,9 +106,11 @@ namespace MultiplayerTopDownTank.Behaviors
                     this.transform.Rotation = rotation;
                 }
             }
-
+                              
             // Tank shoot   
             Vector2 rightJoyDirection = this.rightJoystick.Direction;
+
+            this.time -= gameTime;
 
             #region Keyboard move
 
@@ -125,8 +133,17 @@ namespace MultiplayerTopDownTank.Behaviors
                 float rotation = Vector2.Angle(rightJoyDirection, this.textureDirection);
 
                 if (!float.IsNaN(rotation))
-                { 
+                {
                     this.barrelTransform.Rotation = rotation;
+
+                    if (this.time <= TimeSpan.Zero)
+                    {
+                        // Create bullet
+                        Vector2 tankPosition = new Vector2(this.transform.X, this.transform.Y);
+                        this.bulletEmitter.Shoot(tankPosition, rightJoyDirection);
+                    }
+
+                    this.time = this.shootCadence;
                 }
             }
         }
