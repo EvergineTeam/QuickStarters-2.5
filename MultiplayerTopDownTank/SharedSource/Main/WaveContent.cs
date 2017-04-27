@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// File generated on 25/04/2017 17:04:50
+// File generated on 27/04/2017 15:54:49
 namespace MultiplayerTopDownTank
 {
     using System;
@@ -16,6 +16,9 @@ namespace MultiplayerTopDownTank
     
     public sealed class WaveContent
     {
+        
+        /// <summary> Path to Content/MultiplayerTopDownTank.wgame </summary>
+        public const string GameInfo = "Content/MultiplayerTopDownTank.wgame";
         
         public sealed class Assets
         {
@@ -812,6 +815,9 @@ namespace MultiplayerTopDownTank
                 
                 /// <summary> Path to Content/Assets/Tiles/Map.tmx </summary>
                 public const string Map_tmx = "Content/Assets/Tiles/Map.tmx";
+                
+                /// <summary> Path to Content/Assets/Tiles/MultiplayerTopDownTankSpritesheet.png </summary>
+                public const string MultiplayerTopDownTankSpritesheet_png = "Content/Assets/Tiles/MultiplayerTopDownTankSpritesheet.png";
             }
         }
         
