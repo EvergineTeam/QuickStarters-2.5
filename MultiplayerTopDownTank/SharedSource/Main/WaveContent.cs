@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// File generated on 02/05/2017 15:35:27
+// File generated on 02/05/2017 16:21:35
 namespace MultiplayerTopDownTank
 {
     using System;
@@ -398,6 +398,13 @@ namespace MultiplayerTopDownTank
                     
                     /// <summary> Path to Content/Assets/Gui/Buttons/flatDark48.png </summary>
                     public const string flatDark48_png = "Content/Assets/Gui/Buttons/flatDark48.png";
+                }
+                
+                public sealed class Hub
+                {
+                    
+                    /// <summary> Path to Content/Assets/Gui/Hub/hubBackground.png </summary>
+                    public const string hubBackground_png = "Content/Assets/Gui/Hub/hubBackground.png";
                 }
                 
                 public sealed class Menu

@@ -75,6 +75,15 @@ namespace MultiplayerTopDownTank
                 this.VirtualScreenManager.VirtualHeight);
             var rightJoystick = new Joystick("rightJoystick", rightArea);
             EntityManager.Add(rightJoystick);
+
+            CreateHub();
+        }
+
+        private void CreateHub()
+        {
+            // Create Hub
+            var hubPanel = new Hub();
+            EntityManager.Add(hubPanel);
         }
     }
 }

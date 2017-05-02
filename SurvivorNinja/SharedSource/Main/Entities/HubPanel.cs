@@ -59,7 +59,7 @@ namespace SurvivorNinja.Entities
             {
                 HorizontalAlignment = WaveEngine.Framework.UI.HorizontalAlignment.Center,
                 VerticalAlignment = WaveEngine.Framework.UI.VerticalAlignment.Top,
-                Width = 800,
+                Width = 300,
                 Height = 40,
             };
 
