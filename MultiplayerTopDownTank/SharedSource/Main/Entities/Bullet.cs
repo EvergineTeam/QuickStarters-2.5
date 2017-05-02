@@ -58,7 +58,7 @@ namespace MultiplayerTopDownTank.Entities
                                 })
                                 .AddComponent(new CircleCollider2D())
                                 .AddComponent(new BulletBehavior(this))
-                                .AddComponent(new Sprite(WaveContent.Assets.Textures.Bullets.bulletBeigeSilver_outline_png))
+                                .AddComponent(new Sprite(WaveContent.Assets.Textures.Bullets.rounded_bulletBeige_outline_png))
                                 .AddComponent(new SpriteRenderer(DefaultLayers.Alpha));
             this.direction = Vector2.Zero;
             this.position = Vector2.Zero;

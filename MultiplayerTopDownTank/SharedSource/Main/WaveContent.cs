@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// File generated on 02/05/2017 15:22:04
+// File generated on 02/05/2017 15:35:27
 namespace MultiplayerTopDownTank
 {
     using System;
@@ -535,6 +535,9 @@ namespace MultiplayerTopDownTank
                     
                     /// <summary> Path to Content/Assets/Textures/Bullets/bulletYellow_outline.png </summary>
                     public const string bulletYellow_outline_png = "Content/Assets/Textures/Bullets/bulletYellow_outline.png";
+                    
+                    /// <summary> Path to Content/Assets/Textures/Bullets/rounded_bulletBeige_outline.png </summary>
+                    public const string rounded_bulletBeige_outline_png = "Content/Assets/Textures/Bullets/rounded_bulletBeige_outline.png";
                 }
                 
                 public sealed class Environment
