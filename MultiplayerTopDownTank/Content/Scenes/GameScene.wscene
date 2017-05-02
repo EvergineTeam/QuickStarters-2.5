@@ -378,6 +378,31 @@
         </d4p1:Component>
         <d4p1:Component xmlns:d5p1="http://schemas.datacontract.org/2004/07/MultiplayerTopDownTank.Components" i:type="d5p1:TankComponent" />
         <d4p1:Component xmlns:d5p1="MultiplayerTopDownTank.Components" i:type="d5p1:BulletEmitter" />
+        <d4p1:Component xmlns:d5p1="WaveEngine.Framework.Physics2D" i:type="d5p1:RectangleCollider2D">
+          <d5p1:CollidesWith>All</d5p1:CollidesWith>
+          <d5p1:CollisionCategories>Cat1</d5p1:CollisionCategories>
+          <d5p1:DebugLineColor xmlns:d6p1="WaveEngine.Common.Graphics">
+            <d6p1:A>255</d6p1:A>
+            <d6p1:B>0</d6p1:B>
+            <d6p1:G>165</d6p1:G>
+            <d6p1:R>255</d6p1:R>
+          </d5p1:DebugLineColor>
+          <d5p1:Density>1</d5p1:Density>
+          <d5p1:Friction>0.2</d5p1:Friction>
+          <d5p1:GroupIndex>0</d5p1:GroupIndex>
+          <d5p1:IsSensor>false</d5p1:IsSensor>
+          <d5p1:Restitution>0</d5p1:Restitution>
+          <d5p1:autoRefresh>true</d5p1:autoRefresh>
+          <d5p1:offset xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+            <d6p1:X>0</d6p1:X>
+            <d6p1:Y>0</d6p1:Y>
+          </d5p1:offset>
+          <d5p1:Size xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+            <d6p1:X>1</d6p1:X>
+            <d6p1:Y>1</d6p1:Y>
+          </d5p1:Size>
+          <d5p1:rotationOffset>0</d5p1:rotationOffset>
+        </d4p1:Component>
       </d2p1:SerializeComponents>
     </d2p1:BaseEntityModel>
   </Entities>

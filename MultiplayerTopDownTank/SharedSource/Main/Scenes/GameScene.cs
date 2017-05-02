@@ -4,8 +4,10 @@ using MultiplayerTopDownTank.Components;
 using MultiplayerTopDownTank.Entities;
 using WaveEngine.Common.Math;
 using WaveEngine.Common.Media;
+using WaveEngine.Common.Physics2D;
 using WaveEngine.Framework;
 using WaveEngine.Framework.Managers;
+using WaveEngine.Framework.Physics2D;
 using WaveEngine.Framework.Services;
 using WaveEngine.TiledMap;
 #endregion
@@ -20,13 +22,7 @@ namespace MultiplayerTopDownTank
         {
             this.Load(WaveContent.Scenes.GameScene);
 
-            this.CreateUI();  
-            
-            // Music
-            var musicInfo = new MusicInfo(WaveContent.Assets.Sounds.Background_Music_mp3);
-            WaveServices.MusicPlayer.Play(musicInfo);
-            WaveServices.MusicPlayer.Volume = 0.8f;
-            WaveServices.MusicPlayer.IsRepeat = true;
+            this.CreateUI();
         }
 
         protected override void Start()
@@ -35,6 +31,8 @@ namespace MultiplayerTopDownTank
 
             this.InitializePlayer();
             this.SetCameraBounds();
+            this.CreatePhysicScene();
+            this.CreateBackgroundMusic();
         }
 
         private void InitializePlayer()
@@ -55,12 +53,12 @@ namespace MultiplayerTopDownTank
                     new Vector2(tiledMap.Width * tiledMap.TileWidth, tiledMap.Height * tiledMap.TileHeight));
             }
         }
-        
+
         private void CreateUI()
         {
             // Left Joystick
             RectangleF leftArea = new RectangleF(
-                0,             
+                0,
                 0,
                 this.VirtualScreenManager.VirtualWidth / 2f,
                 this.VirtualScreenManager.VirtualHeight);
@@ -84,6 +82,38 @@ namespace MultiplayerTopDownTank
             // Create Hub
             var hubPanel = new Hub();
             EntityManager.Add(hubPanel);
+        }
+
+        private void CreatePhysicScene()
+        {
+            // Invisible physic walls
+            var physicLayer = this.tiledMap.ObjectLayers[GameConstants.PhysicLayer];
+            foreach (var physic in physicLayer.Objects)
+            {
+                var colliderEntity = TiledMapUtils.CollisionEntityFromObject(physic.Name, physic);
+                colliderEntity.Tag = GameConstants.TagCollider;
+                colliderEntity.AddComponent(new RigidBody2D() { PhysicBodyType = RigidBodyType2D.Static });
+
+                var collider = colliderEntity.FindComponent<Collider2D>(false);
+                if (collider != null)
+                {
+                    collider.CollisionCategories = ColliderCategory2D.Cat3;
+                    collider.CollidesWith = ColliderCategory2D.All;
+                    collider.Friction = 1.0f;
+                    collider.Restitution = 0.2f;
+                }
+
+                this.EntityManager.Add(colliderEntity);
+            }
+        }
+
+        private void CreateBackgroundMusic()
+        {
+            // Music
+            var musicInfo = new MusicInfo(WaveContent.Assets.Sounds.Background_Music_mp3);
+            WaveServices.MusicPlayer.Play(musicInfo);
+            WaveServices.MusicPlayer.Volume = 0.8f;
+            WaveServices.MusicPlayer.IsRepeat = true;
         }
     }
 }
