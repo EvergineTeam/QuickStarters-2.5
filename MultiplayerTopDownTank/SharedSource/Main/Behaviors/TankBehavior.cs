@@ -1,5 +1,6 @@
 ﻿using MultiplayerTopDownTank.Components;
 using MultiplayerTopDownTank.Entities;
+using MultiplayerTopDownTank.Managers;
 using System;
 using System.Runtime.Serialization;
 using WaveEngine.Common.Input;
@@ -141,6 +142,7 @@ namespace MultiplayerTopDownTank.Behaviors
                         // Create bullet
                         Vector2 tankPosition = new Vector2(this.transform.X, this.transform.Y);
                         this.bulletEmitter.Shoot(tankPosition, rightJoyDirection);
+                        SoundsManager.Instance.PlaySound(SoundsManager.SOUNDS.Shoot);
                     }
 
                     this.time = this.shootCadence;

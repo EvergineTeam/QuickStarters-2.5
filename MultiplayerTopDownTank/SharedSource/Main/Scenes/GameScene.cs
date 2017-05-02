@@ -3,8 +3,10 @@ using MultiplayerTopDownTank.Behaviors;
 using MultiplayerTopDownTank.Components;
 using MultiplayerTopDownTank.Entities;
 using WaveEngine.Common.Math;
+using WaveEngine.Common.Media;
 using WaveEngine.Framework;
 using WaveEngine.Framework.Managers;
+using WaveEngine.Framework.Services;
 using WaveEngine.TiledMap;
 #endregion
 
@@ -18,7 +20,13 @@ namespace MultiplayerTopDownTank
         {
             this.Load(WaveContent.Scenes.GameScene);
 
-            this.CreateUI();
+            this.CreateUI();  
+            
+            // Music
+            var musicInfo = new MusicInfo(WaveContent.Assets.Sounds.Background_Music_mp3);
+            WaveServices.MusicPlayer.Play(musicInfo);
+            WaveServices.MusicPlayer.Volume = 0.8f;
+            WaveServices.MusicPlayer.IsRepeat = true;
         }
 
         protected override void Start()
