@@ -15,6 +15,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Behaviors\TankBehavior.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Components\BulletEmitter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Components\GamePlayManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Components\SyncPositionComponent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Components\TankComponent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\Bullet.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\Hub.cs" />

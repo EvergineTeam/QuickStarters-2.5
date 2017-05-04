@@ -9,14 +9,28 @@ using WaveEngine.Framework;
 using WaveEngine.Framework.Managers;
 using WaveEngine.Framework.Physics2D;
 using WaveEngine.Framework.Services;
+using WaveEngine.Networking;
 using WaveEngine.TiledMap;
 #endregion
 
 namespace MultiplayerTopDownTank
 {
-    public class GameSceneScene : Scene
+    public class GameScene : Scene
     {
+        private const string GameSceneIdentifier = "MultiplayerTopDownTank.Game.Scene";
+
         private TiledMap tiledMap;
+        private int playerIndex;
+
+        private readonly NetworkService networkService;
+        private readonly NetworkManager networkManager;
+
+        public GameScene(int playerIndex)
+        {
+            this.playerIndex = playerIndex;
+            this.networkService = WaveServices.GetService<NetworkService>();
+            this.networkManager = this.networkService.RegisterScene(this, GameSceneIdentifier);
+        }
 
         protected override void CreateScene()
         {
@@ -38,6 +52,11 @@ namespace MultiplayerTopDownTank
         private void InitializePlayer()
         {
             var player = this.EntityManager.Find(GameConstants.Player);
+            player.Name = "Player_" + this.playerIndex;
+
+            // When the scene start add the payer entity to NetworkManager to start to sync with other clients.
+            this.networkManager.AddEntity(player);
+
             var playerComponent = player.FindComponent<TankComponent>();
             playerComponent.PrepareTank();
         }

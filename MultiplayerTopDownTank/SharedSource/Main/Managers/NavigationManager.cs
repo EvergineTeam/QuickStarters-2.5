@@ -25,12 +25,12 @@ namespace MultiplayerTopDownTank.Managers
                     ScreenContextBehaviors.None));
         }
 
-        public void NavigateToGame()
+        public void NavigateToGame(int playerIndex)
         {
             WaveServices.ScreenContextManager
                 .To(CreateScreenContext(
                     "GameSceneContext",
-                    new GameSceneScene(),
+                    new GameScene(playerIndex),
                     ScreenContextBehaviors.None));
         }
 

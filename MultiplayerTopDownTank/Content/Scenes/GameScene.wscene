@@ -123,13 +123,13 @@
             <d6p1:Z>0</d6p1:Z>
           </d5p1:LocalOrientation>
           <d5p1:LocalPosition xmlns:d6p1="WaveEngine.Common.Math">
-            <d6p1:X>640</d6p1:X>
-            <d6p1:Y>360</d6p1:Y>
+            <d6p1:X>1280</d6p1:X>
+            <d6p1:Y>720</d6p1:Y>
             <d6p1:Z>-10</d6p1:Z>
           </d5p1:LocalPosition>
           <d5p1:LocalScale xmlns:d6p1="WaveEngine.Common.Math">
-            <d6p1:X>1</d6p1:X>
-            <d6p1:Y>1</d6p1:Y>
+            <d6p1:X>2</d6p1:X>
+            <d6p1:Y>2</d6p1:Y>
             <d6p1:Z>1</d6p1:Z>
           </d5p1:LocalScale>
           <d5p1:Effect>None</d5p1:Effect>
@@ -185,8 +185,8 @@
             <d6p1:Y>0.5</d6p1:Y>
           </d5p1:vanishingPoint>
           <d5p1:zoom xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
-            <d6p1:X>1</d6p1:X>
-            <d6p1:Y>1</d6p1:Y>
+            <d6p1:X>2</d6p1:X>
+            <d6p1:Y>2</d6p1:Y>
           </d5p1:zoom>
         </d4p1:Component>
         <d4p1:Component xmlns:d5p1="http://schemas.datacontract.org/2004/07/MultiplayerTopDownTank.Behaviors" i:type="d5p1:FollowCameraBehavior">
@@ -402,6 +402,11 @@
             <d6p1:Y>1</d6p1:Y>
           </d5p1:Size>
           <d5p1:rotationOffset>0</d5p1:rotationOffset>
+        </d4p1:Component>
+        <d4p1:Component xmlns:d5p1="http://schemas.datacontract.org/2004/07/MultiplayerTopDownTank.Components" i:type="d5p1:SyncPositionComponent" />
+        <d4p1:Component xmlns:d5p1="WaveEngine.Networking" i:type="d5p1:NetworkBehavior">
+          <d4p1:UpdateOrder>0.5</d4p1:UpdateOrder>
+          <d4p1:isDisabled>false</d4p1:isDisabled>
         </d4p1:Component>
       </d2p1:SerializeComponents>
     </d2p1:BaseEntityModel>

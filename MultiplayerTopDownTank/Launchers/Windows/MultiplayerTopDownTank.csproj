@@ -2,6 +2,7 @@
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
+	<WaveProtobufEnabled>false</WaveProtobufEnabled>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{8F3605A3-8720-48F7-8799-A33CD4ACCB97}</ProjectGuid>
@@ -63,6 +64,10 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="WaveEngine.Networking, Version=2.3.1.32, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\WaveEngine.Networking.2.3.1.32\lib\net45\WaveEngine.Networking.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="WaveEngine.TiledMap, Version=2.3.1.32, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\WaveEngine.TiledMap.2.3.1.32\lib\net45\WaveEngine.TiledMap.dll</HintPath>
       <Private>True</Private>
@@ -70,6 +75,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
+    <Compile Include="NetworkConfiguration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Game.ico" />
