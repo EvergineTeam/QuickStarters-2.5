@@ -20,7 +20,27 @@ namespace MultiplayerTopDownTank.Behaviors
         {
             if (this.Follow && this.TargetTransform != null)
             {
-                this.desiredPosition = this.TargetTransform.Position;
+                var newDesiredPosition = this.TargetTransform.Position;
+                if (newDesiredPosition.X < this.pixelLimitMin.X)
+                {
+                    newDesiredPosition.X = this.pixelLimitMin.X;
+                }
+                else if(newDesiredPosition.X > this.pixelLimitMax.X)
+                {
+                    newDesiredPosition.X = this.pixelLimitMax.X;
+                }
+
+
+                if(newDesiredPosition.Y < this.pixelLimitMin.Y)
+                {
+                    newDesiredPosition.Y = this.pixelLimitMin.Y;
+                }
+                else if (newDesiredPosition.Y > this.pixelLimitMax.Y)
+                {
+                    newDesiredPosition.Y = this.pixelLimitMax.Y;
+                }
+
+                this.desiredPosition = newDesiredPosition;
                 this.transform.Position = Vector2.SmoothStep(this.currentPosition, this.desiredPosition, this.Speed * (float)gameTime.TotalSeconds);
                 this.currentPosition = this.transform.Position;
             }

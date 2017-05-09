@@ -21,7 +21,7 @@ namespace MultiplayerTopDownTank.Behaviors
         private Vector2 textureDirection;
         private TimeSpan time;
         private TimeSpan shootCadence;
-        private VirtualScreenManager virtualScreenManager;
+        //private VirtualScreenManager virtualScreenManager;
         private Transform2D barrelTransform = null;
 
         [RequiredComponent]
@@ -38,7 +38,7 @@ namespace MultiplayerTopDownTank.Behaviors
             this.shootCadence = TimeSpan.FromMilliseconds(150);
             this.time = this.shootCadence;
             this.life = 100;
-            this.velocity = 2;
+            this.velocity = 15;
             this.textureDirection = new Vector2(0, -1);
 
             base.DefaultValues();
@@ -53,7 +53,7 @@ namespace MultiplayerTopDownTank.Behaviors
 
             this.leftJoystick = this.EntityManager.Find<Joystick>("leftJoystick");
             this.rightJoystick = this.EntityManager.Find<Joystick>("rightJoystick");
-            this.virtualScreenManager = this.Owner.Scene.VirtualScreenManager;
+            // this.virtualScreenManager = this.Owner.Scene.VirtualScreenManager;
 
             var barrelEntity = this.Owner.FindChild(GameConstants.PlayerBarrel);
             this.barrelTransform = barrelEntity.FindComponent<Transform2D>();
@@ -89,11 +89,13 @@ namespace MultiplayerTopDownTank.Behaviors
 
             if (!float.IsNaN(moveDirection.X) && !float.IsNaN(moveDirection.Y))
             {
-                float x = this.transform.X + (moveDirection.X * velocity * 60 * (float)gameTime.TotalSeconds);
-                this.transform.X = MathHelper.Clamp(x, this.virtualScreenManager.LeftEdge, this.virtualScreenManager.RightEdge);
+                float x = this.transform.X + (moveDirection.X * this.velocity * 60 * (float)gameTime.TotalSeconds);
+                //this.transform.X = MathHelper.Clamp(x, this.virtualScreenManager.LeftEdge, this.virtualScreenManager.RightEdge);
+                this.transform.X = x;
 
-                float y = this.transform.Y + (moveDirection.Y * velocity * 60 * (float)gameTime.TotalSeconds);
-                this.transform.Y = MathHelper.Clamp(y, this.virtualScreenManager.TopEdge, this.virtualScreenManager.BottomEdge);
+                float y = this.transform.Y + (moveDirection.Y * this.velocity * 60 * (float)gameTime.TotalSeconds);
+                //this.transform.Y = MathHelper.Clamp(y, this.virtualScreenManager.TopEdge, this.virtualScreenManager.BottomEdge);
+                this.transform.Y = y;
 
                 float rotation = Vector2.Angle(moveDirection, this.textureDirection);
 
