@@ -2,10 +2,13 @@
 using MultiplayerTopDownTank.Behaviors;
 using MultiplayerTopDownTank.Components;
 using MultiplayerTopDownTank.Entities;
+using System;
 using WaveEngine.Common.Math;
 using WaveEngine.Common.Media;
 using WaveEngine.Common.Physics2D;
+using WaveEngine.Components.Graphics2D;
 using WaveEngine.Framework;
+using WaveEngine.Framework.Graphics;
 using WaveEngine.Framework.Managers;
 using WaveEngine.Framework.Physics2D;
 using WaveEngine.Framework.Services;
@@ -21,6 +24,7 @@ namespace MultiplayerTopDownTank
 
         private TiledMap tiledMap;
         private int playerIndex;
+        private Entity playerEntity;
 
         private readonly NetworkService networkService;
         private readonly NetworkManager networkManager;
@@ -43,21 +47,67 @@ namespace MultiplayerTopDownTank
         {
             base.Start();
 
-            this.InitializePlayer();
             this.SetCameraBounds();
             this.CreatePhysicScene();
             this.CreateBackgroundMusic();
+            this.InitializePlayer();
+        }
+
+        private void CreatePlayer(Vector2 position, string name)
+        {
+            this.playerEntity = new Entity(name)
+                .AddComponent(new Transform2D
+                {
+                    Position = position,
+                    Origin = new Vector2(0.5f, 0.5f)
+                })
+                .AddComponent(new Sprite
+                {
+                    TexturePath = string.Format("Content/Assets/Textures/Tanks/tankBase{0}.png", playerIndex)
+                })
+                .AddComponent(new SpriteRenderer(DefaultLayers.Alpha))
+                .AddComponent(new TankBehavior())
+                .AddComponent(new TankComponent())
+                .AddComponent(new BulletEmitter())
+                .AddComponent(new RectangleCollider2D())
+                .AddComponent(new NetworkBehavior())
+                .AddComponent(new TankNetworkSyncComponent());
+
+            var barrel = new Entity(GameConstants.PlayerBarrel)
+              .AddComponent(new Transform2D
+              {
+                  LocalDrawOrder = -0.1f,
+                  Origin = new Vector2(0.5f, 0.75f)
+              })
+              .AddComponent(new Sprite
+              {
+                  TexturePath = string.Format("Content/Assets/Textures/Tanks/tankBarrel{0}.png", playerIndex)
+              })
+              .AddComponent(new SpriteRenderer(DefaultLayers.Alpha));
+
+            playerEntity.AddChild(barrel);
+
+            this.EntityManager.Add(playerEntity);
+        }
+
+        private Vector2 GetRandomSpawnPoint()
+        {
+            var anchorLayer = tiledMap.ObjectLayers[GameConstants.AnchorLayer];
+            WaveEngine.Framework.Services.Random rnd = new WaveEngine.Framework.Services.Random();
+            var spawnIndex = rnd.Next(1, Convert.ToInt32(tiledMap.Properties[GameConstants.SpawnCount]));
+            var position = anchorLayer.Objects.Find(o => o.Name == $"{GameConstants.SpawnPointPrefix}{spawnIndex}");
+
+            return new Vector2(position.X, position.Y);
         }
 
         private void InitializePlayer()
         {
-            var player = this.EntityManager.Find(GameConstants.Player);
-            player.Name = "Player_" + this.playerIndex;
+            this.CreatePlayer(GetRandomSpawnPoint(), "Player_" + this.playerIndex);
 
             // When the scene start add the payer entity to NetworkManager to start to sync with other clients.
-            this.networkManager.AddEntity(player);
+            this.networkManager.AddEntity(playerEntity);
 
-            var playerComponent = player.FindComponent<TankComponent>();
+            var playerComponent = playerEntity.FindComponent<TankComponent>();
             playerComponent.PrepareTank();
         }
 

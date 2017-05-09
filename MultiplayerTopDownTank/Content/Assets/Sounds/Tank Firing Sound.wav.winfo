@@ -1,5 +1,5 @@
 ﻿<Asset xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="WaveEngine.Framework.Models">
-  <Id>5aaab58e-b569-46b7-89d3-eba55a898a70</Id>
+  <Id>a0b5fe8c-aea8-4943-9ede-7a890008fb38</Id>
   <AsRaw>false</AsRaw>
   <Asset xmlns:d2p1="WaveEngine.Framework.Models.Assets" i:type="d2p1:Sound">
     <d2p1:Profiles xmlns:d3p1="WaveEngine.Framework.Models.Profiles">

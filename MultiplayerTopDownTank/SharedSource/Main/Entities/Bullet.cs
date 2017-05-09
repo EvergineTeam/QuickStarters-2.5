@@ -1,9 +1,11 @@
 ﻿using MultiplayerTopDownTank.Behaviors;
+using MultiplayerTopDownTank.Components;
 using WaveEngine.Common.Math;
 using WaveEngine.Components.Graphics2D;
 using WaveEngine.Framework;
 using WaveEngine.Framework.Graphics;
 using WaveEngine.Framework.Physics2D;
+using WaveEngine.Networking;
 
 namespace MultiplayerTopDownTank.Entities
 {
@@ -59,7 +61,10 @@ namespace MultiplayerTopDownTank.Entities
                                 .AddComponent(new CircleCollider2D())
                                 .AddComponent(new BulletBehavior(this))
                                 .AddComponent(new Sprite(WaveContent.Assets.Textures.Bullets.rounded_bulletBeige_outline_png))
-                                .AddComponent(new SpriteRenderer(DefaultLayers.Alpha));
+                                .AddComponent(new SpriteRenderer(DefaultLayers.Alpha))
+                                .AddComponent(new NetworkBehavior())
+                                .AddComponent(new BulletNetworkSyncComponent());
+
             this.direction = Vector2.Zero;
             this.position = Vector2.Zero;
 

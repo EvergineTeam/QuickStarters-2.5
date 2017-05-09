@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// File generated on 04/05/2017 17:20:40
+// File generated on 09/05/2017 16:13:50
 namespace MultiplayerTopDownTank
 {
     using System;
@@ -733,6 +733,30 @@ namespace MultiplayerTopDownTank
                     
                     /// <summary> Path to Content/Assets/Textures/Tanks/barrelRed_outline.png </summary>
                     public const string barrelRed_outline_png = "Content/Assets/Textures/Tanks/barrelRed_outline.png";
+                    
+                    /// <summary> Path to Content/Assets/Textures/Tanks/tankBarrel1.png </summary>
+                    public const string tankBarrel1_png = "Content/Assets/Textures/Tanks/tankBarrel1.png";
+                    
+                    /// <summary> Path to Content/Assets/Textures/Tanks/tankBarrel2.png </summary>
+                    public const string tankBarrel2_png = "Content/Assets/Textures/Tanks/tankBarrel2.png";
+                    
+                    /// <summary> Path to Content/Assets/Textures/Tanks/tankBarrel3.png </summary>
+                    public const string tankBarrel3_png = "Content/Assets/Textures/Tanks/tankBarrel3.png";
+                    
+                    /// <summary> Path to Content/Assets/Textures/Tanks/tankBarrel4.png </summary>
+                    public const string tankBarrel4_png = "Content/Assets/Textures/Tanks/tankBarrel4.png";
+                    
+                    /// <summary> Path to Content/Assets/Textures/Tanks/tankBase1.png </summary>
+                    public const string tankBase1_png = "Content/Assets/Textures/Tanks/tankBase1.png";
+                    
+                    /// <summary> Path to Content/Assets/Textures/Tanks/tankBase2.png </summary>
+                    public const string tankBase2_png = "Content/Assets/Textures/Tanks/tankBase2.png";
+                    
+                    /// <summary> Path to Content/Assets/Textures/Tanks/tankBase3.png </summary>
+                    public const string tankBase3_png = "Content/Assets/Textures/Tanks/tankBase3.png";
+                    
+                    /// <summary> Path to Content/Assets/Textures/Tanks/tankBase4.png </summary>
+                    public const string tankBase4_png = "Content/Assets/Textures/Tanks/tankBase4.png";
                     
                     /// <summary> Path to Content/Assets/Textures/Tanks/tankBeige.png </summary>
                     public const string tankBeige_png = "Content/Assets/Textures/Tanks/tankBeige.png";

@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using WaveEngine.Common.Graphics;
+using WaveEngine.Common.Math;
 using WaveEngine.Components.Cameras;
+using WaveEngine.Components.Graphics2D;
 using WaveEngine.Components.UI;
 using WaveEngine.Framework;
+using WaveEngine.Framework.Graphics;
 using WaveEngine.Framework.Services;
 using WaveEngine.Framework.UI;
 using WaveEngine.Networking;
@@ -50,6 +53,7 @@ namespace MultiplayerTopDownTank.Scenes
                 Margin = new Thickness(10, 0, 10, 10)
             };
             this.EntityManager.Add(this.messageTextBlock);
+
             this.SendHelloToServer();
         }
 
@@ -86,7 +90,7 @@ namespace MultiplayerTopDownTank.Scenes
 
         private int GetNextPlayerIndex()
         {
-            for (int i = MinIndex; i < MaxIndex; i++)
+            for (int i = MinIndex; i <= MaxIndex; i++)
             {
                 if (!this.assignedPlayerIndex.Contains(i))
                 {

@@ -7,8 +7,8 @@ using WaveEngine.Networking.Messages;
 
 namespace MultiplayerTopDownTank.Components
 {
-    [DataContract()]
-    public class SyncPositionComponent : NetworkSyncComponent
+    [DataContract]
+    public class BaseNetworkSyncComponent : NetworkSyncComponent
     {
         private Vector2 lastPosition;
 

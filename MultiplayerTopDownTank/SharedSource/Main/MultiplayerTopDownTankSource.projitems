@@ -14,9 +14,11 @@
     <Compile Include="$(MSBuildThisFileDirectory)Behaviors\FollowCameraBehavior.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Behaviors\TankBehavior.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Components\BulletEmitter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Components\BulletNetworkSyncComponent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Components\GamePlayManager.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Components\SyncPositionComponent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Components\BaseNetworkSyncComponent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Components\TankComponent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Components\TankNetworkSyncComponent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\Bullet.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\Hub.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\Joystick.cs" />

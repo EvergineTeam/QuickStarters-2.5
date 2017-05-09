@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="64" height="48" tilewidth="128" tileheight="128" nextobjectid="2">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="64" height="48" tilewidth="128" tileheight="128" nextobjectid="8">
+ <properties>
+  <property name="SpawnCount" type="int" value="6"/>
+ </properties>
  <tileset firstgid="1" name="MultiplayerTopDownTankSpritesheet" tilewidth="128" tileheight="128" tilecount="5" columns="5">
   <image source="MultiplayerTopDownTankSpritesheet.png" width="640" height="128"/>
  </tileset>
@@ -163,5 +166,13 @@
   <object id="1" name="Collisions" x="120" y="120">
    <polyline points="0,0 0,1528 1520,1528 1520,1040 1664,1040 1672,1664 8,1672 16,5888 1008,5896 1008,2320 1152,2320 1160,5872 2432,5880 2440,4608 5104,4608 5104,3848 3216,3848 3216,3720 5248,3728 5256,4736 2568,4736 2568,5864 6000,5880 6008,4624 6160,4624 6152,5856 7928,5880 7936,4736 6792,4736 6776,4608 7920,4608 7928,2824 6040,2816 6040,2688 7936,2696 7928,16 6152,16 6152,2032 6016,2032 6008,8 4232,8 4232,2040 4096,2040 4088,0 1672,8 1672,384 2576,384 2568,2696 5256,2696 5256,2816 2568,2824 2576,3824 2432,3824 2432,520 1520,528 1536,8 0,8"/>
   </object>
+ </objectgroup>
+ <objectgroup name="AnchorLayer">
+  <object id="2" name="SpawnPoint1" x="640" y="752" width="128" height="144"/>
+  <object id="3" name="SpawnPoint2" x="7040" y="1392" width="160" height="144"/>
+  <object id="4" name="SpawnPoint3" x="496" y="2784" width="144" height="176"/>
+  <object id="5" name="SpawnPoint4" x="7168" y="5392" width="128" height="128"/>
+  <object id="6" name="SpawnPoint5" x="3072" y="5344" width="128" height="160"/>
+  <object id="7" name="SpawnPoint6" x="3984" y="3328" width="144" height="144"/>
  </objectgroup>
 </map>
