@@ -40,6 +40,10 @@ namespace MultiplayerTopDownTank
         {
             this.Load(WaveContent.Scenes.GameScene);
 
+#if DEBUG
+            this.EntityManager.Add(new Entity().AddComponent(new DebugBehavior()));
+#endif
+
             this.CreateUI();
         }
 
@@ -162,17 +166,18 @@ namespace MultiplayerTopDownTank
             foreach (var physic in physicLayer.Objects)
             {
                 var colliderEntity = TiledMapUtils.CollisionEntityFromObject(physic.Name, physic);
+                colliderEntity.Name = GameConstants.MapColliderEntity;
                 colliderEntity.Tag = GameConstants.TagCollider;
                 colliderEntity.AddComponent(new RigidBody2D() { PhysicBodyType = RigidBodyType2D.Static });
 
-                var collider = colliderEntity.FindComponent<Collider2D>(false);
-                if (collider != null)
-                {
-                    collider.CollisionCategories = ColliderCategory2D.Cat3;
-                    collider.CollidesWith = ColliderCategory2D.All;
-                    collider.Friction = 1.0f;
-                    collider.Restitution = 0.2f;
-                }
+                //var collider = colliderEntity.FindComponent<Collider2D>(false);
+                //if (collider != null)
+                //{
+                //    collider.CollisionCategories = ColliderCategory2D.Cat3;
+                //    collider.CollidesWith = ColliderCategory2D.All;
+                //    collider.Friction = 1.0f;
+                //    collider.Restitution = 0.2f;
+                //}
 
                 this.EntityManager.Add(colliderEntity);
             }

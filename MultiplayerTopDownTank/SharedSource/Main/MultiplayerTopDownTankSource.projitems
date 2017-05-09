@@ -11,6 +11,7 @@
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Behaviors\BulletBehavior.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Behaviors\CameraBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Behaviors\DebugBehavior.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Behaviors\FollowCameraBehavior.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Behaviors\TankBehavior.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Components\BulletEmitter.cs" />

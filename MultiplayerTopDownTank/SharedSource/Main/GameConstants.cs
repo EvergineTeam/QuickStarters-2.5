@@ -4,8 +4,10 @@
     {
         // Map
         public static string EntityMap = "Map";
+        public static string MapColliderEntity = "MapColliderEntity";
         public static string SpawnPointPrefix = "SpawnPoint";
         public static string SpawnCount = "SpawnCount";
+
 
         // Map Layers
         public static string PhysicLayer = "PhysicLayer";

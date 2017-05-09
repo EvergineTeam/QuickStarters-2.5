@@ -9,6 +9,7 @@ using WaveEngine.Framework;
 using WaveEngine.Framework.Graphics;
 using WaveEngine.Framework.Managers;
 using WaveEngine.Framework.Services;
+using WaveEngine.Framework.Physics2D;
 
 namespace MultiplayerTopDownTank.Behaviors
 {
@@ -23,12 +24,16 @@ namespace MultiplayerTopDownTank.Behaviors
         private TimeSpan shootCadence;
         //private VirtualScreenManager virtualScreenManager;
         private Transform2D barrelTransform = null;
+        private Collider2D mapCollider = null;
 
         [RequiredComponent]
         private Transform2D transform = null;
 
         [RequiredComponent]
         private BulletEmitter bulletEmitter = null;
+
+        [RequiredComponent(false)]
+        private Collider2D collider = null;
 
         /// <summary>
         /// Sets the default values
@@ -57,6 +62,9 @@ namespace MultiplayerTopDownTank.Behaviors
 
             var barrelEntity = this.Owner.FindChild(GameConstants.PlayerBarrel);
             this.barrelTransform = barrelEntity.FindComponent<Transform2D>();
+
+            this.mapCollider = this.EntityManager.FindComponentFromEntityPath<Collider2D>(GameConstants.MapColliderEntity, false);
+
         }
 
         protected override void Update(TimeSpan gameTime)
@@ -91,12 +99,19 @@ namespace MultiplayerTopDownTank.Behaviors
             {
                 float x = this.transform.X + (moveDirection.X * this.velocity * 60 * (float)gameTime.TotalSeconds);
                 //this.transform.X = MathHelper.Clamp(x, this.virtualScreenManager.LeftEdge, this.virtualScreenManager.RightEdge);
-                this.transform.X = x;
 
                 float y = this.transform.Y + (moveDirection.Y * this.velocity * 60 * (float)gameTime.TotalSeconds);
                 //this.transform.Y = MathHelper.Clamp(y, this.virtualScreenManager.TopEdge, this.virtualScreenManager.BottomEdge);
-                this.transform.Y = y;
 
+                if (!this.collider.Intersects(this.mapCollider))
+                {
+                    this.transform.X = x;
+                    this.transform.Y = y;
+                }
+                else
+                {
+
+                }
                 float rotation = Vector2.Angle(moveDirection, this.textureDirection);
 
                 if (float.IsNaN(rotation))
