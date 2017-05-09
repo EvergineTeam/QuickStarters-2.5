@@ -83,7 +83,9 @@ namespace MultiplayerTopDownTank
               {
                   TexturePath = string.Format("Content/Assets/Textures/Tanks/tankBarrel{0}.png", playerIndex)
               })
-              .AddComponent(new SpriteRenderer(DefaultLayers.Alpha));
+              .AddComponent(new SpriteRenderer(DefaultLayers.Alpha))
+              .AddComponent(new NetworkBehavior())
+              .AddComponent(new TankBarrelNetworkSyncComponent());
 
             playerEntity.AddChild(barrel);
 
