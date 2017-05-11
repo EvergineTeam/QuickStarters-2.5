@@ -3,7 +3,6 @@ using System;
 using WaveEngine.Common.Math;
 using WaveEngine.Framework;
 using WaveEngine.Framework.Graphics;
-using WaveEngine.Framework.Managers;
 using WaveEngine.Framework.Physics2D;
 
 namespace MultiplayerTopDownTank.Behaviors
@@ -12,8 +11,7 @@ namespace MultiplayerTopDownTank.Behaviors
     {
         private Bullet bullet;
         private Vector2 direction;
-        private float velocity = 10f;
-        private VirtualScreenManager virtualScreenManager;
+        private float velocity = 15f;
 
         [RequiredComponent]
         private Transform2D transform;
@@ -28,16 +26,6 @@ namespace MultiplayerTopDownTank.Behaviors
         public BulletBehavior(Bullet bullet)
         {
             this.bullet = bullet;
-        }
-
-        /// <summary>
-        /// Resolves the dependencies needed for this instance to work.
-        /// </summary>
-        protected override void ResolveDependencies()
-        {
-            base.ResolveDependencies();
-
-            this.virtualScreenManager = this.Owner.Scene.VirtualScreenManager;
         }
 
         /// <summary>
@@ -57,13 +45,6 @@ namespace MultiplayerTopDownTank.Behaviors
             float fps = 60 * (float)gameTime.TotalSeconds;
             this.transform.X += this.direction.X * velocity * fps;
             this.transform.Y += this.direction.Y * velocity * fps;
-
-            // Limits
-            if (this.transform.X < this.virtualScreenManager.LeftEdge || this.transform.X > this.virtualScreenManager.RightEdge ||
-                this.transform.Y < this.virtualScreenManager.TopEdge || this.transform.Y > this.virtualScreenManager.BottomEdge)
-            {
-                this.Owner.IsVisible = false;
-            }
         }
     }
 }

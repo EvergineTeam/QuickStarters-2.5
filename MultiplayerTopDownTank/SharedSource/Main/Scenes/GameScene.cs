@@ -52,6 +52,7 @@ namespace MultiplayerTopDownTank
             base.Start();
 
             this.SetCameraBounds();
+            this.ConfigurePhysics();
             this.CreatePhysicScene();
             this.CreateBackgroundMusic();
             this.InitializePlayer();
@@ -73,9 +74,14 @@ namespace MultiplayerTopDownTank
                 .AddComponent(new TankBehavior())
                 .AddComponent(new TankComponent())
                 .AddComponent(new BulletEmitter())
-                .AddComponent(new RectangleCollider2D())
+                .AddComponent(new CircleCollider2D())
                 .AddComponent(new NetworkBehavior())
-                .AddComponent(new TankNetworkSyncComponent());
+                .AddComponent(new TankNetworkSyncComponent())
+                .AddComponent(new RigidBody2D
+                {
+                    AngularDamping = 5.0f,
+                    LinearDamping = 10.0f
+                });
 
             var barrel = new Entity(GameConstants.PlayerBarrel)
               .AddComponent(new Transform2D
@@ -129,6 +135,11 @@ namespace MultiplayerTopDownTank
             }
         }
 
+        private void ConfigurePhysics()
+        {
+            this.PhysicsManager.Simulation2D.Gravity = Vector2.Zero;
+        }
+
         private void CreateUI()
         {
             // Left Joystick
@@ -169,15 +180,6 @@ namespace MultiplayerTopDownTank
                 colliderEntity.Name = GameConstants.MapColliderEntity;
                 colliderEntity.Tag = GameConstants.TagCollider;
                 colliderEntity.AddComponent(new RigidBody2D() { PhysicBodyType = RigidBodyType2D.Static });
-
-                //var collider = colliderEntity.FindComponent<Collider2D>(false);
-                //if (collider != null)
-                //{
-                //    collider.CollisionCategories = ColliderCategory2D.Cat3;
-                //    collider.CollidesWith = ColliderCategory2D.All;
-                //    collider.Friction = 1.0f;
-                //    collider.Restitution = 0.2f;
-                //}
 
                 this.EntityManager.Add(colliderEntity);
             }
