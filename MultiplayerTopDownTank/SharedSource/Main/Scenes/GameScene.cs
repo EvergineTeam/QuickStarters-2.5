@@ -74,7 +74,7 @@ namespace MultiplayerTopDownTank
                 .AddComponent(new TankBehavior())
                 .AddComponent(new TankComponent())
                 .AddComponent(new BulletEmitter())
-                .AddComponent(new CircleCollider2D())
+                .AddComponent(new RectangleCollider2D())
                 .AddComponent(new NetworkBehavior())
                 .AddComponent(new TankNetworkSyncComponent())
                 .AddComponent(new RigidBody2D

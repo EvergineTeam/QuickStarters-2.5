@@ -15,7 +15,7 @@ namespace MultiplayerTopDownTank.Components
         protected override void DefaultValues()
         {
             base.DefaultValues();
-            this.bulletMax = 100;
+            this.bulletMax = 5;
         }
 
         private void InitBulletPool()
@@ -47,6 +47,11 @@ namespace MultiplayerTopDownTank.Components
             bullet.Direction = direction;
 
             this.bulletIndex = (this.bulletIndex + 1) % this.bulletMax;
+        }
+
+        public void DestrotBullet(Bullet bullet)
+        {
+            bullet.IsVisible = false;
         }
     }
 }

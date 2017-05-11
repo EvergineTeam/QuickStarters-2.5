@@ -50,6 +50,13 @@ namespace MultiplayerTopDownTank.Entities
         /// </summary>
         public Bullet()
         {
+            var bulletCircleCollider2D = new CircleCollider2D();
+
+            bulletCircleCollider2D.BeginCollision += (s) =>
+            {
+
+            };
+
             this.entity = new Entity() { Tag = "bullet" }
                                 .AddComponent(new Transform2D()
                                 {
@@ -57,6 +64,11 @@ namespace MultiplayerTopDownTank.Entities
                                     X = 0,
                                     Y = 0,
                                     DrawOrder = 0.6f,
+                                })
+                                .AddComponent(new RigidBody2D
+                                {
+                                    PhysicBodyType = WaveEngine.Common.Physics2D.RigidBodyType2D.Kinematic,
+                                    IsBullet = true
                                 })
                                 .AddComponent(new CircleCollider2D())
                                 .AddComponent(new BulletBehavior(this))
