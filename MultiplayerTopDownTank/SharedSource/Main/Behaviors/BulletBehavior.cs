@@ -2,6 +2,7 @@
 using System;
 using WaveEngine.Common.Math;
 using WaveEngine.Framework;
+using WaveEngine.Framework.Diagnostic;
 using WaveEngine.Framework.Graphics;
 using WaveEngine.Framework.Physics2D;
 
@@ -11,17 +12,13 @@ namespace MultiplayerTopDownTank.Behaviors
     {
         private Bullet bullet;
         private Vector2 direction;
-        private float velocity = 300f;
-        private Collider2D mapCollider;
+        private float velocity = 350f;
 
         [RequiredComponent]
         private Transform2D transform;
 
         [RequiredComponent]
         private RigidBody2D rigidBody;
-
-        [RequiredComponent(false)]
-        private Collider2D collider;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="BulletBehavior" /> class.
@@ -30,14 +27,6 @@ namespace MultiplayerTopDownTank.Behaviors
         public BulletBehavior(Bullet bullet)
         {
             this.bullet = bullet;
-        }
-
-
-        protected override void ResolveDependencies()
-        {
-            base.ResolveDependencies();
-
-            mapCollider = EntityManager.FindComponentFromEntityPath<Collider2D>(GameConstants.MapColliderEntity, false);
         }
 
         /// <summary>
@@ -56,13 +45,7 @@ namespace MultiplayerTopDownTank.Behaviors
             this.direction = bullet.Direction;
             float fps = 60 * (float)gameTime.TotalSeconds;
 
-            //this.rigidBody.ResetPosition(direction * velocity * fps);
-            this.rigidBody.LinearVelocity = direction * velocity * fps;
-
-            if (collider.Intersects(mapCollider))
-            {
-                this.rigidBody.LinearVelocity = Vector2.Zero;
-            }
+            Labels.Add(this.Name, this.transform.Position);
         }
     }
 }

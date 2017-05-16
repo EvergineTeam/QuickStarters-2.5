@@ -21,6 +21,8 @@ namespace MultiplayerTopDownTank
             this.RegisterServices();
 
             navigationManager.InitialNavigation();
+
+            WaveServices.ScreenContextManager.SetDiagnosticsActive(true);
         }
 
         private void RegisterServices()

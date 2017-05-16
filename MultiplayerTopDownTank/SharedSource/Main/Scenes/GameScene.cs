@@ -2,6 +2,7 @@
 using MultiplayerTopDownTank.Behaviors;
 using MultiplayerTopDownTank.Components;
 using MultiplayerTopDownTank.Entities;
+using MultiplayerTopDownTank.Managers;
 using System;
 using WaveEngine.Common.Math;
 using WaveEngine.Common.Media;
@@ -25,6 +26,7 @@ namespace MultiplayerTopDownTank
         private TiledMap tiledMap;
         private int playerIndex;
         private Entity playerEntity;
+        private Entity managerEntity;
 
         private readonly NetworkService networkService;
         private readonly NetworkManager networkManager;
@@ -55,7 +57,19 @@ namespace MultiplayerTopDownTank
             this.ConfigurePhysics();
             this.CreatePhysicScene();
             this.CreateBackgroundMusic();
+            this.CreateManager();
             this.InitializePlayer();
+        }
+
+        private void CreateManager()
+        {
+            this.managerEntity = new Entity(GameConstants.Manager)
+                .AddComponent(new BulletManager
+                {
+                     BulletPoolSize = 100
+                });
+
+            this.EntityManager.Add(managerEntity);
         }
 
         private void CreatePlayer(Vector2 position, string name)
@@ -181,6 +195,19 @@ namespace MultiplayerTopDownTank
                 colliderEntity.Tag = GameConstants.TagCollider;
                 colliderEntity.AddComponent(new RigidBody2D() { PhysicBodyType = RigidBodyType2D.Static });
 
+                colliderEntity.FindComponent<Collider2D>(false).BeginCollision += (args) =>
+                {
+                    if(args.ColliderB != null && args.ColliderB.UserData is RectangleCollider2D)
+                    {
+                        var tag = ((RectangleCollider2D)args.ColliderB.UserData).Owner.Tag;
+
+                        if(tag.Equals(GameConstants.BulletTag))
+                        {
+
+                        }
+                    }
+                };
+                
                 this.EntityManager.Add(colliderEntity);
             }
         }

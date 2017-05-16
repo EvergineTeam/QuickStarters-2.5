@@ -15,8 +15,7 @@ namespace MultiplayerTopDownTank.Components
             var rotation = reader.ReadSingle();
             this.transform.Rotation = rotation;
         }
-
-
+        
         public override void WriteSyncData(OutgoingMessage writer)
         {
             base.WriteSyncData(writer);

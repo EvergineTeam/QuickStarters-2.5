@@ -13,6 +13,8 @@ namespace MultiplayerTopDownTank.Entities
     {
         private Vector2 position;
         private Vector2 direction;
+        private RigidBody2D rigidBody;
+        private float velocity = 5f;
 
         #region Properties
 
@@ -43,6 +45,7 @@ namespace MultiplayerTopDownTank.Entities
                 this.entity.IsVisible = true;
             }
         }
+
         #endregion
 
         /// <summary>
@@ -50,37 +53,50 @@ namespace MultiplayerTopDownTank.Entities
         /// </summary>
         public Bullet()
         {
-            var bulletCircleCollider2D = new CircleCollider2D();
-
-            bulletCircleCollider2D.BeginCollision += (s) =>
+            this.rigidBody = new RigidBody2D
             {
-
+                PhysicBodyType = WaveEngine.Common.Physics2D.RigidBodyType2D.Dynamic,
+                IsBullet = true,
+                LinearDamping = 0
             };
 
             this.entity = new Entity() { Tag = "bullet" }
-                                .AddComponent(new Transform2D()
-                                {
-                                    Origin = Vector2.Center,
-                                    X = 0,
-                                    Y = 0,
-                                    DrawOrder = 0.6f,
-                                })
-                                .AddComponent(new RigidBody2D
-                                {
-                                    PhysicBodyType = WaveEngine.Common.Physics2D.RigidBodyType2D.Kinematic,
-                                    IsBullet = true
-                                })
-                                .AddComponent(new CircleCollider2D())
-                                .AddComponent(new BulletBehavior(this))
-                                .AddComponent(new Sprite(WaveContent.Assets.Textures.Bullets.rounded_bulletBeige_outline_png))
-                                .AddComponent(new SpriteRenderer(DefaultLayers.Alpha))
-                                .AddComponent(new NetworkBehavior())
-                                .AddComponent(new BulletNetworkSyncComponent());
+                .AddComponent(new Transform2D()
+                {
+                    Origin = Vector2.Center,
+                    X = 0,
+                    Y = 0,
+                    DrawOrder = 0.6f,
+                })
+                .AddComponent(this.rigidBody)
+                .AddComponent(new RectangleCollider2D())
+                .AddComponent(new BulletBehavior(this))
+                .AddComponent(new Sprite(WaveContent.Assets.Textures.Bullets.rounded_bulletBeige_outline_png))
+                .AddComponent(new SpriteRenderer(DefaultLayers.Alpha))
+                .AddComponent(new NetworkBehavior())
+                .AddComponent(new BulletNetworkSyncComponent());
 
             this.direction = Vector2.Zero;
             this.position = Vector2.Zero;
-
             this.entity.IsVisible = false;
+        }
+
+        public void Shoot(Vector2 position, Vector2 direction)
+        {
+            this.rigidBody.ResetPosition(position);
+            this.Direction = direction;
+            this.IsBulletActive(true);
+
+            Vector2 impulse = direction * this.velocity;
+            this.rigidBody.ApplyLinearImpulse(impulse, position);
+        }
+
+        public void IsBulletActive(bool isActive)
+        {
+            var bulletBehavior = this.entity.FindComponent<BulletBehavior>();
+            bulletBehavior.IsActive = isActive;
+            this.IsVisible = isActive;
+            this.entity.IsVisible = isActive;
         }
     }
 }

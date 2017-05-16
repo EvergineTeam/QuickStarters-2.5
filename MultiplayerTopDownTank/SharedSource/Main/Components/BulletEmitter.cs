@@ -1,4 +1,5 @@
 ﻿using MultiplayerTopDownTank.Entities;
+using MultiplayerTopDownTank.Managers;
 using System.Runtime.Serialization;
 using WaveEngine.Common.Math;
 using WaveEngine.Framework;
@@ -8,26 +9,15 @@ namespace MultiplayerTopDownTank.Components
     [DataContract(Namespace = "MultiplayerTopDownTank.Components")]
     public class BulletEmitter : Component
     {
-        private int bulletMax;
-        private Bullet[] bullets;
-        private int bulletIndex;
+        private BulletManager bulletManager;
 
-        protected override void DefaultValues()
+        protected override void ResolveDependencies()
         {
-            base.DefaultValues();
-            this.bulletMax = 5;
-        }
+            base.ResolveDependencies();
 
-        private void InitBulletPool()
-        {
-            this.bullets = new Bullet[this.bulletMax];
-
-            for (int i = 0; i < this.bulletMax; i++)
-            {
-                Bullet bullet = new Bullet();
-                this.bullets[i] = bullet;
-                this.EntityManager.Add(bullet.Entity);
-            }
+            bulletManager = EntityManager
+                .Find(GameConstants.Manager)
+                .FindComponent<BulletManager>();
         }
 
         /// <summary>
@@ -37,21 +27,18 @@ namespace MultiplayerTopDownTank.Components
         /// <param name="direction">The direction.</param>
         public void Shoot(Vector2 position, Vector2 direction)
         {
-            if (this.bullets == null)
-            {
-                this.InitBulletPool();
-            }
-
-            Bullet bullet = this.bullets[this.bulletIndex];
-            bullet.Position = position;
-            bullet.Direction = direction;
-
-            this.bulletIndex = (this.bulletIndex + 1) % this.bulletMax;
+            Bullet bullet = this.bulletManager.Retrieve();
+            bullet.Shoot(position, direction);
         }
 
-        public void DestrotBullet(Bullet bullet)
+        /// <summary>
+        /// Destry the Bullet
+        /// </summary>
+        /// <param name="bullet">The Bullet</param>
+        /// <param name="destroy">Indicates if the bullet is destroyed</param>
+        public void Destroy(Bullet bullet, bool destroy)
         {
-            bullet.IsVisible = false;
+            bullet.IsBulletActive(destroy);
         }
     }
 }
