@@ -22,5 +22,6 @@
 
         // Bullet
         public static string BulletTag = "bullet";
+        public static int BulletPoolSize = 10;
     }
 }

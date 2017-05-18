@@ -27,18 +27,8 @@ namespace MultiplayerTopDownTank.Components
         /// <param name="direction">The direction.</param>
         public void Shoot(Vector2 position, Vector2 direction)
         {
-            Bullet bullet = this.bulletManager.Retrieve();
-            bullet.Shoot(position, direction);
-        }
-
-        /// <summary>
-        /// Destry the Bullet
-        /// </summary>
-        /// <param name="bullet">The Bullet</param>
-        /// <param name="destroy">Indicates if the bullet is destroyed</param>
-        public void Destroy(Bullet bullet, bool destroy)
-        {
-            bullet.IsBulletActive(destroy);
+            var bullet = this.bulletManager.Retrieve();
+            bullet.FindComponent<BulletComponent>().Shoot(position, direction);
         }
     }
 }

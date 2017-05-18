@@ -4,6 +4,7 @@ using MultiplayerTopDownTank.Components;
 using MultiplayerTopDownTank.Entities;
 using MultiplayerTopDownTank.Managers;
 using System;
+using System.Collections.Generic;
 using WaveEngine.Common.Math;
 using WaveEngine.Common.Media;
 using WaveEngine.Common.Physics2D;
@@ -27,6 +28,7 @@ namespace MultiplayerTopDownTank
         private int playerIndex;
         private Entity playerEntity;
         private Entity managerEntity;
+        private BulletManager bulletManager;
 
         private readonly NetworkService networkService;
         private readonly NetworkManager networkManager;
@@ -63,11 +65,13 @@ namespace MultiplayerTopDownTank
 
         private void CreateManager()
         {
+            bulletManager = new BulletManager
+            {
+                BulletPoolSize = GameConstants.BulletPoolSize
+            };
+
             this.managerEntity = new Entity(GameConstants.Manager)
-                .AddComponent(new BulletManager
-                {
-                     BulletPoolSize = 100
-                });
+                .AddComponent(bulletManager);
 
             this.EntityManager.Add(managerEntity);
         }
@@ -88,13 +92,17 @@ namespace MultiplayerTopDownTank
                 .AddComponent(new TankBehavior())
                 .AddComponent(new TankComponent())
                 .AddComponent(new BulletEmitter())
-                .AddComponent(new RectangleCollider2D())
+                .AddComponent(new RectangleCollider2D
+                {
+                    CollisionCategories = ColliderCategory2D.Cat1,
+                    CollidesWith = ColliderCategory2D.Cat1 | ColliderCategory2D.Cat3 | ColliderCategory2D.Cat4
+                })
                 .AddComponent(new NetworkBehavior())
                 .AddComponent(new TankNetworkSyncComponent())
                 .AddComponent(new RigidBody2D
                 {
                     AngularDamping = 5.0f,
-                    LinearDamping = 10.0f
+                    LinearDamping = 10.0f,
                 });
 
             var barrel = new Entity(GameConstants.PlayerBarrel)
@@ -195,15 +203,24 @@ namespace MultiplayerTopDownTank
                 colliderEntity.Tag = GameConstants.TagCollider;
                 colliderEntity.AddComponent(new RigidBody2D() { PhysicBodyType = RigidBodyType2D.Static });
 
-                colliderEntity.FindComponent<Collider2D>(false).BeginCollision += (args) =>
+                var collider2D = colliderEntity.FindComponent<Collider2D>(false);
+                collider2D.CollisionCategories = ColliderCategory2D.Cat4;
+                collider2D.CollidesWith = ColliderCategory2D.All;
+
+                collider2D.BeginCollision += (args) =>
                 {
-                    if(args.ColliderB != null && args.ColliderB.UserData is RectangleCollider2D)
+                    if(args.ColliderB != null && args.ColliderB.UserData is Collider2D)
                     {
-                        var tag = ((RectangleCollider2D)args.ColliderB.UserData).Owner.Tag;
+                        var tag = ((Collider2D)args.ColliderB.UserData).Owner.Tag;
 
-                        if(tag.Equals(GameConstants.BulletTag))
+                        if(tag != null && tag.Equals(GameConstants.BulletTag))
                         {
+                            var bullets = new List<Entity>
+                            {
+                                ((Collider2D)args.ColliderB.UserData).Owner
+                            };
 
+                            bulletManager.FreeBulletEntity(bullets);
                         }
                     }
                 };
