@@ -18,8 +18,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Components\BulletEmitter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Components\BulletNetworkSyncComponent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Components\GamePlayManager.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Components\BaseNetworkSyncComponent.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Components\TankBarrelNetworkSyncComponent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Components\TankComponent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Components\TankNetworkSyncComponent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\Hub.cs" />

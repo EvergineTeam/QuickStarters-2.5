@@ -39,7 +39,34 @@ namespace MultiplayerTopDownTank
             this.playerIndex = playerIndex;
             this.networkService = WaveServices.GetService<NetworkService>();
             this.networkManager = this.networkService.RegisterScene(this, GameSceneIdentifier);
+            this.networkManager.AddFactory(GameConstants.TankFactory, OnPlayerReceived);
+            this.networkManager.AddFactory(GameConstants.BulletFactory, OnBulletReceived);
             Labels.Add("PlayerIndex", playerIndex);
+        }
+
+        private Entity OnPlayerReceived(string clientId, string behaviorId)
+        {
+            var isHostPlayer = this.networkService.ClientIdentifier == clientId;
+
+            if (isHostPlayer)
+            {
+                var randomSpawnPoint = GetRandomSpawnPoint();
+                return CreateTank(randomSpawnPoint, clientId);
+            }
+            else
+            {
+                var enemy = CreateTank(new Vector2(-500,-500), clientId);
+                RemoveTankBehavior(enemy);
+
+                return enemy;
+            }
+        }
+
+        private Entity OnBulletReceived(string clientId, string behaviorId)
+        {
+            var bullet = bulletManager.Retrieve();
+
+            return bullet;
         }
 
         protected override void CreateScene()
@@ -78,7 +105,7 @@ namespace MultiplayerTopDownTank
             this.EntityManager.Add(managerEntity);
         }
 
-        private void CreatePlayer(Vector2 position, string name)
+        private Entity CreateTank(Vector2 position, string name)
         {
             this.playerEntity = new Entity(name)
                 .AddComponent(new Transform2D
@@ -117,13 +144,17 @@ namespace MultiplayerTopDownTank
               {
                   TexturePath = string.Format("Content/Assets/Textures/Tanks/tankBarrel{0}.png", playerIndex)
               })
-              .AddComponent(new SpriteRenderer(DefaultLayers.Alpha))
-              .AddComponent(new NetworkBehavior())
-              .AddComponent(new TankBarrelNetworkSyncComponent());
+              .AddComponent(new SpriteRenderer(DefaultLayers.Alpha));
 
             playerEntity.AddChild(barrel);
 
-            this.EntityManager.Add(playerEntity);
+            return playerEntity;
+        }
+
+
+        private void RemoveTankBehavior(Entity tank)
+        {
+            tank.RemoveComponent<TankBehavior>();
         }
 
         private Vector2 GetRandomSpawnPoint()
@@ -131,17 +162,17 @@ namespace MultiplayerTopDownTank
             var anchorLayer = tiledMap.ObjectLayers[GameConstants.AnchorLayer];
             WaveEngine.Framework.Services.Random rnd = new WaveEngine.Framework.Services.Random();
             var spawnIndex = rnd.Next(1, Convert.ToInt32(tiledMap.Properties[GameConstants.SpawnCount]));
+#if DEBUG
+            spawnIndex = 1;
+#endif
             var position = anchorLayer.Objects.Find(o => o.Name == $"{GameConstants.SpawnPointPrefix}{spawnIndex}");
-
             return new Vector2(position.X, position.Y);
         }
 
         private void InitializePlayer()
         {
-            this.CreatePlayer(GetRandomSpawnPoint(), "Player_" + this.playerIndex);
-
             // When the scene start add the payer entity to NetworkManager to start to sync with other clients.
-            this.networkManager.AddEntity(playerEntity);
+            this.networkManager.AddEntity(GameConstants.TankFactory);
 
             var playerComponent = playerEntity.FindComponent<TankComponent>();
             playerComponent.PrepareTank();
