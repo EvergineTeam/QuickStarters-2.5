@@ -10,6 +10,7 @@ using WaveEngine.Common.Media;
 using WaveEngine.Common.Physics2D;
 using WaveEngine.Components.Graphics2D;
 using WaveEngine.Framework;
+using WaveEngine.Framework.Diagnostic;
 using WaveEngine.Framework.Graphics;
 using WaveEngine.Framework.Managers;
 using WaveEngine.Framework.Physics2D;
@@ -38,6 +39,7 @@ namespace MultiplayerTopDownTank
             this.playerIndex = playerIndex;
             this.networkService = WaveServices.GetService<NetworkService>();
             this.networkManager = this.networkService.RegisterScene(this, GameSceneIdentifier);
+            Labels.Add("PlayerIndex", playerIndex);
         }
 
         protected override void CreateScene()
@@ -234,7 +236,7 @@ namespace MultiplayerTopDownTank
             // Music
             var musicInfo = new MusicInfo(WaveContent.Assets.Sounds.Background_Music_mp3);
             WaveServices.MusicPlayer.Play(musicInfo);
-            WaveServices.MusicPlayer.Volume = 0.8f;
+            WaveServices.MusicPlayer.Volume = 0.0f;
             WaveServices.MusicPlayer.IsRepeat = true;
         }
     }
