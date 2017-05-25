@@ -36,26 +36,9 @@
     <ApplicationIcon>Game.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="WaveEngine.Adapter">
-      <HintPath>..\..\packages\WaveEngine.Adapter.2.3.2-alpha-20170503-493\lib\net45\WaveEngine.Adapter.dll</HintPath>
-    </Reference>
-    <Reference Include="WaveEngine.Box2D">
-      <HintPath>..\..\packages\WaveEngine.Box2D.2.3.2-alpha-20170503-493\lib\net45\WaveEngine.Box2D.dll</HintPath>
-    </Reference>
-    <Reference Include="WaveEngine.Common">
-      <HintPath>..\..\packages\WaveEngine.Common.2.3.2-alpha-20170503-493\lib\net45\WaveEngine.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="WaveEngine.Framework">
-      <HintPath>..\..\packages\WaveEngine.Framework.2.3.2-alpha-20170503-493\lib\net45\WaveEngine.Framework.dll</HintPath>
-    </Reference>
-    <Reference Include="WaveEngine.Components">
-      <HintPath>..\..\packages\WaveEngine.Components.2.3.2-alpha-20170503-493\lib\net45\WaveEngine.Components.dll</HintPath>
-    </Reference>
-    <Reference Include="WaveEngine.Materials">
-      <HintPath>..\..\packages\WaveEngine.Materials.2.3.2-alpha-20170503-493\lib\net45\WaveEngine.Materials.dll</HintPath>
-    </Reference>
-    <Reference Include="WaveEngine.ImageEffects">
-      <HintPath>..\..\packages\WaveEngine.ImageEffects.2.3.2-alpha-20170503-493\lib\net45\WaveEngine.ImageEffects.dll</HintPath>
+    <Reference Include="protobuf-net, Version=2.0.0.668, Culture=neutral, PublicKeyToken=257b51d87d2e4d67, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files (x86)\WaveEngine\v2.0\Lib\Windows\protobuf-net.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -64,13 +47,33 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="WaveEngine.Adapter">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files (x86)\WaveEngine\v2.0\Lib\Windows\WaveEngine.Adapter.dll</HintPath>
+    </Reference>
+    <Reference Include="WaveEngine.Common">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files (x86)\WaveEngine\v2.0\Lib\Windows\WaveEngine.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="WaveEngine.Components">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files (x86)\WaveEngine\v2.0\Lib\Windows\WaveEngine.Components.dll</HintPath>
+    </Reference>
+    <Reference Include="WaveEngine.Framework">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files (x86)\WaveEngine\v2.0\Lib\Windows\WaveEngine.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="WaveEngine.Materials">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files (x86)\WaveEngine\v2.0\Lib\Windows\WaveEngine.Materials.dll</HintPath>
+    </Reference>
     <Reference Include="WaveEngine.Networking">
-      <HintPath>..\..\packages\WaveEngine.Networking.2.3.2-alpha-20170503-493\lib\net45\WaveEngine.Networking.dll</HintPath>
-      <Private>True</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files (x86)\WaveEngine\v2.0\Lib\Windows\WaveEngine.Networking.dll</HintPath>
     </Reference>
     <Reference Include="WaveEngine.TiledMap">
-      <HintPath>..\..\packages\WaveEngine.TiledMap.2.3.2-alpha-20170503-493\lib\net45\WaveEngine.TiledMap.dll</HintPath>
-      <Private>True</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files (x86)\WaveEngine\v2.0\Lib\Windows\WaveEngine.TiledMap.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

@@ -9,6 +9,7 @@ namespace MultiplayerTopDownTank.Components
     public class BulletComponent : Component
     {
         private float velocity = 30f;
+
         [RequiredComponent]
         private RigidBody2D rigidBody = null;
 

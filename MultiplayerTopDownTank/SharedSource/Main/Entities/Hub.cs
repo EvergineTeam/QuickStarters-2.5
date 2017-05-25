@@ -29,7 +29,7 @@ namespace MultiplayerTopDownTank.Entities
 
         #endregion
 
-        public Hub()
+        public Hub(string name)
         {
             Grid grid = new Grid("Hub")
             {
@@ -65,6 +65,7 @@ namespace MultiplayerTopDownTank.Entities
             grid.Add(progressBar);
 
             this.entity = grid.Entity;
+            this.entity.Name = name;
         }
 
         /// <summary>

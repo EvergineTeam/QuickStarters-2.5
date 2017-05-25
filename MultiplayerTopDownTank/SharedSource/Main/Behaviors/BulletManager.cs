@@ -19,6 +19,8 @@ namespace MultiplayerTopDownTank.Managers
         private Queue<Entity> bulletPool;
         private ConcurrentQueue<Entity> toRemoveBulletPool;
 
+        private GameScene gameScene;
+
         [DataMember]
         public int BulletPoolSize { get; set; }
 
@@ -26,6 +28,7 @@ namespace MultiplayerTopDownTank.Managers
         {
             base.ResolveDependencies();
 
+            this.gameScene = Owner.Scene as GameScene;
             this.bulletPool = new Queue<Entity>();
             this.toRemoveBulletPool = new ConcurrentQueue<Entity>();
 
@@ -44,32 +47,30 @@ namespace MultiplayerTopDownTank.Managers
 
         private Entity CreateBullet()
         {
-            var rigidBody = new RigidBody2D
-            {
-                PhysicBodyType = WaveEngine.Common.Physics2D.RigidBodyType2D.Dynamic,
-                IsBullet = true,
-                LinearDamping = 0
-            };
-
             var bullet = new Entity() { Tag = GameConstants.BulletTag }
-                .AddComponent(new Transform2D()
+                .AddComponent(new Transform2D
                 {
                     Origin = Vector2.Center,
                     X = 0,
                     Y = 0,
                     DrawOrder = 0.6f,
                 })
-                .AddComponent(rigidBody)
+                .AddComponent(new RigidBody2D
+                {
+                    PhysicBodyType = WaveEngine.Common.Physics2D.RigidBodyType2D.Dynamic,
+                    IsBullet = true,
+                    LinearDamping = 0
+                })
                 .AddComponent(new CircleCollider2D
                 {
                     CollisionCategories = WaveEngine.Common.Physics2D.ColliderCategory2D.Cat2,
-                    CollidesWith = 
+                    CollidesWith =
                         WaveEngine.Common.Physics2D.ColliderCategory2D.Cat1 |
                         WaveEngine.Common.Physics2D.ColliderCategory2D.Cat3 |
                         WaveEngine.Common.Physics2D.ColliderCategory2D.Cat4
                 })
                 .AddComponent(new Sprite(WaveContent.Assets.Textures.Bullets.rounded_bulletBeige_outline_png))
-                .AddComponent(new SpriteRenderer(DefaultLayers.Alpha))   
+                .AddComponent(new SpriteRenderer(DefaultLayers.Alpha))
                 .AddComponent(new BulletComponent())
                 .AddComponent(new NetworkBehavior())
                 .AddComponent(new BulletNetworkSyncComponent());
@@ -80,7 +81,7 @@ namespace MultiplayerTopDownTank.Managers
         private void AddToPool(Entity bullet)
         {
             bullet.Tag = GameConstants.BulletTag;
-            bulletPool.Enqueue(bullet);    
+            bulletPool.Enqueue(bullet);
         }
 
         public Entity Retrieve()
@@ -95,8 +96,6 @@ namespace MultiplayerTopDownTank.Managers
             {
                 bullet = CreateBullet();
             }
-
-            EntityManager.Add(bullet);
 
             return bullet;
         }
@@ -116,7 +115,7 @@ namespace MultiplayerTopDownTank.Managers
 
         protected override void Update(TimeSpan gameTime)
         {
-            foreach(var bullet in toRemoveBulletPool)
+            foreach (var bullet in toRemoveBulletPool)
             {
                 EntityManager.Detach(bullet);
                 bulletPool.Enqueue(bullet);
@@ -127,7 +126,7 @@ namespace MultiplayerTopDownTank.Managers
             {
                 toRemoveBulletPool.TryDequeue(out entity);
             }
-            
+
             Labels.Add("Bullets", bulletPool.Count);
         }
     }

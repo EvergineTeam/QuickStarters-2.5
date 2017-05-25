@@ -9,13 +9,11 @@
     <Import_RootNamespace>MultiplayerTopDownTank</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)Behaviors\BulletManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Behaviors\CameraBehavior.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Behaviors\DebugBehavior.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Behaviors\FollowCameraBehavior.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Behaviors\TankBehavior.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Components\BulletComponent.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Components\BulletEmitter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Components\BulletNetworkSyncComponent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Components\GamePlayManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Components\TankComponent.cs" />

@@ -21,7 +21,7 @@ namespace MultiplayerTopDownTank.Components
 
         public override bool NeedSendSyncData()
         {
-            return    
+            return
                 this.lastPosition != this.transform.Position;
         }
 

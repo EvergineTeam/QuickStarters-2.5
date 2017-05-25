@@ -1,5 +1,4 @@
-﻿using MultiplayerTopDownTank.Components;
-using MultiplayerTopDownTank.Entities;
+﻿using MultiplayerTopDownTank.Entities;
 using MultiplayerTopDownTank.Managers;
 using System;
 using System.Runtime.Serialization;
@@ -16,7 +15,6 @@ namespace MultiplayerTopDownTank.Behaviors
     public class TankBehavior : Behavior
     {
         private Joystick leftJoystick, rightJoystick;
-        private int life;
         private float moveVelocity;
         private float rotateVelocity;
         private Vector2 textureDirection;
@@ -30,9 +28,6 @@ namespace MultiplayerTopDownTank.Behaviors
         [RequiredComponent]
         private RigidBody2D rigitBody = null;
 
-        [RequiredComponent]
-        private BulletEmitter bulletEmitter = null;
-
         /// <summary>
         /// Sets the default values
         /// </summary>
@@ -40,7 +35,6 @@ namespace MultiplayerTopDownTank.Behaviors
         {
             this.shootCadence = TimeSpan.FromMilliseconds(150);
             this.time = this.shootCadence;
-            this.life = 100;
             this.moveVelocity = 15;
             this.rotateVelocity = 20;
             this.textureDirection = new Vector2(0, -1);
@@ -94,17 +88,17 @@ namespace MultiplayerTopDownTank.Behaviors
             {
                 Vector2 impulse = moveDirection * this.moveVelocity * (float)gameTime.TotalSeconds;
                 impulse.X = 0;
-   
+
                 float rotation = this.transform.Rotation;
 
                 if (!float.IsNaN(rotation) && impulse.Y != 0)
                 {
-                    var result = Vector2.Rotate(impulse,this.transform.Rotation);
+                    var result = Vector2.Rotate(impulse, this.transform.Rotation);
                     this.rigitBody.ApplyLinearImpulse(result, this.transform.Position);
                 }
             }
 
-     
+
             if (!float.IsNaN(moveDirection.X))
             {
                 Vector2 impulse = moveDirection * this.rotateVelocity * (float)gameTime.TotalSeconds;
@@ -118,7 +112,7 @@ namespace MultiplayerTopDownTank.Behaviors
                     this.rigitBody.ApplyTorque(result.X);
                 }
             }
-        
+
 
             // Tank shoot   
             Vector2 rightJoyDirection = this.rightJoystick.Direction;
@@ -153,7 +147,14 @@ namespace MultiplayerTopDownTank.Behaviors
                     {
                         // Create bullet
                         Vector2 tankPosition = new Vector2(this.transform.X, this.transform.Y);
-                        this.bulletEmitter.Shoot(tankPosition, rightJoyDirection);
+
+                        var gameScene = this.Owner.Scene as GameScene;
+
+                        if (gameScene != null)
+                        {
+                            gameScene.Shoot(tankPosition, rightJoyDirection);
+                        }
+
                         SoundsManager.Instance.PlaySound(SoundsManager.SOUNDS.Shoot);
                     }
 

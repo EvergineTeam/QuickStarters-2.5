@@ -2,7 +2,6 @@
 using MultiplayerTopDownTank.Behaviors;
 using MultiplayerTopDownTank.Components;
 using MultiplayerTopDownTank.Entities;
-using MultiplayerTopDownTank.Managers;
 using System;
 using System.Collections.Generic;
 using WaveEngine.Common.Math;
@@ -23,13 +22,12 @@ namespace MultiplayerTopDownTank
 {
     public class GameScene : Scene
     {
+        public const string TankTag = "TankTag";
         private const string GameSceneIdentifier = "MultiplayerTopDownTank.Game.Scene";
 
         private TiledMap tiledMap;
         private int playerIndex;
         private Entity playerEntity;
-        private Entity managerEntity;
-        private BulletManager bulletManager;
 
         private readonly NetworkService networkService;
         private readonly NetworkManager networkManager;
@@ -41,7 +39,13 @@ namespace MultiplayerTopDownTank
             this.networkManager = this.networkService.RegisterScene(this, GameSceneIdentifier);
             this.networkManager.AddFactory(GameConstants.TankFactory, OnPlayerReceived);
             this.networkManager.AddFactory(GameConstants.BulletFactory, OnBulletReceived);
-            Labels.Add("PlayerIndex", playerIndex);
+        }
+
+        public void Shoot(Vector2 position, Vector2 direction)
+        {
+            var bullet = this.networkManager.AddEntity(GameConstants.BulletFactory);
+
+            bullet.FindComponent<BulletComponent>().Shoot(position, direction);
         }
 
         private Entity OnPlayerReceived(string clientId, string behaviorId)
@@ -51,11 +55,11 @@ namespace MultiplayerTopDownTank
             if (isHostPlayer)
             {
                 var randomSpawnPoint = GetRandomSpawnPoint();
-                return CreateTank(randomSpawnPoint, clientId);
+                return CreateTank(randomSpawnPoint, clientId, true);
             }
             else
             {
-                var enemy = CreateTank(new Vector2(-500,-500), clientId);
+                var enemy = CreateTank(new Vector2(-500, -500), clientId, false);
                 RemoveTankBehavior(enemy);
 
                 return enemy;
@@ -64,9 +68,7 @@ namespace MultiplayerTopDownTank
 
         private Entity OnBulletReceived(string clientId, string behaviorId)
         {
-            var bullet = bulletManager.Retrieve();
-
-            return bullet;
+            return CreateBullet();
         }
 
         protected override void CreateScene()
@@ -88,25 +90,27 @@ namespace MultiplayerTopDownTank
             this.ConfigurePhysics();
             this.CreatePhysicScene();
             this.CreateBackgroundMusic();
-            this.CreateManager();
             this.InitializePlayer();
+            this.InitializeBullet();
         }
 
-        private void CreateManager()
+        private Entity CreateTank(Vector2 position, string name, bool isLocal)
         {
-            bulletManager = new BulletManager
+            var tankCollider = new RectangleCollider2D
             {
-                BulletPoolSize = GameConstants.BulletPoolSize
+                CollisionCategories = ColliderCategory2D.Cat1,
+                CollidesWith = isLocal ?
+                        ColliderCategory2D.Cat1 | ColliderCategory2D.Cat3 | ColliderCategory2D.Cat4 :
+                        ColliderCategory2D.All
             };
 
-            this.managerEntity = new Entity(GameConstants.Manager)
-                .AddComponent(bulletManager);
+            var tankComponent = new TankComponent
+            {
+                IsLocal = isLocal
+            };
 
-            this.EntityManager.Add(managerEntity);
-        }
+            Labels.Add("IsLocal", isLocal.ToString());
 
-        private Entity CreateTank(Vector2 position, string name)
-        {
             this.playerEntity = new Entity(name)
                 .AddComponent(new Transform2D
                 {
@@ -119,13 +123,8 @@ namespace MultiplayerTopDownTank
                 })
                 .AddComponent(new SpriteRenderer(DefaultLayers.Alpha))
                 .AddComponent(new TankBehavior())
-                .AddComponent(new TankComponent())
-                .AddComponent(new BulletEmitter())
-                .AddComponent(new RectangleCollider2D
-                {
-                    CollisionCategories = ColliderCategory2D.Cat1,
-                    CollidesWith = ColliderCategory2D.Cat1 | ColliderCategory2D.Cat3 | ColliderCategory2D.Cat4
-                })
+                .AddComponent(tankComponent)
+                .AddComponent(tankCollider)
                 .AddComponent(new NetworkBehavior())
                 .AddComponent(new TankNetworkSyncComponent())
                 .AddComponent(new RigidBody2D
@@ -146,11 +145,68 @@ namespace MultiplayerTopDownTank
               })
               .AddComponent(new SpriteRenderer(DefaultLayers.Alpha));
 
+            playerEntity.Tag = TankTag;
+
             playerEntity.AddChild(barrel);
+
+
+            tankCollider.BeginCollision += (args) =>
+            {
+                if (args.ColliderB != null && args.ColliderB.UserData is Collider2D)
+                {
+                    var tag = ((Collider2D)args.ColliderB.UserData).Owner.Tag;
+
+                    if (tag != null && tag.Equals(GameConstants.BulletTag))
+                    {
+                        var bullet = ((Collider2D)args.ColliderB.UserData).Owner;
+
+                        this.networkManager.RemoveEntity(bullet);
+
+                        tankComponent.Damage();
+                    }
+                }
+            };
 
             return playerEntity;
         }
 
+        private Entity CreateBullet()
+        {
+            var bullet = new Entity() { Tag = GameConstants.BulletTag }
+               .AddComponent(new Transform2D
+               {
+                   Origin = Vector2.Center,
+                   X = 0,
+                   Y = 0,
+                   DrawOrder = 0.6f,
+               })
+               .AddComponent(new RigidBody2D
+               {
+                   PhysicBodyType = RigidBodyType2D.Dynamic,
+                   IsBullet = true,
+                   LinearDamping = 0
+               })
+               .AddComponent(new CircleCollider2D
+               {
+                   CollisionCategories = ColliderCategory2D.Cat2,
+                   CollidesWith =
+                       ColliderCategory2D.Cat1 |
+                       ColliderCategory2D.Cat3 |
+                       ColliderCategory2D.Cat4
+               })
+               .AddComponent(new Sprite(WaveContent.Assets.Textures.Bullets.rounded_bulletBeige_outline_png))
+               .AddComponent(new SpriteRenderer(DefaultLayers.Alpha))
+               .AddComponent(new BulletComponent())
+               .AddComponent(new NetworkBehavior())
+               .AddComponent(new BulletNetworkSyncComponent());
+
+            return bullet;
+        }
+
+        internal void DestroyTank(Entity tank)
+        {
+            this.networkManager.RemoveEntity(tank);
+        }
 
         private void RemoveTankBehavior(Entity tank)
         {
@@ -176,6 +232,11 @@ namespace MultiplayerTopDownTank
 
             var playerComponent = playerEntity.FindComponent<TankComponent>();
             playerComponent.PrepareTank();
+        }
+
+        private void InitializeBullet()
+        {
+            this.networkManager.AddEntity(GameConstants.BulletFactory);
         }
 
         private void SetCameraBounds()
@@ -221,8 +282,8 @@ namespace MultiplayerTopDownTank
         private void CreateHub()
         {
             // Create Hub
-            var hubPanel = new Hub();
-            EntityManager.Add(hubPanel);
+            var hud = new Hub(GameConstants.Hud);
+            EntityManager.Add(hud);
         }
 
         private void CreatePhysicScene()
@@ -242,22 +303,19 @@ namespace MultiplayerTopDownTank
 
                 collider2D.BeginCollision += (args) =>
                 {
-                    if(args.ColliderB != null && args.ColliderB.UserData is Collider2D)
+                    if (args.ColliderB != null && args.ColliderB.UserData is Collider2D)
                     {
                         var tag = ((Collider2D)args.ColliderB.UserData).Owner.Tag;
 
-                        if(tag != null && tag.Equals(GameConstants.BulletTag))
+                        if (tag != null && tag.Equals(GameConstants.BulletTag))
                         {
-                            var bullets = new List<Entity>
-                            {
-                                ((Collider2D)args.ColliderB.UserData).Owner
-                            };
+                            var bullet = ((Collider2D)args.ColliderB.UserData).Owner;
 
-                            bulletManager.FreeBulletEntity(bullets);
+                            this.networkManager.RemoveEntity(bullet);
                         }
                     }
                 };
-                
+
                 this.EntityManager.Add(colliderEntity);
             }
         }

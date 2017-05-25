@@ -1,5 +1,4 @@
-﻿using MultiplayerTopDownTank.Entities;
-using MultiplayerTopDownTank.Managers;
+﻿using MultiplayerTopDownTank.Managers;
 using System.Runtime.Serialization;
 using WaveEngine.Common.Math;
 using WaveEngine.Framework;
