@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>846d34c8-e537-4dc7-b646-cff649ce42e4</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Match3</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Components\BackgroundElemEmitter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Components\Finish\ScoreComponent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Components\Finish\StarsComponent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Components\Gameplay\CandyAnimationBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Components\Gameplay\CandyAttributesComponent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Components\Gameplay\CandyTouchComponent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Components\Gameplay\GameboardAnimationsOrchestrator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Components\Gameplay\GameboardContent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Components\Gameplay\ScoreComponent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Components\Gameplay\TimerBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Components\LevelSelection\LevelButtonComponent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Components\Pause\TitleLevelComponent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Factories\GameplayFactory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Game.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Gameboard\Board.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Gameboard\BoardGenerator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Gameboard\BoardOperation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Gameboard\Candy.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Gameboard\CandyColors.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Gameboard\CandyMoves.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Gameboard\CandyOperation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Gameboard\CandyTypes.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Gameboard\Coordinate.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Gameboard\OperationTypes.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\GameLogicExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Scenes\MenuBackground.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Scenes\About.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Scenes\Pause.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Scenes\Gameplay.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Scenes\Loading.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Scenes\LevelSelection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Scenes\Finish.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Scenes\ExitConfirmation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Scenes\MainMenu.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Audio\AudioEnum.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Audio\AudioPlayer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\CustomServices.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\GameLogic.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Navigation\IAnimatedNavigationScene.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Navigation\INavigationService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Navigation\NavigateCommands.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Navigation\NavigationService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UI\ButtonComponent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UI\MuteComponent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UI\Navigation\KeyboardNavigationComponent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UI\Navigation\NavigationComponent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UI\Navigation\NextLevelComponent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UI\Navigation\TimerNavigationComponent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UI\Navigation\TouchNavigationComponent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UI\NinePatch\NinePatchBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UI\NinePatch\NinePatchRenderer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UI\NinePatch\NinePatchSprite.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UI\NinePatch\NinePatchSpriteAtlas.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UI\NinePatch\NinePatchTextureInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UI\ToggleButtonComponent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WaveContent.cs" />
+  </ItemGroup>
+</Project>
