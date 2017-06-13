@@ -6,7 +6,6 @@ using WaveEngine.Networking;
 using WaveEngine.Framework.Animation;
 using MultiplayerTopDownTank.Managers;
 using System.Threading.Tasks;
-using NetTask = System.Threading.Tasks.Task;
 
 namespace MultiplayerTopDownTank.Scenes
 {
@@ -75,18 +74,15 @@ namespace MultiplayerTopDownTank.Scenes
 
         private async Task<NetworkEndpoint> WaitForDiscoverHostAsync(TimeSpan timeOut)
         {
-            TaskCompletionSource<bool> tcs = new TaskCompletionSource<bool>();
-
             NetworkEndpoint discoveredHost = null;
             HostDiscovered hostDisceveredHandler = (sender, host) =>
             {
                 discoveredHost = host;
-                tcs.TrySetResult(true);
             };
 
             this.networkService.HostDiscovered += hostDisceveredHandler;
             this.networkService.DiscoveryHosts(NetworkConfiguration.GameIdentifier, NetworkConfiguration.Port);
-            await NetTask.WhenAny(tcs.Task, NetTask.Delay(timeOut));
+            await System.Threading.Tasks.Task.Delay(timeOut);
             this.networkService.HostDiscovered -= hostDisceveredHandler;
 
             return discoveredHost;
