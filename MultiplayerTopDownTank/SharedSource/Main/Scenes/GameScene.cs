@@ -3,7 +3,6 @@ using MultiplayerTopDownTank.Behaviors;
 using MultiplayerTopDownTank.Components;
 using MultiplayerTopDownTank.Entities;
 using System;
-using System.Collections.Generic;
 using WaveEngine.Common.Math;
 using WaveEngine.Common.Media;
 using WaveEngine.Common.Physics2D;
@@ -22,7 +21,6 @@ namespace MultiplayerTopDownTank
 {
     public class GameScene : Scene
     {
-        public const string TankTag = "TankTag";
         private const string GameSceneIdentifier = "MultiplayerTopDownTank.Game.Scene";
 
         private TiledMap tiledMap;
@@ -40,6 +38,8 @@ namespace MultiplayerTopDownTank
             this.networkManager.AddFactory(GameConstants.TankFactory, OnPlayerReceived);
             this.networkManager.AddFactory(GameConstants.BulletFactory, OnBulletReceived);
         }
+
+        public NetworkManager NetworkManager { get { return this.networkManager; } }
 
         public void Shoot(Vector2 position, Vector2 direction)
         {
@@ -104,34 +104,37 @@ namespace MultiplayerTopDownTank
                         ColliderCategory2D.All
             };
 
-            var tankComponent = new TankComponent
-            {
-                IsLocal = isLocal
-            };
+            var tankComponent = new TankComponent();
+            var tankBehavior = new TankBehavior();
 
             Labels.Add("IsLocal", isLocal.ToString());
 
-            this.playerEntity = new Entity(name)
-                .AddComponent(new Transform2D
-                {
-                    Position = position,
-                    Origin = new Vector2(0.5f, 0.5f)
-                })
-                .AddComponent(new Sprite
-                {
-                    TexturePath = string.Format("Content/Assets/Textures/Tanks/tankBase{0}.png", playerIndex)
-                })
-                .AddComponent(new SpriteRenderer(DefaultLayers.Alpha))
-                .AddComponent(new TankBehavior())
-                .AddComponent(tankComponent)
-                .AddComponent(tankCollider)
-                .AddComponent(new NetworkBehavior())
-                .AddComponent(new TankNetworkSyncComponent())
-                .AddComponent(new RigidBody2D
-                {
-                    AngularDamping = 5.0f,
-                    LinearDamping = 10.0f,
-                });
+            this.playerEntity = new Entity(string.Format("{0}-{1}", isLocal ? "Local" : "Remote", name))
+            {
+                Tag = GameConstants.TankTag
+            }
+            .AddComponent(new Transform2D
+            {
+                Position = position,
+                Origin = new Vector2(0.5f, 0.5f)
+            })
+            .AddComponent(new Sprite
+            {
+                TexturePath = string.Format("Content/Assets/Textures/Tanks/tankBase{0}.png", playerIndex)
+            })
+            .AddComponent(new SpriteRenderer(DefaultLayers.Alpha))
+            .AddComponent(tankBehavior)
+            .AddComponent(tankComponent)
+            .AddComponent(tankCollider)
+            .AddComponent(new NetworkBehavior())
+            .AddComponent(new TankNetworkSyncComponent())
+            .AddComponent(new RigidBody2D
+            {
+                AngularDamping = 5.0f,
+                LinearDamping = 10.0f,
+            });
+
+            Labels.Add("PlayerEntity Name", this.playerEntity.Name);
 
             var barrel = new Entity(GameConstants.PlayerBarrel)
               .AddComponent(new Transform2D
@@ -145,24 +148,39 @@ namespace MultiplayerTopDownTank
               })
               .AddComponent(new SpriteRenderer(DefaultLayers.Alpha));
 
-            playerEntity.Tag = TankTag;
-
             playerEntity.AddChild(barrel);
 
 
             tankCollider.BeginCollision += (args) =>
             {
+                if(isLocal)
+                {
+                    Labels.Add("Collision Info", "A");
+                }
+                else
+                {
+                    Labels.Add("Collision Info", "B");
+                }
+
                 if (args.ColliderB != null && args.ColliderB.UserData is Collider2D)
                 {
-                    var tag = ((Collider2D)args.ColliderB.UserData).Owner.Tag;
+                    var bulletTag = ((Collider2D)args.ColliderB.UserData).Owner.Tag;
 
-                    if (tag != null && tag.Equals(GameConstants.BulletTag))
+                    if (bulletTag != null && bulletTag.Equals(GameConstants.BulletTag))
                     {
                         var bullet = ((Collider2D)args.ColliderB.UserData).Owner;
-
                         this.networkManager.RemoveEntity(bullet);
 
-                        tankComponent.Damage();
+                        if (args.ColliderA != null && args.ColliderA.UserData is Collider2D)
+                        {
+                            var tankTag = ((Collider2D)args.ColliderA.UserData).Owner.Tag;
+                            if (tankTag != null && tankTag.Equals(GameConstants.TankTag))
+                            {
+                                var tank = ((Collider2D)args.ColliderA.UserData).Owner;
+                                Labels.Add("Damage Info", $" {bullet.Name} -> {tank.Name}");
+                                tankBehavior.Damage(); 
+                            }
+                        }
                     }
                 }
             };
@@ -201,11 +219,6 @@ namespace MultiplayerTopDownTank
                .AddComponent(new BulletNetworkSyncComponent());
 
             return bullet;
-        }
-
-        internal void DestroyTank(Entity tank)
-        {
-            this.networkManager.RemoveEntity(tank);
         }
 
         private void RemoveTankBehavior(Entity tank)

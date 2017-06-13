@@ -27,8 +27,8 @@ namespace MultiplayerTopDownTank.Scenes
         public LobbyScene()
         {
             this.networkService = WaveServices.GetService<NetworkService>();
-            this.networkService.HostMessageReceived += this.HostMessageReceived;
-            this.networkService.ClientMessageReceived += this.ClientMessageReceived;
+            this.networkService.MessageReceivedFromHost += this.ClientMessageReceived;
+            this.networkService.MessageReceivedFromClient += this.HostMessageReceived;
 
             assignedPlayerIndex = new List<int>();
         }
@@ -104,7 +104,7 @@ namespace MultiplayerTopDownTank.Scenes
         /// <summary>
         /// Handles the messages received from the clients. Only when this player is the host.
         /// </summary>
-        private void HostMessageReceived(object sender, IncomingMessage receivedMessage)
+        private void HostMessageReceived(object sender, NetworkEndpoint networkEndpoint, IncomingMessage receivedMessage)
         {
             var playerIdentifier = receivedMessage.ReadString();
             var playerIndex = receivedMessage.ReadInt32();
@@ -121,7 +121,7 @@ namespace MultiplayerTopDownTank.Scenes
         /// <summary>
         /// Handles the messages received from the host.
         /// </summary>
-        private void ClientMessageReceived(object sender, IncomingMessage receivedMessage)
+        private void ClientMessageReceived(object sender, NetworkEndpoint networkEndpoint, IncomingMessage receivedMessage)
         {
             var playerIdentifier = receivedMessage.ReadString();
             var playerIndex = receivedMessage.ReadInt32();

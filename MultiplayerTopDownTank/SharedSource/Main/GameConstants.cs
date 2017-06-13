@@ -17,6 +17,7 @@
         public static string PlayerBarrel = "Barrel";
         public static string TagCollider = "collider";
         public static string TankFactory = "TankFactory";
+        public static string TankTag = "tank";
 
         // Manager
         public static string Manager = "Manager";

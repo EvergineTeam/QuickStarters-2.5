@@ -1,11 +1,11 @@
 ﻿using System;
-using System.Diagnostics;
 using WaveEngine.Framework;
 using WaveEngine.Framework.Services;
 using WaveEngine.Framework.UI;
 using WaveEngine.Networking;
 using WaveEngine.Framework.Animation;
 using MultiplayerTopDownTank.Managers;
+using System.Threading.Tasks;
 
 namespace MultiplayerTopDownTank.Scenes
 {
@@ -46,50 +46,40 @@ namespace MultiplayerTopDownTank.Scenes
             this.EntityManager.Add(button);
         }
 
-        private void OnStartButtonClicked(object sender, EventArgs args)
+        private async void OnStartButtonClicked(object sender, EventArgs args)
         {
-            DiscoverHosts();
+            var discoveredHost = await this.WaitForDiscoverHostAsync(TimeSpan.FromSeconds(3));
+
+            if (discoveredHost == null)
+            {
+                discoveredHost = this.InitializeHost();
+            }
+
+            await this.networkService.ConnectAsync(discoveredHost);
+            this.navigationManager.NavigateToLobby();
         }
 
-        private void DiscoverHosts()
+        private NetworkEndpoint InitializeHost()
         {
-            try
-            {
-                this.networkService.InitializeHost(NetworkConfiguration.GameIdentifier, NetworkConfiguration.Port);
-                this.DiscoverHosts();
-            }
-            catch
-            {
-                this.DisableHostDiscoveryAndCleanButtons();
-                this.networkService.HostDiscovered += this.OnHostDiscovered;
-                this.networkService.DiscoveryHosts(NetworkConfiguration.GameIdentifier, NetworkConfiguration.Port);
-            }
+            this.networkService.InitializeHost(NetworkConfiguration.GameIdentifier, NetworkConfiguration.Port);
+            var host = new NetworkEndpoint() { Address = "127.0.0.1", Port = NetworkConfiguration.Port };
+            return host;
         }
 
-        private void DisableHostDiscoveryAndCleanButtons()
+        private async Task<NetworkEndpoint> WaitForDiscoverHostAsync(TimeSpan timeOut)
         {
-            this.networkService.HostDiscovered -= this.OnHostDiscovered;
-        }
+            NetworkEndpoint discoveredHost = null;
+            HostDiscovered hostDisceveredHandler = (sender, host) =>
+            {
+                discoveredHost = host;
+            };
 
-        private void OnHostDiscovered(object sender, Host host)
-        {
-            if (host != null)
-            {
-                ConnectToHost(host);
-            }
-        }
+            this.networkService.HostDiscovered += hostDisceveredHandler;
+            this.networkService.DiscoveryHosts(NetworkConfiguration.GameIdentifier, NetworkConfiguration.Port);
+            await System.Threading.Tasks.Task.Delay(timeOut);
+            this.networkService.HostDiscovered -= hostDisceveredHandler;
 
-        private async void ConnectToHost(Host host)
-        {
-            try
-            {
-                await this.networkService.ConnectAsync(host);
-                this.navigationManager.NavigateToLobby();
-            }
-            catch (Exception exception)
-            {
-                Debug.WriteLine(exception);
-            }
+            return discoveredHost;
         }
     }
 }

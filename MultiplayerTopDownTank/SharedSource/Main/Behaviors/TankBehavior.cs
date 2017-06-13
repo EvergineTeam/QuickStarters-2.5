@@ -8,12 +8,15 @@ using WaveEngine.Framework;
 using WaveEngine.Framework.Graphics;
 using WaveEngine.Framework.Services;
 using WaveEngine.Framework.Physics2D;
+using WaveEngine.Framework.Diagnostic;
 
 namespace MultiplayerTopDownTank.Behaviors
 {
     [DataContract]
     public class TankBehavior : Behavior
     {
+        private const int BulletDamage = 25;
+
         private Joystick leftJoystick, rightJoystick;
         private float moveVelocity;
         private float rotateVelocity;
@@ -21,12 +24,14 @@ namespace MultiplayerTopDownTank.Behaviors
         private TimeSpan time;
         private TimeSpan shootCadence;
         private Transform2D barrelTransform = null;
+        private int life;
+        private bool kia;   // Killed in Action
 
         [RequiredComponent]
         private Transform2D transform = null;
 
         [RequiredComponent]
-        private RigidBody2D rigitBody = null;
+        private RigidBody2D rigidBody = null;
 
         /// <summary>
         /// Sets the default values
@@ -38,6 +43,8 @@ namespace MultiplayerTopDownTank.Behaviors
             this.moveVelocity = 15;
             this.rotateVelocity = 20;
             this.textureDirection = new Vector2(0, -1);
+            this.life = 100;
+            this.kia = false;
 
             base.DefaultValues();
         }
@@ -58,6 +65,12 @@ namespace MultiplayerTopDownTank.Behaviors
 
         protected override void Update(TimeSpan gameTime)
         {
+            if (this.kia)
+            {
+                this.Destroy();
+                return;
+            }
+
             Input input = WaveServices.Input;
 
             if (this.leftJoystick == null || this.rightJoystick == null)
@@ -94,7 +107,7 @@ namespace MultiplayerTopDownTank.Behaviors
                 if (!float.IsNaN(rotation) && impulse.Y != 0)
                 {
                     var result = Vector2.Rotate(impulse, this.transform.Rotation);
-                    this.rigitBody.ApplyLinearImpulse(result, this.transform.Position);
+                    this.rigidBody.ApplyLinearImpulse(result, this.transform.Position);
                 }
             }
 
@@ -109,10 +122,9 @@ namespace MultiplayerTopDownTank.Behaviors
                 if (!float.IsNaN(rotation) && impulse.X != 0)
                 {
                     var result = Vector2.Rotate(impulse, MathHelper.ToRadians(rotation));
-                    this.rigitBody.ApplyTorque(result.X);
+                    this.rigidBody.ApplyTorque(result.X);
                 }
             }
-
 
             // Tank shoot   
             Vector2 rightJoyDirection = this.rightJoystick.Direction;
@@ -160,6 +172,28 @@ namespace MultiplayerTopDownTank.Behaviors
 
                     this.time = this.shootCadence;
                 }
+            }
+        }
+
+        public void Damage()
+        {
+            this.life = this.life - BulletDamage;
+            Labels.Add("Damage", this.life);
+            if (this.life <= 0)
+            {
+                this.kia = true;
+            }
+        }
+
+        private void Destroy()
+        {
+            var gameScene = this.Owner.Scene as GameScene;
+
+            if (gameScene != null)
+            {
+                var tank = this.Owner;
+                gameScene.NetworkManager.RemoveEntity(tank);
+                Labels.Add("Destroy", tank.Name);
             }
         }
     }
