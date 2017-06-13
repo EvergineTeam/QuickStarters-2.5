@@ -107,9 +107,8 @@ namespace MultiplayerTopDownTank
             var tankComponent = new TankComponent();
             var tankBehavior = new TankBehavior();
 
-            Labels.Add("IsLocal", isLocal.ToString());
-
-            this.playerEntity = new Entity(string.Format("{0}-{1}", isLocal ? "Local" : "Remote", name))
+            this.playerEntity = new Entity(
+                string.Format("{0}-{1}", isLocal ? "Local" : "Remote", name))
             {
                 Tag = GameConstants.TankTag
             }
@@ -150,18 +149,8 @@ namespace MultiplayerTopDownTank
 
             playerEntity.AddChild(barrel);
 
-
             tankCollider.BeginCollision += (args) =>
             {
-                if(isLocal)
-                {
-                    Labels.Add("Collision Info", "A");
-                }
-                else
-                {
-                    Labels.Add("Collision Info", "B");
-                }
-
                 if (args.ColliderB != null && args.ColliderB.UserData is Collider2D)
                 {
                     var bulletTag = ((Collider2D)args.ColliderB.UserData).Owner.Tag;
@@ -190,6 +179,15 @@ namespace MultiplayerTopDownTank
 
         private Entity CreateBullet()
         {
+            var bulletCollider = new CircleCollider2D
+            {
+                CollisionCategories = ColliderCategory2D.Cat2,
+                CollidesWith =
+                       ColliderCategory2D.Cat1 |
+                       ColliderCategory2D.Cat3 |
+                       ColliderCategory2D.Cat4
+            };
+
             var bullet = new Entity() { Tag = GameConstants.BulletTag }
                .AddComponent(new Transform2D
                {
@@ -204,19 +202,17 @@ namespace MultiplayerTopDownTank
                    IsBullet = true,
                    LinearDamping = 0
                })
-               .AddComponent(new CircleCollider2D
-               {
-                   CollisionCategories = ColliderCategory2D.Cat2,
-                   CollidesWith =
-                       ColliderCategory2D.Cat1 |
-                       ColliderCategory2D.Cat3 |
-                       ColliderCategory2D.Cat4
-               })
+               .AddComponent(bulletCollider)
                .AddComponent(new Sprite(WaveContent.Assets.Textures.Bullets.rounded_bulletBeige_outline_png))
                .AddComponent(new SpriteRenderer(DefaultLayers.Alpha))
                .AddComponent(new BulletComponent())
                .AddComponent(new NetworkBehavior())
                .AddComponent(new BulletNetworkSyncComponent());
+
+            bulletCollider.BeginCollision += (args) =>
+            {
+                this.networkManager.RemoveEntity(bullet);
+            };
 
             return bullet;
         }
@@ -314,6 +310,7 @@ namespace MultiplayerTopDownTank
                 collider2D.CollisionCategories = ColliderCategory2D.Cat4;
                 collider2D.CollidesWith = ColliderCategory2D.All;
 
+                /*
                 collider2D.BeginCollision += (args) =>
                 {
                     if (args.ColliderB != null && args.ColliderB.UserData is Collider2D)
@@ -328,6 +325,7 @@ namespace MultiplayerTopDownTank
                         }
                     }
                 };
+                */
 
                 this.EntityManager.Add(colliderEntity);
             }
