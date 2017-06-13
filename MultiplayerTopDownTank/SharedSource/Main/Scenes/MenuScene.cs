@@ -6,6 +6,7 @@ using WaveEngine.Networking;
 using WaveEngine.Framework.Animation;
 using MultiplayerTopDownTank.Managers;
 using System.Threading.Tasks;
+using NetTask = System.Threading.Tasks.Task;
 
 namespace MultiplayerTopDownTank.Scenes
 {
@@ -50,12 +51,18 @@ namespace MultiplayerTopDownTank.Scenes
         {
             var discoveredHost = await this.WaitForDiscoverHostAsync(TimeSpan.FromSeconds(3));
 
+            //NetworkEndpoint discoveredHost = new NetworkEndpoint
+            //{
+            //    Address = "10.4.1.42",
+            //    Port = NetworkConfiguration.Port,
+            //};
+
             if (discoveredHost == null)
             {
                 discoveredHost = this.InitializeHost();
             }
 
-            await this.networkService.ConnectAsync(discoveredHost);
+            this.networkService.Connect(NetworkConfiguration.GameIdentifier, discoveredHost);
             this.navigationManager.NavigateToLobby();
         }
 
@@ -68,15 +75,18 @@ namespace MultiplayerTopDownTank.Scenes
 
         private async Task<NetworkEndpoint> WaitForDiscoverHostAsync(TimeSpan timeOut)
         {
+            TaskCompletionSource<bool> tcs = new TaskCompletionSource<bool>();
+
             NetworkEndpoint discoveredHost = null;
             HostDiscovered hostDisceveredHandler = (sender, host) =>
             {
                 discoveredHost = host;
+                tcs.TrySetResult(true);
             };
 
             this.networkService.HostDiscovered += hostDisceveredHandler;
             this.networkService.DiscoveryHosts(NetworkConfiguration.GameIdentifier, NetworkConfiguration.Port);
-            await System.Threading.Tasks.Task.Delay(timeOut);
+            await NetTask.WhenAny(tcs.Task, NetTask.Delay(timeOut));
             this.networkService.HostDiscovered -= hostDisceveredHandler;
 
             return discoveredHost;
