@@ -7,6 +7,28 @@ namespace MultiplayerTopDownTank.Components
     [DataContract]
     public class TankComponent : Component
     {
+        private int life;
+
+        public int CurrentLive
+        {
+            get
+            {
+                return this.life;
+            }
+
+            set
+            {
+                this.life = value;
+            }
+        }
+
+        protected override void DefaultValues()
+        {
+            base.DefaultValues();
+
+            this.life = 100;
+        }
+
         public void PrepareTank()
         {
             var entityPath = this.Owner.EntityPath;

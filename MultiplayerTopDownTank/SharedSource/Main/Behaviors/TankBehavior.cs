@@ -22,26 +22,12 @@ namespace MultiplayerTopDownTank.Behaviors
         private TimeSpan time;
         private TimeSpan shootCadence;
         private Transform2D barrelTransform = null;
-        private int life;
 
         [RequiredComponent]
         private Transform2D transform = null;
 
         [RequiredComponent]
         private RigidBody2D rigidBody = null;
-
-        public int CurrentLive
-        {
-            get
-            {
-                return this.life;
-            }
-
-            set
-            {
-                this.life = value;
-            }
-        }
 
         /// <summary>
         /// Sets the default values
@@ -53,7 +39,6 @@ namespace MultiplayerTopDownTank.Behaviors
             this.moveVelocity = 15;
             this.rotateVelocity = 20;
             this.textureDirection = new Vector2(0, -1);
-            this.life = 100;
 
             base.DefaultValues();
         }

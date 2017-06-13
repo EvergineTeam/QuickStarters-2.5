@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using MultiplayerTopDownTank.Components;
 using WaveEngine.Framework;
 using WaveEngine.Networking;
 
@@ -23,12 +24,12 @@ namespace MultiplayerTopDownTank.Behaviors
 
         public void DamageTank(Entity tank)
         {
-            var behavior = tank.FindComponent<TankBehavior>();
-            if (behavior != null)
+            var tankComponent = tank.FindComponent<TankComponent>();
+            if (tankComponent != null)
             {
-                behavior.CurrentLive -= GameConstants.BulletDamage;
+                tankComponent.CurrentLive -= GameConstants.BulletDamage;
 
-                if (behavior.CurrentLive <= 0)
+                if (tankComponent.CurrentLive <= 0)
                 {
                     this.toRemove.Add(tank);
                     
