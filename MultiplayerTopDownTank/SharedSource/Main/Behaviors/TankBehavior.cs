@@ -15,8 +15,6 @@ namespace MultiplayerTopDownTank.Behaviors
     [DataContract]
     public class TankBehavior : Behavior
     {
-        private const int BulletDamage = 25;
-
         private Joystick leftJoystick, rightJoystick;
         private float moveVelocity;
         private float rotateVelocity;
@@ -25,13 +23,25 @@ namespace MultiplayerTopDownTank.Behaviors
         private TimeSpan shootCadence;
         private Transform2D barrelTransform = null;
         private int life;
-        private bool kia;   // Killed in Action
 
         [RequiredComponent]
         private Transform2D transform = null;
 
         [RequiredComponent]
         private RigidBody2D rigidBody = null;
+
+        public int CurrentLive
+        {
+            get
+            {
+                return this.life;
+            }
+
+            set
+            {
+                this.life = value;
+            }
+        }
 
         /// <summary>
         /// Sets the default values
@@ -44,7 +54,6 @@ namespace MultiplayerTopDownTank.Behaviors
             this.rotateVelocity = 20;
             this.textureDirection = new Vector2(0, -1);
             this.life = 100;
-            this.kia = false;
 
             base.DefaultValues();
         }
@@ -65,12 +74,6 @@ namespace MultiplayerTopDownTank.Behaviors
 
         protected override void Update(TimeSpan gameTime)
         {
-            if (this.kia)
-            {
-                this.Destroy();
-                return;
-            }
-
             Input input = WaveServices.Input;
 
             if (this.leftJoystick == null || this.rightJoystick == null)
@@ -172,28 +175,6 @@ namespace MultiplayerTopDownTank.Behaviors
 
                     this.time = this.shootCadence;
                 }
-            }
-        }
-
-        public void Damage()
-        {
-            this.life = this.life - BulletDamage;
-            Labels.Add("Damage", this.life);
-            if (this.life <= 0)
-            {
-                this.kia = true;
-            }
-        }
-
-        private void Destroy()
-        {
-            var gameScene = this.Owner.Scene as GameScene;
-
-            if (gameScene != null)
-            {
-                var tank = this.Owner;
-                gameScene.NetworkManager.RemoveEntity(tank);
-                Labels.Add("Destroy", tank.Name);
             }
         }
     }

@@ -26,6 +26,7 @@
         public static string BulletTag = "bullet";
         public static int BulletPoolSize = 10;
         public static string BulletFactory = "BulletFactory";
+        public static int BulletDamage = 25;
 
         // Hud
         public static string Hud = "Hud";

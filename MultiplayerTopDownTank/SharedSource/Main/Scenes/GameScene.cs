@@ -29,6 +29,7 @@ namespace MultiplayerTopDownTank
 
         private readonly NetworkService networkService;
         private readonly NetworkManager networkManager;
+        private NetworkSceneSyncBehavior networkSceneSyncBehavior;
 
         public GameScene(int playerIndex)
         {
@@ -86,12 +87,25 @@ namespace MultiplayerTopDownTank
         {
             base.Start();
 
+            this.InitializeSceneBehaviors();
             this.SetCameraBounds();
             this.ConfigurePhysics();
             this.CreatePhysicScene();
             this.CreateBackgroundMusic();
             this.InitializePlayer();
             this.InitializeBullet();
+        }
+
+        private void InitializeSceneBehaviors()
+        {
+            this.networkSceneSyncBehavior = new NetworkSceneSyncBehavior();
+            this.AddSceneBehavior(this.networkSceneSyncBehavior, SceneBehavior.Order.PreUpdate);
+        }
+
+        protected override void End()
+        {
+            base.End();
+            this.RemoveSceneBehavior(this.networkSceneSyncBehavior);
         }
 
         private Entity CreateTank(Vector2 position, string name, bool isLocal)
@@ -149,30 +163,30 @@ namespace MultiplayerTopDownTank
 
             playerEntity.AddChild(barrel);
 
-            tankCollider.BeginCollision += (args) =>
-            {
-                if (args.ColliderB != null && args.ColliderB.UserData is Collider2D)
-                {
-                    var bulletTag = ((Collider2D)args.ColliderB.UserData).Owner.Tag;
+            //tankCollider.BeginCollision += (args) =>
+            //{
+            //    if (args.ColliderB != null && args.ColliderB.UserData is Collider2D)
+            //    {
+            //        var bulletTag = ((Collider2D)args.ColliderB.UserData).Owner.Tag;
 
-                    if (bulletTag != null && bulletTag.Equals(GameConstants.BulletTag))
-                    {
-                        var bullet = ((Collider2D)args.ColliderB.UserData).Owner;
-                        this.networkManager.RemoveEntity(bullet);
+            //        if (bulletTag != null && bulletTag.Equals(GameConstants.BulletTag))
+            //        {
+            //            var bullet = ((Collider2D)args.ColliderB.UserData).Owner;
+            //            this.networkManager.RemoveEntity(bullet);
 
-                        if (args.ColliderA != null && args.ColliderA.UserData is Collider2D)
-                        {
-                            var tankTag = ((Collider2D)args.ColliderA.UserData).Owner.Tag;
-                            if (tankTag != null && tankTag.Equals(GameConstants.TankTag))
-                            {
-                                var tank = ((Collider2D)args.ColliderA.UserData).Owner;
-                                Labels.Add("Damage Info", $" {bullet.Name} -> {tank.Name}");
-                                tankBehavior.Damage(); 
-                            }
-                        }
-                    }
-                }
-            };
+            //            if (args.ColliderA != null && args.ColliderA.UserData is Collider2D)
+            //            {
+            //                var tankTag = ((Collider2D)args.ColliderA.UserData).Owner.Tag;
+            //                if (tankTag != null && tankTag.Equals(GameConstants.TankTag))
+            //                {
+            //                    var tank = ((Collider2D)args.ColliderA.UserData).Owner;
+            //                    Labels.Add("Damage Info", $" {bullet.Name} -> {tank.Name}");
+            //                    tankBehavior.Damage(); 
+            //                }
+            //            }
+            //        }
+            //    }
+            //};
 
             return playerEntity;
         }
@@ -211,7 +225,17 @@ namespace MultiplayerTopDownTank
 
             bulletCollider.BeginCollision += (args) =>
             {
-                this.networkManager.RemoveEntity(bullet);
+                this.networkSceneSyncBehavior.AddEntityToRemove(bullet);
+
+                if (args.ColliderA != null && args.ColliderA.UserData is Collider2D)
+                {
+                    var tankTag = ((Collider2D)args.ColliderA.UserData).Owner.Tag;
+                    if (tankTag != null && tankTag.Equals(GameConstants.TankTag))
+                    {
+                        var tank = ((Collider2D)args.ColliderA.UserData).Owner;
+                        this.networkSceneSyncBehavior.DamageTank(tank);
+                    }
+                }
             };
 
             return bullet;
