@@ -113,7 +113,7 @@ namespace MultiplayerTopDownTank.Scenes
 
             // Send to other players to create theis foes.
             var resultPlayerIndex = this.AssignPlayerIndex(Convert.ToInt32(playerIndex));
-            var sendToPlayersMessage = NetworkMessageHelper.CreateMessage(this.networkService, NetworkAgentEnum.Client, NetworkCommandEnum.CreatePlayer, playerIdentifier, resultPlayerIndex.ToString());
+            var sendToPlayersMessage = NetworkMessageHelper.CreateMessage(this.networkService, NetworkAgentEnum.Server, NetworkCommandEnum.CreatePlayer, playerIdentifier, resultPlayerIndex.ToString());
             this.networkService.SendToClients(sendToPlayersMessage, DeliveryMethod.ReliableUnordered);
         }
 
@@ -122,12 +122,21 @@ namespace MultiplayerTopDownTank.Scenes
         /// </summary>
         private void ClientMessageReceived(object sender, NetworkEndpoint networkEndpoint, IncomingMessage receivedMessage)
         {
-            var playerIdentifier = receivedMessage.ReadString();
-            var playerIndex = receivedMessage.ReadInt32();
+            NetworkCommandEnum command;
+            string playerIdentifier;
+            string playerIndex;
+            NetworkMessageHelper.ReadMessage(receivedMessage, out command, out playerIdentifier, out playerIndex);
 
-            if (this.networkService.ClientIdentifier == playerIdentifier)
+            switch (command)
             {
-                this.HandlePlayerSelectionResponse(playerIndex);
+                case NetworkCommandEnum.CreatePlayer:
+                    if (this.networkService.ClientIdentifier == playerIdentifier)
+                    {
+                        this.HandlePlayerSelectionResponse(Convert.ToInt32(playerIndex));
+                    }
+                    break;
+                default:
+                    break;
             }
         }
 
