@@ -15,6 +15,8 @@ using WaveEngine.Framework.Physics2D;
 using WaveEngine.Framework.Services;
 using WaveEngine.Networking;
 using WaveEngine.TiledMap;
+using WaveEngine.Networking.Messages;
+using MultiplayerTopDownTank.Managers;
 #endregion
 
 namespace MultiplayerTopDownTank
@@ -94,6 +96,22 @@ namespace MultiplayerTopDownTank
             this.CreateBackgroundMusic();
             this.InitializePlayer();
             this.InitializeBullet();
+
+            this.networkService.MessageReceivedFromHost += this.ClientMessageReceived;
+            this.networkService.MessageReceivedFromClient += this.HostMessageReceived;
+        }
+
+        private void HostMessageReceived(object sender, NetworkEndpoint fromEndpoint, IncomingMessage receivedMessage)
+        {
+        }
+
+        private void ClientMessageReceived(object sender, NetworkEndpoint fromEndpoint, IncomingMessage receivedMessage)
+        {
+            var name = receivedMessage.ReadString();
+
+            this.networkService.Disconnect();
+            var navigationManager = WaveServices.GetService<NavigationManager>();
+            navigationManager.InitialNavigation();
         }
 
         private void InitializeSceneBehaviors()
@@ -106,6 +124,9 @@ namespace MultiplayerTopDownTank
         {
             base.End();
             this.RemoveSceneBehavior(this.networkSceneSyncBehavior);
+
+            this.networkService.MessageReceivedFromHost -= this.ClientMessageReceived;
+            this.networkService.MessageReceivedFromClient -= this.HostMessageReceived;
         }
 
         private Entity CreateTank(Vector2 position, string name, bool isLocal)
@@ -162,31 +183,6 @@ namespace MultiplayerTopDownTank
               .AddComponent(new SpriteRenderer(DefaultLayers.Alpha));
 
             playerEntity.AddChild(barrel);
-
-            //tankCollider.BeginCollision += (args) =>
-            //{
-            //    if (args.ColliderB != null && args.ColliderB.UserData is Collider2D)
-            //    {
-            //        var bulletTag = ((Collider2D)args.ColliderB.UserData).Owner.Tag;
-
-            //        if (bulletTag != null && bulletTag.Equals(GameConstants.BulletTag))
-            //        {
-            //            var bullet = ((Collider2D)args.ColliderB.UserData).Owner;
-            //            this.networkManager.RemoveEntity(bullet);
-
-            //            if (args.ColliderA != null && args.ColliderA.UserData is Collider2D)
-            //            {
-            //                var tankTag = ((Collider2D)args.ColliderA.UserData).Owner.Tag;
-            //                if (tankTag != null && tankTag.Equals(GameConstants.TankTag))
-            //                {
-            //                    var tank = ((Collider2D)args.ColliderA.UserData).Owner;
-            //                    Labels.Add("Damage Info", $" {bullet.Name} -> {tank.Name}");
-            //                    tankBehavior.Damage(); 
-            //                }
-            //            }
-            //        }
-            //    }
-            //};
 
             return playerEntity;
         }

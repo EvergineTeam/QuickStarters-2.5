@@ -148,6 +148,14 @@ namespace MultiplayerTopDownTank.Scenes
             }
         }
 
+        protected override void End()
+        {
+            base.End();
+
+            this.networkService.MessageReceivedFromHost -= this.ClientMessageReceived;
+            this.networkService.MessageReceivedFromClient -= this.HostMessageReceived;
+        }
+
         private void PlayerSelected(int playerIndex)
         {
             // Wait 3 seconds and start game.
