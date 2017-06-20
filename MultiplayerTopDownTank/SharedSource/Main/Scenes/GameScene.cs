@@ -17,6 +17,7 @@ using WaveEngine.Networking;
 using WaveEngine.TiledMap;
 using WaveEngine.Networking.Messages;
 using MultiplayerTopDownTank.Managers;
+using MultiplayerTopDownTank.Messages;
 #endregion
 
 namespace MultiplayerTopDownTank
@@ -107,11 +108,30 @@ namespace MultiplayerTopDownTank
 
         private void ClientMessageReceived(object sender, NetworkEndpoint fromEndpoint, IncomingMessage receivedMessage)
         {
-            var name = receivedMessage.ReadString();
+            NetworkCommandEnum command;
+            string playerName;
+            string emptyParameter;
 
-            this.networkService.Disconnect();
-            var navigationManager = WaveServices.GetService<NavigationManager>();
-            navigationManager.InitialNavigation();
+            NetworkMessageHelper.ReadMessage(receivedMessage, out command, out playerName, out emptyParameter);
+
+            switch (command)
+            {
+                case NetworkCommandEnum.Die:
+                    this.NetworkSyncDie(playerName);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void NetworkSyncDie(string playerName)
+        {
+            if (playerName == this.playerEntity.Name)
+            {
+                this.networkService.Disconnect();
+                var navigationManager = WaveServices.GetService<NavigationManager>();
+                navigationManager.InitialNavigation();
+            }
         }
 
         private void InitializeSceneBehaviors()
@@ -142,8 +162,8 @@ namespace MultiplayerTopDownTank
             var tankComponent = new TankComponent();
             var tankBehavior = new TankBehavior();
 
-            this.playerEntity = new Entity(
-                string.Format("{0}-{1}", isLocal ? "Local" : "Remote", name))
+            this.playerEntity = new Entity(name)
+                //string.Format("{0}-{1}", isLocal ? "Local" : "Remote", name))
             {
                 Tag = GameConstants.TankTag
             }

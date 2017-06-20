@@ -25,6 +25,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)GameConstants.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Managers\NavigationManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Managers\SoundsManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Messages\NetworkAgentEnum.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Messages\NetworkCommandEnum.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Messages\NetworkMessageHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Scenes\GameScene.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Scenes\LobbyScene.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Scenes\MenuScene.cs" />

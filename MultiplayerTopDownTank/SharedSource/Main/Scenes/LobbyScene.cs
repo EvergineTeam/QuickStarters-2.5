@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using MultiplayerTopDownTank.Messages;
 using WaveEngine.Common.Graphics;
 using WaveEngine.Common.Math;
 using WaveEngine.Components.Cameras;
@@ -66,10 +67,8 @@ namespace MultiplayerTopDownTank.Scenes
 
         private void SelectPlayer(int playerIndex)
         {
-            var message = this.networkService.CreateClientMessage();
-            message.Write(this.networkService.ClientIdentifier);
-            message.Write(playerIndex);
-
+            var message = NetworkMessageHelper.CreateMessage(this.networkService, NetworkAgentEnum.Server, NetworkCommandEnum.CreatePlayer, this.networkService.ClientIdentifier,
+                playerIndex.ToString());
             this.networkService.SendToServer(message, DeliveryMethod.ReliableUnordered);
         }
 
@@ -106,16 +105,16 @@ namespace MultiplayerTopDownTank.Scenes
         /// </summary>
         private void HostMessageReceived(object sender, NetworkEndpoint networkEndpoint, IncomingMessage receivedMessage)
         {
-            var playerIdentifier = receivedMessage.ReadString();
-            var playerIndex = receivedMessage.ReadInt32();
+            // Get message from Server (Player must be created)
+            NetworkCommandEnum command;
+            string playerIdentifier;
+            string playerIndex;
+            NetworkMessageHelper.ReadMessage(receivedMessage, out command, out playerIdentifier, out playerIndex);
 
-            var resultPlayerIndex = this.AssignPlayerIndex(playerIndex);
-
-            var responseMessage = this.networkService.CreateServerMessage();
-            responseMessage.Write(playerIdentifier);
-            responseMessage.Write(resultPlayerIndex);
-
-            this.networkService.SendToClients(responseMessage, DeliveryMethod.ReliableUnordered);
+            // Send to other players to create theis foes.
+            var resultPlayerIndex = this.AssignPlayerIndex(Convert.ToInt32(playerIndex));
+            var sendToPlayersMessage = NetworkMessageHelper.CreateMessage(this.networkService, NetworkAgentEnum.Client, NetworkCommandEnum.CreatePlayer, playerIdentifier, resultPlayerIndex.ToString());
+            this.networkService.SendToClients(sendToPlayersMessage, DeliveryMethod.ReliableUnordered);
         }
 
         /// <summary>

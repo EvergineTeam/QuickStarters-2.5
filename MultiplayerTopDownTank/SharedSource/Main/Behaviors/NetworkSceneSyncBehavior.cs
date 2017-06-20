@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using MultiplayerTopDownTank.Components;
+using MultiplayerTopDownTank.Messages;
 using WaveEngine.Framework;
 using WaveEngine.Framework.Services;
 using WaveEngine.Networking;
@@ -44,10 +45,7 @@ namespace MultiplayerTopDownTank.Behaviors
         private void SendDieMessage(string name)
         {
             var networkService = WaveServices.GetService<NetworkService>();
-
-            OutgoingMessage message = networkService.CreateClientMessage(MessageType.Data);
-            message.Write(name);
-
+            var message = NetworkMessageHelper.CreateMessage(networkService, NetworkAgentEnum.Server, NetworkCommandEnum.Die, name, string.Empty);
             networkService.SendToServer(message, DeliveryMethod.ReliableUnordered);
         }
 
