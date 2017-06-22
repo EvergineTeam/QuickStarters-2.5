@@ -186,7 +186,7 @@ namespace MultiplayerTopDownTank.Scenes
                     WaveServices.TimerFactory.RemoveTimer(timerName);
 
                     // Navigate to GameScene and created player with selected sprite.
-                    WaveServices.ScreenContextManager.Push(new ScreenContext(new GameScene(playerIndex)));
+                    WaveServices.ScreenContextManager.To(new ScreenContext(new GameScene(playerIndex)));
                 }
 
                 this.UpdateRemainingSeconds(remainingSeconds);
