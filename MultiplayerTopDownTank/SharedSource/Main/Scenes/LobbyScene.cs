@@ -16,25 +16,27 @@ namespace MultiplayerTopDownTank.Scenes
     {
         private const int MinIndex = 1;
         private const int MaxIndex = 4;
-        private readonly List<int> assignedPlayerIndex;
+        private List<int> assignedPlayerIndex;
 
         private TextBlock messageTextBlock;
 
-        private readonly NetworkService networkService;
+        private NetworkService networkService;
 
-        public LobbyScene()
+        private void OnHostConnected(object sender, NetworkEndpoint endpoint)
         {
+            this.SelectPlayer(WaveServices.Random.Next(MinIndex, MaxIndex));
+        }
+
+        protected override void Start()
+        {
+            base.Start();
+
             this.networkService = WaveServices.GetService<NetworkService>();
             this.networkService.HostConnected += this.OnHostConnected;
             this.networkService.MessageReceivedFromHost += this.ClientMessageReceived;
             this.networkService.MessageReceivedFromClient += this.HostMessageReceived;
 
             assignedPlayerIndex = new List<int>();
-        }
-
-        private void OnHostConnected(object sender, NetworkEndpoint endpoint)
-        {
-            this.SelectPlayer(WaveServices.Random.Next(MinIndex, MaxIndex));
         }
 
         protected override void CreateScene()
@@ -164,14 +166,6 @@ namespace MultiplayerTopDownTank.Scenes
             }
         }
 
-        protected override void End()
-        {
-            base.End();
-
-            this.networkService.MessageReceivedFromHost -= this.ClientMessageReceived;
-            this.networkService.MessageReceivedFromClient -= this.HostMessageReceived;
-        }
-
         private void PlayerSelected(int playerIndex)
         {
             // Wait 3 seconds and start game.
@@ -181,12 +175,17 @@ namespace MultiplayerTopDownTank.Scenes
             WaveServices.TimerFactory.CreateTimer(timerName, TimeSpan.FromSeconds(1), () =>
             {
                 remainingSeconds--;
+
                 if (remainingSeconds == 0)
                 {
                     WaveServices.TimerFactory.RemoveTimer(timerName);
 
                     // Navigate to GameScene and created player with selected sprite.
-                    WaveServices.ScreenContextManager.To(new ScreenContext(new GameScene(playerIndex)));
+                    WaveServices.ScreenContextManager.Push(new ScreenContext(new GameScene(playerIndex)));
+
+                    this.networkService.HostConnected -= this.OnHostConnected;
+                    this.networkService.MessageReceivedFromHost -= this.ClientMessageReceived;
+                    this.networkService.MessageReceivedFromClient -= this.HostMessageReceived;
                 }
 
                 this.UpdateRemainingSeconds(remainingSeconds);
