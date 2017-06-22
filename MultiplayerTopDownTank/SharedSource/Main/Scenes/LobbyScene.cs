@@ -66,9 +66,9 @@ namespace MultiplayerTopDownTank.Scenes
         private void SelectPlayer(int playerIndex)
         {
             var message = NetworkMessageHelper.CreateMessage(
-                this.networkService, 
-                NetworkAgentEnum.Client, 
-                NetworkCommandEnum.CreatePlayer, 
+                this.networkService,
+                NetworkAgentEnum.Client,
+                NetworkCommandEnum.CreatePlayer,
                 this.networkService.ClientIdentifier,
                 playerIndex.ToString());
 
@@ -113,18 +113,22 @@ namespace MultiplayerTopDownTank.Scenes
             string playerIdentifier;
             string playerIndex;
             NetworkMessageHelper.ReadMessage(receivedMessage, out command, out playerIdentifier, out playerIndex);
+            switch (command)
+            {
+                case NetworkCommandEnum.CreatePlayer:
+                    // Send to other players to create theis foes.
+                    var resultPlayerIndex = this.AssignPlayerIndex(Convert.ToInt32(playerIndex));
 
-            // Send to other players to create theis foes.
-            var resultPlayerIndex = this.AssignPlayerIndex(Convert.ToInt32(playerIndex));
+                    var sendToPlayersMessage = NetworkMessageHelper.CreateMessage(
+                        this.networkService,
+                        NetworkAgentEnum.Server,
+                        NetworkCommandEnum.CreatePlayer,
+                        playerIdentifier,
+                        resultPlayerIndex.ToString());
 
-            var sendToPlayersMessage = NetworkMessageHelper.CreateMessage(
-                this.networkService, 
-                NetworkAgentEnum.Server,
-                NetworkCommandEnum.CreatePlayer, 
-                playerIdentifier,
-                resultPlayerIndex.ToString());
-
-            this.networkService.SendToClients(sendToPlayersMessage, DeliveryMethod.ReliableUnordered);
+                    this.networkService.SendToClients(sendToPlayersMessage, DeliveryMethod.ReliableUnordered);
+                    break;
+            }
         }
 
         /// <summary>
@@ -182,10 +186,6 @@ namespace MultiplayerTopDownTank.Scenes
 
                     // Navigate to GameScene and created player with selected sprite.
                     WaveServices.ScreenContextManager.Push(new ScreenContext(new GameScene(playerIndex)));
-
-                    this.networkService.HostConnected -= this.OnHostConnected;
-                    this.networkService.MessageReceivedFromHost -= this.ClientMessageReceived;
-                    this.networkService.MessageReceivedFromClient -= this.HostMessageReceived;
                 }
 
                 this.UpdateRemainingSeconds(remainingSeconds);
@@ -201,6 +201,7 @@ namespace MultiplayerTopDownTank.Scenes
         {
             // Sprite selection not allowed, server completed, disconnect, and navigate back.
             this.networkService.Disconnect();
+
             WaveServices.TimerFactory.CreateTimer(TimeSpan.FromSeconds(1), () =>
             {
                 WaveServices.ScreenContextManager.Pop(false);
