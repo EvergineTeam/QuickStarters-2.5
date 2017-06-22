@@ -22,7 +22,7 @@ namespace MultiplayerTopDownTank.Messages
                     throw new Exception("Agent does not not exists.");
             }
 
-            responseMessage.Write((int)command);
+            responseMessage.Write(command.ToString());
             responseMessage.Write(parameter1);
             responseMessage.Write(parameter2);
 
@@ -31,7 +31,8 @@ namespace MultiplayerTopDownTank.Messages
 
         public static void ReadMessage(IncomingMessage incomingMessage, out NetworkCommandEnum command, out string parameter1, out string parameter2)
         {
-            command = (NetworkCommandEnum)incomingMessage.ReadInt32();
+            var commandParameter = incomingMessage.ReadString();
+            command = Enum.Parse(typeof(NetworkCommandEnum), commandParameter);
             parameter1 = incomingMessage.ReadString();
             parameter2 = incomingMessage.ReadString();
         }

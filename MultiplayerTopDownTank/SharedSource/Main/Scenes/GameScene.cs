@@ -54,25 +54,12 @@ namespace MultiplayerTopDownTank
 
         private Entity OnPlayerReceived(string clientId, string behaviorId)
         {
-            var isHostPlayer = this.networkService.ClientIdentifier == clientId;
-
-            if (isHostPlayer)
-            {
-                var randomSpawnPoint = GetRandomSpawnPoint();
-                return CreateTank(randomSpawnPoint, clientId, true);
-            }
-            else
-            {
-                var enemy = CreateTank(new Vector2(-500, -500), clientId, false);
-                RemoveTankBehavior(enemy);
-
-                return enemy;
-            }
+            return this.CreateNetworkTank(clientId);
         }
 
         private Entity OnBulletReceived(string clientId, string behaviorId)
         {
-            return CreateBullet();
+            return this.CreateBullet();
         }
 
         protected override void CreateScene()
@@ -104,6 +91,7 @@ namespace MultiplayerTopDownTank
 
         private void HostMessageReceived(object sender, NetworkEndpoint fromEndpoint, IncomingMessage receivedMessage)
         {
+   
         }
 
         private void ClientMessageReceived(object sender, NetworkEndpoint fromEndpoint, IncomingMessage receivedMessage)
@@ -116,10 +104,10 @@ namespace MultiplayerTopDownTank
 
             switch (command)
             {
+                case NetworkCommandEnum.CreatePlayer:
+                    break;
                 case NetworkCommandEnum.Die:
                     this.NetworkSyncDie(playerName);
-                    break;
-                default:
                     break;
             }
         }
@@ -205,6 +193,25 @@ namespace MultiplayerTopDownTank
             playerEntity.AddChild(barrel);
 
             return playerEntity;
+        }
+
+
+        private Entity CreateNetworkTank(string clientId)
+        {
+            var isHostPlayer = this.networkService.ClientIdentifier == clientId;
+
+            if (isHostPlayer)
+            {
+                var randomSpawnPoint = GetRandomSpawnPoint();
+                return CreateTank(randomSpawnPoint, clientId, true);
+            }
+            else
+            {
+                var enemy = CreateTank(new Vector2(-500, -500), clientId, false);
+                RemoveTankBehavior(enemy);
+
+                return enemy;
+            }
         }
 
         private Entity CreateBullet()

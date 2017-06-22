@@ -2,12 +2,9 @@
 using System.Collections.Generic;
 using MultiplayerTopDownTank.Messages;
 using WaveEngine.Common.Graphics;
-using WaveEngine.Common.Math;
 using WaveEngine.Components.Cameras;
-using WaveEngine.Components.Graphics2D;
 using WaveEngine.Components.UI;
 using WaveEngine.Framework;
-using WaveEngine.Framework.Graphics;
 using WaveEngine.Framework.Services;
 using WaveEngine.Framework.UI;
 using WaveEngine.Networking;
@@ -66,8 +63,13 @@ namespace MultiplayerTopDownTank.Scenes
 
         private void SelectPlayer(int playerIndex)
         {
-            var message = NetworkMessageHelper.CreateMessage(this.networkService, NetworkAgentEnum.Client, NetworkCommandEnum.CreatePlayer, this.networkService.ClientIdentifier,
+            var message = NetworkMessageHelper.CreateMessage(
+                this.networkService, 
+                NetworkAgentEnum.Client, 
+                NetworkCommandEnum.CreatePlayer, 
+                this.networkService.ClientIdentifier,
                 playerIndex.ToString());
+
             this.networkService.SendToServer(message, DeliveryMethod.ReliableUnordered);
         }
 
@@ -112,7 +114,14 @@ namespace MultiplayerTopDownTank.Scenes
 
             // Send to other players to create theis foes.
             var resultPlayerIndex = this.AssignPlayerIndex(Convert.ToInt32(playerIndex));
-            var sendToPlayersMessage = NetworkMessageHelper.CreateMessage(this.networkService, NetworkAgentEnum.Server, NetworkCommandEnum.CreatePlayer, playerIdentifier, resultPlayerIndex.ToString());
+
+            var sendToPlayersMessage = NetworkMessageHelper.CreateMessage(
+                this.networkService, 
+                NetworkAgentEnum.Server,
+                NetworkCommandEnum.CreatePlayer, 
+                playerIdentifier,
+                resultPlayerIndex.ToString());
+
             this.networkService.SendToClients(sendToPlayersMessage, DeliveryMethod.ReliableUnordered);
         }
 

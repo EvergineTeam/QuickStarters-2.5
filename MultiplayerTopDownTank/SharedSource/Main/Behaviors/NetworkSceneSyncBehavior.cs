@@ -45,7 +45,14 @@ namespace MultiplayerTopDownTank.Behaviors
         private void SendDieMessage(string name)
         {
             var networkService = WaveServices.GetService<NetworkService>();
-            var message = NetworkMessageHelper.CreateMessage(networkService, NetworkAgentEnum.Server, NetworkCommandEnum.Die, name, string.Empty);
+
+            var message = NetworkMessageHelper.CreateMessage(
+                networkService, 
+                NetworkAgentEnum.Server,
+                NetworkCommandEnum.Die, 
+                name, 
+                string.Empty);
+
             networkService.SendToServer(message, DeliveryMethod.ReliableUnordered);
         }
 
