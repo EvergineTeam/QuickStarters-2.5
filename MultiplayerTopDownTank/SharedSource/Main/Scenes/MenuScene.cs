@@ -48,6 +48,8 @@ namespace MultiplayerTopDownTank.Scenes
 
         private async void OnStartButtonClicked(object sender, EventArgs args)
         {
+            this.networkService.Disconnect();
+
             var discoveredHost = await this.WaitForDiscoverHostAsync(TimeSpan.FromSeconds(3));
 
             //NetworkEndpoint discoveredHost = new NetworkEndpoint
