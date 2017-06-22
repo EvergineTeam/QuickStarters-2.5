@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using MultiplayerTopDownTank.Managers;
 using MultiplayerTopDownTank.Messages;
 using WaveEngine.Common.Graphics;
 using WaveEngine.Components.Cameras;
@@ -136,6 +137,16 @@ namespace MultiplayerTopDownTank.Scenes
 
                     this.networkService.SendToClients(sendToPlayersMessage, DeliveryMethod.ReliableUnordered);
                     break;
+                case NetworkCommandEnum.Die:
+                    var sendToPlayersDieMessage = NetworkMessageHelper.CreateMessage(
+                       this.networkService,
+                       NetworkAgentEnum.Client,
+                       NetworkCommandEnum.Die,
+                       playerIdentifier,
+                       string.Empty);
+
+                    this.networkService.SendToClients(sendToPlayersDieMessage, DeliveryMethod.ReliableUnordered);
+                    break;
             }
         }
 
@@ -157,7 +168,13 @@ namespace MultiplayerTopDownTank.Scenes
                         this.HandlePlayerSelectionResponse(Convert.ToInt32(playerIndex));
                     }
                     break;
+                case NetworkCommandEnum.Die:
+                    this.networkService.Disconnect();
+                    var navigationManager = WaveServices.GetService<NavigationManager>();
+                    navigationManager.InitialNavigation();
+                    break;
                 default:
+
                     break;
             }
         }

@@ -96,20 +96,6 @@ namespace MultiplayerTopDownTank
             string emptyParameter;
 
             NetworkMessageHelper.ReadMessage(receivedMessage, out command, out playerName, out emptyParameter);
-
-            switch (command)
-            {
-                case NetworkCommandEnum.Die:
-                    var sendToPlayersMessage = NetworkMessageHelper.CreateMessage(
-                       this.networkService,
-                       NetworkAgentEnum.Client,
-                       NetworkCommandEnum.Die,
-                       playerName,
-                       string.Empty);
-
-                    this.networkService.SendToClients(sendToPlayersMessage, DeliveryMethod.ReliableUnordered);
-                    break;
-            }
         }
 
         private void ClientMessageReceived(object sender, NetworkEndpoint fromEndpoint, IncomingMessage receivedMessage)

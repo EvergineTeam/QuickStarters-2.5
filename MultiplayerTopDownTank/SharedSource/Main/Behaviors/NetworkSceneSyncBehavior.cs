@@ -53,7 +53,7 @@ namespace MultiplayerTopDownTank.Behaviors
                 name, 
                 string.Empty);
 
-            networkService.SendToClients(message, DeliveryMethod.ReliableUnordered);
+            networkService.SendToServer(message, DeliveryMethod.ReliableUnordered);
         }
 
         protected override void Update(TimeSpan gameTime)
