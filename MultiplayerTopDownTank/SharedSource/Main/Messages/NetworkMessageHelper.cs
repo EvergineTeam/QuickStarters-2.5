@@ -32,7 +32,7 @@ namespace MultiplayerTopDownTank.Messages
         public static void ReadMessage(IncomingMessage incomingMessage, out NetworkCommandEnum command, out string parameter1, out string parameter2)
         {
             var commandParameter = incomingMessage.ReadString();
-            command = Enum.Parse(typeof(NetworkCommandEnum), commandParameter);
+            Enum.TryParse<NetworkCommandEnum>(commandParameter, out command);
             parameter1 = incomingMessage.ReadString();
             parameter2 = incomingMessage.ReadString();
         }
