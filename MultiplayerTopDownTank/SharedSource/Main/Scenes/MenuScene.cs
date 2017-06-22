@@ -48,8 +48,11 @@ namespace MultiplayerTopDownTank.Scenes
 
         private async void OnStartButtonClicked(object sender, EventArgs args)
         {
-            this.networkService.Disconnect();
+            await SearchOrCreateHost();
+        }
 
+        private async System.Threading.Tasks.Task SearchOrCreateHost()
+        {
             var discoveredHost = await this.WaitForDiscoverHostAsync(TimeSpan.FromSeconds(3));
 
             //NetworkEndpoint discoveredHost = new NetworkEndpoint
@@ -60,18 +63,14 @@ namespace MultiplayerTopDownTank.Scenes
 
             if (discoveredHost == null)
             {
-                discoveredHost = this.InitializeHost();
+                this.networkService.InitializeHost(NetworkConfiguration.GameIdentifier, NetworkConfiguration.Port);
+                await this.SearchOrCreateHost();
             }
-
-            this.networkService.Connect(NetworkConfiguration.GameIdentifier, discoveredHost);
-            this.navigationManager.NavigateToLobby();
-        }
-
-        private NetworkEndpoint InitializeHost()
-        {
-            this.networkService.InitializeHost(NetworkConfiguration.GameIdentifier, NetworkConfiguration.Port);
-            var host = new NetworkEndpoint() { Address = "127.0.0.1", Port = NetworkConfiguration.Port };
-            return host;
+            else
+            {
+                this.networkService.Connect(NetworkConfiguration.GameIdentifier, discoveredHost);
+                this.navigationManager.NavigateToLobby();
+            }
         }
 
         private async Task<NetworkEndpoint> WaitForDiscoverHostAsync(TimeSpan timeOut)
