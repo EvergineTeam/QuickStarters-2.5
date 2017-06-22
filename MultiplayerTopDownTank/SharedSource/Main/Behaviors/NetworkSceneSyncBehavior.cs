@@ -48,7 +48,7 @@ namespace MultiplayerTopDownTank.Behaviors
 
             var message = NetworkMessageHelper.CreateMessage(
                 networkService, 
-                NetworkAgentEnum.Server,
+                NetworkAgentEnum.Client,
                 NetworkCommandEnum.Die, 
                 name, 
                 string.Empty);
