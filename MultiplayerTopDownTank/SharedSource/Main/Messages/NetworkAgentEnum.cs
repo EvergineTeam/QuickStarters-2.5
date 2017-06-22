@@ -3,6 +3,6 @@
     public enum NetworkAgentEnum
     {
         Server,
-        Client,
+        Client
     }
 }

@@ -66,7 +66,7 @@ namespace MultiplayerTopDownTank.Scenes
 
         private void SelectPlayer(int playerIndex)
         {
-            var message = NetworkMessageHelper.CreateMessage(this.networkService, NetworkAgentEnum.Server, NetworkCommandEnum.CreatePlayer, this.networkService.ClientIdentifier,
+            var message = NetworkMessageHelper.CreateMessage(this.networkService, NetworkAgentEnum.Client, NetworkCommandEnum.CreatePlayer, this.networkService.ClientIdentifier,
                 playerIndex.ToString());
             this.networkService.SendToServer(message, DeliveryMethod.ReliableUnordered);
         }

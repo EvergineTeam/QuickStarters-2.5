@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using WaveEngine.Networking;
 using WaveEngine.Networking.Messages;
 
