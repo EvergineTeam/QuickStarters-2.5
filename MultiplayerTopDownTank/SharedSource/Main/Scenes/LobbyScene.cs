@@ -22,21 +22,28 @@ namespace MultiplayerTopDownTank.Scenes
 
         private NetworkService networkService;
 
-        private void OnHostConnected(object sender, NetworkEndpoint endpoint)
+        public LobbyScene()
         {
-            this.SelectPlayer(WaveServices.Random.Next(MinIndex, MaxIndex));
-        }
-
-        protected override void Start()
-        {
-            base.Start();
-
             this.networkService = WaveServices.GetService<NetworkService>();
             this.networkService.HostConnected += this.OnHostConnected;
             this.networkService.MessageReceivedFromHost += this.ClientMessageReceived;
             this.networkService.MessageReceivedFromClient += this.HostMessageReceived;
 
             assignedPlayerIndex = new List<int>();
+        }
+
+        private void OnHostConnected(object sender, NetworkEndpoint endpoint)
+        {
+            this.SelectPlayer(WaveServices.Random.Next(MinIndex, MaxIndex));
+        }
+
+        protected override void End()
+        {
+            base.End();
+
+            this.networkService.HostConnected -= this.OnHostConnected;
+            this.networkService.MessageReceivedFromHost -= this.ClientMessageReceived;
+            this.networkService.MessageReceivedFromClient -= this.HostMessageReceived;
         }
 
         protected override void CreateScene()
@@ -113,6 +120,7 @@ namespace MultiplayerTopDownTank.Scenes
             string playerIdentifier;
             string playerIndex;
             NetworkMessageHelper.ReadMessage(receivedMessage, out command, out playerIdentifier, out playerIndex);
+
             switch (command)
             {
                 case NetworkCommandEnum.CreatePlayer:
