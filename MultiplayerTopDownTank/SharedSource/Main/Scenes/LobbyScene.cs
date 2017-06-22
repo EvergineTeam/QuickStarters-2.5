@@ -28,10 +28,16 @@ namespace MultiplayerTopDownTank.Scenes
         public LobbyScene()
         {
             this.networkService = WaveServices.GetService<NetworkService>();
+            this.networkService.HostConnected += this.OnHostConnected;
             this.networkService.MessageReceivedFromHost += this.ClientMessageReceived;
             this.networkService.MessageReceivedFromClient += this.HostMessageReceived;
 
             assignedPlayerIndex = new List<int>();
+        }
+
+        private void OnHostConnected(object sender, NetworkEndpoint endpoint)
+        {
+            this.SelectPlayer(WaveServices.Random.Next(MinIndex, MaxIndex));
         }
 
         protected override void CreateScene()
@@ -55,14 +61,7 @@ namespace MultiplayerTopDownTank.Scenes
             };
             this.EntityManager.Add(this.messageTextBlock);
 
-            this.SendHelloToServer();
-        }
-
-        private void SendHelloToServer()
-        {
             messageTextBlock.Text = "Waiting player assignment...";
-
-            this.SelectPlayer(WaveServices.Random.Next(MinIndex, MaxIndex));
         }
 
         private void SelectPlayer(int playerIndex)
