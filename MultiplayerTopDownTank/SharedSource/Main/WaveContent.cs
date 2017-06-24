@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// File generated on 22/06/2017 17:40:57
+// File generated on 24/06/2017 9:50:20
 namespace MultiplayerTopDownTank
 {
     using System;
@@ -16,9 +16,6 @@ namespace MultiplayerTopDownTank
     
     public sealed class WaveContent
     {
-        
-        /// <summary> Path to Content/MultiplayerTopDownTank.wgame </summary>
-        public const string GameInfo = "Content/MultiplayerTopDownTank.wgame";
         
         public sealed class Assets
         {

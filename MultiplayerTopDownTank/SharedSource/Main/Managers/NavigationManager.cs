@@ -16,12 +16,12 @@ namespace MultiplayerTopDownTank.Managers
             WaveServices.ScreenContextManager.Push(screenContext);
         }
 
-        public void NavigateToLobby()
+        public void NavigateToLobby(bool createServer)
         {
             WaveServices.ScreenContextManager
                 .To(CreateScreenContext(
                     "LobbySceneContext",                                 
-                    new LobbyScene(),
+                    new LobbyScene(createServer),
                     ScreenContextBehaviors.None));
         }
 

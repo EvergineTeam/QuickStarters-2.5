@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using MultiplayerTopDownTank.Managers;
 using MultiplayerTopDownTank.Messages;
+using MultiplayerTopDownTank.Network;
 using WaveEngine.Common.Graphics;
 using WaveEngine.Components.Cameras;
 using WaveEngine.Components.UI;
@@ -21,30 +22,33 @@ namespace MultiplayerTopDownTank.Scenes
 
         private TextBlock messageTextBlock;
 
-        private NetworkService networkService;
+        private Server server;
+        private Client client;
 
-        public LobbyScene()
+        private bool createServer = false;
+
+        public LobbyScene(bool createServer)
         {
-            this.networkService = WaveServices.GetService<NetworkService>();
-            this.networkService.HostConnected += this.OnHostConnected;
-            this.networkService.MessageReceivedFromHost += this.ClientMessageReceived;
-            this.networkService.MessageReceivedFromClient += this.HostMessageReceived;
+            this.assignedPlayerIndex = new List<int>();
+            this.server = WaveServices.GetService<Server>();
+            this.createServer = createServer;
+        }
 
-            assignedPlayerIndex = new List<int>();
+        protected override void Start()
+        {
+            base.Start();
+
+            if(this.createServer)
+            {
+                this.server.StartServer();
+            }
+
+            this.client = new Client();
         }
 
         private void OnHostConnected(object sender, NetworkEndpoint endpoint)
         {
             this.SelectPlayer(WaveServices.Random.Next(MinIndex, MaxIndex));
-        }
-
-        protected override void End()
-        {
-            base.End();
-
-            this.networkService.HostConnected -= this.OnHostConnected;
-            this.networkService.MessageReceivedFromHost -= this.ClientMessageReceived;
-            this.networkService.MessageReceivedFromClient -= this.HostMessageReceived;
         }
 
         protected override void CreateScene()

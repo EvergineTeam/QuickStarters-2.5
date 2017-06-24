@@ -1,5 +1,6 @@
 #region Using Statements
 using MultiplayerTopDownTank.Managers;
+using MultiplayerTopDownTank.Network;
 using WaveEngine.Common;
 using WaveEngine.Framework;
 using WaveEngine.Framework.Services;
@@ -30,6 +31,7 @@ namespace MultiplayerTopDownTank
             navigationManager = new NavigationManager();
             WaveServices.RegisterService(navigationManager);
             WaveServices.RegisterService(new NetworkService());
+            WaveServices.RegisterService(new Server());
         }
     }
 }
