@@ -18,6 +18,8 @@ using WaveEngine.TiledMap;
 using WaveEngine.Networking.Messages;
 using MultiplayerTopDownTank.Managers;
 using MultiplayerTopDownTank.Messages;
+using System.Collections.Generic;
+using System.Linq;
 #endregion
 
 namespace MultiplayerTopDownTank
@@ -29,6 +31,8 @@ namespace MultiplayerTopDownTank
         private TiledMap tiledMap;
         private int playerIndex;
         private Entity playerEntity;
+        private List<string> players;
+        private int _numberOfTanks;
 
         private readonly NetworkService networkService;
         private readonly NetworkManager networkManager;
@@ -36,6 +40,8 @@ namespace MultiplayerTopDownTank
 
         public GameScene(int playerIndex)
         {
+            this._numberOfTanks = 0;
+            this.players = new List<string>();
             this.playerIndex = playerIndex;
             this.networkService = WaveServices.GetService<NetworkService>();
             this.networkManager = this.networkService.RegisterScene(this, GameSceneIdentifier);
@@ -44,6 +50,7 @@ namespace MultiplayerTopDownTank
         }
 
         public NetworkManager NetworkManager { get { return this.networkManager; } }
+        public Entity PlayerEntity { get { return this.playerEntity; } }
 
         public void Shoot(Vector2 position, Vector2 direction)
         {
@@ -54,12 +61,15 @@ namespace MultiplayerTopDownTank
 
         private Entity OnPlayerReceived(string clientId, string behaviorId)
         {
+            this._numberOfTanks++;
+            players.Add(string.Format("{0}", clientId));
+            Labels.Add("PlayerEntity Name", string.Join(",", players));
             return this.CreateNetworkTank(clientId);
         }
 
         private Entity OnBulletReceived(string clientId, string behaviorId)
         {
-            return this.CreateBullet();
+            return this.CreateBullet(clientId);
         }
 
         protected override void CreateScene()
@@ -111,18 +121,7 @@ namespace MultiplayerTopDownTank
                 case NetworkCommandEnum.CreatePlayer:
                     break;
                 case NetworkCommandEnum.Die:
-                    this.NetworkSyncDie(playerName);
                     break;
-            }
-        }
-
-        private void NetworkSyncDie(string playerName)
-        {
-            if (playerName == this.playerEntity.Name)
-            {
-                this.networkService.Disconnect();
-                var navigationManager = WaveServices.GetService<NavigationManager>();
-                navigationManager.InitialNavigation();
             }
         }
 
@@ -145,17 +144,16 @@ namespace MultiplayerTopDownTank
         {
             var tankCollider = new RectangleCollider2D
             {
-                CollisionCategories = ColliderCategory2D.Cat1,
+                CollisionCategories = isLocal ? ColliderCategory2D.Cat1 : ColliderCategory2D.Cat4,
                 CollidesWith = isLocal ?
-                        ColliderCategory2D.Cat1 | ColliderCategory2D.Cat3 | ColliderCategory2D.Cat4 :
-                        ColliderCategory2D.All
+                        ColliderCategory2D.Cat3 | ColliderCategory2D.Cat4 | ColliderCategory2D.Cat5 :
+                        ColliderCategory2D.Cat1 | ColliderCategory2D.Cat3 | ColliderCategory2D.Cat4 | ColliderCategory2D.Cat5
             };
 
             var tankComponent = new TankComponent();
             var tankBehavior = new TankBehavior();
 
             this.playerEntity = new Entity(name)
-                //string.Format("{0}-{1}", isLocal ? "Local" : "Remote", name))
             {
                 Tag = GameConstants.TankTag
             }
@@ -180,8 +178,6 @@ namespace MultiplayerTopDownTank
                 LinearDamping = 10.0f,
             });
 
-            Labels.Add("PlayerEntity Name", this.playerEntity.Name);
-
             var barrel = new Entity(GameConstants.PlayerBarrel)
               .AddComponent(new Transform2D
               {
@@ -202,9 +198,9 @@ namespace MultiplayerTopDownTank
 
         private Entity CreateNetworkTank(string clientId)
         {
-            var isHostPlayer = this.networkService.ClientIdentifier == clientId;
+            var isLocal = this._numberOfTanks == 1;
 
-            if (isHostPlayer)
+            if (isLocal)
             {
                 var randomSpawnPoint = GetRandomSpawnPoint();
                 return CreateTank(randomSpawnPoint, clientId, true);
@@ -218,23 +214,31 @@ namespace MultiplayerTopDownTank
             }
         }
 
-        private Entity CreateBullet()
+        private Entity CreateBullet(string clientId)
         {
+            var isLocal = this._numberOfTanks == 1;
+
+            Labels.Add("IsServer?", isLocal);
+
             var bulletCollider = new CircleCollider2D
             {
-                CollisionCategories = ColliderCategory2D.Cat2,
+                CollisionCategories = isLocal ? 
+                    ColliderCategory2D.Cat2 : 
+                    ColliderCategory2D.Cat5,
                 CollidesWith =
-                       ColliderCategory2D.Cat1 |
-                       ColliderCategory2D.Cat3 |
-                       ColliderCategory2D.Cat4
+                isLocal ?
+                    ColliderCategory2D.Cat3 |
+                    ColliderCategory2D.Cat4 :
+                    ColliderCategory2D.Cat1 |
+                    ColliderCategory2D.Cat3 
             };
 
             var bullet = new Entity() { Tag = GameConstants.BulletTag }
                .AddComponent(new Transform2D
                {
                    Origin = Vector2.Center,
-                   X = 0,
-                   Y = 0,
+                   X = 15,
+                   Y = 15,
                    DrawOrder = 0.6f,
                })
                .AddComponent(new RigidBody2D
@@ -250,17 +254,24 @@ namespace MultiplayerTopDownTank
                .AddComponent(new NetworkBehavior())
                .AddComponent(new BulletNetworkSyncComponent());
 
-            bulletCollider.BeginCollision += (args) =>
+            bulletCollider.BeginCollision += (contact) =>
             {
-                this.networkSceneSyncBehavior.AddEntityToRemove(bullet);
+                var colliderA = contact.ColliderA; // Tank
+                var colliderB = contact.ColliderB; // Bullet
+                var physicBodyA = colliderA.RigidBody.UserData as RigidBody2D;
+                var physicBodyB = colliderB.RigidBody.UserData as RigidBody2D;
+                Entity tankEntity = physicBodyA.Owner;
+                Labels.Add("colliderA:", tankEntity.Name);
+                Entity bulletEntity = physicBodyB.Owner;
+                Labels.Add("colliderB", bulletEntity.Name);
+                this.networkSceneSyncBehavior.AddEntityToRemove(bulletEntity);
 
-                if (args.ColliderA != null && args.ColliderA.UserData is Collider2D)
+                if (colliderA != null)
                 {
-                    var tankTag = ((Collider2D)args.ColliderA.UserData).Owner.Tag;
+                    var tankTag = tankEntity.Tag;
                     if (tankTag != null && tankTag.Equals(GameConstants.TankTag))
                     {
-                        var tank = ((Collider2D)args.ColliderA.UserData).Owner;
-                        this.networkSceneSyncBehavior.DamageTank(tank);
+                        this.networkSceneSyncBehavior.DamageTank(tankEntity);
                     }
                 }
             };
@@ -360,23 +371,6 @@ namespace MultiplayerTopDownTank
                 var collider2D = colliderEntity.FindComponent<Collider2D>(false);
                 collider2D.CollisionCategories = ColliderCategory2D.Cat4;
                 collider2D.CollidesWith = ColliderCategory2D.All;
-
-                /*
-                collider2D.BeginCollision += (args) =>
-                {
-                    if (args.ColliderB != null && args.ColliderB.UserData is Collider2D)
-                    {
-                        var tag = ((Collider2D)args.ColliderB.UserData).Owner.Tag;
-
-                        if (tag != null && tag.Equals(GameConstants.BulletTag))
-                        {
-                            var bullet = ((Collider2D)args.ColliderB.UserData).Owner;
-
-                            this.networkManager.RemoveEntity(bullet);
-                        }
-                    }
-                };
-                */
 
                 this.EntityManager.Add(colliderEntity);
             }

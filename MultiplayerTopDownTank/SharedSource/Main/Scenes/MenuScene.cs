@@ -55,12 +55,6 @@ namespace MultiplayerTopDownTank.Scenes
         {
             var discoveredHost = await this.WaitForDiscoverHostAsync(TimeSpan.FromSeconds(3));
 
-            //NetworkEndpoint discoveredHost = new NetworkEndpoint
-            //{
-            //    Address = "10.4.1.42",
-            //    Port = NetworkConfiguration.Port,
-            //};
-
             if (discoveredHost == null)
             {
                 this.networkService.InitializeHost(NetworkConfiguration.GameIdentifier, NetworkConfiguration.Port);

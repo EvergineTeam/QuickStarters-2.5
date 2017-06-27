@@ -36,8 +36,9 @@ namespace MultiplayerTopDownTank.Behaviors
                 if (tankComponent.CurrentLive <= 0)
                 {
                     this.toRemove.Add(tank);
+
                     // TODO: Add decal, explosion, smoke, etc...
-                    this.SendDieMessage(tankComponent.Name);
+                    this.SendDieMessage(tank.Name);
                 }
             }
         }
@@ -47,10 +48,10 @@ namespace MultiplayerTopDownTank.Behaviors
             var networkService = WaveServices.GetService<NetworkService>();
 
             var message = NetworkMessageHelper.CreateMessage(
-                networkService, 
+                networkService,
                 NetworkAgentEnum.Client,
-                NetworkCommandEnum.Die, 
-                name, 
+                NetworkCommandEnum.Die,
+                name,
                 string.Empty);
 
             networkService.SendToServer(message, DeliveryMethod.ReliableUnordered);
