@@ -17,6 +17,7 @@ namespace P2PTank
 
 			ScreenContext screenContext = new ScreenContext(new P2PScene());	
 			WaveServices.ScreenContextManager.To(screenContext);
+            WaveServices.ScreenContextManager.SetDiagnosticsActive(true);
 		}
 	}
 }

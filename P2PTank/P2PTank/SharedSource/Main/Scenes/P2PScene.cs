@@ -1,18 +1,11 @@
 #region Using Statements
 using System;
 using P2PNET.TransportLayer.EventArgs;
-using WaveEngine.Common;
-using WaveEngine.Common.Graphics;
-using WaveEngine.Common.Math;
-using WaveEngine.Components.Cameras;
-using WaveEngine.Components.Graphics2D;
-using WaveEngine.Components.Graphics3D;
 using WaveEngine.Framework;
-using WaveEngine.Framework.Graphics;
-using WaveEngine.Framework.Resources;
-using WaveEngine.Framework.Services;
 using WaveEngine.Framework.UI;
 using WaveEngine.Networking.P2P;
+using P2PNET.TransportLayer;
+using WaveEngine.Framework.Diagnostic;
 #endregion
 
 namespace P2PTank.Scenes
@@ -52,6 +45,10 @@ namespace P2PTank.Scenes
 
         private void OnPeerChanged(object sender, PeerChangeEventArgs e)
         {
+            foreach (Peer peer in e.Peers)
+            {
+                Labels.Add("OnPeerChanged", peer.IpAddress);
+            }
         }
     }
 }

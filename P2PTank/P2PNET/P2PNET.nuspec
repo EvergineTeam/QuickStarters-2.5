@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>SquidInc.P2PNET</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>Clinton Page</authors>
+	<language>en-US</language>
+    <owners>Clinton Page</owners>
+	<projectUrl>https://github.com/BlueSquid1/P2PNET</projectUrl>
+	<licenseUrl>https://github.com/BlueSquid1/P2PNET/blob/master/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>P2PNET is a low level portable peer to peer library written in C# with an emphasises on being simple to use</description>
+    <releaseNotes>Further stability updates</releaseNotes>
+    <copyright>Copyright 2017</copyright>
+    <tags>P2P NET peer2peer peer network networking symetric .net P2PNET sockets tcp udp xamarin windows phone wp8 winrt uwp android xamarin.forms asp.net ios</tags>
+  </metadata>
+</package>

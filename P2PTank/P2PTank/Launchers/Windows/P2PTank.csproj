@@ -16,7 +16,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\AnyCPU\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;WINDOWS</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;WINDOWS,PROFILE</DefineConstants>
     <DebugType>full</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
@@ -37,10 +37,6 @@
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="P2PNET, Version=1.5.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SquidInc.P2PNET.1.5.0\lib\portable45-net45+win8+wp8+wpa81\P2PNET.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="PCLStorage, Version=1.0.2.0, Culture=neutral, PublicKeyToken=286fe515a2c35b64, processorArchitecture=MSIL">
@@ -100,6 +96,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\P2PNET\P2PNET.csproj">
+      <Project>{196653e2-638f-4590-82e6-79387f5b2fb9}</Project>
+      <Name>P2PNET</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\WaveEngine.Networking.P2P\WaveEngine.Networking.P2P\WaveEngine.Networking.P2P.csproj">
       <Project>{adce07b1-4757-4858-8588-ef749beaac8c}</Project>
       <Name>WaveEngine.Networking.P2P</Name>

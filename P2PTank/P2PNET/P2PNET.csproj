@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{196653E2-638F-4590-82E6-79387F5B2FB9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>P2PNET</RootNamespace>
+    <AssemblyName>P2PNET</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkProfile>Profile259</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;MESSAGE OBJECT FILE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;MESSAGE OBJECT</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="FileLayer\EventArgs\DebugInfoEventArgs.cs" />
+    <Compile Include="FileLayer\EventArgs\FileReceivedEventArgs.cs" />
+    <Compile Include="FileLayer\FileTransReq.cs" />
+    <Compile Include="FileLayer\SendableObjects\FileAck.cs" />
+    <Compile Include="FileLayer\SendableObjects\FileMeta.cs" />
+    <Compile Include="FileLayer\SendableObjects\FilePartObj.cs" />
+    <Compile Include="FileLayer\SendableObjects\ReqAck.cs" />
+    <Compile Include="FileLayer\SendableObjects\FileReqMeta.cs" />
+    <Compile Include="ILogger.cs" />
+    <Compile Include="ObjectLayer\BObject.cs" />
+    <Compile Include="FileLayer\EventArgs\FileTransferEventArgs.cs" />
+    <Compile Include="FileLayer\FileManager.cs" />
+    <Compile Include="FileLayer\FileReceivedReq.cs" />
+    <Compile Include="FileLayer\FileSentReq.cs" />
+    <Compile Include="ObjectLayer\Metadata.cs" />
+    <Compile Include="ObjectLayer\ObjectManager.cs" />
+    <Compile Include="ObjectLayer\ObjPackage.cs" />
+    <Compile Include="TransportLayer\AbstractStreamUtil.cs" />
+    <Compile Include="TransportLayer\BaseStation.cs" />
+    <Compile Include="ObjectLayer\EventArgs\ObjReceivedEventArgs.cs" />
+    <Compile Include="TransportLayer\BufferedUDPStream.cs" />
+    <Compile Include="TransportLayer\EventArgs\PeerEventArgs.cs" />
+    <Compile Include="TransportLayer\EventArgs\PeerChangeEventArgs.cs" />
+    <Compile Include="Exceptions.cs" />
+    <Compile Include="TransportLayer\Listener.cs" />
+    <Compile Include="TransportLayer\EventArgs\MsgReceivedEventArgs.cs" />
+    <Compile Include="TransportLayer\Peer.cs" />
+    <Compile Include="TransportLayer\ReadStreamUtil.cs" />
+    <Compile Include="TransportLayer\WriteStreamUtil.cs" />
+    <Compile Include="TransportLayer\TransportManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ObjectLayer\Serializer.cs" />
+    <Compile Include="TransportLayer\TransportType.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\P2PTank\packages\Newtonsoft.Json.10.0.3\lib\portable-net45+win8+wp8+wpa81\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PCLStorage, Version=1.0.2.0, Culture=neutral, PublicKeyToken=286fe515a2c35b64, processorArchitecture=MSIL">
+      <HintPath>..\P2PTank\packages\PCLStorage.1.0.2\lib\portable-net45+wp8+wpa81+win8+monoandroid+monotouch+Xamarin.iOS+Xamarin.Mac\PCLStorage.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PCLStorage.Abstractions, Version=1.0.2.0, Culture=neutral, PublicKeyToken=286fe515a2c35b64, processorArchitecture=MSIL">
+      <HintPath>..\P2PTank\packages\PCLStorage.1.0.2\lib\portable-net45+wp8+wpa81+win8+monoandroid+monotouch+Xamarin.iOS+Xamarin.Mac\PCLStorage.Abstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sockets.Plugin, Version=2.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\P2PTank\packages\rda.SocketsForPCL.2.0.2\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Sockets.Plugin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sockets.Plugin.Abstractions, Version=2.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\P2PTank\packages\rda.SocketsForPCL.2.0.2\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Sockets.Plugin.Abstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
