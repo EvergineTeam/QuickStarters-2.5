@@ -12,13 +12,13 @@ using WaveEngine.Framework.Resources;
 using WaveEngine.Framework.Services;
 #endregion
 
-namespace P2PTank
+namespace P2PTank.Scenes
 {
-    public class MyScene : Scene
+    public class P2PScene : Scene
     {
         protected override void CreateScene()
         {
-            this.Load(WaveContent.Scenes.MyScene);           
+            this.Load(WaveContent.Scenes.MyScene);
         }
     }
 }
