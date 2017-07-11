@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Runtime.Serialization;
-using System.Text;
+﻿using System.Runtime.Serialization;
 using P2PTank.Scenes;
-using WaveEngine.Components.Graphics2D;
 using WaveEngine.Framework;
-using WaveEngine.Framework.Graphics;
 
 namespace P2PTank.Managers
 {

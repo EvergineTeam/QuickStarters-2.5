@@ -9,9 +9,14 @@
     <Import_RootNamespace>P2PTank</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\P2PMessages\CreatePlayerMessage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\P2PMessages\DestroyMessage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\P2PMessages\MoveMessage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\P2PMessages\ShootMessage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Game.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GameConstants.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Managers\GamePlayManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Managers\P2PManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Scenes\GamePlayScene.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Scenes\P2PScene.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)WaveContent.cs" />
@@ -19,7 +24,6 @@
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Behaviors\" />
     <Folder Include="$(MSBuildThisFileDirectory)Components\" />
-    <Folder Include="$(MSBuildThisFileDirectory)Entities\" />
     <Folder Include="$(MSBuildThisFileDirectory)Commons\" />
   </ItemGroup>
 </Project>

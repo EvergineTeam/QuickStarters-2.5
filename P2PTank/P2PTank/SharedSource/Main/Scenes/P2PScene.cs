@@ -3,29 +3,30 @@ using System;
 using P2PNET.TransportLayer.EventArgs;
 using WaveEngine.Framework;
 using WaveEngine.Framework.UI;
-using WaveEngine.Networking.P2P;
 using P2PNET.TransportLayer;
 using WaveEngine.Framework.Diagnostic;
 using System.Text;
+using P2PTank.Managers;
+using P2PTank.Entities.P2PMessages;
+using Newtonsoft.Json;
 #endregion
 
 namespace P2PTank.Scenes
 {
     public class P2PScene : Scene
     {
-        private Peer2Peer peerManager;
+        private P2PManager peerManager;
 
         private WaveEngine.Components.UI.TextBox _textBox1;
         private WaveEngine.Components.UI.TextBox _textBox2;
         private WaveEngine.Components.UI.TextBox _textBox3;
         private WaveEngine.Components.UI.TextBox _textBox4;
-        private WaveEngine.Components.UI.TextBox _msgTextBox;
 
-        protected override async void CreateScene()
+        protected override void CreateScene()
         {
             this.Load(WaveContent.Scenes.MyScene);
 
-            this.peerManager = new Peer2Peer();
+            this.peerManager = new P2PManager();
             this.peerManager.PeerChange +=  this.OnPeerChanged;
             this.peerManager.MsgReceived += this.OnMsgReceived;
 
@@ -85,35 +86,74 @@ namespace P2PTank.Scenes
 
             ipPanel.Add(_textBox4);
 
-            _msgTextBox = new WaveEngine.Components.UI.TextBox
+            var messagesPanel = new WaveEngine.Components.UI.StackPanel
             {
-                Text = string.Empty,
-                Width = 300
+                Orientation = WaveEngine.Components.UI.Orientation.Horizontal
             };
 
-            panel.Add(_msgTextBox);
+            panel.Add(messagesPanel);
 
-            var button = new WaveEngine.Components.UI.Button()
+            var createPlayerButon = new WaveEngine.Components.UI.Button()
             {
-                HorizontalAlignment = HorizontalAlignment.Center,
-                VerticalAlignment = VerticalAlignment.Center,
-                Text = "START",
+                Text = "Create Player",
+                Width = 200,
                 IsBorder = false
             };
+            messagesPanel.Add(createPlayerButon);
+            createPlayerButon.Click += OnCreatePlayerButonClick;
 
-            button.Click += this.OnStartButtonClicked;
-            panel.Add(button);
+            var moveButon = new WaveEngine.Components.UI.Button()
+            {
+                Text = "Move",
+                IsBorder = false
+            };
+            messagesPanel.Add(moveButon);
+            moveButon.Click += OnMoveButonClick;
 
-            await peerManager.StartAsync();
+            var shootButon = new WaveEngine.Components.UI.Button()
+            {
+                Text = "Shoot",
+                IsBorder = false
+            };
+            messagesPanel.Add(shootButon);
+
+            var dieButon = new WaveEngine.Components.UI.Button()
+            {
+                Text = "Die",
+                IsBorder = false
+            };
+            messagesPanel.Add(dieButon);
         }
 
-        private async void OnStartButtonClicked(object sender, EventArgs e)
+        private async void OnCreatePlayerButonClick(object sender, EventArgs e)
         {
+            var createPlayerMessage = new CreatePlayerMessage
+            {
+                IpAddress = "10.4.1.1",
+                PlayerId = "1"
+            };
+
+            var createPlayerMessageSerialized = JsonConvert.SerializeObject(createPlayerMessage);
+
             var ipAddress = string.Format("{0}.{1}.{2}.{3}", _textBox1.Text, _textBox2.Text, _textBox3.Text, _textBox4.Text);
 
-            await peerManager.SendMessage(ipAddress, _msgTextBox.Text, TransportType.TCP);
+            await peerManager.SendMessage(ipAddress, createPlayerMessageSerialized, TransportType.TCP);
+        }
 
-            _msgTextBox.Text = string.Empty;
+        private async void OnMoveButonClick(object sender, EventArgs e)
+        {
+            var moveMessage = new MoveMessage
+            {
+                PlayerId = "1",
+                X = 300,
+                Y = 350
+            };
+
+            var moveMessageSerialized = JsonConvert.SerializeObject(moveMessage);
+
+            var ipAddress = string.Format("{0}.{1}.{2}.{3}", _textBox1.Text, _textBox2.Text, _textBox3.Text, _textBox4.Text);
+
+            await peerManager.SendMessage(ipAddress, moveMessageSerialized, TransportType.TCP);
         }
 
         private void OnMsgReceived(object sender, MsgReceivedEventArgs e)
