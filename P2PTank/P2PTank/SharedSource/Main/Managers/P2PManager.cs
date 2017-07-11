@@ -46,13 +46,13 @@ namespace P2PTank.Managers
         {
             var contentSerialized = JsonConvert.SerializeObject(content);
 
-            return string.Format("{0},{1}", messageType, contentSerialized);
+            return string.Format("{0}@{1}", messageType, contentSerialized);
         }
 
         public object ReadMessage(string message)
         {
             object messageObject = null;
-            var result = message.Split(',');
+            var result = message.Split('@');
 
             P2PMessageType messageType;
             Enum.TryParse(result[0], out messageType);
