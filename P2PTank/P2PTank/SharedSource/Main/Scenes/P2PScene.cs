@@ -116,6 +116,7 @@ namespace P2PTank.Scenes
                 IsBorder = false
             };
             messagesPanel.Add(shootButon);
+            shootButon.Click += OnShootButonClick;
 
             var dieButon = new WaveEngine.Components.UI.Button()
             {
@@ -123,6 +124,7 @@ namespace P2PTank.Scenes
                 IsBorder = false
             };
             messagesPanel.Add(dieButon);
+            dieButon.Click += OnDieButonClick;
 
             await peerManager.StartAsync();
         }
@@ -156,6 +158,36 @@ namespace P2PTank.Scenes
             var ipAddress = string.Format("{0}.{1}.{2}.{3}", _textBox1.Text, _textBox2.Text, _textBox3.Text, _textBox4.Text);
 
             await peerManager.SendMessage(ipAddress, moveMessageSerialized, TransportType.TCP);
+        }
+
+        private async void OnShootButonClick(object sender, EventArgs e)
+        {
+            var shootMessage = new ShootMessage
+            {
+                PlayerId = "1",
+                X = 30,
+                Y = 35
+            };
+
+            var shootMessageSerialized = JsonConvert.SerializeObject(shootMessage);
+
+            var ipAddress = string.Format("{0}.{1}.{2}.{3}", _textBox1.Text, _textBox2.Text, _textBox3.Text, _textBox4.Text);
+
+            await peerManager.SendMessage(ipAddress, shootMessageSerialized, TransportType.TCP);
+        }
+
+        private async void OnDieButonClick(object sender, EventArgs e)
+        {
+            var destroyMessage = new DestroyMessage
+            {
+                PlayerId = "1"
+            };
+
+            var destroyMessageSerialized = JsonConvert.SerializeObject(destroyMessage);
+
+            var ipAddress = string.Format("{0}.{1}.{2}.{3}", _textBox1.Text, _textBox2.Text, _textBox3.Text, _textBox4.Text);
+
+            await peerManager.SendMessage(ipAddress, destroyMessageSerialized, TransportType.TCP);
         }
 
         private void OnMsgReceived(object sender, MsgReceivedEventArgs e)
