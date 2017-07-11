@@ -19,6 +19,7 @@ namespace P2PTank.Scenes
         private WaveEngine.Components.UI.TextBox _textBox2;
         private WaveEngine.Components.UI.TextBox _textBox3;
         private WaveEngine.Components.UI.TextBox _textBox4;
+        private WaveEngine.Components.UI.TextBox _msgTextBox;
 
         protected override async void CreateScene()
         {
@@ -84,6 +85,14 @@ namespace P2PTank.Scenes
 
             ipPanel.Add(_textBox4);
 
+            _msgTextBox = new WaveEngine.Components.UI.TextBox
+            {
+                Text = string.Empty,
+                Width = 300
+            };
+
+            panel.Add(_msgTextBox);
+
             var button = new WaveEngine.Components.UI.Button()
             {
                 HorizontalAlignment = HorizontalAlignment.Center,
@@ -102,8 +111,9 @@ namespace P2PTank.Scenes
         {
             var ipAddress = string.Format("{0}.{1}.{2}.{3}", _textBox1.Text, _textBox2.Text, _textBox3.Text, _textBox4.Text);
 
-            await peerManager.SendMessage(ipAddress, "Test", TransportType.TCP);
-            
+            await peerManager.SendMessage(ipAddress, _msgTextBox.Text, TransportType.TCP);
+
+            _msgTextBox.Text = string.Empty;
         }
 
         private void OnMsgReceived(object sender, MsgReceivedEventArgs e)
