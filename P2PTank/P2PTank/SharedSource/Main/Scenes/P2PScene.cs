@@ -22,7 +22,7 @@ namespace P2PTank.Scenes
         private WaveEngine.Components.UI.TextBox _textBox3;
         private WaveEngine.Components.UI.TextBox _textBox4;
 
-        protected override void CreateScene()
+        protected override async void CreateScene()
         {
             this.Load(WaveContent.Scenes.MyScene);
 
@@ -123,6 +123,8 @@ namespace P2PTank.Scenes
                 IsBorder = false
             };
             messagesPanel.Add(dieButon);
+
+            await peerManager.StartAsync();
         }
 
         private async void OnCreatePlayerButonClick(object sender, EventArgs e)

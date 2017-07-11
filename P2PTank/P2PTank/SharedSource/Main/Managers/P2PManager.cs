@@ -14,24 +14,25 @@ namespace P2PTank.Managers
         public event EventHandler<PeerChangeEventArgs> PeerChange;
         public event EventHandler<MsgReceivedEventArgs> MsgReceived;
 
-        protected override async void Initialize()
+        public P2PManager()
         {
             this.peer2peer = new Peer2Peer();
 
             this.peer2peer.PeerChange += this.OnPeerChanged;
             this.peer2peer.MsgReceived += this.OnMsgReceived;
-
-            await peer2peer.StartAsync();
-
-            base.Initialize();
         }
-
+        
         protected override void Removed()
         {
             this.peer2peer.PeerChange -= this.OnPeerChanged;
             this.peer2peer.MsgReceived -= this.OnMsgReceived;
 
             base.Removed();
+        }
+
+        public async Task StartAsync()
+        {
+            await peer2peer.StartAsync();
         }
 
         public async Task SendMessage(string ipAddress, string message, TransportType transportType)
