@@ -36,7 +36,7 @@ namespace P2PTank.Scenes
 
         private async void OnStartButtonClicked(object sender, EventArgs e)
         {
-            await this.peerManager.StartBroadcastingAsync();
+            await this.peerManager.StartAsync();
         }
 
         private void OnMsgReceived(object sender, MsgReceivedEventArgs e)
