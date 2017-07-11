@@ -269,7 +269,8 @@ namespace P2PNET.TransportLayer
 
         private bool IsValidInterface(CommsInterface commsInterface)
         {
-            if (commsInterface.Name.ToLowerInvariant().Equals("wi-fi") || commsInterface.Name.ToLowerInvariant().Equals("ethernet"))
+            if (commsInterface.Name.ToLowerInvariant().Equals("wi-fi") 
+                || commsInterface.Name.ToLowerInvariant().Equals("ethernet"))
                 if (commsInterface.ConnectionStatus == Sockets.Plugin.Abstractions.CommsInterfaceStatus.Connected)
                     return true;
 
