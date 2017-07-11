@@ -20,7 +20,7 @@ namespace P2PTank.Scenes
         private WaveEngine.Components.UI.TextBox _textBox3;
         private WaveEngine.Components.UI.TextBox _textBox4;
 
-        protected override void CreateScene()
+        protected override async void CreateScene()
         {
             this.Load(WaveContent.Scenes.MyScene);
 
@@ -94,6 +94,8 @@ namespace P2PTank.Scenes
 
             button.Click += this.OnStartButtonClicked;
             panel.Add(button);
+
+            await peerManager.StartAsync();
         }
 
         private async void OnStartButtonClicked(object sender, EventArgs e)
