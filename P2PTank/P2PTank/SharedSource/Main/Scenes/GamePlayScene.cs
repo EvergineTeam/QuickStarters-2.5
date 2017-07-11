@@ -12,11 +12,9 @@ namespace P2PTank.Scenes
 
         protected override void CreateScene()
         {
-            this.gamePlayManager = new GamePlayManager();
+            this.Load(WaveContent.Scenes.GamePlayScene);
 
-            // TODO: Create this Entity with component by Wave Editor
-            Entity managersEntity = new Entity(GameConstants.ManagerEntityName)
-                .AddComponent(this.gamePlayManager);
+            this.gamePlayManager = this.EntityManager.FindComponentFromEntityPath<GamePlayManager>(GameConstants.ManagerEntityPath);
         }
     }
 }
