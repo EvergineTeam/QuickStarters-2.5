@@ -1,6 +1,12 @@
-﻿using System.Runtime.Serialization;
+﻿using System;
+using System.Collections.Generic;
+using System.Runtime.Serialization;
+using System.Text;
 using P2PTank.Scenes;
+using WaveEngine.Components.Graphics2D;
 using WaveEngine.Framework;
+using WaveEngine.Framework.Graphics;
+using WaveEngine.Framework.Services;
 
 namespace P2PTank.Managers
 {
@@ -16,12 +22,16 @@ namespace P2PTank.Managers
             this.gamePlayScene = this.Owner.Scene as GamePlayScene;
         }
 
-        public void CreatePlayer()
+        public Entity CreatePlayer()
         {
+            var entity = new Entity("Player");
+            return entity;
         }
 
-        public void CreateFoe()
+        public Entity CreateFoe()
         {
+            var entity = new Entity();
+            return entity;
         }
     }
 }
