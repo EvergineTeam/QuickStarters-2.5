@@ -1,5 +1,7 @@
-﻿using P2PNET.TransportLayer;
+﻿using Newtonsoft.Json;
+using P2PNET.TransportLayer;
 using P2PNET.TransportLayer.EventArgs;
+using P2PTank.Entities.P2PMessages;
 using System;
 using System.Threading.Tasks;
 using WaveEngine.Framework;
@@ -38,6 +40,31 @@ namespace P2PTank.Managers
         public async Task SendMessage(string ipAddress, string message, TransportType transportType)
         {
             await peer2peer.SendMessage(ipAddress, message, transportType);
+        }
+
+        public string CreateMessage(P2PMessageType messageType, object content)
+        {
+            var contentSerialized = JsonConvert.SerializeObject(content);
+
+            return string.Format("{0},{1}", messageType, contentSerialized);
+        }
+
+        public object ReadMessage(string message)
+        {
+            object messageObject = null;
+            var result = message.Split(',');
+
+            P2PMessageType messageType;
+            Enum.TryParse(result[0], out messageType);
+
+            switch(messageType)
+            {
+                case P2PMessageType.CreatePlayer:
+                    messageObject = JsonConvert.DeserializeObject<CreatePlayerMessage>(result[1]);
+                    break;
+            }
+
+            return messageObject;
         }
 
         private void OnMsgReceived(object sender, MsgReceivedEventArgs e)

@@ -137,11 +137,12 @@ namespace P2PTank.Scenes
                 PlayerId = "1"
             };
 
-            var createPlayerMessageSerialized = JsonConvert.SerializeObject(createPlayerMessage);
-
             var ipAddress = string.Format("{0}.{1}.{2}.{3}", _textBox1.Text, _textBox2.Text, _textBox3.Text, _textBox4.Text);
 
-            await peerManager.SendMessage(ipAddress, createPlayerMessageSerialized, TransportType.TCP);
+            await peerManager.SendMessage(
+                ipAddress, 
+                peerManager.CreateMessage(P2PMessageType.CreatePlayer, createPlayerMessage), 
+                TransportType.TCP);
         }
 
         private async void OnMoveButonClick(object sender, EventArgs e)
@@ -195,6 +196,8 @@ namespace P2PTank.Scenes
             var message = Encoding.ASCII.GetString(e.Message);
 
             Labels.Add("OnMsgReceived", message);
+
+            var result = peerManager.ReadMessage(message);
         }
 
         private void OnPeerChanged(object sender, PeerChangeEventArgs e)
