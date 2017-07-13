@@ -8,6 +8,7 @@ using WaveEngine.Framework.Diagnostic;
 using System.Text;
 using P2PTank.Managers;
 using P2PTank.Entities.P2PMessages;
+using System.Linq;
 #endregion
 
 namespace P2PTank.Scenes
@@ -129,11 +130,35 @@ namespace P2PTank.Scenes
 
         private void OnMsgReceived(object sender, MsgReceivedEventArgs e)
         {
-            var message = Encoding.ASCII.GetString(e.Message);
+            var messageReceived = Encoding.ASCII.GetString(e.Message);
 
-            Labels.Add("OnMsgReceived", message);
+            Labels.Add("OnMsgReceived", messageReceived);
 
-            var result = peerManager.ReadMessage(message);
+            var result = peerManager.ReadMessage(messageReceived);
+
+            if(result.Any())
+            {
+                var message = result.FirstOrDefault();
+
+                if(message.Value != null)
+                {
+                    switch(message.Key)
+                    {
+                        case P2PMessageType.CreatePlayer:
+                            var createPlayerData = message.Value as CreatePlayerMessage;
+                            break;
+                        case P2PMessageType.Move:
+                            var moveData = message.Value as MoveMessage;
+                            break;
+                        case P2PMessageType.Shoot:
+                            var shootData = message.Value as ShootMessage;
+                            break;
+                        case P2PMessageType.Destroy:
+                            var destroyData = message.Value as DestroyMessage;
+                            break;
+                    }
+                }
+            }
         }
 
         private void OnPeerChanged(object sender, PeerChangeEventArgs e)
