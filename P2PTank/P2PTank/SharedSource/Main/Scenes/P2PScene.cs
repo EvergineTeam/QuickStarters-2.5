@@ -150,6 +150,8 @@ namespace P2PTank.Scenes
                         case P2PMessageType.Move:
                             var moveData = message.Value as MoveMessage;
                             break;
+                        case P2PMessageType.Rotate:
+                            break;
                         case P2PMessageType.Shoot:
                             var shootData = message.Value as ShootMessage;
                             break;
