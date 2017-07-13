@@ -4,6 +4,7 @@
     {
         CreatePlayer,
         Move,
+        Rotate,
         Shoot,
         Destroy
     }

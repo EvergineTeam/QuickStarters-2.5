@@ -4,8 +4,9 @@ using System.Text;
 using P2PNET.TransportLayer;
 using P2PNET.TransportLayer.EventArgs;
 using P2PTank.Behaviors;
-using P2PTank.Components;
 using P2PTank.Managers;
+using P2PTank.Components;
+using P2PTank.Behaviors.Inputs;
 using WaveEngine.Common.Math;
 using WaveEngine.Components.Graphics2D;
 using WaveEngine.Framework;
@@ -17,16 +18,19 @@ namespace P2PTank.Scenes
     {
         private GamePlayManager gamePlayManager;
 
-        protected override void CreateScene()
+        private P2PManager peerManager;
+
+        protected async override void CreateScene()
         {
             this.Load(WaveContent.Scenes.GamePlayScene);
 
             this.gamePlayManager = this.EntityManager.FindComponentFromEntityPath<GamePlayManager>(GameConstants.ManagerEntityPath);
 
-            var peerManager = new P2PManager();
-            peerManager.PeerChange += this.OnPeerChanged;
-            peerManager.MsgReceived += this.OnMsgReceived;
+            this.peerManager = new P2PManager();
+            this.peerManager.PeerChange += this.OnPeerChanged;
+            this.peerManager.MsgReceived += this.OnMsgReceived;
 
+            await this.peerManager.StartAsync();
 
             //var player = new Entity()
             //    .AddComponent(new Transform2D() { Origin = Vector2.Center })
@@ -52,13 +56,24 @@ namespace P2PTank.Scenes
 
         private void CreateFoe()
         {
-            //var player = new Entity()
-            //    .AddComponent(new Transform2D() { Origin = Vector2.Center })
-            //    .AddComponent(new Sprite(WaveContent.Assets.Textures.tankBody_png))
-            //    .AddComponent(new SpriteRenderer())
-            //    .AddComponent(new TankComponent())
-            //    .AddComponent(new PlayerInputBehavior());
-            //this.EntityManager.Add(player);
+            var foe = new Entity()
+                .AddComponent(new Transform2D() { Origin = Vector2.Center })
+                .AddComponent(new Sprite(WaveContent.Assets.Textures.tankBody_png))
+                .AddComponent(new SpriteRenderer())
+                .AddComponent(new TankComponent())
+                .AddComponent(new NetworkInputBehavior(this.peerManager));
+            this.EntityManager.Add(foe);
+        }
+
+        private void CreatePlayer()
+        {
+            var foe = new Entity()
+                .AddComponent(new Transform2D() { Origin = Vector2.Center })
+                .AddComponent(new Sprite(WaveContent.Assets.Textures.tankBody_png))
+                .AddComponent(new SpriteRenderer())
+                .AddComponent(new TankComponent())
+                .AddComponent(new PlayerInputBehavior(this.peerManager));
+            this.EntityManager.Add(foe);
         }
 
         private void OnMsgReceived(object sender, MsgReceivedEventArgs e)
