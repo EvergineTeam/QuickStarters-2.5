@@ -42,17 +42,22 @@ namespace P2PTank.Managers
             await peer2peer.SendMessage(ipAddress, message, transportType);
         }
 
+        public async Task SendBroadcastAsync(string message)
+        {
+            await peer2peer.SendBroadcastAsync(message);
+        }
+
         public string CreateMessage(P2PMessageType messageType, object content)
         {
             var contentSerialized = JsonConvert.SerializeObject(content);
 
-            return string.Format("{0}@{1}", messageType, contentSerialized);
+            return string.Format("{0}/{1}", messageType, contentSerialized);
         }
 
         public object ReadMessage(string message)
         {
             object messageObject = null;
-            var result = message.Split('@');
+            var result = message.Split('/');
 
             P2PMessageType messageType;
             Enum.TryParse(result[0], out messageType);

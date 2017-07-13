@@ -55,7 +55,15 @@ namespace WaveEngine.Networking.P2P
                 await this.transMgr.SendAsyncTCP(ipAddress, msgBits);
             }
         }
-           
+
+        public async Task SendBroadcastAsync(string message)
+        {
+            byte[] msgBits = Encoding.UTF8.GetBytes(message);
+
+            await transMgr.SendBroadcastAsyncUDP(msgBits);
+        }
+
+
         private void OnPeerChange(object sender, PeerChangeEventArgs e)
         {
             this.PeerChange?.Invoke(this, e);
