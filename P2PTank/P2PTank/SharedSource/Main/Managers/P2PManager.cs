@@ -6,6 +6,7 @@ using System;
 using System.Threading.Tasks;
 using WaveEngine.Framework;
 using WaveEngine.Networking.P2P;
+using System.Collections.Generic;
 
 namespace P2PTank.Managers
 {
@@ -42,17 +43,22 @@ namespace P2PTank.Managers
             await peer2peer.SendMessage(ipAddress, message, transportType);
         }
 
+        public async Task SendBroadcastAsync(string message)
+        {
+            await peer2peer.SendBroadcastAsync(message);
+        }
+
         public string CreateMessage(P2PMessageType messageType, object content)
         {
             var contentSerialized = JsonConvert.SerializeObject(content);
 
-            return string.Format("{0}@{1}", messageType, contentSerialized);
+            return string.Format("{0}/{1}", messageType, contentSerialized);
         }
 
-        public object ReadMessage(string message)
+        public Dictionary<P2PMessageType, object> ReadMessage(string message)
         {
-            object messageObject = null;
-            var result = message.Split('@');
+            Dictionary<P2PMessageType, object> messageObject = new Dictionary<P2PMessageType, object>();
+            var result = message.Split('/');
 
             P2PMessageType messageType;
             Enum.TryParse(result[0], out messageType);
@@ -60,7 +66,24 @@ namespace P2PTank.Managers
             switch(messageType)
             {
                 case P2PMessageType.CreatePlayer:
-                    messageObject = JsonConvert.DeserializeObject<CreatePlayerMessage>(result[1]);
+                    messageObject.Add(
+                        P2PMessageType.CreatePlayer, 
+                        JsonConvert.DeserializeObject<CreatePlayerMessage>(result[1]));
+                    break;
+                case P2PMessageType.Move:
+                    messageObject.Add(
+                        P2PMessageType.Move, 
+                        JsonConvert.DeserializeObject<MoveMessage>(result[1]));
+                    break;
+                case P2PMessageType.Shoot:
+                    messageObject.Add(
+                        P2PMessageType.Shoot, 
+                        JsonConvert.DeserializeObject<ShootMessage>(result[1]));
+                    break;
+                case P2PMessageType.Destroy:
+                    messageObject.Add(
+                        P2PMessageType.Destroy, 
+                        JsonConvert.DeserializeObject<DestroyMessage>(result[1]));
                     break;
             }
 

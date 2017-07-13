@@ -8,7 +8,7 @@ using WaveEngine.Framework.Diagnostic;
 using System.Text;
 using P2PTank.Managers;
 using P2PTank.Entities.P2PMessages;
-using Newtonsoft.Json;
+using System.Linq;
 #endregion
 
 namespace P2PTank.Scenes
@@ -16,11 +16,6 @@ namespace P2PTank.Scenes
     public class P2PScene : Scene
     {
         private P2PManager peerManager;
-
-        private WaveEngine.Components.UI.TextBox _textBox1;
-        private WaveEngine.Components.UI.TextBox _textBox2;
-        private WaveEngine.Components.UI.TextBox _textBox3;
-        private WaveEngine.Components.UI.TextBox _textBox4;
 
         protected override async void CreateScene()
         {
@@ -34,57 +29,6 @@ namespace P2PTank.Scenes
             panel.HorizontalAlignment = HorizontalAlignment.Center;
             panel.VerticalAlignment = VerticalAlignment.Center;
             this.EntityManager.Add(panel);
-
-            var label = new WaveEngine.Components.UI.TextBlock
-            {
-                Text = "Insert your Opponent IP Address"
-            };
-
-            panel.Add(label);
-
-            var ipPanel = new WaveEngine.Components.UI.StackPanel
-            {
-                Orientation = WaveEngine.Components.UI.Orientation.Horizontal
-            };
-
-            panel.Add(ipPanel);
-
-            _textBox1 = new WaveEngine.Components.UI.TextBox
-            {
-                Text = string.Empty,
-                Width = 50,
-                Margin = new Thickness(6)
-            };
-
-            ipPanel.Add(_textBox1);
-
-            _textBox2 = new WaveEngine.Components.UI.TextBox
-            {
-                Text = string.Empty,
-                Width = 50,
-                Margin = new Thickness(6)
-            };
-
-            ipPanel.Add(_textBox2);
-
-            _textBox3 = new WaveEngine.Components.UI.TextBox
-            {
-                Text = string.Empty,
-                Width = 50,
-                Margin = new Thickness(6)
-            };
-
-            ipPanel.Add(_textBox3);
-
-
-            _textBox4 = new WaveEngine.Components.UI.TextBox
-            {
-                Text = string.Empty,
-                Width = 50,
-                Margin = new Thickness(6)
-            };
-
-            ipPanel.Add(_textBox4);
 
             var messagesPanel = new WaveEngine.Components.UI.StackPanel
             {
@@ -133,48 +77,43 @@ namespace P2PTank.Scenes
         {
             var createPlayerMessage = new CreatePlayerMessage
             {
-                IpAddress = "10.4.1.1",
+                IpAddress = "192.168.1.1",
                 PlayerId = "1"
             };
 
-            var ipAddress = string.Format("{0}.{1}.{2}.{3}", _textBox1.Text, _textBox2.Text, _textBox3.Text, _textBox4.Text);
+            var message = peerManager.CreateMessage(P2PMessageType.CreatePlayer, createPlayerMessage);
 
-            await peerManager.SendMessage(
-                ipAddress, 
-                peerManager.CreateMessage(P2PMessageType.CreatePlayer, createPlayerMessage), 
-                TransportType.TCP);
+            await peerManager.SendBroadcastAsync(message);
         }
 
         private async void OnMoveButonClick(object sender, EventArgs e)
         {
+            Random rnd = new Random();
             var moveMessage = new MoveMessage
             {
                 PlayerId = "1",
-                X = 300,
-                Y = 350
+                X = rnd.Next(1, 300),
+                Y = rnd.Next(1, 300)
             };
 
-            var moveMessageSerialized = JsonConvert.SerializeObject(moveMessage);
+            var message = peerManager.CreateMessage(P2PMessageType.Move, moveMessage);
 
-            var ipAddress = string.Format("{0}.{1}.{2}.{3}", _textBox1.Text, _textBox2.Text, _textBox3.Text, _textBox4.Text);
-
-            await peerManager.SendMessage(ipAddress, moveMessageSerialized, TransportType.TCP);
+            await peerManager.SendBroadcastAsync(message);
         }
 
         private async void OnShootButonClick(object sender, EventArgs e)
         {
+            Random rnd = new Random();
             var shootMessage = new ShootMessage
             {
                 PlayerId = "1",
-                X = 30,
-                Y = 35
+                X = rnd.Next(1, 300),
+                Y = rnd.Next(1, 300)
             };
 
-            var shootMessageSerialized = JsonConvert.SerializeObject(shootMessage);
+            var message = peerManager.CreateMessage(P2PMessageType.Shoot, shootMessage);
 
-            var ipAddress = string.Format("{0}.{1}.{2}.{3}", _textBox1.Text, _textBox2.Text, _textBox3.Text, _textBox4.Text);
-
-            await peerManager.SendMessage(ipAddress, shootMessageSerialized, TransportType.TCP);
+            await peerManager.SendBroadcastAsync(message);
         }
 
         private async void OnDieButonClick(object sender, EventArgs e)
@@ -184,20 +123,42 @@ namespace P2PTank.Scenes
                 PlayerId = "1"
             };
 
-            var destroyMessageSerialized = JsonConvert.SerializeObject(destroyMessage);
+            var message = peerManager.CreateMessage(P2PMessageType.Destroy, destroyMessage);
 
-            var ipAddress = string.Format("{0}.{1}.{2}.{3}", _textBox1.Text, _textBox2.Text, _textBox3.Text, _textBox4.Text);
-
-            await peerManager.SendMessage(ipAddress, destroyMessageSerialized, TransportType.TCP);
+            await peerManager.SendBroadcastAsync(message);
         }
 
         private void OnMsgReceived(object sender, MsgReceivedEventArgs e)
         {
-            var message = Encoding.ASCII.GetString(e.Message);
+            var messageReceived = Encoding.ASCII.GetString(e.Message);
 
-            Labels.Add("OnMsgReceived", message);
+            Labels.Add("OnMsgReceived", messageReceived);
 
-            var result = peerManager.ReadMessage(message);
+            var result = peerManager.ReadMessage(messageReceived);
+
+            if(result.Any())
+            {
+                var message = result.FirstOrDefault();
+
+                if(message.Value != null)
+                {
+                    switch(message.Key)
+                    {
+                        case P2PMessageType.CreatePlayer:
+                            var createPlayerData = message.Value as CreatePlayerMessage;
+                            break;
+                        case P2PMessageType.Move:
+                            var moveData = message.Value as MoveMessage;
+                            break;
+                        case P2PMessageType.Shoot:
+                            var shootData = message.Value as ShootMessage;
+                            break;
+                        case P2PMessageType.Destroy:
+                            var destroyData = message.Value as DestroyMessage;
+                            break;
+                    }
+                }
+            }
         }
 
         private void OnPeerChanged(object sender, PeerChangeEventArgs e)
