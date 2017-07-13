@@ -7,6 +7,8 @@ namespace P2PTank.Behaviors.Inputs
 {
     public class NetworkInputBehavior : Behavior
     {
+
+
         protected override void Update(TimeSpan gameTime)
         {
         }
