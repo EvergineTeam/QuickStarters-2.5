@@ -8,6 +8,6 @@ namespace P2PTank
     {
         // Entity Names
         // Game Scene
-        public static string ManagerEntityPath = "manager"; 
+        public static string ManagerEntityPath = "manager";
     }
 }
