@@ -6,17 +6,25 @@ using P2PTank.Scenes;
 
 namespace P2PTank
 {
-    public class Game : WaveEngine.Framework.Game
+	public class Game : WaveEngine.Framework.Game
 	{
 		public override void Initialize(IApplication application)
 		{
 			base.Initialize(application);
 
-			//ScreenContext screenContext = new ScreenContext(new P2PScene());
-            ScreenContext screenContext = new ScreenContext(new GamePlayScene());
+            // Better if serialized and stored 
+            GameSettings.EnableFX = true;
+            GameSettings.EnableMusic = true;
+            GameSettings.FXVolume = 1.0f;
+            GameSettings.MusicVolume = 1.0f;
+            GameSettings.GamePadDeadZone = 0.25f;
 
-            WaveServices.ScreenContextManager.To(screenContext);
-            WaveServices.ScreenContextManager.SetDiagnosticsActive(true);
+			//ScreenContext screenContext = new ScreenContext(new P2PScene());
+			//ScreenContext screenContext = new ScreenContext(new GamePlayScene());
+			ScreenContext screenContext = new ScreenContext(new TestScene());
+
+			WaveServices.ScreenContextManager.To(screenContext);
+			WaveServices.ScreenContextManager.SetDiagnosticsActive(true);
 		}
 	}
 }

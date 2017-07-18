@@ -123,13 +123,13 @@
             <d6p1:Z>0</d6p1:Z>
           </d5p1:LocalOrientation>
           <d5p1:LocalPosition xmlns:d6p1="WaveEngine.Common.Math">
-            <d6p1:X>0</d6p1:X>
-            <d6p1:Y>0</d6p1:Y>
-            <d6p1:Z>-10</d6p1:Z>
+            <d6p1:X>92.7</d6p1:X>
+            <d6p1:Y>32.3999939</d6p1:Y>
+            <d6p1:Z>10</d6p1:Z>
           </d5p1:LocalPosition>
           <d5p1:LocalScale xmlns:d6p1="WaveEngine.Common.Math">
             <d6p1:X>1</d6p1:X>
-            <d6p1:Y>1</d6p1:Y>
+            <d6p1:Y>1.1</d6p1:Y>
             <d6p1:Z>1</d6p1:Z>
           </d5p1:LocalScale>
           <d5p1:Effect>None</d5p1:Effect>
@@ -186,7 +186,7 @@
           </d5p1:vanishingPoint>
           <d5p1:zoom xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
             <d6p1:X>1</d6p1:X>
-            <d6p1:Y>1</d6p1:Y>
+            <d6p1:Y>1.1</d6p1:Y>
           </d5p1:zoom>
         </d4p1:Component>
       </d2p1:SerializeComponents>
@@ -214,8 +214,8 @@
                 <d8p1:Z>-0.2</d8p1:Z>
               </d7p1:LocalPosition>
               <d7p1:LocalScale xmlns:d8p1="WaveEngine.Common.Math">
-                <d8p1:X>1</d8p1:X>
-                <d8p1:Y>1</d8p1:Y>
+                <d8p1:X>1.2</d8p1:X>
+                <d8p1:Y>1.2</d8p1:Y>
                 <d8p1:Z>1</d8p1:Z>
               </d7p1:LocalScale>
               <d7p1:Effect>None</d7p1:Effect>
@@ -241,9 +241,9 @@
               <d7p1:SourceRectangle xmlns:d8p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math" i:nil="true" />
               <d7p1:TintColor xmlns:d8p1="WaveEngine.Common.Graphics">
                 <d8p1:A>255</d8p1:A>
-                <d8p1:B>252</d8p1:B>
-                <d8p1:G>255</d8p1:G>
-                <d8p1:R>0</d8p1:R>
+                <d8p1:B>8</d8p1:B>
+                <d8p1:G>164</d8p1:G>
+                <d8p1:R>5</d8p1:R>
               </d7p1:TintColor>
               <d7p1:materialPath i:nil="true" />
               <d7p1:texturePath>Content/Assets/Textures/tankBarrel.png.wpk</d7p1:texturePath>
@@ -277,15 +277,15 @@
                 <d8p1:Z>-0.1</d8p1:Z>
               </d7p1:LocalPosition>
               <d7p1:LocalScale xmlns:d8p1="WaveEngine.Common.Math">
-                <d8p1:X>1</d8p1:X>
-                <d8p1:Y>1</d8p1:Y>
+                <d8p1:X>1.2</d8p1:X>
+                <d8p1:Y>1.2</d8p1:Y>
                 <d8p1:Z>1</d8p1:Z>
               </d7p1:LocalScale>
               <d7p1:Effect>None</d7p1:Effect>
               <d7p1:Opacity>1</d7p1:Opacity>
               <d7p1:Rectangle xmlns:d8p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
-                <d8p1:Height>80</d8p1:Height>
-                <d8p1:Width>84</d8p1:Width>
+                <d8p1:Height>70</d8p1:Height>
+                <d8p1:Width>44</d8p1:Width>
                 <d8p1:X>0</d8p1:X>
                 <d8p1:Y>0</d8p1:Y>
               </d7p1:Rectangle>
@@ -304,9 +304,9 @@
               <d7p1:SourceRectangle xmlns:d8p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math" i:nil="true" />
               <d7p1:TintColor xmlns:d8p1="WaveEngine.Common.Graphics">
                 <d8p1:A>255</d8p1:A>
-                <d8p1:B>234</d8p1:B>
-                <d8p1:G>255</d8p1:G>
-                <d8p1:R>0</d8p1:R>
+                <d8p1:B>8</d8p1:B>
+                <d8p1:G>164</d8p1:G>
+                <d8p1:R>5</d8p1:R>
               </d7p1:TintColor>
               <d7p1:materialPath i:nil="true" />
               <d7p1:texturePath>Content/Assets/Textures/tankBody.png.wpk</d7p1:texturePath>
@@ -424,6 +424,18 @@
           </d5p1:screenPosition>
           <d5p1:transformMode>Standard</d5p1:transformMode>
         </d4p1:Component>
+        <d4p1:Component xmlns:d5p1="http://schemas.datacontract.org/2004/07/P2PTank.Components" i:type="d5p1:TankComponent">
+          <d5p1:Color xmlns:d6p1="WaveEngine.Common.Graphics">
+            <d6p1:A>255</d6p1:A>
+            <d6p1:B>8</d6p1:B>
+            <d6p1:G>164</d6p1:G>
+            <d6p1:R>5</d6p1:R>
+          </d5p1:Color>
+          <d5p1:InitialLive>100</d5p1:InitialLive>
+          <d5p1:InitialRotationBarrelSpeed>0.5</d5p1:InitialRotationBarrelSpeed>
+          <d5p1:InitialRotationSpeed>0.5</d5p1:InitialRotationSpeed>
+          <d5p1:InitialSpeed>100</d5p1:InitialSpeed>
+        </d4p1:Component>
       </d2p1:SerializeComponents>
     </d2p1:BaseEntityModel>
   </Entities>
@@ -437,7 +449,7 @@
           <d5p1:Expand>true</d5p1:Expand>
           <d5p1:Stretch>Uniform</d5p1:Stretch>
           <d5p1:VirtualHeight>730</d5p1:VirtualHeight>
-          <d5p1:VirtualWidth>1016</d5p1:VirtualWidth>
+          <d5p1:VirtualWidth>993</d5p1:VirtualWidth>
         </d3p1:Value>
       </d3p1:KeyValueOfstringanyType>
       <d3p1:KeyValueOfstringanyType>

@@ -22,7 +22,7 @@ namespace P2PTank.Behaviors
 
         private P2PManager p2pManager;
 
-        public PlayerInputBehavior(P2PManager p2pManager)
+        public PlayerInputBehavior(P2PManager p2pManager = null)
         {
             this.p2pManager = p2pManager;
         }
@@ -38,44 +38,110 @@ namespace P2PTank.Behaviors
 
             float elapsedTime = (float)gameTime.TotalSeconds;
 
+            this.HandleKeyboard(input, elapsedTime);
+            this.HandlePad(input, elapsedTime);
+
+        }
+
+        private void HandlePad(Input input, float elapsedTime)
+        {
+            GamePadState gamepadState = input.GamePadState;
+
+            if (gamepadState.IsConnected)
+            {
+                Vector2 leftThumb = this.ApplyDeadZone(gamepadState.ThumbStricks.Left);
+                Vector2 rightthumb = this.ApplyDeadZone(gamepadState.ThumbStricks.Right);
+
+                if (leftThumb != Vector2.Zero)
+                {
+                    this.Move(-leftThumb.Y, elapsedTime);
+                    this.Rotate(leftThumb.X, elapsedTime);
+                }
+
+                if (rightthumb != Vector2.Zero)
+                {
+                    this.RotateBarrel(rightthumb.X, elapsedTime);
+                }
+            }
+        }
+
+        private Vector2 ApplyDeadZone(Vector2 vector)
+        {
+            var output = vector;
+
+            var deadZone = GameSettings.GamePadDeadZone;
+
+            // Scaled radial DeadZone, the Right way to do a DeadZone:
+            // https://web.archive.org/web/20130418234531/http://www.gamasutra.com/blogs/JoshSutphin/20130416/190541/Doing_Thumbstick_Dead_Zones_Right.php
+            var magnitude = output.Length();
+            if (magnitude < deadZone)
+            {
+                output = Vector2.Zero;
+            }
+            else
+            {
+                output.Normalize();
+                output *= ((magnitude - deadZone) / (1 - deadZone));
+            }
+
+            return output;
+        }
+
+        private void HandleKeyboard(Input input, float elapsedTime)
+        {
             if (input.KeyboardState.Up == ButtonState.Pressed)
             {
-                this.Move(true, elapsedTime);
+                this.Move(-1.0f, elapsedTime);
             }
             else if (input.KeyboardState.Down == ButtonState.Pressed)
             {
-                this.Move(false, elapsedTime);
+                this.Move(1.0f, elapsedTime);
             }
 
             if (input.KeyboardState.Left == ButtonState.Pressed)
             {
-                this.Rotate(true, elapsedTime);
+                this.Rotate(-1.0f, elapsedTime);
             }
             else if (input.KeyboardState.Right == ButtonState.Pressed)
             {
-                this.Rotate(false, elapsedTime);
+                this.Rotate(1.0f, elapsedTime);
+            }
+
+            if (input.KeyboardState.A == ButtonState.Pressed)
+            {
+                this.RotateBarrel(-1.0f, elapsedTime);
+            }
+            else if (input.KeyboardState.D == ButtonState.Pressed)
+            {
+                this.RotateBarrel(1.0f, elapsedTime);
             }
         }
 
-        private async void Move(bool forward, float elapsedTime)
+        private async void Move(float forward, float elapsedTime)
         {
-            var orientation = this.transform.Orientation;
-            this.transform.LocalPosition += (forward ? -1 : 1) * (orientation * Vector3.UnitY * elapsedTime * this.tankComponent.CurrentSpeed).ToVector2();
+            this.tankComponent.Move(forward, elapsedTime);
 
-            var moveMessage = new MoveMessage()
+            if (this.p2pManager != null)
             {
-                PlayerId = "Player1",
-                X = this.transform.LocalPosition.X,
-                Y = this.transform.LocalPosition.Y,
-            };
+                var moveMessage = new MoveMessage()
+                {
+                    PlayerId = "Player1",
+                    X = this.transform.LocalPosition.X,
+                    Y = this.transform.LocalPosition.Y,
+                };
 
-            await this.p2pManager.SendBroadcastAsync(this.p2pManager.CreateMessage(P2PMessageType.Move, moveMessage));
+                await this.p2pManager.SendBroadcastAsync(this.p2pManager.CreateMessage(P2PMessageType.Move, moveMessage));
+            }
         }
 
-        private void Rotate(bool left, float elapsedTime)
+        private void Rotate(float left, float elapsedTime)
         {
-            var roll = (left ? -1 : 1) * this.tankComponent.CurrentRotationSpeed * elapsedTime;
-            this.transform.Orientation = this.transform.Orientation * Quaternion.CreateFromYawPitchRoll(0.0f, 0.0f, roll);
+            this.tankComponent.Rotate(left, elapsedTime);
         }
+        private void RotateBarrel(float left, float elapsedTime)
+        {
+            this.tankComponent.RotateBarrel(left, elapsedTime);
+        }
+
     }
 }
