@@ -9,9 +9,11 @@ namespace P2PTank.Behaviors.Inputs
 {
     public class NetworkInputBehavior : Behavior
     {
+        public string PlayerID { get; set; }
+
         public NetworkInputBehavior(P2PManager p2pManager)
         {
-        }
+}
 
         protected override void Update(TimeSpan gameTime)
         {
