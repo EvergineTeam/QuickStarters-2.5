@@ -142,6 +142,5 @@ namespace P2PTank.Behaviors
         {
             this.tankComponent.RotateBarrel(left, elapsedTime);
         }
-
     }
 }

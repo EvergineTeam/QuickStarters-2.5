@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 using P2PTank.Behaviors;
+using P2PTank.Behaviors.Cameras;
 using P2PTank.Components;
+using P2PTank.Managers;
 using WaveEngine.Common.Graphics;
 using WaveEngine.Common.Math;
 using WaveEngine.Components.Graphics2D;
@@ -18,29 +20,21 @@ namespace P2PTank.Scenes
         protected override void CreateScene()
         {
             this.Load(WaveContent.Scenes.GamePlayScene);
-
-            this.CreatePlayer();
         }
 
-        private void CreateFoe()
+        protected override void Start()
         {
-            var entity = this.CreateBaseTank(currentTankIndex++);
-            this.EntityManager.Add(entity);
-        }
+            base.Start();
 
-        private void CreatePlayer()
-        {
-            var entity = this.CreateBaseTank(currentTankIndex++);
-            entity.AddComponent(new PlayerInputBehavior());
-            this.EntityManager.Add(entity);
-        }
+            var gameplayManager = this.EntityManager.FindComponentFromEntityPath<GamePlayManager>(GameConstants.ManagerEntityPath);
+            var player = gameplayManager.CreatePlayer();
+            this.EntityManager.Add(player);
 
-        private Entity CreateBaseTank(int playerIndex)
-        {
-            var entity = this.EntityManager.Instantiate(WaveContent.Assets.Prefabs.tankPrefab);
-            var component = entity.FindComponent<TankComponent>();
-            component.Color = GameConstants.Palette[currentTankIndex];
-            return entity;
+            var targetCameraBehavior = new TargetCameraBehavior();
+            targetCameraBehavior.SetTarget(player.FindComponent<Transform2D>());
+            targetCameraBehavior.Follow = true;
+            targetCameraBehavior.Speed = 5;
+            this.RenderManager.ActiveCamera2D.Owner.AddComponent(targetCameraBehavior);
         }
     }
 }
