@@ -74,11 +74,14 @@ namespace P2PTank.Components
             base.ResolveDependencies();
 
             this.body = this.Owner.FindChild(GameConstants.EntityNameTankBody).FindComponent<Sprite>();
+            this.barrel = this.Owner.FindChild(GameConstants.EntitynameTankBarrel).FindComponent<Sprite>();
 
             this.CurrentLive = this.InitialLive;
             this.CurrentSpeed = this.InitialSpeed;
             this.CurrentRotationSpeed = this.InitialRotationSpeed;
             this.CurrentRotationBarrelSpeed = this.InitialRotationBarrelSpeed;
+
+            this.UpdateColor();
         }
 
         private void UpdateColor()

@@ -189,6 +189,31 @@
             <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
             <d6p1:SamplerMode>LinearClamp</d6p1:SamplerMode>
           </d5p1:Component>
+          <d5p1:Component xmlns:d6p1="WaveEngine.Framework.Physics2D" i:type="d6p1:RectangleCollider2D">
+            <d6p1:CollidesWith>All</d6p1:CollidesWith>
+            <d6p1:CollisionCategories>Cat1</d6p1:CollisionCategories>
+            <d6p1:DebugLineColor xmlns:d7p1="WaveEngine.Common.Graphics">
+              <d7p1:A>255</d7p1:A>
+              <d7p1:B>0</d7p1:B>
+              <d7p1:G>165</d7p1:G>
+              <d7p1:R>255</d7p1:R>
+            </d6p1:DebugLineColor>
+            <d6p1:Density>1</d6p1:Density>
+            <d6p1:Friction>0.2</d6p1:Friction>
+            <d6p1:GroupIndex>0</d6p1:GroupIndex>
+            <d6p1:IsSensor>false</d6p1:IsSensor>
+            <d6p1:Restitution>0</d6p1:Restitution>
+            <d6p1:autoRefresh>true</d6p1:autoRefresh>
+            <d6p1:offset xmlns:d7p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+              <d7p1:X>0</d7p1:X>
+              <d7p1:Y>0</d7p1:Y>
+            </d6p1:offset>
+            <d6p1:Size xmlns:d7p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
+              <d7p1:X>1</d7p1:X>
+              <d7p1:Y>1</d7p1:Y>
+            </d6p1:Size>
+            <d6p1:rotationOffset>0</d6p1:rotationOffset>
+          </d5p1:Component>
         </d2p1:SerializeComponents>
       </d2p1:BaseEntityModel>
     </d2p1:SerializeChildrens>
@@ -211,8 +236,8 @@
           <d5p1:Z>0</d5p1:Z>
         </d4p1:LocalPosition>
         <d4p1:LocalScale xmlns:d5p1="WaveEngine.Common.Math">
-          <d5p1:X>1</d5p1:X>
-          <d5p1:Y>1</d5p1:Y>
+          <d5p1:X>0.5</d5p1:X>
+          <d5p1:Y>0.5</d5p1:Y>
           <d5p1:Z>1</d5p1:Z>
         </d4p1:LocalScale>
         <d4p1:Effect>None</d4p1:Effect>
@@ -243,7 +268,7 @@
         <d4p1:InitialLive>100</d4p1:InitialLive>
         <d4p1:InitialRotationBarrelSpeed>2</d4p1:InitialRotationBarrelSpeed>
         <d4p1:InitialRotationSpeed>200</d4p1:InitialRotationSpeed>
-        <d4p1:InitialSpeed>20000</d4p1:InitialSpeed>
+        <d4p1:InitialSpeed>15000</d4p1:InitialSpeed>
       </d3p1:Component>
     </d2p1:SerializeComponents>
   </EntityModel>

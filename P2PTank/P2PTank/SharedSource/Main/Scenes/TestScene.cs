@@ -28,6 +28,12 @@ namespace P2PTank.Scenes
         protected override void CreateScene()
         {
             this.Load(this.contentPath);
+
+#if DEBUG
+            var debugEntity = new Entity()
+                .AddComponent(new DebugBehavior());
+            this.EntityManager.Add(debugEntity);
+#endif
         }
 
         private void ConfigurePhysics()
@@ -35,8 +41,9 @@ namespace P2PTank.Scenes
             this.PhysicsManager.Simulation2D.Gravity = Vector2.Zero;
         }
 
-        private void CreateBorders(TiledMap tiledMap, ColliderCategory2D category, ColliderCategory2D collidesWith)
+        private void CreateBorders(Entity tiledEntity, ColliderCategory2D category, ColliderCategory2D collidesWith)
         {
+            var tiledMap = tiledEntity.FindComponent<TiledMap>();
             var borders = tiledMap.ObjectLayers[GameConstants.TiledMapBordersLayerName];
             foreach (var border in borders.Objects)
             {
@@ -53,7 +60,7 @@ namespace P2PTank.Scenes
                     collider.Restitution = 0.2f;
                 }
 
-                this.EntityManager.Add(colliderEntity);
+                tiledEntity.AddChild(colliderEntity);
             }
         }
 
@@ -61,21 +68,50 @@ namespace P2PTank.Scenes
         {
             base.Start();
 
-            ///// Doing this code here cause in CreateScene doesnt load tiledMap file still
-            var tiledMap = this.EntityManager.FindComponentFromEntityPath<TiledMap>("map");
-            this.ConfigurePhysics();
-            this.CreateBorders(tiledMap, ColliderCategory2D.Cat3, ColliderCategory2D.All);
-            //////
-
             var gameplayManager = this.EntityManager.FindComponentFromEntityPath<GamePlayManager>(GameConstants.ManagerEntityPath);
-            var player = gameplayManager.CreatePlayer();
+
+            ///// Doing this code here cause in CreateScene doesnt load tiledMap file still
+            
+            var tiledEntity = this.EntityManager.Find(GameConstants.MapEntityPath);
+
+            this.ConfigurePhysics();
+            this.CreateBorders(tiledEntity, ColliderCategory2D.Cat3, ColliderCategory2D.All);
+            /////
+
+            /// Create Player
+            var player = gameplayManager.CreatePlayer(0, ColliderCategory2D.Cat1, ColliderCategory2D.All);
+            player.FindComponent<Transform2D>().LocalPosition = this.GetSpawnPoint(0);
             this.EntityManager.Add(player);
 
+            var foe1 = gameplayManager.CreateFoe(1, ColliderCategory2D.Cat1, ColliderCategory2D.All);
+            var foe2 = gameplayManager.CreateFoe(2, ColliderCategory2D.Cat1, ColliderCategory2D.All);
+            var foe3 = gameplayManager.CreateFoe(3, ColliderCategory2D.Cat1, ColliderCategory2D.All);
+            foe1.FindComponent<Transform2D>().LocalPosition = this.GetSpawnPoint(1);
+            foe2.FindComponent<Transform2D>().LocalPosition = this.GetSpawnPoint(2);
+            foe3.FindComponent<Transform2D>().LocalPosition = this.GetSpawnPoint(3);
+            this.EntityManager.Add(foe1);
+            this.EntityManager.Add(foe2);
+            this.EntityManager.Add(foe3);
+
+            /// Set camera to follow player
             var targetCameraBehavior = new TargetCameraBehavior();
             targetCameraBehavior.SetTarget(player.FindComponent<Transform2D>());
             targetCameraBehavior.Follow = true;
             targetCameraBehavior.Speed = 5;
             this.RenderManager.ActiveCamera2D.Owner.AddComponent(targetCameraBehavior);
+        }
+
+        private Vector2 GetSpawnPoint(int index)
+        {
+            Vector2 res = Vector2.Zero;
+            var entity = this.EntityManager.Find(string.Format(GameConstants.SpawnPointPathFormat, index));
+
+            if(entity!=null)
+            {
+                res = entity.FindComponent<Transform2D>().LocalPosition;
+            }
+
+            return res;
         }
     }
 }

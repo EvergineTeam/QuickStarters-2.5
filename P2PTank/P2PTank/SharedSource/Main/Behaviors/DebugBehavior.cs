@@ -14,7 +14,6 @@ namespace P2PTank.Behaviors
         private Input input;
         private KeyboardState currentKeyboardState;
         private KeyboardState lastKeyboardState;
-        private bool diagnostics;
 
         protected override void Update(TimeSpan gameTime)
         {

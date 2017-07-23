@@ -10,6 +10,8 @@ namespace P2PTank
         // Entity Names
         // Game Scene
         public static string ManagerEntityPath = "manager";
+        public static string MapEntityPath = "gamearena.map";
+        public static string SpawnPointPathFormat = "gamearena.spawnpoints.spawn{0:00}";
 
         // TiledMap names
         public static string TiledMapBordersLayerName = "borders";
@@ -23,13 +25,13 @@ namespace P2PTank
 
         // Color Palette
         public static Color[] Palette = new Color[]{
-            Color.Red,
-            Color.Blue,
             Color.Green,
+            Color.Red,
             Color.Orange,
             Color.Violet,
+            Color.Yellow,
             Color.Pink,
-            Color.Yellow
+            Color.Blue,
         };
     }
 }
