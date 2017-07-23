@@ -11,10 +11,17 @@ namespace P2PTank
         // Game Scene
         public static string ManagerEntityPath = "manager";
 
+        // TiledMap names
+        public static string TiledMapBordersLayerName = "borders";
+
         // Tank Entity
         public static string EntityNameTankBody = "body";
         public static string EntitynameTankBarrel = "barrel";
 
+        // Tag
+        public static string TagCollider = "collider";
+
+        // Color Palette
         public static Color[] Palette = new Color[]{
             Color.Red,
             Color.Blue,

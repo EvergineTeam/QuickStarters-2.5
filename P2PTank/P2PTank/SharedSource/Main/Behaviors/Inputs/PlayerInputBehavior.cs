@@ -6,8 +6,10 @@ using P2PTank.Entities.P2PMessages;
 using P2PTank.Managers;
 using WaveEngine.Common.Input;
 using WaveEngine.Common.Math;
+using WaveEngine.Components.Graphics2D;
 using WaveEngine.Framework;
 using WaveEngine.Framework.Graphics;
+using WaveEngine.Framework.Physics2D;
 using WaveEngine.Framework.Services;
 
 namespace P2PTank.Behaviors
@@ -20,6 +22,13 @@ namespace P2PTank.Behaviors
         [RequiredComponent]
         private Transform2D transform = null;
 
+        [RequiredComponent]
+        private RigidBody2D rigidBody = null;
+
+        private Transform2D barrelTransform = null;
+
+        private Sprite barrel;
+
         private P2PManager p2pManager;
 
         public PlayerInputBehavior(P2PManager p2pManager = null)
@@ -30,6 +39,10 @@ namespace P2PTank.Behaviors
         protected override void ResolveDependencies()
         {
             base.ResolveDependencies();
+
+            var barrelEntity = this.Owner.FindChild(GameConstants.EntitynameTankBarrel);
+            this.barrel = barrelEntity.FindComponent<Sprite>();
+            this.barrelTransform = barrelEntity.FindComponent<Transform2D>();
         }
 
         protected override void Update(TimeSpan gameTime)
@@ -49,8 +62,8 @@ namespace P2PTank.Behaviors
 
             if (gamepadState.IsConnected)
             {
-                Vector2 leftThumb = this.ApplyDeadZone(gamepadState.ThumbStricks.Left);
-                Vector2 rightthumb = this.ApplyDeadZone(gamepadState.ThumbStricks.Right);
+                Vector2 leftThumb = this.ApplyDeadZone(gamepadState.ThumbSticks.Left);
+                Vector2 rightthumb = this.ApplyDeadZone(gamepadState.ThumbSticks.Right);
 
                 if (leftThumb != Vector2.Zero)
                 {
@@ -119,7 +132,10 @@ namespace P2PTank.Behaviors
 
         private async void Move(float forward, float elapsedTime)
         {
-            this.tankComponent.Move(forward, elapsedTime);
+            var orientation = this.transform.Orientation;
+            //this.rigidBody.ApplyLinearImpulse(forward * (orientation * Vector3.UnitY * elapsedTime * this.tankComponent.CurrentSpeed).ToVector2(), this.transform.Position);
+            this.rigidBody.LinearVelocity = forward * (orientation * Vector3.UnitY * elapsedTime * this.tankComponent.CurrentSpeed).ToVector2();
+            //this.transform.LocalPosition += forward * (orientation * Vector3.UnitY * elapsedTime * this.tankComponent.CurrentSpeed).ToVector2();
 
             if (this.p2pManager != null)
             {
@@ -136,11 +152,15 @@ namespace P2PTank.Behaviors
 
         private void Rotate(float left, float elapsedTime)
         {
-            this.tankComponent.Rotate(left, elapsedTime);
+            var roll = left * this.tankComponent.CurrentRotationSpeed * elapsedTime;
+            //this.transform.Orientation = this.transform.Orientation * Quaternion.CreateFromYawPitchRoll(0.0f, 0.0f, roll);
+            this.rigidBody.AngularVelocity = roll;
         }
+
         private void RotateBarrel(float left, float elapsedTime)
         {
-            this.tankComponent.RotateBarrel(left, elapsedTime);
+            var roll = left * this.tankComponent.CurrentRotationBarrelSpeed * elapsedTime;
+            this.barrelTransform.Orientation = this.barrelTransform.Orientation * Quaternion.CreateFromYawPitchRoll(0.0f, 0.0f, roll);
         }
     }
 }

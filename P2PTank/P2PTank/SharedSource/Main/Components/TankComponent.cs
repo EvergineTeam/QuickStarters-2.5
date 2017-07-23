@@ -7,6 +7,7 @@ using WaveEngine.Common.Math;
 using WaveEngine.Components.Graphics2D;
 using WaveEngine.Framework;
 using WaveEngine.Framework.Graphics;
+using WaveEngine.Framework.Physics2D;
 
 namespace P2PTank.Components
 {
@@ -18,11 +19,6 @@ namespace P2PTank.Components
         private Sprite barrel;
 
         private Sprite body;
-
-        private Transform2D barrelTransform = null;
-
-        [RequiredComponent]
-        private Transform2D transform = null;
 
         [DataMember]
         public float InitialLive { get; set; }
@@ -67,7 +63,7 @@ namespace P2PTank.Components
             base.DefaultValues();
 
             this.InitialLive = 100;
-            this.InitialSpeed = 200;
+            this.InitialSpeed = 20;
             this.InitialRotationSpeed = 0.5f;
             this.InitialRotationBarrelSpeed = 0.5f;
             this.Color = Color.White;
@@ -76,10 +72,6 @@ namespace P2PTank.Components
         protected override void ResolveDependencies()
         {
             base.ResolveDependencies();
-
-            var barrelEntity = this.Owner.FindChild(GameConstants.EntitynameTankBarrel);
-            this.barrel = barrelEntity.FindComponent<Sprite>();
-            this.barrelTransform = barrelEntity.FindComponent<Transform2D>();
 
             this.body = this.Owner.FindChild(GameConstants.EntityNameTankBody).FindComponent<Sprite>();
 
@@ -100,24 +92,6 @@ namespace P2PTank.Components
             {
                 this.body.TintColor = this.color;
             }
-        }
-
-        internal void Move(float forward, float elapsedTime)
-        {
-            var orientation = this.transform.Orientation;
-            this.transform.LocalPosition += forward * (orientation * Vector3.UnitY * elapsedTime * this.CurrentSpeed).ToVector2();
-        }
-
-        internal void Rotate(float left, float elapsedTime)
-        {
-            var roll = left * this.CurrentRotationSpeed * elapsedTime;
-            this.transform.Orientation = this.transform.Orientation * Quaternion.CreateFromYawPitchRoll(0.0f, 0.0f, roll);
-        }
-
-        internal void RotateBarrel(float left, float elapsedTime)
-        {
-            var roll = left * this.CurrentRotationBarrelSpeed * elapsedTime;
-            this.barrelTransform.Orientation = this.barrelTransform.Orientation * Quaternion.CreateFromYawPitchRoll(0.0f, 0.0f, roll);
         }
     }
 }

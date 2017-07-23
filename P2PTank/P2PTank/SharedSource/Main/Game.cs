@@ -21,7 +21,7 @@ namespace P2PTank
 
             //ScreenContext screenContext = new ScreenContext(new P2PScene());
             //ScreenContext screenContext = new ScreenContext(new GamePlayScene());
-            ScreenContext screenContext = new ScreenContext(new TestScene());
+            ScreenContext screenContext = new ScreenContext(new TestScene(WaveContent.Scenes.Levels.Level1));
 
             WaveServices.ScreenContextManager.To(screenContext);
             WaveServices.ScreenContextManager.SetDiagnosticsActive(true);

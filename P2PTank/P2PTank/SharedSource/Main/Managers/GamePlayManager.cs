@@ -8,6 +8,7 @@ using P2PTank.Scenes;
 using WaveEngine.Components.Graphics2D;
 using WaveEngine.Framework;
 using WaveEngine.Framework.Graphics;
+using WaveEngine.Framework.Physics2D;
 using WaveEngine.Framework.Services;
 
 namespace P2PTank.Managers
@@ -28,7 +29,12 @@ namespace P2PTank.Managers
         public Entity CreatePlayer()
         {
             var entity = this.CreateBaseTank(currentTankIndex++);
-            entity.AddComponent(new PlayerInputBehavior());
+            entity.AddComponent(new PlayerInputBehavior())
+                 .AddComponent(new RigidBody2D
+                 {
+                     AngularDamping = 5.0f,
+                     LinearDamping = 10.0f,
+                 });
             return entity;
         }
 
@@ -42,7 +48,7 @@ namespace P2PTank.Managers
         {
             var entity = this.EntityManager.Instantiate(WaveContent.Assets.Prefabs.tankPrefab);
             var component = entity.FindComponent<TankComponent>();
-            component.Color = GameConstants.Palette[currentTankIndex];
+            component.Color = GameConstants.Palette[playerIndex];
             return entity;
         }
     }

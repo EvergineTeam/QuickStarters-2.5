@@ -242,8 +242,8 @@
         </d4p1:Color>
         <d4p1:InitialLive>100</d4p1:InitialLive>
         <d4p1:InitialRotationBarrelSpeed>2</d4p1:InitialRotationBarrelSpeed>
-        <d4p1:InitialRotationSpeed>0.5</d4p1:InitialRotationSpeed>
-        <d4p1:InitialSpeed>100</d4p1:InitialSpeed>
+        <d4p1:InitialRotationSpeed>200</d4p1:InitialRotationSpeed>
+        <d4p1:InitialSpeed>20000</d4p1:InitialSpeed>
       </d3p1:Component>
     </d2p1:SerializeComponents>
   </EntityModel>
