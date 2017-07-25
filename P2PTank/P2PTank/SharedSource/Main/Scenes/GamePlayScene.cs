@@ -6,7 +6,6 @@ using P2PNET.TransportLayer.EventArgs;
 using P2PTank.Behaviors;
 using P2PTank.Managers;
 using P2PTank.Components;
-using P2PTank.Behaviors.Inputs;
 using WaveEngine.Common.Math;
 using WaveEngine.Components.Graphics2D;
 using WaveEngine.Framework;

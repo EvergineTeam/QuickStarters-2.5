@@ -33,6 +33,9 @@ namespace P2PTank.Components
         public float InitialRotationBarrelSpeed { get; set; }
 
         [DataMember]
+        public float InitialShootInterval { get; set; }
+
+        [DataMember]
         public Color Color
         {
             get
@@ -58,6 +61,9 @@ namespace P2PTank.Components
         [IgnoreDataMember]
         public float CurrentRotationBarrelSpeed { get; private set; }
 
+        [IgnoreDataMember]
+        public float CurrentShootInterval { get; private set; }
+
         protected override void DefaultValues()
         {
             base.DefaultValues();
@@ -66,6 +72,7 @@ namespace P2PTank.Components
             this.InitialSpeed = 20;
             this.InitialRotationSpeed = 0.5f;
             this.InitialRotationBarrelSpeed = 0.5f;
+            this.InitialShootInterval = 0.5f;
             this.Color = Color.White;
         }
 
@@ -80,6 +87,7 @@ namespace P2PTank.Components
             this.CurrentSpeed = this.InitialSpeed;
             this.CurrentRotationSpeed = this.InitialRotationSpeed;
             this.CurrentRotationBarrelSpeed = this.InitialRotationBarrelSpeed;
+            this.CurrentShootInterval = this.InitialShootInterval;
 
             this.UpdateColor();
         }

@@ -1,17 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using WaveEngine.Framework;
-using P2PTank.Entities.P2PMessages;
 using P2PTank.Managers;
+using WaveEngine.Framework;
 
 namespace P2PTank.Behaviors
 {
-    public class NetworkInputBehavior : Behavior
+    public class BulletNetworkBehavior : Behavior
     {
-        public string PlayerID { get; set; }
+        public string BulletID { get; set; }
 
-        public NetworkInputBehavior(P2PManager p2pManager = null)
+        public BulletNetworkBehavior(P2PManager p2pManager = null)
         {
         }
 

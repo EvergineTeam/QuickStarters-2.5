@@ -459,6 +459,7 @@
           <d5p1:InitialLive>100</d5p1:InitialLive>
           <d5p1:InitialRotationBarrelSpeed>2</d5p1:InitialRotationBarrelSpeed>
           <d5p1:InitialRotationSpeed>200</d5p1:InitialRotationSpeed>
+          <d5p1:InitialShootInterval>2</d5p1:InitialShootInterval>
           <d5p1:InitialSpeed>15000</d5p1:InitialSpeed>
         </d4p1:Component>
       </d2p1:SerializeComponents>
@@ -473,8 +474,8 @@
           <d5p1:Enabled>false</d5p1:Enabled>
           <d5p1:Expand>true</d5p1:Expand>
           <d5p1:Stretch>Uniform</d5p1:Stretch>
-          <d5p1:VirtualHeight>427</d5p1:VirtualHeight>
-          <d5p1:VirtualWidth>1016</d5p1:VirtualWidth>
+          <d5p1:VirtualHeight>513</d5p1:VirtualHeight>
+          <d5p1:VirtualWidth>673</d5p1:VirtualWidth>
         </d3p1:Value>
       </d3p1:KeyValueOfstringanyType>
       <d3p1:KeyValueOfstringanyType>

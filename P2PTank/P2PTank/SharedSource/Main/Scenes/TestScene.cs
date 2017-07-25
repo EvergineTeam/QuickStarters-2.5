@@ -71,7 +71,7 @@ namespace P2PTank.Scenes
             var gameplayManager = this.EntityManager.FindComponentFromEntityPath<GamePlayManager>(GameConstants.ManagerEntityPath);
 
             ///// Doing this code here cause in CreateScene doesnt load tiledMap file still
-            
+
             var tiledEntity = this.EntityManager.Find(GameConstants.MapEntityPath);
 
             this.ConfigurePhysics();
@@ -79,13 +79,13 @@ namespace P2PTank.Scenes
             /////
 
             /// Create Player
-            var player = gameplayManager.CreatePlayer(0, ColliderCategory2D.Cat1, ColliderCategory2D.All);
+            var player = gameplayManager.CreatePlayer(0);
             player.FindComponent<Transform2D>().LocalPosition = this.GetSpawnPoint(0);
             this.EntityManager.Add(player);
 
-            var foe1 = gameplayManager.CreateFoe(1, ColliderCategory2D.Cat1, ColliderCategory2D.All);
-            var foe2 = gameplayManager.CreateFoe(2, ColliderCategory2D.Cat1, ColliderCategory2D.All);
-            var foe3 = gameplayManager.CreateFoe(3, ColliderCategory2D.Cat1, ColliderCategory2D.All);
+            var foe1 = gameplayManager.CreateFoe(1);
+            var foe2 = gameplayManager.CreateFoe(2);
+            var foe3 = gameplayManager.CreateFoe(3);
             foe1.FindComponent<Transform2D>().LocalPosition = this.GetSpawnPoint(1);
             foe2.FindComponent<Transform2D>().LocalPosition = this.GetSpawnPoint(2);
             foe3.FindComponent<Transform2D>().LocalPosition = this.GetSpawnPoint(3);
@@ -98,7 +98,16 @@ namespace P2PTank.Scenes
             targetCameraBehavior.SetTarget(player.FindComponent<Transform2D>());
             targetCameraBehavior.Follow = true;
             targetCameraBehavior.Speed = 5;
+
+            var tiledMapEntity = this.EntityManager.Find(GameConstants.MapEntityPath);
+            var tiledMap = tiledMapEntity.FindComponent<TiledMap>();
+            var tiledMapTransform = tiledMapEntity.FindComponent<Transform2D>();
+
+            targetCameraBehavior.SetLimits(
+                new Vector2(0, 0),
+                new Vector2(tiledMap.Width * tiledMap.TileWidth * tiledMapTransform.Scale.X, tiledMap.Height * tiledMap.TileHeight * tiledMapTransform.Scale.Y));
             this.RenderManager.ActiveCamera2D.Owner.AddComponent(targetCameraBehavior);
+            targetCameraBehavior.RefreshCameraLimits();
         }
 
         private Vector2 GetSpawnPoint(int index)
@@ -106,7 +115,7 @@ namespace P2PTank.Scenes
             Vector2 res = Vector2.Zero;
             var entity = this.EntityManager.Find(string.Format(GameConstants.SpawnPointPathFormat, index));
 
-            if(entity!=null)
+            if (entity != null)
             {
                 res = entity.FindComponent<Transform2D>().LocalPosition;
             }
