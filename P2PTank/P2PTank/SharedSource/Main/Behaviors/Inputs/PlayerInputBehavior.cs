@@ -261,7 +261,7 @@ namespace P2PTank.Behaviors
 
                     var direction = new Vector2((float)Math.Sin(angle), -(float)Math.Cos(angle));
 
-                    this.gamePlayManger.ShootPlayerBullet(position, direction);
+                    this.gamePlayManger.ShootPlayerBullet(position, direction, this.tankComponent.Color);
 
                     this.shootTimer = this.tankComponent.CurrentShootInterval;
                 }

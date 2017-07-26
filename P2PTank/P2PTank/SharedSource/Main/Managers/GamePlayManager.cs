@@ -6,6 +6,7 @@ using System.Text;
 using P2PTank.Behaviors;
 using P2PTank.Components;
 using P2PTank.Scenes;
+using WaveEngine.Common.Graphics;
 using WaveEngine.Common.Math;
 using WaveEngine.Common.Physics2D;
 using WaveEngine.Components.Graphics2D;
@@ -56,12 +57,12 @@ namespace P2PTank.Managers
             return entity;
         }
 
-        public void ShootPlayerBullet(Vector2 position, Vector2 direction)
+        public void ShootPlayerBullet(Vector2 position, Vector2 direction, Color color)
         {
             var category = ColliderCategory2D.Cat2;
             var collidesWith = ColliderCategory2D.Cat3 | ColliderCategory2D.Cat4;
 
-            var entity = this.CreateBaseBullet(category, collidesWith);
+            var entity = this.CreateBaseBullet(category, collidesWith, color);
             var behavior = new BulletBehavior();
             entity.AddComponent(behavior);
             entity.AddComponent(new RigidBody2D
@@ -76,12 +77,12 @@ namespace P2PTank.Managers
             // return entity;
         }
 
-        public Entity CreateFoeBullet()
+        public Entity CreateFoeBullet(Color color)
         {
             var category = ColliderCategory2D.Cat5;
             var collidesWith = ColliderCategory2D.Cat1 | ColliderCategory2D.Cat3;
 
-            var entity = this.CreateBaseBullet(category, collidesWith);
+            var entity = this.CreateBaseBullet(category, collidesWith, color);
             entity.AddComponent(new BulletNetworkBehavior());
             return entity;
         }
@@ -106,9 +107,13 @@ namespace P2PTank.Managers
             return entity;
         }
 
-        private Entity CreateBaseBullet(ColliderCategory2D category, ColliderCategory2D collidesWith)
+        private Entity CreateBaseBullet(ColliderCategory2D category, ColliderCategory2D collidesWith, Color color)
         {
             var entity = this.poolComponent.RetrieveBulletEntity();
+
+            var component = entity.FindComponent<BulletComponent>();
+            component.Color = color;
+
             var colliders = entity.FindComponentsInChildren<Collider2D>(false);
             var collider = colliders.FirstOrDefault();
 
