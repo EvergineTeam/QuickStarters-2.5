@@ -91,8 +91,13 @@ namespace P2PTank.Components
                 if (entity.Parent != null)
                 {
                     entity.Parent.DetachChild(entity.Name);
-                    pool.Enqueue(entity);
                 }
+                else
+                {
+                    entity.Scene.EntityManager.Detach(entity.Name);
+                }
+
+                pool.Enqueue(entity);
             }
         }
 

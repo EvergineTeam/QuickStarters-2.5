@@ -69,6 +69,9 @@ namespace P2PTank.Managers
             {
                 PhysicBodyType = RigidBodyType2D.Dynamic,
                 IsBullet = true,
+                
+                FixedRotation = true,
+                AngularDamping = 0,
                 LinearDamping = 0
             });
 
@@ -85,6 +88,11 @@ namespace P2PTank.Managers
             var entity = this.CreateBaseBullet(category, collidesWith, color);
             entity.AddComponent(new BulletNetworkBehavior());
             return entity;
+        }
+
+        public void DestroyBullet(Entity bullet)
+        {
+            this.poolComponent.FreeBulletEntity(new Entity[] { bullet });
         }
 
         private Entity CreateBaseTank(int playerIndex, ColliderCategory2D category, ColliderCategory2D collidesWith)
