@@ -106,7 +106,7 @@ namespace P2PTank.Behaviors
 
             this.Shoot(playerCommand.Shoot, elapsedTime);
         }
- 
+
         private void HandlePad(Input input, ref PlayerCommand playerCommand)
         {
             GamePadState gamepadState = input.GamePadState;
@@ -127,8 +127,8 @@ namespace P2PTank.Behaviors
                     playerCommand.SetRotateBarrel(rightthumb.X);
                 }
 
-                if(gamepadState.Buttons.RightShoulder == ButtonState.Pressed
-                    || gamepadState.Buttons.RightStick == ButtonState.Pressed)
+                if (gamepadState.Buttons.RightShoulder == ButtonState.Pressed
+                    || gamepadState.Triggers.Right > 0.5f)
                 {
                     playerCommand.SetShoot();
                 }

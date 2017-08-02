@@ -25,7 +25,7 @@ namespace P2PTank
             this.Height = 720;
 			this.FullScreen = false;
 			this.WindowTitle = "P2PTank";
-            this.HasVideoSupport = true;
+            this.HasVideoSupport = false;
     }
 
         public override void Initialize()

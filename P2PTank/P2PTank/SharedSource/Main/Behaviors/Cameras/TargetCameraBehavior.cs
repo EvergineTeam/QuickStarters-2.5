@@ -64,7 +64,10 @@ namespace P2PTank.Behaviors.Cameras
                 }
 
                 this.desiredPosition = newDesiredPosition;
-                this.cameraTransform.Position = Vector2.SmoothStep(this.currentPosition, this.desiredPosition, this.Speed * (float)gameTime.TotalSeconds);
+
+                var posi = Vector2.SmoothStep(this.currentPosition, this.desiredPosition, this.Speed * (float)gameTime.TotalSeconds);
+                this.cameraTransform.Position = (Vector2.UnitX * (int)posi.X) + (Vector2.UnitY * (int)posi.Y);
+
                 this.currentPosition = this.cameraTransform.Position;
             }
         }
