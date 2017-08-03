@@ -5,6 +5,7 @@
         CreatePlayer,
         Move,
         Rotate,
+        BarrelRotate,
         Shoot,
         Destroy
     }

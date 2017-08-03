@@ -32,13 +32,13 @@ namespace P2PTank.Managers
             this.poolComponent = this.gamePlayScene.EntityManager.FindComponentFromEntityPath<PoolComponent>(GameConstants.ManagerEntityPath);
         }
 
-        public Entity CreatePlayer(int playerIndex)
+        public Entity CreatePlayer(int playerIndex, P2PManager peerManager)
         {
             var category = ColliderCategory2D.Cat2;
             var collidesWith = ColliderCategory2D.Cat3 | ColliderCategory2D.Cat4 | ColliderCategory2D.Cat5;
 
             var entity = this.CreateBaseTank(playerIndex, category, collidesWith);
-            entity.AddComponent(new PlayerInputBehavior())
+            entity.AddComponent(new PlayerInputBehavior(peerManager))
                  .AddComponent(new RigidBody2D
                  {
                      AngularDamping = 5.0f,
@@ -47,23 +47,23 @@ namespace P2PTank.Managers
             return entity;
         }
 
-        public Entity CreateFoe(int playerIndex)
+        public Entity CreateFoe(int playerIndex, P2PManager peerManager, string foeID)
         {
             var category = ColliderCategory2D.Cat4;
             var collidesWith = ColliderCategory2D.Cat1 | ColliderCategory2D.Cat3 | ColliderCategory2D.Cat4 | ColliderCategory2D.Cat5;
 
             var entity = this.CreateBaseTank(playerIndex, category, collidesWith);
-            entity.AddComponent(new NetworkInputBehavior());
+            entity.AddComponent(new NetworkInputBehavior(peerManager) { PlayerID = foeID });
             return entity;
         }
 
-        public void ShootPlayerBullet(Vector2 position, Vector2 direction, Color color)
+        public void ShootPlayerBullet(Vector2 position, Vector2 direction, Color color, P2PManager peerManager)
         {
             var category = ColliderCategory2D.Cat2;
             var collidesWith = ColliderCategory2D.Cat3 | ColliderCategory2D.Cat4;
 
             var entity = this.CreateBaseBullet(category, collidesWith, color);
-            var behavior = new BulletBehavior();
+            var behavior = new BulletBehavior(peerManager);
             entity.AddComponent(behavior);
             entity.AddComponent(new RigidBody2D
             {

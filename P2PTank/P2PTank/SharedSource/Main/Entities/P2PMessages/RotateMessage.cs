@@ -3,6 +3,7 @@
     public class RotateMessage
     {
         public string PlayerId { get; set; }
-        public double Rotation { get; set; }
+
+        public float Rotation { get; set; }
     }
 }

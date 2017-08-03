@@ -64,13 +64,13 @@ namespace P2PTank.Behaviors
 
         private Sprite barrel;
 
-        private P2PManager p2pManager;
+        private P2PManager peerManager;
 
         private float shootTimer;
 
-        public PlayerInputBehavior(P2PManager p2pManager = null)
+        public PlayerInputBehavior(P2PManager peerManager = null)
         {
-            this.p2pManager = p2pManager;
+            this.peerManager = peerManager;
         }
 
         protected override void ResolveDependencies()
@@ -204,7 +204,7 @@ namespace P2PTank.Behaviors
             this.rigidBody.LinearVelocity = forward * (orientation * Vector3.UnitY * elapsedTime * this.tankComponent.CurrentSpeed).ToVector2();
             //this.transform.LocalPosition += forward * (orientation * Vector3.UnitY * elapsedTime * this.tankComponent.CurrentSpeed).ToVector2();
 
-            if (this.p2pManager != null)
+            if (this.peerManager != null)
             {
                 var moveMessage = new MoveMessage()
                 {
@@ -213,7 +213,7 @@ namespace P2PTank.Behaviors
                     Y = this.transform.LocalPosition.Y,
                 };
 
-                await this.p2pManager.SendBroadcastAsync(this.p2pManager.CreateMessage(P2PMessageType.Move, moveMessage));
+                await this.peerManager.SendBroadcastAsync(this.peerManager.CreateMessage(P2PMessageType.Move, moveMessage));
             }
         }
 
@@ -261,7 +261,7 @@ namespace P2PTank.Behaviors
 
                     var direction = new Vector2((float)Math.Sin(angle), -(float)Math.Cos(angle));
 
-                    this.gamePlayManger.ShootPlayerBullet(position, direction, this.tankComponent.Color);
+                    this.gamePlayManger.ShootPlayerBullet(position, direction, this.tankComponent.Color, peerManager);
 
                     this.shootTimer = this.tankComponent.CurrentShootInterval;
                 }

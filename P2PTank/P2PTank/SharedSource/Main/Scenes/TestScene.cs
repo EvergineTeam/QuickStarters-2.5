@@ -26,6 +26,9 @@ namespace P2PTank.Scenes
     {
         private string contentPath;
         private P2PManager peerManager;
+        private GamePlayManager gameplayManager;
+
+        private string playerID;
 
         public TestScene(string contentPath)
         {
@@ -81,7 +84,7 @@ namespace P2PTank.Scenes
         {
             base.Start();
 
-            var gameplayManager = this.EntityManager.FindComponentFromEntityPath<GamePlayManager>(GameConstants.ManagerEntityPath);
+            this.gameplayManager = this.EntityManager.FindComponentFromEntityPath<GamePlayManager>(GameConstants.ManagerEntityPath);
 
             ///// Doing this code here cause in CreateScene doesnt load tiledMap file still
 
@@ -123,20 +126,30 @@ namespace P2PTank.Scenes
 
         private async Task<Entity> CreatePlayer(GamePlayManager gameplayManager)
         {
-            var player = gameplayManager.CreatePlayer(0);
+            var player = gameplayManager.CreatePlayer(0, peerManager);
             player.FindComponent<Transform2D>().LocalPosition = this.GetSpawnPoint(0);
             this.EntityManager.Add(player);
 
+            this.playerID = new Guid().ToString();
+
             var createPlayerMessage = new CreatePlayerMessage
             {
-                IpAddress = "192.168.1.1",
-                PlayerId = "1"
+                IpAddress = string.Empty, // do we need send the IpAddress?? maybe not
+                PlayerId = this.playerID,
             };
 
             var message = peerManager.CreateMessage(P2PMessageType.CreatePlayer, createPlayerMessage);
 
             await peerManager.SendBroadcastAsync(message);
             return player;
+        }
+
+        private Entity CreateFoe(GamePlayManager gameplayManager, string foeID)
+        {
+            var foe = gameplayManager.CreateFoe(1, peerManager, foeID);
+            foe.FindComponent<Transform2D>().LocalPosition = this.GetSpawnPoint(1);
+            this.EntityManager.Add(foe);
+            return foe;
         }
 
         private Vector2 GetSpawnPoint(int index)
@@ -155,7 +168,6 @@ namespace P2PTank.Scenes
         private void OnMsgReceived(object sender, MsgReceivedEventArgs e)
         {
             var messageReceived = Encoding.ASCII.GetString(e.Message);
-
             Labels.Add("OnMsgReceived", messageReceived);
 
             var result = peerManager.ReadMessage(messageReceived);
@@ -170,6 +182,14 @@ namespace P2PTank.Scenes
                     {
                         case P2PMessageType.CreatePlayer:
                             var createPlayerData = message.Value as CreatePlayerMessage;
+
+                            if (createPlayerData.PlayerId.Equals(this.playerID))
+                            {
+                                break;
+                            }
+
+                            this.CreateFoe(this.gameplayManager, createPlayerData.PlayerId);
+
                             break;
                         case P2PMessageType.Move:
                             var moveData = message.Value as MoveMessage;
