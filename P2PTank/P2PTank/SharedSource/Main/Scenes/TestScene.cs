@@ -1,15 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
+using P2PNET.TransportLayer;
+using P2PNET.TransportLayer.EventArgs;
 using P2PTank.Behaviors;
 using P2PTank.Behaviors.Cameras;
 using P2PTank.Components;
+using P2PTank.Entities.P2PMessages;
 using P2PTank.Managers;
 using WaveEngine.Common.Graphics;
 using WaveEngine.Common.Math;
 using WaveEngine.Common.Physics2D;
 using WaveEngine.Components.Graphics2D;
 using WaveEngine.Framework;
+using WaveEngine.Framework.Diagnostic;
 using WaveEngine.Framework.Graphics;
 using WaveEngine.Framework.Physics2D;
 using WaveEngine.TiledMap;
@@ -19,13 +25,18 @@ namespace P2PTank.Scenes
     public class TestScene : Scene
     {
         private string contentPath;
+        private P2PManager peerManager;
 
         public TestScene(string contentPath)
         {
             this.contentPath = contentPath;
+
+            this.peerManager = new P2PManager();
+            this.peerManager.PeerChange += this.OnPeerChanged;
+            this.peerManager.MsgReceived += this.OnMsgReceived;
         }
 
-        protected override void CreateScene()
+        protected override async void CreateScene()
         {
             this.Load(this.contentPath);
 
@@ -34,6 +45,8 @@ namespace P2PTank.Scenes
                 .AddComponent(new DebugBehavior());
             this.EntityManager.Add(debugEntity);
 #endif
+
+            await peerManager.StartAsync();
         }
 
         private void ConfigurePhysics()
@@ -64,7 +77,7 @@ namespace P2PTank.Scenes
             }
         }
 
-        protected override void Start()
+        protected override async void Start()
         {
             base.Start();
 
@@ -79,19 +92,17 @@ namespace P2PTank.Scenes
             /////
 
             /// Create Player
-            var player = gameplayManager.CreatePlayer(0);
-            player.FindComponent<Transform2D>().LocalPosition = this.GetSpawnPoint(0);
-            this.EntityManager.Add(player);
+            Entity player = await this.CreatePlayer(gameplayManager);
 
-            var foe1 = gameplayManager.CreateFoe(1);
-            var foe2 = gameplayManager.CreateFoe(2);
-            var foe3 = gameplayManager.CreateFoe(3);
-            foe1.FindComponent<Transform2D>().LocalPosition = this.GetSpawnPoint(1);
-            foe2.FindComponent<Transform2D>().LocalPosition = this.GetSpawnPoint(2);
-            foe3.FindComponent<Transform2D>().LocalPosition = this.GetSpawnPoint(3);
-            this.EntityManager.Add(foe1);
-            this.EntityManager.Add(foe2);
-            this.EntityManager.Add(foe3);
+            //var foe1 = gameplayManager.CreateFoe(1);
+            //var foe2 = gameplayManager.CreateFoe(2);
+            //var foe3 = gameplayManager.CreateFoe(3);
+            //foe1.FindComponent<Transform2D>().LocalPosition = this.GetSpawnPoint(1);
+            //foe2.FindComponent<Transform2D>().LocalPosition = this.GetSpawnPoint(2);
+            //foe3.FindComponent<Transform2D>().LocalPosition = this.GetSpawnPoint(3);
+            //this.EntityManager.Add(foe1);
+            //this.EntityManager.Add(foe2);
+            //this.EntityManager.Add(foe3);
 
             /// Set camera to follow player
             var targetCameraBehavior = new TargetCameraBehavior();
@@ -110,6 +121,24 @@ namespace P2PTank.Scenes
             targetCameraBehavior.RefreshCameraLimits();
         }
 
+        private async Task<Entity> CreatePlayer(GamePlayManager gameplayManager)
+        {
+            var player = gameplayManager.CreatePlayer(0);
+            player.FindComponent<Transform2D>().LocalPosition = this.GetSpawnPoint(0);
+            this.EntityManager.Add(player);
+
+            var createPlayerMessage = new CreatePlayerMessage
+            {
+                IpAddress = "192.168.1.1",
+                PlayerId = "1"
+            };
+
+            var message = peerManager.CreateMessage(P2PMessageType.CreatePlayer, createPlayerMessage);
+
+            await peerManager.SendBroadcastAsync(message);
+            return player;
+        }
+
         private Vector2 GetSpawnPoint(int index)
         {
             Vector2 res = Vector2.Zero;
@@ -121,6 +150,49 @@ namespace P2PTank.Scenes
             }
 
             return res;
+        }
+
+        private void OnMsgReceived(object sender, MsgReceivedEventArgs e)
+        {
+            var messageReceived = Encoding.ASCII.GetString(e.Message);
+
+            Labels.Add("OnMsgReceived", messageReceived);
+
+            var result = peerManager.ReadMessage(messageReceived);
+
+            if (result.Any())
+            {
+                var message = result.FirstOrDefault();
+
+                if (message.Value != null)
+                {
+                    switch (message.Key)
+                    {
+                        case P2PMessageType.CreatePlayer:
+                            var createPlayerData = message.Value as CreatePlayerMessage;
+                            break;
+                        case P2PMessageType.Move:
+                            var moveData = message.Value as MoveMessage;
+                            break;
+                        case P2PMessageType.Rotate:
+                            break;
+                        case P2PMessageType.Shoot:
+                            var shootData = message.Value as ShootMessage;
+                            break;
+                        case P2PMessageType.Destroy:
+                            var destroyData = message.Value as DestroyMessage;
+                            break;
+                    }
+                }
+            }
+        }
+
+        private void OnPeerChanged(object sender, PeerChangeEventArgs e)
+        {
+            foreach (Peer peer in e.Peers)
+            {
+                Labels.Add("OnPeerChanged", peer.IpAddress);
+            }
         }
     }
 }
