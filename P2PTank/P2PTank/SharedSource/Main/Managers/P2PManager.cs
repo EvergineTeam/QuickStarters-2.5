@@ -75,6 +75,16 @@ namespace P2PTank.Managers
                         P2PMessageType.Move, 
                         JsonConvert.DeserializeObject<MoveMessage>(result[1]));
                     break;
+                case P2PMessageType.Rotate:
+                    messageObject.Add(
+                        P2PMessageType.Rotate,
+                        JsonConvert.DeserializeObject<RotateMessage>(result[1]));
+                    break;
+                case P2PMessageType.BarrelRotate:
+                    messageObject.Add(
+                        P2PMessageType.BarrelRotate,
+                        JsonConvert.DeserializeObject<BarrelRotate>(result[1]));
+                    break;
                 case P2PMessageType.Shoot:
                     messageObject.Add(
                         P2PMessageType.Shoot, 

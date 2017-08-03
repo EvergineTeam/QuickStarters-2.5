@@ -17,9 +17,6 @@ namespace P2PTank.Behaviors
         [RequiredComponent]
         private Transform2D transform = null;
 
-        [RequiredComponent]
-        private RigidBody2D rigidBody = null;
-
         private Transform2D barrelTransform = null;
 
         public string PlayerID { get; set; }
@@ -74,7 +71,7 @@ namespace P2PTank.Behaviors
 
                             if (this.PlayerID.Equals(barrelRotateData.PlayerId))
                             {
-                                this.Rotate(barrelRotateData.Rotation);
+                                this.BarrelRotate(barrelRotateData.Rotation);
                             }
                             break;
                     //    case P2PMessageType.Shoot:

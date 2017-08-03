@@ -80,7 +80,7 @@ namespace P2PTank.Scenes
             }
         }
 
-        protected override async void Start()
+        protected override void Start()
         {
             base.Start();
 
@@ -95,7 +95,7 @@ namespace P2PTank.Scenes
             /////
 
             /// Create Player
-            Entity player = await this.CreatePlayer(gameplayManager);
+            Entity player = this.CreatePlayer(gameplayManager);
 
             //var foe1 = gameplayManager.CreateFoe(1);
             //var foe2 = gameplayManager.CreateFoe(2);
@@ -124,23 +124,15 @@ namespace P2PTank.Scenes
             targetCameraBehavior.RefreshCameraLimits();
         }
 
-        private async Task<Entity> CreatePlayer(GamePlayManager gameplayManager)
+        private Entity CreatePlayer(GamePlayManager gameplayManager)
         {
-            var player = gameplayManager.CreatePlayer(0, peerManager);
+            this.playerID = Guid.NewGuid().ToString();
+
+            var player = gameplayManager.CreatePlayer(0, peerManager, this.playerID);
             player.FindComponent<Transform2D>().LocalPosition = this.GetSpawnPoint(0);
             this.EntityManager.Add(player);
 
-            this.playerID = new Guid().ToString();
-
-            var createPlayerMessage = new CreatePlayerMessage
-            {
-                IpAddress = string.Empty, // do we need send the IpAddress?? maybe not
-                PlayerId = this.playerID,
-            };
-
-            var message = peerManager.CreateMessage(P2PMessageType.CreatePlayer, createPlayerMessage);
-
-            await peerManager.SendBroadcastAsync(message);
+            this.SendCreatePlayerMessage();
             return player;
         }
 
@@ -188,7 +180,10 @@ namespace P2PTank.Scenes
                                 break;
                             }
 
-                            this.CreateFoe(this.gameplayManager, createPlayerData.PlayerId);
+                            if (!this.EntityManager.AllEntities.Any(i => i.Name.Equals(createPlayerData.PlayerId)))
+                            {
+                                this.CreateFoe(this.gameplayManager, createPlayerData.PlayerId);
+                            }
 
                             break;
                         case P2PMessageType.Move:
@@ -207,11 +202,38 @@ namespace P2PTank.Scenes
             }
         }
 
+        private List<Peer> ConnectedPeers { get; set; } = new List<Peer>();
+
         private void OnPeerChanged(object sender, PeerChangeEventArgs e)
         {
             foreach (Peer peer in e.Peers)
             {
                 Labels.Add("OnPeerChanged", peer.IpAddress);
+                if (!this.ConnectedPeers.Contains(peer))
+                {
+                    this.ConnectedPeers.Add(peer);
+                    this.SendCreatePlayerMessage(peer);
+                }
+            }
+        }
+
+        private async void SendCreatePlayerMessage(Peer peer = null)
+        {
+            var createPlayerMessage = new CreatePlayerMessage
+            {
+                IpAddress = string.Empty, // do we need send the IpAddress?? maybe not
+                PlayerId = this.playerID,
+            };
+
+            var message = peerManager.CreateMessage(P2PMessageType.CreatePlayer, createPlayerMessage);
+
+            if (peer == null)
+            {
+                await peerManager.SendBroadcastAsync(message);
+            }
+            else
+            {
+                await peerManager.SendMessage(peer.IpAddress, message, TransportType.UDP);
             }
         }
     }

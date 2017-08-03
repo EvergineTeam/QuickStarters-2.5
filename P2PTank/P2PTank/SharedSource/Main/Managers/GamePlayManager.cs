@@ -11,6 +11,7 @@ using WaveEngine.Common.Math;
 using WaveEngine.Common.Physics2D;
 using WaveEngine.Components.Graphics2D;
 using WaveEngine.Framework;
+using WaveEngine.Framework.Diagnostic;
 using WaveEngine.Framework.Graphics;
 using WaveEngine.Framework.Physics2D;
 using WaveEngine.Framework.Services;
@@ -32,13 +33,14 @@ namespace P2PTank.Managers
             this.poolComponent = this.gamePlayScene.EntityManager.FindComponentFromEntityPath<PoolComponent>(GameConstants.ManagerEntityPath);
         }
 
-        public Entity CreatePlayer(int playerIndex, P2PManager peerManager)
+        public Entity CreatePlayer(int playerIndex, P2PManager peerManager, string playerID)
         {
             var category = ColliderCategory2D.Cat2;
             var collidesWith = ColliderCategory2D.Cat3 | ColliderCategory2D.Cat4 | ColliderCategory2D.Cat5;
 
             var entity = this.CreateBaseTank(playerIndex, category, collidesWith);
-            entity.AddComponent(new PlayerInputBehavior(peerManager))
+            entity.Name = playerID;
+            entity.AddComponent(new PlayerInputBehavior(peerManager, playerID))
                  .AddComponent(new RigidBody2D
                  {
                      AngularDamping = 5.0f,
@@ -49,10 +51,12 @@ namespace P2PTank.Managers
 
         public Entity CreateFoe(int playerIndex, P2PManager peerManager, string foeID)
         {
+            Labels.Add("foeID", foeID);
             var category = ColliderCategory2D.Cat4;
             var collidesWith = ColliderCategory2D.Cat1 | ColliderCategory2D.Cat3 | ColliderCategory2D.Cat4 | ColliderCategory2D.Cat5;
 
             var entity = this.CreateBaseTank(playerIndex, category, collidesWith);
+            entity.Name = foeID;
             entity.AddComponent(new NetworkInputBehavior(peerManager) { PlayerID = foeID });
             return entity;
         }

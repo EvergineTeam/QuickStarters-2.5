@@ -71,7 +71,7 @@ namespace P2PTank.Scenes
                 .AddComponent(new Sprite(WaveContent.Assets.Textures.tankBody_png))
                 .AddComponent(new SpriteRenderer())
                 .AddComponent(new TankComponent())
-                .AddComponent(new PlayerInputBehavior(this.peerManager));
+                .AddComponent(new PlayerInputBehavior(this.peerManager, "player1"));
             this.EntityManager.Add(foe);
         }
 

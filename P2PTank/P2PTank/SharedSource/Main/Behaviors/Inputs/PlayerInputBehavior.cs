@@ -18,6 +18,8 @@ namespace P2PTank.Behaviors
 {
     public class PlayerInputBehavior : Behavior
     {
+        public string PlayerID { get; set; }
+
         private struct PlayerCommand
         {
             public float Move { get; private set; }
@@ -68,8 +70,9 @@ namespace P2PTank.Behaviors
 
         private float shootTimer;
 
-        public PlayerInputBehavior(P2PManager peerManager = null)
+        public PlayerInputBehavior(P2PManager peerManager, string playerID)
         {
+            this.PlayerID = playerID;
             this.peerManager = peerManager;
         }
 
@@ -96,6 +99,40 @@ namespace P2PTank.Behaviors
             this.HandlePad(input, ref playerCommand);
 
             this.RunInputCommands(playerCommand, elapsedTime);
+
+            this.HandleNetworkMessages();
+        }
+
+        private async void HandleNetworkMessages()
+        {
+            if (this.peerManager != null)
+            {
+                if (this.rigidBody.Awake)
+                {
+                    var moveMessage = new MoveMessage()
+                    {
+                        PlayerId = this.PlayerID,
+                        X = this.transform.LocalPosition.X,
+                        Y = this.transform.LocalPosition.Y,
+                    };
+                    await this.peerManager.SendBroadcastAsync(this.peerManager.CreateMessage(P2PMessageType.Move, moveMessage));
+
+                    var rotateMessage = new RotateMessage()
+                    {
+                        PlayerId = this.PlayerID,
+                        Rotation = this.transform.Rotation,
+                    };
+                    await this.peerManager.SendBroadcastAsync(this.peerManager.CreateMessage(P2PMessageType.Rotate, rotateMessage));
+                }
+
+                var barrelRotateMessage = new BarrelRotate()
+                {
+                    PlayerId = this.PlayerID,
+                    Rotation = this.barrelTransform.Rotation,
+                };
+
+                await this.peerManager.SendBroadcastAsync(this.peerManager.CreateMessage(P2PMessageType.BarrelRotate, barrelRotateMessage));
+            }
         }
 
         private void RunInputCommands(PlayerCommand playerCommand, float elapsedTime)
@@ -192,7 +229,7 @@ namespace P2PTank.Behaviors
             }
         }
 
-        private async void Move(float forward, float elapsedTime)
+        private void Move(float forward, float elapsedTime)
         {
             if (forward == 0)
             {
@@ -203,18 +240,6 @@ namespace P2PTank.Behaviors
             //this.rigidBody.ApplyLinearImpulse(forward * (orientation * Vector3.UnitY * elapsedTime * this.tankComponent.CurrentSpeed).ToVector2(), this.transform.Position);
             this.rigidBody.LinearVelocity = forward * (orientation * Vector3.UnitY * elapsedTime * this.tankComponent.CurrentSpeed).ToVector2();
             //this.transform.LocalPosition += forward * (orientation * Vector3.UnitY * elapsedTime * this.tankComponent.CurrentSpeed).ToVector2();
-
-            if (this.peerManager != null)
-            {
-                var moveMessage = new MoveMessage()
-                {
-                    PlayerId = "Player1",
-                    X = this.transform.LocalPosition.X,
-                    Y = this.transform.LocalPosition.Y,
-                };
-
-                await this.peerManager.SendBroadcastAsync(this.peerManager.CreateMessage(P2PMessageType.Move, moveMessage));
-            }
         }
 
         private void Rotate(float left, float elapsedTime)
@@ -229,7 +254,7 @@ namespace P2PTank.Behaviors
             this.rigidBody.AngularVelocity = roll;
         }
 
-        private void RotateBarrel(float left, float elapsedTime)
+        private async void RotateBarrel(float left, float elapsedTime)
         {
             if (left == 0)
             {
