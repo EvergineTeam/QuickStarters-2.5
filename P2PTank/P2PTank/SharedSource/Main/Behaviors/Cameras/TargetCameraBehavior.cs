@@ -89,10 +89,10 @@ namespace P2PTank.Behaviors.Cameras
                 new Vector2((virtualScreenManager.RightEdge - virtualScreenManager.LeftEdge) / 2,
                 (virtualScreenManager.TopEdge - virtualScreenManager.BottomEdge) / 2);
 
-            this.pixelLimitMax.X = this.max.X - (halfScreenSize.X * this.transform.XScale);
-            this.pixelLimitMax.Y = this.max.Y + (halfScreenSize.Y * this.transform.YScale);
-            this.pixelLimitMin.X = this.min.X + (halfScreenSize.X * this.transform.XScale);
-            this.pixelLimitMin.Y = this.min.Y - (halfScreenSize.Y * this.transform.YScale);
+            this.pixelLimitMax.X = this.max.X - (halfScreenSize.X * this.transform.XScale) - 1;
+            this.pixelLimitMax.Y = this.max.Y + (halfScreenSize.Y * this.transform.YScale) - 1;
+            this.pixelLimitMin.X = this.min.X + (halfScreenSize.X * this.transform.XScale) + 1;
+            this.pixelLimitMin.Y = this.min.Y - (halfScreenSize.Y * this.transform.YScale) + 1;
 
             if (this.pixelLimitMin.Y > this.pixelLimitMax.Y)
             {
