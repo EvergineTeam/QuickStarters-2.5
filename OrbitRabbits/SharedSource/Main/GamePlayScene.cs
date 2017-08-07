@@ -20,22 +20,6 @@ namespace OrbitRabbits
 {
     public class GamePlayScene : Scene
     {
-        public Entity DetaultCamera2D
-        {
-            get
-            {
-                return this.EntityManager.Find("defaultCamera2D");
-            }
-        }
-
-        public Entity TapHand
-        {
-            get
-            {
-                return this.EntityManager.Find("TapHand");
-            }
-        }
-
         protected override void CreateScene()
         {
             this.Load(WaveContent.Scenes.GamePlayScene);  
@@ -54,16 +38,6 @@ namespace OrbitRabbits
                 Margin = new Thickness(10, -120, 0, 0)
             };
             EntityManager.Add(restart);
-
-            // Score Panel            
-            var scorePanel = new ScorePanel("ScorePanel")
-            {
-                HorizontalAlignment = HorizontalAlignment.Center,
-                VerticalAlignment = VerticalAlignment.Top,
-                Margin = new Thickness(0, 0, -250, 0)
-            };
-
-            EntityManager.Add(scorePanel);
         }
     }
 }

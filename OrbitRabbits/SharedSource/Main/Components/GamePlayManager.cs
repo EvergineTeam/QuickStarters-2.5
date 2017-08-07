@@ -48,11 +48,11 @@ namespace OrbitRabbits.Components
             }
         }
 
-        public ScorePanel ScorePanel
+        public ScoreComponent ScorePanel
         {
             get
             {
-                return this.EntityManager.Find<ScorePanel>("ScorePanel");
+                return this.EntityManager.FindComponentFromEntityPath<ScoreComponent>("scorePanel");
             }
         }
 
