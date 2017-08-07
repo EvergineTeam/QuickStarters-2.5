@@ -120,7 +120,7 @@ namespace SuperSlingshot.Scenes
 
         private void PauseButtonStateChanged(object sender, WaveEngine.Common.Input.ButtonState currentState, WaveEngine.Common.Input.ButtonState lastState)
         {
-            if (currentState == ButtonState.Release && lastState == ButtonState.Pressed)
+            if (currentState == ButtonState.Released && lastState == ButtonState.Pressed)
             {
                 var manager = WaveServices.GetService<GamePlayManager>();
                 if (!manager.IsPaused)

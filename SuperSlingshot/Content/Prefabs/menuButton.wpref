@@ -27,14 +27,14 @@
               <d7p1:Y>1</d7p1:Y>
               <d7p1:Z>1</d7p1:Z>
             </d6p1:LocalScale>
-            <d6p1:Effect>None</d6p1:Effect>
             <d6p1:Opacity>1</d6p1:Opacity>
             <d6p1:Rectangle xmlns:d7p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
-              <d7p1:Height>79</d7p1:Height>
-              <d7p1:Width>51</d7p1:Width>
-              <d7p1:X>-25.5</d7p1:X>
-              <d7p1:Y>39.5</d7p1:Y>
+              <d7p1:Height>79.5</d7p1:Height>
+              <d7p1:Width>17.5</d7p1:Width>
+              <d7p1:X>-8.75</d7p1:X>
+              <d7p1:Y>39.75</d7p1:Y>
             </d6p1:Rectangle>
+            <d6p1:effect>None</d6p1:effect>
             <d6p1:origin xmlns:d7p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
               <d7p1:X>0.5</d7p1:X>
               <d7p1:Y>0.5</d7p1:Y>
@@ -46,7 +46,8 @@
             <d6p1:transformMode>Standard</d6p1:transformMode>
           </d5p1:Component>
           <d5p1:Component xmlns:d6p1="WaveEngine.Components.Toolkit" i:type="d6p1:TextComponent">
-            <d6p1:fontPath>Content/Assets/Fonts/Komika Axis_36.ttf.wpk</d6p1:fontPath>
+            <d6p1:alpha>1</d6p1:alpha>
+            <d6p1:fontPath>Content/Assets/Fonts/Komika Axis_72.ttf.wpk</d6p1:fontPath>
             <d6p1:foreground xmlns:d7p1="WaveEngine.Common.Graphics">
               <d7p1:A>255</d7p1:A>
               <d7p1:B>0</d7p1:B>
@@ -59,10 +60,10 @@
               <d7p1:Y>0.5</d7p1:Y>
             </d6p1:origin>
             <d6p1:scale xmlns:d7p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
-              <d7p1:X>1</d7p1:X>
-              <d7p1:Y>1</d7p1:Y>
+              <d7p1:X>0.5</d7p1:X>
+              <d7p1:Y>0.5</d7p1:Y>
             </d6p1:scale>
-            <d6p1:text i:nil="true" />
+            <d6p1:text></d6p1:text>
             <d6p1:textAlignment>Left</d6p1:textAlignment>
             <d6p1:textWrapping>false</d6p1:textWrapping>
             <d6p1:width>300</d6p1:width>
@@ -98,7 +99,6 @@
           <d5p1:Y>0.8</d5p1:Y>
           <d5p1:Z>1</d5p1:Z>
         </d4p1:LocalScale>
-        <d4p1:Effect>None</d4p1:Effect>
         <d4p1:Opacity>1</d4p1:Opacity>
         <d4p1:Rectangle xmlns:d5p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
           <d5p1:Height>178</d5p1:Height>
@@ -106,6 +106,7 @@
           <d5p1:X>0</d5p1:X>
           <d5p1:Y>0</d5p1:Y>
         </d4p1:Rectangle>
+        <d4p1:effect>None</d4p1:effect>
         <d4p1:origin xmlns:d5p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
           <d5p1:X>0.5</d5p1:X>
           <d5p1:Y>0.5</d5p1:Y>
@@ -142,8 +143,8 @@
         <d4p1:rotationOffset>0</d4p1:rotationOffset>
       </d3p1:Component>
       <d3p1:Component xmlns:d4p1="WaveEngine.Components.Gestures" i:type="d4p1:TouchGestures">
-        <d3p1:IsActive>true</d3p1:IsActive>
         <d3p1:UpdateOrder>0.5</d3p1:UpdateOrder>
+        <d3p1:isDisabled>false</d3p1:isDisabled>
         <d4p1:EnabledGestures>None</d4p1:EnabledGestures>
         <d4p1:ManualTouchOrder>false</d4p1:ManualTouchOrder>
         <d4p1:MaxScale>5</d4p1:MaxScale>
@@ -175,6 +176,7 @@
         <d3p1:IsVisible>true</d3p1:IsVisible>
         <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
         <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
+        <d4p1:DrawMode>Simple</d4p1:DrawMode>
         <d4p1:SamplerMode>LinearClamp</d4p1:SamplerMode>
       </d3p1:Component>
     </d2p1:SerializeComponents>

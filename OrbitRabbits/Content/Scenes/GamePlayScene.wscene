@@ -698,7 +698,7 @@
               <d7p1:Rectangle xmlns:d8p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                 <d8p1:Height>27</d8p1:Height>
                 <d8p1:Width>32</d8p1:Width>
-                <d8p1:X>0</d8p1:X>
+                <d8p1:X>-0</d8p1:X>
                 <d8p1:Y>13.5</d8p1:Y>
               </d7p1:Rectangle>
               <d7p1:effect>None</d7p1:effect>
@@ -771,7 +771,7 @@
               <d7p1:Rectangle xmlns:d8p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                 <d8p1:Height>27</d8p1:Height>
                 <d8p1:Width>32</d8p1:Width>
-                <d8p1:X>0</d8p1:X>
+                <d8p1:X>-0</d8p1:X>
                 <d8p1:Y>13.5</d8p1:Y>
               </d7p1:Rectangle>
               <d7p1:effect>None</d7p1:effect>

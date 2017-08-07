@@ -80,7 +80,7 @@ namespace SuperSlingshot.Scenes
 
         private void HomeStateChanged(object sender, ButtonState currentState, ButtonState lastState)
         {
-            if (currentState == ButtonState.Release && lastState == ButtonState.Pressed)
+            if (currentState == ButtonState.Released && lastState == ButtonState.Pressed)
             {
                 this.navigationManager.InitialNavigation();
             }
@@ -88,7 +88,7 @@ namespace SuperSlingshot.Scenes
 
         private void MenuStateChanged(object sender, ButtonState currentState, ButtonState lastState)
         {
-            if (currentState == ButtonState.Release && lastState == ButtonState.Pressed)
+            if (currentState == ButtonState.Released && lastState == ButtonState.Pressed)
             {
                 this.navigationManager.NavigateToLevelSelection();
             }
@@ -96,7 +96,7 @@ namespace SuperSlingshot.Scenes
 
         private void ReplayStateChanged(object sender, ButtonState currentState, ButtonState lastState)
         {
-            if (currentState == ButtonState.Release && lastState == ButtonState.Pressed)
+            if (currentState == ButtonState.Released && lastState == ButtonState.Pressed)
             {
                 this.navigationManager.ReplayLevel();
             }
@@ -104,7 +104,7 @@ namespace SuperSlingshot.Scenes
 
         private void NextStateChanged(object sender, ButtonState currentState, ButtonState lastState)
         {
-            if (currentState == ButtonState.Release && lastState == ButtonState.Pressed)
+            if (currentState == ButtonState.Released && lastState == ButtonState.Pressed)
             {
                 this.navigationManager.NavigateToNextLevel();
             }

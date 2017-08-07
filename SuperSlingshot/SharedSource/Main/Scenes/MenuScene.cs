@@ -46,7 +46,7 @@ namespace SuperSlingshot.Scenes
 
         private void ResumeButtonStateChanged(object sender, ButtonState currentState, ButtonState lastState)
         {
-            if (currentState == ButtonState.Release && lastState == ButtonState.Pressed)
+            if (currentState == ButtonState.Released && lastState == ButtonState.Pressed)
             {
                 this.gamePlayManager.ResumeGame();
             }
@@ -54,7 +54,7 @@ namespace SuperSlingshot.Scenes
 
         private void RestartButtonStateChanged(object sender, ButtonState currentState, ButtonState lastState)
         {
-            if (currentState == ButtonState.Release && lastState == ButtonState.Pressed)
+            if (currentState == ButtonState.Released && lastState == ButtonState.Pressed)
             {
                 // TODO:
             }
@@ -62,7 +62,7 @@ namespace SuperSlingshot.Scenes
 
         private void ExitButtonStateChanged(object sender, ButtonState currentState, ButtonState lastState)
         {
-            if (currentState == ButtonState.Release && lastState == ButtonState.Pressed)
+            if (currentState == ButtonState.Released && lastState == ButtonState.Pressed)
             {
                 this.navigationManager.InitialNavigation();
             }
