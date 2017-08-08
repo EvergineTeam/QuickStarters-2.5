@@ -75,15 +75,6 @@ namespace P2PTank.Managers
             var bulletID = Guid.NewGuid().ToString();
             var behavior = new BulletBehavior(peerManager, bulletID, this.playerID);
             entity.AddComponent(behavior);
-            entity.AddComponent(new RigidBody2D
-            {
-                PhysicBodyType = RigidBodyType2D.Dynamic,
-                IsBullet = true,
-
-                FixedRotation = true,
-                AngularDamping = 0,
-                LinearDamping = 0
-            });
 
             this.gamePlayScene.EntityManager.Add(entity);
             behavior.Shoot(position, direction);
@@ -152,6 +143,16 @@ namespace P2PTank.Managers
                 collider.CollisionCategories = category;
                 collider.CollidesWith = collidesWith;
             }
+
+            entity.AddComponent(new RigidBody2D
+            {
+                PhysicBodyType = RigidBodyType2D.Dynamic,
+                IsBullet = true,
+
+                FixedRotation = true,
+                AngularDamping = 0,
+                LinearDamping = 0
+            });
 
             return entity;
         }
