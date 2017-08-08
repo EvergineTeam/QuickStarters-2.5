@@ -4,6 +4,7 @@ using System;
 using WaveEngine.Common.Graphics;
 using WaveEngine.Common.Math;
 using WaveEngine.Components;
+using WaveEngine.Components.Toolkit;
 using WaveEngine.Components.Transitions;
 using WaveEngine.Components.UI;
 using WaveEngine.Framework;
@@ -49,28 +50,7 @@ namespace SuperSquid.Scenes
             play.Entity.AddComponent(new AnimationUI());
             EntityManager.Add(play);
 
-            // Best Scores
-            TextBlock bestScores = new TextBlock("BestScores")
-            {
-                FontPath = WaveContent.Assets.Fonts.Bulky_Pixels_16_TTF,
-                Text = "your best score:",
-                Foreground = new Color(223 / 255f, 244 / 255f, 255 / 255f),
-                HorizontalAlignment = HorizontalAlignment.Left,
-                VerticalAlignment = VerticalAlignment.Bottom,
-                Margin = new Thickness(161, 0, 0, 30),
-            };
-            EntityManager.Add(bestScores);
-
-            // Scores
-            TextBlock scores = new TextBlock()
-            {
-                FontPath = WaveContent.Assets.Fonts.Bulky_Pixels_26_TTF,
-                Text = this.gameStorage.BestScore.ToString(),
-                HorizontalAlignment = HorizontalAlignment.Left,
-                VerticalAlignment = VerticalAlignment.Bottom,
-                Margin = new Thickness(440, 0, 0, 40),
-            };
-            EntityManager.Add(scores);
+            this.EntityManager.FindComponentFromEntityPath<TextComponent>("score.bestScoreText").Text = this.gameStorage.BestScore.ToString();
         }
 
 #if ANDROID
