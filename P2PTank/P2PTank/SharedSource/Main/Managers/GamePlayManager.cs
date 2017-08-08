@@ -108,6 +108,7 @@ namespace P2PTank.Managers
 
             var entity = this.CreateBaseBullet(category, collidesWith, color);
             entity.AddComponent(new BulletNetworkBehavior(peerManager, bulletID, playerID));
+            this.EntityManager.Add(entity);
             return entity;
         }
 
