@@ -70,7 +70,7 @@ namespace P2PTank.Managers
         {
             var category = ColliderCategory2D.Cat2;
             var collidesWith = ColliderCategory2D.Cat3 | ColliderCategory2D.Cat4;
-
+            
             var entity = this.CreateBaseBullet(category, collidesWith, color);
             var bulletID = Guid.NewGuid().ToString();
             var behavior = new BulletBehavior(peerManager, bulletID, this.playerID);
@@ -78,6 +78,8 @@ namespace P2PTank.Managers
 
             this.gamePlayScene.EntityManager.Add(entity);
             behavior.Shoot(position, direction);
+
+            this.gamePlayScene.AddActiveBullet(bulletID);
 
             if (peerManager != null)
             {

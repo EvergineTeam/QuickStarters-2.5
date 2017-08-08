@@ -167,7 +167,7 @@ namespace P2PTank.Scenes
             var messageReceived = Encoding.ASCII.GetString(e.Message);
             Labels.Add("OnMsgReceived", messageReceived);
 
-            if(messageReceived.Contains("Create"))
+            if (messageReceived.Contains("Create"))
             {
             }
 
@@ -211,7 +211,7 @@ namespace P2PTank.Scenes
                                 break;
                             }
 
-                            this.activeBullets.Add(createBulletData.BulletID);
+                            this.AddActiveBullet(createBulletData.BulletID);
                             this.gameplayManager.CreateFoeBullet(createBulletData.Color, this.playerID, createBulletData.BulletID, peerManager);
                             break;
                         case P2PMessageType.BulletDestroy:
@@ -221,6 +221,11 @@ namespace P2PTank.Scenes
                     }
                 }
             }
+        }
+
+        public void AddActiveBullet(string id)
+        {
+            this.activeBullets.Add(id);
         }
 
         private void OnPeerChanged(object sender, PeerChangeEventArgs e)
