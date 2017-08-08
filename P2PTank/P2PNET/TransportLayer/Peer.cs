@@ -3,8 +3,6 @@ using System.Threading.Tasks;
 using System.IO;
 using Sockets.Plugin.Abstractions;
 using P2PNET.TransportLayer.EventArgs;
-using System.Text;
-using System.Linq;
 
 namespace P2PNET.TransportLayer
 {

@@ -74,12 +74,6 @@ namespace P2PTank.Behaviors
                                 this.BarrelRotate(barrelRotateData.Rotation);
                             }
                             break;
-                    //    case P2PMessageType.Shoot:
-                    //        var shootData = message.Value as ShootMessage;
-                    //        break;
-                    //    case P2PMessageType.Destroy:
-                    //        var destroyData = message.Value as DestroyMessage;
-                    //        break;
                     }
                 }
             }

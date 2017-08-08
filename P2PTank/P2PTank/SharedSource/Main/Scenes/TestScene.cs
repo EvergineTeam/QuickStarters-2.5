@@ -245,7 +245,7 @@ namespace P2PTank.Scenes
         {
             var createPlayerMessage = new CreatePlayerMessage
             {
-                IpAddress = string.Empty, // do we need send the IpAddress?? maybe not
+                IpAddress = string.Empty, // Do we need send the IpAddress?? maybe not
                 PlayerId = this.playerID,
             };
 

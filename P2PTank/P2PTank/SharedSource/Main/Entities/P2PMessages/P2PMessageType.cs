@@ -10,6 +10,6 @@
         Destroy,
         BulletMove,
         BulletDestroy,
-        BulletCreate,
+        BulletCreate
     }
 }
