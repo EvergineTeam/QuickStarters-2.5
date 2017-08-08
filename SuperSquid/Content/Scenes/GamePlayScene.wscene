@@ -26,7 +26,6 @@
             <d6p1:Y>1</d6p1:Y>
             <d6p1:Z>1</d6p1:Z>
           </d5p1:LocalScale>
-          <d5p1:Effect>None</d5p1:Effect>
           <d5p1:Opacity>1</d5p1:Opacity>
           <d5p1:Rectangle xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
             <d6p1:Height>0</d6p1:Height>
@@ -34,6 +33,7 @@
             <d6p1:X>0</d6p1:X>
             <d6p1:Y>0</d6p1:Y>
           </d5p1:Rectangle>
+          <d5p1:effect>None</d5p1:effect>
           <d5p1:origin xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
             <d6p1:X>0</d6p1:X>
             <d6p1:Y>0</d6p1:Y>
@@ -110,7 +110,6 @@
             <d6p1:Y>1</d6p1:Y>
             <d6p1:Z>1</d6p1:Z>
           </d5p1:LocalScale>
-          <d5p1:Effect>None</d5p1:Effect>
           <d5p1:Opacity>1</d5p1:Opacity>
           <d5p1:Rectangle xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
             <d6p1:Height>0</d6p1:Height>
@@ -118,6 +117,7 @@
             <d6p1:X>0</d6p1:X>
             <d6p1:Y>0</d6p1:Y>
           </d5p1:Rectangle>
+          <d5p1:effect>None</d5p1:effect>
           <d5p1:origin xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
             <d6p1:X>0</d6p1:X>
             <d6p1:Y>0</d6p1:Y>
@@ -158,7 +158,6 @@
                 <d8p1:Y>1</d8p1:Y>
                 <d8p1:Z>1</d8p1:Z>
               </d7p1:LocalScale>
-              <d7p1:Effect>None</d7p1:Effect>
               <d7p1:Opacity>1</d7p1:Opacity>
               <d7p1:Rectangle xmlns:d8p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                 <d8p1:Height>0</d8p1:Height>
@@ -166,6 +165,7 @@
                 <d8p1:X>0</d8p1:X>
                 <d8p1:Y>0</d8p1:Y>
               </d7p1:Rectangle>
+              <d7p1:effect>None</d7p1:effect>
               <d7p1:origin xmlns:d8p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                 <d8p1:X>0.5</d8p1:X>
                 <d8p1:Y>0.5</d8p1:Y>
@@ -175,13 +175,6 @@
                 <d8p1:Y>0</d8p1:Y>
               </d7p1:screenPosition>
               <d7p1:transformMode>Standard</d7p1:transformMode>
-            </d6p1:Component>
-            <d6p1:Component xmlns:d7p1="WaveEngine.Components.Graphics3D" i:type="d7p1:MaterialsMap">
-              <d7p1:DefaultMaterialPath>Content/Assets/Materials/WaterParticleMaterial.wmat</d7p1:DefaultMaterialPath>
-              <d7p1:MaterialsPath xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
-              <d7p1:UseMaterialCopy>false</d7p1:UseMaterialCopy>
-              <d7p1:useDefaultMaterial>false</d7p1:useDefaultMaterial>
-              <d7p1:useDummyMaterial>false</d7p1:useDummyMaterial>
             </d6p1:Component>
             <d6p1:Component xmlns:d7p1="WaveEngine.Components.Particles" i:type="d7p1:ParticleSystem2D">
               <d7p1:AlphaEnabled>true</d7p1:AlphaEnabled>
@@ -247,6 +240,12 @@
               <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
               <LayerTypeName i:nil="true" xmlns="WaveEngine.Framework.Graphics" />
             </d6p1:Component>
+            <d6p1:Component xmlns:d7p1="http://schemas.datacontract.org/2004/07/WaveEngine.Components.Graphics3D" i:type="d7p1:MaterialComponent">
+              <d7p1:AsignedTo i:nil="true" />
+              <d7p1:MaterialPath>Content/Assets/Materials/WaterParticleMaterial.wmat</d7p1:MaterialPath>
+              <d7p1:UseCopy>false</d7p1:UseCopy>
+              <d7p1:useDummyMaterial>false</d7p1:useDummyMaterial>
+            </d6p1:Component>
           </d2p1:SerializeComponents>
         </d2p1:BaseEntityModel>
       </d2p1:SerializeChildrens>
@@ -273,7 +272,6 @@
             <d6p1:Y>1</d6p1:Y>
             <d6p1:Z>1</d6p1:Z>
           </d5p1:LocalScale>
-          <d5p1:Effect>None</d5p1:Effect>
           <d5p1:Opacity>1</d5p1:Opacity>
           <d5p1:Rectangle xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
             <d6p1:Height>280</d6p1:Height>
@@ -281,6 +279,7 @@
             <d6p1:X>0</d6p1:X>
             <d6p1:Y>0</d6p1:Y>
           </d5p1:Rectangle>
+          <d5p1:effect>None</d5p1:effect>
           <d5p1:origin xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
             <d6p1:X>0.5</d6p1:X>
             <d6p1:Y>0.22</d6p1:Y>
@@ -309,8 +308,8 @@
           <d5p1:SamplerMode>LinearClamp</d5p1:SamplerMode>
         </d4p1:Component>
         <d4p1:Component xmlns:d5p1="WaveEngine.Components.Animation" i:type="d5p1:Animation2D">
-          <d4p1:IsActive>true</d4p1:IsActive>
           <d4p1:UpdateOrder>0.5</d4p1:UpdateOrder>
+          <d4p1:isDisabled>false</d4p1:isDisabled>
           <d5p1:CurrentAnimation>Anim</d5p1:CurrentAnimation>
           <d5p1:PlayAutomatically>true</d5p1:PlayAutomatically>
           <d5p1:currentAnimation>Anim</d5p1:currentAnimation>
@@ -636,12 +635,12 @@
           </d5p1:vertices>
         </d4p1:Component>
         <d4p1:Component xmlns:d5p1="SuperSquid.Entities.Behaviors" i:type="d5p1:SquidBehavior">
-          <d4p1:IsActive>true</d4p1:IsActive>
           <d4p1:UpdateOrder>0.5</d4p1:UpdateOrder>
+          <d4p1:isDisabled>false</d4p1:isDisabled>
         </d4p1:Component>
         <d4p1:Component xmlns:d5p1="WaveEngine.Framework.Animation" i:type="d5p1:AnimationUI">
-          <d4p1:IsActive>true</d4p1:IsActive>
           <d4p1:UpdateOrder>0.5</d4p1:UpdateOrder>
+          <d4p1:isDisabled>false</d4p1:isDisabled>
           <d5p1:State>Stopped</d5p1:State>
         </d4p1:Component>
       </d2p1:SerializeComponents>
@@ -675,7 +674,6 @@
                     <d10p1:Y>1</d10p1:Y>
                     <d10p1:Z>1</d10p1:Z>
                   </d9p1:LocalScale>
-                  <d9p1:Effect>None</d9p1:Effect>
                   <d9p1:Opacity>1</d9p1:Opacity>
                   <d9p1:Rectangle xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:Height>160</d10p1:Height>
@@ -683,6 +681,7 @@
                     <d10p1:X>0</d10p1:X>
                     <d10p1:Y>0</d10p1:Y>
                   </d9p1:Rectangle>
+                  <d9p1:effect>None</d9p1:effect>
                   <d9p1:origin xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:X>0.5</d10p1:X>
                     <d10p1:Y>0.5</d10p1:Y>
@@ -711,8 +710,8 @@
                   <d9p1:SamplerMode>LinearClamp</d9p1:SamplerMode>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="WaveEngine.Components.Animation" i:type="d9p1:Animation2D">
-                  <d8p1:IsActive>true</d8p1:IsActive>
                   <d8p1:UpdateOrder>0.5</d8p1:UpdateOrder>
+                  <d8p1:isDisabled>false</d8p1:isDisabled>
                   <d9p1:CurrentAnimation>Anim</d9p1:CurrentAnimation>
                   <d9p1:PlayAutomatically>true</d9p1:PlayAutomatically>
                   <d9p1:currentAnimation>Anim</d9p1:currentAnimation>
@@ -1474,8 +1473,8 @@
                   </d9p1:vertices>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="WaveEngine.Framework.Animation" i:type="d9p1:AnimationUI">
-                  <d8p1:IsActive>true</d8p1:IsActive>
                   <d8p1:UpdateOrder>0.5</d8p1:UpdateOrder>
+                  <d8p1:isDisabled>false</d8p1:isDisabled>
                   <d9p1:State>Stopped</d9p1:State>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="SuperSquid.Components" i:type="d9p1:JellyFishController">
@@ -1508,7 +1507,6 @@
                     <d10p1:Y>0.7472328</d10p1:Y>
                     <d10p1:Z>1</d10p1:Z>
                   </d9p1:LocalScale>
-                  <d9p1:Effect>None</d9p1:Effect>
                   <d9p1:Opacity>1</d9p1:Opacity>
                   <d9p1:Rectangle xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:Height>100</d10p1:Height>
@@ -1516,6 +1514,7 @@
                     <d10p1:X>0</d10p1:X>
                     <d10p1:Y>0</d10p1:Y>
                   </d9p1:Rectangle>
+                  <d9p1:effect>None</d9p1:effect>
                   <d9p1:origin xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:X>0.5</d10p1:X>
                     <d10p1:Y>0.5</d10p1:Y>
@@ -1542,6 +1541,7 @@
                   <d8p1:IsVisible>true</d8p1:IsVisible>
                   <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
                   <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
+                  <d9p1:DrawMode>Simple</d9p1:DrawMode>
                   <d9p1:SamplerMode>LinearClamp</d9p1:SamplerMode>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="WaveEngine.Framework.Physics3D" i:type="d9p1:CircleCollider2D">
@@ -1592,7 +1592,6 @@
                     <d10p1:Y>1.02397072</d10p1:Y>
                     <d10p1:Z>1</d10p1:Z>
                   </d9p1:LocalScale>
-                  <d9p1:Effect>None</d9p1:Effect>
                   <d9p1:Opacity>1</d9p1:Opacity>
                   <d9p1:Rectangle xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:Height>100</d10p1:Height>
@@ -1600,6 +1599,7 @@
                     <d10p1:X>0</d10p1:X>
                     <d10p1:Y>0</d10p1:Y>
                   </d9p1:Rectangle>
+                  <d9p1:effect>None</d9p1:effect>
                   <d9p1:origin xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:X>0.5</d10p1:X>
                     <d10p1:Y>0.5</d10p1:Y>
@@ -1626,6 +1626,7 @@
                   <d8p1:IsVisible>true</d8p1:IsVisible>
                   <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
                   <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
+                  <d9p1:DrawMode>Simple</d9p1:DrawMode>
                   <d9p1:SamplerMode>LinearClamp</d9p1:SamplerMode>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="WaveEngine.Framework.Physics3D" i:type="d9p1:CircleCollider2D">
@@ -1676,7 +1677,6 @@
                     <d10p1:Y>1</d10p1:Y>
                     <d10p1:Z>1</d10p1:Z>
                   </d9p1:LocalScale>
-                  <d9p1:Effect>None</d9p1:Effect>
                   <d9p1:Opacity>1</d9p1:Opacity>
                   <d9p1:Rectangle xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:Height>160</d10p1:Height>
@@ -1684,6 +1684,7 @@
                     <d10p1:X>0</d10p1:X>
                     <d10p1:Y>0</d10p1:Y>
                   </d9p1:Rectangle>
+                  <d9p1:effect>None</d9p1:effect>
                   <d9p1:origin xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:X>0.5</d10p1:X>
                     <d10p1:Y>0.5</d10p1:Y>
@@ -1712,8 +1713,8 @@
                   <d9p1:SamplerMode>LinearClamp</d9p1:SamplerMode>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="WaveEngine.Components.Animation" i:type="d9p1:Animation2D">
-                  <d8p1:IsActive>true</d8p1:IsActive>
                   <d8p1:UpdateOrder>0.5</d8p1:UpdateOrder>
+                  <d8p1:isDisabled>false</d8p1:isDisabled>
                   <d9p1:CurrentAnimation>Anim</d9p1:CurrentAnimation>
                   <d9p1:PlayAutomatically>true</d9p1:PlayAutomatically>
                   <d9p1:currentAnimation>Anim</d9p1:currentAnimation>
@@ -2475,8 +2476,8 @@
                   </d9p1:vertices>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="WaveEngine.Framework.Animation" i:type="d9p1:AnimationUI">
-                  <d8p1:IsActive>true</d8p1:IsActive>
                   <d8p1:UpdateOrder>0.5</d8p1:UpdateOrder>
+                  <d8p1:isDisabled>false</d8p1:isDisabled>
                   <d9p1:State>Stopped</d9p1:State>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="SuperSquid.Components" i:type="d9p1:JellyFishController">
@@ -2509,7 +2510,6 @@
                     <d10p1:Y>1</d10p1:Y>
                     <d10p1:Z>1</d10p1:Z>
                   </d9p1:LocalScale>
-                  <d9p1:Effect>None</d9p1:Effect>
                   <d9p1:Opacity>1</d9p1:Opacity>
                   <d9p1:Rectangle xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:Height>380</d10p1:Height>
@@ -2517,6 +2517,7 @@
                     <d10p1:X>0</d10p1:X>
                     <d10p1:Y>0</d10p1:Y>
                   </d9p1:Rectangle>
+                  <d9p1:effect>None</d9p1:effect>
                   <d9p1:origin xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:X>0.5</d10p1:X>
                     <d10p1:Y>0.5</d10p1:Y>
@@ -2545,8 +2546,8 @@
                   <d9p1:SamplerMode>LinearClamp</d9p1:SamplerMode>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="WaveEngine.Components.Animation" i:type="d9p1:Animation2D">
-                  <d8p1:IsActive>true</d8p1:IsActive>
                   <d8p1:UpdateOrder>0.5</d8p1:UpdateOrder>
+                  <d8p1:isDisabled>false</d8p1:isDisabled>
                   <d9p1:CurrentAnimation>Anim</d9p1:CurrentAnimation>
                   <d9p1:PlayAutomatically>true</d9p1:PlayAutomatically>
                   <d9p1:currentAnimation>Anim</d9p1:currentAnimation>
@@ -3992,8 +3993,8 @@
                   </d9p1:vertices>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="WaveEngine.Framework.Animation" i:type="d9p1:AnimationUI">
-                  <d8p1:IsActive>true</d8p1:IsActive>
                   <d8p1:UpdateOrder>0.5</d8p1:UpdateOrder>
+                  <d8p1:isDisabled>false</d8p1:isDisabled>
                   <d9p1:State>Stopped</d9p1:State>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="SuperSquid.Components" i:type="d9p1:JellyFishController">
@@ -4028,7 +4029,6 @@
                         <d12p1:Y>1</d12p1:Y>
                         <d12p1:Z>1</d12p1:Z>
                       </d11p1:LocalScale>
-                      <d11p1:Effect>None</d11p1:Effect>
                       <d11p1:Opacity>1</d11p1:Opacity>
                       <d11p1:Rectangle xmlns:d12p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                         <d12p1:Height>250</d12p1:Height>
@@ -4036,6 +4036,7 @@
                         <d12p1:X>0</d12p1:X>
                         <d12p1:Y>0</d12p1:Y>
                       </d11p1:Rectangle>
+                      <d11p1:effect>None</d11p1:effect>
                       <d11p1:origin xmlns:d12p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                         <d12p1:X>0.5</d12p1:X>
                         <d12p1:Y>1</d12p1:Y>
@@ -4064,8 +4065,8 @@
                       <d11p1:SamplerMode>LinearClamp</d11p1:SamplerMode>
                     </d10p1:Component>
                     <d10p1:Component xmlns:d11p1="WaveEngine.Components.Animation" i:type="d11p1:Animation2D">
-                      <d10p1:IsActive>true</d10p1:IsActive>
                       <d10p1:UpdateOrder>0.5</d10p1:UpdateOrder>
+                      <d10p1:isDisabled>false</d10p1:isDisabled>
                       <d11p1:CurrentAnimation>Anim</d11p1:CurrentAnimation>
                       <d11p1:PlayAutomatically>true</d11p1:PlayAutomatically>
                       <d11p1:currentAnimation>Anim</d11p1:currentAnimation>
@@ -4096,7 +4097,6 @@
                     <d10p1:Y>1</d10p1:Y>
                     <d10p1:Z>1</d10p1:Z>
                   </d9p1:LocalScale>
-                  <d9p1:Effect>None</d9p1:Effect>
                   <d9p1:Opacity>1</d9p1:Opacity>
                   <d9p1:Rectangle xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:Height>399</d10p1:Height>
@@ -4104,6 +4104,7 @@
                     <d10p1:X>0</d10p1:X>
                     <d10p1:Y>0</d10p1:Y>
                   </d9p1:Rectangle>
+                  <d9p1:effect>None</d9p1:effect>
                   <d9p1:origin xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:X>1</d10p1:X>
                     <d10p1:Y>0</d10p1:Y>
@@ -4130,6 +4131,7 @@
                   <d8p1:IsVisible>true</d8p1:IsVisible>
                   <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
                   <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
+                  <d9p1:DrawMode>Simple</d9p1:DrawMode>
                   <d9p1:SamplerMode>LinearClamp</d9p1:SamplerMode>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="WaveEngine.Framework.Physics2D" i:type="d9p1:PolygonCollider2D">
@@ -4385,7 +4387,6 @@
                         <d12p1:Y>1</d12p1:Y>
                         <d12p1:Z>1</d12p1:Z>
                       </d11p1:LocalScale>
-                      <d11p1:Effect>None</d11p1:Effect>
                       <d11p1:Opacity>1</d11p1:Opacity>
                       <d11p1:Rectangle xmlns:d12p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                         <d12p1:Height>250</d12p1:Height>
@@ -4393,6 +4394,7 @@
                         <d12p1:X>0</d12p1:X>
                         <d12p1:Y>0</d12p1:Y>
                       </d11p1:Rectangle>
+                      <d11p1:effect>None</d11p1:effect>
                       <d11p1:origin xmlns:d12p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                         <d12p1:X>0.5</d12p1:X>
                         <d12p1:Y>1</d12p1:Y>
@@ -4421,8 +4423,8 @@
                       <d11p1:SamplerMode>LinearClamp</d11p1:SamplerMode>
                     </d10p1:Component>
                     <d10p1:Component xmlns:d11p1="WaveEngine.Components.Animation" i:type="d11p1:Animation2D">
-                      <d10p1:IsActive>true</d10p1:IsActive>
                       <d10p1:UpdateOrder>0.5</d10p1:UpdateOrder>
+                      <d10p1:isDisabled>false</d10p1:isDisabled>
                       <d11p1:CurrentAnimation>Anim</d11p1:CurrentAnimation>
                       <d11p1:PlayAutomatically>true</d11p1:PlayAutomatically>
                       <d11p1:currentAnimation>Anim</d11p1:currentAnimation>
@@ -4453,7 +4455,6 @@
                     <d10p1:Y>1</d10p1:Y>
                     <d10p1:Z>1</d10p1:Z>
                   </d9p1:LocalScale>
-                  <d9p1:Effect>None</d9p1:Effect>
                   <d9p1:Opacity>1</d9p1:Opacity>
                   <d9p1:Rectangle xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:Height>269</d10p1:Height>
@@ -4461,6 +4462,7 @@
                     <d10p1:X>0</d10p1:X>
                     <d10p1:Y>0</d10p1:Y>
                   </d9p1:Rectangle>
+                  <d9p1:effect>None</d9p1:effect>
                   <d9p1:origin xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:X>0</d10p1:X>
                     <d10p1:Y>0</d10p1:Y>
@@ -4487,6 +4489,7 @@
                   <d8p1:IsVisible>true</d8p1:IsVisible>
                   <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
                   <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
+                  <d9p1:DrawMode>Simple</d9p1:DrawMode>
                   <d9p1:SamplerMode>LinearClamp</d9p1:SamplerMode>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="WaveEngine.Framework.Physics2D" i:type="d9p1:PolygonCollider2D">
@@ -4763,7 +4766,6 @@
                 <d8p1:Y>1</d8p1:Y>
                 <d8p1:Z>1</d8p1:Z>
               </d7p1:LocalScale>
-              <d7p1:Effect>None</d7p1:Effect>
               <d7p1:Opacity>1</d7p1:Opacity>
               <d7p1:Rectangle xmlns:d8p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                 <d8p1:Height>0</d8p1:Height>
@@ -4771,6 +4773,7 @@
                 <d8p1:X>0</d8p1:X>
                 <d8p1:Y>0</d8p1:Y>
               </d7p1:Rectangle>
+              <d7p1:effect>None</d7p1:effect>
               <d7p1:origin xmlns:d8p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                 <d8p1:X>0</d8p1:X>
                 <d8p1:Y>0</d8p1:Y>
@@ -4811,7 +4814,6 @@
                     <d10p1:Y>1</d10p1:Y>
                     <d10p1:Z>1</d10p1:Z>
                   </d9p1:LocalScale>
-                  <d9p1:Effect>None</d9p1:Effect>
                   <d9p1:Opacity>1</d9p1:Opacity>
                   <d9p1:Rectangle xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:Height>160</d10p1:Height>
@@ -4819,6 +4821,7 @@
                     <d10p1:X>0</d10p1:X>
                     <d10p1:Y>0</d10p1:Y>
                   </d9p1:Rectangle>
+                  <d9p1:effect>None</d9p1:effect>
                   <d9p1:origin xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:X>0.5</d10p1:X>
                     <d10p1:Y>0.5</d10p1:Y>
@@ -4847,8 +4850,8 @@
                   <d9p1:SamplerMode>LinearClamp</d9p1:SamplerMode>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="WaveEngine.Components.Animation" i:type="d9p1:Animation2D">
-                  <d8p1:IsActive>true</d8p1:IsActive>
                   <d8p1:UpdateOrder>0.5</d8p1:UpdateOrder>
+                  <d8p1:isDisabled>false</d8p1:isDisabled>
                   <d9p1:CurrentAnimation>Anim</d9p1:CurrentAnimation>
                   <d9p1:PlayAutomatically>true</d9p1:PlayAutomatically>
                   <d9p1:currentAnimation>Anim</d9p1:currentAnimation>
@@ -5610,8 +5613,8 @@
                   </d9p1:vertices>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="WaveEngine.Framework.Animation" i:type="d9p1:AnimationUI">
-                  <d8p1:IsActive>true</d8p1:IsActive>
                   <d8p1:UpdateOrder>0.5</d8p1:UpdateOrder>
+                  <d8p1:isDisabled>false</d8p1:isDisabled>
                   <d9p1:State>Stopped</d9p1:State>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="SuperSquid.Components" i:type="d9p1:JellyFishController">
@@ -5644,7 +5647,6 @@
                     <d10p1:Y>0.7472328</d10p1:Y>
                     <d10p1:Z>1</d10p1:Z>
                   </d9p1:LocalScale>
-                  <d9p1:Effect>None</d9p1:Effect>
                   <d9p1:Opacity>1</d9p1:Opacity>
                   <d9p1:Rectangle xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:Height>100</d10p1:Height>
@@ -5652,6 +5654,7 @@
                     <d10p1:X>0</d10p1:X>
                     <d10p1:Y>0</d10p1:Y>
                   </d9p1:Rectangle>
+                  <d9p1:effect>None</d9p1:effect>
                   <d9p1:origin xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:X>0.5</d10p1:X>
                     <d10p1:Y>0.5</d10p1:Y>
@@ -5678,6 +5681,7 @@
                   <d8p1:IsVisible>true</d8p1:IsVisible>
                   <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
                   <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
+                  <d9p1:DrawMode>Simple</d9p1:DrawMode>
                   <d9p1:SamplerMode>LinearClamp</d9p1:SamplerMode>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="WaveEngine.Framework.Physics3D" i:type="d9p1:CircleCollider2D">
@@ -5728,7 +5732,6 @@
                     <d10p1:Y>1.02397072</d10p1:Y>
                     <d10p1:Z>1</d10p1:Z>
                   </d9p1:LocalScale>
-                  <d9p1:Effect>None</d9p1:Effect>
                   <d9p1:Opacity>1</d9p1:Opacity>
                   <d9p1:Rectangle xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:Height>100</d10p1:Height>
@@ -5736,6 +5739,7 @@
                     <d10p1:X>0</d10p1:X>
                     <d10p1:Y>0</d10p1:Y>
                   </d9p1:Rectangle>
+                  <d9p1:effect>None</d9p1:effect>
                   <d9p1:origin xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:X>0.5</d10p1:X>
                     <d10p1:Y>0.5</d10p1:Y>
@@ -5762,6 +5766,7 @@
                   <d8p1:IsVisible>true</d8p1:IsVisible>
                   <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
                   <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
+                  <d9p1:DrawMode>Simple</d9p1:DrawMode>
                   <d9p1:SamplerMode>LinearClamp</d9p1:SamplerMode>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="WaveEngine.Framework.Physics3D" i:type="d9p1:CircleCollider2D">
@@ -5812,7 +5817,6 @@
                     <d10p1:Y>1</d10p1:Y>
                     <d10p1:Z>1</d10p1:Z>
                   </d9p1:LocalScale>
-                  <d9p1:Effect>None</d9p1:Effect>
                   <d9p1:Opacity>1</d9p1:Opacity>
                   <d9p1:Rectangle xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:Height>160</d10p1:Height>
@@ -5820,6 +5824,7 @@
                     <d10p1:X>0</d10p1:X>
                     <d10p1:Y>0</d10p1:Y>
                   </d9p1:Rectangle>
+                  <d9p1:effect>None</d9p1:effect>
                   <d9p1:origin xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:X>0.5</d10p1:X>
                     <d10p1:Y>0.5</d10p1:Y>
@@ -5848,8 +5853,8 @@
                   <d9p1:SamplerMode>LinearClamp</d9p1:SamplerMode>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="WaveEngine.Components.Animation" i:type="d9p1:Animation2D">
-                  <d8p1:IsActive>true</d8p1:IsActive>
                   <d8p1:UpdateOrder>0.5</d8p1:UpdateOrder>
+                  <d8p1:isDisabled>false</d8p1:isDisabled>
                   <d9p1:CurrentAnimation>Anim</d9p1:CurrentAnimation>
                   <d9p1:PlayAutomatically>true</d9p1:PlayAutomatically>
                   <d9p1:currentAnimation>Anim</d9p1:currentAnimation>
@@ -6611,8 +6616,8 @@
                   </d9p1:vertices>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="WaveEngine.Framework.Animation" i:type="d9p1:AnimationUI">
-                  <d8p1:IsActive>true</d8p1:IsActive>
                   <d8p1:UpdateOrder>0.5</d8p1:UpdateOrder>
+                  <d8p1:isDisabled>false</d8p1:isDisabled>
                   <d9p1:State>Stopped</d9p1:State>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="SuperSquid.Components" i:type="d9p1:JellyFishController">
@@ -6645,7 +6650,6 @@
                     <d10p1:Y>1</d10p1:Y>
                     <d10p1:Z>1</d10p1:Z>
                   </d9p1:LocalScale>
-                  <d9p1:Effect>None</d9p1:Effect>
                   <d9p1:Opacity>1</d9p1:Opacity>
                   <d9p1:Rectangle xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:Height>380</d10p1:Height>
@@ -6653,6 +6657,7 @@
                     <d10p1:X>0</d10p1:X>
                     <d10p1:Y>0</d10p1:Y>
                   </d9p1:Rectangle>
+                  <d9p1:effect>None</d9p1:effect>
                   <d9p1:origin xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:X>0.5</d10p1:X>
                     <d10p1:Y>0.5</d10p1:Y>
@@ -6681,8 +6686,8 @@
                   <d9p1:SamplerMode>LinearClamp</d9p1:SamplerMode>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="WaveEngine.Components.Animation" i:type="d9p1:Animation2D">
-                  <d8p1:IsActive>true</d8p1:IsActive>
                   <d8p1:UpdateOrder>0.5</d8p1:UpdateOrder>
+                  <d8p1:isDisabled>false</d8p1:isDisabled>
                   <d9p1:CurrentAnimation>Anim</d9p1:CurrentAnimation>
                   <d9p1:PlayAutomatically>true</d9p1:PlayAutomatically>
                   <d9p1:currentAnimation>Anim</d9p1:currentAnimation>
@@ -8128,8 +8133,8 @@
                   </d9p1:vertices>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="WaveEngine.Framework.Animation" i:type="d9p1:AnimationUI">
-                  <d8p1:IsActive>true</d8p1:IsActive>
                   <d8p1:UpdateOrder>0.5</d8p1:UpdateOrder>
+                  <d8p1:isDisabled>false</d8p1:isDisabled>
                   <d9p1:State>Stopped</d9p1:State>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="SuperSquid.Components" i:type="d9p1:JellyFishController">
@@ -8164,7 +8169,6 @@
                         <d12p1:Y>1</d12p1:Y>
                         <d12p1:Z>1</d12p1:Z>
                       </d11p1:LocalScale>
-                      <d11p1:Effect>None</d11p1:Effect>
                       <d11p1:Opacity>1</d11p1:Opacity>
                       <d11p1:Rectangle xmlns:d12p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                         <d12p1:Height>250</d12p1:Height>
@@ -8172,6 +8176,7 @@
                         <d12p1:X>0</d12p1:X>
                         <d12p1:Y>0</d12p1:Y>
                       </d11p1:Rectangle>
+                      <d11p1:effect>None</d11p1:effect>
                       <d11p1:origin xmlns:d12p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                         <d12p1:X>0.5</d12p1:X>
                         <d12p1:Y>1</d12p1:Y>
@@ -8200,8 +8205,8 @@
                       <d11p1:SamplerMode>LinearClamp</d11p1:SamplerMode>
                     </d10p1:Component>
                     <d10p1:Component xmlns:d11p1="WaveEngine.Components.Animation" i:type="d11p1:Animation2D">
-                      <d10p1:IsActive>true</d10p1:IsActive>
                       <d10p1:UpdateOrder>0.5</d10p1:UpdateOrder>
+                      <d10p1:isDisabled>false</d10p1:isDisabled>
                       <d11p1:CurrentAnimation>Anim</d11p1:CurrentAnimation>
                       <d11p1:PlayAutomatically>true</d11p1:PlayAutomatically>
                       <d11p1:currentAnimation>Anim</d11p1:currentAnimation>
@@ -8232,7 +8237,6 @@
                     <d10p1:Y>1</d10p1:Y>
                     <d10p1:Z>1</d10p1:Z>
                   </d9p1:LocalScale>
-                  <d9p1:Effect>None</d9p1:Effect>
                   <d9p1:Opacity>1</d9p1:Opacity>
                   <d9p1:Rectangle xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:Height>399</d10p1:Height>
@@ -8240,6 +8244,7 @@
                     <d10p1:X>0</d10p1:X>
                     <d10p1:Y>0</d10p1:Y>
                   </d9p1:Rectangle>
+                  <d9p1:effect>None</d9p1:effect>
                   <d9p1:origin xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:X>1</d10p1:X>
                     <d10p1:Y>0</d10p1:Y>
@@ -8266,6 +8271,7 @@
                   <d8p1:IsVisible>true</d8p1:IsVisible>
                   <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
                   <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
+                  <d9p1:DrawMode>Simple</d9p1:DrawMode>
                   <d9p1:SamplerMode>LinearClamp</d9p1:SamplerMode>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="WaveEngine.Framework.Physics2D" i:type="d9p1:PolygonCollider2D">
@@ -8518,7 +8524,6 @@
                 <d8p1:Y>1</d8p1:Y>
                 <d8p1:Z>1</d8p1:Z>
               </d7p1:LocalScale>
-              <d7p1:Effect>None</d7p1:Effect>
               <d7p1:Opacity>1</d7p1:Opacity>
               <d7p1:Rectangle xmlns:d8p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                 <d8p1:Height>0</d8p1:Height>
@@ -8526,6 +8531,7 @@
                 <d8p1:X>0</d8p1:X>
                 <d8p1:Y>0</d8p1:Y>
               </d7p1:Rectangle>
+              <d7p1:effect>None</d7p1:effect>
               <d7p1:origin xmlns:d8p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                 <d8p1:X>0</d8p1:X>
                 <d8p1:Y>0</d8p1:Y>
@@ -8566,7 +8572,6 @@
                     <d10p1:Y>1</d10p1:Y>
                     <d10p1:Z>1</d10p1:Z>
                   </d9p1:LocalScale>
-                  <d9p1:Effect>None</d9p1:Effect>
                   <d9p1:Opacity>1</d9p1:Opacity>
                   <d9p1:Rectangle xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:Height>160</d10p1:Height>
@@ -8574,6 +8579,7 @@
                     <d10p1:X>0</d10p1:X>
                     <d10p1:Y>0</d10p1:Y>
                   </d9p1:Rectangle>
+                  <d9p1:effect>None</d9p1:effect>
                   <d9p1:origin xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:X>0.5</d10p1:X>
                     <d10p1:Y>0.5</d10p1:Y>
@@ -8602,8 +8608,8 @@
                   <d9p1:SamplerMode>LinearClamp</d9p1:SamplerMode>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="WaveEngine.Components.Animation" i:type="d9p1:Animation2D">
-                  <d8p1:IsActive>true</d8p1:IsActive>
                   <d8p1:UpdateOrder>0.5</d8p1:UpdateOrder>
+                  <d8p1:isDisabled>false</d8p1:isDisabled>
                   <d9p1:CurrentAnimation>Anim</d9p1:CurrentAnimation>
                   <d9p1:PlayAutomatically>true</d9p1:PlayAutomatically>
                   <d9p1:currentAnimation>Anim</d9p1:currentAnimation>
@@ -9365,8 +9371,8 @@
                   </d9p1:vertices>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="WaveEngine.Framework.Animation" i:type="d9p1:AnimationUI">
-                  <d8p1:IsActive>true</d8p1:IsActive>
                   <d8p1:UpdateOrder>0.5</d8p1:UpdateOrder>
+                  <d8p1:isDisabled>false</d8p1:isDisabled>
                   <d9p1:State>Stopped</d9p1:State>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="SuperSquid.Components" i:type="d9p1:JellyFishController">
@@ -9399,7 +9405,6 @@
                     <d10p1:Y>0.7472328</d10p1:Y>
                     <d10p1:Z>1</d10p1:Z>
                   </d9p1:LocalScale>
-                  <d9p1:Effect>None</d9p1:Effect>
                   <d9p1:Opacity>1</d9p1:Opacity>
                   <d9p1:Rectangle xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:Height>100</d10p1:Height>
@@ -9407,6 +9412,7 @@
                     <d10p1:X>0</d10p1:X>
                     <d10p1:Y>0</d10p1:Y>
                   </d9p1:Rectangle>
+                  <d9p1:effect>None</d9p1:effect>
                   <d9p1:origin xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:X>0.5</d10p1:X>
                     <d10p1:Y>0.5</d10p1:Y>
@@ -9433,6 +9439,7 @@
                   <d8p1:IsVisible>true</d8p1:IsVisible>
                   <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
                   <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
+                  <d9p1:DrawMode>Simple</d9p1:DrawMode>
                   <d9p1:SamplerMode>LinearClamp</d9p1:SamplerMode>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="WaveEngine.Framework.Physics3D" i:type="d9p1:CircleCollider2D">
@@ -9483,7 +9490,6 @@
                     <d10p1:Y>1.02397072</d10p1:Y>
                     <d10p1:Z>1</d10p1:Z>
                   </d9p1:LocalScale>
-                  <d9p1:Effect>None</d9p1:Effect>
                   <d9p1:Opacity>1</d9p1:Opacity>
                   <d9p1:Rectangle xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:Height>100</d10p1:Height>
@@ -9491,6 +9497,7 @@
                     <d10p1:X>0</d10p1:X>
                     <d10p1:Y>0</d10p1:Y>
                   </d9p1:Rectangle>
+                  <d9p1:effect>None</d9p1:effect>
                   <d9p1:origin xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:X>0.5</d10p1:X>
                     <d10p1:Y>0.5</d10p1:Y>
@@ -9517,6 +9524,7 @@
                   <d8p1:IsVisible>true</d8p1:IsVisible>
                   <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
                   <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
+                  <d9p1:DrawMode>Simple</d9p1:DrawMode>
                   <d9p1:SamplerMode>LinearClamp</d9p1:SamplerMode>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="WaveEngine.Framework.Physics3D" i:type="d9p1:CircleCollider2D">
@@ -9567,7 +9575,6 @@
                     <d10p1:Y>1.023971</d10p1:Y>
                     <d10p1:Z>1</d10p1:Z>
                   </d9p1:LocalScale>
-                  <d9p1:Effect>None</d9p1:Effect>
                   <d9p1:Opacity>1</d9p1:Opacity>
                   <d9p1:Rectangle xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:Height>100</d10p1:Height>
@@ -9575,6 +9582,7 @@
                     <d10p1:X>0</d10p1:X>
                     <d10p1:Y>0</d10p1:Y>
                   </d9p1:Rectangle>
+                  <d9p1:effect>None</d9p1:effect>
                   <d9p1:origin xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:X>0.5</d10p1:X>
                     <d10p1:Y>0.5</d10p1:Y>
@@ -9601,6 +9609,7 @@
                   <d8p1:IsVisible>true</d8p1:IsVisible>
                   <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
                   <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
+                  <d9p1:DrawMode>Simple</d9p1:DrawMode>
                   <d9p1:SamplerMode>LinearClamp</d9p1:SamplerMode>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="WaveEngine.Framework.Physics3D" i:type="d9p1:CircleCollider2D">
@@ -9651,7 +9660,6 @@
                     <d10p1:Y>1</d10p1:Y>
                     <d10p1:Z>1</d10p1:Z>
                   </d9p1:LocalScale>
-                  <d9p1:Effect>None</d9p1:Effect>
                   <d9p1:Opacity>1</d9p1:Opacity>
                   <d9p1:Rectangle xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:Height>160</d10p1:Height>
@@ -9659,6 +9667,7 @@
                     <d10p1:X>0</d10p1:X>
                     <d10p1:Y>0</d10p1:Y>
                   </d9p1:Rectangle>
+                  <d9p1:effect>None</d9p1:effect>
                   <d9p1:origin xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:X>0.5</d10p1:X>
                     <d10p1:Y>0.5</d10p1:Y>
@@ -9687,8 +9696,8 @@
                   <d9p1:SamplerMode>LinearClamp</d9p1:SamplerMode>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="WaveEngine.Components.Animation" i:type="d9p1:Animation2D">
-                  <d8p1:IsActive>true</d8p1:IsActive>
                   <d8p1:UpdateOrder>0.5</d8p1:UpdateOrder>
+                  <d8p1:isDisabled>false</d8p1:isDisabled>
                   <d9p1:CurrentAnimation>Anim</d9p1:CurrentAnimation>
                   <d9p1:PlayAutomatically>true</d9p1:PlayAutomatically>
                   <d9p1:currentAnimation>Anim</d9p1:currentAnimation>
@@ -10450,8 +10459,8 @@
                   </d9p1:vertices>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="WaveEngine.Framework.Animation" i:type="d9p1:AnimationUI">
-                  <d8p1:IsActive>true</d8p1:IsActive>
                   <d8p1:UpdateOrder>0.5</d8p1:UpdateOrder>
+                  <d8p1:isDisabled>false</d8p1:isDisabled>
                   <d9p1:State>Stopped</d9p1:State>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="SuperSquid.Components" i:type="d9p1:JellyFishController">
@@ -10484,7 +10493,6 @@
                     <d10p1:Y>1</d10p1:Y>
                     <d10p1:Z>1</d10p1:Z>
                   </d9p1:LocalScale>
-                  <d9p1:Effect>None</d9p1:Effect>
                   <d9p1:Opacity>1</d9p1:Opacity>
                   <d9p1:Rectangle xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:Height>380</d10p1:Height>
@@ -10492,6 +10500,7 @@
                     <d10p1:X>0</d10p1:X>
                     <d10p1:Y>0</d10p1:Y>
                   </d9p1:Rectangle>
+                  <d9p1:effect>None</d9p1:effect>
                   <d9p1:origin xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:X>0.5</d10p1:X>
                     <d10p1:Y>0.5</d10p1:Y>
@@ -10520,8 +10529,8 @@
                   <d9p1:SamplerMode>LinearClamp</d9p1:SamplerMode>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="WaveEngine.Components.Animation" i:type="d9p1:Animation2D">
-                  <d8p1:IsActive>true</d8p1:IsActive>
                   <d8p1:UpdateOrder>0.5</d8p1:UpdateOrder>
+                  <d8p1:isDisabled>false</d8p1:isDisabled>
                   <d9p1:CurrentAnimation>Anim</d9p1:CurrentAnimation>
                   <d9p1:PlayAutomatically>true</d9p1:PlayAutomatically>
                   <d9p1:currentAnimation>Anim</d9p1:currentAnimation>
@@ -11967,8 +11976,8 @@
                   </d9p1:vertices>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="WaveEngine.Framework.Animation" i:type="d9p1:AnimationUI">
-                  <d8p1:IsActive>true</d8p1:IsActive>
                   <d8p1:UpdateOrder>0.5</d8p1:UpdateOrder>
+                  <d8p1:isDisabled>false</d8p1:isDisabled>
                   <d9p1:State>Stopped</d9p1:State>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="SuperSquid.Components" i:type="d9p1:JellyFishController">
@@ -12000,7 +12009,6 @@
                 <d8p1:Y>1</d8p1:Y>
                 <d8p1:Z>1</d8p1:Z>
               </d7p1:LocalScale>
-              <d7p1:Effect>None</d7p1:Effect>
               <d7p1:Opacity>1</d7p1:Opacity>
               <d7p1:Rectangle xmlns:d8p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                 <d8p1:Height>0</d8p1:Height>
@@ -12008,6 +12016,7 @@
                 <d8p1:X>0</d8p1:X>
                 <d8p1:Y>0</d8p1:Y>
               </d7p1:Rectangle>
+              <d7p1:effect>None</d7p1:effect>
               <d7p1:origin xmlns:d8p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                 <d8p1:X>0</d8p1:X>
                 <d8p1:Y>0</d8p1:Y>
@@ -12050,7 +12059,6 @@
                         <d12p1:Y>1</d12p1:Y>
                         <d12p1:Z>1</d12p1:Z>
                       </d11p1:LocalScale>
-                      <d11p1:Effect>None</d11p1:Effect>
                       <d11p1:Opacity>1</d11p1:Opacity>
                       <d11p1:Rectangle xmlns:d12p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                         <d12p1:Height>250</d12p1:Height>
@@ -12058,6 +12066,7 @@
                         <d12p1:X>0</d12p1:X>
                         <d12p1:Y>0</d12p1:Y>
                       </d11p1:Rectangle>
+                      <d11p1:effect>None</d11p1:effect>
                       <d11p1:origin xmlns:d12p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                         <d12p1:X>0.5</d12p1:X>
                         <d12p1:Y>1</d12p1:Y>
@@ -12086,8 +12095,8 @@
                       <d11p1:SamplerMode>LinearClamp</d11p1:SamplerMode>
                     </d10p1:Component>
                     <d10p1:Component xmlns:d11p1="WaveEngine.Components.Animation" i:type="d11p1:Animation2D">
-                      <d10p1:IsActive>true</d10p1:IsActive>
                       <d10p1:UpdateOrder>0.5</d10p1:UpdateOrder>
+                      <d10p1:isDisabled>false</d10p1:isDisabled>
                       <d11p1:CurrentAnimation>Anim</d11p1:CurrentAnimation>
                       <d11p1:PlayAutomatically>true</d11p1:PlayAutomatically>
                       <d11p1:currentAnimation>Anim</d11p1:currentAnimation>
@@ -12118,7 +12127,6 @@
                     <d10p1:Y>1</d10p1:Y>
                     <d10p1:Z>1</d10p1:Z>
                   </d9p1:LocalScale>
-                  <d9p1:Effect>None</d9p1:Effect>
                   <d9p1:Opacity>1</d9p1:Opacity>
                   <d9p1:Rectangle xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:Height>269</d10p1:Height>
@@ -12126,6 +12134,7 @@
                     <d10p1:X>0</d10p1:X>
                     <d10p1:Y>0</d10p1:Y>
                   </d9p1:Rectangle>
+                  <d9p1:effect>None</d9p1:effect>
                   <d9p1:origin xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:X>0</d10p1:X>
                     <d10p1:Y>0</d10p1:Y>
@@ -12152,6 +12161,7 @@
                   <d8p1:IsVisible>true</d8p1:IsVisible>
                   <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
                   <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
+                  <d9p1:DrawMode>Simple</d9p1:DrawMode>
                   <d9p1:SamplerMode>LinearClamp</d9p1:SamplerMode>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="WaveEngine.Framework.Physics2D" i:type="d9p1:PolygonCollider2D">
@@ -12431,7 +12441,6 @@
                         <d12p1:Y>1</d12p1:Y>
                         <d12p1:Z>1</d12p1:Z>
                       </d11p1:LocalScale>
-                      <d11p1:Effect>None</d11p1:Effect>
                       <d11p1:Opacity>1</d11p1:Opacity>
                       <d11p1:Rectangle xmlns:d12p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                         <d12p1:Height>250</d12p1:Height>
@@ -12439,6 +12448,7 @@
                         <d12p1:X>0</d12p1:X>
                         <d12p1:Y>0</d12p1:Y>
                       </d11p1:Rectangle>
+                      <d11p1:effect>None</d11p1:effect>
                       <d11p1:origin xmlns:d12p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                         <d12p1:X>0.5</d12p1:X>
                         <d12p1:Y>1</d12p1:Y>
@@ -12467,8 +12477,8 @@
                       <d11p1:SamplerMode>LinearClamp</d11p1:SamplerMode>
                     </d10p1:Component>
                     <d10p1:Component xmlns:d11p1="WaveEngine.Components.Animation" i:type="d11p1:Animation2D">
-                      <d10p1:IsActive>true</d10p1:IsActive>
                       <d10p1:UpdateOrder>0.5</d10p1:UpdateOrder>
+                      <d10p1:isDisabled>false</d10p1:isDisabled>
                       <d11p1:CurrentAnimation>Anim</d11p1:CurrentAnimation>
                       <d11p1:PlayAutomatically>true</d11p1:PlayAutomatically>
                       <d11p1:currentAnimation>Anim</d11p1:currentAnimation>
@@ -12499,7 +12509,6 @@
                     <d10p1:Y>1</d10p1:Y>
                     <d10p1:Z>1</d10p1:Z>
                   </d9p1:LocalScale>
-                  <d9p1:Effect>None</d9p1:Effect>
                   <d9p1:Opacity>1</d9p1:Opacity>
                   <d9p1:Rectangle xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:Height>399</d10p1:Height>
@@ -12507,6 +12516,7 @@
                     <d10p1:X>0</d10p1:X>
                     <d10p1:Y>0</d10p1:Y>
                   </d9p1:Rectangle>
+                  <d9p1:effect>None</d9p1:effect>
                   <d9p1:origin xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:X>1</d10p1:X>
                     <d10p1:Y>0</d10p1:Y>
@@ -12533,6 +12543,7 @@
                   <d8p1:IsVisible>true</d8p1:IsVisible>
                   <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
                   <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
+                  <d9p1:DrawMode>Simple</d9p1:DrawMode>
                   <d9p1:SamplerMode>LinearClamp</d9p1:SamplerMode>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="WaveEngine.Framework.Physics2D" i:type="d9p1:PolygonCollider2D">
@@ -12786,7 +12797,6 @@
                     <d10p1:Y>1</d10p1:Y>
                     <d10p1:Z>1</d10p1:Z>
                   </d9p1:LocalScale>
-                  <d9p1:Effect>None</d9p1:Effect>
                   <d9p1:Opacity>1</d9p1:Opacity>
                   <d9p1:Rectangle xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:Height>160</d10p1:Height>
@@ -12794,6 +12804,7 @@
                     <d10p1:X>0</d10p1:X>
                     <d10p1:Y>0</d10p1:Y>
                   </d9p1:Rectangle>
+                  <d9p1:effect>None</d9p1:effect>
                   <d9p1:origin xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:X>0.5</d10p1:X>
                     <d10p1:Y>0.5</d10p1:Y>
@@ -12822,8 +12833,8 @@
                   <d9p1:SamplerMode>LinearClamp</d9p1:SamplerMode>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="WaveEngine.Components.Animation" i:type="d9p1:Animation2D">
-                  <d8p1:IsActive>true</d8p1:IsActive>
                   <d8p1:UpdateOrder>0.5</d8p1:UpdateOrder>
+                  <d8p1:isDisabled>false</d8p1:isDisabled>
                   <d9p1:CurrentAnimation>Anim</d9p1:CurrentAnimation>
                   <d9p1:PlayAutomatically>true</d9p1:PlayAutomatically>
                   <d9p1:currentAnimation>Anim</d9p1:currentAnimation>
@@ -13585,8 +13596,8 @@
                   </d9p1:vertices>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="WaveEngine.Framework.Animation" i:type="d9p1:AnimationUI">
-                  <d8p1:IsActive>true</d8p1:IsActive>
                   <d8p1:UpdateOrder>0.5</d8p1:UpdateOrder>
+                  <d8p1:isDisabled>false</d8p1:isDisabled>
                   <d9p1:State>Stopped</d9p1:State>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="SuperSquid.Components" i:type="d9p1:JellyFishController">
@@ -13619,7 +13630,6 @@
                     <d10p1:Y>0.7472328</d10p1:Y>
                     <d10p1:Z>1</d10p1:Z>
                   </d9p1:LocalScale>
-                  <d9p1:Effect>None</d9p1:Effect>
                   <d9p1:Opacity>1</d9p1:Opacity>
                   <d9p1:Rectangle xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:Height>100</d10p1:Height>
@@ -13627,6 +13637,7 @@
                     <d10p1:X>0</d10p1:X>
                     <d10p1:Y>0</d10p1:Y>
                   </d9p1:Rectangle>
+                  <d9p1:effect>None</d9p1:effect>
                   <d9p1:origin xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:X>0.5</d10p1:X>
                     <d10p1:Y>0.5</d10p1:Y>
@@ -13653,6 +13664,7 @@
                   <d8p1:IsVisible>true</d8p1:IsVisible>
                   <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
                   <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
+                  <d9p1:DrawMode>Simple</d9p1:DrawMode>
                   <d9p1:SamplerMode>LinearClamp</d9p1:SamplerMode>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="WaveEngine.Framework.Physics3D" i:type="d9p1:CircleCollider2D">
@@ -13703,7 +13715,6 @@
                     <d10p1:Y>1.02397072</d10p1:Y>
                     <d10p1:Z>1</d10p1:Z>
                   </d9p1:LocalScale>
-                  <d9p1:Effect>None</d9p1:Effect>
                   <d9p1:Opacity>1</d9p1:Opacity>
                   <d9p1:Rectangle xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:Height>100</d10p1:Height>
@@ -13711,6 +13722,7 @@
                     <d10p1:X>0</d10p1:X>
                     <d10p1:Y>0</d10p1:Y>
                   </d9p1:Rectangle>
+                  <d9p1:effect>None</d9p1:effect>
                   <d9p1:origin xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:X>0.5</d10p1:X>
                     <d10p1:Y>0.5</d10p1:Y>
@@ -13737,6 +13749,7 @@
                   <d8p1:IsVisible>true</d8p1:IsVisible>
                   <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
                   <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
+                  <d9p1:DrawMode>Simple</d9p1:DrawMode>
                   <d9p1:SamplerMode>LinearClamp</d9p1:SamplerMode>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="WaveEngine.Framework.Physics3D" i:type="d9p1:CircleCollider2D">
@@ -13787,7 +13800,6 @@
                     <d10p1:Y>1.02397072</d10p1:Y>
                     <d10p1:Z>1</d10p1:Z>
                   </d9p1:LocalScale>
-                  <d9p1:Effect>None</d9p1:Effect>
                   <d9p1:Opacity>1</d9p1:Opacity>
                   <d9p1:Rectangle xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:Height>100</d10p1:Height>
@@ -13795,6 +13807,7 @@
                     <d10p1:X>0</d10p1:X>
                     <d10p1:Y>0</d10p1:Y>
                   </d9p1:Rectangle>
+                  <d9p1:effect>None</d9p1:effect>
                   <d9p1:origin xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:X>0.5</d10p1:X>
                     <d10p1:Y>0.5</d10p1:Y>
@@ -13821,6 +13834,7 @@
                   <d8p1:IsVisible>true</d8p1:IsVisible>
                   <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
                   <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
+                  <d9p1:DrawMode>Simple</d9p1:DrawMode>
                   <d9p1:SamplerMode>LinearClamp</d9p1:SamplerMode>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="WaveEngine.Framework.Physics3D" i:type="d9p1:CircleCollider2D">
@@ -13870,7 +13884,6 @@
                 <d8p1:Y>1</d8p1:Y>
                 <d8p1:Z>1</d8p1:Z>
               </d7p1:LocalScale>
-              <d7p1:Effect>None</d7p1:Effect>
               <d7p1:Opacity>1</d7p1:Opacity>
               <d7p1:Rectangle xmlns:d8p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                 <d8p1:Height>0</d8p1:Height>
@@ -13878,6 +13891,7 @@
                 <d8p1:X>0</d8p1:X>
                 <d8p1:Y>0</d8p1:Y>
               </d7p1:Rectangle>
+              <d7p1:effect>None</d7p1:effect>
               <d7p1:origin xmlns:d8p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                 <d8p1:X>0</d8p1:X>
                 <d8p1:Y>0</d8p1:Y>
@@ -13920,7 +13934,6 @@
                         <d12p1:Y>1</d12p1:Y>
                         <d12p1:Z>1</d12p1:Z>
                       </d11p1:LocalScale>
-                      <d11p1:Effect>None</d11p1:Effect>
                       <d11p1:Opacity>1</d11p1:Opacity>
                       <d11p1:Rectangle xmlns:d12p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                         <d12p1:Height>250</d12p1:Height>
@@ -13928,6 +13941,7 @@
                         <d12p1:X>0</d12p1:X>
                         <d12p1:Y>0</d12p1:Y>
                       </d11p1:Rectangle>
+                      <d11p1:effect>None</d11p1:effect>
                       <d11p1:origin xmlns:d12p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                         <d12p1:X>0.5</d12p1:X>
                         <d12p1:Y>1</d12p1:Y>
@@ -13956,8 +13970,8 @@
                       <d11p1:SamplerMode>LinearClamp</d11p1:SamplerMode>
                     </d10p1:Component>
                     <d10p1:Component xmlns:d11p1="WaveEngine.Components.Animation" i:type="d11p1:Animation2D">
-                      <d10p1:IsActive>true</d10p1:IsActive>
                       <d10p1:UpdateOrder>0.5</d10p1:UpdateOrder>
+                      <d10p1:isDisabled>false</d10p1:isDisabled>
                       <d11p1:CurrentAnimation>Anim</d11p1:CurrentAnimation>
                       <d11p1:PlayAutomatically>true</d11p1:PlayAutomatically>
                       <d11p1:currentAnimation>Anim</d11p1:currentAnimation>
@@ -13988,7 +14002,6 @@
                     <d10p1:Y>1</d10p1:Y>
                     <d10p1:Z>1</d10p1:Z>
                   </d9p1:LocalScale>
-                  <d9p1:Effect>None</d9p1:Effect>
                   <d9p1:Opacity>1</d9p1:Opacity>
                   <d9p1:Rectangle xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:Height>235</d10p1:Height>
@@ -13996,6 +14009,7 @@
                     <d10p1:X>0</d10p1:X>
                     <d10p1:Y>0</d10p1:Y>
                   </d9p1:Rectangle>
+                  <d9p1:effect>None</d9p1:effect>
                   <d9p1:origin xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:X>0.5</d10p1:X>
                     <d10p1:Y>0.5</d10p1:Y>
@@ -14022,6 +14036,7 @@
                   <d8p1:IsVisible>true</d8p1:IsVisible>
                   <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
                   <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
+                  <d9p1:DrawMode>Simple</d9p1:DrawMode>
                   <d9p1:SamplerMode>LinearClamp</d9p1:SamplerMode>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="WaveEngine.Framework.Physics2D" i:type="d9p1:PolygonCollider2D">
@@ -14375,7 +14390,6 @@
                     <d10p1:Y>0.703016</d10p1:Y>
                     <d10p1:Z>1</d10p1:Z>
                   </d9p1:LocalScale>
-                  <d9p1:Effect>None</d9p1:Effect>
                   <d9p1:Opacity>1</d9p1:Opacity>
                   <d9p1:Rectangle xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:Height>100</d10p1:Height>
@@ -14383,6 +14397,7 @@
                     <d10p1:X>0</d10p1:X>
                     <d10p1:Y>0</d10p1:Y>
                   </d9p1:Rectangle>
+                  <d9p1:effect>None</d9p1:effect>
                   <d9p1:origin xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:X>0.5</d10p1:X>
                     <d10p1:Y>0.5</d10p1:Y>
@@ -14409,6 +14424,7 @@
                   <d8p1:IsVisible>true</d8p1:IsVisible>
                   <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
                   <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
+                  <d9p1:DrawMode>Simple</d9p1:DrawMode>
                   <d9p1:SamplerMode>LinearClamp</d9p1:SamplerMode>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="WaveEngine.Framework.Physics3D" i:type="d9p1:CircleCollider2D">
@@ -14459,7 +14475,6 @@
                     <d10p1:Y>1</d10p1:Y>
                     <d10p1:Z>1</d10p1:Z>
                   </d9p1:LocalScale>
-                  <d9p1:Effect>None</d9p1:Effect>
                   <d9p1:Opacity>1</d9p1:Opacity>
                   <d9p1:Rectangle xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:Height>380</d10p1:Height>
@@ -14467,6 +14482,7 @@
                     <d10p1:X>0</d10p1:X>
                     <d10p1:Y>0</d10p1:Y>
                   </d9p1:Rectangle>
+                  <d9p1:effect>None</d9p1:effect>
                   <d9p1:origin xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:X>0.5</d10p1:X>
                     <d10p1:Y>0.5</d10p1:Y>
@@ -14495,8 +14511,8 @@
                   <d9p1:SamplerMode>LinearClamp</d9p1:SamplerMode>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="WaveEngine.Components.Animation" i:type="d9p1:Animation2D">
-                  <d8p1:IsActive>true</d8p1:IsActive>
                   <d8p1:UpdateOrder>0.5</d8p1:UpdateOrder>
+                  <d8p1:isDisabled>false</d8p1:isDisabled>
                   <d9p1:CurrentAnimation>Anim</d9p1:CurrentAnimation>
                   <d9p1:PlayAutomatically>true</d9p1:PlayAutomatically>
                   <d9p1:currentAnimation>Anim</d9p1:currentAnimation>
@@ -15942,8 +15958,8 @@
                   </d9p1:vertices>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="WaveEngine.Framework.Animation" i:type="d9p1:AnimationUI">
-                  <d8p1:IsActive>true</d8p1:IsActive>
                   <d8p1:UpdateOrder>0.5</d8p1:UpdateOrder>
+                  <d8p1:isDisabled>false</d8p1:isDisabled>
                   <d9p1:State>Stopped</d9p1:State>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="SuperSquid.Components" i:type="d9p1:JellyFishController">
@@ -15976,7 +15992,6 @@
                     <d10p1:Y>0.9000246</d10p1:Y>
                     <d10p1:Z>1</d10p1:Z>
                   </d9p1:LocalScale>
-                  <d9p1:Effect>None</d9p1:Effect>
                   <d9p1:Opacity>1</d9p1:Opacity>
                   <d9p1:Rectangle xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:Height>100</d10p1:Height>
@@ -15984,6 +15999,7 @@
                     <d10p1:X>0</d10p1:X>
                     <d10p1:Y>0</d10p1:Y>
                   </d9p1:Rectangle>
+                  <d9p1:effect>None</d9p1:effect>
                   <d9p1:origin xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:X>0.5</d10p1:X>
                     <d10p1:Y>0.5</d10p1:Y>
@@ -16010,6 +16026,7 @@
                   <d8p1:IsVisible>true</d8p1:IsVisible>
                   <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
                   <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
+                  <d9p1:DrawMode>Simple</d9p1:DrawMode>
                   <d9p1:SamplerMode>LinearClamp</d9p1:SamplerMode>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="WaveEngine.Framework.Physics3D" i:type="d9p1:CircleCollider2D">
@@ -16060,7 +16077,6 @@
                     <d10p1:Y>0.799128056</d10p1:Y>
                     <d10p1:Z>1</d10p1:Z>
                   </d9p1:LocalScale>
-                  <d9p1:Effect>None</d9p1:Effect>
                   <d9p1:Opacity>1</d9p1:Opacity>
                   <d9p1:Rectangle xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:Height>100</d10p1:Height>
@@ -16068,6 +16084,7 @@
                     <d10p1:X>0</d10p1:X>
                     <d10p1:Y>0</d10p1:Y>
                   </d9p1:Rectangle>
+                  <d9p1:effect>None</d9p1:effect>
                   <d9p1:origin xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:X>0.5</d10p1:X>
                     <d10p1:Y>0.5</d10p1:Y>
@@ -16094,6 +16111,7 @@
                   <d8p1:IsVisible>true</d8p1:IsVisible>
                   <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
                   <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
+                  <d9p1:DrawMode>Simple</d9p1:DrawMode>
                   <d9p1:SamplerMode>LinearClamp</d9p1:SamplerMode>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="WaveEngine.Framework.Physics3D" i:type="d9p1:CircleCollider2D">
@@ -16143,7 +16161,6 @@
                 <d8p1:Y>1</d8p1:Y>
                 <d8p1:Z>1</d8p1:Z>
               </d7p1:LocalScale>
-              <d7p1:Effect>None</d7p1:Effect>
               <d7p1:Opacity>1</d7p1:Opacity>
               <d7p1:Rectangle xmlns:d8p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                 <d8p1:Height>0</d8p1:Height>
@@ -16151,6 +16168,7 @@
                 <d8p1:X>0</d8p1:X>
                 <d8p1:Y>0</d8p1:Y>
               </d7p1:Rectangle>
+              <d7p1:effect>None</d7p1:effect>
               <d7p1:origin xmlns:d8p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                 <d8p1:X>0</d8p1:X>
                 <d8p1:Y>0</d8p1:Y>
@@ -16193,7 +16211,6 @@
                         <d12p1:Y>1</d12p1:Y>
                         <d12p1:Z>1</d12p1:Z>
                       </d11p1:LocalScale>
-                      <d11p1:Effect>None</d11p1:Effect>
                       <d11p1:Opacity>1</d11p1:Opacity>
                       <d11p1:Rectangle xmlns:d12p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                         <d12p1:Height>250</d12p1:Height>
@@ -16201,6 +16218,7 @@
                         <d12p1:X>0</d12p1:X>
                         <d12p1:Y>0</d12p1:Y>
                       </d11p1:Rectangle>
+                      <d11p1:effect>None</d11p1:effect>
                       <d11p1:origin xmlns:d12p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                         <d12p1:X>0.5</d12p1:X>
                         <d12p1:Y>1</d12p1:Y>
@@ -16229,8 +16247,8 @@
                       <d11p1:SamplerMode>LinearClamp</d11p1:SamplerMode>
                     </d10p1:Component>
                     <d10p1:Component xmlns:d11p1="WaveEngine.Components.Animation" i:type="d11p1:Animation2D">
-                      <d10p1:IsActive>true</d10p1:IsActive>
                       <d10p1:UpdateOrder>0.5</d10p1:UpdateOrder>
+                      <d10p1:isDisabled>false</d10p1:isDisabled>
                       <d11p1:CurrentAnimation>Anim</d11p1:CurrentAnimation>
                       <d11p1:PlayAutomatically>true</d11p1:PlayAutomatically>
                       <d11p1:currentAnimation>Anim</d11p1:currentAnimation>
@@ -16261,7 +16279,6 @@
                     <d10p1:Y>1</d10p1:Y>
                     <d10p1:Z>1</d10p1:Z>
                   </d9p1:LocalScale>
-                  <d9p1:Effect>None</d9p1:Effect>
                   <d9p1:Opacity>1</d9p1:Opacity>
                   <d9p1:Rectangle xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:Height>235</d10p1:Height>
@@ -16269,6 +16286,7 @@
                     <d10p1:X>0</d10p1:X>
                     <d10p1:Y>0</d10p1:Y>
                   </d9p1:Rectangle>
+                  <d9p1:effect>None</d9p1:effect>
                   <d9p1:origin xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:X>0.5</d10p1:X>
                     <d10p1:Y>0.5</d10p1:Y>
@@ -16295,6 +16313,7 @@
                   <d8p1:IsVisible>true</d8p1:IsVisible>
                   <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
                   <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
+                  <d9p1:DrawMode>Simple</d9p1:DrawMode>
                   <d9p1:SamplerMode>LinearClamp</d9p1:SamplerMode>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="WaveEngine.Framework.Physics2D" i:type="d9p1:PolygonCollider2D">
@@ -16650,7 +16669,6 @@
                         <d12p1:Y>1</d12p1:Y>
                         <d12p1:Z>1</d12p1:Z>
                       </d11p1:LocalScale>
-                      <d11p1:Effect>None</d11p1:Effect>
                       <d11p1:Opacity>1</d11p1:Opacity>
                       <d11p1:Rectangle xmlns:d12p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                         <d12p1:Height>250</d12p1:Height>
@@ -16658,6 +16676,7 @@
                         <d12p1:X>0</d12p1:X>
                         <d12p1:Y>0</d12p1:Y>
                       </d11p1:Rectangle>
+                      <d11p1:effect>None</d11p1:effect>
                       <d11p1:origin xmlns:d12p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                         <d12p1:X>0.5</d12p1:X>
                         <d12p1:Y>1</d12p1:Y>
@@ -16686,8 +16705,8 @@
                       <d11p1:SamplerMode>LinearClamp</d11p1:SamplerMode>
                     </d10p1:Component>
                     <d10p1:Component xmlns:d11p1="WaveEngine.Components.Animation" i:type="d11p1:Animation2D">
-                      <d10p1:IsActive>true</d10p1:IsActive>
                       <d10p1:UpdateOrder>0.5</d10p1:UpdateOrder>
+                      <d10p1:isDisabled>false</d10p1:isDisabled>
                       <d11p1:CurrentAnimation>Anim</d11p1:CurrentAnimation>
                       <d11p1:PlayAutomatically>true</d11p1:PlayAutomatically>
                       <d11p1:currentAnimation>Anim</d11p1:currentAnimation>
@@ -16718,7 +16737,6 @@
                     <d10p1:Y>1</d10p1:Y>
                     <d10p1:Z>1</d10p1:Z>
                   </d9p1:LocalScale>
-                  <d9p1:Effect>None</d9p1:Effect>
                   <d9p1:Opacity>1</d9p1:Opacity>
                   <d9p1:Rectangle xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:Height>235</d10p1:Height>
@@ -16726,6 +16744,7 @@
                     <d10p1:X>0</d10p1:X>
                     <d10p1:Y>0</d10p1:Y>
                   </d9p1:Rectangle>
+                  <d9p1:effect>None</d9p1:effect>
                   <d9p1:origin xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:X>0.5</d10p1:X>
                     <d10p1:Y>0.5</d10p1:Y>
@@ -16752,6 +16771,7 @@
                   <d8p1:IsVisible>true</d8p1:IsVisible>
                   <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
                   <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
+                  <d9p1:DrawMode>Simple</d9p1:DrawMode>
                   <d9p1:SamplerMode>LinearClamp</d9p1:SamplerMode>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="WaveEngine.Framework.Physics2D" i:type="d9p1:PolygonCollider2D">
@@ -17105,7 +17125,6 @@
                     <d10p1:Y>1</d10p1:Y>
                     <d10p1:Z>1</d10p1:Z>
                   </d9p1:LocalScale>
-                  <d9p1:Effect>None</d9p1:Effect>
                   <d9p1:Opacity>1</d9p1:Opacity>
                   <d9p1:Rectangle xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:Height>100</d10p1:Height>
@@ -17113,6 +17132,7 @@
                     <d10p1:X>0</d10p1:X>
                     <d10p1:Y>0</d10p1:Y>
                   </d9p1:Rectangle>
+                  <d9p1:effect>None</d9p1:effect>
                   <d9p1:origin xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:X>0.5</d10p1:X>
                     <d10p1:Y>0.5</d10p1:Y>
@@ -17139,6 +17159,7 @@
                   <d8p1:IsVisible>true</d8p1:IsVisible>
                   <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
                   <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
+                  <d9p1:DrawMode>Simple</d9p1:DrawMode>
                   <d9p1:SamplerMode>LinearClamp</d9p1:SamplerMode>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="WaveEngine.Framework.Physics3D" i:type="d9p1:CircleCollider2D">
@@ -17189,7 +17210,6 @@
                     <d10p1:Y>0.8097536</d10p1:Y>
                     <d10p1:Z>1</d10p1:Z>
                   </d9p1:LocalScale>
-                  <d9p1:Effect>None</d9p1:Effect>
                   <d9p1:Opacity>1</d9p1:Opacity>
                   <d9p1:Rectangle xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:Height>100</d10p1:Height>
@@ -17197,6 +17217,7 @@
                     <d10p1:X>0</d10p1:X>
                     <d10p1:Y>0</d10p1:Y>
                   </d9p1:Rectangle>
+                  <d9p1:effect>None</d9p1:effect>
                   <d9p1:origin xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:X>0.5</d10p1:X>
                     <d10p1:Y>0.5</d10p1:Y>
@@ -17223,6 +17244,7 @@
                   <d8p1:IsVisible>true</d8p1:IsVisible>
                   <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
                   <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
+                  <d9p1:DrawMode>Simple</d9p1:DrawMode>
                   <d9p1:SamplerMode>LinearClamp</d9p1:SamplerMode>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="WaveEngine.Framework.Physics3D" i:type="d9p1:CircleCollider2D">
@@ -17272,7 +17294,6 @@
                 <d8p1:Y>1</d8p1:Y>
                 <d8p1:Z>1</d8p1:Z>
               </d7p1:LocalScale>
-              <d7p1:Effect>None</d7p1:Effect>
               <d7p1:Opacity>1</d7p1:Opacity>
               <d7p1:Rectangle xmlns:d8p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                 <d8p1:Height>0</d8p1:Height>
@@ -17280,6 +17301,7 @@
                 <d8p1:X>0</d8p1:X>
                 <d8p1:Y>0</d8p1:Y>
               </d7p1:Rectangle>
+              <d7p1:effect>None</d7p1:effect>
               <d7p1:origin xmlns:d8p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                 <d8p1:X>0</d8p1:X>
                 <d8p1:Y>0</d8p1:Y>
@@ -17322,7 +17344,6 @@
                         <d12p1:Y>1</d12p1:Y>
                         <d12p1:Z>1</d12p1:Z>
                       </d11p1:LocalScale>
-                      <d11p1:Effect>None</d11p1:Effect>
                       <d11p1:Opacity>1</d11p1:Opacity>
                       <d11p1:Rectangle xmlns:d12p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                         <d12p1:Height>250</d12p1:Height>
@@ -17330,6 +17351,7 @@
                         <d12p1:X>0</d12p1:X>
                         <d12p1:Y>0</d12p1:Y>
                       </d11p1:Rectangle>
+                      <d11p1:effect>None</d11p1:effect>
                       <d11p1:origin xmlns:d12p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                         <d12p1:X>0.5</d12p1:X>
                         <d12p1:Y>1</d12p1:Y>
@@ -17358,8 +17380,8 @@
                       <d11p1:SamplerMode>LinearClamp</d11p1:SamplerMode>
                     </d10p1:Component>
                     <d10p1:Component xmlns:d11p1="WaveEngine.Components.Animation" i:type="d11p1:Animation2D">
-                      <d10p1:IsActive>true</d10p1:IsActive>
                       <d10p1:UpdateOrder>0.5</d10p1:UpdateOrder>
+                      <d10p1:isDisabled>false</d10p1:isDisabled>
                       <d11p1:CurrentAnimation>Anim</d11p1:CurrentAnimation>
                       <d11p1:PlayAutomatically>true</d11p1:PlayAutomatically>
                       <d11p1:currentAnimation>Anim</d11p1:currentAnimation>
@@ -17390,7 +17412,6 @@
                     <d10p1:Y>1</d10p1:Y>
                     <d10p1:Z>1</d10p1:Z>
                   </d9p1:LocalScale>
-                  <d9p1:Effect>None</d9p1:Effect>
                   <d9p1:Opacity>1</d9p1:Opacity>
                   <d9p1:Rectangle xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:Height>269</d10p1:Height>
@@ -17398,6 +17419,7 @@
                     <d10p1:X>0</d10p1:X>
                     <d10p1:Y>0</d10p1:Y>
                   </d9p1:Rectangle>
+                  <d9p1:effect>None</d9p1:effect>
                   <d9p1:origin xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:X>0</d10p1:X>
                     <d10p1:Y>0</d10p1:Y>
@@ -17424,6 +17446,7 @@
                   <d8p1:IsVisible>true</d8p1:IsVisible>
                   <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
                   <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
+                  <d9p1:DrawMode>Simple</d9p1:DrawMode>
                   <d9p1:SamplerMode>LinearClamp</d9p1:SamplerMode>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="WaveEngine.Framework.Physics2D" i:type="d9p1:PolygonCollider2D">
@@ -17703,7 +17726,6 @@
                         <d12p1:Y>1</d12p1:Y>
                         <d12p1:Z>1</d12p1:Z>
                       </d11p1:LocalScale>
-                      <d11p1:Effect>None</d11p1:Effect>
                       <d11p1:Opacity>1</d11p1:Opacity>
                       <d11p1:Rectangle xmlns:d12p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                         <d12p1:Height>250</d12p1:Height>
@@ -17711,6 +17733,7 @@
                         <d12p1:X>0</d12p1:X>
                         <d12p1:Y>0</d12p1:Y>
                       </d11p1:Rectangle>
+                      <d11p1:effect>None</d11p1:effect>
                       <d11p1:origin xmlns:d12p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                         <d12p1:X>0.5</d12p1:X>
                         <d12p1:Y>1</d12p1:Y>
@@ -17739,8 +17762,8 @@
                       <d11p1:SamplerMode>LinearClamp</d11p1:SamplerMode>
                     </d10p1:Component>
                     <d10p1:Component xmlns:d11p1="WaveEngine.Components.Animation" i:type="d11p1:Animation2D">
-                      <d10p1:IsActive>true</d10p1:IsActive>
                       <d10p1:UpdateOrder>0.5</d10p1:UpdateOrder>
+                      <d10p1:isDisabled>false</d10p1:isDisabled>
                       <d11p1:CurrentAnimation>Anim</d11p1:CurrentAnimation>
                       <d11p1:PlayAutomatically>true</d11p1:PlayAutomatically>
                       <d11p1:currentAnimation>Anim</d11p1:currentAnimation>
@@ -17771,7 +17794,6 @@
                     <d10p1:Y>1</d10p1:Y>
                     <d10p1:Z>1</d10p1:Z>
                   </d9p1:LocalScale>
-                  <d9p1:Effect>None</d9p1:Effect>
                   <d9p1:Opacity>1</d9p1:Opacity>
                   <d9p1:Rectangle xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:Height>399</d10p1:Height>
@@ -17779,6 +17801,7 @@
                     <d10p1:X>0</d10p1:X>
                     <d10p1:Y>0</d10p1:Y>
                   </d9p1:Rectangle>
+                  <d9p1:effect>None</d9p1:effect>
                   <d9p1:origin xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:X>1</d10p1:X>
                     <d10p1:Y>0</d10p1:Y>
@@ -17805,6 +17828,7 @@
                   <d8p1:IsVisible>true</d8p1:IsVisible>
                   <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
                   <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
+                  <d9p1:DrawMode>Simple</d9p1:DrawMode>
                   <d9p1:SamplerMode>LinearClamp</d9p1:SamplerMode>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="WaveEngine.Framework.Physics2D" i:type="d9p1:PolygonCollider2D">
@@ -18058,7 +18082,6 @@
                     <d10p1:Y>1</d10p1:Y>
                     <d10p1:Z>1</d10p1:Z>
                   </d9p1:LocalScale>
-                  <d9p1:Effect>None</d9p1:Effect>
                   <d9p1:Opacity>1</d9p1:Opacity>
                   <d9p1:Rectangle xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:Height>160</d10p1:Height>
@@ -18066,6 +18089,7 @@
                     <d10p1:X>0</d10p1:X>
                     <d10p1:Y>0</d10p1:Y>
                   </d9p1:Rectangle>
+                  <d9p1:effect>None</d9p1:effect>
                   <d9p1:origin xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:X>0.5</d10p1:X>
                     <d10p1:Y>0.5</d10p1:Y>
@@ -18094,8 +18118,8 @@
                   <d9p1:SamplerMode>LinearClamp</d9p1:SamplerMode>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="WaveEngine.Components.Animation" i:type="d9p1:Animation2D">
-                  <d8p1:IsActive>true</d8p1:IsActive>
                   <d8p1:UpdateOrder>0.5</d8p1:UpdateOrder>
+                  <d8p1:isDisabled>false</d8p1:isDisabled>
                   <d9p1:CurrentAnimation>Anim</d9p1:CurrentAnimation>
                   <d9p1:PlayAutomatically>true</d9p1:PlayAutomatically>
                   <d9p1:currentAnimation>Anim</d9p1:currentAnimation>
@@ -18857,8 +18881,8 @@
                   </d9p1:vertices>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="WaveEngine.Framework.Animation" i:type="d9p1:AnimationUI">
-                  <d8p1:IsActive>true</d8p1:IsActive>
                   <d8p1:UpdateOrder>0.5</d8p1:UpdateOrder>
+                  <d8p1:isDisabled>false</d8p1:isDisabled>
                   <d9p1:State>Stopped</d9p1:State>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="SuperSquid.Components" i:type="d9p1:JellyFishController">
@@ -18891,7 +18915,6 @@
                     <d10p1:Y>0.7472328</d10p1:Y>
                     <d10p1:Z>1</d10p1:Z>
                   </d9p1:LocalScale>
-                  <d9p1:Effect>None</d9p1:Effect>
                   <d9p1:Opacity>1</d9p1:Opacity>
                   <d9p1:Rectangle xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:Height>100</d10p1:Height>
@@ -18899,6 +18922,7 @@
                     <d10p1:X>0</d10p1:X>
                     <d10p1:Y>0</d10p1:Y>
                   </d9p1:Rectangle>
+                  <d9p1:effect>None</d9p1:effect>
                   <d9p1:origin xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:X>0.5</d10p1:X>
                     <d10p1:Y>0.5</d10p1:Y>
@@ -18925,6 +18949,7 @@
                   <d8p1:IsVisible>true</d8p1:IsVisible>
                   <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
                   <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
+                  <d9p1:DrawMode>Simple</d9p1:DrawMode>
                   <d9p1:SamplerMode>LinearClamp</d9p1:SamplerMode>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="WaveEngine.Framework.Physics3D" i:type="d9p1:CircleCollider2D">
@@ -18975,7 +19000,6 @@
                     <d10p1:Y>1.02397072</d10p1:Y>
                     <d10p1:Z>1</d10p1:Z>
                   </d9p1:LocalScale>
-                  <d9p1:Effect>None</d9p1:Effect>
                   <d9p1:Opacity>1</d9p1:Opacity>
                   <d9p1:Rectangle xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:Height>100</d10p1:Height>
@@ -18983,6 +19007,7 @@
                     <d10p1:X>0</d10p1:X>
                     <d10p1:Y>0</d10p1:Y>
                   </d9p1:Rectangle>
+                  <d9p1:effect>None</d9p1:effect>
                   <d9p1:origin xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:X>0.5</d10p1:X>
                     <d10p1:Y>0.5</d10p1:Y>
@@ -19009,6 +19034,7 @@
                   <d8p1:IsVisible>true</d8p1:IsVisible>
                   <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
                   <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
+                  <d9p1:DrawMode>Simple</d9p1:DrawMode>
                   <d9p1:SamplerMode>LinearClamp</d9p1:SamplerMode>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="WaveEngine.Framework.Physics3D" i:type="d9p1:CircleCollider2D">
@@ -19058,7 +19084,6 @@
                 <d8p1:Y>1</d8p1:Y>
                 <d8p1:Z>1</d8p1:Z>
               </d7p1:LocalScale>
-              <d7p1:Effect>None</d7p1:Effect>
               <d7p1:Opacity>1</d7p1:Opacity>
               <d7p1:Rectangle xmlns:d8p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                 <d8p1:Height>0</d8p1:Height>
@@ -19066,6 +19091,7 @@
                 <d8p1:X>0</d8p1:X>
                 <d8p1:Y>0</d8p1:Y>
               </d7p1:Rectangle>
+              <d7p1:effect>None</d7p1:effect>
               <d7p1:origin xmlns:d8p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                 <d8p1:X>0</d8p1:X>
                 <d8p1:Y>0</d8p1:Y>
@@ -19103,7 +19129,6 @@
             <d6p1:Y>1</d6p1:Y>
             <d6p1:Z>1</d6p1:Z>
           </d5p1:LocalScale>
-          <d5p1:Effect>None</d5p1:Effect>
           <d5p1:Opacity>1</d5p1:Opacity>
           <d5p1:Rectangle xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
             <d6p1:Height>0</d6p1:Height>
@@ -19111,6 +19136,7 @@
             <d6p1:X>0</d6p1:X>
             <d6p1:Y>0</d6p1:Y>
           </d5p1:Rectangle>
+          <d5p1:effect>None</d5p1:effect>
           <d5p1:origin xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
             <d6p1:X>0.5</d6p1:X>
             <d6p1:Y>0.5</d6p1:Y>
@@ -19122,8 +19148,8 @@
           <d5p1:transformMode>Standard</d5p1:transformMode>
         </d4p1:Component>
         <d4p1:Component xmlns:d5p1="SuperSquid.Entities.Behaviors" i:type="d5p1:BlockBuilderBehavior">
-          <d4p1:IsActive>true</d4p1:IsActive>
           <d4p1:UpdateOrder>0.5</d4p1:UpdateOrder>
+          <d4p1:isDisabled>false</d4p1:isDisabled>
         </d4p1:Component>
       </d2p1:SerializeComponents>
     </d2p1:BaseEntityModel>
