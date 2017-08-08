@@ -20,6 +20,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Components\PoolComponent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Components\TankComponent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\P2PMessages\BarrelRotate.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\P2PMessages\BulletCreateMessage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\P2PMessages\BulletDestroyMessage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\P2PMessages\BulletMoveMessage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\P2PMessages\CreatePlayerMessage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\P2PMessages\DestroyMessage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\P2PMessages\MoveMessage.cs" />

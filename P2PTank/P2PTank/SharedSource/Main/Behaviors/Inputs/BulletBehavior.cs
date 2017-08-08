@@ -1,10 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using P2PTank.Components;
+using P2PTank.Entities.P2PMessages;
 using P2PTank.Managers;
 using WaveEngine.Common.Math;
 using WaveEngine.Framework;
+using WaveEngine.Framework.Graphics;
 using WaveEngine.Framework.Physics2D;
 
 namespace P2PTank.Behaviors
@@ -20,15 +20,23 @@ namespace P2PTank.Behaviors
         [RequiredComponent]
         private BulletComponent bulletComponent = null;
 
-        private P2PManager p2pManager;
+        [RequiredComponent]
+        private Transform2D transform = null;
 
-        private GamePlayManager gamePlayManger;
+        private P2PManager peerManager;
+
+        private GamePlayManager gamePlayManager;
 
         public string BulletID { get; set; }
 
-        public BulletBehavior(P2PManager p2pManager = null)
+        public string PlayerID { get; set; }
+
+        public BulletBehavior(P2PManager peerManager, string bulletID, string playerID)
         {
-            this.p2pManager = p2pManager;
+            this.peerManager = peerManager;
+
+            this.BulletID = bulletID;
+            this.PlayerID = playerID;
         }
 
         protected override void ResolveDependencies()
@@ -37,17 +45,21 @@ namespace P2PTank.Behaviors
 
             this.collider.BeginCollision += this.ColliderBeginCollision;
 
-            this.gamePlayManger = this.Owner.Scene.EntityManager.FindComponentFromEntityPath<GamePlayManager>(GameConstants.ManagerEntityPath);
+            this.gamePlayManager = this.Owner.Scene.EntityManager.FindComponentFromEntityPath<GamePlayManager>(GameConstants.ManagerEntityPath);
         }
 
         private void ColliderBeginCollision(WaveEngine.Common.Physics2D.ICollisionInfo2D contact)
         {
-       
-            this.gamePlayManger.DestroyBullet(this.Owner);
+            this.gamePlayManager.DestroyBullet(this.Owner);
 
-            if (this.p2pManager != null)
+            if (this.peerManager != null)
             {
-                p2pManager.CreateMessage(Entities.P2PMessages.P2PMessageType.Destroy, this.BulletID);
+                var destroyMessage = new BulletDestroyMessage()
+                {
+                    BulletId = this.BulletID
+                };
+
+                peerManager.CreateMessage(P2PMessageType.BulletDestroy, destroyMessage);
             }
         }
 
@@ -60,6 +72,26 @@ namespace P2PTank.Behaviors
 
         protected override void Update(TimeSpan gameTime)
         {
+            this.HandleNetworkMessages();
+        }
+
+        private async void HandleNetworkMessages()
+        {
+            if (this.peerManager != null)
+            {
+                if (this.rigidBody.Awake)
+                {
+                    var moveMessage = new BulletMoveMessage()
+                    {
+                        PlayerId = this.PlayerID,
+                        BulletId = this.BulletID,
+                        X = this.transform.LocalPosition.X,
+                        Y = this.transform.LocalPosition.Y,
+                    };
+
+                    await this.peerManager.SendBroadcastAsync(this.peerManager.CreateMessage(P2PMessageType.BulletMove, moveMessage));
+                }
+            }
         }
     }
 }

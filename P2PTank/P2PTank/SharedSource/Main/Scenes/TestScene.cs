@@ -24,6 +24,11 @@ namespace P2PTank.Scenes
 {
     public class TestScene : Scene
     {
+        private List<string> activeBullets = new List<string>();
+
+        private List<Peer> ConnectedPeers { get; set; } = new List<Peer>();
+
+
         private string contentPath;
         private P2PManager peerManager;
         private GamePlayManager gameplayManager;
@@ -187,22 +192,32 @@ namespace P2PTank.Scenes
 
                             break;
                         case P2PMessageType.Move:
-                            var moveData = message.Value as MoveMessage;
                             break;
                         case P2PMessageType.Rotate:
                             break;
                         case P2PMessageType.Shoot:
-                            var shootData = message.Value as ShootMessage;
                             break;
                         case P2PMessageType.Destroy:
-                            var destroyData = message.Value as DestroyMessage;
+                            break;
+                        case P2PMessageType.BulletCreate:
+                            var createBulletData = message.Value as BulletCreateMessage;
+
+                            if (activeBullets.Any(b => b.Equals(createBulletData.BulletID)))
+                            {
+                                break;
+                            }
+
+                            this.activeBullets.Add(createBulletData.BulletID);
+                            this.gameplayManager.CreateFoeBullet(createBulletData.Color, this.playerID, createBulletData.BulletID, peerManager);
+                            break;
+                        case P2PMessageType.BulletDestroy:
+                            var destroyBulletData = message.Value as BulletDestroyMessage;
+                            this.activeBullets.Remove(destroyBulletData.BulletId);
                             break;
                     }
                 }
             }
         }
-
-        private List<Peer> ConnectedPeers { get; set; } = new List<Peer>();
 
         private void OnPeerChanged(object sender, PeerChangeEventArgs e)
         {

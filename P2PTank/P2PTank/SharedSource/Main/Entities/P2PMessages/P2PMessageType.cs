@@ -7,6 +7,9 @@
         Rotate,
         BarrelRotate,
         Shoot,
-        Destroy
+        Destroy,
+        BulletMove,
+        BulletDestroy,
+        BulletCreate,
     }
 }

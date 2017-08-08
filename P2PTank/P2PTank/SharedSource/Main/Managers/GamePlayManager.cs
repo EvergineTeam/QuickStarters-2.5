@@ -5,6 +5,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using P2PTank.Behaviors;
 using P2PTank.Components;
+using P2PTank.Entities.P2PMessages;
 using P2PTank.Scenes;
 using WaveEngine.Common.Graphics;
 using WaveEngine.Common.Math;
@@ -26,6 +27,8 @@ namespace P2PTank.Managers
         private CURRENTSCENETYPE gamePlayScene;
         private PoolComponent poolComponent;
 
+        private string playerID;
+
         protected override void ResolveDependencies()
         {
             base.ResolveDependencies();
@@ -35,6 +38,8 @@ namespace P2PTank.Managers
 
         public Entity CreatePlayer(int playerIndex, P2PManager peerManager, string playerID)
         {
+            this.playerID = playerID;
+
             var category = ColliderCategory2D.Cat2;
             var collidesWith = ColliderCategory2D.Cat3 | ColliderCategory2D.Cat4 | ColliderCategory2D.Cat5;
 
@@ -67,13 +72,14 @@ namespace P2PTank.Managers
             var collidesWith = ColliderCategory2D.Cat3 | ColliderCategory2D.Cat4;
 
             var entity = this.CreateBaseBullet(category, collidesWith, color);
-            var behavior = new BulletBehavior(peerManager);
+            var bulletID = Guid.NewGuid().ToString();
+            var behavior = new BulletBehavior(peerManager, bulletID, this.playerID);
             entity.AddComponent(behavior);
             entity.AddComponent(new RigidBody2D
             {
                 PhysicBodyType = RigidBodyType2D.Dynamic,
                 IsBullet = true,
-                
+
                 FixedRotation = true,
                 AngularDamping = 0,
                 LinearDamping = 0
@@ -81,16 +87,26 @@ namespace P2PTank.Managers
 
             this.gamePlayScene.EntityManager.Add(entity);
             behavior.Shoot(position, direction);
-            // return entity;
+
+            if (peerManager != null)
+            {
+                var createBulletMessage = new BulletCreateMessage()
+                {
+                    BulletID = bulletID,
+                    PlayerID = this.playerID,
+                };
+
+                peerManager.CreateMessage(P2PMessageType.BulletCreate, createBulletMessage);
+            }
         }
 
-        public Entity CreateFoeBullet(Color color)
+        public Entity CreateFoeBullet(Color color, string playerID, string bulletID, P2PManager peerManager)
         {
             var category = ColliderCategory2D.Cat5;
             var collidesWith = ColliderCategory2D.Cat1 | ColliderCategory2D.Cat3;
 
             var entity = this.CreateBaseBullet(category, collidesWith, color);
-            entity.AddComponent(new BulletNetworkBehavior());
+            entity.AddComponent(new BulletNetworkBehavior(peerManager, bulletID, playerID));
             return entity;
         }
 
