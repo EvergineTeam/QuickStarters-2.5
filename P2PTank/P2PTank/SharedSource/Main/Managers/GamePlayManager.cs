@@ -66,7 +66,7 @@ namespace P2PTank.Managers
             return entity;
         }
 
-        public void ShootPlayerBullet(Vector2 position, Vector2 direction, Color color, P2PManager peerManager)
+        public async void ShootPlayerBullet(Vector2 position, Vector2 direction, Color color, P2PManager peerManager)
         {
             var category = ColliderCategory2D.Cat2;
             var collidesWith = ColliderCategory2D.Cat3 | ColliderCategory2D.Cat4;
@@ -96,7 +96,7 @@ namespace P2PTank.Managers
                     PlayerID = this.playerID,
                 };
 
-                peerManager.CreateMessage(P2PMessageType.BulletCreate, createBulletMessage);
+                await peerManager.SendBroadcastAsync(peerManager.CreateMessage(P2PMessageType.BulletCreate, createBulletMessage));
             }
         }
 
