@@ -95,6 +95,21 @@ namespace P2PTank.Managers
                         P2PMessageType.Destroy, 
                         JsonConvert.DeserializeObject<DestroyMessage>(result[1]));
                     break;
+                case P2PMessageType.BulletCreate:
+                    messageObject.Add(
+                        P2PMessageType.BulletCreate,
+                        JsonConvert.DeserializeObject<BulletCreateMessage>(result[1]));
+                    break;
+                case P2PMessageType.BulletMove:
+                    messageObject.Add(
+                        P2PMessageType.BulletMove,
+                        JsonConvert.DeserializeObject<BulletMoveMessage>(result[1]));
+                    break;
+                case P2PMessageType.BulletDestroy:
+                    messageObject.Add(
+                        P2PMessageType.BulletDestroy,
+                        JsonConvert.DeserializeObject<BulletDestroyMessage>(result[1]));
+                    break;
             }
 
             return messageObject;

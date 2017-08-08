@@ -94,6 +94,7 @@ namespace P2PTank.Managers
                 {
                     BulletID = bulletID,
                     PlayerID = this.playerID,
+                    Color = color,
                 };
 
                 await peerManager.SendBroadcastAsync(peerManager.CreateMessage(P2PMessageType.BulletCreate, createBulletMessage));

@@ -167,6 +167,10 @@ namespace P2PTank.Scenes
             var messageReceived = Encoding.ASCII.GetString(e.Message);
             Labels.Add("OnMsgReceived", messageReceived);
 
+            if(messageReceived.Contains("Create"))
+            {
+            }
+
             var result = peerManager.ReadMessage(messageReceived);
 
             if (result.Any())
