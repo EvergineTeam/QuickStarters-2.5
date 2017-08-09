@@ -1,21 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
-using System.Text;
 using P2PTank.Behaviors;
 using P2PTank.Components;
 using P2PTank.Entities.P2PMessages;
-using P2PTank.Scenes;
 using WaveEngine.Common.Graphics;
 using WaveEngine.Common.Math;
 using WaveEngine.Common.Physics2D;
-using WaveEngine.Components.Graphics2D;
 using WaveEngine.Framework;
 using WaveEngine.Framework.Diagnostic;
-using WaveEngine.Framework.Graphics;
 using WaveEngine.Framework.Physics2D;
-using WaveEngine.Framework.Services;
 
 using CURRENTSCENETYPE = P2PTank.Scenes.GamePlayScene;
 
