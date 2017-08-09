@@ -20,8 +20,7 @@ namespace P2PTank
             GameSettings.GamePadDeadZone = 0.25f;
 
             //ScreenContext screenContext = new ScreenContext(new P2PScene());
-            //ScreenContext screenContext = new ScreenContext(new GamePlayScene());
-            ScreenContext screenContext = new ScreenContext(new TestScene(WaveContent.Scenes.Levels.Level1));
+            ScreenContext screenContext = new ScreenContext(new GamePlayScene(WaveContent.Scenes.Levels.Level1));
 
             WaveServices.ScreenContextManager.To(screenContext);
             WaveServices.ScreenContextManager.SetDiagnosticsActive(true);

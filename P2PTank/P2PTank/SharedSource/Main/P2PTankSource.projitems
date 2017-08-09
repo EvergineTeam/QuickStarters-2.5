@@ -35,7 +35,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Managers\GamePlayManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Managers\P2PManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Scenes\GamePlayScene.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Scenes\TestScene.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Scenes\IntroScene.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Scenes\P2PScene.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)WaveContent.cs" />
   </ItemGroup>

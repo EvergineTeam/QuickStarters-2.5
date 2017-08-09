@@ -17,7 +17,7 @@ using WaveEngine.Framework.Graphics;
 using WaveEngine.Framework.Physics2D;
 using WaveEngine.Framework.Services;
 
-using CURRENTSCENETYPE = P2PTank.Scenes.TestScene;
+using CURRENTSCENETYPE = P2PTank.Scenes.GamePlayScene;
 
 namespace P2PTank.Managers
 {
