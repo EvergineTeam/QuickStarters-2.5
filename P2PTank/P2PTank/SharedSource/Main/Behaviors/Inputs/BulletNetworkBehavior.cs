@@ -84,7 +84,7 @@ namespace P2PTank.Behaviors
 
         private void BulletDestroy()
         {
-            this.gamePlayManager.DestroyBullet(this.Owner);
+            this.gamePlayManager.DestroyBullet(this.Owner, this.peerManager);
         }
 
         private void BulletMove(float x, float y)

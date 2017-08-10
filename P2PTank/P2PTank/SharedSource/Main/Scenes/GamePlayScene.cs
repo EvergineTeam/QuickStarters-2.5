@@ -125,7 +125,13 @@ namespace P2PTank.Scenes
                         // Cat5 is Foe Bullet
                         if (contact.ColliderB.CollisionCategories == ColliderCategory2D.Cat5)
                         {
-                            player.FindComponent<PlayerInputBehavior>().Hit(100);
+                            player.FindComponent<PlayerInputBehavior>().Hit(50);
+                            var bulletCollider = contact.ColliderB.UserData as Collider2D;
+                            if (bulletCollider != null)
+                            {
+                                var bullet = bulletCollider.Owner;
+                                this.gameplayManager.DestroyBullet(bullet, this.peerManager);
+                            }
                         }
                     };
             }

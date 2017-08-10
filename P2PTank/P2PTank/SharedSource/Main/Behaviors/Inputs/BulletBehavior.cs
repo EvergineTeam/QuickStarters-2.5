@@ -43,24 +43,15 @@ namespace P2PTank.Behaviors
         {
             base.ResolveDependencies();
 
+            this.collider.BeginCollision -= this.ColliderBeginCollision;
             this.collider.BeginCollision += this.ColliderBeginCollision;
 
             this.gamePlayManager = this.Owner.Scene.EntityManager.FindComponentFromEntityPath<GamePlayManager>(GameConstants.ManagerEntityPath);
         }
 
-        private async void ColliderBeginCollision(WaveEngine.Common.Physics2D.ICollisionInfo2D contact)
+        private void ColliderBeginCollision(WaveEngine.Common.Physics2D.ICollisionInfo2D contact)
         {
-            this.gamePlayManager.DestroyBullet(this.Owner);
-
-            if (this.peerManager != null)
-            {
-                var destroyMessage = new BulletDestroyMessage()
-                {
-                    BulletId = this.BulletID
-                };
-
-                await this.peerManager.SendBroadcastAsync(peerManager.CreateMessage(P2PMessageType.BulletDestroy, destroyMessage));
-            }
+            this.gamePlayManager.DestroyBullet(this.Owner, this.peerManager);
         }
 
         public void Shoot(Vector2 position, Vector2 direction)
