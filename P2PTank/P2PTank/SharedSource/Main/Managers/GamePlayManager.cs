@@ -115,7 +115,7 @@ namespace P2PTank.Managers
 
             var bulletCollider = bullet.FindComponent<Collider2D>(false);
 
-            if (bulletCollider.CollisionCategories == ColliderCategory2D.Cat2)
+            if (peerManager != null)
             {
                 var destroyMessage = new BulletDestroyMessage()
                 {
