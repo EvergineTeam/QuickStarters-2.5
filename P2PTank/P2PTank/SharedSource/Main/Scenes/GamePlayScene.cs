@@ -122,9 +122,10 @@ namespace P2PTank.Scenes
             {
                 collider.BeginCollision += (contact) =>
                     {
-                        // Cat2 is Bullet
-                        if (contact.ColliderB.CollisionCategories == ColliderCategory2D.Cat2)
+                        // Cat5 is Foe Bullet
+                        if (contact.ColliderB.CollisionCategories == ColliderCategory2D.Cat5)
                         {
+                            player.FindComponent<PlayerInputBehavior>().Hit(100);
                         }
                     };
             }

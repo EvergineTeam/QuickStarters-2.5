@@ -35,7 +35,7 @@ namespace P2PTank.Managers
             this.playerID = playerID;
 
             var category = ColliderCategory2D.Cat1;
-            var collidesWith = ColliderCategory2D.Cat2 | ColliderCategory2D.Cat3 | ColliderCategory2D.Cat4;
+            var collidesWith = ColliderCategory2D.Cat3 | ColliderCategory2D.Cat4 | ColliderCategory2D.Cat5;
 
             var entity = this.CreateBaseTank(playerIndex, category, collidesWith);
             entity.Name = playerID;
@@ -63,7 +63,7 @@ namespace P2PTank.Managers
         public async void ShootPlayerBullet(Vector2 position, Vector2 direction, Color color, P2PManager peerManager)
         {
             var category = ColliderCategory2D.Cat2;
-            var collidesWith = ColliderCategory2D.Cat1 | ColliderCategory2D.Cat3;
+            var collidesWith = ColliderCategory2D.Cat3 | ColliderCategory2D.Cat4;
             
             var entity = this.CreateBaseBullet(category, collidesWith, color);
             var bulletID = Guid.NewGuid().ToString();
@@ -90,7 +90,7 @@ namespace P2PTank.Managers
 
         public Entity CreateFoeBullet(Color color, string playerID, string bulletID, P2PManager peerManager)
         {
-            var category = ColliderCategory2D.Cat2;
+            var category = ColliderCategory2D.Cat5;
             var collidesWith = ColliderCategory2D.Cat1 | ColliderCategory2D.Cat3;
 
             var entity = this.CreateBaseBullet(category, collidesWith, color);
