@@ -64,7 +64,7 @@ namespace P2PTank.Managers
         {
             var category = ColliderCategory2D.Cat2;
             var collidesWith = ColliderCategory2D.Cat3 | ColliderCategory2D.Cat4;
-            
+
             var entity = this.CreateBaseBullet(category, collidesWith, color);
             var bulletID = Guid.NewGuid().ToString();
             var behavior = new BulletBehavior(peerManager, bulletID, this.playerID);
@@ -111,14 +111,19 @@ namespace P2PTank.Managers
         {
             this.poolComponent.FreeBulletEntity(new Entity[] { bullet });
 
-            var destroyMessage = new BulletDestroyMessage()
-            {
-                BulletId = bullet.Name,
-            };
+            var bulletCollider = bullet.FindComponent<Collider2D>(false);
 
-            await peerManager.SendBroadcastAsync(peerManager.CreateMessage(P2PMessageType.BulletDestroy, destroyMessage));
+            if (bulletCollider.CollisionCategories == ColliderCategory2D.Cat2)
+            {
+                var destroyMessage = new BulletDestroyMessage()
+                {
+                    BulletId = bullet.Name,
+                };
+
+                await peerManager.SendBroadcastAsync(peerManager.CreateMessage(P2PMessageType.BulletDestroy, destroyMessage));
+            }
         }
-    
+
 
         private Entity CreateBaseTank(int playerIndex, ColliderCategory2D category, ColliderCategory2D collidesWith)
         {

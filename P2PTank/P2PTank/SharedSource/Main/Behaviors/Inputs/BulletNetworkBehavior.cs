@@ -89,7 +89,7 @@ namespace P2PTank.Behaviors
 
         private void BulletMove(float x, float y)
         {
-            if (this.rigidBody != null)
+            if (this.rigidBody != null && this.rigidBody.RigidBody != null)
             {
                 this.rigidBody.ResetPosition(new Vector2(x, y));
             }
