@@ -70,6 +70,8 @@ namespace P2PTank.Managers
             var behavior = new BulletBehavior(peerManager, bulletID, this.playerID);
             entity.AddComponent(behavior);
 
+            entity.Name = bulletID;
+
             this.gamePlayScene.EntityManager.Add(entity);
             behavior.Shoot(position, direction);
 
