@@ -94,6 +94,7 @@ namespace P2PTank.Scenes
 
             /// Create Local Player
             Entity player = this.CreatePlayer(gameplayManager);
+            this.HandlePlayerCollision(player);
 
             /// Set camera to follow player
             var targetCameraBehavior = new TargetCameraBehavior();
@@ -110,6 +111,23 @@ namespace P2PTank.Scenes
                 new Vector2(tiledMap.Width * tiledMap.TileWidth * tiledMapTransform.Scale.X, tiledMap.Height * tiledMap.TileHeight * tiledMapTransform.Scale.Y));
             this.RenderManager.ActiveCamera2D.Owner.AddComponent(targetCameraBehavior);
             targetCameraBehavior.RefreshCameraLimits();
+        }
+
+        private void HandlePlayerCollision(Entity player)
+        {
+            var colliders = player.FindComponentsInChildren<Collider2D>(false);
+            var collider = colliders.FirstOrDefault();
+
+            if (collider != null)
+            {
+                collider.BeginCollision += (contact) =>
+                    {
+                        // Cat2 is Bullet
+                        if (contact.ColliderB.CollisionCategories == ColliderCategory2D.Cat2)
+                        {
+                        }
+                    };
+            }
         }
 
         private Entity CreatePlayer(GamePlayManager gameplayManager)
@@ -130,6 +148,12 @@ namespace P2PTank.Scenes
             foe.FindComponent<Transform2D>().LocalPosition = this.GetSpawnPoint(1);
             this.EntityManager.Add(foe);
             return foe;
+        }
+
+        private void DestroyFoe(GamePlayManager gameplayManager, string foeId)
+        {
+            var foe = this.EntityManager.Find(foeId);
+            this.EntityManager.Remove(foe);
         }
 
         private Vector2 GetSpawnPoint(int index)
@@ -184,7 +208,16 @@ namespace P2PTank.Scenes
                             break;
                         case P2PMessageType.Shoot:
                             break;
-                        case P2PMessageType.Destroy:
+                        case P2PMessageType.DestroyPlayer:
+                            var destroyPlayerData = message.Value as DestroyPlayerMessage;
+
+                            if (destroyPlayerData.PlayerId.Equals(this.playerID))
+                            {
+                                break;
+                            }
+
+                            this.DestroyFoe(this.gameplayManager, destroyPlayerData.PlayerId);
+
                             break;
                         case P2PMessageType.BulletCreate:
                             var createBulletData = message.Value as BulletCreateMessage;

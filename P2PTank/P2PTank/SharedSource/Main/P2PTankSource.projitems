@@ -25,7 +25,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Entities\P2PMessages\BulletDestroyMessage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\P2PMessages\BulletMoveMessage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\P2PMessages\CreatePlayerMessage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Entities\P2PMessages\DestroyMessage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\P2PMessages\DestroyPlayerMessage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\P2PMessages\MoveMessage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\P2PMessages\P2PMessageType.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\P2PMessages\RotateMessage.cs" />

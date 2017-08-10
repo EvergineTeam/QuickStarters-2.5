@@ -1,6 +1,6 @@
 ﻿namespace P2PTank.Entities.P2PMessages
 {
-    public class DestroyMessage
+    public class DestroyPlayerMessage
     {
         public string PlayerId { get; set; }
     }

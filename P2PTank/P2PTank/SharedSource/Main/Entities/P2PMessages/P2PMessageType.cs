@@ -3,13 +3,14 @@
     public enum P2PMessageType
     {
         CreatePlayer,
+        DestroyPlayer,
         Move,
         Rotate,
         BarrelRotate,
         Shoot,
-        Destroy,
         BulletMove,
         BulletDestroy,
-        BulletCreate
+        BulletCreate,
+        Destroy
     }
 }

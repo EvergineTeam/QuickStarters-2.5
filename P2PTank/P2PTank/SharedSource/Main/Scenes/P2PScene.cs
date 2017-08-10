@@ -118,7 +118,7 @@ namespace P2PTank.Scenes
 
         private async void OnDieButonClick(object sender, EventArgs e)
         {
-            var destroyMessage = new DestroyMessage
+            var destroyMessage = new DestroyPlayerMessage
             {
                 PlayerId = "1"
             };
@@ -156,7 +156,7 @@ namespace P2PTank.Scenes
                             var shootData = message.Value as ShootMessage;
                             break;
                         case P2PMessageType.Destroy:
-                            var destroyData = message.Value as DestroyMessage;
+                            var destroyData = message.Value as DestroyPlayerMessage;
                             break;
                     }
                 }

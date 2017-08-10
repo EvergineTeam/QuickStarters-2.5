@@ -124,16 +124,22 @@ namespace P2PTank.Behaviors
                     };
                     await this.peerManager.SendBroadcastAsync(this.peerManager.CreateMessage(P2PMessageType.Rotate, rotateMessage));
                 }
+            }
 
+            if (this.lastBarrelRotation != this.barrelTransform.Rotation)
+            {
                 var barrelRotateMessage = new BarrelRotate()
                 {
                     PlayerId = this.PlayerID,
                     Rotation = this.barrelTransform.Rotation,
                 };
 
+                this.lastBarrelRotation = this.barrelTransform.Rotation;
                 await this.peerManager.SendBroadcastAsync(this.peerManager.CreateMessage(P2PMessageType.BarrelRotate, barrelRotateMessage));
             }
         }
+
+        private float lastBarrelRotation;
 
         private void RunInputCommands(PlayerCommand playerCommand, float elapsedTime)
         {
@@ -254,7 +260,7 @@ namespace P2PTank.Behaviors
             this.rigidBody.AngularVelocity = roll;
         }
 
-        private async void RotateBarrel(float left, float elapsedTime)
+        private void RotateBarrel(float left, float elapsedTime)
         {
             if (left == 0)
             {
@@ -291,6 +297,23 @@ namespace P2PTank.Behaviors
                     this.shootTimer = this.tankComponent.CurrentShootInterval;
                 }
             }
+        }
+
+        public void Hit(float damage)
+        {
+            this.tankComponent.CurrentLive -= damage;
+            if (this.tankComponent.CurrentLive <= 0)
+            {
+                this.DestroyTank();
+            }
+        }
+
+        private async void DestroyTank()
+        {
+            this.gamePlayManger.DestroyTank(this.Owner);
+
+            var destroyMessage = new DestroyPlayerMessage() { PlayerId = this.PlayerID};
+            await peerManager.SendBroadcastAsync(peerManager.CreateMessage(P2PMessageType.DestroyPlayer, destroyMessage));
         }
     }
 }

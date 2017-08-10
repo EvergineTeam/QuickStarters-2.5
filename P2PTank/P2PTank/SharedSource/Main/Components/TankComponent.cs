@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 using System.Text;
+using P2PTank.Managers;
+using P2PTank.Scenes;
 using WaveEngine.Common.Graphics;
 using WaveEngine.Common.Math;
 using WaveEngine.Components.Graphics2D;
@@ -50,16 +52,16 @@ namespace P2PTank.Components
         }
 
         [IgnoreDataMember]
-        public float CurrentLive { get; private set; }
+        public float CurrentLive { get; set; }
 
         [IgnoreDataMember]
-        public float CurrentSpeed { get; private set; }
+        public float CurrentSpeed { get; set; }
 
         [IgnoreDataMember]
-        public float CurrentRotationSpeed { get; private set; }
+        public float CurrentRotationSpeed { get; set; }
 
         [IgnoreDataMember]
-        public float CurrentRotationBarrelSpeed { get; private set; }
+        public float CurrentRotationBarrelSpeed { get; set; }
 
         [IgnoreDataMember]
         public float CurrentShootInterval { get; private set; }

@@ -90,10 +90,10 @@ namespace P2PTank.Managers
                         P2PMessageType.Shoot, 
                         JsonConvert.DeserializeObject<ShootMessage>(result[1]));
                     break;
-                case P2PMessageType.Destroy:
+                case P2PMessageType.DestroyPlayer:
                     messageObject.Add(
-                        P2PMessageType.Destroy, 
-                        JsonConvert.DeserializeObject<DestroyMessage>(result[1]));
+                        P2PMessageType.DestroyPlayer, 
+                        JsonConvert.DeserializeObject<DestroyPlayerMessage>(result[1]));
                     break;
                 case P2PMessageType.BulletCreate:
                     messageObject.Add(
