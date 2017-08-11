@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// File generated on 15/03/2017 17:36:39
+// File generated on 8/7/2017 2:39:41 PM
 namespace SuperSlingshot
 {
     using System;
@@ -16,6 +16,9 @@ namespace SuperSlingshot
     
     public sealed class WaveContent
     {
+        
+        /// <summary> Path to Content/SuperSlingshot.wgame </summary>
+        public const string GameInfo = "Content/SuperSlingshot.wgame";
         
         public sealed class Assets
         {
@@ -299,6 +302,9 @@ namespace SuperSlingshot
                 
                 /// <summary> Path to Content/Assets/Fonts/Komika Axis_36.ttf </summary>
                 public const string Komika_Axis_36_ttf = "Content/Assets/Fonts/Komika Axis_36.ttf";
+                
+                /// <summary> Path to Content/Assets/Fonts/Komika Axis_72.ttf </summary>
+                public const string Komika_Axis_72_ttf = "Content/Assets/Fonts/Komika Axis_72.ttf";
                 
                 /// <summary> Path to Content/Assets/Fonts/sketches_16.ttf </summary>
                 public const string sketches_16_ttf = "Content/Assets/Fonts/sketches_16.ttf";

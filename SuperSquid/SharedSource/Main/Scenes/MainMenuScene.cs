@@ -1,21 +1,15 @@
 #region Using Statements
 using SuperSquid.Managers;
 using System;
-using System.Collections.Generic;
-using WaveEngine.Common;
 using WaveEngine.Common.Graphics;
 using WaveEngine.Common.Math;
 using WaveEngine.Components;
-using WaveEngine.Components.Cameras;
-using WaveEngine.Components.Graphics2D;
-using WaveEngine.Components.Graphics3D;
-using WaveEngine.Components.Particles;
+using WaveEngine.Components.Toolkit;
 using WaveEngine.Components.Transitions;
 using WaveEngine.Components.UI;
 using WaveEngine.Framework;
 using WaveEngine.Framework.Animation;
 using WaveEngine.Framework.Graphics;
-using WaveEngine.Framework.Resources;
 using WaveEngine.Framework.Services;
 using WaveEngine.Framework.UI;
 #endregion
@@ -30,7 +24,7 @@ namespace SuperSquid.Scenes
         protected override void CreateScene()
         {
             this.Load(WaveContent.Scenes.MainMenuScene);
-            
+
             this.EntityManager.Find("defaultCamera2D").FindComponent<Camera2D>().CenterScreen();
 
             this.gameStorage = Catalog.GetItem<GameStorage>();
@@ -50,55 +44,36 @@ namespace SuperSquid.Scenes
                 Margin = new Thickness(244, 580, 0, 0),
             };
 
-            play.Click +=
-#if ANDROID
-                async 
-#endif
-                (s, o) =>
-            {
-#if ANDROID
-                var logIn = await WaveServices.GetService<SocialService>().Login();
-                if(logIn)
-                {
-#endif
-                    var gameContext = new ScreenContext("GamePlay", new GamePlayScene())
-                    {
-                        Behavior = ScreenContextBehaviors.DrawInBackground
-                    };
-
-                    WaveServices.ScreenContextManager.Pop();
-                    WaveServices.ScreenContextManager.Push(gameContext, new CrossFadeTransition(TimeSpan.FromSeconds(1.5f)));
-#if ANDROID
-            }
-#endif
-            };
+            play.Click += this.Play_Click;
 
             play.Entity.FindChild("ImageEntity").FindComponent<Transform2D>().Origin = Vector2.Center;
-            play.Entity.AddComponent(new AnimationUI());            
+            play.Entity.AddComponent(new AnimationUI());
             EntityManager.Add(play);
 
-            // Best Scores
-            TextBlock bestScores = new TextBlock("BestScores")
-            {
-                FontPath = WaveContent.Assets.Fonts.Bulky_Pixels_16_TTF,
-                Text = "your best score:",
-                Foreground = new Color(223 / 255f, 244 / 255f, 255 / 255f),
-                HorizontalAlignment = HorizontalAlignment.Left,
-                VerticalAlignment = VerticalAlignment.Bottom,
-                Margin = new Thickness(161, 0, 0, 30),
-            };
-            EntityManager.Add(bestScores);
+            this.EntityManager.FindComponentFromEntityPath<TextComponent>("score.bestScoreText").Text = this.gameStorage.BestScore.ToString();
+        }
 
-            // Scores
-            TextBlock scores = new TextBlock()
+#if ANDROID
+        private async void Play_Click(object sender, EventArgs e)
+        {
+            var logIn = await WaveServices.GetService<SocialService>().Login();
+            
+            if (!logIn)
             {
-                FontPath = WaveContent.Assets.Fonts.Bulky_Pixels_26_TTF,
-                Text = this.gameStorage.BestScore.ToString(),
-                HorizontalAlignment = HorizontalAlignment.Left,
-                VerticalAlignment = VerticalAlignment.Bottom,
-                Margin = new Thickness(440, 0, 0, 40),
+                return;
+            }
+#else
+        private void Play_Click(object sender, EventArgs e)
+        {
+#endif
+
+            var gameContext = new ScreenContext("GamePlay", new GamePlayScene())
+            {
+                Behavior = ScreenContextBehaviors.DrawInBackground
             };
-            EntityManager.Add(scores);
+
+            WaveServices.ScreenContextManager.Pop();
+            WaveServices.ScreenContextManager.Push(gameContext, new CrossFadeTransition(TimeSpan.FromSeconds(1.5f)));
         }
 
         protected override void Start()

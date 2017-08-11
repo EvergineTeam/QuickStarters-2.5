@@ -10,6 +10,7 @@ using WaveEngine.Components.Cameras;
 using WaveEngine.Components.Graphics2D;
 using WaveEngine.Components.Graphics3D;
 using WaveEngine.Components.Particles;
+using WaveEngine.Components.Toolkit;
 using WaveEngine.Components.Transitions;
 using WaveEngine.Components.UI;
 using WaveEngine.Framework;
@@ -37,7 +38,7 @@ namespace SuperSquid.Scenes
 #endif
             override void CreateScene()
         {
-            this.Load(WaveContent.Scenes.GameOverScene);            
+            this.Load(WaveContent.Scenes.GameOverScene);
             this.EntityManager.Find("defaultCamera2D").FindComponent<Camera2D>().CenterScreen();
 
             this.gameStorage = Catalog.GetItem<GameStorage>();
@@ -56,7 +57,7 @@ namespace SuperSquid.Scenes
 #if ANDROID
                 await WaveServices.GetService<SocialService>().AddNewScore(LeaderboardCode, this.gameScene.CurrentScore);
 
-                await WaveServices.GetService<SocialService>().ShowAllLeaderboards();
+                await WaveServices.GetService<SocialService>().ShowLeaderboard(LeaderboardCode);
 #endif
             }
 
@@ -67,7 +68,7 @@ namespace SuperSquid.Scenes
         }
 
         private void CreateUI()
-        {                      
+        {
             // Play Button
             Button restart = new Button("Restart")
             {
@@ -85,65 +86,22 @@ namespace SuperSquid.Scenes
             };
 
             restart.Entity.FindChild("ImageEntity").FindComponent<Transform2D>().Origin = Vector2.Center;
-            restart.Entity.AddComponent(new AnimationUI());            
+            restart.Entity.AddComponent(new AnimationUI());
             EntityManager.Add(restart);
 
-            // Last score text
-            TextBlock lastScoresText = new TextBlock()
-            {
-                FontPath = WaveContent.Assets.Fonts.Bulky_Pixels_16_TTF,
-                Text = "your last score:",
-                Foreground = new Color(223 / 255f, 244 / 255f, 255 / 255f),
-                HorizontalAlignment = HorizontalAlignment.Left,
-                VerticalAlignment = VerticalAlignment.Bottom,
-                Margin = new Thickness(161, 0, 0, 80),
-            };
-            EntityManager.Add(lastScoresText);
-
-            // Last scores
-            TextBlock lastScores = new TextBlock()
-            {
-                FontPath = WaveContent.Assets.Fonts.Bulky_Pixels_26_TTF,
-                Text = this.gameScene.CurrentScore.ToString(),
-                HorizontalAlignment = HorizontalAlignment.Left,
-                VerticalAlignment = VerticalAlignment.Bottom,
-                Margin = new Thickness(440, 0, 0, 90),
-            };
-            EntityManager.Add(lastScores);
-
-            // Best Scores text
-            TextBlock bestScoresText = new TextBlock()
-            {
-                FontPath = WaveContent.Assets.Fonts.Bulky_Pixels_16_TTF,
-                Text = "your best score:",
-                Foreground = new Color(223 / 255f, 244 / 255f, 255 / 255f),
-                HorizontalAlignment = HorizontalAlignment.Left,
-                VerticalAlignment = VerticalAlignment.Bottom,
-                Margin = new Thickness(161, 0, 0, 10),
-            };
-            EntityManager.Add(bestScoresText);
-
-            // Best scores
-            TextBlock bestScores = new TextBlock()
-            {
-                FontPath = WaveContent.Assets.Fonts.Bulky_Pixels_26_TTF,
-                Text = this.gameStorage.BestScore.ToString(),
-                HorizontalAlignment = HorizontalAlignment.Left,
-                VerticalAlignment = VerticalAlignment.Bottom,
-                Margin = new Thickness(440, 0, 0, 20),
-            };
-            EntityManager.Add(bestScores);
+            this.EntityManager.FindComponentFromEntityPath<TextComponent>("scores.lastScore").Text = this.gameScene.CurrentScore.ToString();
+            this.EntityManager.FindComponentFromEntityPath<TextComponent>("scores.bestScore").Text = this.gameStorage.BestScore.ToString();
         }
 
         protected override void Start()
         {
-            base.Start(); 
+            base.Start();
 
             // Animations            
             Duration duration = TimeSpan.FromSeconds(1);
             var scaleAppear = new SingleAnimation(0.2f, 1f, TimeSpan.FromSeconds(2), EasingFunctions.Back);
             var opacityAppear = new SingleAnimation(0, 1, duration, EasingFunctions.Cubic);
-            
+
             // Game animation
             var gameAnimation = this.EntityManager.Find("Game").FindComponent<AnimationUI>();
             gameAnimation.BeginAnimation(Transform2D.XScaleProperty, scaleAppear);

@@ -24,6 +24,7 @@ using WaveEngine.Components.Graphics2D;
 using WaveEngine.Components.Particles;
 using WaveEngine.Framework;
 using WaveEngine.Framework.Graphics;
+using WaveEngine.Framework.Physics2D;
 using WaveEngine.Framework.Services;
 #endregion
 
@@ -32,6 +33,15 @@ namespace OrbitRabbits.Behaviors
     [DataContract(Namespace = "OrbitRabbits.Behaviors")]
     public class RabbitBehavior : Behavior
     {
+        [RequiredComponent]
+        public Transform2D Transform = null;
+
+        [RequiredComponent]
+        private SpriteAtlas sprite = null;
+
+        [RequiredComponent]
+        protected RectangleCollider2D collider;
+
         private Vector2 moonPosition = new Vector2(382, 605);
         private float moonRadio = 130;
         private float gravityRadio = 400;
@@ -42,22 +52,16 @@ namespace OrbitRabbits.Behaviors
         private float mass = 4;
         private Vector2 velocity;
         private Vector2 initialDirection;
-        private Rabbit.RabbitState state;
+        private RabbitState state;
         private TimeSpan stillTime;
-        private ParticleSystem2D rabbitParticles;        
-
-        [RequiredComponent]
-        private Transform2D transform = null;
-
-        [RequiredComponent]
-        private SpriteAtlas sprite = null;
+        private ParticleSystem2D rabbitParticles;
 
         #region Properties
 
         /// <summary>
         /// Gets or sets the state.
         /// </summary>
-        public Rabbit.RabbitState State
+        public RabbitState State
         {
             get { return state; }
             set
@@ -65,20 +69,20 @@ namespace OrbitRabbits.Behaviors
                 state = value;
                 switch (state)
                 {
-                    case Rabbit.RabbitState.still:
+                    case RabbitState.still:
                         if (this.rabbitParticles != null) this.rabbitParticles.Emit = false;
                         break;
-                    case Rabbit.RabbitState.afloat:
+                    case RabbitState.afloat:
                         if (this.rabbitParticles != null) this.rabbitParticles.Emit = true;
                         break;
 
-                    case Rabbit.RabbitState.dying:
+                    case RabbitState.dying:
                         this.velocity = Vector2.Zero;
                         this.sprite.TintColor = Color.Gray;
                         if (this.rabbitParticles != null) this.rabbitParticles.Emit = false;
                         SoundsManager.Instance.PlaySound(SoundsManager.SOUNDS.Fall);
                         break;
-                    case Rabbit.RabbitState.dead:
+                    case RabbitState.dead:
                         if (this.rabbitParticles != null) this.rabbitParticles.Emit = false;
                         break;
                 }
@@ -94,7 +98,7 @@ namespace OrbitRabbits.Behaviors
         {
             this.velocity = new Vector2(0.2f, 0);
             this.initialDirection = Vector2.UnitX;
-            this.State = Rabbit.RabbitState.still;
+            this.State = RabbitState.still;
             this.stillTime = TimeSpan.Zero;
         }
 
@@ -119,8 +123,8 @@ namespace OrbitRabbits.Behaviors
         protected override void Update(TimeSpan gameTime)
         {
             // Position
-            this.position.X = transform.X;
-            this.position.Y = transform.Y;
+            this.position.X = Transform.X;
+            this.position.Y = Transform.Y;
 
             Vector2 distance = this.moonPosition - this.position;
             float distanceSquare = distance.LengthSquared();
@@ -142,42 +146,42 @@ namespace OrbitRabbits.Behaviors
 
                 switch (this.state)
                 {
-                    case Rabbit.RabbitState.afloat:
-                        this.State = Rabbit.RabbitState.still;
+                    case RabbitState.afloat:
+                        this.State = RabbitState.still;
                         break;
-                    case Rabbit.RabbitState.dying:
-                        this.State = Rabbit.RabbitState.dead;
+                    case RabbitState.dying:
+                        this.State = RabbitState.dead;
                         break;
                 }
             }
             else if (newDistanceLength > this.gravityRadio)
             {
-                this.State = Rabbit.RabbitState.dying;
+                this.State = RabbitState.dying;
             }
             else
             {
-                this.transform.X = this.position.X;
-                this.transform.Y = this.position.Y;
+                this.Transform.X = this.position.X;
+                this.Transform.Y = this.position.Y;
             }
 
             // Rotation
-            if (this.state == Rabbit.RabbitState.dying)
+            if (this.state == RabbitState.dying)
             {
-                this.transform.Rotation += (float)gameTime.TotalMilliseconds / 250;
+                this.Transform.Rotation += (float)gameTime.TotalMilliseconds / 250;
             }
             else
             {
                 float angle = Vector2.Angle(this.initialDirection, distance);
-                this.transform.Rotation = -angle;
+                this.Transform.Rotation = -angle;
             }
 
             // Still Time
-            if (this.state == Rabbit.RabbitState.still)
+            if (this.state == RabbitState.still)
             {
                 this.stillTime += gameTime;
                 if (this.stillTime > TimeSpan.FromSeconds(3))
                 {
-                    this.State = Rabbit.RabbitState.dead;
+                    this.State = RabbitState.dead;
                 }
             }
             else
@@ -186,20 +190,26 @@ namespace OrbitRabbits.Behaviors
             }
         }
 
+        internal void Spawn(Vector2 initialRabbitPosition)
+        {
+            this.Transform.LocalPosition = initialRabbitPosition;
+            this.Transform.DrawOrder = 0.75f;
+        }
+
         /// <summary>
         /// Applies the impulse.
         /// </summary>
         public void ApplyImpulse()
         {
-            if (this.state == Rabbit.RabbitState.dead ||
-                this.state == Rabbit.RabbitState.dying)
+            if (this.state == RabbitState.dead ||
+                this.state == RabbitState.dying)
             {
                 return;
             }
 
             // Position
-            this.position.X = transform.X;
-            this.position.Y = transform.Y;
+            this.position.X = Transform.X;
+            this.position.Y = Transform.Y;
 
             Vector2 direction = this.position - this.moonPosition;
 
@@ -209,7 +219,12 @@ namespace OrbitRabbits.Behaviors
             //this.velocity += Utils.RotateVectorAroundPoint(direction * 5000 / distanceLenghtSquare, this.moonPosition, 30);
             this.velocity += Utils.RotateVectorAroundPoint(direction * 5000 / distanceLenghtSquare, this.moonPosition, 30);
 
-            this.State = Rabbit.RabbitState.afloat;
+            this.State = RabbitState.afloat;
+        }
+
+        public bool Collision(RabbitBehavior rabbit)
+        {
+            return this.collider.Intersects(rabbit.collider);
         }
     }
 }
