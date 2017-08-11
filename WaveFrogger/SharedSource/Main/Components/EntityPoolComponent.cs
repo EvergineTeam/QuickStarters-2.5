@@ -219,9 +219,9 @@ namespace WaveFrogger.Services
         {
             foreach (var entity in collection)
             {
-                this.FreeTreeEntity(entity.FindAllChildrenByTag(Constants.TAG_OBSTACLES));
-                this.FreeTreeLimitEntity(entity.FindAllChildrenByTag(Constants.TAG_LIMITS));
-                this.FreeCarEntity(entity.FindAllChildrenByTag(Constants.TAG_VEHICLE));
+                this.FreeTreeEntity(entity.FindChildrenByTag(Constants.TAG_OBSTACLES, true));
+                this.FreeTreeLimitEntity(entity.FindChildrenByTag(Constants.TAG_LIMITS, true));
+                this.FreeCarEntity(entity.FindChildrenByTag(Constants.TAG_VEHICLE, true));
 
                 this.EntityManager.Detach(entity);
                 this.terrainPool[entity.Tag].Enqueue(entity);

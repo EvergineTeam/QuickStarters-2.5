@@ -10,6 +10,7 @@ using WaveFrogger.Services;
 using WaveEngine.Components.Toolkit;
 using WaveEngine.Components.Gestures;
 using WaveEngine.Framework.Animation;
+using WaveEngine.Framework.Threading;
 
 namespace WaveFrogger.Scenes
 {
@@ -59,21 +60,21 @@ namespace WaveFrogger.Scenes
                 var animationService = WaveServices.GetService<AnimationService>();
                 animationService.CreatePulseAnimation(this.loadingEntity, 1000).Run();
 
-				#if MAC               	
+#if MAC
                     gameScene = new GameScene();
                     gameScene.Initialize(WaveServices.GraphicsDevice);                
                     WaveServices.ScreenContextManager.To(new ScreenContext(gameScene), transition);                
-				#else
-				WaveServices.TaskScheduler.CreateTask(() =>
-				{
-					gameScene = new GameScene();
-					gameScene.Initialize(WaveServices.GraphicsDevice);
-				})
-				.ContinueWith(() =>
-				{
-					WaveServices.ScreenContextManager.To(new ScreenContext(gameScene), transition);
-				});
-				#endif
+#else
+                WaveBackgroundTask.Run(() =>
+                {
+                    gameScene = new GameScene();
+                    gameScene.Initialize(WaveServices.GraphicsDevice);
+                })
+                .ContinueWith((t) =>
+                {
+                    WaveServices.ScreenContextManager.To(new ScreenContext(gameScene), transition);
+                });
+#endif
             }
         }
 
