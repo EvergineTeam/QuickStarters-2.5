@@ -111,9 +111,9 @@ namespace WaveFrogger.Behaviors
             {
                 var rowToRemove = this.RemoveBottom();
 
-                var trees = rowToRemove.FindAllChildrenByTag(Constants.TAG_OBSTACLES);
-                var limits = rowToRemove.FindAllChildrenByTag(Constants.TAG_LIMITS);
-                var cars = rowToRemove.FindAllChildrenByTag(Constants.TAG_VEHICLE);
+                var trees = rowToRemove.FindChildrenByTag(Constants.TAG_OBSTACLES, true);
+                var limits = rowToRemove.FindChildrenByTag(Constants.TAG_LIMITS,true);
+                var cars = rowToRemove.FindChildrenByTag(Constants.TAG_VEHICLE, true);
 
                 this.entityPoolComponent.FreeTreeEntity(trees);
                 this.entityPoolComponent.FreeTreeLimitEntity(limits);
