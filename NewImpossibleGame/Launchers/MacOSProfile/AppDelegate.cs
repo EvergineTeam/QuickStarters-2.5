@@ -1,7 +1,7 @@
 using Foundation;
 using AppKit;
 
-namespace DeepSpace
+namespace NewImpossibleGame
 {
 	public partial class AppDelegate : NSApplicationDelegate
 	{

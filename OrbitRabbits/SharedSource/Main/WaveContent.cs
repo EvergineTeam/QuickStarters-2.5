@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// File generated on 8/14/2017 11:11:10 AM
+// File generated on 8/14/2017 1:08:54 PM
 namespace OrbitRabbits
 {
     using System;
@@ -17,8 +17,8 @@ namespace OrbitRabbits
     public sealed class WaveContent
     {
         
-        /// <summary> Path to  </summary>
-        public const string GameInfo = null;
+        /// <summary> Path to Content/OrbitRabbits.wgame </summary>
+        public const string GameInfo = "Content/OrbitRabbits.wgame";
         
         public sealed class Assets
         {

@@ -1,7 +1,7 @@
 using Foundation;
 using AppKit;
 
-namespace DeepSpace
+namespace OrbitRabbits
 {
 	public partial class AppDelegate : NSApplicationDelegate
 	{

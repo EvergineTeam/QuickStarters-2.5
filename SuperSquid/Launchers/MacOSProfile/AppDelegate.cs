@@ -1,7 +1,7 @@
 using Foundation;
 using AppKit;
 
-namespace DeepSpace
+namespace SuperSquid
 {
 	public partial class AppDelegate : NSApplicationDelegate
 	{

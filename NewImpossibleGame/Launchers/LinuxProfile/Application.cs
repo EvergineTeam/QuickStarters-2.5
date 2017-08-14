@@ -8,11 +8,11 @@ using WaveEngine.Common.Input;
 using WaveEngine.Common.Math;
 using WaveEngine.Framework.Graphics;
 
-namespace DeepSpace
+namespace NewImpossibleGame
 {
     public class App : WaveEngine.Adapter.Application
     {
-        DeepSpace.Game game;
+        NewImpossibleGame.Game game;
         SpriteBatch spriteBatch;
         Texture2D splashScreen;
         bool splashState = true;
@@ -26,12 +26,12 @@ namespace DeepSpace
             this.Width = 1280;
             this.Height = 720;
             this.FullScreen = false;
-            this.WindowTitle = "DeepSpace";
+            this.WindowTitle = "NewImpossibleGame";
         }
 
         public override void Initialize()
         {
-            this.game = new DeepSpace.Game();
+            this.game = new NewImpossibleGame.Game();
             this.game.Initialize(this);
 
             #region DEFAULT SPLASHSCREEN

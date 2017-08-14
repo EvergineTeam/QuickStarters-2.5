@@ -1,4 +1,4 @@
-<Project xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="WaveEngine.Framework.Models">
+﻿<Project xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="WaveEngine.Framework.Models">
   <Id>30add64c-9034-4285-9acd-d7e6b51ff7b5</Id>
   <GameInfoPath>NewImpossibleGame.wgame</GameInfoPath>
   <ResourcesPath>Content</ResourcesPath>
@@ -10,17 +10,17 @@
           <d5p1:Profiles>
             <Profile>
               <AlphaCompressionFormat>R8G8B8A8</AlphaCompressionFormat>
-              <LauncherType i:nil="true" />
-              <Name>Linux</Name>
+              <LauncherType>Default</LauncherType>
+              <Name>MacOSProfile</Name>
               <NonAlphaCompressionFormat>R8G8B8A8</NonAlphaCompressionFormat>
-              <Platform>Linux</Platform>
+              <Platform>MacOS</Platform>
             </Profile>
             <Profile>
               <AlphaCompressionFormat>R8G8B8A8</AlphaCompressionFormat>
               <LauncherType>Default</LauncherType>
-              <Name>MacOS</Name>
+              <Name>LinuxProfile</Name>
               <NonAlphaCompressionFormat>R8G8B8A8</NonAlphaCompressionFormat>
-              <Platform>MacOS</Platform>
+              <Platform>Linux</Platform>
             </Profile>
             <Profile>
               <AlphaCompressionFormat>R8G8B8A8</AlphaCompressionFormat>

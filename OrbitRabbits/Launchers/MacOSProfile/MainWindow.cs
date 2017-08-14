@@ -7,7 +7,7 @@ using System.IO;
 using WaveEngine.Common.Input;
 using WaveEngine.Common.Math;
 
-namespace DeepSpace
+namespace OrbitRabbits
 {
 	public partial class MainWindow : WaveEngine.Adapter.Application, WaveEngine.Common.IApplication
 	{
@@ -19,14 +19,14 @@ namespace DeepSpace
 		private Vector2 position;
 		private Color backgroundSplashColor;
 
-		private DeepSpace.Game game;
+		private OrbitRabbits.Game game;
 		#endregion
 
 		#region Constructors
 
 		public MainWindow (IntPtr handle) : base (handle)
 		{
-			this.WindowTitle = "DeepSpace";
+			this.WindowTitle = "OrbitRabbits";
 			this.ResizeScreen(1280, 720);
 		}
 
@@ -43,7 +43,7 @@ namespace DeepSpace
 		/// </summary>
 		public override void Initialize()
 		{
-			this.game = new DeepSpace.Game();
+			this.game = new OrbitRabbits.Game();
 			this.game.Initialize(this);
 
 			#region DEFAULT SPLASHSCREEN

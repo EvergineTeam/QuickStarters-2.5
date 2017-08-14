@@ -204,8 +204,8 @@
             <d6p1:Z>0</d6p1:Z>
           </d5p1:LocalOrientation>
           <d5p1:LocalPosition xmlns:d6p1="WaveEngine.Common.Math">
-            <d6p1:X>-508.0006</d6p1:X>
-            <d6p1:Y>-357.000427</d6p1:Y>
+            <d6p1:X>-808.3999</d6p1:X>
+            <d6p1:Y>-485.9999</d6p1:Y>
             <d6p1:Z>0.95</d6p1:Z>
           </d5p1:LocalPosition>
           <d5p1:LocalScale xmlns:d6p1="WaveEngine.Common.Math">
