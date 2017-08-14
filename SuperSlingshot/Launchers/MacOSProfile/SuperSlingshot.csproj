@@ -78,6 +78,12 @@
     <Reference Include="WaveEngine.ImageEffects">
       <HintPath>..\..\packages\WaveEngine.ImageEffects.2.4.1-alpha-20170812-566\lib\Xamarin.Mac\WaveEngine.ImageEffects.dll</HintPath>
     </Reference>
+    <Reference Include="TiledSharp">
+      <HintPath>..\..\packages\WaveEngine.TiledMap.2.4.1-alpha-20170812-566\lib\Xamarin.Mac\TiledSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="WaveEngine.TiledMap">
+      <HintPath>..\..\packages\WaveEngine.TiledMap.2.4.1-alpha-20170812-566\lib\Xamarin.Mac\WaveEngine.TiledMap.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
