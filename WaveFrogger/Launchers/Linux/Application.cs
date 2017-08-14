@@ -8,11 +8,11 @@ using WaveEngine.Common.Input;
 using WaveEngine.Common.Math;
 using WaveEngine.Framework.Graphics;
 
-namespace Match3
+namespace WaveFrogger
 {
     public class App : WaveEngine.Adapter.Application
     {
-        Match3.Game game;
+        WaveFrogger.Game game;
         SpriteBatch spriteBatch;
         Texture2D splashScreen;
         bool splashState = true;
@@ -23,15 +23,15 @@ namespace Match3
 
         public App()
         {
-            this.Width = 720;
-            this.Height = 960;
+            this.Width = 1280;
+            this.Height = 720;
             this.FullScreen = false;
-            this.WindowTitle = "Match3";
+            this.WindowTitle = "WaveFrogger";
         }
 
         public override void Initialize()
         {
-            this.game = new Match3.Game();
+            this.game = new WaveFrogger.Game();
             this.game.Initialize(this);
 
             #region DEFAULT SPLASHSCREEN
