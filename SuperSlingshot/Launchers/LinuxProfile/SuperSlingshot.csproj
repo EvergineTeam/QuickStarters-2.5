@@ -57,7 +57,6 @@
     <Reference Include="System.Net" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="WaveEngine.Adapter">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\WaveEngine.Adapter.2.4.1-alpha-20170812-566\lib\Mono\WaveEngine.Adapter.dll</HintPath>
     </Reference>
     <Reference Include="WaveEngine.Common">
@@ -77,6 +76,12 @@
     </Reference>
     <Reference Include="WaveEngine.ImageEffects">
       <HintPath>..\..\packages\WaveEngine.ImageEffects.2.4.1-alpha-20170812-566\lib\Mono\WaveEngine.ImageEffects.dll</HintPath>
+    </Reference>
+    <Reference Include="TiledSharp">
+      <HintPath>..\..\packages\WaveEngine.TiledMap.2.4.1-alpha-20170812-566\lib\Mono\TiledSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="WaveEngine.TiledMap">
+      <HintPath>..\..\packages\WaveEngine.TiledMap.2.4.1-alpha-20170812-566\lib\Mono\WaveEngine.TiledMap.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -136,5 +141,6 @@
       <Link>Tao.Sdl.dll.config</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>
