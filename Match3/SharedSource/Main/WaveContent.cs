@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// File generated on 11/08/2017 12:53:30
+// File generated on 8/14/2017 11:10:49 AM
 namespace Match3
 {
     using System;
@@ -53,9 +53,6 @@ namespace Match3
             
             public sealed class Fonts
             {
-                
-                /// <summary> Path to Content/Assets/Fonts/Arial_16.ttf </summary>
-                public const string Arial_16_ttf = "Content/Assets/Fonts/Arial_16.ttf";
                 
                 /// <summary> Path to Content/Assets/Fonts/BradyBunchMedium.ttf </summary>
                 public const string BradyBunchMedium_ttf = "Content/Assets/Fonts/BradyBunchMedium.ttf";
