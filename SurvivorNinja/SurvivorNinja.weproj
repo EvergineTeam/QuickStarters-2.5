@@ -1,4 +1,4 @@
-<Project xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="WaveEngine.Framework.Models">
+﻿<Project xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="WaveEngine.Framework.Models">
   <Id>d1d789d9-12cc-4f24-aa9b-c628ed343402</Id>
   <GameInfoPath>SurvivorNinja.wgame</GameInfoPath>
   <ResourcesPath>Content</ResourcesPath>
@@ -8,13 +8,6 @@
         <d3p1:Key>Profiles</d3p1:Key>
         <d3p1:Value xmlns:d5p1="WaveEngine.Framework.Models.Settings.Categories" i:type="d5p1:ProfilesData">
           <d5p1:Profiles>
-            <Profile>
-              <AlphaCompressionFormat>R8G8B8A8</AlphaCompressionFormat>
-              <LauncherType i:nil="true" />
-              <Name>Android</Name>
-              <NonAlphaCompressionFormat>ETC1RGB8</NonAlphaCompressionFormat>
-              <Platform>Android</Platform>
-            </Profile>
             <Profile>
               <AlphaCompressionFormat>R8G8B8A8</AlphaCompressionFormat>
               <LauncherType i:nil="true" />
@@ -35,13 +28,6 @@
               <Name>Windows</Name>
               <NonAlphaCompressionFormat>R8G8B8A8</NonAlphaCompressionFormat>
               <Platform>Windows</Platform>
-            </Profile>
-            <Profile>
-              <AlphaCompressionFormat>DXT1</AlphaCompressionFormat>
-              <LauncherType i:nil="true" />
-              <Name>UWPProfile</Name>
-              <NonAlphaCompressionFormat>DXT5</NonAlphaCompressionFormat>
-              <Platform>UWP</Platform>
             </Profile>
           </d5p1:Profiles>
         </d3p1:Value>
