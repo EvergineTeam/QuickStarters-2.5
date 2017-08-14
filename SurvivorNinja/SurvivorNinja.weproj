@@ -1,4 +1,4 @@
-﻿<Project xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="WaveEngine.Framework.Models">
+<Project xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="WaveEngine.Framework.Models">
   <Id>d1d789d9-12cc-4f24-aa9b-c628ed343402</Id>
   <GameInfoPath>SurvivorNinja.wgame</GameInfoPath>
   <ResourcesPath>Content</ResourcesPath>

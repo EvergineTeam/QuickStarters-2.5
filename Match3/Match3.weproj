@@ -1,4 +1,4 @@
-﻿<Project xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="WaveEngine.Framework.Models">
+<Project xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="WaveEngine.Framework.Models">
   <Id>485f2444-6781-48c8-8999-1023e77a4482</Id>
   <GameInfoPath>Match3.wgame</GameInfoPath>
   <ResourcesPath>Content</ResourcesPath>

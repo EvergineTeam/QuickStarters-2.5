@@ -1,4 +1,4 @@
-﻿<Project xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="WaveEngine.Framework.Models">
+<Project xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="WaveEngine.Framework.Models">
   <Id>0c61daa5-edcd-493d-abf5-82da4b9a8062</Id>
   <GameInfoPath>WaveFrogger.wgame</GameInfoPath>
   <ResourcesPath>Content</ResourcesPath>

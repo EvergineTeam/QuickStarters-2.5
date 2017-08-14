@@ -1,4 +1,4 @@
-﻿<Project xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="WaveEngine.Framework.Models">
+<Project xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="WaveEngine.Framework.Models">
   <Id>39fb227b-b39b-400c-8fd5-cd30972bad57</Id>
   <GameInfoPath>DeepSpace.wgame</GameInfoPath>
   <ResourcesPath>Content</ResourcesPath>
