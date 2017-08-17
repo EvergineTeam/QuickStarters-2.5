@@ -51,7 +51,7 @@ namespace P2PTank.Behaviors
 
         private void ColliderBeginCollision(WaveEngine.Common.Physics2D.ICollisionInfo2D contact)
         {
-            this.gamePlayManager.DestroyBullet(this.Owner, null);
+            this.gamePlayManager.DestroyBullet(this.Owner, this.peerManager);
         }
 
         public void Shoot(Vector2 position, Vector2 direction)

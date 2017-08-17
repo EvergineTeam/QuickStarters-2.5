@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.Serialization;
 using P2PTank.Behaviors;
@@ -220,6 +221,7 @@ namespace P2PTank.Managers
             {
                 foreach (var tank in this.tanksToAdd)
                 {
+                    Debug.WriteLine(tank.Name);
                     this.EntityManager.Add(tank);
                 }
 
