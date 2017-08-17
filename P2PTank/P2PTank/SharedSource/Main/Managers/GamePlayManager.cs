@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
 using P2PTank.Behaviors;
@@ -9,6 +10,7 @@ using WaveEngine.Common.Math;
 using WaveEngine.Common.Physics2D;
 using WaveEngine.Framework;
 using WaveEngine.Framework.Diagnostic;
+using WaveEngine.Framework.Graphics;
 using WaveEngine.Framework.Physics2D;
 
 using CURRENTSCENETYPE = P2PTank.Scenes.GamePlayScene;
@@ -16,12 +18,17 @@ using CURRENTSCENETYPE = P2PTank.Scenes.GamePlayScene;
 namespace P2PTank.Managers
 {
     [DataContract]
-    public class GamePlayManager : Component
+    public class GamePlayManager : Behavior
     {
         private CURRENTSCENETYPE gamePlayScene;
         private PoolComponent poolComponent;
 
         private string playerID;
+
+        private List<Entity> tanksToRemove = new List<Entity>();
+        private List<Entity> tanksToAdd = new List<Entity>();
+        private List<Entity> bulletsToRemove = new List<Entity>();
+        private List<Entity> bulletsToAdd = new List<Entity>();
 
         protected override void ResolveDependencies()
         {
@@ -30,7 +37,7 @@ namespace P2PTank.Managers
             this.poolComponent = this.gamePlayScene.EntityManager.FindComponentFromEntityPath<PoolComponent>(GameConstants.ManagerEntityPath);
         }
 
-        public Entity CreatePlayer(int playerIndex, P2PManager peerManager, string playerID)
+        public Entity CreatePlayer(int playerIndex, P2PManager peerManager, string playerID, Vector2 position)
         {
             this.playerID = playerID;
 
@@ -42,13 +49,18 @@ namespace P2PTank.Managers
             entity.AddComponent(new PlayerInputBehavior(peerManager, playerID))
                  .AddComponent(new RigidBody2D
                  {
-                     AngularDamping = 5.0f,
-                     LinearDamping = 10.0f,
+                     AngularDamping = 8.0f,
+                     LinearDamping = 9.0f,
                  });
+
+            entity.FindComponent<Transform2D>().LocalPosition = position;
+
+            this.tanksToAdd.Add(entity);
+
             return entity;
         }
 
-        public Entity CreateFoe(int playerIndex, P2PManager peerManager, string foeID)
+        public void CreateFoe(int playerIndex, P2PManager peerManager, string foeID, Vector2 position)
         {
             Labels.Add("foeID", foeID);
             var category = ColliderCategory2D.Cat4;
@@ -57,7 +69,9 @@ namespace P2PTank.Managers
             var entity = this.CreateBaseTank(playerIndex, category, collidesWith);
             entity.Name = foeID;
             entity.AddComponent(new NetworkInputBehavior(peerManager) { PlayerID = foeID });
-            return entity;
+            entity.FindComponent<Transform2D>().LocalPosition = position;
+
+            this.tanksToAdd.Add(entity);
         }
 
         public async void ShootPlayerBullet(Vector2 position, Vector2 direction, Color color, P2PManager peerManager)
@@ -100,21 +114,20 @@ namespace P2PTank.Managers
             entity.Name = bulletID;
 
             entity.AddComponent(new BulletNetworkBehavior(peerManager, bulletID, playerID));
-            this.EntityManager.Add(entity);
+            this.bulletsToAdd.Add(entity);
             return entity;
         }
 
         public void DestroyTank(Entity tank)
         {
-            this.EntityManager.Remove(tank);
+            this.tanksToRemove.Add(tank);
         }
 
         public async void DestroyBullet(Entity bullet, P2PManager peerManager)
         {
-            this.poolComponent.FreeBulletEntity(new Entity[] { bullet });
+            this.bulletsToRemove.Add(bullet);
 
             var bulletCollider = bullet.FindComponent<Collider2D>(false);
-
             if (peerManager != null)
             {
                 var destroyMessage = new BulletDestroyMessage()
@@ -174,6 +187,47 @@ namespace P2PTank.Managers
             });
 
             return entity;
+        }
+
+        protected override void Update(TimeSpan gameTime)
+        {
+            // Removes
+            if (this.bulletsToRemove.Count > 0)
+            {
+                this.poolComponent.FreeBulletEntity(this.bulletsToRemove);
+                this.bulletsToRemove.Clear();
+            }
+
+            if (this.tanksToRemove.Count > 0)
+            {
+                foreach (var tank in this.tanksToRemove)
+                {
+                    this.EntityManager.Remove(tank);
+                }
+
+                this.tanksToRemove.Clear();
+            }
+
+            // Adds
+            if(this.tanksToAdd.Count>0)
+            {
+                foreach (var tank in this.tanksToAdd)
+                {
+                    this.EntityManager.Add(tank);
+                }
+
+                this.tanksToAdd.Clear();
+            }
+
+            if (this.bulletsToAdd.Count > 0)
+            {
+                foreach (var bullet in this.bulletsToAdd)
+                {
+                    this.EntityManager.Add(bullet);
+                }
+
+                this.bulletsToAdd.Clear();
+            }
         }
     }
 }

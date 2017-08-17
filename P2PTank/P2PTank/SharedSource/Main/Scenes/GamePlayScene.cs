@@ -141,26 +141,22 @@ namespace P2PTank.Scenes
         {
             this.playerID = Guid.NewGuid().ToString();
 
-            var player = gameplayManager.CreatePlayer(0, peerManager, this.playerID);
-            player.FindComponent<Transform2D>().LocalPosition = this.GetSpawnPoint(0);
-            this.EntityManager.Add(player);
+            var player = gameplayManager.CreatePlayer(0, peerManager, this.playerID, this.GetSpawnPoint(0));
 
             this.SendCreatePlayerMessage();
+
             return player;
         }
 
-        private Entity CreateFoe(GamePlayManager gameplayManager, string foeID)
+        private void CreateFoe(GamePlayManager gameplayManager, string foeID)
         {
-            var foe = gameplayManager.CreateFoe(1, peerManager, foeID);
-            foe.FindComponent<Transform2D>().LocalPosition = this.GetSpawnPoint(1);
-            this.EntityManager.Add(foe);
-            return foe;
+            gameplayManager.CreateFoe(1, peerManager, foeID, this.GetSpawnPoint(1));
         }
 
         private void DestroyFoe(GamePlayManager gameplayManager, string foeId)
         {
             var foe = this.EntityManager.Find(foeId);
-            this.EntityManager.Remove(foe);
+            this.gameplayManager.DestroyTank(foe);
         }
 
         private Vector2 GetSpawnPoint(int index)
