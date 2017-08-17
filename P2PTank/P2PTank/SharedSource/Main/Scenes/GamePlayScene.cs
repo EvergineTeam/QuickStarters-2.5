@@ -236,6 +236,8 @@ namespace P2PTank.Scenes
                         case P2PMessageType.BulletDestroy:
                             var destroyBulletData = message.Value as BulletDestroyMessage;
                             this.activeBullets.Remove(destroyBulletData.BulletId);
+                            var bullet = this.EntityManager.Find(destroyBulletData.BulletId);
+                            this.gameplayManager.DestroyBullet(bullet, null);
                             break;
                     }
                 }

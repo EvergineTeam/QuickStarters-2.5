@@ -133,6 +133,11 @@ namespace P2PTank.Managers
 
         public async void DestroyBullet(Entity bullet, P2PManager peerManager)
         {
+            if (bullet == null)
+            {
+                return;
+            }
+
             this.bulletsToRemove.Add(bullet);
 
             var bulletCollider = bullet.FindComponent<Collider2D>(false);
