@@ -226,8 +226,10 @@ namespace P2PTank.Managers
             {
                 foreach (var tank in this.tanksToAdd)
                 {
-                    Debug.WriteLine(tank.Name);
-                    this.EntityManager.Add(tank);
+                    if (!this.EntityManager.Contains(tank))
+                    {
+                        this.EntityManager.Add(tank);
+                    }
                 }
 
                 this.tanksToAdd.Clear();
@@ -238,11 +240,15 @@ namespace P2PTank.Managers
                 foreach (var bullet in this.bulletsToAdd)
                 {
                     var entity = bullet.bullet;
-                    this.EntityManager.Add(entity);
 
-                    if (bullet.isLocal)
+                    if (!this.EntityManager.Contains(entity))
                     {
-                        entity.FindComponent<BulletBehavior>().Shoot(bullet.position, bullet.direction);
+                        this.EntityManager.Add(entity);
+
+                        if (bullet.isLocal)
+                        {
+                            entity.FindComponent<BulletBehavior>().Shoot(bullet.position, bullet.direction);
+                        }
                     }
                 }
 
