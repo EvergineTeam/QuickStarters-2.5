@@ -15,6 +15,9 @@ using WaveEngine.Framework.Diagnostic;
 using WaveEngine.Framework.Graphics;
 using WaveEngine.Framework.Physics2D;
 using WaveEngine.TiledMap;
+using WaveEngine.Components.UI;
+using WaveEngine.Framework.UI;
+using WaveEngine.Components.GameActions;
 
 namespace P2PTank.Scenes
 {
@@ -52,6 +55,36 @@ namespace P2PTank.Scenes
             await peerManager.StartAsync();
         }
 
+        private void CreateCountDown()
+        {
+            var countDownTextBlock = new TextBlock()
+            {
+                HorizontalAlignment = HorizontalAlignment.Center,
+                VerticalAlignment = VerticalAlignment.Center,
+                FontPath = WaveContent.Assets.Fonts.Top_Secret_36_ttf
+            };
+
+            var countDownTextBlockTransform = countDownTextBlock.Entity.FindComponent<Transform2D>();
+            countDownTextBlockTransform.Origin = Vector2.Center;
+
+            this.EntityManager.Add(countDownTextBlock);
+
+            var delay = TimeSpan.FromSeconds(1);
+
+            this.CreateGameAction(new ActionGameAction(() =>
+            {
+                countDownTextBlock.Text = "3";
+            }).Delay(delay)
+            .ContinueWith(new ActionGameAction(() =>
+            {
+                countDownTextBlock.Text = "2";
+            }).Delay(delay)
+            .ContinueWith(new ActionGameAction(() =>
+            {
+                countDownTextBlock.Text = "1";
+            }).Delay(delay)))).Run();
+        }
+
         private void ConfigurePhysics()
         {
             this.PhysicsManager.Simulation2D.Gravity = Vector2.Zero;
@@ -83,6 +116,8 @@ namespace P2PTank.Scenes
         protected override void Start()
         {
             base.Start();
+
+            CreateCountDown();
 
             this.gameplayManager = this.EntityManager.FindComponentFromEntityPath<GamePlayManager>(GameConstants.ManagerEntityPath);
 
