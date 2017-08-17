@@ -20,6 +20,14 @@ namespace P2PTank.Managers
     [DataContract]
     public class GamePlayManager : Behavior
     {
+        private class BulletState
+        {
+            public Entity bullet;
+            public Vector2 position;
+            public Vector2 direction;
+            public bool isLocal;
+        }
+
         private CURRENTSCENETYPE gamePlayScene;
         private PoolComponent poolComponent;
 
@@ -28,7 +36,7 @@ namespace P2PTank.Managers
         private List<Entity> tanksToRemove = new List<Entity>();
         private List<Entity> tanksToAdd = new List<Entity>();
         private List<Entity> bulletsToRemove = new List<Entity>();
-        private List<Entity> bulletsToAdd = new List<Entity>();
+        private List<BulletState> bulletsToAdd = new List<BulletState>();
 
         protected override void ResolveDependencies()
         {
@@ -86,8 +94,7 @@ namespace P2PTank.Managers
 
             entity.Name = bulletID;
 
-            this.bulletsToAdd.Add(entity);
-            behavior.Shoot(position, direction);
+            this.bulletsToAdd.Add(new BulletState() { bullet = entity, direction = direction, position = position, isLocal = true });
 
             this.gamePlayScene.AddActiveBullet(bulletID);
 
@@ -114,7 +121,7 @@ namespace P2PTank.Managers
             entity.Name = bulletID;
 
             entity.AddComponent(new BulletNetworkBehavior(peerManager, bulletID, playerID));
-            this.bulletsToAdd.Add(entity);
+            this.bulletsToAdd.Add(new BulletState() { bullet = entity, isLocal = false });
             return entity;
         }
 
@@ -209,7 +216,7 @@ namespace P2PTank.Managers
             }
 
             // Adds
-            if(this.tanksToAdd.Count>0)
+            if (this.tanksToAdd.Count > 0)
             {
                 foreach (var tank in this.tanksToAdd)
                 {
@@ -223,7 +230,13 @@ namespace P2PTank.Managers
             {
                 foreach (var bullet in this.bulletsToAdd)
                 {
-                    this.EntityManager.Add(bullet);
+                    var entity = bullet.bullet;
+                    this.EntityManager.Add(entity);
+
+                    if (bullet.isLocal)
+                    {
+                        entity.FindComponent<BulletBehavior>().Shoot(bullet.position, bullet.direction);
+                    }
                 }
 
                 this.bulletsToAdd.Clear();
