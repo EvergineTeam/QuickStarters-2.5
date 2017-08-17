@@ -85,6 +85,9 @@ namespace P2PTank.Behaviors
 
         private void Move(float x, float y)
         {
+            if (transform == null)
+                return;
+
             var pos = this.transform.Position;
             pos.X = x;
             pos.Y = y;
@@ -93,11 +96,17 @@ namespace P2PTank.Behaviors
 
         private void Rotate(float angle)
         {
+            if (transform == null)
+                return;
+
             this.transform.Rotation = angle;
         }
 
         private void BarrelRotate(float angle)
         {
+            if (barrelTransform == null)
+                return;
+
             this.barrelTransform.Rotation = angle;
         }
 
