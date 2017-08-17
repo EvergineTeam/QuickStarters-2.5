@@ -86,7 +86,7 @@ namespace P2PTank.Managers
 
             entity.Name = bulletID;
 
-            this.gamePlayScene.EntityManager.Add(entity);
+            this.bulletsToAdd.Add(entity);
             behavior.Shoot(position, direction);
 
             this.gamePlayScene.AddActiveBullet(bulletID);
