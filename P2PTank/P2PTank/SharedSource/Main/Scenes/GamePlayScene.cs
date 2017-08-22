@@ -319,15 +319,20 @@ namespace P2PTank.Scenes
             this.activeBullets.Add(id);
         }
 
-        private void OnPeerChanged(object sender, PeerChangeEventArgs e)
+        private async void OnPeerChanged(object sender, PeerChangeEventArgs e)
         {
+            var ipAddress = await this.peerManager.GetIpAddress();
             foreach (Peer peer in e.Peers)
             {
                 Labels.Add("OnPeerChanged", peer.IpAddress);
                 if (!this.ConnectedPeers.Contains(peer))
                 {
                     this.ConnectedPeers.Add(peer);
-                    //this.SendCreatePlayerMessage(peer);
+
+                    if (ipAddress != peer.IpAddress)
+                    {
+                        this.SendCreatePlayerMessage(peer.IpAddress);
+                    }
                 }
             }
         }
