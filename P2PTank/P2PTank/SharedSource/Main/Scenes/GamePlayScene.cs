@@ -100,10 +100,13 @@ namespace P2PTank.Scenes
             {
                 countDownTextBlock.Text = "1";
             }).Delay(delay)
-            .ContinueWith(new ActionGameAction(() =>
+            .ContinueWith(new ActionGameAction(async () =>
             {
                 countDownTextBlock.Text = string.Empty;
                 this.StartPlayerGamePlay();
+                var ipAddress = await this.peerManager.GetIpAddress();
+                this.SendCreatePlayerMessage(ipAddress);
+                
             }))))).Run();
         }
 
@@ -324,28 +327,28 @@ namespace P2PTank.Scenes
                 if (!this.ConnectedPeers.Contains(peer))
                 {
                     this.ConnectedPeers.Add(peer);
-                    this.SendCreatePlayerMessage(peer);
+                    //this.SendCreatePlayerMessage(peer);
                 }
             }
         }
 
-        private async void SendCreatePlayerMessage(Peer peer = null)
+        private async void SendCreatePlayerMessage(string ipAddress = "")
         {
             var createPlayerMessage = new CreatePlayerMessage
             {
-                IpAddress = string.Empty, // Do we need send the IpAddress?? maybe not
+                IpAddress = ipAddress, 
                 PlayerId = this.playerID,
             };
 
             var message = peerManager.CreateMessage(P2PMessageType.CreatePlayer, createPlayerMessage);
 
-            if (peer == null)
+            if (string.IsNullOrEmpty(ipAddress))
             {
                 await peerManager.SendBroadcastAsync(message);
             }
             else
             {
-                await peerManager.SendMessage(peer.IpAddress, message, TransportType.UDP);
+                await peerManager.SendMessage(ipAddress, message, TransportType.UDP);
             }
         }
     }

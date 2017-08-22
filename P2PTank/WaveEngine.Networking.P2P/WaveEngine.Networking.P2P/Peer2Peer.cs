@@ -63,7 +63,11 @@ namespace WaveEngine.Networking.P2P
             await transMgr.SendBroadcastAsyncUDP(msgBits);
         }
 
-
+        public async Task<string> GetIpAddress()
+        {
+            return await this.transMgr.GetIpAddress();
+        }
+        
         private void OnPeerChange(object sender, PeerChangeEventArgs e)
         {
             this.PeerChange?.Invoke(this, e);

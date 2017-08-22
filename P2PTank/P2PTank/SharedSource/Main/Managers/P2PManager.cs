@@ -55,6 +55,11 @@ namespace P2PTank.Managers
             return string.Format("{0}/{1}", messageType, contentSerialized);
         }
 
+        public async Task<string> GetIpAddress()
+        {
+            return await peer2peer.GetIpAddress();
+        }
+
         public Dictionary<P2PMessageType, object> ReadMessage(string message)
         {
             Dictionary<P2PMessageType, object> messageObject = new Dictionary<P2PMessageType, object>();
