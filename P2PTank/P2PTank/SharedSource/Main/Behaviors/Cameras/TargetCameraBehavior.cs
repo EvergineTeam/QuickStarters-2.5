@@ -105,6 +105,13 @@ namespace P2PTank.Behaviors.Cameras
                 this.pixelLimitMin.X = middle;
                 this.pixelLimitMax.X = middle;
             }
+
+            if (this.TargetTransform == null)
+            {
+                this.cameraTransform.Position = (this.max - this.min) / 2;
+                this.desiredPosition = this.cameraTransform.Position;
+                this.currentPosition = this.desiredPosition;
+            }
         }
 
         public void Dispose()

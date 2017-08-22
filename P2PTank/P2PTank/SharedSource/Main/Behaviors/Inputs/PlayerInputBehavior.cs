@@ -4,6 +4,7 @@ using System.Text;
 using P2PTank.Components;
 using P2PTank.Entities.P2PMessages;
 using P2PTank.Managers;
+using P2PTank.Scenes;
 using WaveEngine.Common.Input;
 using WaveEngine.Common.Math;
 using WaveEngine.Common.Physics2D;
@@ -60,7 +61,7 @@ namespace P2PTank.Behaviors
         [RequiredComponent]
         private RigidBody2D rigidBody = null;
 
-        private GamePlayManager gamePlayManger;
+        private GamePlayManager gamePlayManager;
 
         private Transform2D barrelTransform = null;
 
@@ -84,7 +85,7 @@ namespace P2PTank.Behaviors
             this.barrel = barrelEntity.FindComponent<Sprite>();
             this.barrelTransform = barrelEntity.FindComponent<Transform2D>();
 
-            this.gamePlayManger = this.Owner.Scene.EntityManager.FindComponentFromEntityPath<GamePlayManager>(GameConstants.ManagerEntityPath);
+            this.gamePlayManager = this.Owner.Scene.EntityManager.FindComponentFromEntityPath<GamePlayManager>(GameConstants.ManagerEntityPath);
         }
 
         protected override void Update(TimeSpan gameTime)
@@ -292,7 +293,7 @@ namespace P2PTank.Behaviors
 
                     var direction = new Vector2((float)Math.Sin(angle), -(float)Math.Cos(angle));
 
-                    this.gamePlayManger.ShootPlayerBullet(position, direction, this.tankComponent.Color, peerManager);
+                    this.gamePlayManager.ShootPlayerBullet(position, direction, this.tankComponent.Color, peerManager);
 
                     this.shootTimer = this.tankComponent.CurrentShootInterval;
                 }
@@ -310,10 +311,12 @@ namespace P2PTank.Behaviors
 
         private async void DestroyTank()
         {
-            this.gamePlayManger.DestroyTank(this.Owner);
+            this.gamePlayManager.DestroyTank(this.Owner);
 
             var destroyMessage = new DestroyPlayerMessage() { PlayerId = this.PlayerID};
             await peerManager.SendBroadcastAsync(peerManager.CreateMessage(P2PMessageType.DestroyPlayer, destroyMessage));
+
+            ((GamePlayScene)this.Owner.Scene).CreateCountDown();
         }
     }
 }

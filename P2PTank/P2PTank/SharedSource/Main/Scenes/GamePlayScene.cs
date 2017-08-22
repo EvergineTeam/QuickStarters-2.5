@@ -18,6 +18,7 @@ using WaveEngine.TiledMap;
 using WaveEngine.Components.UI;
 using WaveEngine.Framework.UI;
 using WaveEngine.Components.GameActions;
+using WaveEngine.Common.Graphics;
 
 namespace P2PTank.Scenes
 {
@@ -55,19 +56,35 @@ namespace P2PTank.Scenes
             await peerManager.StartAsync();
         }
 
-        private void CreateCountDown()
+        public void CreateCountDown()
         {
+            Vector2 pos = new Vector2(VirtualScreenManager.ScreenWidth / 2, VirtualScreenManager.ScreenHeight / 2);
+            VirtualScreenManager.ToVirtualPosition(ref pos);
+
+            var entity = new Entity()
+                .AddComponent(new Transform2D()
+                {
+                    Position = pos,
+                    LocalScale = new Vector2(1),
+                    Origin = Vector2.Center,
+                });
             var countDownTextBlock = new TextBlock()
             {
+                FontPath = WaveContent.Assets.Fonts.Top_Secret_36_ttf,
                 HorizontalAlignment = HorizontalAlignment.Center,
+                Foreground = Color.DarkOliveGreen,
                 VerticalAlignment = VerticalAlignment.Center,
-                FontPath = WaveContent.Assets.Fonts.Top_Secret_36_ttf
             };
 
-            var countDownTextBlockTransform = countDownTextBlock.Entity.FindComponent<Transform2D>();
-            countDownTextBlockTransform.Origin = Vector2.Center;
+            var grid = new Grid()
+            {
+                VerticalAlignment = VerticalAlignment.Center,
+                HorizontalAlignment = HorizontalAlignment.Center,
+            };
+            grid.Add(countDownTextBlock);
 
-            this.EntityManager.Add(countDownTextBlock);
+            entity.AddChild(grid.Entity);
+            this.EntityManager.Add(entity);
 
             var delay = TimeSpan.FromSeconds(1);
 
@@ -82,7 +99,12 @@ namespace P2PTank.Scenes
             .ContinueWith(new ActionGameAction(() =>
             {
                 countDownTextBlock.Text = "1";
-            }).Delay(delay)))).Run();
+            }).Delay(delay)
+            .ContinueWith(new ActionGameAction(() =>
+            {
+                countDownTextBlock.Text = string.Empty;
+                this.StartPlayerGamePlay();
+            }))))).Run();
         }
 
         private void ConfigurePhysics()
@@ -117,8 +139,6 @@ namespace P2PTank.Scenes
         {
             base.Start();
 
-            CreateCountDown();
-
             this.gameplayManager = this.EntityManager.FindComponentFromEntityPath<GamePlayManager>(GameConstants.ManagerEntityPath);
 
             ///// Doing this code here cause in CreateScene doesnt load tiledMap file still
@@ -127,26 +147,38 @@ namespace P2PTank.Scenes
             this.CreateBorders(tiledEntity, ColliderCategory2D.Cat3, ColliderCategory2D.All);
             /////
 
-            /// Create Local Player
-            Entity player = this.CreatePlayer(gameplayManager);
-            this.HandlePlayerCollision(player);
-
-            /// Set camera to follow player
-            var targetCameraBehavior = new TargetCameraBehavior();
-            targetCameraBehavior.SetTarget(player.FindComponent<Transform2D>());
-            targetCameraBehavior.Follow = true;
-            targetCameraBehavior.Speed = 5;
-
             var tiledMapEntity = this.EntityManager.Find(GameConstants.MapEntityPath);
             var tiledMap = tiledMapEntity.FindComponent<TiledMap>();
             var tiledMapTransform = tiledMapEntity.FindComponent<Transform2D>();
-
+            var targetCameraBehavior = new TargetCameraBehavior();
             targetCameraBehavior.SetLimits(
                 new Vector2(0, 0),
                 new Vector2(tiledMap.Width * tiledMap.TileWidth * tiledMapTransform.Scale.X, tiledMap.Height * tiledMap.TileHeight * tiledMapTransform.Scale.Y));
             this.RenderManager.ActiveCamera2D.Owner.AddComponent(targetCameraBehavior);
             targetCameraBehavior.RefreshCameraLimits();
+
+            this.CreateCountDown();
         }
+
+        private void StartPlayerGamePlay()
+        {
+            /// Create Local Player
+            Entity player = this.CreatePlayer(gameplayManager);
+            this.HandlePlayerCollision(player);
+
+            var behavior = this.RenderManager.ActiveCamera2D.Owner.FindComponent<TargetCameraBehavior>();
+
+            this.StartPlayerCamera(player, behavior);
+        }
+
+        private void StartPlayerCamera(Entity player, TargetCameraBehavior targetCameraBehavior)
+        {
+            /// Set camera to follow player
+            targetCameraBehavior.SetTarget(player.FindComponent<Transform2D>());
+            targetCameraBehavior.Follow = true;
+            targetCameraBehavior.Speed = 5;
+        }
+
 
         private void HandlePlayerCollision(Entity player)
         {
