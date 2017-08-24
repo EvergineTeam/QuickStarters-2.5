@@ -195,15 +195,20 @@ namespace P2PTank.Managers
                 collider.CollidesWith = collidesWith;
             }
 
-            entity.AddComponent(new RigidBody2D
-            {
-                PhysicBodyType = RigidBodyType2D.Dynamic,
-                IsBullet = true,
+            var rigidBody = entity.FindComponent<RigidBody2D>();
 
-                FixedRotation = true,
-                AngularDamping = 0,
-                LinearDamping = 0
-            });
+            if (rigidBody == null)
+            {
+                entity.AddComponent(new RigidBody2D
+                {
+                    PhysicBodyType = RigidBodyType2D.Dynamic,
+                    IsBullet = true,
+
+                    FixedRotation = true,
+                    AngularDamping = 0,
+                    LinearDamping = 0
+                });
+            }
 
             return entity;
         }
