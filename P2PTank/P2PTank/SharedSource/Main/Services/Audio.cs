@@ -11,7 +11,8 @@
         {
             Zap_wav,
             Gun_wav,
-            Explosion_wav
+            Explosion_wav,
+            BulletCollision_wav
         }
     }
 }

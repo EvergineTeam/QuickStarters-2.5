@@ -210,11 +210,14 @@ namespace P2PTank.Managers
 
         protected override void Update(TimeSpan gameTime)
         {
+            var audioService = WaveServices.GetService<AudioService>();
+
             // Removes
             if (this.bulletsToRemove.Count > 0)
             {
                 this.poolComponent.FreeBulletEntity(this.bulletsToRemove);
                 this.bulletsToRemove.Clear();
+                audioService.Play(Audio.Sfx.BulletCollision_wav);
             }
 
             if (this.tanksToRemove.Count > 0)
@@ -224,7 +227,6 @@ namespace P2PTank.Managers
                     this.EntityManager.Remove(tank);
                 }
 
-                var audioService = WaveServices.GetService<AudioService>();
                 audioService.Play(Audio.Sfx.Explosion_wav);
 
                 this.tanksToRemove.Clear();
