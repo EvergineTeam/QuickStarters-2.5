@@ -15,6 +15,8 @@ using WaveEngine.Framework.Graphics;
 using WaveEngine.Framework.Physics2D;
 
 using CURRENTSCENETYPE = P2PTank.Scenes.GamePlayScene;
+using P2PTank.Services;
+using WaveEngine.Framework.Services;
 
 namespace P2PTank.Managers
 {
@@ -123,6 +125,10 @@ namespace P2PTank.Managers
 
             entity.AddComponent(new BulletNetworkBehavior(peerManager, bulletID, playerID));
             this.bulletsToAdd.Add(new BulletState() { bullet = entity, isLocal = false });
+
+            var audioService = WaveServices.GetService<AudioService>();
+            audioService.Play(Audio.Sfx.Gun_wav);
+
             return entity;
         }
 
@@ -217,6 +223,9 @@ namespace P2PTank.Managers
                 {
                     this.EntityManager.Remove(tank);
                 }
+
+                var audioService = WaveServices.GetService<AudioService>();
+                audioService.Play(Audio.Sfx.Explosion_wav);
 
                 this.tanksToRemove.Clear();
             }
