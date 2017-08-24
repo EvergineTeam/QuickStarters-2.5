@@ -49,8 +49,8 @@ namespace P2PTank.Scenes
         {
             this.Load(this.contentPath);
 
-            //var audioService = WaveServices.GetService<AudioService>();
-            //audioService.Play(Audio.Music.Background_mp3, 1.0f);
+            var audioService = WaveServices.GetService<AudioService>();
+            audioService.Play(Audio.Music.Background_mp3, 1.0f);
 
             //var music = new WaveEngine.Common.Media.MusicInfo(WaveContent.Assets.Sounds.Background_mp3);
             //WaveServices.MusicPlayer.Play(music);
