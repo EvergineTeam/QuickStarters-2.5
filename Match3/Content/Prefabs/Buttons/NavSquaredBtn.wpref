@@ -25,7 +25,6 @@
           <d5p1:Y>0.77</d5p1:Y>
           <d5p1:Z>1</d5p1:Z>
         </d4p1:LocalScale>
-        <d4p1:Effect>None</d4p1:Effect>
         <d4p1:Opacity>1</d4p1:Opacity>
         <d4p1:Rectangle xmlns:d5p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
           <d5p1:Height>190</d5p1:Height>
@@ -33,6 +32,7 @@
           <d5p1:X>0</d5p1:X>
           <d5p1:Y>0</d5p1:Y>
         </d4p1:Rectangle>
+        <d4p1:effect>None</d4p1:effect>
         <d4p1:origin xmlns:d5p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
           <d5p1:X>0.5</d5p1:X>
           <d5p1:Y>0.5</d5p1:Y>
@@ -86,8 +86,8 @@
         <d4p1:rotationOffset>0</d4p1:rotationOffset>
       </d3p1:Component>
       <d3p1:Component xmlns:d4p1="WaveEngine.Components.Gestures" i:type="d4p1:TouchGestures">
-        <d3p1:IsActive>true</d3p1:IsActive>
         <d3p1:UpdateOrder>0.5</d3p1:UpdateOrder>
+        <d3p1:isDisabled>false</d3p1:isDisabled>
         <d4p1:EnabledGestures>None</d4p1:EnabledGestures>
         <d4p1:ManualTouchOrder>false</d4p1:ManualTouchOrder>
         <d4p1:MaxScale>5</d4p1:MaxScale>

@@ -3,6 +3,7 @@
   <Entities xmlns:d2p1="WaveEngine.Framework.Models.Entities">
     <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
       <d2p1:SerializeChildrens />
+      <d2p1:isDisabled>false</d2p1:isDisabled>
       <d2p1:isStatic>false</d2p1:isStatic>
       <d2p1:isVisible>true</d2p1:isVisible>
       <d2p1:name>defaultCamera3D</d2p1:name>
@@ -56,20 +57,14 @@
           <d5p1:AspectRatio>1.78217816</d5p1:AspectRatio>
         </d4p1:Component>
         <d4p1:Component xmlns:d5p1="WaveEngine.Framework.Sound" i:type="d5p1:SoundListener3D">
-          <d4p1:IsActive>true</d4p1:IsActive>
           <d4p1:UpdateOrder>0.5</d4p1:UpdateOrder>
-        </d4p1:Component>
-        <d4p1:Component xmlns:d5p1="WaveEngine.Components.Cameras" i:type="d5p1:FreeCamera3DBehavior">
-          <d4p1:IsActive>false</d4p1:IsActive>
-          <d4p1:UpdateOrder>0.5</d4p1:UpdateOrder>
-          <d5p1:GamepadRotationSpeed>0.75</d5p1:GamepadRotationSpeed>
-          <d5p1:RotationSpeed>0.004</d5p1:RotationSpeed>
-          <d5p1:Speed>20</d5p1:Speed>
+          <d4p1:isDisabled>false</d4p1:isDisabled>
         </d4p1:Component>
       </d2p1:SerializeComponents>
     </d2p1:BaseEntityModel>
     <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
       <d2p1:SerializeChildrens />
+      <d2p1:isDisabled>false</d2p1:isDisabled>
       <d2p1:isStatic>false</d2p1:isStatic>
       <d2p1:isVisible>true</d2p1:isVisible>
       <d2p1:name>defaultLight</d2p1:name>
@@ -101,11 +96,13 @@
             <d6p1:R>255</d6p1:R>
           </d5p1:Color>
           <d5p1:Intensity>1</d5p1:Intensity>
+          <d5p1:isLightDisabled>false</d5p1:isLightDisabled>
         </d4p1:Component>
       </d2p1:SerializeComponents>
     </d2p1:BaseEntityModel>
     <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
       <d2p1:SerializeChildrens />
+      <d2p1:isDisabled>false</d2p1:isDisabled>
       <d2p1:isStatic>false</d2p1:isStatic>
       <d2p1:isVisible>true</d2p1:isVisible>
       <d2p1:name>defaultCamera2D</d2p1:name>
@@ -128,7 +125,6 @@
             <d6p1:Y>1</d6p1:Y>
             <d6p1:Z>1</d6p1:Z>
           </d5p1:LocalScale>
-          <d5p1:Effect>None</d5p1:Effect>
           <d5p1:Opacity>1</d5p1:Opacity>
           <d5p1:Rectangle xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
             <d6p1:Height>0</d6p1:Height>
@@ -136,6 +132,7 @@
             <d6p1:X>0</d6p1:X>
             <d6p1:Y>0</d6p1:Y>
           </d5p1:Rectangle>
+          <d5p1:effect>None</d5p1:effect>
           <d5p1:origin xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
             <d6p1:X>0</d6p1:X>
             <d6p1:Y>0</d6p1:Y>
@@ -191,6 +188,7 @@
       <d2p1:SerializeChildrens>
         <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
           <d2p1:SerializeChildrens />
+          <d2p1:isDisabled>false</d2p1:isDisabled>
           <d2p1:isStatic>false</d2p1:isStatic>
           <d2p1:isVisible>true</d2p1:isVisible>
           <d2p1:name>player</d2p1:name>
@@ -235,6 +233,7 @@
           <d2p1:SerializeChildrens>
             <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
               <d2p1:SerializeChildrens />
+              <d2p1:isDisabled>false</d2p1:isDisabled>
               <d2p1:isStatic>false</d2p1:isStatic>
               <d2p1:isVisible>true</d2p1:isVisible>
               <d2p1:name>model</d2p1:name>
@@ -247,6 +246,7 @@
               <d2p1:modifiedProperties xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
             </d2p1:BaseEntityModel>
           </d2p1:SerializeChildrens>
+          <d2p1:isDisabled>false</d2p1:isDisabled>
           <d2p1:isStatic>false</d2p1:isStatic>
           <d2p1:isVisible>true</d2p1:isVisible>
           <d2p1:name>fieldRow03</d2p1:name>
@@ -258,28 +258,11 @@
           <d2p1:RemovedComponents xmlns:d6p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
           <d2p1:modifiedProperties xmlns:d6p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
             <d6p1:KeyValueOfstringanyType>
-              <d6p1:Key>WaveEngine.Framework.Graphics.Transform3D#LocalPosition</d6p1:Key>
+              <d6p1:Key>WaveEngine.Framework.Graphics.Transform3D#0#LocalPosition</d6p1:Key>
               <d6p1:Value xmlns:d8p1="WaveEngine.Common.Math" i:type="d8p1:Vector3">
                 <d8p1:X>0</d8p1:X>
                 <d8p1:Y>0</d8p1:Y>
                 <d8p1:Z>-12</d8p1:Z>
-              </d6p1:Value>
-            </d6p1:KeyValueOfstringanyType>
-            <d6p1:KeyValueOfstringanyType>
-              <d6p1:Key>WaveEngine.Framework.Graphics.Transform3D#LocalOrientation</d6p1:Key>
-              <d6p1:Value xmlns:d8p1="WaveEngine.Common.Math" i:type="d8p1:Quaternion">
-                <d8p1:W>1</d8p1:W>
-                <d8p1:X>0</d8p1:X>
-                <d8p1:Y>0</d8p1:Y>
-                <d8p1:Z>0</d8p1:Z>
-              </d6p1:Value>
-            </d6p1:KeyValueOfstringanyType>
-            <d6p1:KeyValueOfstringanyType>
-              <d6p1:Key>WaveEngine.Framework.Graphics.Transform3D#LocalScale</d6p1:Key>
-              <d6p1:Value xmlns:d8p1="WaveEngine.Common.Math" i:type="d8p1:Vector3">
-                <d8p1:X>1</d8p1:X>
-                <d8p1:Y>1</d8p1:Y>
-                <d8p1:Z>1</d8p1:Z>
               </d6p1:Value>
             </d6p1:KeyValueOfstringanyType>
           </d2p1:modifiedProperties>
@@ -288,6 +271,7 @@
           <d2p1:SerializeChildrens>
             <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
               <d2p1:SerializeChildrens />
+              <d2p1:isDisabled>false</d2p1:isDisabled>
               <d2p1:isStatic>false</d2p1:isStatic>
               <d2p1:isVisible>true</d2p1:isVisible>
               <d2p1:name>model</d2p1:name>
@@ -300,6 +284,7 @@
               <d2p1:modifiedProperties xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
             </d2p1:BaseEntityModel>
           </d2p1:SerializeChildrens>
+          <d2p1:isDisabled>false</d2p1:isDisabled>
           <d2p1:isStatic>false</d2p1:isStatic>
           <d2p1:isVisible>true</d2p1:isVisible>
           <d2p1:name>fieldRow02</d2p1:name>
@@ -311,28 +296,11 @@
           <d2p1:RemovedComponents xmlns:d6p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
           <d2p1:modifiedProperties xmlns:d6p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
             <d6p1:KeyValueOfstringanyType>
-              <d6p1:Key>WaveEngine.Framework.Graphics.Transform3D#LocalPosition</d6p1:Key>
+              <d6p1:Key>WaveEngine.Framework.Graphics.Transform3D#0#LocalPosition</d6p1:Key>
               <d6p1:Value xmlns:d8p1="WaveEngine.Common.Math" i:type="d8p1:Vector3">
                 <d8p1:X>0</d8p1:X>
                 <d8p1:Y>0</d8p1:Y>
                 <d8p1:Z>-9</d8p1:Z>
-              </d6p1:Value>
-            </d6p1:KeyValueOfstringanyType>
-            <d6p1:KeyValueOfstringanyType>
-              <d6p1:Key>WaveEngine.Framework.Graphics.Transform3D#LocalOrientation</d6p1:Key>
-              <d6p1:Value xmlns:d8p1="WaveEngine.Common.Math" i:type="d8p1:Quaternion">
-                <d8p1:W>1</d8p1:W>
-                <d8p1:X>0</d8p1:X>
-                <d8p1:Y>0</d8p1:Y>
-                <d8p1:Z>0</d8p1:Z>
-              </d6p1:Value>
-            </d6p1:KeyValueOfstringanyType>
-            <d6p1:KeyValueOfstringanyType>
-              <d6p1:Key>WaveEngine.Framework.Graphics.Transform3D#LocalScale</d6p1:Key>
-              <d6p1:Value xmlns:d8p1="WaveEngine.Common.Math" i:type="d8p1:Vector3">
-                <d8p1:X>1</d8p1:X>
-                <d8p1:Y>1</d8p1:Y>
-                <d8p1:Z>1</d8p1:Z>
               </d6p1:Value>
             </d6p1:KeyValueOfstringanyType>
           </d2p1:modifiedProperties>
@@ -341,6 +309,7 @@
           <d2p1:SerializeChildrens>
             <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
               <d2p1:SerializeChildrens />
+              <d2p1:isDisabled>false</d2p1:isDisabled>
               <d2p1:isStatic>false</d2p1:isStatic>
               <d2p1:isVisible>true</d2p1:isVisible>
               <d2p1:name>model</d2p1:name>
@@ -353,6 +322,7 @@
               <d2p1:modifiedProperties xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
             </d2p1:BaseEntityModel>
           </d2p1:SerializeChildrens>
+          <d2p1:isDisabled>false</d2p1:isDisabled>
           <d2p1:isStatic>false</d2p1:isStatic>
           <d2p1:isVisible>true</d2p1:isVisible>
           <d2p1:name>fieldRow01</d2p1:name>
@@ -364,28 +334,11 @@
           <d2p1:RemovedComponents xmlns:d6p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
           <d2p1:modifiedProperties xmlns:d6p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
             <d6p1:KeyValueOfstringanyType>
-              <d6p1:Key>WaveEngine.Framework.Graphics.Transform3D#LocalPosition</d6p1:Key>
+              <d6p1:Key>WaveEngine.Framework.Graphics.Transform3D#0#LocalPosition</d6p1:Key>
               <d6p1:Value xmlns:d8p1="WaveEngine.Common.Math" i:type="d8p1:Vector3">
                 <d8p1:X>0</d8p1:X>
                 <d8p1:Y>0</d8p1:Y>
                 <d8p1:Z>-6</d8p1:Z>
-              </d6p1:Value>
-            </d6p1:KeyValueOfstringanyType>
-            <d6p1:KeyValueOfstringanyType>
-              <d6p1:Key>WaveEngine.Framework.Graphics.Transform3D#LocalOrientation</d6p1:Key>
-              <d6p1:Value xmlns:d8p1="WaveEngine.Common.Math" i:type="d8p1:Quaternion">
-                <d8p1:W>1</d8p1:W>
-                <d8p1:X>0</d8p1:X>
-                <d8p1:Y>0</d8p1:Y>
-                <d8p1:Z>0</d8p1:Z>
-              </d6p1:Value>
-            </d6p1:KeyValueOfstringanyType>
-            <d6p1:KeyValueOfstringanyType>
-              <d6p1:Key>WaveEngine.Framework.Graphics.Transform3D#LocalScale</d6p1:Key>
-              <d6p1:Value xmlns:d8p1="WaveEngine.Common.Math" i:type="d8p1:Vector3">
-                <d8p1:X>1</d8p1:X>
-                <d8p1:Y>1</d8p1:Y>
-                <d8p1:Z>1</d8p1:Z>
               </d6p1:Value>
             </d6p1:KeyValueOfstringanyType>
           </d2p1:modifiedProperties>
@@ -394,6 +347,7 @@
           <d2p1:SerializeChildrens>
             <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
               <d2p1:SerializeChildrens />
+              <d2p1:isDisabled>false</d2p1:isDisabled>
               <d2p1:isStatic>false</d2p1:isStatic>
               <d2p1:isVisible>true</d2p1:isVisible>
               <d2p1:name>model</d2p1:name>
@@ -406,6 +360,7 @@
               <d2p1:modifiedProperties xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
             </d2p1:BaseEntityModel>
           </d2p1:SerializeChildrens>
+          <d2p1:isDisabled>false</d2p1:isDisabled>
           <d2p1:isStatic>false</d2p1:isStatic>
           <d2p1:isVisible>true</d2p1:isVisible>
           <d2p1:name>fieldRow</d2p1:name>
@@ -417,28 +372,11 @@
           <d2p1:RemovedComponents xmlns:d6p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
           <d2p1:modifiedProperties xmlns:d6p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
             <d6p1:KeyValueOfstringanyType>
-              <d6p1:Key>WaveEngine.Framework.Graphics.Transform3D#LocalPosition</d6p1:Key>
+              <d6p1:Key>WaveEngine.Framework.Graphics.Transform3D#0#LocalPosition</d6p1:Key>
               <d6p1:Value xmlns:d8p1="WaveEngine.Common.Math" i:type="d8p1:Vector3">
                 <d8p1:X>0</d8p1:X>
                 <d8p1:Y>-2.38418579E-07</d8p1:Y>
                 <d8p1:Z>3</d8p1:Z>
-              </d6p1:Value>
-            </d6p1:KeyValueOfstringanyType>
-            <d6p1:KeyValueOfstringanyType>
-              <d6p1:Key>WaveEngine.Framework.Graphics.Transform3D#LocalOrientation</d6p1:Key>
-              <d6p1:Value xmlns:d8p1="WaveEngine.Common.Math" i:type="d8p1:Quaternion">
-                <d8p1:W>1</d8p1:W>
-                <d8p1:X>0</d8p1:X>
-                <d8p1:Y>0</d8p1:Y>
-                <d8p1:Z>0</d8p1:Z>
-              </d6p1:Value>
-            </d6p1:KeyValueOfstringanyType>
-            <d6p1:KeyValueOfstringanyType>
-              <d6p1:Key>WaveEngine.Framework.Graphics.Transform3D#LocalScale</d6p1:Key>
-              <d6p1:Value xmlns:d8p1="WaveEngine.Common.Math" i:type="d8p1:Vector3">
-                <d8p1:X>1</d8p1:X>
-                <d8p1:Y>1</d8p1:Y>
-                <d8p1:Z>1</d8p1:Z>
               </d6p1:Value>
             </d6p1:KeyValueOfstringanyType>
           </d2p1:modifiedProperties>
@@ -447,6 +385,7 @@
           <d2p1:SerializeChildrens>
             <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
               <d2p1:SerializeChildrens />
+              <d2p1:isDisabled>false</d2p1:isDisabled>
               <d2p1:isStatic>false</d2p1:isStatic>
               <d2p1:isVisible>true</d2p1:isVisible>
               <d2p1:name>model03</d2p1:name>
@@ -456,19 +395,11 @@
               <d2p1:PrefabId>1c2f5ecb-a11c-4b46-bdc2-bc10904c9e80</d2p1:PrefabId>
               <d2p1:PrefabPath>Content/Prefabs/roadRow.wpref</d2p1:PrefabPath>
               <d2p1:RemovedComponents xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
-              <d2p1:modifiedProperties xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
-                <d8p1:KeyValueOfstringanyType>
-                  <d8p1:Key>WaveEngine.Framework.Graphics.Transform3D#LocalPosition</d8p1:Key>
-                  <d8p1:Value xmlns:d10p1="WaveEngine.Common.Math" i:type="d10p1:Vector3">
-                    <d10p1:X>0</d10p1:X>
-                    <d10p1:Y>-0.25</d10p1:Y>
-                    <d10p1:Z>0</d10p1:Z>
-                  </d8p1:Value>
-                </d8p1:KeyValueOfstringanyType>
-              </d2p1:modifiedProperties>
+              <d2p1:modifiedProperties xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
             </d2p1:BaseEntityModel>
             <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
               <d2p1:SerializeChildrens />
+              <d2p1:isDisabled>false</d2p1:isDisabled>
               <d2p1:isStatic>false</d2p1:isStatic>
               <d2p1:isVisible>true</d2p1:isVisible>
               <d2p1:name>model02</d2p1:name>
@@ -482,6 +413,7 @@
             </d2p1:BaseEntityModel>
             <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
               <d2p1:SerializeChildrens />
+              <d2p1:isDisabled>false</d2p1:isDisabled>
               <d2p1:isStatic>false</d2p1:isStatic>
               <d2p1:isVisible>true</d2p1:isVisible>
               <d2p1:name>model01</d2p1:name>
@@ -494,6 +426,7 @@
               <d2p1:modifiedProperties xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
             </d2p1:BaseEntityModel>
           </d2p1:SerializeChildrens>
+          <d2p1:isDisabled>false</d2p1:isDisabled>
           <d2p1:isStatic>false</d2p1:isStatic>
           <d2p1:isVisible>true</d2p1:isVisible>
           <d2p1:name>roadRow01</d2p1:name>
@@ -503,38 +436,13 @@
           <d2p1:PrefabId>1c2f5ecb-a11c-4b46-bdc2-bc10904c9e80</d2p1:PrefabId>
           <d2p1:PrefabPath>Content/Prefabs/roadRow.wpref</d2p1:PrefabPath>
           <d2p1:RemovedComponents xmlns:d6p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
-          <d2p1:modifiedProperties xmlns:d6p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
-            <d6p1:KeyValueOfstringanyType>
-              <d6p1:Key>WaveEngine.Framework.Graphics.Transform3D#LocalPosition</d6p1:Key>
-              <d6p1:Value xmlns:d8p1="WaveEngine.Common.Math" i:type="d8p1:Vector3">
-                <d8p1:X>0</d8p1:X>
-                <d8p1:Y>0</d8p1:Y>
-                <d8p1:Z>0</d8p1:Z>
-              </d6p1:Value>
-            </d6p1:KeyValueOfstringanyType>
-            <d6p1:KeyValueOfstringanyType>
-              <d6p1:Key>WaveEngine.Framework.Graphics.Transform3D#LocalOrientation</d6p1:Key>
-              <d6p1:Value xmlns:d8p1="WaveEngine.Common.Math" i:type="d8p1:Quaternion">
-                <d8p1:W>1</d8p1:W>
-                <d8p1:X>0</d8p1:X>
-                <d8p1:Y>0</d8p1:Y>
-                <d8p1:Z>0</d8p1:Z>
-              </d6p1:Value>
-            </d6p1:KeyValueOfstringanyType>
-            <d6p1:KeyValueOfstringanyType>
-              <d6p1:Key>WaveEngine.Framework.Graphics.Transform3D#LocalScale</d6p1:Key>
-              <d6p1:Value xmlns:d8p1="WaveEngine.Common.Math" i:type="d8p1:Vector3">
-                <d8p1:X>1</d8p1:X>
-                <d8p1:Y>1</d8p1:Y>
-                <d8p1:Z>1</d8p1:Z>
-              </d6p1:Value>
-            </d6p1:KeyValueOfstringanyType>
-          </d2p1:modifiedProperties>
+          <d2p1:modifiedProperties xmlns:d6p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
         </d2p1:BaseEntityModel>
         <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
           <d2p1:SerializeChildrens>
             <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
               <d2p1:SerializeChildrens />
+              <d2p1:isDisabled>false</d2p1:isDisabled>
               <d2p1:isStatic>false</d2p1:isStatic>
               <d2p1:isVisible>true</d2p1:isVisible>
               <d2p1:name>model03</d2p1:name>
@@ -548,6 +456,7 @@
             </d2p1:BaseEntityModel>
             <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
               <d2p1:SerializeChildrens />
+              <d2p1:isDisabled>false</d2p1:isDisabled>
               <d2p1:isStatic>false</d2p1:isStatic>
               <d2p1:isVisible>true</d2p1:isVisible>
               <d2p1:name>model02</d2p1:name>
@@ -561,6 +470,7 @@
             </d2p1:BaseEntityModel>
             <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
               <d2p1:SerializeChildrens />
+              <d2p1:isDisabled>false</d2p1:isDisabled>
               <d2p1:isStatic>false</d2p1:isStatic>
               <d2p1:isVisible>true</d2p1:isVisible>
               <d2p1:name>model01</d2p1:name>
@@ -573,6 +483,7 @@
               <d2p1:modifiedProperties xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
             </d2p1:BaseEntityModel>
           </d2p1:SerializeChildrens>
+          <d2p1:isDisabled>false</d2p1:isDisabled>
           <d2p1:isStatic>false</d2p1:isStatic>
           <d2p1:isVisible>true</d2p1:isVisible>
           <d2p1:name>roadRow</d2p1:name>
@@ -584,28 +495,11 @@
           <d2p1:RemovedComponents xmlns:d6p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
           <d2p1:modifiedProperties xmlns:d6p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
             <d6p1:KeyValueOfstringanyType>
-              <d6p1:Key>WaveEngine.Framework.Graphics.Transform3D#LocalPosition</d6p1:Key>
+              <d6p1:Key>WaveEngine.Framework.Graphics.Transform3D#0#LocalPosition</d6p1:Key>
               <d6p1:Value xmlns:d8p1="WaveEngine.Common.Math" i:type="d8p1:Vector3">
                 <d8p1:X>0</d8p1:X>
                 <d8p1:Y>0</d8p1:Y>
                 <d8p1:Z>-3</d8p1:Z>
-              </d6p1:Value>
-            </d6p1:KeyValueOfstringanyType>
-            <d6p1:KeyValueOfstringanyType>
-              <d6p1:Key>WaveEngine.Framework.Graphics.Transform3D#LocalOrientation</d6p1:Key>
-              <d6p1:Value xmlns:d8p1="WaveEngine.Common.Math" i:type="d8p1:Quaternion">
-                <d8p1:W>1</d8p1:W>
-                <d8p1:X>0</d8p1:X>
-                <d8p1:Y>0</d8p1:Y>
-                <d8p1:Z>0</d8p1:Z>
-              </d6p1:Value>
-            </d6p1:KeyValueOfstringanyType>
-            <d6p1:KeyValueOfstringanyType>
-              <d6p1:Key>WaveEngine.Framework.Graphics.Transform3D#LocalScale</d6p1:Key>
-              <d6p1:Value xmlns:d8p1="WaveEngine.Common.Math" i:type="d8p1:Vector3">
-                <d8p1:X>1</d8p1:X>
-                <d8p1:Y>1</d8p1:Y>
-                <d8p1:Z>1</d8p1:Z>
               </d6p1:Value>
             </d6p1:KeyValueOfstringanyType>
           </d2p1:modifiedProperties>
@@ -614,6 +508,7 @@
           <d2p1:SerializeChildrens>
             <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
               <d2p1:SerializeChildrens />
+              <d2p1:isDisabled>false</d2p1:isDisabled>
               <d2p1:isStatic>false</d2p1:isStatic>
               <d2p1:isVisible>true</d2p1:isVisible>
               <d2p1:name>Tree08</d2p1:name>
@@ -625,34 +520,18 @@
               <d2p1:RemovedComponents xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
               <d2p1:modifiedProperties xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
                 <d8p1:KeyValueOfstringanyType>
-                  <d8p1:Key>WaveEngine.Framework.Graphics.Transform3D#LocalPosition</d8p1:Key>
+                  <d8p1:Key>WaveEngine.Framework.Graphics.Transform3D#0#LocalPosition</d8p1:Key>
                   <d8p1:Value xmlns:d10p1="WaveEngine.Common.Math" i:type="d10p1:Vector3">
                     <d10p1:X>-4</d10p1:X>
                     <d10p1:Y>0</d10p1:Y>
                     <d10p1:Z>0</d10p1:Z>
                   </d8p1:Value>
                 </d8p1:KeyValueOfstringanyType>
-                <d8p1:KeyValueOfstringanyType>
-                  <d8p1:Key>WaveEngine.Framework.Graphics.Transform3D#LocalOrientation</d8p1:Key>
-                  <d8p1:Value xmlns:d10p1="WaveEngine.Common.Math" i:type="d10p1:Quaternion">
-                    <d10p1:W>1</d10p1:W>
-                    <d10p1:X>0</d10p1:X>
-                    <d10p1:Y>0</d10p1:Y>
-                    <d10p1:Z>0</d10p1:Z>
-                  </d8p1:Value>
-                </d8p1:KeyValueOfstringanyType>
-                <d8p1:KeyValueOfstringanyType>
-                  <d8p1:Key>WaveEngine.Framework.Graphics.Transform3D#LocalScale</d8p1:Key>
-                  <d8p1:Value xmlns:d10p1="WaveEngine.Common.Math" i:type="d10p1:Vector3">
-                    <d10p1:X>1</d10p1:X>
-                    <d10p1:Y>1</d10p1:Y>
-                    <d10p1:Z>1</d10p1:Z>
-                  </d8p1:Value>
-                </d8p1:KeyValueOfstringanyType>
               </d2p1:modifiedProperties>
             </d2p1:BaseEntityModel>
             <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
               <d2p1:SerializeChildrens />
+              <d2p1:isDisabled>false</d2p1:isDisabled>
               <d2p1:isStatic>false</d2p1:isStatic>
               <d2p1:isVisible>true</d2p1:isVisible>
               <d2p1:name>Tree07</d2p1:name>
@@ -664,34 +543,18 @@
               <d2p1:RemovedComponents xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
               <d2p1:modifiedProperties xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
                 <d8p1:KeyValueOfstringanyType>
-                  <d8p1:Key>WaveEngine.Framework.Graphics.Transform3D#LocalPosition</d8p1:Key>
+                  <d8p1:Key>WaveEngine.Framework.Graphics.Transform3D#0#LocalPosition</d8p1:Key>
                   <d8p1:Value xmlns:d10p1="WaveEngine.Common.Math" i:type="d10p1:Vector3">
                     <d10p1:X>4</d10p1:X>
                     <d10p1:Y>0</d10p1:Y>
                     <d10p1:Z>0</d10p1:Z>
                   </d8p1:Value>
                 </d8p1:KeyValueOfstringanyType>
-                <d8p1:KeyValueOfstringanyType>
-                  <d8p1:Key>WaveEngine.Framework.Graphics.Transform3D#LocalOrientation</d8p1:Key>
-                  <d8p1:Value xmlns:d10p1="WaveEngine.Common.Math" i:type="d10p1:Quaternion">
-                    <d10p1:W>1</d10p1:W>
-                    <d10p1:X>0</d10p1:X>
-                    <d10p1:Y>0</d10p1:Y>
-                    <d10p1:Z>0</d10p1:Z>
-                  </d8p1:Value>
-                </d8p1:KeyValueOfstringanyType>
-                <d8p1:KeyValueOfstringanyType>
-                  <d8p1:Key>WaveEngine.Framework.Graphics.Transform3D#LocalScale</d8p1:Key>
-                  <d8p1:Value xmlns:d10p1="WaveEngine.Common.Math" i:type="d10p1:Vector3">
-                    <d10p1:X>1</d10p1:X>
-                    <d10p1:Y>1</d10p1:Y>
-                    <d10p1:Z>1</d10p1:Z>
-                  </d8p1:Value>
-                </d8p1:KeyValueOfstringanyType>
               </d2p1:modifiedProperties>
             </d2p1:BaseEntityModel>
             <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
               <d2p1:SerializeChildrens />
+              <d2p1:isDisabled>false</d2p1:isDisabled>
               <d2p1:isStatic>false</d2p1:isStatic>
               <d2p1:isVisible>true</d2p1:isVisible>
               <d2p1:name>Tree06</d2p1:name>
@@ -703,34 +566,18 @@
               <d2p1:RemovedComponents xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
               <d2p1:modifiedProperties xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
                 <d8p1:KeyValueOfstringanyType>
-                  <d8p1:Key>WaveEngine.Framework.Graphics.Transform3D#LocalPosition</d8p1:Key>
+                  <d8p1:Key>WaveEngine.Framework.Graphics.Transform3D#0#LocalPosition</d8p1:Key>
                   <d8p1:Value xmlns:d10p1="WaveEngine.Common.Math" i:type="d10p1:Vector3">
                     <d10p1:X>-3</d10p1:X>
                     <d10p1:Y>0</d10p1:Y>
                     <d10p1:Z>0</d10p1:Z>
                   </d8p1:Value>
                 </d8p1:KeyValueOfstringanyType>
-                <d8p1:KeyValueOfstringanyType>
-                  <d8p1:Key>WaveEngine.Framework.Graphics.Transform3D#LocalOrientation</d8p1:Key>
-                  <d8p1:Value xmlns:d10p1="WaveEngine.Common.Math" i:type="d10p1:Quaternion">
-                    <d10p1:W>1</d10p1:W>
-                    <d10p1:X>0</d10p1:X>
-                    <d10p1:Y>0</d10p1:Y>
-                    <d10p1:Z>0</d10p1:Z>
-                  </d8p1:Value>
-                </d8p1:KeyValueOfstringanyType>
-                <d8p1:KeyValueOfstringanyType>
-                  <d8p1:Key>WaveEngine.Framework.Graphics.Transform3D#LocalScale</d8p1:Key>
-                  <d8p1:Value xmlns:d10p1="WaveEngine.Common.Math" i:type="d10p1:Vector3">
-                    <d10p1:X>1</d10p1:X>
-                    <d10p1:Y>1</d10p1:Y>
-                    <d10p1:Z>1</d10p1:Z>
-                  </d8p1:Value>
-                </d8p1:KeyValueOfstringanyType>
               </d2p1:modifiedProperties>
             </d2p1:BaseEntityModel>
             <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
               <d2p1:SerializeChildrens />
+              <d2p1:isDisabled>false</d2p1:isDisabled>
               <d2p1:isStatic>false</d2p1:isStatic>
               <d2p1:isVisible>true</d2p1:isVisible>
               <d2p1:name>Tree05</d2p1:name>
@@ -742,34 +589,18 @@
               <d2p1:RemovedComponents xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
               <d2p1:modifiedProperties xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
                 <d8p1:KeyValueOfstringanyType>
-                  <d8p1:Key>WaveEngine.Framework.Graphics.Transform3D#LocalPosition</d8p1:Key>
+                  <d8p1:Key>WaveEngine.Framework.Graphics.Transform3D#0#LocalPosition</d8p1:Key>
                   <d8p1:Value xmlns:d10p1="WaveEngine.Common.Math" i:type="d10p1:Vector3">
                     <d10p1:X>2</d10p1:X>
                     <d10p1:Y>0</d10p1:Y>
                     <d10p1:Z>0</d10p1:Z>
                   </d8p1:Value>
                 </d8p1:KeyValueOfstringanyType>
-                <d8p1:KeyValueOfstringanyType>
-                  <d8p1:Key>WaveEngine.Framework.Graphics.Transform3D#LocalOrientation</d8p1:Key>
-                  <d8p1:Value xmlns:d10p1="WaveEngine.Common.Math" i:type="d10p1:Quaternion">
-                    <d10p1:W>1</d10p1:W>
-                    <d10p1:X>0</d10p1:X>
-                    <d10p1:Y>0</d10p1:Y>
-                    <d10p1:Z>0</d10p1:Z>
-                  </d8p1:Value>
-                </d8p1:KeyValueOfstringanyType>
-                <d8p1:KeyValueOfstringanyType>
-                  <d8p1:Key>WaveEngine.Framework.Graphics.Transform3D#LocalScale</d8p1:Key>
-                  <d8p1:Value xmlns:d10p1="WaveEngine.Common.Math" i:type="d10p1:Vector3">
-                    <d10p1:X>1</d10p1:X>
-                    <d10p1:Y>1</d10p1:Y>
-                    <d10p1:Z>1</d10p1:Z>
-                  </d8p1:Value>
-                </d8p1:KeyValueOfstringanyType>
               </d2p1:modifiedProperties>
             </d2p1:BaseEntityModel>
             <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
               <d2p1:SerializeChildrens />
+              <d2p1:isDisabled>false</d2p1:isDisabled>
               <d2p1:isStatic>false</d2p1:isStatic>
               <d2p1:isVisible>true</d2p1:isVisible>
               <d2p1:name>Tree</d2p1:name>
@@ -781,34 +612,18 @@
               <d2p1:RemovedComponents xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
               <d2p1:modifiedProperties xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
                 <d8p1:KeyValueOfstringanyType>
-                  <d8p1:Key>WaveEngine.Framework.Graphics.Transform3D#LocalPosition</d8p1:Key>
+                  <d8p1:Key>WaveEngine.Framework.Graphics.Transform3D#0#LocalPosition</d8p1:Key>
                   <d8p1:Value xmlns:d10p1="WaveEngine.Common.Math" i:type="d10p1:Vector3">
                     <d10p1:X>3</d10p1:X>
                     <d10p1:Y>0</d10p1:Y>
                     <d10p1:Z>0</d10p1:Z>
                   </d8p1:Value>
                 </d8p1:KeyValueOfstringanyType>
-                <d8p1:KeyValueOfstringanyType>
-                  <d8p1:Key>WaveEngine.Framework.Graphics.Transform3D#LocalOrientation</d8p1:Key>
-                  <d8p1:Value xmlns:d10p1="WaveEngine.Common.Math" i:type="d10p1:Quaternion">
-                    <d10p1:W>1</d10p1:W>
-                    <d10p1:X>0</d10p1:X>
-                    <d10p1:Y>0</d10p1:Y>
-                    <d10p1:Z>0</d10p1:Z>
-                  </d8p1:Value>
-                </d8p1:KeyValueOfstringanyType>
-                <d8p1:KeyValueOfstringanyType>
-                  <d8p1:Key>WaveEngine.Framework.Graphics.Transform3D#LocalScale</d8p1:Key>
-                  <d8p1:Value xmlns:d10p1="WaveEngine.Common.Math" i:type="d10p1:Vector3">
-                    <d10p1:X>1</d10p1:X>
-                    <d10p1:Y>1</d10p1:Y>
-                    <d10p1:Z>1</d10p1:Z>
-                  </d8p1:Value>
-                </d8p1:KeyValueOfstringanyType>
               </d2p1:modifiedProperties>
             </d2p1:BaseEntityModel>
             <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
               <d2p1:SerializeChildrens />
+              <d2p1:isDisabled>false</d2p1:isDisabled>
               <d2p1:isStatic>false</d2p1:isStatic>
               <d2p1:isVisible>true</d2p1:isVisible>
               <d2p1:name>Tree04</d2p1:name>
@@ -820,34 +635,18 @@
               <d2p1:RemovedComponents xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
               <d2p1:modifiedProperties xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
                 <d8p1:KeyValueOfstringanyType>
-                  <d8p1:Key>WaveEngine.Framework.Graphics.Transform3D#LocalPosition</d8p1:Key>
+                  <d8p1:Key>WaveEngine.Framework.Graphics.Transform3D#0#LocalPosition</d8p1:Key>
                   <d8p1:Value xmlns:d10p1="WaveEngine.Common.Math" i:type="d10p1:Vector3">
                     <d10p1:X>1</d10p1:X>
                     <d10p1:Y>0</d10p1:Y>
                     <d10p1:Z>0</d10p1:Z>
-                  </d8p1:Value>
-                </d8p1:KeyValueOfstringanyType>
-                <d8p1:KeyValueOfstringanyType>
-                  <d8p1:Key>WaveEngine.Framework.Graphics.Transform3D#LocalOrientation</d8p1:Key>
-                  <d8p1:Value xmlns:d10p1="WaveEngine.Common.Math" i:type="d10p1:Quaternion">
-                    <d10p1:W>1</d10p1:W>
-                    <d10p1:X>0</d10p1:X>
-                    <d10p1:Y>0</d10p1:Y>
-                    <d10p1:Z>0</d10p1:Z>
-                  </d8p1:Value>
-                </d8p1:KeyValueOfstringanyType>
-                <d8p1:KeyValueOfstringanyType>
-                  <d8p1:Key>WaveEngine.Framework.Graphics.Transform3D#LocalScale</d8p1:Key>
-                  <d8p1:Value xmlns:d10p1="WaveEngine.Common.Math" i:type="d10p1:Vector3">
-                    <d10p1:X>1</d10p1:X>
-                    <d10p1:Y>1</d10p1:Y>
-                    <d10p1:Z>1</d10p1:Z>
                   </d8p1:Value>
                 </d8p1:KeyValueOfstringanyType>
               </d2p1:modifiedProperties>
             </d2p1:BaseEntityModel>
             <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
               <d2p1:SerializeChildrens />
+              <d2p1:isDisabled>false</d2p1:isDisabled>
               <d2p1:isStatic>false</d2p1:isStatic>
               <d2p1:isVisible>true</d2p1:isVisible>
               <d2p1:name>Tree03</d2p1:name>
@@ -859,34 +658,18 @@
               <d2p1:RemovedComponents xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
               <d2p1:modifiedProperties xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
                 <d8p1:KeyValueOfstringanyType>
-                  <d8p1:Key>WaveEngine.Framework.Graphics.Transform3D#LocalPosition</d8p1:Key>
+                  <d8p1:Key>WaveEngine.Framework.Graphics.Transform3D#0#LocalPosition</d8p1:Key>
                   <d8p1:Value xmlns:d10p1="WaveEngine.Common.Math" i:type="d10p1:Vector3">
                     <d10p1:X>-1</d10p1:X>
                     <d10p1:Y>0</d10p1:Y>
                     <d10p1:Z>0</d10p1:Z>
                   </d8p1:Value>
                 </d8p1:KeyValueOfstringanyType>
-                <d8p1:KeyValueOfstringanyType>
-                  <d8p1:Key>WaveEngine.Framework.Graphics.Transform3D#LocalOrientation</d8p1:Key>
-                  <d8p1:Value xmlns:d10p1="WaveEngine.Common.Math" i:type="d10p1:Quaternion">
-                    <d10p1:W>1</d10p1:W>
-                    <d10p1:X>0</d10p1:X>
-                    <d10p1:Y>0</d10p1:Y>
-                    <d10p1:Z>0</d10p1:Z>
-                  </d8p1:Value>
-                </d8p1:KeyValueOfstringanyType>
-                <d8p1:KeyValueOfstringanyType>
-                  <d8p1:Key>WaveEngine.Framework.Graphics.Transform3D#LocalScale</d8p1:Key>
-                  <d8p1:Value xmlns:d10p1="WaveEngine.Common.Math" i:type="d10p1:Vector3">
-                    <d10p1:X>1</d10p1:X>
-                    <d10p1:Y>1</d10p1:Y>
-                    <d10p1:Z>1</d10p1:Z>
-                  </d8p1:Value>
-                </d8p1:KeyValueOfstringanyType>
               </d2p1:modifiedProperties>
             </d2p1:BaseEntityModel>
             <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
               <d2p1:SerializeChildrens />
+              <d2p1:isDisabled>false</d2p1:isDisabled>
               <d2p1:isStatic>false</d2p1:isStatic>
               <d2p1:isVisible>true</d2p1:isVisible>
               <d2p1:name>Tree01</d2p1:name>
@@ -896,36 +679,11 @@
               <d2p1:PrefabId>7b7cf133-a145-444b-b678-e19aaabd4998</d2p1:PrefabId>
               <d2p1:PrefabPath>Content/Prefabs/Tree02.wpref</d2p1:PrefabPath>
               <d2p1:RemovedComponents xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
-              <d2p1:modifiedProperties xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
-                <d8p1:KeyValueOfstringanyType>
-                  <d8p1:Key>WaveEngine.Framework.Graphics.Transform3D#LocalPosition</d8p1:Key>
-                  <d8p1:Value xmlns:d10p1="WaveEngine.Common.Math" i:type="d10p1:Vector3">
-                    <d10p1:X>0</d10p1:X>
-                    <d10p1:Y>0</d10p1:Y>
-                    <d10p1:Z>0</d10p1:Z>
-                  </d8p1:Value>
-                </d8p1:KeyValueOfstringanyType>
-                <d8p1:KeyValueOfstringanyType>
-                  <d8p1:Key>WaveEngine.Framework.Graphics.Transform3D#LocalOrientation</d8p1:Key>
-                  <d8p1:Value xmlns:d10p1="WaveEngine.Common.Math" i:type="d10p1:Quaternion">
-                    <d10p1:W>1</d10p1:W>
-                    <d10p1:X>0</d10p1:X>
-                    <d10p1:Y>0</d10p1:Y>
-                    <d10p1:Z>0</d10p1:Z>
-                  </d8p1:Value>
-                </d8p1:KeyValueOfstringanyType>
-                <d8p1:KeyValueOfstringanyType>
-                  <d8p1:Key>WaveEngine.Framework.Graphics.Transform3D#LocalScale</d8p1:Key>
-                  <d8p1:Value xmlns:d10p1="WaveEngine.Common.Math" i:type="d10p1:Vector3">
-                    <d10p1:X>1</d10p1:X>
-                    <d10p1:Y>1</d10p1:Y>
-                    <d10p1:Z>1</d10p1:Z>
-                  </d8p1:Value>
-                </d8p1:KeyValueOfstringanyType>
-              </d2p1:modifiedProperties>
+              <d2p1:modifiedProperties xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
             </d2p1:BaseEntityModel>
             <d2p1:BaseEntityModel i:type="d2p1:PrefabInstanceModel">
               <d2p1:SerializeChildrens />
+              <d2p1:isDisabled>false</d2p1:isDisabled>
               <d2p1:isStatic>false</d2p1:isStatic>
               <d2p1:isVisible>true</d2p1:isVisible>
               <d2p1:name>Tree02</d2p1:name>
@@ -937,33 +695,17 @@
               <d2p1:RemovedComponents xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
               <d2p1:modifiedProperties xmlns:d8p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
                 <d8p1:KeyValueOfstringanyType>
-                  <d8p1:Key>WaveEngine.Framework.Graphics.Transform3D#LocalPosition</d8p1:Key>
+                  <d8p1:Key>WaveEngine.Framework.Graphics.Transform3D#0#LocalPosition</d8p1:Key>
                   <d8p1:Value xmlns:d10p1="WaveEngine.Common.Math" i:type="d10p1:Vector3">
                     <d10p1:X>-2</d10p1:X>
                     <d10p1:Y>0</d10p1:Y>
                     <d10p1:Z>0</d10p1:Z>
                   </d8p1:Value>
                 </d8p1:KeyValueOfstringanyType>
-                <d8p1:KeyValueOfstringanyType>
-                  <d8p1:Key>WaveEngine.Framework.Graphics.Transform3D#LocalOrientation</d8p1:Key>
-                  <d8p1:Value xmlns:d10p1="WaveEngine.Common.Math" i:type="d10p1:Quaternion">
-                    <d10p1:W>1</d10p1:W>
-                    <d10p1:X>0</d10p1:X>
-                    <d10p1:Y>0</d10p1:Y>
-                    <d10p1:Z>0</d10p1:Z>
-                  </d8p1:Value>
-                </d8p1:KeyValueOfstringanyType>
-                <d8p1:KeyValueOfstringanyType>
-                  <d8p1:Key>WaveEngine.Framework.Graphics.Transform3D#LocalScale</d8p1:Key>
-                  <d8p1:Value xmlns:d10p1="WaveEngine.Common.Math" i:type="d10p1:Vector3">
-                    <d10p1:X>1</d10p1:X>
-                    <d10p1:Y>1</d10p1:Y>
-                    <d10p1:Z>1</d10p1:Z>
-                  </d8p1:Value>
-                </d8p1:KeyValueOfstringanyType>
               </d2p1:modifiedProperties>
             </d2p1:BaseEntityModel>
           </d2p1:SerializeChildrens>
+          <d2p1:isDisabled>false</d2p1:isDisabled>
           <d2p1:isStatic>false</d2p1:isStatic>
           <d2p1:isVisible>true</d2p1:isVisible>
           <d2p1:name>background</d2p1:name>
@@ -990,6 +732,7 @@
           </d2p1:SerializeComponents>
         </d2p1:BaseEntityModel>
       </d2p1:SerializeChildrens>
+      <d2p1:isDisabled>false</d2p1:isDisabled>
       <d2p1:isStatic>false</d2p1:isStatic>
       <d2p1:isVisible>true</d2p1:isVisible>
       <d2p1:name>sceneEntity</d2p1:name>
@@ -1019,6 +762,7 @@
       <d2p1:SerializeChildrens>
         <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
           <d2p1:SerializeChildrens />
+          <d2p1:isDisabled>false</d2p1:isDisabled>
           <d2p1:isStatic>false</d2p1:isStatic>
           <d2p1:isVisible>true</d2p1:isVisible>
           <d2p1:name>currentscore</d2p1:name>
@@ -1033,7 +777,7 @@
               </d7p1:LocalOrientation>
               <d7p1:LocalPosition xmlns:d8p1="WaveEngine.Common.Math">
                 <d8p1:X>0</d8p1:X>
-                <d8p1:Y>-326.7</d8p1:Y>
+                <d8p1:Y>-328.5</d8p1:Y>
                 <d8p1:Z>0</d8p1:Z>
               </d7p1:LocalPosition>
               <d7p1:LocalScale xmlns:d8p1="WaveEngine.Common.Math">
@@ -1041,7 +785,6 @@
                 <d8p1:Y>1</d8p1:Y>
                 <d8p1:Z>1</d8p1:Z>
               </d7p1:LocalScale>
-              <d7p1:Effect>None</d7p1:Effect>
               <d7p1:Opacity>1</d7p1:Opacity>
               <d7p1:Rectangle xmlns:d8p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                 <d8p1:Height>32</d8p1:Height>
@@ -1049,6 +792,7 @@
                 <d8p1:X>-24</d8p1:X>
                 <d8p1:Y>16</d8p1:Y>
               </d7p1:Rectangle>
+              <d7p1:effect>None</d7p1:effect>
               <d7p1:origin xmlns:d8p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                 <d8p1:X>0.5</d8p1:X>
                 <d8p1:Y>0.5</d8p1:Y>
@@ -1060,6 +804,7 @@
               <d7p1:transformMode>Screen</d7p1:transformMode>
             </d6p1:Component>
             <d6p1:Component xmlns:d7p1="WaveEngine.Components.Toolkit" i:type="d7p1:TextComponent">
+              <d7p1:alpha>1</d7p1:alpha>
               <d7p1:fontPath>Content/Assets/Fonts/8BITWONDER_24.TTF.wpk</d7p1:fontPath>
               <d7p1:foreground xmlns:d8p1="WaveEngine.Common.Graphics">
                 <d8p1:A>255</d8p1:A>
@@ -1090,6 +835,7 @@
         </d2p1:BaseEntityModel>
         <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
           <d2p1:SerializeChildrens />
+          <d2p1:isDisabled>false</d2p1:isDisabled>
           <d2p1:isStatic>false</d2p1:isStatic>
           <d2p1:isVisible>false</d2p1:isVisible>
           <d2p1:name>loading</d2p1:name>
@@ -1104,7 +850,7 @@
               </d7p1:LocalOrientation>
               <d7p1:LocalPosition xmlns:d8p1="WaveEngine.Common.Math">
                 <d8p1:X>0</d8p1:X>
-                <d8p1:Y>290.399963</d8p1:Y>
+                <d8p1:Y>292</d8p1:Y>
                 <d8p1:Z>0</d8p1:Z>
               </d7p1:LocalPosition>
               <d7p1:LocalScale xmlns:d8p1="WaveEngine.Common.Math">
@@ -1112,7 +858,6 @@
                 <d8p1:Y>1</d8p1:Y>
                 <d8p1:Z>1</d8p1:Z>
               </d7p1:LocalScale>
-              <d7p1:Effect>None</d7p1:Effect>
               <d7p1:Opacity>1</d7p1:Opacity>
               <d7p1:Rectangle xmlns:d8p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                 <d8p1:Height>80</d8p1:Height>
@@ -1120,6 +865,7 @@
                 <d8p1:X>-280</d8p1:X>
                 <d8p1:Y>40</d8p1:Y>
               </d7p1:Rectangle>
+              <d7p1:effect>None</d7p1:effect>
               <d7p1:origin xmlns:d8p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                 <d8p1:X>0.5</d8p1:X>
                 <d8p1:Y>0.5</d8p1:Y>
@@ -1131,6 +877,7 @@
               <d7p1:transformMode>Screen</d7p1:transformMode>
             </d6p1:Component>
             <d6p1:Component xmlns:d7p1="WaveEngine.Components.Toolkit" i:type="d7p1:TextComponent">
+              <d7p1:alpha>1</d7p1:alpha>
               <d7p1:fontPath>Content/Assets/Fonts/8BITWONDER_60.TTF.wpk</d7p1:fontPath>
               <d7p1:foreground xmlns:d8p1="WaveEngine.Common.Graphics">
                 <d8p1:A>255</d8p1:A>
@@ -1161,6 +908,7 @@
         </d2p1:BaseEntityModel>
         <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
           <d2p1:SerializeChildrens />
+          <d2p1:isDisabled>false</d2p1:isDisabled>
           <d2p1:isStatic>false</d2p1:isStatic>
           <d2p1:isVisible>true</d2p1:isVisible>
           <d2p1:name>currentscoretext</d2p1:name>
@@ -1174,8 +922,8 @@
                 <d8p1:Z>0</d8p1:Z>
               </d7p1:LocalOrientation>
               <d7p1:LocalPosition xmlns:d8p1="WaveEngine.Common.Math">
-                <d8p1:X>-263.64</d8p1:X>
-                <d8p1:Y>-326.7</d8p1:Y>
+                <d8p1:X>-264.16</d8p1:X>
+                <d8p1:Y>-328.5</d8p1:Y>
                 <d8p1:Z>0</d8p1:Z>
               </d7p1:LocalPosition>
               <d7p1:LocalScale xmlns:d8p1="WaveEngine.Common.Math">
@@ -1183,7 +931,6 @@
                 <d8p1:Y>1</d8p1:Y>
                 <d8p1:Z>1</d8p1:Z>
               </d7p1:LocalScale>
-              <d7p1:Effect>None</d7p1:Effect>
               <d7p1:Opacity>1</d7p1:Opacity>
               <d7p1:Rectangle xmlns:d8p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                 <d8p1:Height>32</d8p1:Height>
@@ -1191,6 +938,7 @@
                 <d8p1:X>-208</d8p1:X>
                 <d8p1:Y>16</d8p1:Y>
               </d7p1:Rectangle>
+              <d7p1:effect>None</d7p1:effect>
               <d7p1:origin xmlns:d8p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                 <d8p1:X>0.5</d8p1:X>
                 <d8p1:Y>0.5</d8p1:Y>
@@ -1202,6 +950,7 @@
               <d7p1:transformMode>Screen</d7p1:transformMode>
             </d6p1:Component>
             <d6p1:Component xmlns:d7p1="WaveEngine.Components.Toolkit" i:type="d7p1:TextComponent">
+              <d7p1:alpha>1</d7p1:alpha>
               <d7p1:fontPath>Content/Assets/Fonts/8BITWONDER_24.TTF.wpk</d7p1:fontPath>
               <d7p1:foreground xmlns:d8p1="WaveEngine.Common.Graphics">
                 <d8p1:A>255</d8p1:A>
@@ -1232,6 +981,7 @@
         </d2p1:BaseEntityModel>
         <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
           <d2p1:SerializeChildrens />
+          <d2p1:isDisabled>false</d2p1:isDisabled>
           <d2p1:isStatic>false</d2p1:isStatic>
           <d2p1:isVisible>true</d2p1:isVisible>
           <d2p1:name>maxscore</d2p1:name>
@@ -1246,7 +996,7 @@
               </d7p1:LocalOrientation>
               <d7p1:LocalPosition xmlns:d8p1="WaveEngine.Common.Math">
                 <d8p1:X>0</d8p1:X>
-                <d8p1:Y>-268.62</d8p1:Y>
+                <d8p1:Y>-270.1</d8p1:Y>
                 <d8p1:Z>0</d8p1:Z>
               </d7p1:LocalPosition>
               <d7p1:LocalScale xmlns:d8p1="WaveEngine.Common.Math">
@@ -1254,7 +1004,6 @@
                 <d8p1:Y>1</d8p1:Y>
                 <d8p1:Z>1</d8p1:Z>
               </d7p1:LocalScale>
-              <d7p1:Effect>None</d7p1:Effect>
               <d7p1:Opacity>1</d7p1:Opacity>
               <d7p1:Rectangle xmlns:d8p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                 <d8p1:Height>32</d8p1:Height>
@@ -1262,6 +1011,7 @@
                 <d8p1:X>-24</d8p1:X>
                 <d8p1:Y>16</d8p1:Y>
               </d7p1:Rectangle>
+              <d7p1:effect>None</d7p1:effect>
               <d7p1:origin xmlns:d8p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                 <d8p1:X>0.5</d8p1:X>
                 <d8p1:Y>0.5</d8p1:Y>
@@ -1273,6 +1023,7 @@
               <d7p1:transformMode>Screen</d7p1:transformMode>
             </d6p1:Component>
             <d6p1:Component xmlns:d7p1="WaveEngine.Components.Toolkit" i:type="d7p1:TextComponent">
+              <d7p1:alpha>1</d7p1:alpha>
               <d7p1:fontPath>Content/Assets/Fonts/8BITWONDER_24.TTF.wpk</d7p1:fontPath>
               <d7p1:foreground xmlns:d8p1="WaveEngine.Common.Graphics">
                 <d8p1:A>255</d8p1:A>
@@ -1303,6 +1054,7 @@
         </d2p1:BaseEntityModel>
         <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
           <d2p1:SerializeChildrens />
+          <d2p1:isDisabled>false</d2p1:isDisabled>
           <d2p1:isStatic>false</d2p1:isStatic>
           <d2p1:isVisible>true</d2p1:isVisible>
           <d2p1:name>maxscoretext</d2p1:name>
@@ -1316,8 +1068,8 @@
                 <d8p1:Z>0</d8p1:Z>
               </d7p1:LocalOrientation>
               <d7p1:LocalPosition xmlns:d8p1="WaveEngine.Common.Math">
-                <d8p1:X>-220.038</d8p1:X>
-                <d8p1:Y>-268.62</d8p1:Y>
+                <d8p1:X>-220.472015</d8p1:X>
+                <d8p1:Y>-270.1</d8p1:Y>
                 <d8p1:Z>0</d8p1:Z>
               </d7p1:LocalPosition>
               <d7p1:LocalScale xmlns:d8p1="WaveEngine.Common.Math">
@@ -1325,7 +1077,6 @@
                 <d8p1:Y>1</d8p1:Y>
                 <d8p1:Z>1</d8p1:Z>
               </d7p1:LocalScale>
-              <d7p1:Effect>None</d7p1:Effect>
               <d7p1:Opacity>1</d7p1:Opacity>
               <d7p1:Rectangle xmlns:d8p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                 <d8p1:Height>32</d8p1:Height>
@@ -1333,6 +1084,7 @@
                 <d8p1:X>-152</d8p1:X>
                 <d8p1:Y>16</d8p1:Y>
               </d7p1:Rectangle>
+              <d7p1:effect>None</d7p1:effect>
               <d7p1:origin xmlns:d8p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                 <d8p1:X>0.5</d8p1:X>
                 <d8p1:Y>0.5</d8p1:Y>
@@ -1344,6 +1096,7 @@
               <d7p1:transformMode>Screen</d7p1:transformMode>
             </d6p1:Component>
             <d6p1:Component xmlns:d7p1="WaveEngine.Components.Toolkit" i:type="d7p1:TextComponent">
+              <d7p1:alpha>1</d7p1:alpha>
               <d7p1:fontPath>Content/Assets/Fonts/8BITWONDER_24.TTF.wpk</d7p1:fontPath>
               <d7p1:foreground xmlns:d8p1="WaveEngine.Common.Graphics">
                 <d8p1:A>255</d8p1:A>
@@ -1374,6 +1127,7 @@
         </d2p1:BaseEntityModel>
         <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
           <d2p1:SerializeChildrens />
+          <d2p1:isDisabled>false</d2p1:isDisabled>
           <d2p1:isStatic>false</d2p1:isStatic>
           <d2p1:isVisible>true</d2p1:isVisible>
           <d2p1:name>title</d2p1:name>
@@ -1396,7 +1150,6 @@
                 <d8p1:Y>1</d8p1:Y>
                 <d8p1:Z>1</d8p1:Z>
               </d7p1:LocalScale>
-              <d7p1:Effect>None</d7p1:Effect>
               <d7p1:Opacity>1</d7p1:Opacity>
               <d7p1:Rectangle xmlns:d8p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                 <d8p1:Height>80</d8p1:Height>
@@ -1404,6 +1157,7 @@
                 <d8p1:X>-500</d8p1:X>
                 <d8p1:Y>40</d8p1:Y>
               </d7p1:Rectangle>
+              <d7p1:effect>None</d7p1:effect>
               <d7p1:origin xmlns:d8p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                 <d8p1:X>0.5</d8p1:X>
                 <d8p1:Y>0.5</d8p1:Y>
@@ -1415,6 +1169,7 @@
               <d7p1:transformMode>Standard</d7p1:transformMode>
             </d6p1:Component>
             <d6p1:Component xmlns:d7p1="WaveEngine.Components.Toolkit" i:type="d7p1:TextComponent">
+              <d7p1:alpha>1</d7p1:alpha>
               <d7p1:fontPath>Content/Assets/Fonts/8BITWONDER_60.TTF.wpk</d7p1:fontPath>
               <d7p1:foreground xmlns:d8p1="WaveEngine.Common.Graphics">
                 <d8p1:A>255</d8p1:A>
@@ -1445,6 +1200,7 @@
         </d2p1:BaseEntityModel>
         <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
           <d2p1:SerializeChildrens />
+          <d2p1:isDisabled>false</d2p1:isDisabled>
           <d2p1:isStatic>false</d2p1:isStatic>
           <d2p1:isVisible>true</d2p1:isVisible>
           <d2p1:name>taptoplay</d2p1:name>
@@ -1467,7 +1223,6 @@
                 <d8p1:Y>1</d8p1:Y>
                 <d8p1:Z>1</d8p1:Z>
               </d7p1:LocalScale>
-              <d7p1:Effect>None</d7p1:Effect>
               <d7p1:Opacity>1</d7p1:Opacity>
               <d7p1:Rectangle xmlns:d8p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                 <d8p1:Height>48</d8p1:Height>
@@ -1475,6 +1230,7 @@
                 <d8p1:X>-252</d8p1:X>
                 <d8p1:Y>24</d8p1:Y>
               </d7p1:Rectangle>
+              <d7p1:effect>None</d7p1:effect>
               <d7p1:origin xmlns:d8p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                 <d8p1:X>0.5</d8p1:X>
                 <d8p1:Y>0.5</d8p1:Y>
@@ -1486,6 +1242,7 @@
               <d7p1:transformMode>Standard</d7p1:transformMode>
             </d6p1:Component>
             <d6p1:Component xmlns:d7p1="WaveEngine.Components.Toolkit" i:type="d7p1:TextComponent">
+              <d7p1:alpha>1</d7p1:alpha>
               <d7p1:fontPath>Content/Assets/Fonts/8BITWONDER_36.TTF.wpk</d7p1:fontPath>
               <d7p1:foreground xmlns:d8p1="WaveEngine.Common.Graphics">
                 <d8p1:A>255</d8p1:A>
@@ -1538,8 +1295,8 @@
               <d7p1:rotationOffset>0</d7p1:rotationOffset>
             </d6p1:Component>
             <d6p1:Component xmlns:d7p1="WaveEngine.Components.Gestures" i:type="d7p1:TouchGestures">
-              <d6p1:IsActive>true</d6p1:IsActive>
               <d6p1:UpdateOrder>0.5</d6p1:UpdateOrder>
+              <d6p1:isDisabled>false</d6p1:isDisabled>
               <d7p1:EnabledGestures>None</d7p1:EnabledGestures>
               <d7p1:ManualTouchOrder>false</d7p1:ManualTouchOrder>
               <d7p1:MaxScale>5</d7p1:MaxScale>
@@ -1550,6 +1307,7 @@
           </d2p1:SerializeComponents>
         </d2p1:BaseEntityModel>
       </d2p1:SerializeChildrens>
+      <d2p1:isDisabled>false</d2p1:isDisabled>
       <d2p1:isStatic>false</d2p1:isStatic>
       <d2p1:isVisible>true</d2p1:isVisible>
       <d2p1:name>GUI</d2p1:name>
@@ -1572,7 +1330,6 @@
             <d6p1:Y>1</d6p1:Y>
             <d6p1:Z>1</d6p1:Z>
           </d5p1:LocalScale>
-          <d5p1:Effect>None</d5p1:Effect>
           <d5p1:Opacity>1</d5p1:Opacity>
           <d5p1:Rectangle xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
             <d6p1:Height>0</d6p1:Height>
@@ -1580,6 +1337,7 @@
             <d6p1:X>0</d6p1:X>
             <d6p1:Y>0</d6p1:Y>
           </d5p1:Rectangle>
+          <d5p1:effect>None</d5p1:effect>
           <d5p1:origin xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
             <d6p1:X>0.5</d6p1:X>
             <d6p1:Y>0.5</d6p1:Y>
@@ -1594,6 +1352,7 @@
     </d2p1:BaseEntityModel>
     <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
       <d2p1:SerializeChildrens />
+      <d2p1:isDisabled>false</d2p1:isDisabled>
       <d2p1:isStatic>false</d2p1:isStatic>
       <d2p1:isVisible>true</d2p1:isVisible>
       <d2p1:name>GameController</d2p1:name>
@@ -1626,6 +1385,7 @@
       </d2p1:SerializeComponents>
     </d2p1:BaseEntityModel>
   </Entities>
+  <EntityPointers xmlns:d2p1="http://schemas.datacontract.org/2004/07/WaveEngine.Framework.Models.Entities" />
   <Settings xmlns:d2p1="WaveEngine.Framework.Models.Settings">
     <d2p1:Categories xmlns:d3p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
       <d3p1:KeyValueOfstringanyType>

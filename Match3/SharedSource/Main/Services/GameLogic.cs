@@ -20,7 +20,20 @@ namespace Match3.Services
 
         public TimeSpan LeftTime { get { return this.currentTimer.Interval; } }
 
-        public int BoardSizeM { get { return this.currentBoard.SizeM; } }
+        public int BoardSizeM
+        {
+            get
+            {
+                if (this.currentBoard != null)
+                {
+                    return this.currentBoard.SizeM;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+        }
 
         public int BoardSizeN { get { return this.currentBoard.SizeN; } }
 

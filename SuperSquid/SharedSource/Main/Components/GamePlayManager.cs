@@ -4,10 +4,12 @@ using SuperSquid.Managers;
 using SuperSquid.Scenes;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using WaveEngine.Common.Graphics;
 using WaveEngine.Common.Media;
+using WaveEngine.Components.Toolkit;
 using WaveEngine.Components.Transitions;
 using WaveEngine.Framework;
 using WaveEngine.Framework.Services;
@@ -17,7 +19,8 @@ namespace SuperSquid.Components
     [DataContract(Namespace = "SuperSquid.Components")]
     public class GamePlayManager : Component
     {
-        private ScorePanel scorePanel;
+        private int score;
+        private TextComponent scoreText;
         private BackgroundScene backScene;
 
         private BlockBuilderBehavior blockBuilder;
@@ -33,12 +36,13 @@ namespace SuperSquid.Components
         {
             get
             {
-                return this.scorePanel.Score;
+                return this.score;
             }
 
             set
             {
-                this.scorePanel.Score = value;
+                this.score = value;
+                this.scoreText.Text = value.ToString();
             }
         }
 
@@ -46,7 +50,7 @@ namespace SuperSquid.Components
         {
             base.Initialize();
 
-            this.scorePanel = this.EntityManager.Find<ScorePanel>("ScorePanel");
+            this.scoreText = (this.EntityManager.FindAllByTag("ScoreText").FirstOrDefault() as Entity).FindComponent<TextComponent>();
 
             //Backscene 
             var backContext = WaveServices.ScreenContextManager.FindContextByName("BackContext");

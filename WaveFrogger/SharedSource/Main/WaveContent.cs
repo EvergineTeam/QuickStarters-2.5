@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// File generated on 25/07/2017 19:07:34
+// File generated on 8/14/2017 11:12:05 AM
 namespace WaveFrogger
 {
     using System;
@@ -20,8 +20,8 @@ namespace WaveFrogger
         /// <summary> Path to Content/readme.txt </summary>
         public const string readme_txt = "Content/readme.txt";
         
-        /// <summary> Path to  </summary>
-        public const string GameInfo = null;
+        /// <summary> Path to Content/WaveFrogger.wgame </summary>
+        public const string GameInfo = "Content/WaveFrogger.wgame";
         
         public sealed class Assets
         {

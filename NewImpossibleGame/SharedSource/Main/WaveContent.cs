@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// File generated on 3/14/2017 2:07:23 PM
+// File generated on 8/14/2017 11:11:02 AM
 namespace NewImpossibleGame
 {
     using System;
@@ -16,6 +16,9 @@ namespace NewImpossibleGame
     
     public sealed class WaveContent
     {
+        
+        /// <summary> Path to Content/NewImpossibleGame.wgame </summary>
+        public const string GameInfo = "Content/NewImpossibleGame.wgame";
         
         public sealed class Assets
         {

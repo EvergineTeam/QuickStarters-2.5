@@ -9,6 +9,7 @@ using WaveEngine.Framework;
 using WaveEngine.Framework.Diagnostic;
 using WaveEngine.Framework.Graphics;
 using WaveEngine.Framework.Services;
+using WaveEngine.Framework.Threading;
 
 namespace Match3.Services.Navigation
 {
@@ -362,7 +363,7 @@ namespace Match3.Services.Navigation
 #elif __UNIFIED__
 			preloadAction();
 #else
-            WaveServices.TaskScheduler.CreateTask(preloadAction);
+            WaveBackgroundTask.Run(preloadAction);
 #endif
 
             this.CreateContextAnimation(false, WaveServices.ScreenContextManager.CurrentContext)

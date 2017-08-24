@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// File generated on 3/14/2017 2:13:02 PM
+// File generated on 8/14/2017 1:08:54 PM
 namespace OrbitRabbits
 {
     using System;
@@ -16,6 +16,9 @@ namespace OrbitRabbits
     
     public sealed class WaveContent
     {
+        
+        /// <summary> Path to Content/OrbitRabbits.wgame </summary>
+        public const string GameInfo = "Content/OrbitRabbits.wgame";
         
         public sealed class Assets
         {
@@ -109,6 +112,13 @@ namespace OrbitRabbits
                 
                 /// <summary> Path to Content/Assets/Materials/StarParticleMaterial.wmat </summary>
                 public const string StarParticleMaterial = "Content/Assets/Materials/StarParticleMaterial.wmat";
+            }
+            
+            public sealed class Prefabs
+            {
+                
+                /// <summary> Path to Content/Assets/Prefabs/rabbit.wpref </summary>
+                public const string rabbit = "Content/Assets/Prefabs/rabbit.wpref";
             }
         }
         

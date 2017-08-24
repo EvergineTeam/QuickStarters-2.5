@@ -23,6 +23,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Scenes\GameOverScene.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Scenes\MainMenuScene.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Scenes\BackgroundScene.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\GameplayService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)WaveContent.cs" />
   </ItemGroup>
 </Project>

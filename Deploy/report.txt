@@ -1,0 +1,17 @@
+
+
+---------------------------------------------------------------------
+Quickstarters Report:
+---------------------------------------------------------------------
+ 0 -      Success - ../DeepSpace\DeepSpace_Windows.sln
+ 1 -      Success - ../FlyingKite\FlyingKite_Windows.sln
+ 2 -      Success - ../Match3\Match3_Windows.sln
+ 3 -      Success - ../NewImpossibleGame\NewImpossibleGame_Windows.sln
+ 4 -      Success - ../OrbitRabbits\OrbitRabbits_Windows.sln
+ 5 -      Success - ../SuperSlingshot\SuperSlingshot_Windows.sln
+ 6 -      Success - ../SuperSquid\SuperSquid_Windows.sln
+ 7 -      Success - ../SurvivorNinja\SurvivorNinja_Windows.sln
+ 8 -      Success - ../WaveFrogger\WaveFrogger_Windows.sln
+
+   Projects success: 9 / 9
+---------------------------------------------------------------------
