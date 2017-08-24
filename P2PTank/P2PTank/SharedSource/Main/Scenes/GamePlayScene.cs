@@ -21,6 +21,7 @@ using WaveEngine.Components.GameActions;
 using WaveEngine.Common.Graphics;
 using WaveEngine.Framework.Services;
 using P2PTank.Services;
+using P2PTank.Components;
 
 namespace P2PTank.Scenes
 {
@@ -217,16 +218,21 @@ namespace P2PTank.Scenes
         {
             this.playerID = Guid.NewGuid().ToString();
 
-            var player = gameplayManager.CreatePlayer(0, peerManager, this.playerID, this.GetSpawnPoint(0));
+            var spawnIndex = WaveServices.Random.Next(0, 4);
+            var spawnPoint = this.GetSpawnPoint(spawnIndex);
 
-            this.SendCreatePlayerMessage();
+            var player = gameplayManager.CreatePlayer(0, peerManager, this.playerID, spawnPoint);
+
+            var playerColor = player.FindComponent<TankComponent>().Color;
+
+            this.SendCreatePlayerMessage(playerColor, spawnPoint);
 
             return player;
         }
 
-        private void CreateFoe(GamePlayManager gameplayManager, string foeID)
+        private void CreateFoe(GamePlayManager gameplayManager, Color foeColor, Vector2 foeSpawnPosition, string foeID)
         {
-            gameplayManager.CreateFoe(1, peerManager, foeID, this.GetSpawnPoint(1));
+            gameplayManager.CreateFoe(1, peerManager, foeID, foeColor, foeSpawnPosition);
         }
 
         private void DestroyFoe(GamePlayManager gameplayManager, string foeId)
@@ -277,7 +283,7 @@ namespace P2PTank.Scenes
 
                             if (!this.EntityManager.AllEntities.Any(i => i.Name.Equals(createPlayerData.PlayerId)))
                             {
-                                this.CreateFoe(this.gameplayManager, createPlayerData.PlayerId);
+                                this.CreateFoe(this.gameplayManager, createPlayerData.PlayerColor, createPlayerData.SpawnPosition, createPlayerData.PlayerId);
                             }
 
                             break;
@@ -337,13 +343,13 @@ namespace P2PTank.Scenes
 
                     if (ipAddress != peer.IpAddress)
                     {
-                        this.SendCreatePlayerMessage(peer.IpAddress);
+                        this.SendCreatePlayerMessage(null, null, peer.IpAddress);
                     }
                 }
             }
         }
 
-        private async void SendCreatePlayerMessage(string ipAddress = "")
+        private async void SendCreatePlayerMessage(Color? playerColor, Vector2? spawnPosition, string ipAddress = "")
         {
             if (string.IsNullOrEmpty(this.playerID))
                 return;
@@ -353,6 +359,12 @@ namespace P2PTank.Scenes
                 IpAddress = ipAddress,
                 PlayerId = this.playerID
             };
+
+            if (playerColor.HasValue && spawnPosition.HasValue)
+            {
+                createPlayerMessage.PlayerColor = playerColor.Value;
+                createPlayerMessage.SpawnPosition = spawnPosition.Value;
+            }
 
             var message = peerManager.CreateMessage(P2PMessageType.CreatePlayer, createPlayerMessage);
 

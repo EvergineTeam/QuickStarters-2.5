@@ -71,7 +71,7 @@ namespace P2PTank.Managers
             return entity;
         }
 
-        public void CreateFoe(int playerIndex, P2PManager peerManager, string foeID, Vector2 position)
+        public void CreateFoe(int playerIndex, P2PManager peerManager, string foeID, Color color, Vector2 position)
         {
             Labels.Add("foeID", foeID);
             var category = ColliderCategory2D.Cat4;
@@ -81,6 +81,8 @@ namespace P2PTank.Managers
             entity.Name = foeID;
             entity.AddComponent(new NetworkInputBehavior(peerManager) { PlayerID = foeID });
             entity.FindComponent<Transform2D>().LocalPosition = position;
+
+            entity.FindComponent<TankComponent>().Color = color;
 
             this.tanksToAdd.Add(entity);
         }
@@ -166,7 +168,9 @@ namespace P2PTank.Managers
             entity.Name += playerIndex;
 
             var tankComponent = entity.FindComponent<TankComponent>();
-            tankComponent.Color = GameConstants.Palette[playerIndex];
+
+             var index = WaveServices.Random.Next(0, GameConstants.Palette.Count());
+            tankComponent.Color = GameConstants.Palette[index];
 
             var colliders = entity.FindComponentsInChildren<Collider2D>(false);
             var collider = colliders.FirstOrDefault();
