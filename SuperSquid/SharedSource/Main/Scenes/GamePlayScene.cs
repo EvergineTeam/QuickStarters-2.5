@@ -29,7 +29,7 @@ namespace SuperSquid.Scenes
         {
             get
             {
-                return this.EntityManager.Find("GamePlayManager").FindComponent<GamePlayManager>();
+                return this.EntityManager.Find("GameplayManager").FindComponent<GamePlayManager>();
             }
         }
 
@@ -42,42 +42,6 @@ namespace SuperSquid.Scenes
             //Backscene 
             this.backScene = WaveServices.ScreenContextManager.FindContextByName("BackContext")
                                                               .FindScene<BackgroundScene>();
-
-            this.CreateUI();
-        }
-
-        private void CreateUI()
-        {
-            // Side black panels
-            Entity rightBlackpanel = new Entity()
-                    .AddComponent(new Transform2D()
-                    {
-                        DrawOrder = 1f,
-                        X = this.VirtualScreenManager.LeftEdge
-                    })
-                    .AddComponent(new ImageControl(
-                        Color.Black,
-                        (int)-this.VirtualScreenManager.LeftEdge,
-                        (int)this.VirtualScreenManager.VirtualHeight))
-                    .AddComponent(new ImageControlRenderer(DefaultLayers.GUI));
-            EntityManager.Add(rightBlackpanel);
-
-            Entity leftBlackpanel = new Entity()
-                    .AddComponent(new Transform2D()
-                    {
-                        DrawOrder = 1f,
-                        X = this.VirtualScreenManager.VirtualWidth
-                    })
-                    .AddComponent(new ImageControl(
-                        Color.Black,
-                        (int)-this.VirtualScreenManager.LeftEdge,
-                        (int)this.VirtualScreenManager.VirtualHeight))
-                    .AddComponent(new ImageControlRenderer(DefaultLayers.GUI));
-            EntityManager.Add(leftBlackpanel);
-
-            // ScorePanel
-            ScorePanel scorePanel = new ScorePanel("ScorePanel");
-            this.EntityManager.Add(scorePanel);
         }
 
         protected override void Start()

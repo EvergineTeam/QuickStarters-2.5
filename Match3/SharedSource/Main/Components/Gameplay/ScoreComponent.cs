@@ -47,7 +47,7 @@ namespace Match3.Components.Gameplay
             this.gameLogic = CustomServices.GameLogic;
             if (this.gameLogic != null)
             {
-                var stars = this.Owner.FindAllChildrenByTag("star").OrderBy(x => x.Name).ToArray();
+                var stars = this.Owner.FindChildrenByTag("star", true).OrderBy(x => x.Name).ToArray();
                 this.starsTransforms = stars.Select(x => x.FindComponent<Transform2D>()).ToArray();
                 this.starsSpriteAtlas = stars.Select(x => x.FindComponent<SpriteAtlas>()).ToArray();
 
@@ -81,12 +81,15 @@ namespace Match3.Components.Gameplay
             var lastStar = this.starsTransforms.Last().LocalPosition;
 
             var starsSpace = lastStar.X - firstStar.X;
-            for (int i = 0; i < this.gameLogic.StarsScores.Length - 1; i++)
+            if (this.gameLogic.StarsScores != null)
             {
-                var scoreRatio = this.gameLogic.StarsScores[i] / (float)this.gameLogic.StarsScores[this.gameLogic.StarsScores.Length - 1];
-                var starPosition = this.starsTransforms[i].LocalPosition;
-                starPosition.X = firstStar.X + (starsSpace * scoreRatio);
-                this.starsTransforms[i].LocalPosition = starPosition;
+                for (int i = 0; i < this.gameLogic.StarsScores.Length - 1; i++)
+                {
+                    var scoreRatio = this.gameLogic.StarsScores[i] / (float)this.gameLogic.StarsScores[this.gameLogic.StarsScores.Length - 1];
+                    var starPosition = this.starsTransforms[i].LocalPosition;
+                    starPosition.X = firstStar.X + (starsSpace * scoreRatio);
+                    this.starsTransforms[i].LocalPosition = starPosition;
+                }
             }
         }
 

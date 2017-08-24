@@ -26,7 +26,6 @@
             <d6p1:Y>0.95</d6p1:Y>
             <d6p1:Z>1</d6p1:Z>
           </d5p1:LocalScale>
-          <d5p1:Effect>None</d5p1:Effect>
           <d5p1:Opacity>1</d5p1:Opacity>
           <d5p1:Rectangle xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
             <d6p1:Height>0</d6p1:Height>
@@ -34,6 +33,7 @@
             <d6p1:X>0</d6p1:X>
             <d6p1:Y>0</d6p1:Y>
           </d5p1:Rectangle>
+          <d5p1:effect>None</d5p1:effect>
           <d5p1:origin xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
             <d6p1:X>0</d6p1:X>
             <d6p1:Y>0</d6p1:Y>
@@ -103,17 +103,17 @@
             <d6p1:KeyValueOfstringanyType>
               <d6p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#Rectangle</d6p1:Key>
               <d6p1:Value xmlns:d8p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math" i:type="d8p1:RectangleF">
-                <d8p1:Height>108</d8p1:Height>
-                <d8p1:Width>227</d8p1:Width>
-                <d8p1:X>-113.5</d8p1:X>
-                <d8p1:Y>54</d8p1:Y>
+                <d8p1:Height>109</d8p1:Height>
+                <d8p1:Width>228.5</d8p1:Width>
+                <d8p1:X>-114.25</d8p1:X>
+                <d8p1:Y>54.5</d8p1:Y>
               </d6p1:Value>
             </d6p1:KeyValueOfstringanyType>
             <d6p1:KeyValueOfstringanyType>
               <d6p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#LocalPosition</d6p1:Key>
               <d6p1:Value xmlns:d8p1="WaveEngine.Common.Math" i:type="d8p1:Vector3">
-                <d8p1:X>6</d8p1:X>
-                <d8p1:Y>-18.8</d8p1:Y>
+                <d8p1:X>5.99999571</d8p1:X>
+                <d8p1:Y>-18.7999954</d8p1:Y>
                 <d8p1:Z>-0.1000061</d8p1:Z>
               </d6p1:Value>
             </d6p1:KeyValueOfstringanyType>
@@ -154,8 +154,8 @@
         <d4p1:KeyValueOfstringanyType>
           <d4p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#LocalPosition</d4p1:Key>
           <d4p1:Value xmlns:d6p1="WaveEngine.Common.Math" i:type="d6p1:Vector3">
-            <d6p1:X>-122.500549</d6p1:X>
-            <d6p1:Y>555.4447</d6p1:Y>
+            <d6p1:X>0</d6p1:X>
+            <d6p1:Y>182.5</d6p1:Y>
             <d6p1:Z>-200</d6p1:Z>
           </d4p1:Value>
         </d4p1:KeyValueOfstringanyType>
@@ -223,7 +223,6 @@
                 <d8p1:Y>1</d8p1:Y>
                 <d8p1:Z>1</d8p1:Z>
               </d7p1:LocalScale>
-              <d7p1:Effect>None</d7p1:Effect>
               <d7p1:Opacity>1</d7p1:Opacity>
               <d7p1:Rectangle xmlns:d8p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                 <d8p1:Height>750</d8p1:Height>
@@ -231,6 +230,7 @@
                 <d8p1:X>0</d8p1:X>
                 <d8p1:Y>0</d8p1:Y>
               </d7p1:Rectangle>
+              <d7p1:effect>None</d7p1:effect>
               <d7p1:origin xmlns:d8p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                 <d8p1:X>0.5</d8p1:X>
                 <d8p1:Y>0.5</d8p1:Y>
@@ -245,6 +245,7 @@
               <d6p1:IsVisible>true</d6p1:IsVisible>
               <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
               <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
+              <d7p1:DrawMode>Simple</d7p1:DrawMode>
               <d7p1:SamplerMode>LinearClamp</d7p1:SamplerMode>
             </d6p1:Component>
           </d2p1:SerializeComponents>
@@ -277,7 +278,6 @@
                 <d8p1:Y>1</d8p1:Y>
                 <d8p1:Z>1</d8p1:Z>
               </d7p1:LocalScale>
-              <d7p1:Effect>None</d7p1:Effect>
               <d7p1:Opacity>1</d7p1:Opacity>
               <d7p1:Rectangle xmlns:d8p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                 <d8p1:Height>350</d8p1:Height>
@@ -285,6 +285,7 @@
                 <d8p1:X>0</d8p1:X>
                 <d8p1:Y>0</d8p1:Y>
               </d7p1:Rectangle>
+              <d7p1:effect>None</d7p1:effect>
               <d7p1:origin xmlns:d8p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                 <d8p1:X>0.5</d8p1:X>
                 <d8p1:Y>0</d8p1:Y>
@@ -330,7 +331,6 @@
                 <d8p1:Y>1</d8p1:Y>
                 <d8p1:Z>1</d8p1:Z>
               </d7p1:LocalScale>
-              <d7p1:Effect>None</d7p1:Effect>
               <d7p1:Opacity>0.9</d7p1:Opacity>
               <d7p1:Rectangle xmlns:d8p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                 <d8p1:Height>350</d8p1:Height>
@@ -338,6 +338,7 @@
                 <d8p1:X>0</d8p1:X>
                 <d8p1:Y>0</d8p1:Y>
               </d7p1:Rectangle>
+              <d7p1:effect>None</d7p1:effect>
               <d7p1:origin xmlns:d8p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                 <d8p1:X>0.5</d8p1:X>
                 <d8p1:Y>0</d8p1:Y>
@@ -383,7 +384,6 @@
                 <d8p1:Y>0</d8p1:Y>
                 <d8p1:Z>1</d8p1:Z>
               </d7p1:LocalScale>
-              <d7p1:Effect>None</d7p1:Effect>
               <d7p1:Opacity>1</d7p1:Opacity>
               <d7p1:Rectangle xmlns:d8p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                 <d8p1:Height>350</d8p1:Height>
@@ -391,6 +391,7 @@
                 <d8p1:X>0</d8p1:X>
                 <d8p1:Y>0</d8p1:Y>
               </d7p1:Rectangle>
+              <d7p1:effect>None</d7p1:effect>
               <d7p1:origin xmlns:d8p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                 <d8p1:X>0.5</d8p1:X>
                 <d8p1:Y>0.5</d8p1:Y>
@@ -432,7 +433,6 @@
             <d6p1:Y>1</d6p1:Y>
             <d6p1:Z>1</d6p1:Z>
           </d5p1:LocalScale>
-          <d5p1:Effect>None</d5p1:Effect>
           <d5p1:Opacity>1</d5p1:Opacity>
           <d5p1:Rectangle xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
             <d6p1:Height>350</d6p1:Height>
@@ -440,6 +440,7 @@
             <d6p1:X>0</d6p1:X>
             <d6p1:Y>0</d6p1:Y>
           </d5p1:Rectangle>
+          <d5p1:effect>None</d5p1:effect>
           <d5p1:origin xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
             <d6p1:X>0.5</d6p1:X>
             <d6p1:Y>0.5</d6p1:Y>
@@ -486,8 +487,8 @@
       <d2p1:tag>draggable</d2p1:tag>
       <d2p1:AdditionalComponents xmlns:d4p1="WaveEngine.Framework">
         <d4p1:Component xmlns:d5p1="http://schemas.datacontract.org/2004/07/SuperSlingshot.Behaviors" i:type="d5p1:AutoThrowBehavior">
-          <d4p1:IsActive>true</d4p1:IsActive>
           <d4p1:UpdateOrder>0.5</d4p1:UpdateOrder>
+          <d4p1:isDisabled>false</d4p1:isDisabled>
           <d5p1:CountdownTime>5</d5p1:CountdownTime>
           <d5p1:Impulse xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
             <d6p1:X>0.85</d6p1:X>
@@ -564,8 +565,8 @@
       <d2p1:tag>draggable</d2p1:tag>
       <d2p1:AdditionalComponents xmlns:d4p1="WaveEngine.Framework">
         <d4p1:Component xmlns:d5p1="http://schemas.datacontract.org/2004/07/SuperSlingshot.Behaviors" i:type="d5p1:AutoThrowBehavior">
-          <d4p1:IsActive>true</d4p1:IsActive>
           <d4p1:UpdateOrder>0.5</d4p1:UpdateOrder>
+          <d4p1:isDisabled>false</d4p1:isDisabled>
           <d5p1:CountdownTime>3</d5p1:CountdownTime>
           <d5p1:Impulse xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
             <d6p1:X>0.9</d6p1:X>
@@ -638,8 +639,8 @@
       <d2p1:tag>draggable</d2p1:tag>
       <d2p1:AdditionalComponents xmlns:d4p1="WaveEngine.Framework">
         <d4p1:Component xmlns:d5p1="http://schemas.datacontract.org/2004/07/SuperSlingshot.Behaviors" i:type="d5p1:AutoThrowBehavior">
-          <d4p1:IsActive>true</d4p1:IsActive>
           <d4p1:UpdateOrder>0.5</d4p1:UpdateOrder>
+          <d4p1:isDisabled>false</d4p1:isDisabled>
           <d5p1:CountdownTime>4</d5p1:CountdownTime>
           <d5p1:Impulse xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
             <d6p1:X>0.7</d6p1:X>
@@ -699,8 +700,8 @@
             <d6p1:Z>0</d6p1:Z>
           </d5p1:LocalOrientation>
           <d5p1:LocalPosition xmlns:d6p1="WaveEngine.Common.Math">
-            <d6p1:X>-122.500549</d6p1:X>
-            <d6p1:Y>372.949127</d6p1:Y>
+            <d6p1:X>0</d6p1:X>
+            <d6p1:Y>-182.5</d6p1:Y>
             <d6p1:Z>0</d6p1:Z>
           </d5p1:LocalPosition>
           <d5p1:LocalScale xmlns:d6p1="WaveEngine.Common.Math">
@@ -708,14 +709,14 @@
             <d6p1:Y>1</d6p1:Y>
             <d6p1:Z>1</d6p1:Z>
           </d5p1:LocalScale>
-          <d5p1:Effect>None</d5p1:Effect>
           <d5p1:Opacity>1</d5p1:Opacity>
           <d5p1:Rectangle xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
-            <d6p1:Height>186</d6p1:Height>
-            <d6p1:Width>420</d6p1:Width>
-            <d6p1:X>-210</d6p1:X>
-            <d6p1:Y>93</d6p1:Y>
+            <d6p1:Height>188</d6p1:Height>
+            <d6p1:Width>419.25</d6p1:Width>
+            <d6p1:X>-209.625</d6p1:X>
+            <d6p1:Y>94</d6p1:Y>
           </d5p1:Rectangle>
+          <d5p1:effect>None</d5p1:effect>
           <d5p1:origin xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
             <d6p1:X>0.5</d6p1:X>
             <d6p1:Y>0.5</d6p1:Y>
@@ -727,7 +728,8 @@
           <d5p1:transformMode>Screen</d5p1:transformMode>
         </d4p1:Component>
         <d4p1:Component xmlns:d5p1="WaveEngine.Components.Toolkit" i:type="d5p1:TextComponent">
-          <d5p1:fontPath>Content/Assets/Fonts/Komika Axis_36.ttf.wpk</d5p1:fontPath>
+          <d5p1:alpha>1</d5p1:alpha>
+          <d5p1:fontPath>Content/Assets/Fonts/Komika Axis_72.ttf.wpk</d5p1:fontPath>
           <d5p1:foreground xmlns:d6p1="WaveEngine.Common.Graphics">
             <d6p1:A>255</d6p1:A>
             <d6p1:B>19</d6p1:B>
@@ -740,8 +742,8 @@
             <d6p1:Y>0.5</d6p1:Y>
           </d5p1:origin>
           <d5p1:scale xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
-            <d6p1:X>1.5</d6p1:X>
-            <d6p1:Y>2</d6p1:Y>
+            <d6p1:X>0.75</d6p1:X>
+            <d6p1:Y>1</d6p1:Y>
           </d5p1:scale>
           <d5p1:text>Super Slingshot</d5p1:text>
           <d5p1:textAlignment>Center</d5p1:textAlignment>

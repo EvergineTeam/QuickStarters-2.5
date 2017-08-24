@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// File generated on 3/14/2017 1:21:10 PM
+// File generated on 8/14/2017 1:25:54 PM
 namespace SuperSquid
 {
     using System;
@@ -16,6 +16,9 @@ namespace SuperSquid
     
     public sealed class WaveContent
     {
+        
+        /// <summary> Path to Content/SuperSquid.wgame </summary>
+        public const string GameInfo = "Content/SuperSquid.wgame";
         
         public sealed class Assets
         {

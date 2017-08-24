@@ -28,7 +28,7 @@ namespace FlyingKite.Drawables
     public class DrawableCurve2D : Drawable2D
     {
         [RequiredComponent]
-        private MaterialsMap materialsMap = null;
+        private MaterialComponent materialComponent = null;
 
         private Vector2[] curve;
         private VertexPositionColorTexture[] vertices;
@@ -201,7 +201,7 @@ namespace FlyingKite.Drawables
             this.mesh.VertexBuffer.SetData(this.vertices, this.vertices.Length);
             this.GraphicsDevice.BindVertexBuffer(this.mesh.VertexBuffer);
 
-            this.RenderManager.DrawMesh(this.mesh, this.materialsMap.DefaultMaterial, ref this.identityTransform);
+            this.RenderManager.DrawMesh(this.mesh, this.materialComponent.Material, ref this.identityTransform);
         }
         #endregion
     }

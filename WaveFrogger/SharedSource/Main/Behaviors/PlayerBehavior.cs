@@ -10,6 +10,7 @@ using WaveEngine.Framework.Animation;
 using WaveEngine.Framework.Graphics;
 using WaveEngine.Framework.Physics3D;
 using WaveEngine.Framework.Services;
+using WaveEngine.Framework.Threading;
 using WaveFrogger.Scenes;
 using WaveFrogger.Services;
 
@@ -189,16 +190,16 @@ namespace WaveFrogger.Behaviors
 			intialScene.Initialize(WaveServices.GraphicsDevice);
 			WaveServices.ScreenContextManager.To(new ScreenContext(intialScene), transition);
 #else
-			WaveServices.TaskScheduler.CreateTask(() =>
+            WaveBackgroundTask.Run(() =>
             {
                 intialScene = new InitialScene();
                 intialScene.Initialize(WaveServices.GraphicsDevice);
             })
-            .ContinueWith(() =>
+            .ContinueWith((t) =>
             {
                 WaveServices.ScreenContextManager.To(new ScreenContext(intialScene), transition);
             });
-			#endif
+#endif
         }
 
         protected override void Update(TimeSpan gameTime)

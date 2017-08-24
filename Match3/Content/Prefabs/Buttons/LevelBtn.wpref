@@ -27,7 +27,6 @@
               <d7p1:Y>1.42857146</d7p1:Y>
               <d7p1:Z>1</d7p1:Z>
             </d6p1:LocalScale>
-            <d6p1:Effect>None</d6p1:Effect>
             <d6p1:Opacity>1</d6p1:Opacity>
             <d6p1:Rectangle xmlns:d7p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
               <d7p1:Height>41</d7p1:Height>
@@ -35,6 +34,7 @@
               <d7p1:X>0</d7p1:X>
               <d7p1:Y>0</d7p1:Y>
             </d6p1:Rectangle>
+            <d6p1:effect>None</d6p1:effect>
             <d6p1:origin xmlns:d7p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
               <d7p1:X>0.5</d7p1:X>
               <d7p1:Y>0.5</d7p1:Y>
@@ -89,7 +89,6 @@
               <d7p1:Y>1.42857146</d7p1:Y>
               <d7p1:Z>1</d7p1:Z>
             </d6p1:LocalScale>
-            <d6p1:Effect>None</d6p1:Effect>
             <d6p1:Opacity>1</d6p1:Opacity>
             <d6p1:Rectangle xmlns:d7p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
               <d7p1:Height>41</d7p1:Height>
@@ -97,6 +96,7 @@
               <d7p1:X>0</d7p1:X>
               <d7p1:Y>0</d7p1:Y>
             </d6p1:Rectangle>
+            <d6p1:effect>None</d6p1:effect>
             <d6p1:origin xmlns:d7p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
               <d7p1:X>0.5</d7p1:X>
               <d7p1:Y>0.5</d7p1:Y>
@@ -151,7 +151,6 @@
               <d7p1:Y>1.42857146</d7p1:Y>
               <d7p1:Z>1</d7p1:Z>
             </d6p1:LocalScale>
-            <d6p1:Effect>None</d6p1:Effect>
             <d6p1:Opacity>1</d6p1:Opacity>
             <d6p1:Rectangle xmlns:d7p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
               <d7p1:Height>41</d7p1:Height>
@@ -159,6 +158,7 @@
               <d7p1:X>0</d7p1:X>
               <d7p1:Y>0</d7p1:Y>
             </d6p1:Rectangle>
+            <d6p1:effect>None</d6p1:effect>
             <d6p1:origin xmlns:d7p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
               <d7p1:X>0.5</d7p1:X>
               <d7p1:Y>0.5</d7p1:Y>
@@ -213,7 +213,6 @@
               <d7p1:Y>1</d7p1:Y>
               <d7p1:Z>1</d7p1:Z>
             </d6p1:LocalScale>
-            <d6p1:Effect>None</d6p1:Effect>
             <d6p1:Opacity>1</d6p1:Opacity>
             <d6p1:Rectangle xmlns:d7p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
               <d7p1:Height>162.4</d7p1:Height>
@@ -221,6 +220,7 @@
               <d7p1:X>-38.5</d7p1:X>
               <d7p1:Y>81.2</d7p1:Y>
             </d6p1:Rectangle>
+            <d6p1:effect>None</d6p1:effect>
             <d6p1:origin xmlns:d7p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
               <d7p1:X>0.5</d7p1:X>
               <d7p1:Y>0.5</d7p1:Y>
@@ -232,6 +232,7 @@
             <d6p1:transformMode>Standard</d6p1:transformMode>
           </d5p1:Component>
           <d5p1:Component xmlns:d6p1="WaveEngine.Components.Toolkit" i:type="d6p1:TextComponent">
+            <d6p1:alpha>1</d6p1:alpha>
             <d6p1:fontPath>Content/Assets/Fonts/BradyBunchMedium.ttf.wpk</d6p1:fontPath>
             <d6p1:foreground xmlns:d7p1="WaveEngine.Common.Graphics">
               <d7p1:A>255</d7p1:A>
@@ -284,7 +285,6 @@
           <d5p1:Y>0.7</d5p1:Y>
           <d5p1:Z>1</d5p1:Z>
         </d4p1:LocalScale>
-        <d4p1:Effect>None</d4p1:Effect>
         <d4p1:Opacity>1</d4p1:Opacity>
         <d4p1:Rectangle xmlns:d5p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
           <d5p1:Height>190</d5p1:Height>
@@ -292,6 +292,7 @@
           <d5p1:X>0</d5p1:X>
           <d5p1:Y>0</d5p1:Y>
         </d4p1:Rectangle>
+        <d4p1:effect>None</d4p1:effect>
         <d4p1:origin xmlns:d5p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
           <d5p1:X>0.5</d5p1:X>
           <d5p1:Y>0.5</d5p1:Y>
@@ -345,8 +346,8 @@
         <d4p1:rotationOffset>0</d4p1:rotationOffset>
       </d3p1:Component>
       <d3p1:Component xmlns:d4p1="WaveEngine.Components.Gestures" i:type="d4p1:TouchGestures">
-        <d3p1:IsActive>true</d3p1:IsActive>
         <d3p1:UpdateOrder>0.5</d3p1:UpdateOrder>
+        <d3p1:isDisabled>false</d3p1:isDisabled>
         <d4p1:EnabledGestures>None</d4p1:EnabledGestures>
         <d4p1:ManualTouchOrder>false</d4p1:ManualTouchOrder>
         <d4p1:MaxScale>5</d4p1:MaxScale>

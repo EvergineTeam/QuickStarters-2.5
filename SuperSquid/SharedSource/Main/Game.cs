@@ -63,8 +63,6 @@ namespace SuperSquid
         private void InitializeAndRegisterSocialService()
         {
             var socialService = new SocialService();
-            socialService.Initialize(null);
-
             WaveServices.RegisterService(socialService);
         }
 #endif

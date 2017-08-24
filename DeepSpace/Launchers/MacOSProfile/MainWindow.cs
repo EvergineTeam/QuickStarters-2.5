@@ -46,7 +46,7 @@ namespace DeepSpace
 			this.game = new DeepSpace.Game();
 			this.game.Initialize(this);
 
-			#region WAVE SOFTWARE LICENSE AGREEMENT
+			#region DEFAULT SPLASHSCREEN
 			this.backgroundSplashColor = new Color("#ebebeb");
 			this.spriteBatch = new SpriteBatch(WaveServices.GraphicsDevice);
 
@@ -55,7 +55,7 @@ namespace DeepSpace
 
 			foreach (string item in resourceNames)
 			{
-				if (item.Contains("SplashScreen.wpk"))
+				if (item.Contains("SplashScreen.png"))
 				{
 					name = item;
 					break;
@@ -69,7 +69,7 @@ namespace DeepSpace
 
 			using (Stream stream = System.Reflection.Assembly.GetExecutingAssembly().GetManifestResourceStream(name))
 			{
-				this.splashScreen = WaveServices.Assets.Global.LoadAsset<Texture2D>(name, stream);			
+				this.splashScreen = Texture2D.FromFile(WaveServices.GraphicsDevice, stream);			
 			}
 			#endregion
 		}
@@ -84,7 +84,7 @@ namespace DeepSpace
 			{
 				if (this.splashState)
 				{
-					#region WAVE SOFTWARE LICENSE AGREEMENT
+					#region DEFAULT SPLASHSCREEN
 					position.X = (this.Width / 2.0f) - (this.splashScreen.Width / 2.0f);
 					position.Y = (this.Height / 2.0f) - (this.splashScreen.Height / 2.0f);
 					this.time += elapsedTime;
@@ -117,7 +117,7 @@ namespace DeepSpace
 			{
 				if (this.splashState)
 				{
-					#region WAVE SOFTWARE LICENSE AGREEMENT
+					#region DEFAULT SPLASHSCREEN
 					WaveServices.GraphicsDevice.RenderTargets.SetRenderTarget(null);
 					WaveServices.GraphicsDevice.Clear(ref this.backgroundSplashColor, ClearFlags.Target, 1);
 					this.spriteBatch.Draw(this.splashScreen, this.position, Color.White);

@@ -26,7 +26,6 @@
             <d6p1:Y>1</d6p1:Y>
             <d6p1:Z>1</d6p1:Z>
           </d5p1:LocalScale>
-          <d5p1:Effect>None</d5p1:Effect>
           <d5p1:Opacity>1</d5p1:Opacity>
           <d5p1:Rectangle xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
             <d6p1:Height>0</d6p1:Height>
@@ -34,6 +33,7 @@
             <d6p1:X>0</d6p1:X>
             <d6p1:Y>0</d6p1:Y>
           </d5p1:Rectangle>
+          <d5p1:effect>None</d5p1:effect>
           <d5p1:origin xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
             <d6p1:X>0</d6p1:X>
             <d6p1:Y>0</d6p1:Y>
@@ -114,7 +114,6 @@
                     <d10p1:Y>1</d10p1:Y>
                     <d10p1:Z>1</d10p1:Z>
                   </d9p1:LocalScale>
-                  <d9p1:Effect>None</d9p1:Effect>
                   <d9p1:Opacity>1</d9p1:Opacity>
                   <d9p1:Rectangle xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:Height>92.8</d10p1:Height>
@@ -122,6 +121,7 @@
                     <d10p1:X>-119.6</d10p1:X>
                     <d10p1:Y>46.4</d10p1:Y>
                   </d9p1:Rectangle>
+                  <d9p1:effect>None</d9p1:effect>
                   <d9p1:origin xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:X>0.5</d10p1:X>
                     <d10p1:Y>0.5</d10p1:Y>
@@ -133,6 +133,7 @@
                   <d9p1:transformMode>Standard</d9p1:transformMode>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="WaveEngine.Components.Toolkit" i:type="d9p1:TextComponent">
+                  <d9p1:alpha>1</d9p1:alpha>
                   <d9p1:fontPath>Content/Assets/Fonts/BradyBunchMedium.ttf.wpk</d9p1:fontPath>
                   <d9p1:foreground xmlns:d10p1="WaveEngine.Common.Graphics">
                     <d10p1:A>255</d10p1:A>
@@ -185,7 +186,6 @@
                 <d8p1:Y>1</d8p1:Y>
                 <d8p1:Z>1</d8p1:Z>
               </d7p1:LocalScale>
-              <d7p1:Effect>None</d7p1:Effect>
               <d7p1:Opacity>1</d7p1:Opacity>
               <d7p1:Rectangle xmlns:d8p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                 <d8p1:Height>186</d8p1:Height>
@@ -193,6 +193,7 @@
                 <d8p1:X>0</d8p1:X>
                 <d8p1:Y>0</d8p1:Y>
               </d7p1:Rectangle>
+              <d7p1:effect>None</d7p1:effect>
               <d7p1:origin xmlns:d8p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                 <d8p1:X>0.5</d8p1:X>
                 <d8p1:Y>0.5</d8p1:Y>
@@ -249,7 +250,6 @@
                     <d10p1:Y>1.53</d10p1:Y>
                     <d10p1:Z>1</d10p1:Z>
                   </d9p1:LocalScale>
-                  <d9p1:Effect>None</d9p1:Effect>
                   <d9p1:Opacity>1</d9p1:Opacity>
                   <d9p1:Rectangle xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:Height>278.4</d10p1:Height>
@@ -257,6 +257,7 @@
                     <d10p1:X>-188.400009</d10p1:X>
                     <d10p1:Y>139.2</d10p1:Y>
                   </d9p1:Rectangle>
+                  <d9p1:effect>None</d9p1:effect>
                   <d9p1:origin xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:X>0.5</d10p1:X>
                     <d10p1:Y>0.5</d10p1:Y>
@@ -268,6 +269,7 @@
                   <d9p1:transformMode>Standard</d9p1:transformMode>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="WaveEngine.Components.Toolkit" i:type="d9p1:TextComponent">
+                  <d9p1:alpha>1</d9p1:alpha>
                   <d9p1:fontPath>Content/Assets/Fonts/BradyBunchMedium.ttf.wpk</d9p1:fontPath>
                   <d9p1:foreground xmlns:d10p1="WaveEngine.Common.Graphics">
                     <d10p1:A>255</d10p1:A>
@@ -320,7 +322,6 @@
                 <d8p1:Y>0.47</d8p1:Y>
                 <d8p1:Z>1</d8p1:Z>
               </d7p1:LocalScale>
-              <d7p1:Effect>None</d7p1:Effect>
               <d7p1:Opacity>1</d7p1:Opacity>
               <d7p1:Rectangle xmlns:d8p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                 <d8p1:Height>800</d8p1:Height>
@@ -328,6 +329,7 @@
                 <d8p1:X>0</d8p1:X>
                 <d8p1:Y>0</d8p1:Y>
               </d7p1:Rectangle>
+              <d7p1:effect>None</d7p1:effect>
               <d7p1:origin xmlns:d8p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                 <d8p1:X>0.5</d8p1:X>
                 <d8p1:Y>0.5</d8p1:Y>
@@ -475,7 +477,6 @@
             <d6p1:Y>1</d6p1:Y>
             <d6p1:Z>1</d6p1:Z>
           </d5p1:LocalScale>
-          <d5p1:Effect>None</d5p1:Effect>
           <d5p1:Opacity>1</d5p1:Opacity>
           <d5p1:Rectangle xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
             <d6p1:Height>690</d6p1:Height>
@@ -483,6 +484,7 @@
             <d6p1:X>0</d6p1:X>
             <d6p1:Y>0</d6p1:Y>
           </d5p1:Rectangle>
+          <d5p1:effect>None</d5p1:effect>
           <d5p1:origin xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
             <d6p1:X>0.5</d6p1:X>
             <d6p1:Y>0.5</d6p1:Y>
@@ -531,8 +533,8 @@
             <d6p1:Z>0</d6p1:Z>
           </d5p1:LocalOrientation>
           <d5p1:LocalPosition xmlns:d6p1="WaveEngine.Common.Math">
-            <d6p1:X>0</d6p1:X>
-            <d6p1:Y>17</d6p1:Y>
+            <d6p1:X>337.499878</d6p1:X>
+            <d6p1:Y>755.600159</d6p1:Y>
             <d6p1:Z>5</d6p1:Z>
           </d5p1:LocalPosition>
           <d5p1:LocalScale xmlns:d6p1="WaveEngine.Common.Math">
@@ -540,7 +542,6 @@
             <d6p1:Y>6000</d6p1:Y>
             <d6p1:Z>1</d6p1:Z>
           </d5p1:LocalScale>
-          <d5p1:Effect>None</d5p1:Effect>
           <d5p1:Opacity>0.4</d5p1:Opacity>
           <d5p1:Rectangle xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
             <d6p1:Height>1</d6p1:Height>
@@ -548,6 +549,7 @@
             <d6p1:X>0</d6p1:X>
             <d6p1:Y>0</d6p1:Y>
           </d5p1:Rectangle>
+          <d5p1:effect>None</d5p1:effect>
           <d5p1:origin xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
             <d6p1:X>0.5</d6p1:X>
             <d6p1:Y>0.5</d6p1:Y>
@@ -574,6 +576,7 @@
           <d4p1:IsVisible>true</d4p1:IsVisible>
           <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
           <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
+          <d5p1:DrawMode>Simple</d5p1:DrawMode>
           <d5p1:SamplerMode>LinearClamp</d5p1:SamplerMode>
         </d4p1:Component>
       </d2p1:SerializeComponents>

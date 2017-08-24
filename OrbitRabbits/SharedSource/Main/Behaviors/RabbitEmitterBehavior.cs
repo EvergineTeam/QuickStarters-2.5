@@ -8,6 +8,7 @@
 #endregion
 
 #region Using Statements
+using OrbitRabbits.Behaviors;
 using OrbitRabbits.Commons;
 using OrbitRabbits.Components;
 using OrbitRabbits.Entities.Particles;
@@ -34,11 +35,13 @@ namespace OrbitRabbits.Entities.Behaviors
     public class RabbitEmitterBehavior : Behavior
     {
         private Vector2 initialRabbitPosition;
-        private List<Rabbit> deadRabbits;
-        private Rabbit lastRabbit;
+        private List<RabbitBehavior> deadRabbits;
+        private RabbitBehavior lastRabbit;
         private TimeSpan time;
 
-        public List<Rabbit> Rabbits;
+        private int index;
+
+        public List<RabbitBehavior> Rabbits;
         public event EventHandler<int> ScoreChanged;
 
         private Entity explosion 
@@ -85,8 +88,8 @@ namespace OrbitRabbits.Entities.Behaviors
             base.DefaultValues();
 
             this.initialRabbitPosition = new Vector2(375, 460);
-            this.Rabbits = new List<Rabbit>();
-            this.deadRabbits = new List<Rabbit>();
+            this.Rabbits = new List<RabbitBehavior>();
+            this.deadRabbits = new List<RabbitBehavior>();
         }
 
         protected override void Initialize()
@@ -114,8 +117,8 @@ namespace OrbitRabbits.Entities.Behaviors
 
             this.time += gameTime;
 
-            if ((this.lastRabbit != null && (this.lastRabbit.State == Rabbit.RabbitState.dying ||
-                this.lastRabbit.State == Rabbit.RabbitState.dead)) ||
+            if ((this.lastRabbit != null && (this.lastRabbit.State == RabbitState.dying ||
+                this.lastRabbit.State == RabbitState.dead)) ||
                 this.time > TimeSpan.FromSeconds(5))
             {
                 this.AddRabbit();
@@ -123,9 +126,9 @@ namespace OrbitRabbits.Entities.Behaviors
             }
 
             // Clear rabbit deads
-            foreach (Rabbit rabbit in this.Rabbits)
+            foreach (RabbitBehavior rabbit in this.Rabbits)
             {
-                if (rabbit.State == Rabbit.RabbitState.dead)
+                if (rabbit.State == RabbitState.dead)
                 {
                     this.deadRabbits.Add(rabbit);
                 }
@@ -133,10 +136,10 @@ namespace OrbitRabbits.Entities.Behaviors
 
             if (this.deadRabbits.Count > 0)
             {
-                foreach (Rabbit deadRabbit in deadRabbits)
+                foreach (RabbitBehavior deadRabbit in deadRabbits)
                 {
                     this.CreateExplosion(deadRabbit);
-                    this.Owner.RemoveChild(deadRabbit.Name);
+                    this.Owner.RemoveChild(deadRabbit.Owner);
                     this.Rabbits.Remove(deadRabbit);
                 }
                 this.deadRabbits.Clear();
@@ -147,19 +150,19 @@ namespace OrbitRabbits.Entities.Behaviors
             // Check Collision
             for (int i = 0; i < this.Rabbits.Count - 1; i++)
             {
-                Rabbit rabbit1 = this.Rabbits[i];
-                if (rabbit1.State != Rabbit.RabbitState.afloat) { continue; }
+                RabbitBehavior rabbit1 = this.Rabbits[i];
+                if (rabbit1.State != RabbitState.afloat) { continue; }
 
                 for (int j = i + 1; j < this.Rabbits.Count; j++)
                 {
-                    Rabbit rabbit2 = this.Rabbits[j];
-                    if (rabbit2.State != Rabbit.RabbitState.afloat) { continue; }
+                    RabbitBehavior rabbit2 = this.Rabbits[j];
+                    if (rabbit2.State != RabbitState.afloat) { continue; }
 
                     bool collision = rabbit1.Collision(rabbit2);
                     if (collision)
                     {
-                        rabbit1.State = Rabbit.RabbitState.dead;
-                        rabbit2.State = Rabbit.RabbitState.dead;
+                        rabbit1.State = RabbitState.dead;
+                        rabbit2.State = RabbitState.dead;
                         updateScore = true;
 
                         this.CreateExplosion(rabbit1, rabbit2);
@@ -179,11 +182,16 @@ namespace OrbitRabbits.Entities.Behaviors
         /// </summary>
         public void AddRabbit()
         {
-            Rabbit newRabbit = new Rabbit(this.initialRabbitPosition, 0.75f, this.Assets);
-            this.Owner.AddChild(newRabbit.Entity);
-            this.Rabbits.Add(newRabbit);
+            var newRabbit = this.EntityManager.Instantiate(WaveContent.Assets.Prefabs.rabbit);
+            newRabbit.Name = "rabbit_" + index++;
+                
+            this.Owner.AddChild(newRabbit);
 
-            this.lastRabbit = newRabbit;
+            var rabbitBehavior = newRabbit.FindComponent<RabbitBehavior>();
+            rabbitBehavior.Spawn(this.initialRabbitPosition);
+
+            this.Rabbits.Add(rabbitBehavior);
+            this.lastRabbit = rabbitBehavior;
 
             this.NotifyNewScore();
         }
@@ -196,7 +204,7 @@ namespace OrbitRabbits.Entities.Behaviors
             if (this.ScoreChanged != null)
             {
                 int rabbitAliveCount = (from rabbit in this.Rabbits
-                                        where rabbit.State == Rabbit.RabbitState.afloat
+                                        where rabbit.State == RabbitState.afloat
                                         select rabbit).Count();
                 this.ScoreChanged(this, rabbitAliveCount);
             }
@@ -221,7 +229,7 @@ namespace OrbitRabbits.Entities.Behaviors
         /// </summary>
         public void Clear()
         {
-            foreach (Rabbit rabbit in this.Rabbits)
+            foreach (RabbitBehavior rabbit in this.Rabbits)
             {
                 this.Owner.RemoveChild(rabbit.Name);
             }
@@ -233,7 +241,7 @@ namespace OrbitRabbits.Entities.Behaviors
         /// </summary>
         /// <param name="rabbit1">The rabbit1.</param>
         /// <param name="rabbit2">The rabbit2.</param>
-        private void CreateExplosion(Rabbit rabbit1, Rabbit rabbit2)
+        private void CreateExplosion(RabbitBehavior rabbit1, RabbitBehavior rabbit2)
         {
             var explosionSystem = this.explosionParticles;
             var explosionTransform = this.explosionTransform;
@@ -242,8 +250,8 @@ namespace OrbitRabbits.Entities.Behaviors
                 return;
             }
 
-            Vector2 rabbit1Position = new Vector2(rabbit1.Transform2D.X, rabbit1.Transform2D.Y);
-            Vector2 rabbit2Position = new Vector2(rabbit2.Transform2D.X, rabbit2.Transform2D.Y);
+            Vector2 rabbit1Position = rabbit1.Transform.Position;
+            Vector2 rabbit2Position = rabbit2.Transform.Position;
 
             Vector2 distance = rabbit2Position - rabbit1Position;
             float length = distance.Length();
@@ -267,7 +275,7 @@ namespace OrbitRabbits.Entities.Behaviors
         /// Creates the explosion.
         /// </summary>
         /// <param name="rabbit1">The rabbit1.</param>
-        private void CreateExplosion(Rabbit rabbit1)
+        private void CreateExplosion(RabbitBehavior rabbit1)
         {
             var explosionSystem = this.explosionParticles;
             var explosionTransform = this.explosionTransform;
@@ -276,7 +284,7 @@ namespace OrbitRabbits.Entities.Behaviors
                 return;
             }
 
-            Vector2 explosionPosition = new Vector2(rabbit1.Transform2D.X, rabbit1.Transform2D.Y);
+            Vector2 explosionPosition = rabbit1.Transform.Position;
             explosionTransform.X = explosionPosition.X;
             explosionTransform.Y = explosionPosition.Y;
 

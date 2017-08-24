@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// File generated on 3/14/2017 1:57:31 PM
+// File generated on 8/14/2017 11:10:29 AM
 namespace DeepSpace
 {
     using System;
@@ -16,6 +16,9 @@ namespace DeepSpace
     
     public sealed class WaveContent
     {
+        
+        /// <summary> Path to Content/DeepSpace.wgame </summary>
+        public const string GameInfo = "Content/DeepSpace.wgame";
         
         public sealed class Assets
         {

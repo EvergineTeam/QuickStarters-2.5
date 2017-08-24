@@ -185,3 +185,6 @@ packages/
 generate.info
 generate.winfo
 WaveContent.cs
+
+UpgradeLog.txt
+*backup.zip

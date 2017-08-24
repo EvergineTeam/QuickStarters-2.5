@@ -2,6 +2,7 @@
 using WaveEngine.Common;
 using WaveEngine.Framework.Services;
 using P2PTank.Scenes;
+using P2PTank.Services;
 #endregion
 
 namespace P2PTank
@@ -18,6 +19,8 @@ namespace P2PTank
             GameSettings.FXVolume = 1.0f;
             GameSettings.MusicVolume = 1.0f;
             GameSettings.GamePadDeadZone = 0.25f;
+
+            WaveServices.RegisterService(new AudioService());
 
             //ScreenContext screenContext = new ScreenContext(new P2PScene());
             ScreenContext screenContext = new ScreenContext(new GamePlayScene(WaveContent.Scenes.Levels.Level1));

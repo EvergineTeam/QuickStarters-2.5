@@ -13,10 +13,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)Behaviors\RabbitEmitterBehavior.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Behaviors\ScaleCycleBehavior.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Behaviors\StretchBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commons\RabbitState.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commons\Utils.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Components\GamePlayManager.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Entities\Rabbit.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Entities\ScorePanel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Components\ScoreComponent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Game.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MainMenuScene.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Managers\GameStorage.cs" />
