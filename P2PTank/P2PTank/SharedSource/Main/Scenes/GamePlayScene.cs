@@ -50,16 +50,7 @@ namespace P2PTank.Scenes
             this.Load(this.contentPath);
 
             var audioService = WaveServices.GetService<AudioService>();
-            audioService.Play(Audio.Music.Background_mp3, 1.0f);
-
-            //var music = new WaveEngine.Common.Media.MusicInfo(WaveContent.Assets.Sounds.Background_mp3);
-            //WaveServices.MusicPlayer.Play(music);
-
-            //var soundBank = new WaveEngine.Framework.Sound.SoundBank(Assets);
-            //var sound = new WaveEngine.Framework.Sound.SoundInfo(WaveContent.Assets.Sounds.Background_mp3);
-            //soundBank.Add(sound);
-            //WaveServices.SoundPlayer.RegisterSoundBank(soundBank);
-            //WaveServices.SoundPlayer.Play(sound);
+            audioService.Play(Audio.Music.Background_mp3, 0.4f);
 
 #if DEBUG
             var debugEntity = new Entity()
