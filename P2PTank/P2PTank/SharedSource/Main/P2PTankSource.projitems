@@ -38,6 +38,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Scenes\GamePlayScene.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Scenes\IntroScene.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Scenes\P2PScene.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Audio.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\AudioService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)WaveContent.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using WaveEngine.Common.Graphics;
+﻿using WaveEngine.Common.Graphics;
 
 namespace P2PTank
 {

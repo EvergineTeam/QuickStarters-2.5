@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Runtime.Serialization;
-using System.Text;
 using WaveEngine.Framework;
-using WaveEngine.Framework.Services;
 
 namespace P2PTank.Components
 {

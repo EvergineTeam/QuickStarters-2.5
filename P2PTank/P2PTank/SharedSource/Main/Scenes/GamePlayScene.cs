@@ -19,6 +19,8 @@ using WaveEngine.Components.UI;
 using WaveEngine.Framework.UI;
 using WaveEngine.Components.GameActions;
 using WaveEngine.Common.Graphics;
+using WaveEngine.Framework.Services;
+using P2PTank.Services;
 
 namespace P2PTank.Scenes
 {
@@ -46,6 +48,18 @@ namespace P2PTank.Scenes
         protected override async void CreateScene()
         {
             this.Load(this.contentPath);
+
+            //var audioService = WaveServices.GetService<AudioService>();
+            //audioService.Play(Audio.Music.Background_mp3, 1.0f);
+
+            //var music = new WaveEngine.Common.Media.MusicInfo(WaveContent.Assets.Sounds.Background_mp3);
+            //WaveServices.MusicPlayer.Play(music);
+
+            //var soundBank = new WaveEngine.Framework.Sound.SoundBank(Assets);
+            //var sound = new WaveEngine.Framework.Sound.SoundInfo(WaveContent.Assets.Sounds.Background_mp3);
+            //soundBank.Add(sound);
+            //WaveServices.SoundPlayer.RegisterSoundBank(soundBank);
+            //WaveServices.SoundPlayer.Play(sound);
 
 #if DEBUG
             var debugEntity = new Entity()
@@ -87,27 +101,28 @@ namespace P2PTank.Scenes
             this.EntityManager.Add(entity);
 
             var delay = TimeSpan.FromSeconds(1);
+            var audioService = WaveServices.GetService<AudioService>();
 
             this.CreateGameAction(new ActionGameAction(() =>
             {
                 countDownTextBlock.Text = "3";
+                audioService.Play(Audio.Sfx.Zap_wav);
             }).Delay(delay)
             .ContinueWith(new ActionGameAction(() =>
             {
                 countDownTextBlock.Text = "2";
+                audioService.Play(Audio.Sfx.Zap_wav);
             }).Delay(delay)
             .ContinueWith(new ActionGameAction(() =>
             {
                 countDownTextBlock.Text = "1";
+                audioService.Play(Audio.Sfx.Zap_wav);
             }).Delay(delay)
-            .ContinueWith(new ActionGameAction(async () =>
-            {
-                countDownTextBlock.Text = string.Empty;
-                this.StartPlayerGamePlay();
-                var ipAddress = await this.peerManager.GetIpAddress();
-                this.SendCreatePlayerMessage(ipAddress);
-                
-            }))))).Run();
+            .ContinueWith(new ActionGameAction(() =>
+           {
+               countDownTextBlock.Text = string.Empty;
+               this.StartPlayerGamePlay();
+           }))))).Run();
         }
 
         private void ConfigurePhysics()
@@ -339,10 +354,13 @@ namespace P2PTank.Scenes
 
         private async void SendCreatePlayerMessage(string ipAddress = "")
         {
+            if (string.IsNullOrEmpty(this.playerID))
+                return;
+
             var createPlayerMessage = new CreatePlayerMessage
             {
-                IpAddress = ipAddress, 
-                PlayerId = this.playerID,
+                IpAddress = ipAddress,
+                PlayerId = this.playerID
             };
 
             var message = peerManager.CreateMessage(P2PMessageType.CreatePlayer, createPlayerMessage);

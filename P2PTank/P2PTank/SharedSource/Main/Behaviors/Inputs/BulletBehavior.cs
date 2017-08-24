@@ -6,6 +6,8 @@ using WaveEngine.Common.Math;
 using WaveEngine.Framework;
 using WaveEngine.Framework.Graphics;
 using WaveEngine.Framework.Physics2D;
+using WaveEngine.Framework.Services;
+using P2PTank.Services;
 
 namespace P2PTank.Behaviors
 {
@@ -59,6 +61,9 @@ namespace P2PTank.Behaviors
             this.rigidBody.ResetPosition(position);
             var impulse = (direction * this.bulletComponent.CurrentSpeed) / 60;
             this.rigidBody.ApplyLinearImpulse(impulse, position);
+
+            var audioService = WaveServices.GetService<AudioService>();
+            audioService.Play(Audio.Sfx.Gun_wav);
         }
 
         protected override void Update(TimeSpan gameTime)
