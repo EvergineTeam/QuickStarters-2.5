@@ -32,6 +32,15 @@ namespace P2PTank
             Color.Yellow,
             Color.Pink,
             Color.Blue,
+
+            Color.Chartreuse,
+            Color.Firebrick,
+            Color.LawnGreen,
+            Color.Sienna,
+            Color.SlateGray,
+            Color.Coral,
+            Color.IndianRed,
+            Color.LightSeaGreen,
         };
     }
 }
