@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.Serialization;
+using P2PTank.Behaviors;
 using WaveEngine.Framework;
 
 namespace P2PTank.Components
@@ -59,6 +61,11 @@ namespace P2PTank.Components
 
         public void FreeBulletEntity(IEnumerable<Entity> collection)
         {
+            foreach (var bullet in collection)
+            {
+                bullet.RemoveComponent<BulletNetworkBehavior>();
+            }
+
             this.FreeEntity(collection, this.bulletPool);
         }
 
