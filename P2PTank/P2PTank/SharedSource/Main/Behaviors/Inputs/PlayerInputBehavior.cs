@@ -15,6 +15,7 @@ using WaveEngine.Framework.Graphics;
 using WaveEngine.Framework.Physics2D;
 using WaveEngine.Framework.Services;
 using P2PTank.Services;
+using P2PTank.Entities;
 
 namespace P2PTank.Behaviors
 {
@@ -72,6 +73,10 @@ namespace P2PTank.Behaviors
 
         private float shootTimer;
 
+        private Joystick leftJoystick;
+
+        private Joystick rightJoystick;
+
         public PlayerInputBehavior(P2PManager peerManager, string playerID)
         {
             this.PlayerID = playerID;
@@ -81,6 +86,14 @@ namespace P2PTank.Behaviors
         protected override void ResolveDependencies()
         {
             base.ResolveDependencies();
+
+            var virtualJoystickScene = WaveServices.ScreenContextManager.CurrentContext.FindScene<VirtualJoystickScene>();
+
+            if (virtualJoystickScene != null)
+            {
+                this.leftJoystick = virtualJoystickScene.EntityManager.Find<Joystick>("leftJoystick");
+                this.rightJoystick = virtualJoystickScene.EntityManager.Find<Joystick>("rightJoystick");
+            }
 
             var barrelEntity = this.Owner.FindChild(GameConstants.EntitynameTankBarrel);
             this.barrel = barrelEntity.FindComponent<Sprite>();
@@ -99,10 +112,33 @@ namespace P2PTank.Behaviors
 
             this.HandleKeyboard(input, ref playerCommand);
             this.HandlePad(input, ref playerCommand);
-
+            this.HandleVirtualJoystick(ref playerCommand);
             this.RunInputCommands(playerCommand, elapsedTime);
 
             this.HandleNetworkMessages();
+        }
+
+        private void HandleVirtualJoystick(ref PlayerCommand playerCommand)
+        {
+            if (this.leftJoystick == null || this.rightJoystick == null)
+            {
+                return;
+            }
+               
+            Vector2 leftThumb = this.leftJoystick.Direction;
+            Vector2 rightthumb = this.rightJoystick.Direction;
+
+            if (leftThumb != Vector2.Zero)
+            {
+                playerCommand.SetMove(leftThumb.Y);
+                playerCommand.SetRotate(leftThumb.X);
+            }
+
+            if (rightthumb != Vector2.Zero)
+            {
+                playerCommand.SetRotateBarrel(rightthumb.X);
+                playerCommand.SetShoot();
+            }
         }
 
         private async void HandleNetworkMessages()

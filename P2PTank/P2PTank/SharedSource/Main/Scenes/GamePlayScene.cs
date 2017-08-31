@@ -22,6 +22,7 @@ using WaveEngine.Common.Graphics;
 using WaveEngine.Framework.Services;
 using P2PTank.Services;
 using P2PTank.Components;
+using P2PTank.Entities;
 
 namespace P2PTank.Scenes
 {
