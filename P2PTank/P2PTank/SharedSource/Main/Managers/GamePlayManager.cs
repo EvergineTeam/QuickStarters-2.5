@@ -94,8 +94,28 @@ namespace P2PTank.Managers
 
             var entity = this.CreateBaseBullet(category, collidesWith, color);
             var bulletID = Guid.NewGuid().ToString();
-            var behavior = new BulletBehavior(peerManager, bulletID, this.playerID);
-            entity.AddComponent(behavior);
+
+            // Player Bullet Behavior should activate
+            var bulletBehavior = entity.FindComponent<BulletBehavior>();
+            if (bulletBehavior == null)
+            {
+                bulletBehavior = new BulletBehavior(peerManager, bulletID, this.playerID);
+                entity.AddComponent(bulletBehavior);
+            }
+            else
+            {
+                bulletBehavior.BulletID = bulletID;
+                bulletBehavior.PlayerID = this.playerID;
+            }
+            bulletBehavior.IsActive = true;
+
+            // Deactivate network behavior for this bullet
+            var bulletNetworkBehavior = entity.FindComponent<BulletNetworkBehavior>();
+            if(bulletNetworkBehavior != null)
+            {
+                bulletNetworkBehavior.IsActive = false;
+            }
+
 
             entity.Name = bulletID;
 
@@ -125,7 +145,27 @@ namespace P2PTank.Managers
 
             entity.Name = bulletID;
 
-            entity.AddComponent(new BulletNetworkBehavior(peerManager, bulletID, playerID));
+            // Activate network behavior for this bullet
+            var bulletNetworkBehavior = entity.FindComponent<BulletNetworkBehavior>();
+            if (bulletNetworkBehavior == null)
+            {
+                bulletNetworkBehavior = new BulletNetworkBehavior(peerManager, bulletID, playerID);
+                entity.AddComponent(bulletNetworkBehavior);
+            }
+            else
+            {
+                bulletNetworkBehavior.BulletID = bulletID;
+                bulletNetworkBehavior.PlayerID = this.playerID;
+            }
+            bulletNetworkBehavior.IsActive = true;
+
+            // deactivate player behavior for this bullet
+            var bulletBehavior = entity.FindComponent<BulletBehavior>();
+            if(bulletBehavior != null)
+            {
+                bulletBehavior.IsActive = false;
+            }
+
             this.bulletsToAdd.Add(new BulletState() { bullet = entity, isLocal = false });
 
             var audioService = WaveServices.GetService<AudioService>();
@@ -146,9 +186,12 @@ namespace P2PTank.Managers
                 return;
             }
 
+            // Clean Bullet Entity
+            bullet.RemoveComponent<BulletBehavior>();
+            bullet.RemoveComponent<BulletNetworkBehavior>();
+
             this.bulletsToRemove.Add(bullet);
 
-            var bulletCollider = bullet.FindComponent<Collider2D>(false);
             if (peerManager != null)
             {
                 var destroyMessage = new BulletDestroyMessage()
@@ -169,7 +212,7 @@ namespace P2PTank.Managers
 
             var tankComponent = entity.FindComponent<TankComponent>();
 
-             var index = WaveServices.Random.Next(0, GameConstants.Palette.Count());
+            var index = WaveServices.Random.Next(0, GameConstants.Palette.Count());
             tankComponent.Color = GameConstants.Palette[index];
 
             var colliders = entity.FindComponentsInChildren<Collider2D>(false);
