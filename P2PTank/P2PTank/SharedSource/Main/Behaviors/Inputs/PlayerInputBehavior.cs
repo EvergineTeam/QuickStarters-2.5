@@ -87,8 +87,13 @@ namespace P2PTank.Behaviors
         {
             base.ResolveDependencies();
 
-            this.leftJoystick = this.EntityManager.Find<Joystick>("leftJoystick");
-            this.rightJoystick = this.EntityManager.Find<Joystick>("rightJoystick");
+            var virtualJoystickScene = WaveServices.ScreenContextManager.CurrentContext.FindScene<VirtualJoystickScene>();
+
+            if (virtualJoystickScene != null)
+            {
+                this.leftJoystick = virtualJoystickScene.EntityManager.Find<Joystick>("leftJoystick");
+                this.rightJoystick = virtualJoystickScene.EntityManager.Find<Joystick>("rightJoystick");
+            }
 
             var barrelEntity = this.Owner.FindChild(GameConstants.EntitynameTankBarrel);
             this.barrel = barrelEntity.FindComponent<Sprite>();
@@ -119,14 +124,13 @@ namespace P2PTank.Behaviors
             {
                 return;
             }
-
-   
+               
             Vector2 leftThumb = this.leftJoystick.Direction;
             Vector2 rightthumb = this.rightJoystick.Direction;
 
             if (leftThumb != Vector2.Zero)
             {
-                playerCommand.SetMove(-leftThumb.Y);
+                playerCommand.SetMove(leftThumb.Y);
                 playerCommand.SetRotate(leftThumb.X);
             }
 
