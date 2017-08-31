@@ -20,6 +20,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Components\PoolComponent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Components\SideTankComponent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Components\TankComponent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\Joystick.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\P2PMessages\BarrelRotate.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\P2PMessages\BulletCreateMessage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\P2PMessages\BulletDestroyMessage.cs" />

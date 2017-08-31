@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using WaveEngine.Framework;
 using WaveEngine.Networking.P2P;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace P2PTank.Managers
 {
@@ -68,53 +69,61 @@ namespace P2PTank.Managers
             P2PMessageType messageType;
             Enum.TryParse(result[0], out messageType);
 
-            switch(messageType)
+            try
             {
-                case P2PMessageType.CreatePlayer:
-                    messageObject.Add(
-                        P2PMessageType.CreatePlayer, 
-                        JsonConvert.DeserializeObject<CreatePlayerMessage>(result[1]));
-                    break;
-                case P2PMessageType.Move:
-                    messageObject.Add(
-                        P2PMessageType.Move, 
-                        JsonConvert.DeserializeObject<MoveMessage>(result[1]));
-                    break;
-                case P2PMessageType.Rotate:
-                    messageObject.Add(
-                        P2PMessageType.Rotate,
-                        JsonConvert.DeserializeObject<RotateMessage>(result[1]));
-                    break;
-                case P2PMessageType.BarrelRotate:
-                    messageObject.Add(
-                        P2PMessageType.BarrelRotate,
-                        JsonConvert.DeserializeObject<BarrelRotate>(result[1]));
-                    break;
-                case P2PMessageType.Shoot:
-                    messageObject.Add(
-                        P2PMessageType.Shoot, 
-                        JsonConvert.DeserializeObject<ShootMessage>(result[1]));
-                    break;
-                case P2PMessageType.DestroyPlayer:
-                    messageObject.Add(
-                        P2PMessageType.DestroyPlayer, 
-                        JsonConvert.DeserializeObject<DestroyPlayerMessage>(result[1]));
-                    break;
-                case P2PMessageType.BulletCreate:
-                    messageObject.Add(
-                        P2PMessageType.BulletCreate,
-                        JsonConvert.DeserializeObject<BulletCreateMessage>(result[1]));
-                    break;
-                case P2PMessageType.BulletMove:
-                    messageObject.Add(
-                        P2PMessageType.BulletMove,
-                        JsonConvert.DeserializeObject<BulletMoveMessage>(result[1]));
-                    break;
-                case P2PMessageType.BulletDestroy:
-                    messageObject.Add(
-                        P2PMessageType.BulletDestroy,
-                        JsonConvert.DeserializeObject<BulletDestroyMessage>(result[1]));
-                    break;
+                switch (messageType)
+                {
+                    case P2PMessageType.CreatePlayer:
+                        messageObject.Add(
+                            P2PMessageType.CreatePlayer,
+                            JsonConvert.DeserializeObject<CreatePlayerMessage>(result[1]));
+                        break;
+                    case P2PMessageType.Move:
+                        messageObject.Add(
+                            P2PMessageType.Move,
+                            JsonConvert.DeserializeObject<MoveMessage>(result[1]));
+                        break;
+                    case P2PMessageType.Rotate:
+                        messageObject.Add(
+                            P2PMessageType.Rotate,
+                            JsonConvert.DeserializeObject<RotateMessage>(result[1]));
+                        break;
+                    case P2PMessageType.BarrelRotate:
+                        messageObject.Add(
+                            P2PMessageType.BarrelRotate,
+                            JsonConvert.DeserializeObject<BarrelRotate>(result[1]));
+                        break;
+                    case P2PMessageType.Shoot:
+                        messageObject.Add(
+                            P2PMessageType.Shoot,
+                            JsonConvert.DeserializeObject<ShootMessage>(result[1]));
+                        break;
+                    case P2PMessageType.DestroyPlayer:
+                        messageObject.Add(
+                            P2PMessageType.DestroyPlayer,
+                            JsonConvert.DeserializeObject<DestroyPlayerMessage>(result[1]));
+                        break;
+                    case P2PMessageType.BulletCreate:
+                        messageObject.Add(
+                            P2PMessageType.BulletCreate,
+                            JsonConvert.DeserializeObject<BulletCreateMessage>(result[1]));
+                        break;
+                    case P2PMessageType.BulletMove:
+                        messageObject.Add(
+                            P2PMessageType.BulletMove,
+                            JsonConvert.DeserializeObject<BulletMoveMessage>(result[1]));
+                        break;
+                    case P2PMessageType.BulletDestroy:
+                        messageObject.Add(
+                            P2PMessageType.BulletDestroy,
+                            JsonConvert.DeserializeObject<BulletDestroyMessage>(result[1]));
+                        break;
+                }
+
+            }
+            catch(Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
             }
 
             return messageObject;

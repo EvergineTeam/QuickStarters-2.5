@@ -255,6 +255,7 @@ namespace P2PNET.TransportLayer
         private async Task<string> GetLocalIPAddress()
         {
             List<CommsInterface> interfaces = await CommsInterface.GetAllInterfacesAsync();
+
             foreach(CommsInterface comms in interfaces)
             {
                 if(IsValidInterface(comms))
@@ -270,7 +271,8 @@ namespace P2PNET.TransportLayer
         private bool IsValidInterface(CommsInterface commsInterface)
         {
             if (commsInterface.Name.ToLowerInvariant().Equals("wi-fi") 
-                || commsInterface.Name.ToLowerInvariant().Equals("ethernet"))
+                || commsInterface.Name.ToLowerInvariant().Equals("ethernet")
+                || commsInterface.Name.ToLowerInvariant().Equals("wlan0")) 
                 if (commsInterface.ConnectionStatus == Sockets.Plugin.Abstractions.CommsInterfaceStatus.Connected)
                     return true;
 

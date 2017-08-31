@@ -22,6 +22,7 @@ using WaveEngine.Common.Graphics;
 using WaveEngine.Framework.Services;
 using P2PTank.Services;
 using P2PTank.Components;
+using P2PTank.Entities;
 
 namespace P2PTank.Scenes
 {
@@ -59,7 +60,29 @@ namespace P2PTank.Scenes
             this.EntityManager.Add(debugEntity);
 #endif
 
+            this.CreateVirtualJoysticks();
             await peerManager.StartAsync();
+        }
+
+        private void CreateVirtualJoysticks()
+        {
+            // Left Joystick
+            RectangleF leftArea = new RectangleF(
+                0,
+                0,
+                this.VirtualScreenManager.VirtualWidth / 2f,
+                this.VirtualScreenManager.VirtualHeight);
+            var leftJoystick = new Joystick("leftJoystick", leftArea);
+            EntityManager.Add(leftJoystick);
+
+            // Right Joystick
+            RectangleF rightArea = new RectangleF(
+                this.VirtualScreenManager.VirtualWidth / 2,
+                0,
+                this.VirtualScreenManager.VirtualWidth / 2f,
+                this.VirtualScreenManager.VirtualHeight);
+            var rightJoystick = new Joystick("rightJoystick", rightArea);
+            EntityManager.Add(rightJoystick);
         }
 
         public void CreateCountDown()
