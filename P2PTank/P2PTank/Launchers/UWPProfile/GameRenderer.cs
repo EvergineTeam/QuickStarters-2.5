@@ -37,7 +37,7 @@ namespace P2PTank
             this.displayRequest = new DisplayRequest();
             this.displayRequest.RequestActive();
 
-            game = new P2PTank.Game();
+            game = new Game();
             game.Initialize(this);
         }
 

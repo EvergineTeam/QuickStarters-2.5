@@ -24409,6 +24409,7 @@
       "Newtonsoft.Json >= 10.0.3",
       "WaveEngine >= 2.4.0.34",
       "WaveEngine.Adapter >= 2.4.0.34",
+      "WaveEngine.Box2D >= 2.4.0.34",
       "WaveEngine.Common >= 2.4.0.34",
       "WaveEngine.Components >= 2.4.0.34",
       "WaveEngine.Framework >= 2.4.0.34",
