@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
   <Identity Name="5c3499b7-c0fb-407e-9181-e40dfa4c1bbc" Publisher="CN=davila" Version="1.0.3.0" />
   <mp:PhoneIdentity PhoneProductId="5c3499b7-c0fb-407e-9181-e40dfa4c1bbc" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
@@ -23,6 +23,7 @@
     </Application>
   </Applications>
   <Capabilities>
-    <Capability Name="internetClient" />    
+    <Capability Name="internetClient" />
+    <Capability Name="internetClientServer" />
   </Capabilities>
 </Package>

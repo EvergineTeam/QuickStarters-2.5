@@ -174,12 +174,12 @@ namespace P2PTank.Services
                 }
             }
 
-            // Search child classes
-            Type[] types = contentType.GetNestedTypes();
-            foreach (Type type in types)
-            {
-                this.SearchMusicAndSounds(type);
-            }
+            //// Search child classes
+            //Type[] types = contentType.GetNestedTypes();
+            //foreach (Type type in types)
+            //{
+            //    this.SearchMusicAndSounds(type);
+            //}
         }
 
         #endregion
