@@ -190,10 +190,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\P2PNET\P2PNET.csproj">
-      <Project>{196653e2-638f-4590-82e6-79387f5b2fb9}</Project>
-      <Name>P2PNET</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\..\WaveEngine.Networking.P2P\WaveEngine.Networking.P2P\WaveEngine.Networking.P2P.csproj">
       <Project>{adce07b1-4757-4858-8588-ef749beaac8c}</Project>
       <Name>WaveEngine.Networking.P2P</Name>

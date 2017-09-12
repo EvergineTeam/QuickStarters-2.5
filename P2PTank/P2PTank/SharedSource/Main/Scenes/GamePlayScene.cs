@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using P2PNET.TransportLayer;
-using P2PNET.TransportLayer.EventArgs;
 using P2PTank.Behaviors;
 using P2PTank.Behaviors.Cameras;
 using P2PTank.Entities.P2PMessages;
@@ -22,7 +20,8 @@ using WaveEngine.Common.Graphics;
 using WaveEngine.Framework.Services;
 using P2PTank.Services;
 using P2PTank.Components;
-using P2PTank.Entities;
+using WaveEngine.Networking.P2P.TransportLayer;
+using WaveEngine.Networking.P2P.TransportLayer.EventArgs;
 
 namespace P2PTank.Scenes
 {
@@ -30,7 +29,7 @@ namespace P2PTank.Scenes
     {
         private List<string> activeBullets = new List<string>();
 
-        private List<Peer> ConnectedPeers { get; set; } = new List<Peer>();
+        private List<PeerPlayer> ConnectedPeers { get; set; } = new List<PeerPlayer>();
 
         private string contentPath;
         private P2PManager peerManager;
@@ -43,7 +42,7 @@ namespace P2PTank.Scenes
             this.contentPath = contentPath;
 
             this.peerManager = new P2PManager();
-            this.peerManager.PeerChange += this.OnPeerChanged;
+            this.peerManager.PeerPlayerChange += this.OnPeerChanged;
             this.peerManager.MsgReceived += this.OnMsgReceived;
         }
 
@@ -332,10 +331,10 @@ namespace P2PTank.Scenes
             this.activeBullets.Add(id);
         }
 
-        private async void OnPeerChanged(object sender, PeerChangeEventArgs e)
+        private async void OnPeerChanged(object sender, PeerPlayerChangeEventArgs e)
         {
             var ipAddress = await this.peerManager.GetIpAddress();
-            foreach (Peer peer in e.Peers)
+            foreach (PeerPlayer peer in e.Peers)
             {
                 Labels.Add("OnPeerChanged", peer.IpAddress);
                 if (!this.ConnectedPeers.Contains(peer))

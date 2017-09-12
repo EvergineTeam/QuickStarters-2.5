@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using P2PTank.Entities.P2PMessages;
@@ -8,6 +7,7 @@ using WaveEngine.Common.Math;
 using WaveEngine.Framework;
 using WaveEngine.Framework.Graphics;
 using WaveEngine.Framework.Physics2D;
+using WaveEngine.Networking.P2P.TransportLayer.EventArgs;
 
 namespace P2PTank.Behaviors
 {
@@ -47,7 +47,7 @@ namespace P2PTank.Behaviors
         {
         }
 
-        private void OnMessageReceived(object sender, P2PNET.TransportLayer.EventArgs.MsgReceivedEventArgs e)
+        private void OnMessageReceived(object sender, MsgReceivedEventArgs e)
         {
             var messageReceived = Encoding.ASCII.GetString(e.Message);
 

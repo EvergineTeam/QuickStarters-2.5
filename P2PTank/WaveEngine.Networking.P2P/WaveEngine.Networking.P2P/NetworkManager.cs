@@ -1,27 +1,27 @@
-﻿using P2PNET.TransportLayer;
-using P2PNET.TransportLayer.EventArgs;
-using System;
+﻿using System;
 using System.Text;
 using System.Threading.Tasks;
+using WaveEngine.Networking.P2P.TransportLayer;
+using WaveEngine.Networking.P2P.TransportLayer.EventArgs;
 
 namespace WaveEngine.Networking.P2P
 {
-    public class Peer2Peer
+    public class NetworkManager
     {
         private int portNum = 8080;
 
         private TransportManager transMgr;
         private HeartBeatManager hrtBtMgr;
 
-        public event EventHandler<PeerChangeEventArgs> PeerChange;
+        public event EventHandler<PeerPlayerChangeEventArgs> PeerPlayerChange;
         public event EventHandler<MsgReceivedEventArgs> MsgReceived;
 
-        public Peer2Peer()
+        public NetworkManager()
         {
             this.transMgr = new TransportManager(portNum, true);
             this.hrtBtMgr = new HeartBeatManager("heartbeat", transMgr);
 
-            this.transMgr.PeerChange += OnPeerChange;
+            this.transMgr.PeerPlayerChange += OnPeerChange;
             this.transMgr.MsgReceived += OnMsgReceived;
         }
 
@@ -68,9 +68,9 @@ namespace WaveEngine.Networking.P2P
             return await this.transMgr.GetIpAddress();
         }
         
-        private void OnPeerChange(object sender, PeerChangeEventArgs e)
+        private void OnPeerChange(object sender, PeerPlayerChangeEventArgs e)
         {
-            this.PeerChange?.Invoke(this, e);
+            this.PeerPlayerChange?.Invoke(this, e);
         }
 
         private void OnMsgReceived(object sender, MsgReceivedEventArgs e)

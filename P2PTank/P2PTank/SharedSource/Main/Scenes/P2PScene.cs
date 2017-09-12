@@ -1,14 +1,14 @@
 #region Using Statements
 using System;
-using P2PNET.TransportLayer.EventArgs;
 using WaveEngine.Framework;
 using WaveEngine.Framework.UI;
-using P2PNET.TransportLayer;
 using WaveEngine.Framework.Diagnostic;
 using System.Text;
 using P2PTank.Managers;
 using P2PTank.Entities.P2PMessages;
 using System.Linq;
+using WaveEngine.Networking.P2P.TransportLayer.EventArgs;
+using WaveEngine.Networking.P2P.TransportLayer;
 #endregion
 
 namespace P2PTank.Scenes
@@ -22,7 +22,7 @@ namespace P2PTank.Scenes
             this.Load(WaveContent.Scenes.MyScene);
 
             this.peerManager = new P2PManager();
-            this.peerManager.PeerChange +=  this.OnPeerChanged;
+            this.peerManager.PeerPlayerChange +=  this.OnPeerChanged;
             this.peerManager.MsgReceived += this.OnMsgReceived;
 
             var panel = new WaveEngine.Components.UI.StackPanel();
@@ -163,9 +163,9 @@ namespace P2PTank.Scenes
             }
         }
 
-        private void OnPeerChanged(object sender, PeerChangeEventArgs e)
+        private void OnPeerChanged(object sender, PeerPlayerChangeEventArgs e)
         {
-            foreach (Peer peer in e.Peers)
+            foreach (PeerPlayer peer in e.Peers)
             {
                 Labels.Add("OnPeerChanged", peer.IpAddress);
             }

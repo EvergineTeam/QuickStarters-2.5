@@ -37,11 +37,6 @@ namespace P2PNET.FileLayer
         public event EventHandler<PeerChangeEventArgs> PeerChange;
 
         /// <summary>
-        /// Triggered when a whole file have been received from another peer
-        /// </summary>
-        public event EventHandler<FileReceivedEventArgs> FileReceived;
-
-        /// <summary>
         /// list of peers discovered by detecting their network activities
         /// </summary>
         public List<Peer> KnownPeers
