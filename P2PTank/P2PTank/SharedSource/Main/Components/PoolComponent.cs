@@ -21,7 +21,7 @@ namespace P2PTank.Components
         {
             base.DefaultValues();
 
-            this.BulletPoolSize = 50;
+            this.BulletPoolSize = 50;   // Pool size
         }
 
         protected override void ResolveDependencies()

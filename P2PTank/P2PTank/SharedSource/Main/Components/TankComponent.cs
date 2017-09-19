@@ -62,7 +62,7 @@ namespace P2PTank.Components
         {
             base.DefaultValues();
 
-            this.InitialLive = 100;
+            this.InitialLive = 100; // By default, every impact reduce 50. 
             this.InitialSpeed = 20;
             this.InitialRotationSpeed = 0.5f;
             this.InitialRotationBarrelSpeed = 0.5f;

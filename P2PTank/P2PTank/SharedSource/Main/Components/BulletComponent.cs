@@ -37,7 +37,7 @@ namespace P2PTank.Components
         {
             base.DefaultValues();
 
-            this.InitialSpeed = 40;
+            this.InitialSpeed = 40;     // Bullet speed
             this.Color = Color.White;
         }
 
