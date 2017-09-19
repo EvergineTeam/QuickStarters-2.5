@@ -340,10 +340,20 @@ namespace P2PTank.Behaviors
         public void Hit(float damage)
         {
             this.tankComponent.CurrentLive -= damage;
+
+            if (this.tankComponent.CurrentLive <= 50)
+            {
+                this.SmokeTank();
+            }
+
             if (this.tankComponent.CurrentLive <= 0)
             {
                 this.DestroyTank();
             }
+        }
+        private async void SmokeTank()
+        {
+            this.gamePlayManager.SmokeTank(this.Owner);
         }
 
         private async void DestroyTank()

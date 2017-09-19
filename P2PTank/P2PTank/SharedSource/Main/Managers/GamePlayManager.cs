@@ -17,6 +17,9 @@ using P2PTank.Services;
 using WaveEngine.Framework.Services;
 using WaveEngine.Components.Graphics2D;
 using WaveEngine.Components.Animation;
+using WaveEngine.Components.Graphics3D;
+using WaveEngine.Materials;
+using WaveEngine.Components.Particles;
 
 namespace P2PTank.Managers
 {
@@ -210,6 +213,12 @@ namespace P2PTank.Managers
             return entity;
         }
 
+        public void SmokeTank(Entity tank)
+        {
+            var particles = tank.FindComponent<ParticleSystem2D>();
+            particles.Emit = true;
+        }
+
         public void DestroyTank(Entity tank)
         {
             var transform = tank.FindComponent<Transform2D>();
@@ -273,6 +282,48 @@ namespace P2PTank.Managers
                 collider.CollisionCategories = category;
                 collider.CollidesWith = collidesWith;
             }
+
+            entity.AddComponent(new MaterialsMap(new StandardMaterial()
+             {
+                 DiffusePath = WaveContent.Assets.Textures.smoke_png,
+                 LightingEnabled = false,
+                 LayerType = DefaultLayers.Alpha
+             }))
+            // Set some particle properties
+            .AddComponent(new ParticleSystem2D()
+            {
+                Emit = false,
+                // Amount of particles drawn on a game loop
+                NumParticles = 100,
+                // Amount of particles emited per second
+                EmitRate = 100,
+                // Minimum time a particle will be alive
+                MinLife = 1,
+                // Maximum time a particle will be alive
+                MaxLife = 1.25f,
+                // 2D vector containing the local velocity a particle will take
+                LocalVelocity = new Vector2(0.5f, 2f),
+                // 2D vector containing a random velocity applied to the local one
+                RandomVelocity = new Vector2(1.0f, 1.0f),
+                // Minimum size of the particle
+                MinSize = 10,
+                // Maximum size of the particle
+                MaxSize = 50,
+                // Minimum rotation speed for a particle
+                MinRotateSpeed = 0.03f,
+                // Maximum rotation speed for a particle
+                MaxRotateSpeed = -0.03f,
+                // Delta scale applied during the particle's life
+                EndDeltaScale = 0f,
+                // Size the emitter will fit in during execution
+                EmitterSize = new Vector3(30),
+                // Gravity applied to each particle
+                Gravity = new Vector2(0, 0.05f),
+                // Shape the emitter will form during execution
+                EmitterShape = ParticleSystem2D.Shape.FillCircle
+            })
+            .AddComponent(new ParticleSystemRenderer2D());
+
             return entity;
         }
 

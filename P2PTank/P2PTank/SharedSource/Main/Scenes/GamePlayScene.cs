@@ -216,11 +216,14 @@ namespace P2PTank.Scenes
 
         private Entity CreatePlayer(GamePlayManager gameplayManager)
         {
+            // New player identifier
             this.playerID = Guid.NewGuid().ToString();
 
+            // Get a random spawn point to initialize the player
             var spawnIndex = WaveServices.Random.Next(0, 4);
             var spawnPoint = this.GetSpawnPoint(spawnIndex);
 
+            // Create player
             var player = gameplayManager.CreatePlayer(0, peerManager, this.playerID, spawnPoint);
 
             var playerColor = player.FindComponent<TankComponent>().Color;
