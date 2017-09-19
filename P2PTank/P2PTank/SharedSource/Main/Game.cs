@@ -22,7 +22,6 @@ namespace P2PTank
 
             WaveServices.RegisterService(new AudioService());
 
-            //ScreenContext screenContext = new ScreenContext(new P2PScene());
             ScreenContext screenContext = new ScreenContext( 
                 new GamePlayScene(WaveContent.Scenes.Levels.Level1), 
                 new VirtualJoystickScene());

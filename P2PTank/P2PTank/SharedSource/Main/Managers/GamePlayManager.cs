@@ -12,16 +12,19 @@ using WaveEngine.Framework;
 using WaveEngine.Framework.Diagnostic;
 using WaveEngine.Framework.Graphics;
 using WaveEngine.Framework.Physics2D;
-
 using CURRENTSCENETYPE = P2PTank.Scenes.GamePlayScene;
 using P2PTank.Services;
 using WaveEngine.Framework.Services;
+using WaveEngine.Components.Graphics2D;
+using WaveEngine.Components.Animation;
 
 namespace P2PTank.Managers
 {
     [DataContract]
     public class GamePlayManager : Behavior
     {
+        private const int NUMEXPLOSIONS = 5;
+
         private class BulletState
         {
             public Entity bullet;
@@ -39,12 +42,46 @@ namespace P2PTank.Managers
         private List<Entity> tanksToAdd = new List<Entity>();
         private List<Entity> bulletsToRemove = new List<Entity>();
         private List<BulletState> bulletsToAdd = new List<BulletState>();
+        private Entity[] explosions;
+        private int explodeIndex;
+
+        private int ExplodeIndex
+        {
+            get
+            {
+                explodeIndex = ++explodeIndex % NUMEXPLOSIONS;
+                return explodeIndex;
+            }
+        }
 
         protected override void ResolveDependencies()
         {
             base.ResolveDependencies();
             this.gamePlayScene = this.Owner.Scene as CURRENTSCENETYPE;
             this.poolComponent = this.gamePlayScene.EntityManager.FindComponentFromEntityPath<PoolComponent>(GameConstants.ManagerEntityPath);
+
+            this.explosions = new Entity[NUMEXPLOSIONS];
+
+            for (int i = 0; i < NUMEXPLOSIONS; i++)
+            {
+                this.explosions[i] = this.CreateExplosion();
+            }
+        }
+
+        private Entity CreateExplosion()
+        {
+            var explode = new Entity() { IsSerializable = false }
+                    .AddComponent(new Transform2D() { Origin = Vector2.Center, XScale = 2, YScale = 2 })
+                    .AddComponent(new SpriteAtlas(WaveContent.Assets.Textures.ExplodeSprite_spritesheet))
+                    .AddComponent(new SpriteAtlasRenderer() { LayerType = DefaultLayers.Additive })
+                    .AddComponent(new Animation2D() { CurrentAnimation = "explosion", PlayAutomatically = false });
+
+            explode.Enabled = false;
+
+            var anim2D = explode.FindComponent<Animation2D>();
+            this.Owner.AddChild(explode);
+
+            return explode;
         }
 
         public Entity CreatePlayer(int playerIndex, P2PManager peerManager, string playerID, Vector2 position)
@@ -110,7 +147,7 @@ namespace P2PTank.Managers
 
             // Deactivate network behavior for this bullet
             var bulletNetworkBehavior = entity.FindComponent<BulletNetworkBehavior>();
-            if(bulletNetworkBehavior != null)
+            if (bulletNetworkBehavior != null)
             {
                 bulletNetworkBehavior.IsActive = false;
             }
@@ -160,7 +197,7 @@ namespace P2PTank.Managers
 
             // deactivate player behavior for this bullet
             var bulletBehavior = entity.FindComponent<BulletBehavior>();
-            if(bulletBehavior != null)
+            if (bulletBehavior != null)
             {
                 bulletBehavior.IsActive = false;
             }
@@ -175,7 +212,21 @@ namespace P2PTank.Managers
 
         public void DestroyTank(Entity tank)
         {
+            var transform = tank.FindComponent<Transform2D>();
+            this.ExplodeTank(transform);
             this.tanksToRemove.Add(tank);
+        }
+
+        public void ExplodeTank(Transform2D transform)
+        {
+            var explode = this.explosions[this.ExplodeIndex];
+            var transf = explode.FindComponent<Transform2D>();
+            transf.X = transform.X;
+            transf.Y = transform.Y;
+            transf.Rotation = (float)WaveServices.Random.NextDouble();
+            explode.IsActive = explode.IsVisible = true;
+            var anim2D = explode.FindComponent<Animation2D>();
+            anim2D.PlayAnimation("explosion", false);
         }
 
         public async void DestroyBullet(Entity bullet, P2PManager peerManager)
@@ -315,6 +366,14 @@ namespace P2PTank.Managers
                 }
 
                 this.bulletsToAdd.Clear();
+            }
+
+            for (int i = 0; i < this.explosions.Length; i++)
+            {
+                if (this.explosions[i].FindComponent<Animation2D>().State == WaveEngine.Framework.Animation.AnimationState.Stopped)
+                {
+                    this.explosions[i].IsActive = this.explosions[i].IsVisible = false;
+                }
             }
         }
     }

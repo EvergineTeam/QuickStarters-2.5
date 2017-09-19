@@ -1,11 +1,8 @@
 using System;
-using System.Diagnostics;
-using System.Windows.Forms;
-using WaveEngine.Adapter;
 
 namespace P2PTank
 {
-	static class Program
+    static class Program
 	{
 		[STAThread]
 		static void Main()

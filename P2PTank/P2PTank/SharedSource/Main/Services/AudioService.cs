@@ -26,8 +26,8 @@ namespace P2PTank.Services
         private SoundBank soundsBank;
         private Audio.Music? currentMusic;
 
-        private WaveEngine.Framework.Services.MusicPlayer musicPlayer;
-        private WaveEngine.Framework.Services.SoundPlayer soundPlayer;
+        private MusicPlayer musicPlayer;
+        private SoundPlayer soundPlayer;
         private TimeSpan musicFadeTimer;
 
         #region Properties
@@ -175,7 +175,7 @@ namespace P2PTank.Services
             }
 
             // Search child classes
-            Type[] types = contentType.GetNestedTypes(BindingFlags.IgnoreCase);
+            Type[] types = contentType.GetNestedTypes();
             foreach (Type type in types)
             {
                 this.SearchMusicAndSounds(type);
