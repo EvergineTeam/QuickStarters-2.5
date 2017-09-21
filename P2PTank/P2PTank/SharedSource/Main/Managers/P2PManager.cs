@@ -98,6 +98,11 @@ namespace P2PTank.Managers
                             P2PMessageType.Shoot,
                             JsonConvert.DeserializeObject<ShootMessage>(result[1]));
                         break;
+                    case P2PMessageType.HitPlayer:
+                        messageObject.Add(
+                            P2PMessageType.HitPlayer,
+                            JsonConvert.DeserializeObject<HitPlayerMessage>(result[1]));
+                        break;
                     case P2PMessageType.DestroyPlayer:
                         messageObject.Add(
                             P2PMessageType.DestroyPlayer,
