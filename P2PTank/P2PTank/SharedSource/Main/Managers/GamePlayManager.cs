@@ -62,7 +62,10 @@ namespace P2PTank.Managers
             base.ResolveDependencies();
             this.gamePlayScene = this.Owner.Scene as CURRENTSCENETYPE;
             this.poolComponent = this.gamePlayScene.EntityManager.FindComponentFromEntityPath<PoolComponent>(GameConstants.ManagerEntityPath);
+        }
 
+        public void InitializeExplosion()
+        {
             this.explosions = new Entity[NUMEXPLOSIONS];
 
             for (int i = 0; i < NUMEXPLOSIONS; i++)
@@ -82,7 +85,7 @@ namespace P2PTank.Managers
             explode.Enabled = false;
 
             var anim2D = explode.FindComponent<Animation2D>();
-            this.Owner.AddChild(explode);
+            this.EntityManager.Add(explode);
 
             return explode;
         }

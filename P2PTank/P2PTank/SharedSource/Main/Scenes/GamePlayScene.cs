@@ -150,6 +150,7 @@ namespace P2PTank.Scenes
             base.Start();
 
             this.gameplayManager = this.EntityManager.FindComponentFromEntityPath<GamePlayManager>(GameConstants.ManagerEntityPath);
+            this.gameplayManager.InitializeExplosion();
 
             ///// Doing this code here cause in CreateScene doesnt load tiledMap file still
             var tiledEntity = this.EntityManager.Find(GameConstants.MapEntityPath);
