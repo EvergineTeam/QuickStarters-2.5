@@ -215,7 +215,7 @@ namespace P2PTank.Managers
 
         public void SmokeTank(Entity tank)
         {
-            var particles = tank.FindComponent<ParticleSystem2D>();
+            var particles = tank.FindChild("particles").FindComponent<ParticleSystem2D>();
             particles.Emit = true;
         }
 
