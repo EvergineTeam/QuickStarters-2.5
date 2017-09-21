@@ -343,7 +343,7 @@ namespace P2PTank.Behaviors
 
             if (this.tankComponent.CurrentLive <= 50)
             {
-                this.SmokeTank();
+                this.HitTank(this.tankComponent.CurrentLive);
             }
 
             if (this.tankComponent.CurrentLive <= 0)
@@ -351,9 +351,10 @@ namespace P2PTank.Behaviors
                 this.DestroyTank();
             }
         }
-        private async void SmokeTank()
+        private async void HitTank(double life)
         {
-            this.gamePlayManager.SmokeTank(this.Owner);
+            var hitMessage = new HitPlayerMessage() { PlayerId = this.PlayerID, PlayerLife = life };
+            await peerManager.SendBroadcastAsync(peerManager.CreateMessage(P2PMessageType.HitPlayer, hitMessage));
         }
 
         private async void DestroyTank()
