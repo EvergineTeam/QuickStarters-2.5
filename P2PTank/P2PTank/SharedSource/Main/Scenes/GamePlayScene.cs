@@ -34,7 +34,7 @@ namespace P2PTank.Scenes
         private string contentPath;
         private P2PManager peerManager;
         private GamePlayManager gameplayManager;
-
+        
         private string playerID;
 
         public GamePlayScene(string contentPath)

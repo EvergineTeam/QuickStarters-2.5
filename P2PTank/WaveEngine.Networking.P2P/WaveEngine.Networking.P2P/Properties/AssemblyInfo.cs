@@ -2,7 +2,7 @@
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using WaveEngine.Common.Attributes;
+//using WaveEngine.Common.Attributes;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
@@ -18,7 +18,7 @@ using WaveEngine.Common.Attributes;
 [assembly: NeutralResourcesLanguage("en")]
 
 // This line is necessary to mark this assembly as a Wave Engine game assembly
-[assembly: WaveEngineAssembly]
+// [assembly: WaveEngineAssembly]
 
 // Version information for an assembly consists of the following four values:
 //
