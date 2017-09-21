@@ -77,7 +77,7 @@ namespace P2PTank.Managers
                     .AddComponent(new Transform2D() { Origin = Vector2.Center, XScale = 2, YScale = 2 })
                     .AddComponent(new SpriteAtlas(WaveContent.Assets.Textures.ExplodeSprite_spritesheet))
                     .AddComponent(new SpriteAtlasRenderer() { LayerType = DefaultLayers.Additive })
-                    .AddComponent(new Animation2D() { CurrentAnimation = "explosion", PlayAutomatically = false });
+                    .AddComponent(new Animation2D() { CurrentAnimation = "explosion", PlayAutomatically = false, SpeedFactor = 1.0f });
 
             explode.Enabled = false;
 
@@ -120,7 +120,6 @@ namespace P2PTank.Managers
             entity.Name = foeID;
             entity.AddComponent(new NetworkInputBehavior(peerManager) { PlayerID = foeID });
             entity.FindComponent<Transform2D>().LocalPosition = position;
-
             entity.FindComponent<TankComponent>().Color = color;
 
             this.tanksToAdd.Add(entity);

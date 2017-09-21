@@ -281,9 +281,9 @@ namespace P2PTank.Behaviors
             }
 
             var orientation = this.transform.Orientation;
-            //this.rigidBody.ApplyLinearImpulse(forward * (orientation * Vector3.UnitY * elapsedTime * this.tankComponent.CurrentSpeed).ToVector2(), this.transform.Position);
-            this.rigidBody.LinearVelocity = forward * (orientation * Vector3.UnitY * elapsedTime * this.tankComponent.CurrentSpeed).ToVector2();
-            //this.transform.LocalPosition += forward * (orientation * Vector3.UnitY * elapsedTime * this.tankComponent.CurrentSpeed).ToVector2();
+
+            float fixedStep = (1f / 60f);
+            this.rigidBody.LinearVelocity = forward * (orientation * Vector3.UnitY * fixedStep * this.tankComponent.CurrentSpeed).ToVector2();
         }
 
         private void Rotate(float left, float elapsedTime)
@@ -294,7 +294,6 @@ namespace P2PTank.Behaviors
             }
 
             var roll = left * this.tankComponent.CurrentRotationSpeed * elapsedTime;
-            //this.transform.Orientation = this.transform.Orientation * Quaternion.CreateFromYawPitchRoll(0.0f, 0.0f, roll);
             this.rigidBody.AngularVelocity = roll;
         }
 

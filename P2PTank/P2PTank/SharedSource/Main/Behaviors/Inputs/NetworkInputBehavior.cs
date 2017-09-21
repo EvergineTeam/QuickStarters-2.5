@@ -80,6 +80,7 @@ namespace P2PTank.Behaviors
 
         protected override void Update(TimeSpan gameTime)
         {
+
         }
 
         private void Move(float x, float y)
@@ -90,6 +91,7 @@ namespace P2PTank.Behaviors
             var pos = this.transform.Position;
             pos.X = x;
             pos.Y = y;
+
             this.transform.Position = pos;
         }
 
