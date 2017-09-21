@@ -283,46 +283,55 @@ namespace P2PTank.Managers
                 collider.CollidesWith = collidesWith;
             }
 
-            entity.AddComponent(new MaterialsMap(new StandardMaterial()
-             {
-                 DiffusePath = WaveContent.Assets.Textures.smoke_png,
-                 LightingEnabled = false,
-                 LayerType = DefaultLayers.Alpha
-             }))
-            // Set some particle properties
-            .AddComponent(new ParticleSystem2D()
-            {
-                Emit = false,
-                // Amount of particles drawn on a game loop
-                NumParticles = 100,
-                // Amount of particles emited per second
-                EmitRate = 100,
-                // Minimum time a particle will be alive
-                MinLife = 1,
-                // Maximum time a particle will be alive
-                MaxLife = 1.25f,
-                // 2D vector containing the local velocity a particle will take
-                LocalVelocity = new Vector2(0.5f, 2f),
-                // 2D vector containing a random velocity applied to the local one
-                RandomVelocity = new Vector2(1.0f, 1.0f),
-                // Minimum size of the particle
-                MinSize = 10,
-                // Maximum size of the particle
-                MaxSize = 50,
-                // Minimum rotation speed for a particle
-                MinRotateSpeed = 0.03f,
-                // Maximum rotation speed for a particle
-                MaxRotateSpeed = -0.03f,
-                // Delta scale applied during the particle's life
-                EndDeltaScale = 0f,
-                // Size the emitter will fit in during execution
-                EmitterSize = new Vector3(30),
-                // Gravity applied to each particle
-                Gravity = new Vector2(0, 0.05f),
-                // Shape the emitter will form during execution
-                EmitterShape = ParticleSystem2D.Shape.FillCircle
-            })
-            .AddComponent(new ParticleSystemRenderer2D());
+            var particles = new Entity("particles")
+                .AddComponent(new Transform2D())
+                // Set some particle properties
+                .AddComponent(new FixedRotationBehavior() { FixedAngle = 0 })
+                .AddComponent(new ParticleSystem2D()
+                {
+                    Emit = true,
+                    // Amount of particles drawn on a game loop
+                    NumParticles = 40,
+                    // Amount of particles emited per second
+                    EmitRate = 20f,
+                    // Minimum time a particle will be alive
+                    MinLife = 1f,
+                    // Maximum time a particle will be alive
+                    MaxLife = 2f,
+                    // 2D vector containing the local velocity a particle will take
+                    LocalVelocity = new Vector2(0f, 0f),
+                    // 2D vector containing a random velocity applied to the local one
+                    RandomVelocity = new Vector2(0f, 0f),
+                    // Minimum size of the particle
+                    MinSize = 10,
+                    // Maximum size of the particle
+                    MaxSize = 20,
+                    // Minimum rotation speed for a particle
+                    MinRotateSpeed = 0.01f,
+                    // Maximum rotation speed for a particle
+                    MaxRotateSpeed = -0.01f,
+                    // Delta scale applied during the particle's life
+                    EndDeltaScale = 1.7f,
+                    // Size the emitter will fit in during execution
+                    EmitterSize = new Vector3(50),
+                    // Gravity applied to each particle
+                    Gravity = new Vector2(0, 0f),
+                    // Shape the emitter will form during execution
+                    EmitterShape = ParticleSystem2D.Shape.FillCircle,
+                    AlphaEnabled = false,
+                    LinearColorEnabled = true,
+                    InterpolationColors = new List<Color>() { Color.Red, Color.Blue },
+                    SortEnabled = true,
+                })
+                .AddComponent(new MaterialsMap(new StandardMaterial()
+                {
+                    DiffusePath = WaveContent.Assets.Textures.smoke_png,
+                    LightingEnabled = false,
+                    LayerType = DefaultLayers.Alpha,
+                }))
+                .AddComponent(new ParticleSystemRenderer2D());
+
+            entity.AddChild(particles);
 
             return entity;
         }

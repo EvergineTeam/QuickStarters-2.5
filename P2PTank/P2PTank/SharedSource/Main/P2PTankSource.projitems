@@ -12,6 +12,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Behaviors\Cameras\BaseCameraBehavior.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Behaviors\Cameras\TargetCameraBehavior.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Behaviors\DebugBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Behaviors\FixedRotationBehavior.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Behaviors\Inputs\BulletBehavior.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Behaviors\Inputs\BulletNetworkBehavior.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Behaviors\Inputs\NetworkInputBehavior.cs" />

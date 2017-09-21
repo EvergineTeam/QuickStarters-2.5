@@ -124,7 +124,7 @@ namespace P2PTank.Behaviors
             {
                 return;
             }
-               
+
             Vector2 leftThumb = this.leftJoystick.Direction;
             Vector2 rightthumb = this.rightJoystick.Direction;
 
@@ -351,6 +351,7 @@ namespace P2PTank.Behaviors
                 this.DestroyTank();
             }
         }
+
         private async void HitTank(double life)
         {
             var hitMessage = new HitPlayerMessage() { PlayerId = this.PlayerID, PlayerLife = life };
@@ -363,7 +364,7 @@ namespace P2PTank.Behaviors
             var audioService = WaveServices.GetService<AudioService>();
             audioService.Play(Audio.Sfx.Explosion_wav);
 
-            var destroyMessage = new DestroyPlayerMessage() { PlayerId = this.PlayerID};
+            var destroyMessage = new DestroyPlayerMessage() { PlayerId = this.PlayerID };
             await peerManager.SendBroadcastAsync(peerManager.CreateMessage(P2PMessageType.DestroyPlayer, destroyMessage));
 
             ((GamePlayScene)this.Owner.Scene).CreateCountDown();
