@@ -289,7 +289,7 @@ namespace P2PTank.Managers
                 .AddComponent(new FixedRotationBehavior() { FixedAngle = 0 })
                 .AddComponent(new ParticleSystem2D()
                 {
-                    Emit = true,
+                    Emit = false,
                     // Amount of particles drawn on a game loop
                     NumParticles = 40,
                     // Amount of particles emited per second
