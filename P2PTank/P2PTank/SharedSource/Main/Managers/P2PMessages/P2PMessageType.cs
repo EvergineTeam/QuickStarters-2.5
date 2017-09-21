@@ -3,6 +3,7 @@
     public enum P2PMessageType
     {
         CreatePlayer,
+        HitPlayer,
         DestroyPlayer,
         Move,
         Rotate,

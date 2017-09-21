@@ -238,6 +238,15 @@ namespace P2PTank.Scenes
             gameplayManager.CreateFoe(1, peerManager, foeID, foeColor, foeSpawnPosition);
         }
 
+        private void HitFoe(GamePlayManager gameplayManager, string foeId, double life)
+        {
+            if (life > 50)
+                return;
+
+            var foe = this.EntityManager.Find(foeId);
+            this.gameplayManager.SmokeTank(foe);
+        }
+
         private void DestroyFoe(GamePlayManager gameplayManager, string foeId)
         {
             var foe = this.EntityManager.Find(foeId);
@@ -295,6 +304,11 @@ namespace P2PTank.Scenes
                         case P2PMessageType.Rotate:
                             break;
                         case P2PMessageType.Shoot:
+                            break;
+                        case P2PMessageType.HitPlayer:
+                            var hitPlayerData = message.Value as HitPlayerMessage;
+
+                            this.HitFoe(this.gameplayManager, hitPlayerData.PlayerId, hitPlayerData.PlayerLife);
                             break;
                         case P2PMessageType.DestroyPlayer:
                             var destroyPlayerData = message.Value as DestroyPlayerMessage;
