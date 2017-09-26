@@ -5,7 +5,6 @@ namespace P2PTank
     public class GameConstants
     {
         // Entity Names
-        // Game Scene
         public static string ManagerEntityPath = "manager";
         public static string MapEntityPath = "gamearena.map";
         public static string SpawnPointPathFormat = "gamearena.spawnpoints.spawn{0:00}";
@@ -29,7 +28,6 @@ namespace P2PTank
             Color.Yellow,
             Color.Pink,
             Color.Blue,
-
             Color.Chartreuse,
             Color.Firebrick,
             Color.LawnGreen,
@@ -37,7 +35,7 @@ namespace P2PTank
             Color.SlateGray,
             Color.Coral,
             Color.IndianRed,
-            Color.LightSeaGreen,
+            Color.LightSeaGreen
         };
     }
 }

@@ -22,9 +22,17 @@ using P2PTank.Services;
 using P2PTank.Components;
 using WaveEngine.Networking.P2P.TransportLayer;
 using WaveEngine.Networking.P2P.TransportLayer.EventArgs;
+using WaveEngine.Components.Graphics2D;
+using P2PTank.Managers.P2PMessages;
 
 namespace P2PTank.Scenes
 {
+    public enum PowerUpType
+    {
+        Bullet,
+        Repair
+    }
+
     public class GamePlayScene : Scene
     {
         private List<string> activeBullets = new List<string>();
@@ -34,6 +42,7 @@ namespace P2PTank.Scenes
         private string contentPath;
         private P2PManager peerManager;
         private GamePlayManager gameplayManager;
+        private PowerUpManager powerUpManager;
         
         private string playerID;
 
@@ -149,8 +158,14 @@ namespace P2PTank.Scenes
         {
             base.Start();
 
-            this.gameplayManager = this.EntityManager.FindComponentFromEntityPath<GamePlayManager>(GameConstants.ManagerEntityPath);
+            var gameplayEntity = this.EntityManager.Find(GameConstants.ManagerEntityPath);
+            this.gameplayManager = gameplayEntity.FindComponent<GamePlayManager>();
             this.gameplayManager.InitializeExplosion();
+
+            this.powerUpManager = new PowerUpManager(this.peerManager);
+            gameplayEntity.AddComponent(this.powerUpManager);
+
+            this.powerUpManager.InitPowerUp();
 
             ///// Doing this code here cause in CreateScene doesnt load tiledMap file still
             var tiledEntity = this.EntityManager.Find(GameConstants.MapEntityPath);
@@ -211,6 +226,19 @@ namespace P2PTank.Scenes
                                 this.gameplayManager.DestroyBullet(bullet, this.peerManager);
                             }
                         }
+                        // Cat6 is Power Up
+                        if (contact.ColliderB.CollisionCategories == ColliderCategory2D.Cat6)
+                        {
+                            var powerUpCollider = contact.ColliderB.UserData as Collider2D;
+                            if (powerUpCollider != null)
+                            {
+                                var powerUp = powerUpCollider.Owner;
+                                this.powerUpManager.SendDestroyPowerUpMessage(powerUp.Name);
+
+                                var powerUpBehavior = powerUp.FindComponent<PowerUpBehavior>();
+                                player.FindComponent<TankComponent>().PowerUp(powerUpBehavior.PowerUpType);
+                            }
+                        }
                     };
             }
         }
@@ -237,6 +265,17 @@ namespace P2PTank.Scenes
         private void CreateFoe(GamePlayManager gameplayManager, Color foeColor, Vector2 foeSpawnPosition, string foeID)
         {
             gameplayManager.CreateFoe(1, peerManager, foeID, foeColor, foeSpawnPosition);
+        }
+
+        private void CreatePowerUp(GamePlayManager gameplayManager, string powerUpId, PowerUpType powerUpType, Vector2 powerUpSpawnPosition)
+        {
+            gameplayManager.CreatePowerUp(powerUpId, powerUpType, powerUpSpawnPosition);
+        }
+
+        private void DestroyPowerUp(GamePlayManager gameplayManager, string powerUpId)
+        {
+            var powerUp = this.EntityManager.Find(powerUpId);
+            this.gameplayManager.DestroyPowerUp(powerUp);
         }
 
         private void HitFoe(GamePlayManager gameplayManager, string foeId, double life)
@@ -334,6 +373,14 @@ namespace P2PTank.Scenes
                             this.activeBullets.Remove(destroyBulletData.BulletId);
                             var bullet = this.EntityManager.Find(destroyBulletData.BulletId);
                             this.gameplayManager.DestroyBullet(bullet, null);
+                            break;
+                        case P2PMessageType.CreatePowerUp:
+                            var createPowerUpMessage = message.Value as CreatePowerUpMessage;
+                            this.CreatePowerUp(this.gameplayManager, createPowerUpMessage.PowerUpId, createPowerUpMessage.PowerUpType, createPowerUpMessage.SpawnPosition);
+                            break;
+                        case P2PMessageType.DestroyPowerUp:
+                            var destroyPowerUpMessage = message.Value as DestroyPowerUpMessage;
+                            this.DestroyPowerUp(this.gameplayManager, destroyPowerUpMessage.PowerUpId);
                             break;
                     }
                 }

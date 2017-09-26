@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using WaveEngine.Networking.P2P.TransportLayer.EventArgs;
 using WaveEngine.Networking.P2P.TransportLayer;
+using P2PTank.Managers.P2PMessages;
 
 namespace P2PTank.Managers
 {
@@ -122,6 +123,16 @@ namespace P2PTank.Managers
                         messageObject.Add(
                             P2PMessageType.BulletDestroy,
                             JsonConvert.DeserializeObject<BulletDestroyMessage>(result[1]));
+                        break;
+                    case P2PMessageType.CreatePowerUp:
+                        messageObject.Add(
+                            P2PMessageType.CreatePowerUp,
+                            JsonConvert.DeserializeObject<CreatePowerUpMessage>(result[1]));
+                        break;
+                    case P2PMessageType.DestroyPowerUp:
+                        messageObject.Add(
+                            P2PMessageType.DestroyPowerUp,
+                            JsonConvert.DeserializeObject<DestroyPowerUpMessage>(result[1]));
                         break;
                 }
 

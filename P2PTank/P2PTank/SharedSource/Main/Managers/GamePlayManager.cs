@@ -20,6 +20,7 @@ using WaveEngine.Components.Animation;
 using WaveEngine.Components.Graphics3D;
 using WaveEngine.Materials;
 using WaveEngine.Components.Particles;
+using P2PTank.Scenes;
 
 namespace P2PTank.Managers
 {
@@ -45,6 +46,8 @@ namespace P2PTank.Managers
         private List<Entity> tanksToAdd = new List<Entity>();
         private List<Entity> bulletsToRemove = new List<Entity>();
         private List<BulletState> bulletsToAdd = new List<BulletState>();
+        private List<Entity> powerUpToAdd = new List<Entity>();
+        private List<Entity> powerUpToRemove = new List<Entity>();
         private Entity[] explosions;
         private int explodeIndex;
 
@@ -95,7 +98,7 @@ namespace P2PTank.Managers
             this.playerID = playerID;
 
             var category = ColliderCategory2D.Cat1;
-            var collidesWith = ColliderCategory2D.Cat3 | ColliderCategory2D.Cat4 | ColliderCategory2D.Cat5;
+            var collidesWith = ColliderCategory2D.Cat3 | ColliderCategory2D.Cat4 | ColliderCategory2D.Cat5 | ColliderCategory2D.Cat6;
 
             var entity = this.CreateBaseTank(playerIndex, category, collidesWith);
             entity.Name = playerID;
@@ -126,6 +129,53 @@ namespace P2PTank.Managers
             entity.FindComponent<TankComponent>().Color = color;
 
             this.tanksToAdd.Add(entity);
+        }
+
+        public void CreatePowerUp(string powerUpId, PowerUpType powerUpType, Vector2 position)
+        {
+            Sprite powerUpSprite = null;
+
+            switch (powerUpType)
+            {
+                case PowerUpType.Bullet:
+                    powerUpSprite = new Sprite(WaveContent.Assets.Textures.powerup_shoot_png);
+                    break;
+                case PowerUpType.Repair:
+                    powerUpSprite = new Sprite(WaveContent.Assets.Textures.powerup_repair_png);
+                    break;
+                default:
+                    powerUpSprite = new Sprite(WaveContent.Assets.Textures.powerup_repair_png);
+                    break;
+            }
+
+            var powerUp = new Entity(powerUpId)
+                .AddComponent(new Transform2D()
+                {
+                    Origin = Vector2.Center,
+                    DrawOrder = -200,
+                    Position = position
+                })
+                .AddComponent(new CircleCollider2D
+                {
+                    CollisionCategories = ColliderCategory2D.Cat6,
+                    CollidesWith = ColliderCategory2D.Cat1
+                })
+                .AddComponent(new RigidBody2D())
+                .AddComponent(new PowerUpBehavior { PowerUpType = powerUpType })
+                .AddComponent(powerUpSprite)
+                .AddComponent(new SpriteRenderer(DefaultLayers.Alpha));
+
+            this.powerUpToAdd.Add(powerUp);
+        }
+
+        public void DestroyPowerUp(Entity powerUp)
+        {
+            if (powerUp == null)
+            {
+                return;
+            }
+
+            this.powerUpToRemove.Add(powerUp);
         }
 
         public async void ShootPlayerBullet(Vector2 position, Vector2 direction, Color color, P2PManager peerManager)
@@ -263,8 +313,7 @@ namespace P2PTank.Managers
                 await peerManager.SendBroadcastAsync(peerManager.CreateMessage(P2PMessageType.BulletDestroy, destroyMessage));
             }
         }
-
-
+        
         private Entity CreateBaseTank(int playerIndex, ColliderCategory2D category, ColliderCategory2D collidesWith)
         {
             var entity = this.EntityManager.Instantiate(WaveContent.Assets.Prefabs.tankPrefab);
@@ -396,6 +445,16 @@ namespace P2PTank.Managers
                 this.tanksToRemove.Clear();
             }
 
+            if (this.powerUpToRemove.Count > 0)
+            {
+                foreach (var powerUp in this.powerUpToRemove)
+                {
+                    this.EntityManager.Remove(powerUp);
+                }
+
+                this.powerUpToRemove.Clear();
+            }
+
             // Adds
             if (this.tanksToAdd.Count > 0)
             {
@@ -428,6 +487,19 @@ namespace P2PTank.Managers
                 }
 
                 this.bulletsToAdd.Clear();
+            }
+
+            if (this.powerUpToAdd.Count > 0)
+            {
+                foreach (var powerUp in this.powerUpToAdd)
+                {
+                    if (!this.EntityManager.Contains(powerUp))
+                    {
+                        this.EntityManager.Add(powerUp);
+                    }
+                }
+
+                this.powerUpToAdd.Clear();
             }
 
             for (int i = 0; i < this.explosions.Length; i++)

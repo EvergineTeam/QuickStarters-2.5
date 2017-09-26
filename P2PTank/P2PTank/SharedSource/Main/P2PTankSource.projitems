@@ -17,6 +17,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Behaviors\Inputs\BulletNetworkBehavior.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Behaviors\Inputs\NetworkInputBehavior.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Behaviors\Inputs\PlayerInputBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Behaviors\PowerUpBehavior.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Components\BulletComponent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Components\PoolComponent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Components\SideTankComponent.cs" />
@@ -32,12 +33,15 @@
     <Compile Include="$(MSBuildThisFileDirectory)Managers\P2PMessages\BulletDestroyMessage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Managers\P2PMessages\BulletMoveMessage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Managers\P2PMessages\CreatePlayerMessage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Managers\P2PMessages\DestroyPowerUpMessage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Managers\P2PMessages\HitPlayerMessage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Managers\P2PMessages\DestroyPlayerMessage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Managers\P2PMessages\MoveMessage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Managers\P2PMessages\P2PMessageType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Managers\P2PMessages\CreatePowerUpMessage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Managers\P2PMessages\RotateMessage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Managers\P2PMessages\ShootMessage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Managers\PowerUpManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Scenes\GamePlayScene.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Scenes\IntroScene.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Scenes\VirtualJoystickScene.cs" />

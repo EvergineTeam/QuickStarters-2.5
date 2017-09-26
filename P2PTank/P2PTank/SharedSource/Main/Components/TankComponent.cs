@@ -1,4 +1,6 @@
-﻿using System.Runtime.Serialization;
+﻿using System;
+using System.Runtime.Serialization;
+using P2PTank.Scenes;
 using WaveEngine.Common.Graphics;
 using WaveEngine.Components.Graphics2D;
 using WaveEngine.Framework;
@@ -66,7 +68,7 @@ namespace P2PTank.Components
             this.InitialSpeed = 20;
             this.InitialRotationSpeed = 0.5f;
             this.InitialRotationBarrelSpeed = 0.5f;
-            this.InitialShootInterval = 0.5f;
+            this.InitialShootInterval = 2.0f;
             this.Color = Color.White;
         }
 
@@ -96,6 +98,21 @@ namespace P2PTank.Components
             if (this.body != null)
             {
                 this.body.TintColor = this.color;
+            }
+        }
+
+        internal void PowerUp(PowerUpType powerUpType)
+        {
+            switch (powerUpType)
+            {
+                case PowerUpType.Bullet:
+                    this.CurrentShootInterval = 1.0f;
+                    break;
+                case PowerUpType.Repair:
+                    this.CurrentLive = InitialLive;
+                    break;
+                default:
+                    break;
             }
         }
     }

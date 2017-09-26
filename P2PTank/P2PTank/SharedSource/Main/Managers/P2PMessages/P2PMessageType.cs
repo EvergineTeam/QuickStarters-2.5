@@ -12,6 +12,8 @@
         BulletMove,
         BulletDestroy,
         BulletCreate,
-        Destroy
+        Destroy,
+        CreatePowerUp,
+        DestroyPowerUp
     }
 }
