@@ -208,7 +208,7 @@ namespace P2PTank.Managers
 
         public void RemovePowerUp()
         {
-            if (string.IsNullOrEmpty(this.playerID))
+            if (string.IsNullOrEmpty(this.playerID) || playerID == null)
                 return;
 
             var player = this.EntityManager.Find(this.playerID);
