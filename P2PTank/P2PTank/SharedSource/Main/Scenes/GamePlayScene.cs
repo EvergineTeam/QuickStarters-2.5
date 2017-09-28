@@ -288,11 +288,8 @@ namespace P2PTank.Scenes
 
         private void HitFoe(GamePlayManager gameplayManager, string foeId, double life)
         {
-            if (life > 50)
-                return;
-
             var foe = this.EntityManager.Find(foeId);
-            this.gameplayManager.SmokeTank(foe);
+            this.gameplayManager.SmokeTank(foe, life <= 50);
         }
 
         private void DestroyFoe(GamePlayManager gameplayManager, string foeId)

@@ -281,10 +281,10 @@ namespace P2PTank.Managers
             return entity;
         }
 
-        public void SmokeTank(Entity tank)
+        public void SmokeTank(Entity tank, bool emit)
         {
             var particles = tank.FindChild("particles").FindComponent<ParticleSystem2D>();
-            particles.Emit = true;
+            particles.Emit = emit;
         }
 
         public void DestroyTank(Entity tank)
