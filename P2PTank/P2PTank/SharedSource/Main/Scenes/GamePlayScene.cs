@@ -208,6 +208,9 @@ namespace P2PTank.Scenes
 
         private void HandlePlayerCollision(Entity player)
         {
+            if (player == null)
+                return;
+
             var colliders = player.FindComponentsInChildren<Collider2D>(false);
             var collider = colliders.FirstOrDefault();
 
