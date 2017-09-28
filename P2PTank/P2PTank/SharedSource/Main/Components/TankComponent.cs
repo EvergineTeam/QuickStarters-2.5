@@ -1,12 +1,7 @@
-﻿using System;
-using System.Runtime.Serialization;
-using P2PTank.Scenes;
+﻿using System.Runtime.Serialization;
 using WaveEngine.Common.Graphics;
 using WaveEngine.Components.Graphics2D;
 using WaveEngine.Framework;
-using WaveEngine.Components.Particles;
-using P2PTank.Entities.P2PMessages;
-using P2PTank.Managers;
 
 namespace P2PTank.Components
 {
@@ -61,7 +56,7 @@ namespace P2PTank.Components
         public float CurrentRotationBarrelSpeed { get; set; }
 
         [IgnoreDataMember]
-        public float CurrentShootInterval { get; private set; }
+        public float CurrentShootInterval { get; set; }
 
         protected override void DefaultValues()
         {
@@ -101,25 +96,6 @@ namespace P2PTank.Components
             if (this.body != null)
             {
                 this.body.TintColor = this.color;
-            }
-        }
-
-        internal async void PowerUp(P2PManager peerManager, string playerId, PowerUpType powerUpType)
-        {
-            switch (powerUpType)
-            {
-                case PowerUpType.Bullet:
-                    this.CurrentShootInterval = 1.0f;
-                    break;
-                case PowerUpType.Repair:
-                    this.CurrentLive = InitialLive;
-
-                    var hitMessage = new HitPlayerMessage() { PlayerId = playerId, PlayerLife = this.CurrentLive };
-                    await peerManager.SendBroadcastAsync(peerManager.CreateMessage(P2PMessageType.HitPlayer, hitMessage));
-
-                    break;
-                default:
-                    break;
             }
         }
 

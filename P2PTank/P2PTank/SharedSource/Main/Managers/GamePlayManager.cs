@@ -184,6 +184,28 @@ namespace P2PTank.Managers
             }
         }
 
+        public async void AddPowerUp(string playerId, PowerUpType powerUpType, P2PManager peerManager)
+        {
+            var player = this.EntityManager.Find(playerId);
+            var tankComponent = player.FindComponent<TankComponent>();
+
+            switch (powerUpType)
+            {
+                case PowerUpType.Bullet:
+                    tankComponent.CurrentShootInterval = 1.0f;
+                    break;
+                case PowerUpType.Repair:
+                    tankComponent.CurrentLive = tankComponent.InitialLive;
+
+                    var hitMessage = new HitPlayerMessage() { PlayerId = playerId, PlayerLife = tankComponent.CurrentLive };
+                    await peerManager.SendBroadcastAsync(peerManager.CreateMessage(P2PMessageType.HitPlayer, hitMessage));
+
+                    break;
+                default:
+                    break;
+            }
+        }
+
         public void RemovePowerUp()
         {
             if (string.IsNullOrEmpty(this.playerID))
