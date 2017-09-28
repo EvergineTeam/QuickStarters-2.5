@@ -178,7 +178,10 @@ namespace P2PTank.Managers
                 return;
             }
 
-            this.powerUpToRemove.Add(powerUp);
+            if (!powerUpToRemove.Contains(powerUp))
+            {
+                this.powerUpToRemove.Add(powerUp);
+            }
         }
 
         public void RemovePowerUp()
