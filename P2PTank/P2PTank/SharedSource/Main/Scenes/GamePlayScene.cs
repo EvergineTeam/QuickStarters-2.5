@@ -237,6 +237,9 @@ namespace P2PTank.Scenes
 
                                 var powerUpBehavior = powerUp.FindComponent<PowerUpBehavior>();
                                 player.FindComponent<TankComponent>().PowerUp(powerUpBehavior.PowerUpType);
+
+                                var audioService = WaveServices.GetService<AudioService>();
+                                audioService.Play(Audio.Sfx.PowerUp_wav);
                             }
                         }
                     };

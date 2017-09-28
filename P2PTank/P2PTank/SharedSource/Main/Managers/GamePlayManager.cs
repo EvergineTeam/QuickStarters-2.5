@@ -133,6 +133,9 @@ namespace P2PTank.Managers
 
         public void CreatePowerUp(string powerUpId, PowerUpType powerUpType, Vector2 position)
         {
+            var audioService = WaveServices.GetService<AudioService>();
+            audioService.Play(Audio.Sfx.SpawnPowerUp_wav);
+
             Sprite powerUpSprite = null;
 
             switch (powerUpType)

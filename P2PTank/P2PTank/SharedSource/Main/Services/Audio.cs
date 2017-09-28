@@ -12,7 +12,9 @@
             Zap_wav,
             Gun_wav,
             Explosion_wav,
-            BulletCollision_wav
+            BulletCollision_wav,
+            SpawnPowerUp_wav,
+            PowerUp_wav
         }
     }
 }
