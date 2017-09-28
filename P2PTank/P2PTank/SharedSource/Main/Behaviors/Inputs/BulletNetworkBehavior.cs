@@ -5,7 +5,6 @@ using P2PTank.Entities.P2PMessages;
 using P2PTank.Managers;
 using WaveEngine.Common.Math;
 using WaveEngine.Framework;
-using WaveEngine.Framework.Graphics;
 using WaveEngine.Framework.Physics2D;
 using WaveEngine.Networking.P2P.TransportLayer.EventArgs;
 
@@ -13,9 +12,6 @@ namespace P2PTank.Behaviors
 {
     public class BulletNetworkBehavior : Behavior
     {
-        [RequiredComponent]
-        private Transform2D transform = null;
-
         [RequiredComponent]
         private RigidBody2D rigidBody = null;
 
