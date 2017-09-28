@@ -5,6 +5,8 @@ using WaveEngine.Common.Graphics;
 using WaveEngine.Components.Graphics2D;
 using WaveEngine.Framework;
 using WaveEngine.Components.Particles;
+using P2PTank.Entities.P2PMessages;
+using P2PTank.Managers;
 
 namespace P2PTank.Components
 {
@@ -102,7 +104,7 @@ namespace P2PTank.Components
             }
         }
 
-        internal void PowerUp(PowerUpType powerUpType)
+        internal async void PowerUp(P2PManager peerManager, string playerId, PowerUpType powerUpType)
         {
             switch (powerUpType)
             {
@@ -111,9 +113,10 @@ namespace P2PTank.Components
                     break;
                 case PowerUpType.Repair:
                     this.CurrentLive = InitialLive;
-                    var tank = this.Owner;
-                    var particles = tank.FindChild("particles").FindComponent<ParticleSystem2D>();
-                    particles.Emit = false;
+
+                    var hitMessage = new HitPlayerMessage() { PlayerId = playerId, PlayerLife = this.CurrentLive };
+                    await peerManager.SendBroadcastAsync(peerManager.CreateMessage(P2PMessageType.HitPlayer, hitMessage));
+
                     break;
                 default:
                     break;
