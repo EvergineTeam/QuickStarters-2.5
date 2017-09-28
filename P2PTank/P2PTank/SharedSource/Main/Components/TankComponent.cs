@@ -107,13 +107,13 @@ namespace P2PTank.Components
             switch (powerUpType)
             {
                 case PowerUpType.Bullet:
-                    this.CurrentShootInterval = 0.5f;
+                    this.CurrentShootInterval = 1.0f;
                     break;
                 case PowerUpType.Repair:
                     this.CurrentLive = InitialLive;
                     var tank = this.Owner;
-                    var tankSmoke = tank.FindComponent<ParticleSystem2D>();
-                    tankSmoke.Emit = false;
+                    var particles = tank.FindChild("particles").FindComponent<ParticleSystem2D>();
+                    particles.Emit = false;
                     break;
                 default:
                     break;
