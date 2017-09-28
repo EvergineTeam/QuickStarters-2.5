@@ -323,7 +323,7 @@ namespace P2PTank.Managers
                 await peerManager.SendBroadcastAsync(peerManager.CreateMessage(P2PMessageType.BulletDestroy, destroyMessage));
             }
         }
-        
+
         private Entity CreateBaseTank(int playerIndex, ColliderCategory2D category, ColliderCategory2D collidesWith)
         {
             var entity = this.EntityManager.Instantiate(WaveContent.Assets.Prefabs.tankPrefab);
@@ -447,7 +447,10 @@ namespace P2PTank.Managers
             {
                 foreach (var tank in this.tanksToRemove)
                 {
-                    this.EntityManager.Remove(tank);
+                    if (!tank.IsDisposed)
+                    {
+                        this.EntityManager.Remove(tank);
+                    }
                 }
 
                 audioService.Play(Audio.Sfx.Explosion_wav);
@@ -459,7 +462,10 @@ namespace P2PTank.Managers
             {
                 foreach (var powerUp in this.powerUpToRemove)
                 {
-                    this.EntityManager.Remove(powerUp);
+                    if (!powerUp.IsDisposed)
+                    {
+                        this.EntityManager.Remove(powerUp);
+                    }
                 }
 
                 this.powerUpToRemove.Clear();
@@ -472,7 +478,10 @@ namespace P2PTank.Managers
                 {
                     if (!this.EntityManager.Contains(tank))
                     {
-                        this.EntityManager.Add(tank);
+                        if (!tank.IsDisposed)
+                        {
+                            this.EntityManager.Add(tank);
+                        }
                     }
                 }
 
