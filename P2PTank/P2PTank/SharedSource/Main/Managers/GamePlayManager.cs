@@ -186,6 +186,9 @@ namespace P2PTank.Managers
 
         public void RemovePowerUp()
         {
+            if (string.IsNullOrEmpty(this.playerID))
+                return;
+
             var player = this.EntityManager.Find(this.playerID);
             var tankComponent = player.FindComponent<TankComponent>();
             tankComponent.ResetPowerUp();
