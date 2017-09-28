@@ -80,7 +80,10 @@ namespace P2PTank.Behaviors
 
         private void BulletDestroy()
         {
-            this.gamePlayManager.DestroyBullet(this.Owner, null);
+            if (this.gamePlayManager != null)
+            {
+                this.gamePlayManager.DestroyBullet(this.Owner, null);
+            }
         }
 
         private void BulletMove(float x, float y)
