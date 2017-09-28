@@ -29,7 +29,7 @@ namespace P2PTank
             screenContext.Behavior = ScreenContextBehaviors.UpdateInBackground | ScreenContextBehaviors.DrawInBackground;
 
             WaveServices.ScreenContextManager.To(screenContext);
-            WaveServices.ScreenContextManager.SetDiagnosticsActive(true);
+            WaveServices.ScreenContextManager.SetDiagnosticsActive(false);
         }
     }
 }

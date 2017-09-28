@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using P2PTank.Components;
 using P2PTank.Entities.P2PMessages;
 using P2PTank.Managers;
 using P2PTank.Scenes;
 using WaveEngine.Common.Input;
 using WaveEngine.Common.Math;
-using WaveEngine.Common.Physics2D;
 using WaveEngine.Components.Graphics2D;
 using WaveEngine.Framework;
 using WaveEngine.Framework.Diagnostic;

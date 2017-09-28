@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.Serialization;
 using P2PTank.Behaviors;
 using WaveEngine.Framework;

@@ -278,6 +278,11 @@ namespace P2PTank.Scenes
             this.gameplayManager.DestroyPowerUp(powerUp);
         }
 
+        private void RemovePowerUp(GamePlayManager gameplayManager)
+        {
+            this.gameplayManager.RemovePowerUp();
+        }
+
         private void HitFoe(GamePlayManager gameplayManager, string foeId, double life)
         {
             if (life > 50)
@@ -381,6 +386,10 @@ namespace P2PTank.Scenes
                         case P2PMessageType.DestroyPowerUp:
                             var destroyPowerUpMessage = message.Value as DestroyPowerUpMessage;
                             this.DestroyPowerUp(this.gameplayManager, destroyPowerUpMessage.PowerUpId);
+                            break;
+                        case P2PMessageType.RemovePowerUp:
+                            var removePowerUpMessage = message.Value as RemovePowerUpMessage;
+                            this.RemovePowerUp(this.gameplayManager);
                             break;
                     }
                 }

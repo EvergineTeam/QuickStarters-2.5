@@ -134,6 +134,11 @@ namespace P2PTank.Managers
                             P2PMessageType.DestroyPowerUp,
                             JsonConvert.DeserializeObject<DestroyPowerUpMessage>(result[1]));
                         break;
+                    case P2PMessageType.RemovePowerUp:
+                        messageObject.Add(
+                            P2PMessageType.RemovePowerUp,
+                            JsonConvert.DeserializeObject<RemovePowerUpMessage>(result[1]));
+                        break;
                 }
 
             }

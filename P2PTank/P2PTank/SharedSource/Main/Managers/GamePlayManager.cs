@@ -178,6 +178,13 @@ namespace P2PTank.Managers
             this.powerUpToRemove.Add(powerUp);
         }
 
+        public void RemovePowerUp()
+        {
+            var player = this.EntityManager.Find(this.playerID);
+            var tankComponent = player.FindComponent<TankComponent>();
+            tankComponent.ResetPowerUp();
+        }
+
         public async void ShootPlayerBullet(Vector2 position, Vector2 direction, Color color, P2PManager peerManager)
         {
             var category = ColliderCategory2D.Cat2;

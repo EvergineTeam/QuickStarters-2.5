@@ -14,6 +14,7 @@
         BulletCreate,
         Destroy,
         CreatePowerUp,
-        DestroyPowerUp
+        DestroyPowerUp,
+        RemovePowerUp
     }
 }

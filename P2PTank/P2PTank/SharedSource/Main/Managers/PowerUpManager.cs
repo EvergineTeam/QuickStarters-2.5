@@ -58,14 +58,18 @@ namespace P2PTank.Managers
             var spawnIndex = WaveServices.Random.Next(0, 4);
             var spawnPosition = this.GetSpawnPoint(spawnIndex);
 
-            var message = new CreatePowerUpMessage()
+            var createPowerUpMessage = new CreatePowerUpMessage()
             {
                 PowerUpId = powerUpId, 
                 PowerUpType = (PowerUpType)powerUpType,
                 SpawnPosition = spawnPosition
             };
 
-            await this.peerManager.SendBroadcastAsync(this.peerManager.CreateMessage(P2PMessageType.CreatePowerUp, message));
+            await this.peerManager.SendBroadcastAsync(this.peerManager.CreateMessage(P2PMessageType.CreatePowerUp, createPowerUpMessage));
+
+            var removePowerUpMessage = new RemovePowerUpMessage();
+
+            await this.peerManager.SendBroadcastAsync(this.peerManager.CreateMessage(P2PMessageType.RemovePowerUp, removePowerUpMessage));
         }
 
         public async void SendDestroyPowerUpMessage(string powerUpId)

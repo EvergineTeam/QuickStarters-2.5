@@ -106,7 +106,7 @@ namespace P2PTank.Components
             switch (powerUpType)
             {
                 case PowerUpType.Bullet:
-                    this.CurrentShootInterval = 1.0f;
+                    this.CurrentShootInterval = 0.5f;
                     break;
                 case PowerUpType.Repair:
                     this.CurrentLive = InitialLive;
@@ -114,6 +114,11 @@ namespace P2PTank.Components
                 default:
                     break;
             }
+        }
+
+        internal void ResetPowerUp()
+        {
+            this.CurrentShootInterval = this.InitialShootInterval;
         }
     }
 }
