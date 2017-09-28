@@ -4,6 +4,7 @@ using P2PTank.Scenes;
 using WaveEngine.Common.Graphics;
 using WaveEngine.Components.Graphics2D;
 using WaveEngine.Framework;
+using WaveEngine.Components.Particles;
 
 namespace P2PTank.Components
 {
@@ -110,6 +111,9 @@ namespace P2PTank.Components
                     break;
                 case PowerUpType.Repair:
                     this.CurrentLive = InitialLive;
+                    var tank = this.Owner;
+                    var tankSmoke = tank.FindComponent<ParticleSystem2D>();
+                    tankSmoke.Emit = false;
                     break;
                 default:
                     break;
