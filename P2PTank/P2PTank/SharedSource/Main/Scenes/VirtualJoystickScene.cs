@@ -1,37 +1,35 @@
 ﻿using P2PTank.Entities;
 using WaveEngine.Common.Math;
+using WaveEngine.Components.Cameras;
 using WaveEngine.Framework;
 
 namespace P2PTank.Scenes
 {
     public class VirtualJoystickScene : Scene
     {
+        public Joystick Joystick { get; private set; }
+        public FireButton FireButton { get; private set; }
+
+
         protected override void CreateScene()
         {
-            this.CreateVirtualJoysticks();
-        }
+            FixedCamera2D camera = new FixedCamera2D("camera")
+            {
+                ClearFlags = WaveEngine.Common.Graphics.ClearFlags.DepthAndStencil
+            };
 
-        private void CreateVirtualJoysticks()
-        {
-            // Left Joystick
-            RectangleF leftArea = new RectangleF(
-                0,
-                0,
-                this.VirtualScreenManager.VirtualWidth / 2f,
-                this.VirtualScreenManager.VirtualHeight);
-            var leftJoystick = new Joystick("leftJoystick", leftArea);
+            this.EntityManager.Add(camera);
 
-            EntityManager.Add(leftJoystick);
+            var vm = this.VirtualScreenManager;
+            float width = vm.RightEdge - vm.LeftEdge;
+            float halfWidth = width / 2;
+            float height = vm.BottomEdge - vm.TopEdge;
 
-            // Right Joystick
-            RectangleF rightArea = new RectangleF(
-                this.VirtualScreenManager.VirtualWidth / 2,
-                0,
-                this.VirtualScreenManager.VirtualWidth / 2f,
-                this.VirtualScreenManager.VirtualHeight);
-            var rightJoystick = new Joystick("rightJoystick", rightArea);
+            this.Joystick = new Joystick("joystick", new RectangleF(vm.LeftEdge, vm.TopEdge, halfWidth, height));
+            this.EntityManager.Add(this.Joystick);
 
-            EntityManager.Add(rightJoystick);
+            this.FireButton = new FireButton("fireButton", new RectangleF(vm.LeftEdge + (halfWidth), vm.TopEdge, halfWidth, height));
+            this.EntityManager.Add(this.FireButton);
         }
     }
 }

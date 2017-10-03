@@ -22,11 +22,12 @@ namespace P2PTank
 
             WaveServices.RegisterService(new AudioService());
 
-            ScreenContext screenContext = new ScreenContext( 
-                new GamePlayScene(WaveContent.Scenes.Levels.Level1), 
-                new VirtualJoystickScene());
-
-            screenContext.Behavior = ScreenContextBehaviors.UpdateInBackground | ScreenContextBehaviors.DrawInBackground;
+            ScreenContext screenContext = new ScreenContext(
+                new GamePlayScene(WaveContent.Scenes.Levels.Level1),
+                new VirtualJoystickScene())
+            {
+                Behavior = ScreenContextBehaviors.UpdateInBackground | ScreenContextBehaviors.DrawInBackground
+            };
 
             WaveServices.ScreenContextManager.To(screenContext);
             WaveServices.ScreenContextManager.SetDiagnosticsActive(false);

@@ -22,6 +22,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Components\PoolComponent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Components\SideTankComponent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Components\TankComponent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\FireButton.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\Joystick.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Game.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GameConstants.cs" />
