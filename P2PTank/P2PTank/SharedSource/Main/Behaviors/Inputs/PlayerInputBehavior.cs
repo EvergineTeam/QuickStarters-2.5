@@ -70,9 +70,9 @@ namespace P2PTank.Behaviors
 
         private float shootTimer;
 
-        private Joystick leftJoystick;
+        private Joystick joystick;
 
-        private Joystick rightJoystick;
+        private FireButton fireButton;
 
         public PlayerInputBehavior(P2PManager peerManager, string playerID)
         {
@@ -88,8 +88,8 @@ namespace P2PTank.Behaviors
 
             if (virtualJoystickScene != null)
             {
-                this.leftJoystick = virtualJoystickScene.EntityManager.Find<Joystick>("leftJoystick");
-                this.rightJoystick = virtualJoystickScene.EntityManager.Find<Joystick>("rightJoystick");
+                this.joystick = virtualJoystickScene.EntityManager.Find<Joystick>("joystick");
+                this.fireButton = virtualJoystickScene.EntityManager.Find<FireButton>("fireButton");
             }
 
             var barrelEntity = this.Owner.FindChild(GameConstants.EntitynameTankBarrel);
@@ -117,13 +117,13 @@ namespace P2PTank.Behaviors
 
         private void HandleVirtualJoystick(ref PlayerCommand playerCommand)
         {
-            if (this.leftJoystick == null || this.rightJoystick == null)
+            if (this.joystick == null || this.fireButton == null)
             {
                 return;
             }
 
-            Vector2 leftThumb = this.leftJoystick.Direction;
-            Vector2 rightthumb = this.rightJoystick.Direction;
+            Vector2 leftThumb = this.joystick.Direction;
+            bool isShooting = this.fireButton.IsShooting;
 
             if (leftThumb != Vector2.Zero)
             {
@@ -131,9 +131,8 @@ namespace P2PTank.Behaviors
                 playerCommand.SetRotate(leftThumb.X);
             }
 
-            if (rightthumb != Vector2.Zero)
+            if (isShooting)
             {
-                playerCommand.SetRotateBarrel(rightthumb.X);
                 playerCommand.SetShoot();
             }
         }

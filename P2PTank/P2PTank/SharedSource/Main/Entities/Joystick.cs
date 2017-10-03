@@ -100,7 +100,6 @@ namespace P2PTank.Entities
 
             touch.TouchPressed += (s, o) =>
             {
-
                 this.pressedPosition = o.GestureSample.Position;
 
                 this.backgroundTransform.X = this.pressedPosition.X;
