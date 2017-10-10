@@ -212,6 +212,10 @@ namespace P2PTank.Managers
                 return;
 
             var player = this.EntityManager.Find(this.playerID);
+
+            if (player == null)
+                return;
+
             var tankComponent = player.FindComponent<TankComponent>();
             tankComponent.ResetPowerUp();
         }
