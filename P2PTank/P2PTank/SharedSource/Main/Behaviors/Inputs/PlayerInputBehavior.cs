@@ -1,5 +1,4 @@
-﻿using System;
-using P2PTank.Components;
+﻿using P2PTank.Components;
 using P2PTank.Entities.P2PMessages;
 using P2PTank.Managers;
 using P2PTank.Scenes;
@@ -13,43 +12,13 @@ using WaveEngine.Framework.Physics2D;
 using WaveEngine.Framework.Services;
 using P2PTank.Services;
 using P2PTank.Entities;
+using P2PTank.Behaviors.Inputs;
 
 namespace P2PTank.Behaviors
 {
     public class PlayerInputBehavior : Behavior
     {
         public string PlayerID { get; set; }
-
-        private struct PlayerCommand
-        {
-            public float Move { get; private set; }
-
-            public float Rotate { get; private set; }
-
-            public float RotateBarrel { get; private set; }
-
-            public bool Shoot { get; private set; }
-
-            public void SetMove(float move)
-            {
-                this.Move = MathHelper.Clamp(this.Move + move, -1.0f, 1.0f);
-            }
-
-            public void SetRotate(float rotate)
-            {
-                this.Rotate = MathHelper.Clamp(this.Rotate + rotate, -1.0f, 1.0f);
-            }
-
-            public void SetRotateBarrel(float rotateBarrel)
-            {
-                this.RotateBarrel = MathHelper.Clamp(this.RotateBarrel + rotateBarrel, -1.0f, 1.0f);
-            }
-
-            public void SetShoot()
-            {
-                this.Shoot = true;
-            }
-        }
 
         [RequiredComponent]
         private TankComponent tankComponent = null;
@@ -99,7 +68,7 @@ namespace P2PTank.Behaviors
             this.gamePlayManager = this.Owner.Scene.EntityManager.FindComponentFromEntityPath<GamePlayManager>(GameConstants.ManagerEntityPath);
         }
 
-        protected override void Update(TimeSpan gameTime)
+        protected override void Update(System.TimeSpan gameTime)
         {
             Input input = WaveServices.Input;
 
@@ -177,9 +146,17 @@ namespace P2PTank.Behaviors
 
         private void RunInputCommands(PlayerCommand playerCommand, float elapsedTime)
         {
-            this.Move(playerCommand.Move, elapsedTime);
-            this.Rotate(playerCommand.Rotate, elapsedTime);
-            this.RotateBarrel(playerCommand.RotateBarrel, elapsedTime);
+            if (this.joystick != null && this.fireButton != null)
+            {
+                this.Move(playerCommand.AbsoluteMove, elapsedTime);
+                this.Rotate(this.joystick.Direction, elapsedTime);
+            }
+            else
+            {
+                this.Move(playerCommand.Move, elapsedTime);
+                this.Rotate(playerCommand.Rotate, elapsedTime);
+                this.RotateBarrel(playerCommand.RotateBarrel, elapsedTime);
+            }
 
             this.Shoot(playerCommand.Shoot, elapsedTime);
         }
@@ -282,6 +259,12 @@ namespace P2PTank.Behaviors
             this.rigidBody.LinearVelocity = forward * (orientation * Vector3.UnitY * fixedStep * this.tankComponent.CurrentSpeed).ToVector2();
         }
 
+        private void Move(Vector2 forward, float elapsedTime)
+        {
+            float fixedStep = (1f / 60f);
+            this.rigidBody.LinearVelocity = forward * (fixedStep * this.tankComponent.CurrentSpeed);
+        }
+
         private void Rotate(float left, float elapsedTime)
         {
             if (left == 0)
@@ -293,6 +276,16 @@ namespace P2PTank.Behaviors
             this.rigidBody.AngularVelocity = roll;
         }
 
+        private void Rotate(Vector2 orientation, float elapsedTime)
+        {
+            var angle = Vector2.Angle(Vector2.UnitY, orientation * new Vector2(1, -1));
+
+            if (double.IsInfinity(angle) || double.IsNaN(angle))
+                return;
+
+            this.rigidBody.SetTransform(this.rigidBody.Transform2D.Position, angle);
+        }
+
         private void RotateBarrel(float left, float elapsedTime)
         {
             if (left == 0)
@@ -300,8 +293,11 @@ namespace P2PTank.Behaviors
                 return;
             }
 
-            var roll = left * this.tankComponent.CurrentRotationBarrelSpeed * elapsedTime;
-            this.barrelTransform.Orientation = this.barrelTransform.Orientation * Quaternion.CreateFromYawPitchRoll(0.0f, 0.0f, roll);
+            var roll = 
+                left * this.tankComponent.CurrentRotationBarrelSpeed * elapsedTime;
+
+            this.barrelTransform.Orientation = 
+                this.barrelTransform.Orientation * Quaternion.CreateFromYawPitchRoll(0.0f, 0.0f, roll);
         }
 
         private void Shoot(bool shoot, float elapsedTime)
@@ -323,7 +319,7 @@ namespace P2PTank.Behaviors
                     // Rotation angle must be absolute
                     var angle = this.barrelTransform.Rotation;
 
-                    var direction = new Vector2((float)Math.Sin(angle), -(float)Math.Cos(angle));
+                    var direction = new Vector2((float)System.Math.Sin(angle), -(float)System.Math.Cos(angle));
 
                     this.gamePlayManager.ShootPlayerBullet(position, direction, this.tankComponent.Color, peerManager);
 

@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.IO;
 using WaveEngine.Common.Media;
+using System.Diagnostics;
 
 namespace P2PTank.Services
 {
@@ -218,14 +219,23 @@ namespace P2PTank.Services
         /// <returns></returns>
         private SoundInstance InternalPlaySound(Enum sound, bool loop)
         {
-            int soundIndex = Convert.ToInt32(sound);
-            var instance = this.soundPlayer.Play(this.sounds[soundIndex], SFX_VOLUME, loop);
-            if (instance != null && this.muteSFX)
+            try
             {
-                instance.Volume = 0f;
-            }
+                int soundIndex = Convert.ToInt32(sound);
+                var instance = this.soundPlayer.Play(this.sounds[soundIndex], SFX_VOLUME, loop);
+                if (instance != null && this.muteSFX)
+                {
+                    instance.Volume = 0f;
+                }
 
-            return instance;
+                return instance;
+            }
+            catch(Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+
+                return null;
+            }
         }
 
         /// <summary>

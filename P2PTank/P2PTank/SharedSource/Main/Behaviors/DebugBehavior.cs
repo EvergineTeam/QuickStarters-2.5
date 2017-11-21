@@ -24,6 +24,11 @@ namespace P2PTank.Behaviors
                 {
                     this.RenderManager.DebugLines = !this.RenderManager.DebugLines;
                 });
+
+                this.KeyPressAction(Keys.F2, () =>
+                {
+                    WaveServices.ScreenContextManager.SetDiagnosticsActive(true);
+                });
             }
 
             this.lastKeyboardState = currentKeyboardState;

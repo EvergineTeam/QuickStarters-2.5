@@ -13,6 +13,9 @@ namespace P2PTank.Behaviors
 {
     public class BulletBehavior : Behavior
     {
+        [RequiredService]
+        private AudioService audioService;
+
         [RequiredComponent]
         private RigidBody2D rigidBody = null;
 
@@ -61,9 +64,7 @@ namespace P2PTank.Behaviors
             this.rigidBody.ResetPosition(position);
             var impulse = (direction * this.bulletComponent.CurrentSpeed) / 60;
             this.rigidBody.ApplyLinearImpulse(impulse, position);
-
-            var audioService = WaveServices.GetService<AudioService>();
-            audioService.Play(Audio.Sfx.Gun_wav);
+            this.audioService.Play(Audio.Sfx.Gun_wav);
         }
 
         protected override void Update(TimeSpan gameTime)

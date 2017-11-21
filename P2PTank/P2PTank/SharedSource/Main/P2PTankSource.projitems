@@ -16,6 +16,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Behaviors\Inputs\BulletBehavior.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Behaviors\Inputs\BulletNetworkBehavior.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Behaviors\Inputs\NetworkInputBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Behaviors\Inputs\PlayerCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Behaviors\Inputs\PlayerInputBehavior.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Behaviors\PowerUpBehavior.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Components\BulletComponent.cs" />
@@ -50,8 +51,5 @@
     <Compile Include="$(MSBuildThisFileDirectory)Services\Audio.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\AudioService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)WaveContent.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="$(MSBuildThisFileDirectory)Commons\" />
   </ItemGroup>
 </Project>

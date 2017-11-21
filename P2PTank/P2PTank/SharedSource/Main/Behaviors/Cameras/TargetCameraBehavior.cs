@@ -16,9 +16,10 @@ namespace P2PTank.Behaviors.Cameras
 
         private Vector2 desiredPosition;
         private Vector2 currentPosition;
-
         protected Vector2 pixelLimitMin;
         protected Vector2 pixelLimitMax;
+        private Vector2 min;
+        private Vector2 max;
 
         protected override void Initialize()
         {
@@ -27,7 +28,9 @@ namespace P2PTank.Behaviors.Cameras
             this.desiredPosition = this.cameraTransform.Position;
 
             var platform = WaveServices.Platform;
-            platform.OnScreenSizeChanged += this.OnScreenSizeChanged;
+
+            platform.OnScreenSizeChanged -= this.OnScreenSizeChanged;
+            platform.OnScreenSizeChanged += this.OnScreenSizeChanged;   // Update camera limits if the screen size change.
         }
 
         private void OnScreenSizeChanged(object sender, SizeEventArgs e)
@@ -69,9 +72,6 @@ namespace P2PTank.Behaviors.Cameras
                 this.currentPosition = this.cameraTransform.Position;
             }
         }
-
-        private Vector2 min;
-        private Vector2 max;
 
         public void SetLimits(Vector2 min, Vector2 max)
         {

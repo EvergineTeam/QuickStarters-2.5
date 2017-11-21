@@ -292,7 +292,7 @@ namespace P2PTank.Managers
             }
             bulletNetworkBehavior.IsActive = true;
 
-            // deactivate player behavior for this bullet
+            // Deactivate player behavior for this bullet
             var bulletBehavior = entity.FindComponent<BulletBehavior>();
             if (bulletBehavior != null)
             {

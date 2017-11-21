@@ -11,6 +11,8 @@
     <RootNamespace>P2PTank</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <AssemblyName>P2PTank</AssemblyName>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>True</DebugSymbols>
@@ -114,6 +116,10 @@
       <HintPath>..\..\packages\Newtonsoft.Json.10.0.3\lib\netstandard1.3\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="protobuf-net, Version=2.0.0.668, Culture=neutral, PublicKeyToken=257b51d87d2e4d67, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\WaveEngine.Common.2.4.1.35\lib\Xamarin.iOS\protobuf-net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.IO.Compression" />
     <Reference Include="System.Net.Http" />
@@ -124,33 +130,51 @@
       <HintPath>..\..\packages\WaveEngine.TiledMap.2.4.0.34\lib\Xamarin.iOS\TiledSharp.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="WaveEngine.Adapter, Version=2.4.1.35, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\WaveEngine.Adapter.2.4.1.35\lib\Xamarin.iOS\WaveEngine.Adapter.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WaveEngine.Bepu, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\WaveEngine.Framework.2.4.1.35\lib\Xamarin.iOS\WaveEngine.Bepu.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WaveEngine.Box2D, Version=2.4.1.35, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\WaveEngine.Box2D.2.4.1.35\lib\Xamarin.iOS\WaveEngine.Box2D.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WaveEngine.Box2DSharp, Version=2.0.6.30649, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\WaveEngine.Box2D.2.4.1.35\lib\Xamarin.iOS\WaveEngine.Box2DSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WaveEngine.Common, Version=2.4.1.35, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\WaveEngine.Common.2.4.1.35\lib\Xamarin.iOS\WaveEngine.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WaveEngine.Components, Version=2.4.1.35, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\WaveEngine.Components.2.4.1.35\lib\Xamarin.iOS\WaveEngine.Components.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WaveEngine.Framework, Version=2.4.1.35, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\WaveEngine.Framework.2.4.1.35\lib\Xamarin.iOS\WaveEngine.Framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WaveEngine.Materials, Version=2.4.1.35, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\WaveEngine.Materials.2.4.1.35\lib\Xamarin.iOS\WaveEngine.Materials.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WaveEngine.Physics, Version=2.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\WaveEngine.Framework.2.4.1.35\lib\Xamarin.iOS\WaveEngine.Physics.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="WaveEngine.TiledMap, Version=2.4.0.34, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\WaveEngine.TiledMap.2.4.0.34\lib\Xamarin.iOS\WaveEngine.TiledMap.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Xamarin.iOS" />
     <Reference Include="OpenTK-1.0" />
-    <Reference Include="WaveEngine.Adapter">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\WaveEngine.Adapter.2.4.0.34\lib\Xamarin.iOS\WaveEngine.Adapter.dll</HintPath>
-    </Reference>
-    <Reference Include="WaveEngine.Common">
-      <HintPath>..\..\packages\WaveEngine.Common.2.4.0.34\lib\Xamarin.iOS\WaveEngine.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="WaveEngine.Box2D">
-      <HintPath>..\..\packages\WaveEngine.Box2D.2.4.0.34\lib\Xamarin.iOS\WaveEngine.Box2D.dll</HintPath>
-    </Reference>
-    <Reference Include="WaveEngine.Framework">
-      <HintPath>..\..\packages\WaveEngine.Framework.2.4.0.34\lib\Xamarin.iOS\WaveEngine.Framework.dll</HintPath>
-    </Reference>
-    <Reference Include="WaveEngine.Components">
-      <HintPath>..\..\packages\WaveEngine.Components.2.4.0.34\lib\Xamarin.iOS\WaveEngine.Components.dll</HintPath>
-    </Reference>
-    <Reference Include="WaveEngine.Materials">
-      <HintPath>..\..\packages\WaveEngine.Materials.2.4.0.34\lib\Xamarin.iOS\WaveEngine.Materials.dll</HintPath>
-    </Reference>
-    <Reference Include="WaveEngine.ImageEffects">
-      <HintPath>..\..\packages\WaveEngine.ImageEffects.2.4.0.34\lib\Xamarin.iOS\WaveEngine.ImageEffects.dll</HintPath>
+    <Reference Include="Zlib.Portable, Version=1.11.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\WaveEngine.Framework.2.4.1.35\lib\Xamarin.iOS\Zlib.Portable.dll</HintPath>
+      <Private>True</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -196,12 +220,13 @@
       <Name>WaveEngine.Networking.P2P</Name>
     </ProjectReference>
   </ItemGroup>
-  <Import Project="..\..\packages\WaveEngine.Box2D.2.4.0.34\build\Xamarin.iOS\WaveEngine.Box2D.targets" Condition="Exists('..\..\packages\WaveEngine.Box2D.2.4.0.34\build\Xamarin.iOS\WaveEngine.Box2D.targets')" />
-  <Import Project="..\..\packages\WaveEngine.2.4.0.34\build\Xamarin.iOS\WaveEngine.targets" Condition="Exists('..\..\packages\WaveEngine.2.4.0.34\build\Xamarin.iOS\WaveEngine.targets')" />
+  <Import Project="..\..\packages\WaveEngine.Box2D.2.4.1.35\build\Xamarin.iOS\WaveEngine.Box2D.targets" Condition="Exists('..\..\packages\WaveEngine.Box2D.2.4.1.35\build\Xamarin.iOS\WaveEngine.Box2D.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\..\packages\WaveEngine.2.4.0.34\build\Xamarin.iOS\WaveEngine.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\WaveEngine.2.4.0.34\build\Xamarin.iOS\WaveEngine.targets'))" />
+    <Error Condition="!Exists('..\..\packages\WaveEngine.Box2D.2.4.1.35\build\Xamarin.iOS\WaveEngine.Box2D.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\WaveEngine.Box2D.2.4.1.35\build\Xamarin.iOS\WaveEngine.Box2D.targets'))" />
+    <Error Condition="!Exists('..\..\packages\WaveEngine.2.4.1.35\build\Xamarin.iOS\WaveEngine.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\WaveEngine.2.4.1.35\build\Xamarin.iOS\WaveEngine.targets'))" />
   </Target>
+  <Import Project="..\..\packages\WaveEngine.2.4.1.35\build\Xamarin.iOS\WaveEngine.targets" Condition="Exists('..\..\packages\WaveEngine.2.4.1.35\build\Xamarin.iOS\WaveEngine.targets')" />
 </Project>

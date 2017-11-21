@@ -21,16 +21,23 @@ namespace P2PTank
             GameSettings.GamePadDeadZone = 0.25f;
 
             WaveServices.RegisterService(new AudioService());
+            ScreenContext screenContext;
 
-            ScreenContext screenContext = new ScreenContext(
-                new GamePlayScene(WaveContent.Scenes.Levels.Level1),
-                new VirtualJoystickScene())
+            if (WaveServices.Platform.PlatformFamily == PlatformFamily.Desktop)
             {
-                Behavior = ScreenContextBehaviors.UpdateInBackground | ScreenContextBehaviors.DrawInBackground
-            };
+                screenContext = new ScreenContext(new GamePlayScene(WaveContent.Scenes.Levels.Level1));
+            }
+            else
+            {
+                screenContext = new ScreenContext(
+                    new GamePlayScene(WaveContent.Scenes.Levels.Level1),
+                    new VirtualJoystickScene())
+                {
+                    Behavior = ScreenContextBehaviors.UpdateInBackground | ScreenContextBehaviors.DrawInBackground
+                };
+            }
 
             WaveServices.ScreenContextManager.To(screenContext);
-            WaveServices.ScreenContextManager.SetDiagnosticsActive(false);
         }
     }
 }

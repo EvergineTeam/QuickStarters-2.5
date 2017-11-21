@@ -22,7 +22,6 @@ using P2PTank.Services;
 using P2PTank.Components;
 using WaveEngine.Networking.P2P.TransportLayer;
 using WaveEngine.Networking.P2P.TransportLayer.EventArgs;
-using WaveEngine.Components.Graphics2D;
 using P2PTank.Managers.P2PMessages;
 
 namespace P2PTank.Scenes
@@ -186,6 +185,17 @@ namespace P2PTank.Scenes
             this.CreateCountDown();
         }
 
+        protected override async void End()
+        {
+            if (!string.IsNullOrEmpty(this.playerID))
+            {
+                var destroyMessage = new DestroyPlayerMessage() { PlayerId = this.playerID };
+                await peerManager.SendBroadcastAsync(peerManager.CreateMessage(P2PMessageType.DestroyPlayer, destroyMessage));
+            }
+
+            base.End();
+        }
+
         private void StartPlayerGamePlay()
         {
             /// Create Local Player
@@ -204,7 +214,6 @@ namespace P2PTank.Scenes
             targetCameraBehavior.Follow = true;
             targetCameraBehavior.Speed = 5;
         }
-
 
         private void HandlePlayerCollision(Entity player)
         {

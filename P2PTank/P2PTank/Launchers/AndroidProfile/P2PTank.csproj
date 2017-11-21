@@ -54,7 +54,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="InAppServiceBinding, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\WaveEngine.Adapter.2.4.0.34\lib\MonoAndroid\InAppServiceBinding.dll</HintPath>
+      <HintPath>..\..\packages\WaveEngine.Adapter.2.4.1.35\lib\MonoAndroid\InAppServiceBinding.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
@@ -71,11 +71,11 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="play.billing.v3, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\WaveEngine.Adapter.2.4.0.34\lib\MonoAndroid\play.billing.v3.dll</HintPath>
+      <HintPath>..\..\packages\WaveEngine.Adapter.2.4.1.35\lib\MonoAndroid\play.billing.v3.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="protobuf-net, Version=2.0.0.668, Culture=neutral, PublicKeyToken=257b51d87d2e4d67, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\WaveEngine.Common.2.4.0.34\lib\MonoAndroid\protobuf-net.dll</HintPath>
+      <HintPath>..\..\packages\WaveEngine.Common.2.4.1.35\lib\MonoAndroid\protobuf-net.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Sockets.Plugin, Version=2.0.2.0, Culture=neutral, processorArchitecture=MSIL">
@@ -100,40 +100,40 @@
       <HintPath>..\..\packages\WaveEngine.TiledMap.2.4.0.34\lib\MonoAndroid\TiledSharp.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="WaveEngine.Adapter, Version=2.4.0.34, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\WaveEngine.Adapter.2.4.0.34\lib\MonoAndroid\WaveEngine.Adapter.dll</HintPath>
+    <Reference Include="WaveEngine.Adapter, Version=2.4.1.35, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\WaveEngine.Adapter.2.4.1.35\lib\MonoAndroid\WaveEngine.Adapter.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="WaveEngine.Bepu, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\WaveEngine.Framework.2.4.0.34\lib\MonoAndroid\WaveEngine.Bepu.dll</HintPath>
+      <HintPath>..\..\packages\WaveEngine.Framework.2.4.1.35\lib\MonoAndroid\WaveEngine.Bepu.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="WaveEngine.Box2D, Version=2.4.0.34, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\WaveEngine.Box2D.2.4.0.34\lib\MonoAndroid\WaveEngine.Box2D.dll</HintPath>
+    <Reference Include="WaveEngine.Box2D, Version=2.4.1.35, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\WaveEngine.Box2D.2.4.1.35\lib\MonoAndroid\WaveEngine.Box2D.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="WaveEngine.Box2DSharp, Version=2.0.6.22508, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\WaveEngine.Box2D.2.4.0.34\lib\MonoAndroid\WaveEngine.Box2DSharp.dll</HintPath>
+      <HintPath>..\..\packages\WaveEngine.Box2D.2.4.1.35\lib\MonoAndroid\WaveEngine.Box2DSharp.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="WaveEngine.Common, Version=2.4.0.34, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\WaveEngine.Common.2.4.0.34\lib\MonoAndroid\WaveEngine.Common.dll</HintPath>
+    <Reference Include="WaveEngine.Common, Version=2.4.1.35, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\WaveEngine.Common.2.4.1.35\lib\MonoAndroid\WaveEngine.Common.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="WaveEngine.Components, Version=2.4.0.34, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\WaveEngine.Components.2.4.0.34\lib\MonoAndroid\WaveEngine.Components.dll</HintPath>
+    <Reference Include="WaveEngine.Components, Version=2.4.1.35, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\WaveEngine.Components.2.4.1.35\lib\MonoAndroid\WaveEngine.Components.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="WaveEngine.Framework, Version=2.4.0.34, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\WaveEngine.Framework.2.4.0.34\lib\MonoAndroid\WaveEngine.Framework.dll</HintPath>
+    <Reference Include="WaveEngine.Framework, Version=2.4.1.35, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\WaveEngine.Framework.2.4.1.35\lib\MonoAndroid\WaveEngine.Framework.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="WaveEngine.Materials, Version=2.4.0.34, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\WaveEngine.Materials.2.4.0.34\lib\MonoAndroid\WaveEngine.Materials.dll</HintPath>
+    <Reference Include="WaveEngine.Materials, Version=2.4.1.35, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\WaveEngine.Materials.2.4.1.35\lib\MonoAndroid\WaveEngine.Materials.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="WaveEngine.Physics, Version=2.4.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\WaveEngine.Framework.2.4.0.34\lib\MonoAndroid\WaveEngine.Physics.dll</HintPath>
+      <HintPath>..\..\packages\WaveEngine.Framework.2.4.1.35\lib\MonoAndroid\WaveEngine.Physics.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="WaveEngine.TiledMap, Version=2.4.0.34, Culture=neutral, processorArchitecture=MSIL">
@@ -141,7 +141,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Zlib.Portable, Version=1.11.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\WaveEngine.Framework.2.4.0.34\lib\MonoAndroid\Zlib.Portable.dll</HintPath>
+      <HintPath>..\..\packages\WaveEngine.Framework.2.4.1.35\lib\MonoAndroid\Zlib.Portable.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
@@ -185,13 +185,13 @@
       <Name>WaveEngine.Networking.P2P</Name>
     </ProjectReference>
   </ItemGroup>
-  <Import Project="..\..\packages\WaveEngine.Box2D.2.4.0.34\build\MonoAndroid\WaveEngine.Box2D.targets" Condition="Exists('..\..\packages\WaveEngine.Box2D.2.4.0.34\build\MonoAndroid\WaveEngine.Box2D.targets')" />
+  <Import Project="..\..\packages\WaveEngine.Box2D.2.4.1.35\build\MonoAndroid\WaveEngine.Box2D.targets" Condition="Exists('..\..\packages\WaveEngine.Box2D.2.4.1.35\build\MonoAndroid\WaveEngine.Box2D.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\..\packages\WaveEngine.Box2D.2.4.0.34\build\MonoAndroid\WaveEngine.Box2D.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\WaveEngine.Box2D.2.4.0.34\build\MonoAndroid\WaveEngine.Box2D.targets'))" />
-    <Error Condition="!Exists('..\..\packages\WaveEngine.2.4.0.34\build\MonoAndroid\WaveEngine.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\WaveEngine.2.4.0.34\build\MonoAndroid\WaveEngine.targets'))" />
+    <Error Condition="!Exists('..\..\packages\WaveEngine.Box2D.2.4.1.35\build\MonoAndroid\WaveEngine.Box2D.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\WaveEngine.Box2D.2.4.1.35\build\MonoAndroid\WaveEngine.Box2D.targets'))" />
+    <Error Condition="!Exists('..\..\packages\WaveEngine.2.4.1.35\build\MonoAndroid\WaveEngine.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\WaveEngine.2.4.1.35\build\MonoAndroid\WaveEngine.targets'))" />
   </Target>
-  <Import Project="..\..\packages\WaveEngine.2.4.0.34\build\MonoAndroid\WaveEngine.targets" Condition="Exists('..\..\packages\WaveEngine.2.4.0.34\build\MonoAndroid\WaveEngine.targets')" />
+  <Import Project="..\..\packages\WaveEngine.2.4.1.35\build\MonoAndroid\WaveEngine.targets" Condition="Exists('..\..\packages\WaveEngine.2.4.1.35\build\MonoAndroid\WaveEngine.targets')" />
 </Project>

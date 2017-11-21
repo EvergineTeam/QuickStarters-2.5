@@ -80,7 +80,6 @@ namespace P2PTank.Behaviors
 
         protected override void Update(TimeSpan gameTime)
         {
-
         }
 
         private void Move(float x, float y)

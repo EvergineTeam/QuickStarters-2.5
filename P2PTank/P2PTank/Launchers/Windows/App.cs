@@ -141,5 +141,5 @@ namespace P2PTank
                 game.OnDeactivated();
             }
         }
-	}
+    }
 }
