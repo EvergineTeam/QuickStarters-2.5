@@ -19,6 +19,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Behaviors\Inputs\PlayerCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Behaviors\Inputs\PlayerInputBehavior.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Behaviors\PowerUpBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Behaviors\Update3DModelPositionBehavior.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Components\BulletComponent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Components\PoolComponent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Components\SideTankComponent.cs" />
@@ -46,7 +47,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Managers\P2PMessages\ShootMessage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Managers\PowerUpManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Scenes\GamePlayScene.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Scenes\IntroScene.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Scenes\VirtualJoystickScene.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\Audio.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\AudioService.cs" />

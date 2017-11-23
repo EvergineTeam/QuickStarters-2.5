@@ -167,12 +167,11 @@ namespace P2PTank.Scenes
             this.powerUpManager.InitPowerUp();
 
             ///// Doing this code here cause in CreateScene doesnt load tiledMap file still
-            var tiledEntity = this.EntityManager.Find(GameConstants.MapEntityPath);
+            var tiledMapEntity = this.EntityManager.Find(GameConstants.MapEntityPath);
             this.ConfigurePhysics();
-            this.CreateBorders(tiledEntity, ColliderCategory2D.Cat3, ColliderCategory2D.All);
+            this.CreateBorders(tiledMapEntity, ColliderCategory2D.Cat3, ColliderCategory2D.All);
             /////
 
-            var tiledMapEntity = this.EntityManager.Find(GameConstants.MapEntityPath);
             var tiledMap = tiledMapEntity.FindComponent<TiledMap>();
             var tiledMapTransform = tiledMapEntity.FindComponent<Transform2D>();
             var targetCameraBehavior = new TargetCameraBehavior();
