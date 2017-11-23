@@ -18,15 +18,15 @@ namespace P2PTank
         TimeSpan time;
         Vector2 position;
         Color backgroundSplashColor;
-		
+
         public App()
         {
             this.Width = 1280;
             this.Height = 720;
-			this.FullScreen = false;
-			this.WindowTitle = "P2PTank";
-            this.HasVideoSupport = false;
-    }
+            this.FullScreen = false;
+            this.WindowTitle = "TemplateTest";
+            this.HasVideoSupport = true;
+        }
 
         public override void Initialize()
         {
@@ -36,13 +36,13 @@ namespace P2PTank
             #region DEFAULT SPLASHSCREEN
             this.backgroundSplashColor = new Color("#ebebeb");
             this.spriteBatch = new SpriteBatch(WaveServices.GraphicsDevice);
-            
+
             var resourceNames = Assembly.GetExecutingAssembly().GetManifestResourceNames();
             string name = string.Empty;
 
             foreach (string item in resourceNames)
             {
-                if (item.Contains("SplashScreen.wpk"))
+                if (item.Contains("SplashScreen.png"))
                 {
                     name = item;
                     break;
@@ -56,7 +56,7 @@ namespace P2PTank
 
             using (Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream(name))
             {
-                this.splashScreen = WaveServices.Assets.Global.LoadAsset<Texture2D>(name, stream);
+                this.splashScreen = Texture2D.FromFile(WaveServices.GraphicsDevice, stream);
             }
 
             position = new Vector2();
@@ -67,14 +67,14 @@ namespace P2PTank
 
         public override void Update(TimeSpan elapsedTime)
         {
-             if (this.game != null && !this.game.HasExited)
+            if (this.game != null && !this.game.HasExited)
             {
                 if (WaveServices.Input.KeyboardState.F10 == ButtonState.Pressed)
                 {
                     this.FullScreen = !this.FullScreen;
                 }
 
-				if (this.splashState)
+                if (this.splashState)
                 {
                     #region DEFAULT SPLASHSCREEN
                     this.time += elapsedTime;
