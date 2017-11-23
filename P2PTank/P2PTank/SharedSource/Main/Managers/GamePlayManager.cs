@@ -63,8 +63,12 @@ namespace P2PTank.Managers
         protected override void ResolveDependencies()
         {
             base.ResolveDependencies();
-            this.gamePlayScene = this.Owner.Scene as CURRENTSCENETYPE;
-            this.poolComponent = this.gamePlayScene.EntityManager.FindComponentFromEntityPath<PoolComponent>(GameConstants.ManagerEntityPath);
+
+            if (!WaveServices.Platform.IsEditor)
+            {
+                this.gamePlayScene = this.Owner.Scene as CURRENTSCENETYPE;
+                this.poolComponent = this.gamePlayScene.EntityManager.FindComponentFromEntityPath<PoolComponent>(GameConstants.ManagerEntityPath);
+            }
         }
 
         public void InitializeExplosion()
@@ -82,7 +86,7 @@ namespace P2PTank.Managers
             var explode = new Entity() { IsSerializable = false }
                     .AddComponent(new Transform2D() { Origin = Vector2.Center, XScale = 2, YScale = 2 })
                     .AddComponent(new SpriteAtlas(WaveContent.Assets.Textures.ExplodeSprite_spritesheet))
-                    .AddComponent(new SpriteAtlasRenderer() { LayerType = DefaultLayers.Additive })
+                    .AddComponent(new SpriteAtlasRenderer() { LayerId = DefaultLayers.Additive })
                     .AddComponent(new Animation2D() { CurrentAnimation = "explosion", PlayAutomatically = false, SpeedFactor = 1.0f });
 
             explode.Enabled = false;
@@ -254,7 +258,7 @@ namespace P2PTank.Managers
 
             this.bulletsToAdd.Add(new BulletState() { bullet = entity, direction = direction, position = position, isLocal = true });
 
-            this.gamePlayScene.AddActiveBullet(bulletID);
+            this.gamePlayScene?.AddActiveBullet(bulletID);
 
             if (peerManager != null)
             {
@@ -421,9 +425,9 @@ namespace P2PTank.Managers
                 })
                 .AddComponent(new MaterialsMap(new StandardMaterial()
                 {
-                    DiffusePath = WaveContent.Assets.Textures.smoke_png,
+                    Diffuse1Path = WaveContent.Assets.Textures.smoke_png,
                     LightingEnabled = false,
-                    LayerType = DefaultLayers.Alpha,
+                    LayerId = DefaultLayers.Alpha,
                 }))
                 .AddComponent(new ParticleSystemRenderer2D());
 
@@ -434,7 +438,7 @@ namespace P2PTank.Managers
 
         private Entity CreateBaseBullet(ColliderCategory2D category, ColliderCategory2D collidesWith, Color color)
         {
-            var entity = this.poolComponent.RetrieveBulletEntity();
+            var entity = this.poolComponent?.RetrieveBulletEntity();
 
             var component = entity.FindComponent<BulletComponent>();
             component.Color = color;
@@ -473,7 +477,7 @@ namespace P2PTank.Managers
             // Removes
             if (this.bulletsToRemove.Count > 0)
             {
-                this.poolComponent.FreeBulletEntity(this.bulletsToRemove);
+                this.poolComponent?.FreeBulletEntity(this.bulletsToRemove);
                 this.bulletsToRemove.Clear();
                 audioService.Play(Audio.Sfx.BulletCollision_wav);
             }

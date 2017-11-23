@@ -20,9 +20,9 @@ using WaveEngine.Common.Graphics;
 using WaveEngine.Framework.Services;
 using P2PTank.Services;
 using P2PTank.Components;
-using WaveEngine.Networking.P2P.TransportLayer;
-using WaveEngine.Networking.P2P.TransportLayer.EventArgs;
 using P2PTank.Managers.P2PMessages;
+using WaveEngine.Networking.Events;
+using WaveEngine.Networking;
 
 namespace P2PTank.Scenes
 {

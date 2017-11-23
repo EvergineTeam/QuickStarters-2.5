@@ -6,7 +6,7 @@ using P2PTank.Managers;
 using WaveEngine.Common.Math;
 using WaveEngine.Framework;
 using WaveEngine.Framework.Physics2D;
-using WaveEngine.Networking.P2P.TransportLayer.EventArgs;
+using WaveEngine.Networking.Events;
 
 namespace P2PTank.Behaviors
 {
