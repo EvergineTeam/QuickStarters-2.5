@@ -23,6 +23,8 @@ using P2PTank.Components;
 using P2PTank.Managers.P2PMessages;
 using WaveEngine.Networking.Events;
 using WaveEngine.Networking;
+using WaveEngine.Components.Graphics3D;
+using WaveEngine.Materials;
 
 namespace P2PTank.Scenes
 {
@@ -152,6 +154,12 @@ namespace P2PTank.Scenes
 
                 tiledEntity.AddChild(colliderEntity);
             }
+
+            tiledEntity.AddComponent(new Transform3D());            
+            tiledEntity.AddComponent(new MaterialComponent() { Material = new StandardMaterial() { LightingEnabled = false, DiffuseColor = Color.Yellow } });
+            tiledEntity.AddComponent(new Borders3DMeshRenderer(borders.Objects) { WallHeight = 10 });
+            tiledEntity.AddComponent(new MeshRenderer());
+            
         }
 
         protected override void Start()
