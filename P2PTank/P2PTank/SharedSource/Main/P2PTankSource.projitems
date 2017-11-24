@@ -10,6 +10,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Behaviors\Cameras\BaseCameraBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Behaviors\Cameras\Player3DCameraBehavior.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Behaviors\Cameras\TargetCameraBehavior.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Behaviors\DebugBehavior.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Behaviors\FixedRotationBehavior.cs" />

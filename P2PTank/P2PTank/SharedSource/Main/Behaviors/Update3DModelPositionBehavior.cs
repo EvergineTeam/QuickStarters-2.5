@@ -21,7 +21,7 @@ namespace P2PTank.Behaviors
         {
             base.ResolveDependencies();
 
-            this.childEntityTransform3D = this.Owner.FindChild("cube").FindComponent<Transform3D>();
+            this.childEntityTransform3D = this.Owner.FindChild("model3D").FindComponent<Transform3D>();
         }
 
         protected override void Update(TimeSpan gameTime)
@@ -29,16 +29,15 @@ namespace P2PTank.Behaviors
             var pos3D = this.childEntityTransform3D.Position;
             var pos2D = this.transform.Position;
 
+            pos3D.X = pos2D.X;
+            pos3D.Z = pos2D.Y;
 
-            pos3D.X = -pos2D.X;
-            pos3D.Z = -pos2D.Y;
-
-            pos3D = pos3D / 50;
+            pos3D = pos3D / 46;
             Labels.Add("2Dto3D", pos3D);
 
-            
+
             this.childEntityTransform3D.Position = pos3D;
-            this.childEntityTransform3D.Rotation = -Vector3.UnitY * this.transform.Rotation;
+            this.childEntityTransform3D.Rotation = -Vector3.UnitY * (this.transform.Rotation + MathHelper.Pi);
         }
     }
 }

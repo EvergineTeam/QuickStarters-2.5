@@ -56,6 +56,7 @@ namespace P2PTank.Scenes
 
         protected override async void CreateScene()
         {
+            this.Load(WaveContent.Scenes.LevelBaseScene);
             this.Load(this.contentPath);
 
             var audioService = WaveServices.GetService<AudioService>();
@@ -201,17 +202,15 @@ namespace P2PTank.Scenes
             Entity player = this.CreatePlayer(gameplayManager);
             this.HandlePlayerCollision(player);
 
-            var behavior = this.RenderManager.ActiveCamera2D.Owner.FindComponent<TargetCameraBehavior>();
-
-            this.StartPlayerCamera(player, behavior);
+            this.StartPlayerCamera(player);
         }
 
-        private void StartPlayerCamera(Entity player, TargetCameraBehavior targetCameraBehavior)
+        private void StartPlayerCamera(Entity player)
         {
-            /// Set camera to follow player
-            targetCameraBehavior.SetTarget(player.FindComponent<Transform2D>());
-            targetCameraBehavior.Follow = true;
-            targetCameraBehavior.Speed = 5;
+            var camera = this.RenderManager.ActiveCamera3D.Owner.FindComponent<Player3DCameraBehavior>();
+            camera.TargetTransform = player.FindChild("model3D").FindComponent<Transform3D>();
+            camera.Speed = 5.0f;
+            camera.Follow = true;
         }
 
         private void HandlePlayerCollision(Entity player)
