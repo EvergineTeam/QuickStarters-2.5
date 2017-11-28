@@ -25,6 +25,7 @@ using WaveEngine.Networking.Events;
 using WaveEngine.Networking;
 using WaveEngine.Components.Graphics3D;
 using WaveEngine.Materials;
+using P2PTank.Tools;
 
 namespace P2PTank.Scenes
 {
@@ -40,6 +41,7 @@ namespace P2PTank.Scenes
 
         private List<PeerPlayer> ConnectedPeers { get; set; } = new List<PeerPlayer>();
 
+        private MapLoader mapLoader;
         private string contentPath;
         private P2PManager peerManager;
         private GamePlayManager gameplayManager;
@@ -51,6 +53,7 @@ namespace P2PTank.Scenes
         {
             this.contentPath = contentPath;
 
+            this.mapLoader = new MapLoader();
             this.peerManager = new P2PManager();
             this.peerManager.PeerPlayerChange += this.OnPeerChanged;
             this.peerManager.MsgReceived += this.OnMsgReceived;
@@ -60,6 +63,8 @@ namespace P2PTank.Scenes
         {
             this.Load(WaveContent.Scenes.LevelBaseScene);
             this.Load(this.contentPath);
+
+            this.mapLoader.Load(WaveContent.Assets.Maps.level1_tmap, new StandardMaterial { DiffuseColor = Color.LightGray }, this.EntityManager);
 
             var audioService = WaveServices.GetService<AudioService>();
             audioService.Play(Audio.Music.Background_mp3, 0.4f);
@@ -176,19 +181,19 @@ namespace P2PTank.Scenes
             this.powerUpManager.InitPowerUp();
 
             ///// Doing this code here cause in CreateScene doesnt load tiledMap file still
-            var tiledMapEntity = this.EntityManager.Find(GameConstants.MapEntityPath);
-            this.ConfigurePhysics();
-            this.CreateBorders(tiledMapEntity, ColliderCategory2D.Cat3, ColliderCategory2D.All);
+            //var tiledMapEntity = this.EntityManager.Find(GameConstants.MapEntityPath);
+            //this.ConfigurePhysics();
+            //this.CreateBorders(tiledMapEntity, ColliderCategory2D.Cat3, ColliderCategory2D.All);
             /////
 
-            var tiledMap = tiledMapEntity.FindComponent<TiledMap>();
-            var tiledMapTransform = tiledMapEntity.FindComponent<Transform2D>();
-            var targetCameraBehavior = new TargetCameraBehavior();
-            targetCameraBehavior.SetLimits(
-                new Vector2(0, 0),
-                new Vector2(tiledMap.Width * tiledMap.TileWidth * tiledMapTransform.Scale.X, tiledMap.Height * tiledMap.TileHeight * tiledMapTransform.Scale.Y));
-            this.RenderManager.ActiveCamera2D.Owner.AddComponent(targetCameraBehavior);
-            targetCameraBehavior.RefreshCameraLimits();
+            //var tiledMap = tiledMapEntity.FindComponent<TiledMap>();
+            //var tiledMapTransform = tiledMapEntity.FindComponent<Transform2D>();
+            //var targetCameraBehavior = new TargetCameraBehavior();
+            //targetCameraBehavior.SetLimits(
+            //    new Vector2(0, 0),
+            //    new Vector2(tiledMap.Width * tiledMap.TileWidth * tiledMapTransform.Scale.X, tiledMap.Height * tiledMap.TileHeight * tiledMapTransform.Scale.Y));
+            //this.RenderManager.ActiveCamera2D.Owner.AddComponent(targetCameraBehavior);
+            //targetCameraBehavior.RefreshCameraLimits();
 
             this.CreateCountDown();
         }
