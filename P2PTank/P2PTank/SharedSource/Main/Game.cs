@@ -38,6 +38,7 @@ namespace P2PTank
             }
 
             WaveServices.ScreenContextManager.To(screenContext);
+            WaveServices.ScreenContextManager.SetDiagnosticsActive(true);
         }
     }
 }

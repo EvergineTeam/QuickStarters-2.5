@@ -13,7 +13,7 @@ namespace P2PTank.Behaviors.Cameras
     {
         private Vector3 desiredPosition;
         private Vector3 offset;
-
+        
         [RequiredComponent]
         public Transform3D transform = null;
 
@@ -38,21 +38,22 @@ namespace P2PTank.Behaviors.Cameras
             base.Initialize();
 
             this.desiredPosition = this.transform.Position;
-            this.offset = this.transform.Position;
+            this.offset = new Vector3(0, 10, -5);
         }
 
         protected override void Update(TimeSpan gameTime)
         {
             if (this.Follow && this.TargetTransform != null)
             {
-                this.desiredPosition = this.TargetTransform.Position + this.offset;
+                this.desiredPosition = this.TargetTransform.Position;
 
                 if (this.transform.Position != this.desiredPosition)
                 {
-                    var position = Vector3.SmoothStep(this.transform.Position, this.desiredPosition, this.Speed * (float)gameTime.TotalSeconds);
-                    //this.transform.LookAt(position);
-                    this.transform.Position = position;
-                    
+                    var position = 
+                        Vector3.SmoothStep(this.transform.Position - this.offset, this.desiredPosition, this.Speed * (float)gameTime.TotalSeconds);
+            
+                    this.transform.Position = position + this.offset;
+                    this.transform.LookAt(position);
                 }
             }
         }

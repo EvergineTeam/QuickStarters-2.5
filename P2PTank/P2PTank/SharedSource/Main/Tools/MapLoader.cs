@@ -106,11 +106,11 @@ namespace P2PTank.Tools
         
         private Entity CreateCube(int currentX, int currentY, int z, Material material)
         {
-            var cube = new Entity()
+            var cube = new Entity { IsStatic = true }
                 .AddComponent(new Transform3D() { LocalPosition = new Vector3(currentX, z - 1, currentY) })
                 .AddComponent(new CubeMesh())
                 .AddComponent(new MeshRenderer())
-               .AddComponent(new MaterialComponent { Material = material });
+                .AddComponent(new MaterialComponent { Material = material });
 
             this.map.AddChild(cube);
 
