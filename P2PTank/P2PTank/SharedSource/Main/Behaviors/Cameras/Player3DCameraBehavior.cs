@@ -36,7 +36,7 @@ namespace P2PTank.Behaviors.Cameras
             base.Initialize();
 
             this.desiredPosition = this.transform.Position;
-            this.offset = new Vector3(0, 10, -5);
+            this.offset = new Vector3(0, 10, 5);
         }
 
         protected override void Update(TimeSpan gameTime)

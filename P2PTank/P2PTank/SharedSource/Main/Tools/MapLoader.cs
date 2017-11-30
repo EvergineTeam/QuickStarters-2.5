@@ -60,7 +60,7 @@ namespace P2PTank.Tools
                             //this.CreateCube(currentX, currentY, 0, material);
                             
                             // TODO:
-                            this.spawns.Add(new Vector2(currentX * 10, currentY * 10));
+                            this.spawns.Add(new Vector2(currentX * 46, currentY * 46));
                         }
 
                         currentX++;
@@ -124,8 +124,22 @@ namespace P2PTank.Tools
         private Entity CreateCube(int currentX, int currentY, int z, Material material)
         {
             var cube = new Entity { IsStatic = true }
-                .AddComponent(new Transform3D() { LocalPosition = new Vector3(currentX, z - 1, currentY) })
+                .AddComponent(new Transform3D() { LocalPosition = new Vector3(currentX, z + 0.5f, currentY) })
                 .AddComponent(new CubeMesh())
+                .AddComponent(new MeshRenderer())
+                .AddComponent(new MaterialComponent { Material = material });
+
+            this.map.AddChild(cube);
+
+            return cube;
+        }
+
+        private Entity CreatePlane(Material material)
+        {
+            // TODO: Add floor!
+            var cube = new Entity { IsStatic = true }
+                .AddComponent(new Transform3D() { LocalPosition = new Vector3(0, 0, 0) })
+                .AddComponent(new PlaneMesh())
                 .AddComponent(new MeshRenderer())
                 .AddComponent(new MaterialComponent { Material = material });
 
