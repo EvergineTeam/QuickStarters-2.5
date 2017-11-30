@@ -15,7 +15,7 @@
     </d2p1:Profiles>
     <d2p1:ZipCompress>true</d2p1:ZipCompress>
     <d2p1:AntialiasType>Smooth</d2p1:AntialiasType>
-    <d2p1:GenerateMipMaps>true</d2p1:GenerateMipMaps>
+    <d2p1:GenerateMipMaps>false</d2p1:GenerateMipMaps>
     <d2p1:Height>1024</d2p1:Height>
     <d2p1:NinePatchType>None</d2p1:NinePatchType>
     <d2p1:PremultipliedAlpha>true</d2p1:PremultipliedAlpha>

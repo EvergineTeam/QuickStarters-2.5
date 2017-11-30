@@ -1,10 +1,9 @@
 ﻿using P2PTank.Entities.P2PMessages;
 using P2PTank.Managers.P2PMessages;
 using P2PTank.Scenes;
+using P2PTank.Tools;
 using System;
-using WaveEngine.Common.Math;
 using WaveEngine.Framework;
-using WaveEngine.Framework.Graphics;
 using WaveEngine.Framework.Services;
 
 namespace P2PTank.Managers
@@ -17,10 +16,12 @@ namespace P2PTank.Managers
         private P2PManager peerManager;
         private GamePlayManager gamePlayManager;
         private TimeSpan currentSpawnTime;
+        private MapLoader mapLoader;
 
-        public PowerUpManager(P2PManager peerManager)
+        public PowerUpManager(P2PManager peerManager, MapLoader mapLoader)
         {
             this.peerManager = peerManager;
+            this.mapLoader = mapLoader;
         }
 
         protected override void Update(TimeSpan gameTime)
@@ -56,7 +57,7 @@ namespace P2PTank.Managers
 
             // Get a random spawn point to initialize the player
             var spawnIndex = WaveServices.Random.Next(0, 4);
-            var spawnPosition = this.GetSpawnPoint(spawnIndex);
+            var spawnPosition = this.mapLoader.GetSpawnPoint(spawnIndex);
 
             var createPowerUpMessage = new CreatePowerUpMessage()
             {
@@ -80,19 +81,6 @@ namespace P2PTank.Managers
             };
 
             await this.peerManager.SendBroadcastAsync(this.peerManager.CreateMessage(P2PMessageType.DestroyPowerUp, message));
-        }
-
-        private Vector2 GetSpawnPoint(int index)
-        {
-            Vector2 res = Vector2.Zero;
-            var entity = this.EntityManager.Find(string.Format(GameConstants.SpawnPointPathFormat, index));
-
-            if (entity != null)
-            {
-                res = entity.FindComponent<Transform2D>().LocalPosition;
-            }
-
-            return res;
         }
     }
 }

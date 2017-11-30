@@ -26,6 +26,7 @@ using WaveEngine.Networking;
 using WaveEngine.Components.Graphics3D;
 using WaveEngine.Materials;
 using P2PTank.Tools;
+using WaveEngine.Framework.Models;
 
 namespace P2PTank.Scenes
 {
@@ -46,7 +47,7 @@ namespace P2PTank.Scenes
         private P2PManager peerManager;
         private GamePlayManager gameplayManager;
         private PowerUpManager powerUpManager;
-        
+
         private string playerID;
 
         public GamePlayScene(string contentPath)
@@ -64,7 +65,12 @@ namespace P2PTank.Scenes
             this.Load(WaveContent.Scenes.LevelBaseScene);
             this.Load(this.contentPath);
 
-            this.mapLoader.Load(WaveContent.Assets.Maps.level1_tmap, new StandardMaterial { DiffuseColor = Color.LightGray }, this.EntityManager);
+            var materialModel = this.Assets.LoadModel<MaterialModel>(WaveContent.Assets.Models.Materials.wallMaterial);
+            this.mapLoader.Load(WaveContent.Assets.Maps.level1_tmap,
+                                materialModel.Material,
+                                this.EntityManager);
+            ////    new StandardMaterial
+            ////{ DiffuseColor = Color.White }, this.EntityManager);
 
             var audioService = WaveServices.GetService<AudioService>();
             audioService.Play(Audio.Music.Background_mp3, 0.4f);
@@ -160,11 +166,11 @@ namespace P2PTank.Scenes
                 tiledEntity.AddChild(colliderEntity);
             }
 
-            tiledEntity.AddComponent(new Transform3D());            
+            tiledEntity.AddComponent(new Transform3D());
             tiledEntity.AddComponent(new MaterialComponent() { Material = new StandardMaterial() { LightingEnabled = false, DiffuseColor = Color.Yellow } });
             tiledEntity.AddComponent(new Borders3DMeshRenderer(borders.Objects) { WallHeight = 10 });
             tiledEntity.AddComponent(new MeshRenderer());
-            
+
         }
 
         protected override void Start()
@@ -175,7 +181,7 @@ namespace P2PTank.Scenes
             this.gameplayManager = gameplayEntity.FindComponent<GamePlayManager>();
             this.gameplayManager.InitializeExplosion();
 
-            this.powerUpManager = new PowerUpManager(this.peerManager);
+            this.powerUpManager = new PowerUpManager(this.peerManager, this.mapLoader);
             gameplayEntity.AddComponent(this.powerUpManager);
 
             this.powerUpManager.InitPowerUp();
@@ -276,7 +282,7 @@ namespace P2PTank.Scenes
 
             // Get a random spawn point to initialize the player
             var spawnIndex = WaveServices.Random.Next(0, 4);
-            var spawnPoint = this.GetSpawnPoint(spawnIndex);
+            var spawnPoint = this.mapLoader.GetSpawnPoint(spawnIndex);
 
             // Create player
             var player = gameplayManager.CreatePlayer(0, peerManager, this.playerID, spawnPoint);
@@ -319,19 +325,6 @@ namespace P2PTank.Scenes
         {
             var foe = this.EntityManager.Find(foeId);
             this.gameplayManager.DestroyTank(foe);
-        }
-
-        private Vector2 GetSpawnPoint(int index)
-        {
-            Vector2 res = Vector2.Zero;
-            var entity = this.EntityManager.Find(string.Format(GameConstants.SpawnPointPathFormat, index));
-
-            if (entity != null)
-            {
-                res = entity.FindComponent<Transform2D>().LocalPosition;
-            }
-
-            return res;
         }
 
         private void OnMsgReceived(object sender, MsgReceivedEventArgs e)

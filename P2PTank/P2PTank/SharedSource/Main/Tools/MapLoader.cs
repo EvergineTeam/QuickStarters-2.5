@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System.Collections.Generic;
+using System.IO;
 using WaveEngine.Common.Math;
 using WaveEngine.Common.Physics2D;
 using WaveEngine.Components.Graphics3D;
@@ -7,7 +8,6 @@ using WaveEngine.Framework.Graphics;
 using WaveEngine.Framework.Managers;
 using WaveEngine.Framework.Physics2D;
 using WaveEngine.Framework.Services;
-using WaveEngine.Materials;
 
 namespace P2PTank.Tools
 {
@@ -15,12 +15,16 @@ namespace P2PTank.Tools
     {
         private EntityManager entityManager;
         private Entity map;
+        private List<Vector2> spawns;
 
         public async void Load(string filePath, Material material, EntityManager entityManager)
         {
             this.entityManager = entityManager;
+
             this.map = new Entity()
                 .AddComponent(new Transform2D());
+
+            this.spawns = new List<Vector2>();
 
             var storage = WaveServices.Storage;
 
@@ -42,7 +46,7 @@ namespace P2PTank.Tools
                     {
                         if (character == '0')
                         {
-                            this.CreateCube(currentX, currentY, 0, material);
+                            //this.CreateCube(currentX, currentY, 0, material);
                         }
                         else if (character == '1')
                         {
@@ -53,7 +57,10 @@ namespace P2PTank.Tools
                         else if (character == '9')
                         {
                             // Spawn
-                            this.CreateCube(currentX, currentY, 0, material);
+                            //this.CreateCube(currentX, currentY, 0, material);
+                            
+                            // TODO:
+                            this.spawns.Add(new Vector2(currentX * 10, currentY * 10));
                         }
 
                         currentX++;
@@ -65,6 +72,16 @@ namespace P2PTank.Tools
             }
 
             this.entityManager.Add(map);
+        }
+
+        public List<Vector2> GetSpawnPoints()
+        {
+            return this.spawns;
+        }
+
+        public Vector2 GetSpawnPoint(int index)
+        {
+            return this.spawns[index];
         }
 
         private void CreateMapCollider(int x, int y, Entity cube)

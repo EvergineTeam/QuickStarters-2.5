@@ -1,5 +1,5 @@
 ﻿<Prefab xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="WaveEngine.Framework.Models.Assets">
-  <Id xmlns="WaveEngine.Framework.Models">95c44bbf-265d-4f87-af9f-0dcff5c3f33d</Id>
+  <Id xmlns="WaveEngine.Framework.Models">92460b89-38d5-4aad-9a4e-928a157b8ffe</Id>
   <EntityModel xmlns:d2p1="WaveEngine.Framework.Models.Entities">
     <d2p1:SerializeChildrens>
       <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
@@ -99,9 +99,9 @@
               </d7p1:Component>
               <d7p1:Component xmlns:d8p1="http://schemas.datacontract.org/2004/07/WaveEngine.Components.Graphics3D" i:type="d8p1:MaterialComponent">
                 <d8p1:AsignedTo>DefaultMaterial</d8p1:AsignedTo>
-                <d8p1:MaterialPath></d8p1:MaterialPath>
+                <d8p1:MaterialPath>Content/Assets/Models/Materials/Floor.wmat</d8p1:MaterialPath>
                 <d8p1:UseCopy>false</d8p1:UseCopy>
-                <d8p1:useDummyMaterial>true</d8p1:useDummyMaterial>
+                <d8p1:useDummyMaterial>false</d8p1:useDummyMaterial>
               </d7p1:Component>
               <d7p1:Component xmlns:d8p1="WaveEngine.Components.Graphics3D" i:type="d8p1:MeshRenderer">
                 <d7p1:FrustumCullingEnabled>true</d7p1:FrustumCullingEnabled>

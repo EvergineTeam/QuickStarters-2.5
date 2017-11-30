@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Runtime.Serialization;
-using System.Text;
 using WaveEngine.Common.Math;
 using WaveEngine.Framework;
 using WaveEngine.Framework.Diagnostic;
