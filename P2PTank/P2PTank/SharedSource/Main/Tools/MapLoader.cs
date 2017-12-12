@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using WaveEngine.Common.Math;
 using WaveEngine.Common.Physics2D;
@@ -44,22 +45,24 @@ namespace P2PTank.Tools
 
                     foreach (var character in line)
                     {
-                        if (character == '0')
+                        if (character == '1' || character == '2' || character == '3')
                         {
-                            //this.CreateCube(currentX, currentY, 0, material);
-                        }
-                        else if (character == '1')
-                        {
-                            this.CreateCube(currentX, currentY, 0, material);
-                            var cube = this.CreateCube(currentX, currentY, 1, material);
-                            this.CreateMapCollider(currentX, currentY, cube);
+                            var digit = (int)Char.GetNumericValue(character);
+
+                            var cube = this.CreateCube(currentX, currentY, 0, material);
+                            var collider = this.CreateMapCollider(currentX, currentY);
+                            cube.AddChild(collider);
+
+                            if (digit > 1)
+                            {
+                                for (int i = 1; i <= digit; i++)
+                                {
+                                    this.CreateCube(currentX, currentY, i, material);
+                                }
+                            }
                         }
                         else if (character == '9')
                         {
-                            // Spawn
-                            //this.CreateCube(currentX, currentY, 0, material);
-                            
-                            // TODO:
                             this.spawns.Add(new Vector2(currentX * 46, currentY * 46));
                         }
 
@@ -84,7 +87,7 @@ namespace P2PTank.Tools
             return this.spawns[index];
         }
 
-        private void CreateMapCollider(int x, int y, Entity cube)
+        private Entity CreateMapCollider(int x, int y)
         {
             float size = 46;
             float midSize = size / 2.0f;
@@ -118,7 +121,7 @@ namespace P2PTank.Tools
                 collider.Restitution = 0.2f;
             }
 
-            cube.AddChild(colliderEntity);
+            return colliderEntity;
         }
         
         private Entity CreateCube(int currentX, int currentY, int z, Material material)
