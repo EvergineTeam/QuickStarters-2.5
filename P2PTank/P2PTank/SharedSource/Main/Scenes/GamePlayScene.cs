@@ -65,12 +65,14 @@ namespace P2PTank.Scenes
             this.Load(WaveContent.Scenes.LevelBaseScene);
             this.Load(this.contentPath);
 
-            var materialModel = this.Assets.LoadModel<MaterialModel>(WaveContent.Assets.Models.Materials.wallMaterial);
-            this.mapLoader.Load(WaveContent.Assets.Maps.level1_tmap,
-                                materialModel.Material,
-                                this.EntityManager);
-            ////    new StandardMaterial
-            ////{ DiffuseColor = Color.White }, this.EntityManager);
+            var wallModel = this.Assets.LoadModel<MaterialModel>(WaveContent.Assets.Models.Materials.wallMaterial);
+            var floorModel = this.Assets.LoadModel<MaterialModel>(WaveContent.Assets.Models.Materials.floorMaterial);
+
+            this.mapLoader.Load(
+                WaveContent.Assets.Maps.level1_tmap,
+                wallModel.Material,
+                floorModel.Material,
+                this.EntityManager);
 
             var audioService = WaveServices.GetService<AudioService>();
             audioService.Play(Audio.Music.Background_mp3, 0.4f);

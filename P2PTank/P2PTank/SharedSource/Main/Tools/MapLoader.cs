@@ -18,8 +18,10 @@ namespace P2PTank.Tools
         private Entity map;
         private List<Vector2> freeSpaces;
         private List<Vector2> spawns;
+        private int maxX;
+        private int maxY;
 
-        public async void Load(string filePath, Material material, EntityManager entityManager)
+        public async void Load(string filePath, Material materialWall, Material materialFloor, EntityManager entityManager)
         {
             this.entityManager = entityManager;
 
@@ -55,7 +57,7 @@ namespace P2PTank.Tools
                         {
                             var digit = (int)Char.GetNumericValue(character);
 
-                            var cube = this.CreateCube(currentX, currentY, 0, material);
+                            var cube = this.CreateCube(currentX, currentY, 0, materialWall);
                             var collider = this.CreateMapCollider(currentX, currentY);
                             cube.AddChild(collider);
 
@@ -63,7 +65,7 @@ namespace P2PTank.Tools
                             {
                                 for (int i = 1; i <= digit; i++)
                                 {
-                                    this.CreateCube(currentX, currentY, i, material);
+                                    this.CreateCube(currentX, currentY, i, materialWall);
                                 }
                             }
                         }
@@ -73,12 +75,16 @@ namespace P2PTank.Tools
                         }
 
                         currentX++;
+                        maxX = Math.Max(maxX, currentX);
                     }
 
                     currentY++;
+                    maxY = Math.Max(maxY, currentY);
                     currentX = 0;
                 }
             }
+
+            CreatePlane(materialFloor);
 
             this.entityManager.Add(map);
         }
@@ -157,10 +163,16 @@ namespace P2PTank.Tools
 
         private Entity CreatePlane(Material material)
         {
-            // TODO: Add floor!
             var cube = new Entity { IsStatic = true }
-                .AddComponent(new Transform3D() { LocalPosition = new Vector3(0, 0, 0) })
-                .AddComponent(new PlaneMesh())
+                .AddComponent(new Transform3D()
+                {
+                    LocalPosition = new Vector3((maxX / 2), -0.01f, (maxY / 2) - 0.5f),
+                    Scale = new Vector3(maxX, 0, maxY)
+                })
+                .AddComponent(new PlaneMesh()
+                {
+                    // TODO: UTile!
+                })
                 .AddComponent(new MeshRenderer())
                 .AddComponent(new MaterialComponent { Material = material });
 

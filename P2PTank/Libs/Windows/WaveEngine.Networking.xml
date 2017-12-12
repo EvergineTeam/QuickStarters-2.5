@@ -1,0 +1,2030 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WaveEngine.Networking</name>
+    </assembly>
+    <members>
+        <member name="T:WaveEngine.Networking.AbstractStreamUtil">
+            <summary>
+            Stream utils class (abstract)
+            </summary>
+        </member>
+        <member name="P:WaveEngine.Networking.AbstractStreamUtil.ActiveStream">
+            <summary>
+            Gets or sets the current active stream
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Networking.AbstractStreamUtil.#ctor(System.IO.Stream)">
+            <summary>
+            Initializes a new instance of the <see cref="T:WaveEngine.Networking.AbstractStreamUtil"/> class.
+            </summary>
+            <param name="inputStream">input stream</param>
+        </member>
+        <member name="M:WaveEngine.Networking.AbstractStreamUtil.IntToBinary(System.Int32)">
+            <summary>
+            Integer to Binary converter
+            </summary>
+            <param name="value">input integet</param>
+            <returns>converted byte array</returns>
+        </member>
+        <member name="M:WaveEngine.Networking.AbstractStreamUtil.BinaryToInt(System.Byte[])">
+            <summary>
+            Binany to int converter
+            </summary>
+            <param name="binArray">Binary array</param>
+            <returns>converted integer</returns>
+        </member>
+        <member name="T:WaveEngine.Networking.BaseStation">
+            <summary>
+            Station Base class
+            </summary>
+        </member>
+        <member name="E:WaveEngine.Networking.BaseStation.PeerPlayerChange">
+            <summary>
+            PeerPlayer change event args
+            </summary>
+        </member>
+        <member name="E:WaveEngine.Networking.BaseStation.MsgReceived">
+            <summary>
+            Message received event args
+            </summary>
+        </member>
+        <member name="P:WaveEngine.Networking.BaseStation.KnownPeers">
+            <summary>
+            Gets the Known peers collection
+            </summary>
+        </member>
+        <member name="P:WaveEngine.Networking.BaseStation.LocalIpAddress">
+            <summary>
+            Gets or sets a value indicating whether the local IP Address
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Networking.BaseStation.PortNum">
+            <summary>
+            Port number
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Networking.BaseStation.TcpOnly">
+            <summary>
+            Is Tcp Only protocol
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Networking.BaseStation.forwardAll">
+            <summary>
+            Forward all
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Networking.BaseStation.#ctor(System.Int32,System.Boolean,System.Boolean)">
+             <summary>
+             Initializes a new instance of the <see cref="T:WaveEngine.Networking.BaseStation"/> class.
+            
+             </summary>
+             <param name="mPortNum">port number</param>
+             <param name="mForwardAll">forward all</param>
+             <param name="mTcpOnly">tcp only</param>
+        </member>
+        <member name="M:WaveEngine.Networking.BaseStation.SendUDPMsgAsync(System.String,System.Byte[])">
+            <summary>
+            Send UDP message
+            </summary>
+            <param name="ipAddress">target ip address</param>
+            <param name="msg">binary message</param>
+            <returns>false when error</returns>
+        </member>
+        <member name="M:WaveEngine.Networking.BaseStation.SendUDPBroadcastAsync(System.Byte[])">
+            <summary>
+            Send UDP broadcast
+            </summary>
+            <param name="msg">Binary message</param>
+            <returns>awaitable task</returns>
+        </member>
+        <member name="M:WaveEngine.Networking.BaseStation.SendUDPMsgToAllTCPAsync(System.Byte[])">
+            <summary>
+            Send UDP Message to all TCP
+            </summary>
+            <param name="msg">binary Message</param>
+            <returns>awaitable task</returns>
+        </member>
+        <member name="M:WaveEngine.Networking.BaseStation.SendTCPMsgAsync(System.String,System.Byte[])">
+            <summary>
+            Sends TCP message to IP
+            </summary>
+            <param name="ipAddress">ip address</param>
+            <param name="msg">binary message</param>
+            <returns>false when error</returns>
+        </member>
+        <member name="M:WaveEngine.Networking.BaseStation.SendTCPMsgToAllTCPAsync(System.Byte[])">
+            <summary>
+            Send TCP Message to all
+            </summary>
+            <param name="msg">Binary message</param>
+            <returns>awaitable task</returns>
+        </member>
+        <member name="M:WaveEngine.Networking.BaseStation.IncomingMsgAsync(System.Object,WaveEngine.Networking.Events.MsgReceivedEventArgs)">
+            <summary>
+            Incoming message handler
+            </summary>
+            <param name="sender">sender object</param>
+            <param name="e">event args</param>
+        </member>
+        <member name="M:WaveEngine.Networking.BaseStation.NewTCPConnection(System.Object,Sockets.Plugin.Abstractions.TcpSocketListenerConnectEventArgs)">
+            <summary>
+            Stores a new TCP Connection
+            </summary>
+            <param name="sender">sender object</param>
+            <param name="e">event args</param>
+        </member>
+        <member name="M:WaveEngine.Networking.BaseStation.DirectConnectTCPAsync(System.String)">
+            <summary>
+            Direct connection to ip
+            </summary>
+            <param name="ipAddress">ip addredd</param>
+            <returns>awaitable task</returns>
+        </member>
+        <member name="M:WaveEngine.Networking.BaseStation.GetWriteStreamAsync(System.String)">
+            <summary>
+            Get WriteStream
+            </summary>
+            <param name="ipAddress">IP Addredd</param>
+            <returns>Write Stream</returns>
+        </member>
+        <member name="M:WaveEngine.Networking.BaseStation.GetReadStreamAsync(System.String)">
+            <summary>
+            Get Read Stream
+            </summary>
+            <param name="ipAddress">Ip Addredd</param>
+            <returns>Read Stream</returns>
+        </member>
+        <member name="T:WaveEngine.Networking.HostDiscovered">
+            <summary>
+            Host discovered delegate.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="host">The host <see cref="T:WaveEngine.Networking.NetworkEndpoint"/> .</param>
+        </member>
+        <member name="T:WaveEngine.Networking.MessageReceived">
+            <summary>
+            Message received delegate.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="fromEndpoint">The <see cref="T:WaveEngine.Networking.NetworkEndpoint"/> that sent the menssage.</param>
+            <param name="receivedMessage">The received message.</param>
+        </member>
+        <member name="T:WaveEngine.Networking.EndpointConnected">
+            <summary>
+            Endpoint connected delegate.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="endpoint">The connected <see cref="T:WaveEngine.Networking.NetworkEndpoint"/>.</param>
+        </member>
+        <member name="T:WaveEngine.Networking.EndpointDisconnected">
+            <summary>
+            Endpoint disconnected delegate.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="endpoint">The disconnected <see cref="T:WaveEngine.Networking.NetworkEndpoint"/>.</param>
+        </member>
+        <member name="T:WaveEngine.Networking.Events.MsgReceivedEventArgs">
+            <summary>
+            Message Received Event args
+            </summary>
+        </member>
+        <member name="P:WaveEngine.Networking.Events.MsgReceivedEventArgs.Message">
+            <summary>
+            Gets the binary message
+            </summary>
+        </member>
+        <member name="P:WaveEngine.Networking.Events.MsgReceivedEventArgs.BindingType">
+            <summary>
+            Gets the Binding Type
+            </summary>
+        </member>
+        <member name="P:WaveEngine.Networking.Events.MsgReceivedEventArgs.RemoteIp">
+            <summary>
+            Gets the remote IP
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Networking.Events.MsgReceivedEventArgs.#ctor(System.String,System.Byte[],WaveEngine.Networking.TransportType)">
+            <summary>
+            Initializes a new instance of the <see cref="T:WaveEngine.Networking.Events.MsgReceivedEventArgs"/> class.
+            </summary>
+            <param name="remoteIp">Remote IP</param>
+            <param name="msg">binary message</param>
+            <param name="bindType">Transport type</param>
+        </member>
+        <member name="T:WaveEngine.Networking.Events.PeerEventArgs">
+            <summary>
+            Peer event argument class
+            </summary>
+        </member>
+        <member name="P:WaveEngine.Networking.Events.PeerEventArgs.Peer">
+            <summary>
+            Gets the owner Peer
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Networking.Events.PeerEventArgs.#ctor(WaveEngine.Networking.PeerPlayer)">
+            <summary>
+            Initializes a new instance of the <see cref="T:WaveEngine.Networking.Events.PeerEventArgs"/> class.
+            </summary>
+            <param name="peer">Owner peer</param>
+        </member>
+        <member name="T:WaveEngine.Networking.Events.PeerPlayerChangeEventArgs">
+            <summary>
+            Player Change Event arguments
+            </summary>
+        </member>
+        <member name="P:WaveEngine.Networking.Events.PeerPlayerChangeEventArgs.Peers">
+            <summary>
+            Gets the Changed Peer collection
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Networking.Events.PeerPlayerChangeEventArgs.#ctor(System.Collections.Generic.List{WaveEngine.Networking.PeerPlayer})">
+            <summary>
+            Initializes a new instance of the <see cref="T:WaveEngine.Networking.Events.PeerPlayerChangeEventArgs"/> class.
+            </summary>
+            <param name="peers">changed peers collection</param>
+        </member>
+        <member name="T:WaveEngine.Networking.TimerCallback">
+            <summary>
+            Timer Callback Class
+            </summary>
+            <param name="state">state</param>
+        </member>
+        <member name="T:WaveEngine.Networking.HeartBeatManager">
+            <summary>
+            Heartbeat manager class
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Networking.HeartBeatManager.#ctor(System.String,WaveEngine.Networking.TransportManager)">
+            <summary>
+            Initializes a new instance of the <see cref="T:WaveEngine.Networking.HeartBeatManager"/> class.
+            </summary>
+            <param name="mHeartBeatMsg">heartbeat message</param>
+            <param name="mTransMgr">transport manager to use</param>
+        </member>
+        <member name="M:WaveEngine.Networking.HeartBeatManager.StartBroadcasting">
+            <summary>
+            Starts the heartbeat broadcasting
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Networking.HeartBeatManager.EndBroadcasting">
+            <summary>
+            Ends the heartbeat broadcasting
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Networking.HeartBeatManager.TimerCallBack(System.Object)">
+            <summary>
+            Timer callback Handler
+            </summary>
+            <param name="parameter">unused parameter</param>
+        </member>
+        <member name="T:WaveEngine.Networking.Listener">
+            <summary>
+            Peer Listener class
+            </summary>
+        </member>
+        <member name="E:WaveEngine.Networking.Listener.PeerConnectTCPRequest">
+            <summary>
+            Triggered when a peer send a connect request to this peer
+            </summary>
+        </member>
+        <member name="E:WaveEngine.Networking.Listener.IncomingMsg">
+            <summary>
+            Triggered when received a message
+            </summary>
+        </member>
+        <member name="P:WaveEngine.Networking.Listener.IsListening">
+            <summary>
+            Gets a value indicating whether is Listening
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Networking.Listener.#ctor(System.Int32,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:WaveEngine.Networking.Listener"/> class.
+            </summary>
+            <param name="mPortNum">listener port number</param>
+            <param name="mTcpOnly">tcp only protocol</param>
+        </member>
+        <member name="M:WaveEngine.Networking.Listener.Dispose">
+            <summary>
+            Dispose method
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Networking.Listener.StartAsync">
+            <summary>
+            Starts to listen the selected port
+            </summary>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="T:WaveEngine.Networking.NetworkEndpoint">
+            <summary>
+            This class represent a network endpoint.
+            </summary>
+        </member>
+        <member name="P:WaveEngine.Networking.NetworkEndpoint.Address">
+            <summary>
+            Gets or sets the address.
+            </summary>
+            <value>
+            The address.
+            </value>
+        </member>
+        <member name="P:WaveEngine.Networking.NetworkEndpoint.Port">
+            <summary>
+            Gets or sets the port.
+            </summary>
+            <value>
+            The port.
+            </value>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkEndpoint.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:WaveEngine.Networking.NetworkEndpoint"/> class.
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkEndpoint.#ctor(Lidgren.Network.NetIncomingMessage)">
+            <summary>
+            Initializes a new instance of the <see cref="T:WaveEngine.Networking.NetworkEndpoint"/> class from a message.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkEndpoint.Equals(System.Object)">
+            <summary>
+            Determines whether the specified object is equal to the current object.
+            </summary>
+            <param name="obj">The object to compare with the current object.</param>
+            <returns><c>true</c> if the specified object is equal to the current object; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkEndpoint.GetHashCode">
+            <summary>
+            Returns a hash code for this instance.
+            </summary>
+            <returns>
+            A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.
+            </returns>
+        </member>
+        <member name="T:WaveEngine.Networking.INetworkClient">
+            <summary>
+            The network client interface.
+            </summary>
+        </member>
+        <member name="E:WaveEngine.Networking.INetworkClient.MessageReceived">
+            <summary>
+            Occurs when a host message is received by the client.
+            </summary>
+        </member>
+        <member name="E:WaveEngine.Networking.INetworkClient.HostConnected">
+            <summary>
+            Occurs when the client is connected to a host.
+            </summary>
+        </member>
+        <member name="E:WaveEngine.Networking.INetworkClient.HostDisconnected">
+            <summary>
+            Occurs when the client is disconnected from the host.
+            </summary>
+        </member>
+        <member name="E:WaveEngine.Networking.INetworkClient.HostDiscovered">
+            <summary>
+            Occurs when a new host is discovered
+            </summary>
+        </member>
+        <member name="P:WaveEngine.Networking.INetworkClient.IsConnected">
+            <summary>
+            Gets a value indicating whether this instance is connected.
+            </summary>
+            <value>
+            <c>true</c> if this instance is connected; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:WaveEngine.Networking.INetworkClient.Identifier">
+            <summary>
+            Gets the identifier.
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="M:WaveEngine.Networking.INetworkClient.DiscoverHosts(System.Int32)">
+            <summary>
+            Discovers the hosts.
+            </summary>
+            <param name="port">The port.</param>
+        </member>
+        <member name="M:WaveEngine.Networking.INetworkClient.Connect(WaveEngine.Networking.NetworkEndpoint)">
+            <summary>
+            Connects the specified host.
+            </summary>
+            <param name="host">The host.</param>
+        </member>
+        <member name="M:WaveEngine.Networking.INetworkClient.Disconnect">
+            <summary>
+            Disconnects this instance.
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Networking.INetworkClient.Send(WaveEngine.Networking.Messages.OutgoingMessage,WaveEngine.Networking.Messages.DeliveryMethod)">
+            <summary>
+            Sends the specified message.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="deliveryMethod">The delivery method.</param>
+        </member>
+        <member name="M:WaveEngine.Networking.INetworkClient.CreateMessage(WaveEngine.Networking.Messages.MessageType)">
+            <summary>
+            Creates a new outgoing message.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>The create outgoing message.</returns>
+        </member>
+        <member name="T:WaveEngine.Networking.INetworkFactory">
+            <summary>
+            This class is a factory of main network components.
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Networking.INetworkFactory.CreateNetworkServer(System.String,System.Int32,System.Single,System.Single)">
+            <summary>
+            Creates the network server.
+            </summary>
+            <param name="applicationIdentifier">The application identifier.</param>
+            <param name="port">The port.</param>
+            <param name="pingInterval">Ping interval in seconds.</param>
+            <param name="connectionTimeout">Connection timeout in seconds.</param>
+            <returns>
+            A network server instance.
+            </returns>
+        </member>
+        <member name="M:WaveEngine.Networking.INetworkFactory.CreateNetworkClient(System.String,System.Single,System.Single)">
+            <summary>
+            Creates the network client.
+            </summary>
+            <param name="applicationIdentifier">The application identifier.</param>
+            <param name="pingInterval">Ping interval in seconds.</param>
+            <param name="connectionTimeout">Connection timeout in seconds.</param>
+            <returns>
+            A network client instance.
+            </returns>
+        </member>
+        <member name="T:WaveEngine.Networking.INetworkServer">
+            <summary>
+            The network server interface.
+            </summary>
+        </member>
+        <member name="E:WaveEngine.Networking.INetworkServer.ClientConnected">
+            <summary>
+            Occurs when the server receives a new client connection.
+            </summary>
+        </member>
+        <member name="E:WaveEngine.Networking.INetworkServer.ClientDisconnected">
+            <summary>
+            Occurs when the server lose the connection with a client.
+            </summary>
+        </member>
+        <member name="E:WaveEngine.Networking.INetworkServer.MessageReceived">
+            <summary>
+            Occurs when a message is received by the server.
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Networking.INetworkServer.Start">
+            <summary>
+            Starts this instance.
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Networking.INetworkServer.Shutdown">
+            <summary>
+            Shutdowns this instance.
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Networking.INetworkServer.Send(WaveEngine.Networking.Messages.OutgoingMessage,WaveEngine.Networking.Messages.DeliveryMethod)">
+            <summary>
+            Sends the specified message.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="deliveryMethod">The delivery method.</param>
+        </member>
+        <member name="M:WaveEngine.Networking.INetworkServer.Send(WaveEngine.Networking.Messages.IncomingMessage,WaveEngine.Networking.Messages.DeliveryMethod)">
+            <summary>
+            Sends the specified message.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="deliveryMethod">The delivery method.</param>
+        </member>
+        <member name="M:WaveEngine.Networking.INetworkServer.CreateMessage(WaveEngine.Networking.Messages.MessageType)">
+            <summary>
+            Creates a new outgoing message.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>The created outgoing message.</returns>
+        </member>
+        <member name="T:WaveEngine.Networking.INetworkService">
+            <summary>
+            The network service interface
+            </summary>
+        </member>
+        <member name="E:WaveEngine.Networking.INetworkService.MessageReceivedFromClient">
+            <summary>
+            Occurs when a client message is received by the host.
+            </summary>
+        </member>
+        <member name="E:WaveEngine.Networking.INetworkService.ClientConnected">
+            <summary>
+            Occurs when the host receives a new client connection.
+            </summary>
+        </member>
+        <member name="E:WaveEngine.Networking.INetworkService.ClientDisconnected">
+            <summary>
+            Occurs when the host lose the connection with a client.
+            </summary>
+        </member>
+        <member name="E:WaveEngine.Networking.INetworkService.MessageReceivedFromHost">
+            <summary>
+            Occurs when a host message is received by the client.
+            </summary>
+        </member>
+        <member name="E:WaveEngine.Networking.INetworkService.HostConnected">
+            <summary>
+            Occurs when the client is connected to a host.
+            </summary>
+        </member>
+        <member name="E:WaveEngine.Networking.INetworkService.HostDisconnected">
+            <summary>
+            Occurs when the client is disconnected from the host.
+            </summary>
+        </member>
+        <member name="E:WaveEngine.Networking.INetworkService.HostDiscovered">
+            <summary>
+            Occurs when a new host is discovered
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Networking.INetworkService.InitializeHost(System.String,System.Int32)">
+            <summary>
+            Initializes the host.
+            </summary>
+            <param name="applicationIdentifier">The application identifier.</param>
+            <param name="port">The port.</param>
+        </member>
+        <member name="M:WaveEngine.Networking.INetworkService.DiscoveryHosts(System.String,System.Int32)">
+            <summary>
+            Discoveries the hosts.
+            </summary>
+            <param name="applicationIdentifier">The application identifier.</param>
+            <param name="port">The port.</param>
+        </member>
+        <member name="M:WaveEngine.Networking.INetworkService.Connect(System.String,WaveEngine.Networking.NetworkEndpoint)">
+            <summary>
+            Connects the specified application identifier.
+            </summary>
+            <param name="applicationIdentifier">The application identifier.</param>
+            <param name="host">The host.</param>
+        </member>
+        <member name="M:WaveEngine.Networking.INetworkService.Connect(WaveEngine.Networking.NetworkEndpoint)">
+            <summary>
+            Connects the specified host.
+            </summary>
+            <param name="host">The host.</param>
+        </member>
+        <member name="M:WaveEngine.Networking.INetworkService.ConnectAsync(WaveEngine.Networking.NetworkEndpoint)">
+            <summary>
+            Connects the asynchronous.
+            </summary>
+            <param name="host">The host.</param>
+            <returns>An awaitable task</returns>
+        </member>
+        <member name="M:WaveEngine.Networking.INetworkService.Disconnect">
+            <summary>
+            Disconnects this instance.
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Networking.INetworkService.ShutdownHost">
+            <summary>
+            Shutdowns the host.
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Networking.INetworkService.SendToServer(WaveEngine.Networking.Messages.OutgoingMessage,WaveEngine.Networking.Messages.DeliveryMethod)">
+            <summary>
+            Sends to server.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="deliveryMethod">The delivery method.</param>
+        </member>
+        <member name="M:WaveEngine.Networking.INetworkService.SendToClients(WaveEngine.Networking.Messages.OutgoingMessage,WaveEngine.Networking.Messages.DeliveryMethod)">
+            <summary>
+            Sends to clients.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="deliveryMethod">The delivery method.</param>
+        </member>
+        <member name="M:WaveEngine.Networking.INetworkService.ReSendToClients(WaveEngine.Networking.Messages.IncomingMessage,WaveEngine.Networking.Messages.DeliveryMethod)">
+            <summary>
+            Res the send to clients.
+            </summary>
+            <param name="obj">The object.</param>
+            <param name="deliveryMethod">The delivery method.</param>
+        </member>
+        <member name="M:WaveEngine.Networking.INetworkService.CreateServerMessage(WaveEngine.Networking.Messages.MessageType)">
+            <summary>
+            Creates the server message.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>The outgoing message</returns>
+        </member>
+        <member name="M:WaveEngine.Networking.INetworkService.CreateClientMessage(WaveEngine.Networking.Messages.MessageType)">
+            <summary>
+            Creates the client message.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>The outgoing message</returns>
+        </member>
+        <member name="M:WaveEngine.Networking.INetworkService.RegisterScene(WaveEngine.Framework.Scene,System.String)">
+            <summary>
+            Registers the scene and return its manager.
+            </summary>
+            <param name="scene">The scene.</param>
+            <param name="sceneId">The scene identifier.</param>
+            <returns>The NetworkManager associated with the scene.</returns>
+        </member>
+        <member name="T:WaveEngine.Networking.Messages.DeliveryMethod">
+            <summary>
+            How the library deals with resends and handling of late messages
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Networking.Messages.DeliveryMethod.Unknown">
+            <summary>
+            Indicates an error
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Networking.Messages.DeliveryMethod.Unreliable">
+            <summary>
+            Unreliable, unordered delivery
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Networking.Messages.DeliveryMethod.UnreliableSequenced">
+            <summary>
+            Unreliable delivery, but automatically dropping late messages
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Networking.Messages.DeliveryMethod.ReliableUnordered">
+            <summary>
+            Reliable delivery, but unordered
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Networking.Messages.DeliveryMethod.ReliableSequenced">
+            <summary>
+            Reliable delivery, except for late messages which are dropped
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Networking.Messages.DeliveryMethod.ReliableOrdered">
+            <summary>
+            Reliable, ordered delivery
+            </summary>
+        </member>
+        <member name="T:WaveEngine.Networking.Messages.IncomingMessage">
+            <summary>
+            This class represent an incoming message.
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Networking.Messages.IncomingMessage.Message">
+            <summary>
+            The message.
+            </summary>
+        </member>
+        <member name="P:WaveEngine.Networking.Messages.IncomingMessage.Type">
+            <summary>
+            Gets the message type.
+            </summary>
+            <value>
+            The message type.
+            </value>
+        </member>
+        <member name="M:WaveEngine.Networking.Messages.IncomingMessage.#ctor(Lidgren.Network.NetIncomingMessage)">
+            <summary>
+            Initializes a new instance of the <see cref="T:WaveEngine.Networking.Messages.IncomingMessage"/> struct.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:WaveEngine.Networking.Messages.IncomingMessage.ReadString">
+            <summary>
+            Reads the next string.
+            </summary>
+            <returns>The next string in the message.</returns>
+        </member>
+        <member name="M:WaveEngine.Networking.Messages.IncomingMessage.ReadBytes">
+            <summary>
+            Reads the bytes of length of next int.
+            </summary>
+            <returns>The next byte array.</returns>
+        </member>
+        <member name="M:WaveEngine.Networking.Messages.IncomingMessage.ReadBoolean">
+            <summary>
+            Reads the next boolean.
+            </summary>
+            <returns>The next boolean in the message.</returns>
+        </member>
+        <member name="M:WaveEngine.Networking.Messages.IncomingMessage.ReadInt32">
+            <summary>
+            Reads the next int32.
+            </summary>
+            <returns>The next int32 in the message.</returns>
+        </member>
+        <member name="M:WaveEngine.Networking.Messages.IncomingMessage.ReadSingle">
+            <summary>
+            Reads the next single.
+            </summary>
+            <returns>The next single in the message.</returns>
+        </member>
+        <member name="M:WaveEngine.Networking.Messages.IncomingMessage.GetData">
+            <summary>
+            Gets the message data.
+            </summary>
+            <returns>The message byte[].</returns>
+        </member>
+        <member name="M:WaveEngine.Networking.Messages.IncomingMessage.Seek(System.Int32)">
+            <summary>
+            Seeks the specified offset bytes.
+            </summary>
+            <param name="offsetBytes">The offset bytes.</param>
+        </member>
+        <member name="T:WaveEngine.Networking.Messages.MessageType">
+            <summary>
+            Message type.
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Networking.Messages.MessageType.Data">
+            <summary>
+            Data message type.
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Networking.Messages.MessageType.Synchronization">
+            <summary>
+            Synchronization message type.
+            </summary>
+        </member>
+        <member name="T:WaveEngine.Networking.Messages.OutgoingMessage">
+            <summary>
+            This class represent an outgoing message.
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Networking.Messages.OutgoingMessage.Message">
+            <summary>
+            The message.
+            </summary>
+        </member>
+        <member name="P:WaveEngine.Networking.Messages.OutgoingMessage.Type">
+            <summary>
+            Gets the message type.
+            </summary>
+            <value>
+            The message type.
+            </value>
+        </member>
+        <member name="M:WaveEngine.Networking.Messages.OutgoingMessage.#ctor(Lidgren.Network.NetOutgoingMessage)">
+            <summary>
+            Initializes a new instance of the <see cref="T:WaveEngine.Networking.Messages.OutgoingMessage"/> struct.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:WaveEngine.Networking.Messages.OutgoingMessage.#ctor(Lidgren.Network.NetOutgoingMessage,WaveEngine.Networking.Messages.MessageType)">
+            <summary>
+            Initializes a new instance of the <see cref="T:WaveEngine.Networking.Messages.OutgoingMessage"/> struct.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="type">The type.</param>
+        </member>
+        <member name="M:WaveEngine.Networking.Messages.OutgoingMessage.Write(System.String)">
+            <summary>
+            Writes the specified value.
+            </summary>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:WaveEngine.Networking.Messages.OutgoingMessage.Write(System.Boolean)">
+            <summary>
+            Writes the specified value.
+            </summary>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:WaveEngine.Networking.Messages.OutgoingMessage.Write(System.Int32)">
+            <summary>
+            Writes the specified value.
+            </summary>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:WaveEngine.Networking.Messages.OutgoingMessage.Write(System.Single)">
+            <summary>
+            Writes the specified value.
+            </summary>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:WaveEngine.Networking.Messages.OutgoingMessage.Write(System.Byte[])">
+            <summary>
+            Writes the specified byte array, preceded with the length in an int.
+            </summary>
+            <param name="value">The value.</param>
+        </member>
+        <member name="T:WaveEngine.Networking.NetworkBehavior">
+            <summary>
+            The network behavior
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Networking.NetworkBehavior.NetworkManager">
+            <summary>
+            The network manager
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Networking.NetworkBehavior.FactoryId">
+            <summary>
+            The factory identifier
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Networking.NetworkBehavior.CreatedByBehavior">
+            <summary>
+            The created by behavior
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Networking.NetworkBehavior.NetworkSyncComponents">
+            <summary>
+            The network synchronize components
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Networking.NetworkBehavior.ComponentsToSync">
+            <summary>
+            The components to synchronize
+            </summary>
+        </member>
+        <member name="P:WaveEngine.Networking.NetworkBehavior.NetworkOwnerId">
+            <summary>
+            Gets the network owner identifier.
+            </summary>
+            <value>
+            The network owner identifier.
+            </value>
+        </member>
+        <member name="P:WaveEngine.Networking.NetworkBehavior.NetworkBehaviorId">
+            <summary>
+            Gets the network behavior identifier.
+            </summary>
+            <value>
+            The network behavior identifier.
+            </value>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkBehavior.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:WaveEngine.Networking.NetworkBehavior"/> class.
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkBehavior.Initialize">
+            <summary>
+            Initializes this instance.
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkBehavior.ResolveDependencies">
+            <summary>
+            Resolves the dependencies.
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkBehavior.ActiveNotification(System.Boolean)">
+            <summary>
+            Actives the notification.
+            </summary>
+            <param name="active">if set to <c>true</c> [active].</param>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkBehavior.Update(System.TimeSpan)">
+            <summary>
+            Updates the specified game time.
+            </summary>
+            <param name="gameTime">The game time.</param>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkBehavior.NeedSyncComponentsUpdatingComponentsToSync">
+            <summary>
+            Needs the synchronize components updating components to synchronize.
+            </summary>
+            <returns>If there are any component that need to sync</returns>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkBehavior.ReadSyncData(WaveEngine.Networking.Messages.IncomingMessage)">
+            <summary>
+            Reads the synchronize data.
+            </summary>
+            <param name="reader">The reader.</param>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkBehavior.WriteSyncData(WaveEngine.Networking.Messages.OutgoingMessage,WaveEngine.Networking.NetworkSyncComponent[])">
+            <summary>
+            Writes the synchronize data.
+            </summary>
+            <param name="writer">The writer.</param>
+            <param name="components">The components.</param>
+        </member>
+        <member name="T:WaveEngine.Networking.NetworkClient">
+            <summary>
+            The network client
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Networking.NetworkClient.client">
+            <summary>
+            The client
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Networking.NetworkClient.clientStarted">
+            <summary>
+            The client started
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Networking.NetworkClient.readTaskCancellationTokenSource">
+            <summary>
+            The read task cancellation token source
+            </summary>
+        </member>
+        <member name="P:WaveEngine.Networking.NetworkClient.IsConnected">
+            <summary>
+            Gets a value indicating whether this instance is connected.
+            </summary>
+            <value>
+            <c>true</c> if this instance is connected; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:WaveEngine.Networking.NetworkClient.Identifier">
+            <summary>
+            Gets the identifier.
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkClient.#ctor(System.String,System.Single,System.Single)">
+            <summary>
+            Initializes a new instance of the <see cref="T:WaveEngine.Networking.NetworkClient"/> class.
+            </summary>
+            <param name="applicationIdentifier">The application identifier.</param>
+            <param name="pingInterval">Ping interval in seconds.</param>
+            <param name="connectionTimeout">Connection timeout in seconds.</param>
+        </member>
+        <member name="E:WaveEngine.Networking.NetworkClient.MessageReceived">
+            <summary>
+            Occurs when a host message is received by the client.
+            </summary>
+        </member>
+        <member name="E:WaveEngine.Networking.NetworkClient.HostConnected">
+            <summary>
+            Occurs when the client is connected to a host.
+            </summary>
+        </member>
+        <member name="E:WaveEngine.Networking.NetworkClient.HostDisconnected">
+            <summary>
+            Occurs when the client is disconnected from the host.
+            </summary>
+        </member>
+        <member name="E:WaveEngine.Networking.NetworkClient.HostDiscovered">
+            <summary>
+            Occurs when a new host is discovered
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkClient.DiscoverHosts(System.Int32)">
+            <summary>
+            Discovers the hosts.
+            </summary>
+            <param name="port">The port.</param>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkClient.EnsureClientStarted">
+            <summary>
+            Ensures the client started.
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkClient.ReadTask">
+            <summary>
+            Reads the task.
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkClient.Connect(WaveEngine.Networking.NetworkEndpoint)">
+            <summary>
+            Connects the specified host.
+            </summary>
+            <param name="host">The host.</param>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkClient.Disconnect">
+            <summary>
+            Disconnects this instance.
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkClient.Send(WaveEngine.Networking.Messages.OutgoingMessage,WaveEngine.Networking.Messages.DeliveryMethod)">
+            <summary>
+            Sends the specified to send message.
+            </summary>
+            <param name="toSendMessage">To send message.</param>
+            <param name="deliveryMethod">The delivery method.</param>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkClient.CreateMessage(WaveEngine.Networking.Messages.MessageType)">
+            <summary>
+            Creates the message.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>The ooutgoing message</returns>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkClient.OnHostConnected(WaveEngine.Networking.NetworkEndpoint)">
+            <summary>
+            Called when [host connected].
+            </summary>
+            <param name="host">The host.</param>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkClient.OnHostDiscovered(WaveEngine.Networking.NetworkEndpoint)">
+            <summary>
+            Called when [host discovered].
+            </summary>
+            <param name="host">The host.</param>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkClient.OnMessageReceived(WaveEngine.Networking.NetworkEndpoint,WaveEngine.Networking.Messages.IncomingMessage)">
+            <summary>
+            Called when [message received].
+            </summary>
+            <param name="host">The host endpoint that sent the message.</param>
+            <param name="receivedMessage">The receivedmessage.</param>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkClient.OnHostDisconnected(WaveEngine.Networking.NetworkEndpoint)">
+            <summary>
+            Called when [host disconnected].
+            </summary>
+            <param name="host">The host.</param>
+        </member>
+        <member name="T:WaveEngine.Networking.NetworkFactory">
+            <summary>
+            Factory to main network components
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkFactory.CreateNetworkServer(System.String,System.Int32,System.Single,System.Single)">
+            <summary>
+            Creates the network server.
+            </summary>
+            <param name="applicationIdentifier">The application identifier.</param>
+            <param name="port">The port.</param>
+            <param name="pingInterval">Ping interval in seconds.</param>
+            <param name="connectionTimeout">Connection timeout in seconds.</param>
+            <returns>
+            A new network server.
+            </returns>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkFactory.CreateNetworkClient(System.String,System.Single,System.Single)">
+            <summary>
+            Creates the network client.
+            </summary>
+            <param name="applicationIdentifier">The application identifier.</param>
+            <param name="pingInterval">Ping interval in seconds.</param>
+            <param name="connectionTimeout">Connection timeout in seconds.</param>
+            <returns>
+            A new network client
+            </returns>
+        </member>
+        <member name="T:WaveEngine.Networking.NetworkManager">
+            <summary>
+            The network manager
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Networking.NetworkManager.SerializationFactoryId">
+            <summary>
+            The serialization factory identifier
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Networking.NetworkManager.registeredScenes">
+            <summary>
+            The registered scenes
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Networking.NetworkManager.scene">
+            <summary>
+            The scene
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Networking.NetworkManager.networkService">
+            <summary>
+            The network service
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Networking.NetworkManager.factories">
+            <summary>
+            The factories
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Networking.NetworkManager.entityBehaviors">
+            <summary>
+            The entity behaviors
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Networking.NetworkManager.serializer">
+            <summary>
+            The entity serializer
+            </summary>
+        </member>
+        <member name="T:WaveEngine.Networking.NetworkManager.FactoryDelegate">
+            <summary>
+            Delegate for network entity factory method
+            </summary>
+            <param name="clientIdentifier">The client identifier who creates the entity.</param>
+            <param name="fromNetworkBehaviorId">The <see cref="T:WaveEngine.Networking.NetworkBehavior"/> identifier that handle entity syncronization.</param>
+            <returns>A <see cref="T:WaveEngine.Framework.Entity"/> that will be added in the <see cref="T:WaveEngine.Framework.Scene"/></returns>
+        </member>
+        <member name="P:WaveEngine.Networking.NetworkManager.SceneId">
+            <summary>
+            Gets the scene identifier.
+            </summary>
+            <value>
+            The scene identifier.
+            </value>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkManager.#ctor(WaveEngine.Framework.Scene,WaveEngine.Networking.NetworkService)">
+            <summary>
+            Initializes a new instance of the <see cref="T:WaveEngine.Networking.NetworkManager" /> class.
+            </summary>
+            <param name="scene">The scene.</param>
+            <param name="networkService">The network service.</param>
+            <exception cref="T:System.ArgumentNullException">The 'scene' or 'networkService' argument can't be null.</exception>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkManager.RegisterScene(System.String)">
+            <summary>
+            Registers the scene.
+            </summary>
+            <param name="sceneId">The scene identifier.</param>
+            <exception cref="T:System.ArgumentException">The 'sceneId' argument can't be null or empty</exception>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkManager.AddFactory(System.String,WaveEngine.Networking.NetworkManager.FactoryDelegate)">
+            <summary>
+            Adds the factory.
+            </summary>
+            <param name="factoryId">The factory identifier.</param>
+            <param name="factory">The factory.</param>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkManager.RemoveFactory(System.String)">
+            <summary>
+            Removes the factory.
+            </summary>
+            <param name="factoryId">The factory identifier.</param>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkManager.AddEntity(WaveEngine.Framework.Entity)">
+            <summary>
+            Adds the entity.
+            </summary>
+            <param name="offlineEntity">The offline entity.</param>
+            <returns>The added entity.</returns>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkManager.WriteEntity(WaveEngine.Networking.Messages.OutgoingMessage,WaveEngine.Framework.Entity)">
+            <summary>
+            Writes the serialized entity.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="offlineEntity">The offline entity.</param>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkManager.ReadEntity(WaveEngine.Networking.Messages.IncomingMessage)">
+            <summary>
+            Reads the entity.
+            </summary>
+            <param name="message">The message.</param>
+            <returns>Return the serialized entity from message</returns>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkManager.AddEntity(System.String)">
+            <summary>
+            Adds the entity.
+            </summary>
+            <param name="factoryId">The factory identifier.</param>
+            <returns>The added entity</returns>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkManager.CreateEntity(System.String,System.String,System.String)">
+            <summary>
+            Creates the entity.
+            </summary>
+            <param name="factoryId">The factory identifier.</param>
+            <param name="fromNetworkId">From network identifier.</param>
+            <param name="fromNetworkBehaviorId">From network behavior identifier.</param>
+            <returns>The created entity</returns>
+            <exception cref="T:System.InvalidOperationException">No factory with especified id has been found.</exception>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkManager.RegisterEntityBehavior(WaveEngine.Framework.Entity,System.String,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Registers the entity behavior.
+            </summary>
+            <param name="entity">The entity.</param>
+            <param name="networkId">The network identifier.</param>
+            <param name="behaviorId">The behavior identifier.</param>
+            <param name="sceneId">The scene identifier.</param>
+            <param name="factoryId">The factory identifier.</param>
+            <param name="createdByBehavior">if set to <c>true</c> [created by behavior].</param>
+            <returns>The network behavior registered</returns>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkManager.RemoveEntity(WaveEngine.Framework.Entity)">
+            <summary>
+            Removes the entity.
+            </summary>
+            <param name="entity">The entity.</param>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkManager.HandleMessage(WaveEngine.Networking.Messages.IncomingMessage)">
+            <summary>
+            Handles the message.
+            </summary>
+            <param name="receivedmessage">The receivedmessage.</param>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkManager.SendResponseToRecreateThisEntity(WaveEngine.Networking.NetworkBehavior)">
+            <summary>
+            Sends the response to recreate this entity.
+            </summary>
+            <param name="behavior">The behavior.</param>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkManager.CreateNewEntity(System.String,System.String,WaveEngine.Networking.Messages.IncomingMessage,System.String)">
+            <summary>
+            Creates the new entity.
+            </summary>
+            <param name="fromNetworkId">From network identifier.</param>
+            <param name="fromNetworkBehaviorId">From network behavior identifier.</param>
+            <param name="reader">The reader.</param>
+            <param name="factoryId">The factory identifier.</param>
+            <returns>The network behavior os created entity</returns>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkManager.RemoveNetworkEntity(WaveEngine.Networking.NetworkBehavior)">
+            <summary>
+            Removes the network entity.
+            </summary>
+            <param name="behavior">The behavior.</param>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkManager.UpdateBehavior(WaveEngine.Networking.NetworkBehavior)">
+            <summary>
+            Updates the behavior.
+            </summary>
+            <param name="behavior">The behavior.</param>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkManager.CreateNetworkBehaviorMessage(System.String,System.String,WaveEngine.Networking.NetworkSyncType)">
+            <summary>
+            Creates the network behavior message.
+            </summary>
+            <param name="fromNetworkId">From network identifier.</param>
+            <param name="factoryId">The factory identifier.</param>
+            <param name="type">The type.</param>
+            <returns>The outgoing message</returns>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkManager.Dispose">
+            <summary>
+            Releases unmanaged and - optionally - managed resources.
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkManager.RegisterScene(System.String,WaveEngine.Networking.NetworkManager)">
+            <summary>
+            Registers the scene.
+            </summary>
+            <param name="sceneId">The scene identifier.</param>
+            <param name="manager">The manager.</param>
+            <exception cref="T:System.InvalidOperationException">The specified sceneId has been already registered.</exception>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkManager.UnregisterScene(System.String)">
+            <summary>
+            Unregisters the scene.
+            </summary>
+            <param name="sceneId">The scene identifier.</param>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkManager.HandleMenssage(WaveEngine.Networking.Messages.IncomingMessage)">
+            <summary>
+            Handles the menssage.
+            </summary>
+            <param name="receivedmessage">The receivedmessage.</param>
+        </member>
+        <member name="T:WaveEngine.Networking.NetworkServer">
+            <summary>
+            The network server
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Networking.NetworkServer.server">
+            <summary>
+            The server
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Networking.NetworkServer.readTaskCancellationTokenSource">
+            <summary>
+            The read task cancellation token source
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkServer.#ctor(System.String,System.Int32,System.Single,System.Single)">
+            <summary>
+            Initializes a new instance of the <see cref="T:WaveEngine.Networking.NetworkServer" /> class.
+            </summary>
+            <param name="applicationIdentifier">The application identifier.</param>
+            <param name="port">The port.</param>
+            <param name="pingInterval">Ping interval in seconds.</param>
+            <param name="connectionTimeout">Connection timeout in seconds.</param>
+        </member>
+        <member name="E:WaveEngine.Networking.NetworkServer.ClientConnected">
+            <summary>
+            Occurs when the server receives a new client connection.
+            </summary>
+        </member>
+        <member name="E:WaveEngine.Networking.NetworkServer.ClientDisconnected">
+            <summary>
+            Occurs when the server lose the connection with a client.
+            </summary>
+        </member>
+        <member name="E:WaveEngine.Networking.NetworkServer.MessageReceived">
+            <summary>
+            Occurs when a message is received by the server.
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkServer.Start">
+            <summary>
+            Starts this instance.
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkServer.ReadTask">
+            <summary>
+            Reads the task.
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkServer.Shutdown">
+            <summary>
+            Shutdowns this instance.
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkServer.Send(WaveEngine.Networking.Messages.OutgoingMessage,WaveEngine.Networking.Messages.DeliveryMethod)">
+            <summary>
+            Sends the specified to send message.
+            </summary>
+            <param name="toSendMessage">To send message.</param>
+            <param name="deliveryMethod">The delivery method.</param>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkServer.Send(WaveEngine.Networking.Messages.IncomingMessage,WaveEngine.Networking.Messages.DeliveryMethod)">
+            <summary>
+            Sends the specified incoming message.
+            </summary>
+            <param name="incomingMessage">The incoming message.</param>
+            <param name="deliveryMethod">The delivery method.</param>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkServer.CreateMessage(WaveEngine.Networking.Messages.MessageType)">
+            <summary>
+            Creates the message.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>The outgoing message</returns>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkServer.OnClientConnected(WaveEngine.Networking.NetworkEndpoint)">
+            <summary>
+            Called when [client connected].
+            </summary>
+            <param name="client">The client endpoint.</param>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkServer.OnClientDisconnected(WaveEngine.Networking.NetworkEndpoint)">
+            <summary>
+            Called when [client disconnected].
+            </summary>
+            <param name="client">The client endpoint.</param>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkServer.OnMessageReceived(WaveEngine.Networking.NetworkEndpoint,WaveEngine.Networking.Messages.IncomingMessage)">
+            <summary>
+            Called when a message is received by the server.
+            </summary>
+            <param name="client">The client endpoint that sent the message.</param>
+            <param name="receivedMessage">The received message.</param>
+        </member>
+        <member name="T:WaveEngine.Networking.NetworkService">
+            <summary>
+            The network service
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Networking.NetworkService.factory">
+            <summary>
+            The factory
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Networking.NetworkService.networkServer">
+            <summary>
+            The network server
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Networking.NetworkService.networkClient">
+            <summary>
+            The network client
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Networking.NetworkService.pingInterval">
+            <summary>
+            Ping interval
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Networking.NetworkService.connectionTimeout">
+            <summary>
+            Connection timeout
+            </summary>
+        </member>
+        <member name="P:WaveEngine.Networking.NetworkService.ClientIdentifier">
+            <summary>
+            Gets the client unique identifier.
+            </summary>
+            <value>
+            The client unique identifier.
+            </value>
+        </member>
+        <member name="P:WaveEngine.Networking.NetworkService.PingInterval">
+            <summary>
+            Gets or sets the ping interval. Default value is 4 seconds.
+            </summary>
+        </member>
+        <member name="P:WaveEngine.Networking.NetworkService.ConnectionTimeout">
+            <summary>
+            Gets or sets the connection timeout. Default value is 25 seconds.
+            </summary>
+        </member>
+        <member name="P:WaveEngine.Networking.NetworkService.IsClientConnected">
+            <summary>
+            Gets a value indicating whether the client is connected to a host.
+            </summary>
+            <value>
+            <c>true</c> if the client is connected to a host; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkService.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:WaveEngine.Networking.NetworkService"/> class.
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkService.DefaultValues">
+            <summary>
+            This methods is used to set default values by the default constructor of our classes.
+            This is called too when an entity is deserializing.
+            </summary>
+        </member>
+        <member name="E:WaveEngine.Networking.NetworkService.MessageReceivedFromClient">
+            <summary>
+            Occurs when a client message is received by the host.
+            </summary>
+        </member>
+        <member name="E:WaveEngine.Networking.NetworkService.ClientConnected">
+            <summary>
+            Occurs when the host receives a new client connection.
+            </summary>
+        </member>
+        <member name="E:WaveEngine.Networking.NetworkService.ClientDisconnected">
+            <summary>
+            Occurs when the host lose the connection with a client.
+            </summary>
+        </member>
+        <member name="E:WaveEngine.Networking.NetworkService.MessageReceivedFromHost">
+            <summary>
+            Occurs when a host message is received by the client.
+            </summary>
+        </member>
+        <member name="E:WaveEngine.Networking.NetworkService.HostConnected">
+            <summary>
+            Occurs when the client is connected to a host.
+            </summary>
+        </member>
+        <member name="E:WaveEngine.Networking.NetworkService.HostDisconnected">
+            <summary>
+            Occurs when the client is disconnected from the host.
+            </summary>
+        </member>
+        <member name="E:WaveEngine.Networking.NetworkService.HostDiscovered">
+            <summary>
+            Occurs when a new host is discovered
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkService.InitializeHost(System.String,System.Int32)">
+            <summary>
+            Initializes the host.
+            </summary>
+            <param name="applicationIdentifier">The application identifier.</param>
+            <param name="port">The port.</param>
+            <exception cref="T:System.ArgumentException">Application identifier parameter can't be null or empty.</exception>
+            <exception cref="T:System.InvalidOperationException">You can't call multiple times to InitializeHost method.</exception>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkService.DiscoveryHosts(System.String,System.Int32)">
+            <summary>
+            Discoveries the hosts.
+            </summary>
+            <param name="applicationIdentifier">The application identifier.</param>
+            <param name="port">The port.</param>
+            <exception cref="T:System.ArgumentException">Application identifier parameter can't be null or empty.</exception>
+            <exception cref="T:System.InvalidOperationException">You can't call discovery method while is connected to a host. Call before to disconnect method.</exception>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkService.EnsureClient(System.String)">
+            <summary>
+            Ensures the client.
+            </summary>
+            <param name="applicationIdentifier">The application identifier.</param>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkService.Connect(System.String,WaveEngine.Networking.NetworkEndpoint)">
+            <summary>
+            Connects the specified application identifier.
+            </summary>
+            <param name="applicationIdentifier">The application identifier.</param>
+            <param name="host">The host.</param>
+            <exception cref="T:System.ArgumentException">Application identifier parameter can't be null or empty.</exception>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkService.Connect(WaveEngine.Networking.NetworkEndpoint)">
+            <summary>
+            Connects the specified host.
+            </summary>
+            <param name="host">The host.</param>
+            <exception cref="T:System.InvalidOperationException">
+            You can't call this overload connect method whithout discover hosts. Call before to discover hosts method.
+            or
+            You can't call connect method while is connected to a host. Call before to disconnect method.
+            </exception>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkService.ConnectAsync(WaveEngine.Networking.NetworkEndpoint)">
+            <summary>
+            Connects the asynchronous.
+            </summary>
+            <param name="host">The host.</param>
+            <returns>An awaitable task</returns>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkService.Disconnect">
+            <summary>
+            Disconnects this instance.
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkService.Dispose">
+            <summary>
+            Releases unmanaged and - optionally - managed resources.
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkService.ShutdownHost">
+            <summary>
+            Shutdowns the host.
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkService.SendToServer(WaveEngine.Networking.Messages.OutgoingMessage,WaveEngine.Networking.Messages.DeliveryMethod)">
+            <summary>
+            Sends to server.
+            </summary>
+            <param name="messageToSend">The message to send.</param>
+            <param name="deliveryMethod">The delivery method.</param>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkService.SendToClients(WaveEngine.Networking.Messages.OutgoingMessage,WaveEngine.Networking.Messages.DeliveryMethod)">
+            <summary>
+            Sends to clients.
+            </summary>
+            <param name="messageToSend">The message to send.</param>
+            <param name="deliveryMethod">The delivery method.</param>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkService.ReSendToClients(WaveEngine.Networking.Messages.IncomingMessage)">
+            <summary>
+            Res the send to clients.
+            </summary>
+            <param name="obj">The object.</param>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkService.ReSendToClients(WaveEngine.Networking.Messages.IncomingMessage,WaveEngine.Networking.Messages.DeliveryMethod)">
+            <summary>
+            Res the send to clients.
+            </summary>
+            <param name="obj">The object.</param>
+            <param name="deliveryMethod">The delivery method.</param>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkService.CreateServerMessage(WaveEngine.Networking.Messages.MessageType)">
+            <summary>
+            Creates the server message.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>The outgoing message.</returns>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkService.CreateClientMessage(WaveEngine.Networking.Messages.MessageType)">
+            <summary>
+            Creates the client message.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>The outgoing message.</returns>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkService.OnHostDiscovered(System.Object,WaveEngine.Networking.NetworkEndpoint)">
+            <summary>
+            Called when [host discovered].
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="host">The host.</param>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkService.OnClientConnected(System.Object,WaveEngine.Networking.NetworkEndpoint)">
+            <summary>
+            Called when [client connected].
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="client">The client endpoint.</param>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkService.OnClientDisconnected(System.Object,WaveEngine.Networking.NetworkEndpoint)">
+            <summary>
+            Called when [client disconnected].
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="client">The client endpoint.</param>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkService.OnMessageReceivedFromClient(System.Object,WaveEngine.Networking.NetworkEndpoint,WaveEngine.Networking.Messages.IncomingMessage)">
+            <summary>
+            Called when [host message received].
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="client">The client endpoint that sent the message.</param>
+            <param name="receivedMessage">The received message.</param>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkService.CheckClientConnection">
+            <summary>
+            Checks if the client is connected and throws an exception otherwise
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkService.CheckHostConnection">
+            <summary>
+            Checks if the host is connected and throws an exception otherwise
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkService.OnMessageReceivedFromHost(System.Object,WaveEngine.Networking.NetworkEndpoint,WaveEngine.Networking.Messages.IncomingMessage)">
+            <summary>
+            Called when [client message received].
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="host">The host endpoint that sent the message.</param>
+            <param name="receivedMessage">The received message.</param>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkService.OnHostConnected(System.Object,WaveEngine.Networking.NetworkEndpoint)">
+            <summary>
+            Called when [host connected].
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="host">The host endpoint.</param>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkService.OnHostDisconnected(System.Object,WaveEngine.Networking.NetworkEndpoint)">
+            <summary>
+            Called when [host disconnected].
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="host">The host endpoint.</param>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkService.Initialize">
+            <summary>
+            Initializes this instance.
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkService.Terminate">
+            <summary>
+            Terminates this instance.
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkService.RegisterScene(WaveEngine.Framework.Scene,System.String)">
+            <summary>
+            Registers the scene and return its manager.
+            </summary>
+            <param name="scene">The scene.</param>
+            <param name="sceneId">The scene identifier.</param>
+            <returns>The NetworkManager associated with the scene.</returns>
+        </member>
+        <member name="T:WaveEngine.Networking.NetworkSyncComponent">
+            <summary>
+            Base class for netwrok sync components
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkSyncComponent.ReadSyncData(WaveEngine.Networking.Messages.IncomingMessage)">
+            <summary>
+            Reads the synchronize data.
+            </summary>
+            <param name="binaryReader">The binary reader.</param>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkSyncComponent.NeedSendSyncData">
+            <summary>
+            Needs the send synchronize data.
+            </summary>
+            <returns>If component need to sync</returns>
+        </member>
+        <member name="M:WaveEngine.Networking.NetworkSyncComponent.WriteSyncData(WaveEngine.Networking.Messages.OutgoingMessage)">
+            <summary>
+            Writes the synchronize data.
+            </summary>
+            <param name="writer">The writer.</param>
+        </member>
+        <member name="T:WaveEngine.Networking.NetworkSyncType">
+            <summary>
+            The network sync type
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Networking.NetworkSyncType.Start">
+            <summary>
+            The start
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Networking.NetworkSyncType.Update">
+            <summary>
+            The update
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Networking.NetworkSyncType.Create">
+            <summary>
+            The create
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Networking.NetworkSyncType.Remove">
+            <summary>
+            The remove
+            </summary>
+        </member>
+        <member name="T:WaveEngine.Networking.P2pNetworkManager">
+            <summary>
+            P2P network manager
+            </summary>
+        </member>
+        <member name="E:WaveEngine.Networking.P2pNetworkManager.PeerPlayerChange">
+            <summary>
+            PeerPlayer changed event handler
+            </summary>
+        </member>
+        <member name="E:WaveEngine.Networking.P2pNetworkManager.MsgReceived">
+            <summary>
+            Message received event handler
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Networking.P2pNetworkManager.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:WaveEngine.Networking.P2pNetworkManager"/> class.
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Networking.P2pNetworkManager.StartAsync">
+            <summary>
+            Starts the service
+            </summary>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:WaveEngine.Networking.P2pNetworkManager.StartBroadcastingAsync">
+            <summary>
+            Starts the service with heartbeat broadcast
+            </summary>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:WaveEngine.Networking.P2pNetworkManager.SendMessage(System.String)">
+            <summary>
+            Sends a Message
+            </summary>
+            <param name="message">Message text content</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:WaveEngine.Networking.P2pNetworkManager.SendMessage(System.String,System.String,WaveEngine.Networking.TransportType)">
+            <summary>
+            Send Message to target
+            </summary>
+            <param name="ipAddress">Ip Address</param>
+            <param name="message">Message text content</param>
+            <param name="transportType">Transport type</param>
+            <returns>Awaitable Task</returns>
+        </member>
+        <member name="M:WaveEngine.Networking.P2pNetworkManager.SendBroadcastAsync(System.String)">
+            <summary>
+            Sends a Broadcast message. Async method.
+            </summary>
+            <param name="message">Message text content</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:WaveEngine.Networking.P2pNetworkManager.GetIpAddress">
+            <summary>
+            Gets current IP Address
+            </summary>
+            <returns>Ip Address</returns>
+        </member>
+        <member name="T:WaveEngine.Networking.PeerPlayer">
+            <summary>
+            PeerPlayer class
+            </summary>
+        </member>
+        <member name="E:WaveEngine.Networking.PeerPlayer.MsgReceived">
+            <summary>
+            Message Received event handler
+            </summary>
+        </member>
+        <member name="E:WaveEngine.Networking.PeerPlayer.peerStatusChange">
+            <summary>
+            PeerStatus change event handler
+            </summary>
+        </member>
+        <member name="P:WaveEngine.Networking.PeerPlayer.IpAddress">
+            <summary>
+            Gets the Client Ip Addredd
+            </summary>
+        </member>
+        <member name="P:WaveEngine.Networking.PeerPlayer.IsPeerActive">
+            <summary>
+            Gets or sets a value indicating whether peer is active
+            </summary>
+        </member>
+        <member name="P:WaveEngine.Networking.PeerPlayer.WriteStream">
+            <summary>
+            Gets the Write Stream
+            </summary>
+        </member>
+        <member name="P:WaveEngine.Networking.PeerPlayer.ReadStream">
+            <summary>
+            Gets the Read Stream
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Networking.PeerPlayer.#ctor(Sockets.Plugin.Abstractions.ITcpSocketClient)">
+            <summary>
+            Initializes a new instance of the <see cref="T:WaveEngine.Networking.PeerPlayer"/> class.
+            </summary>
+            <param name="mSocketClient">Class that implements ITcpSocketClient interface</param>
+        </member>
+        <member name="M:WaveEngine.Networking.PeerPlayer.SendMsgTCPAsync(System.Byte[])">
+            <summary>
+            Sends a message using TCP
+            </summary>
+            <param name="msg">Binary message</param>
+            <returns>True if ok, false otherwise</returns>
+        </member>
+        <member name="T:WaveEngine.Networking.ReadStreamUtil">
+            <summary>
+            ReadStream utils class
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Networking.ReadStreamUtil.#ctor(System.IO.Stream)">
+            <summary>
+            Initializes a new instance of the <see cref="T:WaveEngine.Networking.ReadStreamUtil"/> class.
+            </summary>
+            <param name="mReadStream">Read Stream</param>
+        </member>
+        <member name="M:WaveEngine.Networking.ReadStreamUtil.ReadBytesAsync">
+            <summary>
+            Read Bytes
+            </summary>
+            <returns>Byte array</returns>
+        </member>
+        <member name="T:WaveEngine.Networking.Timer">
+            <summary>
+            Timer Class
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Networking.Timer.#ctor(WaveEngine.Networking.TimerCallback,System.Object,System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:WaveEngine.Networking.Timer"/> class.
+            </summary>
+            <param name="callback">Timer Callback</param>
+            <param name="state">State object</param>
+            <param name="dueTime">DueTime</param>
+            <param name="period">Timer period</param>
+        </member>
+        <member name="M:WaveEngine.Networking.Timer.Dispose">
+            <summary>
+            Dispose method
+            </summary>
+        </member>
+        <member name="T:WaveEngine.Networking.TransportManager">
+            <summary>
+            Low level class that sends and receives messages between peers.
+            </summary>
+        </member>
+        <member name="E:WaveEngine.Networking.TransportManager.PeerPlayerChange">
+            <summary>
+            Triggered when a new peer is detected or an existing peer becomes inactive
+            </summary>
+        </member>
+        <member name="E:WaveEngine.Networking.TransportManager.MsgReceived">
+            <summary>
+            Triggered when a message has been received by this peer
+            </summary>
+        </member>
+        <member name="P:WaveEngine.Networking.TransportManager.KnownPeers">
+            <summary>
+            Gets a list of all peers that are known to this peer
+            </summary>
+        </member>
+        <member name="P:WaveEngine.Networking.TransportManager.IsListening">
+            <summary>
+            Gets a value indicating whether true = listening for incoming messages
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Networking.TransportManager.GetIpAddress">
+            <summary>
+            Get methods that retreives the IPv4 address of the local peer asynchronously
+            </summary>
+            <returns> A string in the format xxxx.xxxx.xxxx.xxxx  </returns>
+        </member>
+        <member name="P:WaveEngine.Networking.TransportManager.PortNum">
+            <summary>
+            Gets the port number used for sending and receiving messages
+            </summary>
+        </member>
+        <member name="P:WaveEngine.Networking.TransportManager.tcpOnly">
+            <summary>
+            Gets a value indicating whether TCP only
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Networking.TransportManager.#ctor(System.Int32,System.Boolean,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:WaveEngine.Networking.TransportManager"/> class.
+            </summary>
+            <param name="mPortNum"> The port number which this peer will listen on and send messages with </param>
+            <param name="mForwardAll"> When true, all messages received trigger a MsgReceived event. This includes UDB broadcasts that are reflected back to the local peer.</param>
+            <param name="mTcpOnly">When true, use TCP.</param>
+        </member>
+        <member name="M:WaveEngine.Networking.TransportManager.Finalize">
+            <summary>
+            Finalizes an instance of the <see cref="T:WaveEngine.Networking.TransportManager"/> class.
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Networking.TransportManager.StartAsync">
+            <summary>
+            Peer will start actively listening on the specified port number.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:WaveEngine.Networking.TransportManager.CloseConnection">
+            <summary>
+            Peer will destroy all connections. All known peers will be cleared.
+            I have been thinking about making this method public however I don't want users
+            to use it to temporary stop listening. It should be used to terminate all connections
+            at the end of an application.
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Networking.TransportManager.SendAsyncTCP(System.String,System.Byte[])">
+            <summary>
+            Sends a message to a peer via a reliable TCP connection
+            </summary>
+            <param name="ipAddress"> the IPv4 address to send the message to. In the format "xxxx.xxxx.xxxx.xxxx" </param>
+            <param name="msg">The message to send to the other peer</param>
+            <returns>true if message was sucessfully sent otherwise returns false</returns>
+        </member>
+        <member name="M:WaveEngine.Networking.TransportManager.SendAsyncUDP(System.String,System.Byte[])">
+            <summary>
+            Sends a message to a peer via an unreliable UDP connection.
+            Use <C>SendAsyncTCP</C> instead if packet loss cannot be tolerated.
+            </summary>
+            <param name="ipAddress"> the IPv4 address to send the message to. In the format "xxxx.xxxx.xxxx.xxxx" </param>
+            <param name="msg">The message to send to the other peer</param>
+            <returns>true if message was sucessfully sent otherwise returns false</returns>
+        </member>
+        <member name="M:WaveEngine.Networking.TransportManager.SendBroadcastAsyncUDP(System.Byte[])">
+            <summary>
+            Sends an unreliable UDP broadcast to the local router. Depending on your local router settings UDP broadcasts may be ignored.
+            If the address of other peers is known use <C>SendToAllPeersAsyncUDP</C> instead.
+            </summary>
+            <param name="msg">The message broadcast to other peers</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:WaveEngine.Networking.TransportManager.SendToAllPeersAsyncUDP(System.Byte[])">
+            <summary>
+            Sends a message via unreliable UDP to all known peers.
+            Use <C>SendToAllPeersAsyncTCP</C> instead if packet loss can not be tolerated.
+            </summary>
+            <param name="msg">The message sent to all other peers</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:WaveEngine.Networking.TransportManager.SendToAllPeersAsyncTCP(System.Byte[])">
+            <summary>
+            Sends a message via reliable TCP connections to all known peers.
+            </summary>
+            <param name="msg">The message sent to all other peers</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:WaveEngine.Networking.TransportManager.DirectConnectAsyncTCP(System.String)">
+            <summary>
+            This method is avaliable to make it easier to integrate existing asymetric peer to peer systems.
+            </summary>
+            <param name="ipAddress">the ip address to establish a connection with</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:WaveEngine.Networking.TransportManager.GetWriteStreamAsync(System.String)">
+            <summary>
+            returns a TCP stream that is used for sending data to the given ip address.
+            This is for systems that require a TCP stream. Consider using the method SendAsyncTCP() instead.
+            Make sure to flush the stream to make sure the data is sent.
+            </summary>
+            <param name="ipAddress"> the target ip address you want to connect to </param>
+            <returns>A TCP stream that can be written to</returns>
+        </member>
+        <member name="M:WaveEngine.Networking.TransportManager.GetReadStreamAsync(System.String)">
+            <summary>
+            returns a TCP stream that is used for receiving data from the given ip address.
+            This is for systems that require a TCP stream. Consider using the event handler MsgReceived instead.
+            </summary>
+            <param name="ipAddress"> the target ip address you want to connect to </param>
+            <returns>A TCP stream that can be read from</returns>
+        </member>
+        <member name="M:WaveEngine.Networking.TransportManager.Dispose(System.Boolean)">
+            <summary>
+            Dispose method
+            </summary>
+            <param name="disposing">Disposing</param>
+        </member>
+        <member name="M:WaveEngine.Networking.TransportManager.Dispose">
+            <summary>
+            Dispose method
+            </summary>
+        </member>
+        <member name="T:WaveEngine.Networking.TransportType">
+            <summary>
+            Transport Types enum
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Networking.TransportType.TCP">
+            <summary>
+            TCP Transport Type
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Networking.TransportType.UDP">
+            <summary>
+            UDP Transport Type
+            </summary>
+        </member>
+        <member name="T:WaveEngine.Networking.WriteStreamUtil">
+            <summary>
+            Write Stream utils class
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Networking.WriteStreamUtil.#ctor(System.IO.Stream)">
+            <summary>
+            Initializes a new instance of the <see cref="T:WaveEngine.Networking.WriteStreamUtil"/> class.
+            </summary>
+            <param name="mWriteStream">The write Stream</param>
+        </member>
+        <member name="M:WaveEngine.Networking.WriteStreamUtil.WriteBytesAsync(System.Byte[])">
+            <summary>
+            Write bytes
+            </summary>
+            <param name="msg">binary message</param>
+            <returns>awaitable task</returns>
+        </member>
+    </members>
+</doc>
