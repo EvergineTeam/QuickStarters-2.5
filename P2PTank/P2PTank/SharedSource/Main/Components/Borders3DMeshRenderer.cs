@@ -64,10 +64,5 @@ namespace P2PTank.Components
 
             this.Mesh = new Mesh(vertexBuffer, indexBuffer, PrimitiveType.TriangleList);
         }
-
-        protected override void ResolveDependencies()
-        {
-            base.ResolveDependencies();
-        }
     }
 }

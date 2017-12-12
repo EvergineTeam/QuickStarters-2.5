@@ -140,37 +140,14 @@ namespace P2PTank.Managers
             var audioService = WaveServices.GetService<AudioService>();
             audioService.Play(Audio.Sfx.SpawnPowerUp_wav);
 
-            Sprite powerUpSprite = null;
+            var powerUp = this.EntityManager.Instantiate(WaveContent.Assets.Prefabs.powerUpPrefab);
+            powerUp.Name = powerUpId;
 
-            switch (powerUpType)
-            {
-                case PowerUpType.Bullet:
-                    powerUpSprite = new Sprite(WaveContent.Assets.Textures.powerup_shoot_png);
-                    break;
-                case PowerUpType.Repair:
-                    powerUpSprite = new Sprite(WaveContent.Assets.Textures.powerup_repair_png);
-                    break;
-                default:
-                    powerUpSprite = new Sprite(WaveContent.Assets.Textures.powerup_repair_png);
-                    break;
-            }
+            var powerUpTransform = powerUp.FindComponent<Transform2D>();
+            powerUpTransform.Position = position;
 
-            var powerUp = new Entity(powerUpId)
-                .AddComponent(new Transform2D()
-                {
-                    Origin = Vector2.Center,
-                    DrawOrder = -200,
-                    Position = position
-                })
-                .AddComponent(new CircleCollider2D
-                {
-                    CollisionCategories = ColliderCategory2D.Cat6,
-                    CollidesWith = ColliderCategory2D.Cat1
-                })
-                .AddComponent(new RigidBody2D())
-                .AddComponent(new PowerUpBehavior { PowerUpType = powerUpType })
-                .AddComponent(powerUpSprite)
-                .AddComponent(new SpriteRenderer(DefaultLayers.Alpha));
+            var powerUpBehavior = powerUp.FindComponent<PowerUpBehavior>();
+            powerUpBehavior.PowerUpType = powerUpType;
 
             this.powerUpToAdd.Add(powerUp);
         }
