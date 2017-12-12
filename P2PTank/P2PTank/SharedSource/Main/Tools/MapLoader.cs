@@ -16,6 +16,7 @@ namespace P2PTank.Tools
     {
         private EntityManager entityManager;
         private Entity map;
+        private List<Vector2> freeSpaces;
         private List<Vector2> spawns;
 
         public async void Load(string filePath, Material material, EntityManager entityManager)
@@ -25,6 +26,7 @@ namespace P2PTank.Tools
             this.map = new Entity()
                 .AddComponent(new Transform2D());
 
+            this.freeSpaces = new List<Vector2>();
             this.spawns = new List<Vector2>();
 
             var storage = WaveServices.Storage;
@@ -45,6 +47,10 @@ namespace P2PTank.Tools
 
                     foreach (var character in line)
                     {
+                        if(character == '0')
+                        {
+                            this.freeSpaces.Add(new Vector2(currentX * 46, currentY * 46));
+                        }
                         if (character == '1' || character == '2' || character == '3')
                         {
                             var digit = (int)Char.GetNumericValue(character);
@@ -85,6 +91,18 @@ namespace P2PTank.Tools
         public Vector2 GetSpawnPoint(int index)
         {
             return this.spawns[index];
+        }
+
+        public List<Vector2> GetFreeSpaces()
+        {
+            return this.freeSpaces;
+        }
+
+        public Vector2 GetRandomFreeSpace()
+        {
+            var random = WaveServices.Random.Next(0, this.freeSpaces.Count);
+
+            return this.freeSpaces[random];
         }
 
         private Entity CreateMapCollider(int x, int y)

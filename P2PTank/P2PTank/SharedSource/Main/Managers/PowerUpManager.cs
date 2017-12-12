@@ -56,8 +56,7 @@ namespace P2PTank.Managers
             var powerUpType = WaveServices.Random.Next(0, Enum.GetNames(typeof(PowerUpType)).Length + 1);
 
             // Get a random spawn point to initialize the player
-            var spawnIndex = WaveServices.Random.Next(0, 4);
-            var spawnPosition = this.mapLoader.GetSpawnPoint(spawnIndex);
+            var spawnPosition = this.mapLoader.GetRandomFreeSpace();
 
             var createPowerUpMessage = new CreatePowerUpMessage()
             {
