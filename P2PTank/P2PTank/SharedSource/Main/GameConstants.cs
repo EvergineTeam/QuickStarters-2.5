@@ -6,9 +6,7 @@ namespace P2PTank
     {
         // Entity Names
         public static string ManagerEntityPath = "manager";
-        public static string MapEntityPath = "gamearena.map";
-        public static string SpawnPointPathFormat = "gamearena.spawnpoints.spawn{0:00}";
-
+     
         // Tank Entity
         public static string EntityNameTankBody = "body";
         public static string EntitynameTankBarrel = "barrel";

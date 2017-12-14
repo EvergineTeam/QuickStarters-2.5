@@ -152,6 +152,7 @@ namespace P2PTank.Scenes
 
             this.powerUpManager.InitPowerUp();
 
+            this.ConfigurePhysics();
             this.CreateCountDown();
         }
 
