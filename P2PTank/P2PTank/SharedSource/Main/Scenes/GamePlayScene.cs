@@ -40,17 +40,14 @@ namespace P2PTank.Scenes
         private List<PeerPlayer> ConnectedPeers { get; set; } = new List<PeerPlayer>();
 
         private MapLoader mapLoader;
-        private string contentPath;
         private P2PManager peerManager;
         private GamePlayManager gameplayManager;
         private PowerUpManager powerUpManager;
 
         private string playerID;
 
-        public GamePlayScene(string contentPath)
+        public GamePlayScene()
         {
-            this.contentPath = contentPath;
-
             this.mapLoader = new MapLoader();
             this.peerManager = new P2PManager();
             this.peerManager.PeerPlayerChange += this.OnPeerChanged;
@@ -60,7 +57,6 @@ namespace P2PTank.Scenes
         protected override async void CreateScene()
         {
             this.Load(WaveContent.Scenes.LevelBaseScene);
-            this.Load(this.contentPath);
 
             var wallModel = this.Assets.LoadModel<MaterialModel>(WaveContent.Assets.Models.Materials.wallMaterial);
             var floorModel = this.Assets.LoadModel<MaterialModel>(WaveContent.Assets.Models.Materials.floorMaterial);

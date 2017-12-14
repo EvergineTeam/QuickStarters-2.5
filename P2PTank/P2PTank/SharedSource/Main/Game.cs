@@ -25,12 +25,12 @@ namespace P2PTank
 
             if (WaveServices.Platform.PlatformFamily == PlatformFamily.Desktop)
             {
-                screenContext = new ScreenContext(new GamePlayScene(WaveContent.Scenes.Levels.Level1));
+                screenContext = new ScreenContext(new GamePlayScene());
             }
             else
             {
                 screenContext = new ScreenContext(
-                    new GamePlayScene(WaveContent.Scenes.Levels.Level1),
+                    new GamePlayScene(),
                     new VirtualJoystickScene())
                 {
                     Behavior = ScreenContextBehaviors.UpdateInBackground | ScreenContextBehaviors.DrawInBackground
