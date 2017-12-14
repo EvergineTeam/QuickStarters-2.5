@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Threading.Tasks;
 using WaveEngine.Common.Math;
 using WaveEngine.Common.Physics2D;
 using WaveEngine.Components.Graphics3D;
@@ -20,8 +21,10 @@ namespace P2PTank.Tools
         private List<Vector2> spawns;
         private int maxX;
         private int maxY;
+        
+        public Entity CenterMap { get; private set; }
 
-        public async void Load(string filePath, Material materialWall, Material materialFloor, EntityManager entityManager)
+        public async Task Load(string filePath, Material materialWall, Material materialFloor, EntityManager entityManager)
         {
             this.entityManager = entityManager;
 
@@ -175,6 +178,12 @@ namespace P2PTank.Tools
                 })
                 .AddComponent(new MeshRenderer())
                 .AddComponent(new MaterialComponent { Material = material });
+
+            CenterMap = new Entity { IsStatic = true }
+                .AddComponent(new Transform3D()
+                {
+                    LocalPosition = new Vector3(maxX / 2, 0, maxY / 2),
+                });
 
             this.map.AddChild(cube);
 

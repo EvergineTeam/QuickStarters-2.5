@@ -61,11 +61,13 @@ namespace P2PTank.Scenes
             var wallModel = this.Assets.LoadModel<MaterialModel>(WaveContent.Assets.Models.Materials.wallMaterial);
             var floorModel = this.Assets.LoadModel<MaterialModel>(WaveContent.Assets.Models.Materials.floorMaterial);
 
-            this.mapLoader.Load(
+            await this.mapLoader.Load(
                 WaveContent.Assets.Maps.level1_tmap,
                 wallModel.Material,
                 floorModel.Material,
                 this.EntityManager);
+
+            this.Configure3DCamera();
 
             var audioService = WaveServices.GetService<AudioService>();
             audioService.Play(Audio.Music.Background_mp3, 0.4f);
@@ -139,6 +141,21 @@ namespace P2PTank.Scenes
             this.PhysicsManager.Simulation2D.Gravity = Vector2.Zero;
         }
 
+        private void Configure3DCamera()
+        {
+            var centerMap = this.mapLoader.CenterMap;
+
+            var camera = this.EntityManager.FindComponentFromEntityPath<Player3DCameraBehavior>("camera3D");
+
+            var position = centerMap.FindComponent<Transform3D>();
+
+            camera.Reset(position.Position);
+           
+            camera.TargetTransform = centerMap.FindComponent<Transform3D>();
+            camera.Speed = 5.0f;
+            camera.Follow = true;
+        }
+
         protected override void Start()
         {
             base.Start();
@@ -151,7 +168,6 @@ namespace P2PTank.Scenes
             gameplayEntity.AddComponent(this.powerUpManager);
 
             this.powerUpManager.InitPowerUp();
-
             this.ConfigurePhysics();
             this.CreateCountDown();
         }

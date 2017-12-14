@@ -24,6 +24,13 @@ namespace P2PTank.Behaviors.Cameras
         [DataMember]
         public bool Follow { get; set; }
 
+        public void Reset(Vector3 position)
+        {
+            this.desiredPosition = position;
+            this.transform.Position = position + this.offset;
+            this.transform.LookAt(position);
+        }
+
         protected override void DefaultValues()
         {
             base.DefaultValues();
@@ -44,6 +51,9 @@ namespace P2PTank.Behaviors.Cameras
             if (this.Follow && this.TargetTransform != null)
             {
                 this.desiredPosition = this.TargetTransform.Position;
+
+                if (this.desiredPosition == Vector3.Zero)
+                    return;
 
                 if (this.transform.Position != this.desiredPosition)
                 {
