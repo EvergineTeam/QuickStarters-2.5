@@ -12,7 +12,6 @@ using WaveEngine.Framework;
 using WaveEngine.Framework.Diagnostic;
 using WaveEngine.Framework.Graphics;
 using WaveEngine.Framework.Physics2D;
-using WaveEngine.TiledMap;
 using WaveEngine.Components.UI;
 using WaveEngine.Framework.UI;
 using WaveEngine.Components.GameActions;
@@ -23,8 +22,6 @@ using P2PTank.Components;
 using P2PTank.Managers.P2PMessages;
 using WaveEngine.Networking.Events;
 using WaveEngine.Networking;
-using WaveEngine.Components.Graphics3D;
-using WaveEngine.Materials;
 using P2PTank.Tools;
 using WaveEngine.Framework.Models;
 
@@ -146,35 +143,6 @@ namespace P2PTank.Scenes
             this.PhysicsManager.Simulation2D.Gravity = Vector2.Zero;
         }
 
-        private void CreateBorders(Entity tiledEntity, ColliderCategory2D category, ColliderCategory2D collidesWith)
-        {
-            var tiledMap = tiledEntity.FindComponent<TiledMap>();
-            var borders = tiledMap.ObjectLayers[GameConstants.TiledMapBordersLayerName];
-            foreach (var border in borders.Objects)
-            {
-                var colliderEntity = TiledMapUtils.CollisionEntityFromObject(border.Name, border);
-                colliderEntity.Tag = GameConstants.TagCollider;
-                colliderEntity.AddComponent(new RigidBody2D() { PhysicBodyType = RigidBodyType2D.Static });
-
-                var collider = colliderEntity.FindComponent<Collider2D>(false);
-                if (collider != null)
-                {
-                    collider.CollisionCategories = category;
-                    collider.CollidesWith = collidesWith;
-                    collider.Friction = 1.0f;
-                    collider.Restitution = 0.2f;
-                }
-
-                tiledEntity.AddChild(colliderEntity);
-            }
-
-            tiledEntity.AddComponent(new Transform3D());
-            tiledEntity.AddComponent(new MaterialComponent() { Material = new StandardMaterial() { LightingEnabled = false, DiffuseColor = Color.Yellow } });
-            tiledEntity.AddComponent(new Borders3DMeshRenderer(borders.Objects) { WallHeight = 10 });
-            tiledEntity.AddComponent(new MeshRenderer());
-
-        }
-
         protected override void Start()
         {
             base.Start();
@@ -187,21 +155,6 @@ namespace P2PTank.Scenes
             gameplayEntity.AddComponent(this.powerUpManager);
 
             this.powerUpManager.InitPowerUp();
-
-            ///// Doing this code here cause in CreateScene doesnt load tiledMap file still
-            //var tiledMapEntity = this.EntityManager.Find(GameConstants.MapEntityPath);
-            //this.ConfigurePhysics();
-            //this.CreateBorders(tiledMapEntity, ColliderCategory2D.Cat3, ColliderCategory2D.All);
-            /////
-
-            //var tiledMap = tiledMapEntity.FindComponent<TiledMap>();
-            //var tiledMapTransform = tiledMapEntity.FindComponent<Transform2D>();
-            //var targetCameraBehavior = new TargetCameraBehavior();
-            //targetCameraBehavior.SetLimits(
-            //    new Vector2(0, 0),
-            //    new Vector2(tiledMap.Width * tiledMap.TileWidth * tiledMapTransform.Scale.X, tiledMap.Height * tiledMap.TileHeight * tiledMapTransform.Scale.Y));
-            //this.RenderManager.ActiveCamera2D.Owner.AddComponent(targetCameraBehavior);
-            //targetCameraBehavior.RefreshCameraLimits();
 
             this.CreateCountDown();
         }
