@@ -59,7 +59,9 @@ namespace P2PTank.Scenes
             this.Load(WaveContent.Scenes.LevelBaseScene);
 
             var wallModel = this.Assets.LoadModel<MaterialModel>(WaveContent.Assets.Models.Materials.wallMaterial);
+            wallModel.Material.Initialize(this.Assets);
             var floorModel = this.Assets.LoadModel<MaterialModel>(WaveContent.Assets.Models.Materials.floorMaterial);
+            floorModel.Material.Initialize(this.Assets);
 
             await this.mapLoader.Load(
                 WaveContent.Assets.Maps.level1_tmap,

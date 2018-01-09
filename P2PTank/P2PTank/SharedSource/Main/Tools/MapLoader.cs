@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
+using WaveEngine.Common.Graphics;
 using WaveEngine.Common.Math;
 using WaveEngine.Common.Physics2D;
 using WaveEngine.Components.Graphics3D;
@@ -10,6 +11,7 @@ using WaveEngine.Framework.Graphics;
 using WaveEngine.Framework.Managers;
 using WaveEngine.Framework.Physics2D;
 using WaveEngine.Framework.Services;
+using WaveEngine.Materials;
 
 namespace P2PTank.Tools
 {
@@ -174,7 +176,8 @@ namespace P2PTank.Tools
                 })
                 .AddComponent(new PlaneMesh()
                 {
-                    // TODO: UTile!
+                    UTile = 5,
+                    YTile = 5
                 })
                 .AddComponent(new MeshRenderer())
                 .AddComponent(new MaterialComponent { Material = material });
