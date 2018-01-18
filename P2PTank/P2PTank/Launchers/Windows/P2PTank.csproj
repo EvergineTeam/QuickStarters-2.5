@@ -9,12 +9,11 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>P2PTank</RootNamespace>
     <AssemblyName>P2PTank</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <WaveProtobufEnabled>false</WaveProtobufEnabled>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
@@ -160,10 +159,6 @@
     <Reference Include="WaveEngine.Materials, Version=2.5.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\WaveEngine.Materials.2.5.1-alpha-20171227-611\lib\net45\WaveEngine.Materials.dll</HintPath>
     </Reference>
-    <Reference Include="WaveEngine.Networking, Version=2.5.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Libs\Windows\WaveEngine.Networking.dll</HintPath>
-    </Reference>
     <Reference Include="WaveEngine.WinGLAdapter, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\WaveEngine.Adapter.2.5.1-alpha-20171227-611\lib\net45\WaveEngine.WinGLAdapter.dll</HintPath>
       <Private>True</Private>
@@ -185,6 +180,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="SplashScreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\WaveEngine.Networking.P2P\WaveEngine.Networking.P2P\WaveEngine.Networking.P2P.csproj">
+      <Project>{adce07b1-4757-4858-8588-ef749beaac8c}</Project>
+      <Name>WaveEngine.Networking.P2P</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="..\..\SharedSource\Main\P2PTankSource.projitems" Label="Shared" Condition="Exists('..\..\SharedSource\Main\P2PTankSource.projitems')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

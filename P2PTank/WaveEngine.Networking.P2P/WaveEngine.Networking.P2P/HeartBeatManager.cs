@@ -3,9 +3,9 @@ using System.Diagnostics;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using WaveEngine.Networking.P2P.TransportLayer;
+using Networking.P2P.TransportLayer;
 
-namespace WaveEngine.Networking.P2P
+namespace Networking.P2P
 {
     internal delegate void TimerCallback(object state);
 

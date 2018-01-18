@@ -6,21 +6,22 @@ using WaveEngine.Framework;
 using System.Collections.Generic;
 using System.Diagnostics;
 using P2PTank.Managers.P2PMessages;
-using WaveEngine.Networking;
-using WaveEngine.Networking.Events;
+using Networking.P2P.TransportLayer.EventArgs;
+using Networking.P2P;
+using Networking.P2P.TransportLayer;
 
 namespace P2PTank.Managers
 {
     public class P2PManager : Component
     {
-        private P2pNetworkManager peer2peer;
+        private NetworkManager peer2peer;
 
         public event EventHandler<PeerPlayerChangeEventArgs> PeerPlayerChange;
         public event EventHandler<MsgReceivedEventArgs> MsgReceived;
 
         public P2PManager()
         {
-            this.peer2peer = new P2pNetworkManager();
+            this.peer2peer = new NetworkManager();
 
             this.peer2peer.PeerPlayerChange += this.OnPeerChanged;
             this.peer2peer.MsgReceived += this.OnMsgReceived;

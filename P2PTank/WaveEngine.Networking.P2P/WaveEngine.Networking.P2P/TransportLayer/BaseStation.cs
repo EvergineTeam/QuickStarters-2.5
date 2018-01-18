@@ -4,10 +4,10 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
-using WaveEngine.Networking.P2P.Exceptions;
-using WaveEngine.Networking.P2P.TransportLayer.EventArgs;
+using Networking.P2P.Exceptions;
+using Networking.P2P.TransportLayer.EventArgs;
 
-namespace WaveEngine.Networking.P2P.TransportLayer
+namespace Networking.P2P.TransportLayer
 {
     public class BaseStation
     {

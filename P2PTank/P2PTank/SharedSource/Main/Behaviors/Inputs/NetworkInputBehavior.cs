@@ -5,7 +5,7 @@ using P2PTank.Entities.P2PMessages;
 using P2PTank.Managers;
 using System.Linq;
 using WaveEngine.Framework.Graphics;
-using WaveEngine.Networking.Events;
+using Networking.P2P.TransportLayer.EventArgs;
 
 namespace P2PTank.Behaviors
 {

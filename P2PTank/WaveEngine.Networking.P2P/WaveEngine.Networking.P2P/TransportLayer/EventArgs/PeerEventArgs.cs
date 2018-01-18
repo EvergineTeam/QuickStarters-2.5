@@ -1,4 +1,4 @@
-﻿namespace WaveEngine.Networking.P2P.TransportLayer.EventArgs
+﻿namespace Networking.P2P.TransportLayer.EventArgs
 {
     public class PeerEventArgs : System.EventArgs
     {

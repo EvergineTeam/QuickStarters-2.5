@@ -1,4 +1,4 @@
-<Project xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="WaveEngine.Framework.Models">
+﻿<Project xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="WaveEngine.Framework.Models">
   <Id>1780038d-bc3d-4591-ba94-acc4fe4fdaaa</Id>
   <GameInfoPath>P2PTank.wgame</GameInfoPath>
   <ResourcesPath>Content</ResourcesPath>

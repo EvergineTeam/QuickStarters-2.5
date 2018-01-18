@@ -20,10 +20,10 @@ using WaveEngine.Framework.Services;
 using P2PTank.Services;
 using P2PTank.Components;
 using P2PTank.Managers.P2PMessages;
-using WaveEngine.Networking.Events;
-using WaveEngine.Networking;
 using P2PTank.Tools;
 using WaveEngine.Framework.Models;
+using Networking.P2P.TransportLayer;
+using Networking.P2P.TransportLayer.EventArgs;
 
 namespace P2PTank.Scenes
 {

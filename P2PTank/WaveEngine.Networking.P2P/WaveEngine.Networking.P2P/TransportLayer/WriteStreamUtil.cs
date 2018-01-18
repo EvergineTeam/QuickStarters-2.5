@@ -4,7 +4,7 @@ using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace WaveEngine.Networking.P2P.TransportLayer
+namespace Networking.P2P.TransportLayer
 {
     class AbstractStreamUtil
     {

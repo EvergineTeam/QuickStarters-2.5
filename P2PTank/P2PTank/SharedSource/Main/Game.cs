@@ -14,7 +14,7 @@ namespace P2PTank
         {
             base.Initialize(application);
 
-            SerializerFactory.DefaultSerializationType = SerializationType.DATACONTRACT;
+            //SerializerFactory.DefaultSerializationType = SerializationType.DATACONTRACT;
 
             // Better if serialized and stored 
             GameSettings.EnableFX = true;

@@ -3,9 +3,9 @@ using Sockets.Plugin;
 using Sockets.Plugin.Abstractions;
 using System.Threading.Tasks;
 using System.Threading;
-using WaveEngine.Networking.P2P.TransportLayer.EventArgs;
+using Networking.P2P.TransportLayer.EventArgs;
 
-namespace WaveEngine.Networking.P2P.TransportLayer
+namespace Networking.P2P.TransportLayer
 {
     public class Listener : IDisposable
     {

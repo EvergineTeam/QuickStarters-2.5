@@ -2,9 +2,9 @@
 using System.Threading.Tasks;
 using System.IO;
 using Sockets.Plugin.Abstractions;
-using WaveEngine.Networking.P2P.TransportLayer.EventArgs;
+using Networking.P2P.TransportLayer.EventArgs;
 
-namespace WaveEngine.Networking.P2P.TransportLayer
+namespace Networking.P2P.TransportLayer
 {
     public class PeerPlayer
     {
