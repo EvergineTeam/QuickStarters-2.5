@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace WaveEngine.Networking.P2P.Exceptions
+namespace Networking.P2P.Exceptions
 {
     public class InvalidMessage : Exception
     {

@@ -42,12 +42,12 @@ namespace P2PTank.Managers
 
         private string playerID;
 
-        private List<Entity> tanksToRemove = new List<Entity>();
-        private List<Entity> tanksToAdd = new List<Entity>();
-        private List<Entity> bulletsToRemove = new List<Entity>();
-        private List<BulletState> bulletsToAdd = new List<BulletState>();
-        private List<Entity> powerUpToAdd = new List<Entity>();
-        private List<Entity> powerUpToRemove = new List<Entity>();
+        private List<Entity> tanksToRemove;
+        private List<Entity> tanksToAdd;
+        private List<Entity> bulletsToRemove;
+        private List<BulletState> bulletsToAdd;
+        private List<Entity> powerUpToAdd;
+        private List<Entity> powerUpToRemove;
         private Entity[] explosions;
         private int explodeIndex;
 
@@ -66,6 +66,13 @@ namespace P2PTank.Managers
 
             if (!WaveServices.Platform.IsEditor)
             {
+                this.tanksToRemove = new List<Entity>();
+                this.tanksToAdd = new List<Entity>();
+                this.bulletsToRemove = new List<Entity>();
+                this.bulletsToAdd = new List<BulletState>();
+                this.powerUpToAdd = new List<Entity>();
+                this.powerUpToRemove = new List<Entity>();
+
                 this.gamePlayScene = this.Owner.Scene as CURRENTSCENETYPE;
                 this.poolComponent = this.gamePlayScene.EntityManager.FindComponentFromEntityPath<PoolComponent>(GameConstants.ManagerEntityPath);
             }
@@ -118,9 +125,16 @@ namespace P2PTank.Managers
             var tankBody = entity.FindComponentsInChildren<MaterialComponent>().FirstOrDefault(t => t.Owner.Name == "tankBody");
             var tankHead = entity.FindComponentsInChildren<MaterialComponent>().FirstOrDefault(t => t.Owner.Name == "tankHead");
             var index = WaveServices.Random.Next(0, GameConstants.Palette.Count());
-            tankBody.Material = new StandardMaterial { DiffuseColor = GameConstants.Palette[index] };
-            tankHead.Material = new StandardMaterial { DiffuseColor = GameConstants.Palette[index] };
 
+            tankBody.OnComponentInitialized += (s, e) =>
+            {
+                ((StandardMaterial)tankBody.Material).DiffuseColor = GameConstants.Palette[index];
+            };
+            tankHead.OnComponentInitialized += (s, e) =>
+            {
+                ((StandardMaterial)tankHead.Material).DiffuseColor = GameConstants.Palette[index];
+            };
+                   
             this.tanksToAdd.Add(entity);
 
             return entity;
@@ -458,14 +472,14 @@ namespace P2PTank.Managers
             var audioService = WaveServices.GetService<AudioService>();
 
             // Removes
-            if (this.bulletsToRemove.Count > 0)
+            if (this.bulletsToRemove?.Count > 0)
             {
                 this.poolComponent?.FreeBulletEntity(this.bulletsToRemove);
                 this.bulletsToRemove.Clear();
                 audioService.Play(Audio.Sfx.BulletCollision_wav);
             }
 
-            if (this.tanksToRemove.Count > 0)
+            if (this.tanksToRemove?.Count > 0)
             {
                 foreach (var tank in this.tanksToRemove)
                 {
@@ -480,7 +494,7 @@ namespace P2PTank.Managers
                 this.tanksToRemove.Clear();
             }
 
-            if (this.powerUpToRemove.Count > 0)
+            if (this.powerUpToRemove?.Count > 0)
             {
                 foreach (var powerUp in this.powerUpToRemove)
                 {
@@ -494,7 +508,7 @@ namespace P2PTank.Managers
             }
 
             // Adds
-            if (this.tanksToAdd.Count > 0)
+            if (this.tanksToAdd?.Count > 0)
             {
                 foreach (var tank in this.tanksToAdd)
                 {
@@ -510,7 +524,7 @@ namespace P2PTank.Managers
                 this.tanksToAdd.Clear();
             }
 
-            if (this.bulletsToAdd.Count > 0)
+            if (this.bulletsToAdd?.Count > 0)
             {
                 foreach (var bullet in this.bulletsToAdd)
                 {
@@ -530,7 +544,7 @@ namespace P2PTank.Managers
                 this.bulletsToAdd.Clear();
             }
 
-            if (this.powerUpToAdd.Count > 0)
+            if (this.powerUpToAdd?.Count > 0)
             {
                 foreach (var powerUp in this.powerUpToAdd)
                 {

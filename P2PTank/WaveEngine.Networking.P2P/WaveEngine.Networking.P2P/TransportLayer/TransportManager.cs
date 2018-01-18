@@ -1,12 +1,12 @@
 ﻿using Sockets.Plugin;
 using System;
 using System.Collections.Generic;
-using WaveEngine.Networking.P2P.TransportLayer.EventArgs;
+using Networking.P2P.TransportLayer.EventArgs;
 using System.Threading.Tasks;
 using System.IO;
-using WaveEngine.Networking.P2P.Exceptions;
+using Networking.P2P.Exceptions;
 
-namespace WaveEngine.Networking.P2P.TransportLayer
+namespace Networking.P2P.TransportLayer
 {
     /// <summary>
     /// Low level class that sends and receives messages between peers.

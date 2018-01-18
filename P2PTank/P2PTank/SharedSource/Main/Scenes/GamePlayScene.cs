@@ -20,10 +20,10 @@ using WaveEngine.Framework.Services;
 using P2PTank.Services;
 using P2PTank.Components;
 using P2PTank.Managers.P2PMessages;
-using WaveEngine.Networking.Events;
-using WaveEngine.Networking;
 using P2PTank.Tools;
 using WaveEngine.Framework.Models;
+using Networking.P2P.TransportLayer;
+using Networking.P2P.TransportLayer.EventArgs;
 
 namespace P2PTank.Scenes
 {
@@ -59,7 +59,9 @@ namespace P2PTank.Scenes
             this.Load(WaveContent.Scenes.LevelBaseScene);
 
             var wallModel = this.Assets.LoadModel<MaterialModel>(WaveContent.Assets.Models.Materials.wallMaterial);
+            wallModel.Material.Initialize(this.Assets);
             var floorModel = this.Assets.LoadModel<MaterialModel>(WaveContent.Assets.Models.Materials.floorMaterial);
+            floorModel.Material.Initialize(this.Assets);
 
             await this.mapLoader.Load(
                 WaveContent.Assets.Maps.level1_tmap,

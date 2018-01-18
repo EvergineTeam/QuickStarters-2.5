@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Linq;
 using System.Text;
+using Networking.P2P.TransportLayer.EventArgs;
 using P2PTank.Entities.P2PMessages;
 using P2PTank.Managers;
 using WaveEngine.Common.Math;
 using WaveEngine.Framework;
 using WaveEngine.Framework.Physics2D;
-using WaveEngine.Networking.Events;
 
 namespace P2PTank.Behaviors
 {

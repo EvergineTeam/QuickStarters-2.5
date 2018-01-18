@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Text;
 using System.Threading.Tasks;
-using WaveEngine.Networking.P2P.TransportLayer;
-using WaveEngine.Networking.P2P.TransportLayer.EventArgs;
+using Networking.P2P.TransportLayer;
+using Networking.P2P.TransportLayer.EventArgs;
 
-namespace WaveEngine.Networking.P2P
+namespace Networking.P2P
 {
     public class NetworkManager
     {

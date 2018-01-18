@@ -1,4 +1,4 @@
-﻿namespace WaveEngine.Networking.P2P.TransportLayer
+﻿namespace Networking.P2P.TransportLayer
 {
     public enum TransportType
     {

@@ -3,6 +3,7 @@ using WaveEngine.Common;
 using WaveEngine.Framework.Services;
 using P2PTank.Scenes;
 using P2PTank.Services;
+using WaveEngine.Framework;
 #endregion
 
 namespace P2PTank
@@ -12,6 +13,8 @@ namespace P2PTank
         public override void Initialize(IApplication application)
         {
             base.Initialize(application);
+
+            //SerializerFactory.DefaultSerializationType = SerializationType.DATACONTRACT;
 
             // Better if serialized and stored 
             GameSettings.EnableFX = true;
