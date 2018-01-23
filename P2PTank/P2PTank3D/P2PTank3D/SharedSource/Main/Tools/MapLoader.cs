@@ -1,22 +1,25 @@
-﻿using System;
+﻿using P2PTank3D;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using WaveEngine.Common.Graphics;
 using WaveEngine.Common.Math;
 using WaveEngine.Common.Physics2D;
+using WaveEngine.Components.Graphics2D;
 using WaveEngine.Components.Graphics3D;
 using WaveEngine.Framework;
 using WaveEngine.Framework.Graphics;
 using WaveEngine.Framework.Managers;
 using WaveEngine.Framework.Physics2D;
 using WaveEngine.Framework.Services;
-using WaveEngine.Materials;
 
 namespace P2PTank.Tools
 {
     public class MapLoader
     {
+        private const int WallPieceSize = 46;
+
         private EntityManager entityManager;
         private Entity map;
         private List<Vector2> freeSpaces;
@@ -56,7 +59,7 @@ namespace P2PTank.Tools
                     {
                         if(character == '0')
                         {
-                            this.freeSpaces.Add(new Vector2(currentX * 46, currentY * 46));
+                            this.freeSpaces.Add(new Vector2(currentX * WallPieceSize, currentY * WallPieceSize));
                         }
                         if (character == '1' || character == '2' || character == '3')
                         {
@@ -118,11 +121,12 @@ namespace P2PTank.Tools
 
         private Entity CreateMapCollider(int x, int y)
         {
-            float size = 46;
+            float size = WallPieceSize;
             float midSize = size / 2.0f;
             var colliderEntity = new Entity()
               .AddComponent(new Transform2D()
               {
+                  Origin = Vector2.Center,
                   LocalPosition = new Vector2(x * size, y * size),
               })
               .AddComponent(new EdgeCollider2D()
@@ -149,6 +153,14 @@ namespace P2PTank.Tools
                 collider.Friction = 1.0f;
                 collider.Restitution = 0.2f;
             }
+            
+            colliderEntity.AddComponent(new Sprite
+            {
+                TexturePath = WaveContent.Assets.Textures.wall_png,
+                TintColor = Color.Red
+            });
+
+            colliderEntity.AddComponent(new SpriteRenderer(DefaultLayers.Alpha));
 
             return colliderEntity;
         }

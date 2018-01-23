@@ -7,7 +7,6 @@ using WaveEngine.Common.Attributes;
 using WaveEngine.Components.Graphics3D;
 using WaveEngine.Framework;
 using WaveEngine.Framework.Graphics;
-using WaveEngine.Framework.Models;
 
 namespace P2PTank.Behaviors
 {
@@ -40,21 +39,19 @@ namespace P2PTank.Behaviors
 
             this.currentLifeTime = TimeSpan.FromSeconds(LifeTime);
 
-            this.bulletMaterial = this.Assets.LoadModel<MaterialModel>(this.BulletMaterialPath).Material;
-
-            this.repairMaterial = this.Assets.LoadModel<MaterialModel>(this.RepairMaterialPath).Material;
-            
             var model3D = this.Owner.FindComponentsInChildren<MaterialComponent>().FirstOrDefault();
 
             switch (this.PowerUpType)
             {
                 case PowerUpType.Bullet:
-                    model3D.Material = this.bulletMaterial;
+                    model3D.MaterialPath = this.BulletMaterialPath;
                     break;
                 case PowerUpType.Repair:
-                    model3D.Material = this.repairMaterial;
+                    model3D.MaterialPath = this.RepairMaterialPath;
                     break;
             }
+
+            model3D.UseCopy = true;
         }
 
         protected override void Update(TimeSpan gameTime)

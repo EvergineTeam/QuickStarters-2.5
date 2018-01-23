@@ -32,15 +32,17 @@
               </d7p1:Component>
               <d7p1:Component xmlns:d8p1="http://schemas.datacontract.org/2004/07/WaveEngine.Components.Graphics3D" i:type="d8p1:MaterialComponent">
                 <d8p1:AsignedTo i:nil="true" />
-                <d8p1:MaterialPath></d8p1:MaterialPath>
-                <d8p1:UseCopy>false</d8p1:UseCopy>
+                <d8p1:MaterialPath>Content/Assets/Material/bulletMaterial.wmat</d8p1:MaterialPath>
+                <d8p1:UseCopy>true</d8p1:UseCopy>
                 <d8p1:useDummyMaterial>false</d8p1:useDummyMaterial>
               </d7p1:Component>
               <d7p1:Component xmlns:d8p1="http://schemas.datacontract.org/2004/07/WaveEngine.Components.Graphics3D" i:type="d8p1:CubeMesh">
                 <ModelMeshName xmlns="WaveEngine.Components.Graphics3D">Primitive</ModelMeshName>
                 <d8p1:Size>1</d8p1:Size>
+                <d8p1:UTile>1</d8p1:UTile>
                 <d8p1:UVHorizontalFlip>false</d8p1:UVHorizontalFlip>
                 <d8p1:UVVerticalFlip>false</d8p1:UVVerticalFlip>
+                <d8p1:YTile>1</d8p1:YTile>
               </d7p1:Component>
               <d7p1:Component xmlns:d8p1="WaveEngine.Components.Graphics3D" i:type="d8p1:MeshRenderer">
                 <d7p1:FrustumCullingEnabled>true</d7p1:FrustumCullingEnabled>

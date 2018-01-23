@@ -128,15 +128,16 @@ namespace P2PTank.Managers
 
             var tankBody = entity.FindComponentsInChildren<MaterialComponent>().FirstOrDefault(t => t.Owner.Name == "tankBody");
             var tankHead = entity.FindComponentsInChildren<MaterialComponent>().FirstOrDefault(t => t.Owner.Name == "tankHead");
-            var index = WaveServices.Random.Next(0, GameConstants.Palette.Count());
+
+            var color = entity.FindComponent<TankComponent>().Color;
 
             tankBody.OnComponentInitialized += (s, e) =>
             {
-                ((StandardMaterial)tankBody.Material).DiffuseColor = GameConstants.Palette[index];
+                ((StandardMaterial)tankBody.Material).DiffuseColor = color;
             };
             tankHead.OnComponentInitialized += (s, e) =>
             {
-                ((StandardMaterial)tankHead.Material).DiffuseColor = GameConstants.Palette[index];
+                ((StandardMaterial)tankHead.Material).DiffuseColor = color;
             };
 
             this.tanksToAdd.Add(entity);
@@ -166,6 +167,7 @@ namespace P2PTank.Managers
 
             var powerUp = this.EntityManager.Instantiate(WaveContent.Assets.Prefabs.powerUpPrefab);
             powerUp.Name = powerUpId;
+            powerUp.IsVisible = true;
 
             var powerUpTransform = powerUp.FindComponent<Transform2D>();
             powerUpTransform.Position = position;
