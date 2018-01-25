@@ -14,6 +14,7 @@ namespace P2PTank.Managers
 {
     public class P2PManager : Component
     {
+        private string iPAddress;
         private NetworkManager peer2peer;
 
         public event EventHandler<PeerPlayerChangeEventArgs> PeerPlayerChange;
@@ -21,6 +22,7 @@ namespace P2PTank.Managers
 
         public P2PManager(string iPAddress = "")
         {
+            this.iPAddress = iPAddress;
             this.peer2peer = new NetworkManager(iPAddress);
 
             this.peer2peer.PeerPlayerChange += this.OnPeerChanged;
@@ -59,7 +61,10 @@ namespace P2PTank.Managers
 
         public async Task<string> GetIpAddress()
         {
-            return await peer2peer.GetIpAddress();
+            if (string.IsNullOrEmpty(this.iPAddress))
+                return await peer2peer.GetIpAddress();
+            else
+                return this.iPAddress;
         }
 
         public Dictionary<P2PMessageType, object> ReadMessage(string message)

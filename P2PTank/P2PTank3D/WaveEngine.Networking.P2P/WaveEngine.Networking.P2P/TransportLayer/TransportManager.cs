@@ -268,6 +268,7 @@ namespace Networking.P2P.TransportLayer
 
         private async Task<string> GetLocalIPAddress()
         {
+            
             List<CommsInterface> interfaces = await CommsInterface.GetAllInterfacesAsync();
 
             foreach (CommsInterface comms in interfaces)
