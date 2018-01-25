@@ -196,7 +196,7 @@ namespace Networking.P2P.TransportLayer
             // hasn't accepted in the incoming connection
             try
             {
-                await senderTCP.ConnectAsync(ipAddress, this.portNum);
+                await senderTCP.ConnectAsync(LocalIpAddress ?? ipAddress, this.portNum);
             }
             catch( Exception e1)
             {

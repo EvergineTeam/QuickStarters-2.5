@@ -66,7 +66,7 @@ namespace Networking.P2P.TransportLayer
         public string IpAddress
         {
             get { return this.ipAddress; }
-            set { this.ipAddress = value; }
+            set { this.ipAddress = value; this.baseStation.LocalIpAddress = this.IpAddress; }
         }
 
         /// <summary>
@@ -88,7 +88,7 @@ namespace Networking.P2P.TransportLayer
             this.tcpOnly = mTcpOnly;
             this.listener = new Listener(this.PortNum, mTcpOnly);
             this.baseStation = new BaseStation(this.PortNum, mForwardAll, mTcpOnly);
-
+      
             this.baseStation.PeerPlayerChange += OnBaseStationPeerChange;
             this.baseStation.MsgReceived += IncomingMsg;
 
