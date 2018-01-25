@@ -52,6 +52,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Scenes\VirtualJoystickScene.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\Audio.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\AudioService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\ILocalhost.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\LocalhostService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\MapLoader.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)WaveContent.cs" />
   </ItemGroup>

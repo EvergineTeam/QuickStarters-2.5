@@ -25,6 +25,7 @@ using WaveEngine.Framework.Models;
 using Networking.P2P.TransportLayer;
 using Networking.P2P.TransportLayer.EventArgs;
 using P2PTank3D;
+using P2PTank3D.Services;
 
 namespace P2PTank.Scenes
 {
@@ -49,8 +50,12 @@ namespace P2PTank.Scenes
 
         public GamePlayScene()
         {
+            var localHostService = WaveServices.GetService<LocalhostService>();
+            var ipAddress = localHostService.Localhost.Ip;
+
             this.mapLoader = new MapLoader();
-            this.peerManager = new P2PManager();
+            this.peerManager = new P2PManager(ipAddress);
+
             this.peerManager.PeerPlayerChange += this.OnPeerChanged;
             this.peerManager.MsgReceived += this.OnMsgReceived;
         }

@@ -1,3 +1,5 @@
+using P2PTank;
+using P2PTank3D.Services;
 using System;
 using System.IO;
 using System.Reflection;
@@ -30,9 +32,16 @@ namespace P2PTank3D
 
         public override void Initialize()
         {
+
+            var localhostService = new LocalhostService
+            {
+                Localhost = new LocalhostImplementation()
+            };
+            WaveServices.RegisterService(localhostService);
+
             this.game = new P2PTank.Game();
             this.game.Initialize(this);
-
+            
             #region DEFAULT SPLASHSCREEN
             this.backgroundSplashColor = new Color("#ebebeb");
             this.spriteBatch = new SpriteBatch(WaveServices.GraphicsDevice);

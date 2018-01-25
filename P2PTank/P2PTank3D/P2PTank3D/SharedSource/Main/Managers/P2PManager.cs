@@ -19,9 +19,9 @@ namespace P2PTank.Managers
         public event EventHandler<PeerPlayerChangeEventArgs> PeerPlayerChange;
         public event EventHandler<MsgReceivedEventArgs> MsgReceived;
 
-        public P2PManager()
+        public P2PManager(string iPAddress = "")
         {
-            this.peer2peer = new NetworkManager();
+            this.peer2peer = new NetworkManager(iPAddress);
 
             this.peer2peer.PeerPlayerChange += this.OnPeerChanged;
             this.peer2peer.MsgReceived += this.OnMsgReceived;

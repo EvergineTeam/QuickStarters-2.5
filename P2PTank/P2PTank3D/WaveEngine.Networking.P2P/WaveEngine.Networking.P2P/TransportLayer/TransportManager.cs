@@ -11,7 +11,7 @@ namespace Networking.P2P.TransportLayer
     /// <summary>
     /// Low level class that sends and receives messages between peers.
     /// </summary>
-    public class TransportManager: IDisposable
+    public class TransportManager : IDisposable
     {
         /// <summary>
         /// Triggered when a new peer is detected or an existing peer becomes inactive
@@ -39,12 +39,12 @@ namespace Networking.P2P.TransportLayer
         /// true = listening for incoming messages
         /// false = not actively listening for incoming messages
         /// </summary>
-        public bool IsListening 
+        public bool IsListening
         {
             get
             {
                 return listener.IsListening;
-            } 
+            }
         }
 
         private string ipAddress = null;
@@ -55,11 +55,18 @@ namespace Networking.P2P.TransportLayer
         /// <returns> A string in the format xxxx.xxxx.xxxx.xxxx  </returns>
         public async Task<string> GetIpAddress()
         {
-            if(ipAddress == null)
+            if (ipAddress == null)
             {
                 ipAddress = await GetLocalIPAddress();
             }
+
             return ipAddress;
+        }
+
+        public string IpAddress
+        {
+            get { return this.ipAddress; }
+            set { this.ipAddress = value; }
         }
 
         /// <summary>
@@ -90,12 +97,12 @@ namespace Networking.P2P.TransportLayer
             this.listener.PeerConnectTCPRequest += Listener_PeerConnectTCPRequest;
         }
 
-        
+
         ~TransportManager()
         {
             this.CloseConnection();
         }
-        
+
 
         /// <summary>
         /// Peer will start actively listening on the specified port number.
@@ -104,13 +111,21 @@ namespace Networking.P2P.TransportLayer
         public async Task StartAsync()
         {
             //check if already started
-            if ( IsListening == true )
+            if (IsListening == true)
             {
                 //nothing to do
                 return;
             }
 
-            baseStation.LocalIpAddress = await GetLocalIPAddress();
+            if (string.IsNullOrEmpty(this.IpAddress))
+            {
+                baseStation.LocalIpAddress = await GetLocalIPAddress();
+            }
+            else
+            {
+                baseStation.LocalIpAddress = this.IpAddress;
+            }
+
             await listener.StartAsync();
         }
 
@@ -123,7 +138,7 @@ namespace Networking.P2P.TransportLayer
         /// <returns></returns>
         private void CloseConnection()
         {
-            if( listener == null)
+            if (listener == null)
             {
                 listener.Dispose();
                 listener = null;
@@ -230,7 +245,7 @@ namespace Networking.P2P.TransportLayer
             {
                 if (peer.IpAddress == e.SocketClient.RemoteAddress)
                 {
-                    if( baseStation.forwardAll == false)
+                    if (baseStation.forwardAll == false)
                     {
                         return;
                     }
@@ -255,9 +270,9 @@ namespace Networking.P2P.TransportLayer
         {
             List<CommsInterface> interfaces = await CommsInterface.GetAllInterfacesAsync();
 
-            foreach(CommsInterface comms in interfaces)
+            foreach (CommsInterface comms in interfaces)
             {
-                if(IsValidInterface(comms))
+                if (IsValidInterface(comms))
                 {
                     return comms.IpAddress;
                 }
@@ -269,9 +284,10 @@ namespace Networking.P2P.TransportLayer
 
         private bool IsValidInterface(CommsInterface commsInterface)
         {
-            if (commsInterface.Name.ToLowerInvariant().Equals("wi-fi") 
+            if (commsInterface.Name.ToLowerInvariant().Equals("wi-fi")
                 || commsInterface.Name.ToLowerInvariant().Equals("ethernet")
-                || commsInterface.Name.ToLowerInvariant().Equals("wlan0")) 
+                || commsInterface.Name.ToLowerInvariant().Contains("vethernet")
+                || commsInterface.Name.ToLowerInvariant().Equals("wlan0"))
                 if (commsInterface.ConnectionStatus == Sockets.Plugin.Abstractions.CommsInterfaceStatus.Connected)
                     return true;
 

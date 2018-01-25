@@ -39,6 +39,7 @@
     <Compile Include="Exceptions\NoNetworkInterface.cs" />
     <Compile Include="Exceptions\PeerNotKnown.cs" />
     <Compile Include="HeartBeatManager.cs" />
+    <Compile Include="ILocalhost.cs" />
     <Compile Include="NetworkManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TransportLayer\BaseStation.cs" />

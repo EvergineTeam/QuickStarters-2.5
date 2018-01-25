@@ -10,15 +10,21 @@ namespace Networking.P2P
     {
         private int portNum = 8080;
 
+        public string IpAddress { get; set; }  = string.Empty;
+
         private TransportManager transMgr;
         private HeartBeatManager hrtBtMgr;
 
         public event EventHandler<PeerPlayerChangeEventArgs> PeerPlayerChange;
         public event EventHandler<MsgReceivedEventArgs> MsgReceived;
 
-        public NetworkManager()
+        public NetworkManager(string ip = "")
         {
+            this.IpAddress = ip;
+
             this.transMgr = new TransportManager(portNum, true);
+            this.transMgr.IpAddress = this.IpAddress;
+
             this.hrtBtMgr = new HeartBeatManager("heartbeat", transMgr);
 
             this.transMgr.PeerPlayerChange += OnPeerChange;
