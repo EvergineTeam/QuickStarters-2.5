@@ -1,0 +1,25 @@
+﻿{
+  "dependencies": {
+    "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2",
+    "Newtonsoft.Json": "11.0.1-beta3",
+    "rda.SocketsForPCL": "2.0.2",
+    "WaveEngine": "2.5.1-alpha-20171227-611",
+    "WaveEngine.Adapter": "2.5.1-alpha-20171227-611",
+    "WaveEngine.Common": "2.5.1-alpha-20171227-611",
+    "WaveEngine.Components": "2.5.1-alpha-20171227-611",
+    "WaveEngine.Framework": "2.5.1-alpha-20171227-611",
+    "WaveEngine.ImageEffects": "2.5.1-alpha-20171227-611",
+    "WaveEngine.Materials": "2.5.1-alpha-20171227-611"
+  },
+  "frameworks": {
+    "uap10.0.10240": {}
+  },
+  "runtimes": {
+    "win10-arm": {},
+    "win10-arm-aot": {},
+    "win10-x86": {},
+    "win10-x86-aot": {},
+    "win10-x64": {},
+    "win10-x64-aot": {}
+  }
+}

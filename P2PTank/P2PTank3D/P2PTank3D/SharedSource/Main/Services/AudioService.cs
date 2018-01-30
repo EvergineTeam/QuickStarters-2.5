@@ -175,13 +175,16 @@ namespace P2PTank.Services
                     }
                 }
             }
-
+#if WINDOWS_UWP
+            // TODO:
+#else
             // Search child classes
             Type[] types = contentType.GetNestedTypes();
             foreach (Type type in types)
             {
                 this.SearchMusicAndSounds(type);
             }
+#endif
         }
 
         #endregion
@@ -231,7 +234,7 @@ namespace P2PTank.Services
 
                 return instance;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Debug.WriteLine(ex.Message);
 

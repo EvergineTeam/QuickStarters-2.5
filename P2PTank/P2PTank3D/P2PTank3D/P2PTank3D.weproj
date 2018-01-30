@@ -15,6 +15,13 @@
               <NonAlphaCompressionFormat>DXT5</NonAlphaCompressionFormat>
               <Platform>Windows</Platform>
             </Profile>
+            <Profile>
+              <AlphaCompressionFormat>DXT5</AlphaCompressionFormat>
+              <LauncherType>Default</LauncherType>
+              <Name>UWPProfile</Name>
+              <NonAlphaCompressionFormat>DXT5</NonAlphaCompressionFormat>
+              <Platform>UWP</Platform>
+            </Profile>
           </d5p1:Profiles>
         </d3p1:Value>
       </d3p1:KeyValueOfstringanyType>

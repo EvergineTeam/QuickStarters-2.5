@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <RestoreSuccess Condition=" '$(RestoreSuccess)' == '' ">True</RestoreSuccess>
+    <RestoreTool Condition=" '$(RestoreTool)' == '' ">NuGet</RestoreTool>
+    <ProjectAssetsFile Condition=" '$(ProjectAssetsFile)' == '' ">C:\Users\jsuarez\Documents\QuickStarters\P2PTank\P2PTank3D\P2PTank3D\Launchers\UWPProfile\project.lock.json</ProjectAssetsFile>
+    <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">$(UserProfile)\.nuget\packages\</NuGetPackageRoot>
+    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\Users\jsuarez\.nuget\packages\;C:\Program Files (x86)\Microsoft SDKs\NuGetPackagesFallback\</NuGetPackageFolders>
+    <NuGetProjectStyle Condition=" '$(NuGetProjectStyle)' == '' ">ProjectJson</NuGetProjectStyle>
+    <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">4.5.0</NuGetToolVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+  </PropertyGroup>
+  <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)waveengine.bullet\2.5.1-alpha-20171227-611\build\uap10.0\WaveEngine.Bullet.targets" Condition="Exists('$(NuGetPackageRoot)waveengine.bullet\2.5.1-alpha-20171227-611\build\uap10.0\WaveEngine.Bullet.targets')" />
+    <Import Project="$(NuGetPackageRoot)waveengine.box2d\2.5.1-alpha-20171227-611\build\uap10.0\WaveEngine.Box2D.targets" Condition="Exists('$(NuGetPackageRoot)waveengine.box2d\2.5.1-alpha-20171227-611\build\uap10.0\WaveEngine.Box2D.targets')" />
+    <Import Project="$(NuGetPackageRoot)waveengine\2.5.1-alpha-20171227-611\build\uap10.0\WaveEngine.targets" Condition="Exists('$(NuGetPackageRoot)waveengine\2.5.1-alpha-20171227-611\build\uap10.0\WaveEngine.targets')" />
+  </ImportGroup>
+</Project>
