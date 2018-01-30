@@ -106,40 +106,54 @@ namespace P2PTank.Services
             // Create SoundInfo array
             this.sounds = new SoundInfo[Enum.GetValues(typeof(Audio.Sfx)).Length];
 
-            //this.uniqueLoopedSounds = new Dictionary<Audio.SfxLoop, SoundInstance>();
-            //this.playLoopedSoundRequests = new Dictionary<Audio.SfxLoop, int>();
-
             this.LoadAllSounds();
         }
 
-        /// <summary>
-        /// Loads the sound.
-        /// </summary>
-        /// <param name="sound">The sound.</param>
-        /// <param name="file">The file.</param>
-        private void Load(Enum sound, ref SoundInfo[] array)
+        private string GetSoundPath(Audio.Sfx sfx)
         {
-            int soundIndex = Convert.ToInt32(sound);
-            SoundInfo soundInfo = new SoundInfo(this.GetSoundOrMusicPath(sound));
-
-            array[soundIndex] = soundInfo;
-            this.soundsBank.Add(array[soundIndex]);
-        }
-
-        /// <summary>
-        /// Resolve paths
-        /// </summary>
-        /// <param name="audio"></param>
-        /// <returns></returns>
-        private string GetSoundOrMusicPath(Enum audio)
-        {
-            string audioName = audio.ToString();
-            if (this.audioPaths.ContainsKey(audioName))
+            string res = string.Empty;
+            switch (sfx)
             {
-                return this.audioPaths[audioName];
+                case Audio.Sfx.Zap_wav:
+                    res = WaveContent.Assets.Sounds.Zap_wav;
+                    break;
+                case Audio.Sfx.Gun_wav:
+                    res = WaveContent.Assets.Sounds.Gun_wav;
+                    break;
+                case Audio.Sfx.Explosion_wav:
+                    res = WaveContent.Assets.Sounds.Explosion_wav;
+                    break;
+                case Audio.Sfx.BulletCollision_wav:
+                    res = WaveContent.Assets.Sounds.BulletCollision_wav;
+                    break;
+                case Audio.Sfx.SpawnPowerUp_wav:
+                    res = WaveContent.Assets.Sounds.SpawnPowerUp_wav;
+                    break;
+                case Audio.Sfx.PowerUp_wav:
+                    res = WaveContent.Assets.Sounds.PowerUp_wav;
+                    break;
+                default:
+                    res = WaveContent.Assets.Sounds.PowerUp_wav;
+                    break;
             }
 
-            return null;
+            return res;
+        }
+
+        private string GetMusicPath(Audio.Music music)
+        {
+            string res = string.Empty;
+            switch (music)
+            {
+                case Audio.Music.Background_mp3:
+                    res = WaveContent.Assets.Sounds.Background_mp3;
+                    break;
+                default:
+                    res = WaveContent.Assets.Sounds.Background_mp3;
+                    break;
+            }
+
+            return res;
         }
 
         /// <summary>
@@ -147,14 +161,12 @@ namespace P2PTank.Services
         /// </summary>
         public void LoadAllSounds()
         {
-            // Search all sounds and music
-            this.audioPaths = new Dictionary<string, string>();
-            this.SearchMusicAndSounds(typeof(WaveContent));
-
             //Load all Sounds
             foreach (var item in Enum.GetValues(typeof(Audio.Sfx)))
             {
-                this.Load((Audio.Sfx)item, ref this.sounds);
+                //WaveContent.Assets.Sounds.Zap_wav
+                SoundInfo a = new SoundInfo(this.GetSoundPath((Audio.Sfx)item));
+                this.soundsBank.Add(a);
             }
         }
 
@@ -176,15 +188,17 @@ namespace P2PTank.Services
                 }
             }
 #if WINDOWS_UWP
-            // TODO:
+            // Search child classes
+            Type[] types = contentType.GetNestedTypes(BindingFlags.Public);
 #else
             // Search child classes
             Type[] types = contentType.GetNestedTypes();
+#endif
             foreach (Type type in types)
             {
                 this.SearchMusicAndSounds(type);
             }
-#endif
+
         }
 
         #endregion
@@ -255,7 +269,7 @@ namespace P2PTank.Services
             {
                 this.currentMusic = music;
 
-                var musicInfo = new MusicInfo(this.GetSoundOrMusicPath(music));
+                var musicInfo = new MusicInfo(this.GetMusicPath(music));
                 this.musicPlayer.Play(musicInfo);
             }
 

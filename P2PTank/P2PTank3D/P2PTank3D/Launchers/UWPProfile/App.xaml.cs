@@ -1,4 +1,6 @@
+using P2PTank3D.Services;
 using System;
+using WaveEngine.Framework.Services;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.UI.Xaml;
@@ -29,6 +31,11 @@ namespace P2PTank3D
         /// <param name="e">Details about the launch request and process.</param>
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
+            var localhostService = new LocalhostService
+            {
+                Localhost = new LocalhostImplementation()
+            };
+            WaveServices.RegisterService(localhostService);
 
 #if DEBUG
             if (System.Diagnostics.Debugger.IsAttached)

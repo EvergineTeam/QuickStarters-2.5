@@ -19151,14 +19151,14 @@
       ]
     },
     "Microsoft.NETCore.UniversalWindowsPlatform/5.2.2": {
-      "sha512": "eHccUiYTkiY8xeixRA0DV9mcFpi9GA9UzKt3v0d6NtNGrGefhmqwnb60PSWQPe49tXbxZaP0x+W0ghvj6hflHg==",
+      "sha512": "9UHv2YObWmcF8gqtBoDC4UW5gdHzFRtaZ5KtB9QKvCy+NC9LH1DMYyOI/ltupjVZlwYEulj3msjBXys9/QI6nw==",
       "type": "package",
       "path": "microsoft.netcore.universalwindowsplatform/5.2.2",
       "files": [
-        "Microsoft.NETCore.UniversalWindowsPlatform.5.2.2.nupkg.sha512",
-        "Microsoft.NETCore.UniversalWindowsPlatform.nuspec",
         "ThirdPartyNotices.txt",
-        "dotnet_library_license.txt"
+        "dotnet_library_license.txt",
+        "microsoft.netcore.universalwindowsplatform.5.2.2.nupkg.sha512",
+        "microsoft.netcore.universalwindowsplatform.nuspec"
       ]
     },
     "Microsoft.NETCore.Windows.ApiSets/1.0.1": {
@@ -25744,7 +25744,7 @@
       ]
     },
     "WaveEngine.Adapter/2.5.1-alpha-20171227-611": {
-      "sha512": "Qrh30Ve8JjMTFbtMlLGCRP9QxL3tY5xCJe914UwF4wIHOQeRjQpN6bxGOOuNR1MdCPzDSZTJipp7599geNK+8A==",
+      "sha512": "Nh+Fch2DNZIOxlsonyYPlUSP8aJWY4lULaAsrlW17C0++Kjycgl7byMHOaPseVaw6pWt1wlOiXg1lhHVn78GOw==",
       "type": "package",
       "path": "waveengine.adapter/2.5.1-alpha-20171227-611",
       "files": [
@@ -25756,15 +25756,18 @@
         "lib/Mono/Tao.Sdl.dll",
         "lib/Mono/Tao.Sdl.dll.config",
         "lib/Mono/WaveEngine.Adapter.dll",
+        "lib/Mono/WaveEngine.Adapter.pdb",
         "lib/Mono/WaveEngine.Adapter.xml",
         "lib/MonoAndroid/InAppServiceBinding.dll",
         "lib/MonoAndroid/WaveEngine.Adapter.dll",
+        "lib/MonoAndroid/WaveEngine.Adapter.pdb",
         "lib/MonoAndroid/WaveEngine.Adapter.xml",
         "lib/MonoAndroid/play.billing.v3.dll",
         "lib/Xamarin.Mac/OpenTK.dll",
         "lib/Xamarin.Mac/OpenTK.xml",
         "lib/Xamarin.Mac/WaveEngine.Adapter.dll",
         "lib/Xamarin.iOS/WaveEngine.Adapter.dll",
+        "lib/Xamarin.iOS/WaveEngine.Adapter.pdb",
         "lib/Xamarin.iOS/WaveEngine.Adapter.xml",
         "lib/net45/AForge.Video.dll",
         "lib/net45/Aforge.Video.DirectShow.dll",
@@ -25782,10 +25785,13 @@
         "lib/net45/SharpDX.XInput.dll",
         "lib/net45/SharpDX.dll",
         "lib/net45/WaveEngine.Adapter.dll",
+        "lib/net45/WaveEngine.Adapter.pdb",
         "lib/net45/WaveEngine.Adapter.xml",
         "lib/net45/WaveEngine.WinGLAdapter.dll",
+        "lib/net45/WaveEngine.WinGLAdapter.pdb",
         "lib/net45/WaveEngine.WinGLAdapter.xml",
         "lib/uap10.0/WaveEngine.Adapter.dll",
+        "lib/uap10.0/WaveEngine.Adapter.pdb",
         "lib/uap10.0/WaveEngine.Adapter.xml",
         "waveengine.adapter.2.5.1-alpha-20171227-611.nupkg.sha512",
         "waveengine.adapter.nuspec"
@@ -25873,15 +25879,17 @@
       ]
     },
     "WaveEngine.Common/2.5.1-alpha-20171227-611": {
-      "sha512": "8DmwfzcX1HP0dBPclc24CoOGcKDsixXzn8DjEQggZzRyorN1A7Wpop9K2qcr/nCYmP+2pLnqDVEiI1A3w7PhRg==",
+      "sha512": "UQpuIAyMzhqU7qLR8nb+I3KAToNLVfxGgMk8Hx3sE/6Cgak3hMoENbhGttyadoD3IPxJm5IECPyR2eOtn5sgBg==",
       "type": "package",
       "path": "waveengine.common/2.5.1-alpha-20171227-611",
       "files": [
         "lib/Mono/WaveEngine.Common.dll",
+        "lib/Mono/WaveEngine.Common.pdb",
         "lib/Mono/WaveEngine.Common.xml",
         "lib/Mono/protobuf-net.dll",
         "lib/Mono/protobuf-net.xml",
         "lib/MonoAndroid/WaveEngine.Common.dll",
+        "lib/MonoAndroid/WaveEngine.Common.pdb",
         "lib/MonoAndroid/WaveEngine.Common.xml",
         "lib/MonoAndroid/protobuf-net.dll",
         "lib/MonoAndroid/protobuf-net.xml",
@@ -25889,14 +25897,17 @@
         "lib/Xamarin.Mac/protobuf-net.dll",
         "lib/Xamarin.Mac/protobuf-net.xml",
         "lib/Xamarin.iOS/WaveEngine.Common.dll",
+        "lib/Xamarin.iOS/WaveEngine.Common.pdb",
         "lib/Xamarin.iOS/WaveEngine.Common.xml",
         "lib/Xamarin.iOS/protobuf-net.dll",
         "lib/Xamarin.iOS/protobuf-net.xml",
         "lib/net45/WaveEngine.Common.dll",
+        "lib/net45/WaveEngine.Common.pdb",
         "lib/net45/WaveEngine.Common.xml",
         "lib/net45/protobuf-net.dll",
         "lib/net45/protobuf-net.xml",
         "lib/uap10.0/WaveEngine.Common.dll",
+        "lib/uap10.0/WaveEngine.Common.pdb",
         "lib/uap10.0/WaveEngine.Common.xml",
         "lib/uap10.0/protobuf-net.dll",
         "lib/uap10.0/protobuf-net.xml",
@@ -25950,20 +25961,25 @@
       ]
     },
     "WaveEngine.ImageEffects/2.5.1-alpha-20171227-611": {
-      "sha512": "NRpCsWG5TTgLTTRk4LXDYq9O3nu5r0pSSH8nsnXQ0sxgszkA6SbeQtgBeEXalvRiYIzUhGqdqq7H0Q/+Ej0spg==",
+      "sha512": "OLGmbDihFkkPbXvBmDrwdlc3jfnBPyNn9CV3HzlgvPjaxUkzSOGGZUsD5hhCMN4MHDthUh4p6pliyRTaEr9nqA==",
       "type": "package",
       "path": "waveengine.imageeffects/2.5.1-alpha-20171227-611",
       "files": [
         "lib/Mono/WaveEngine.ImageEffects.dll",
+        "lib/Mono/WaveEngine.ImageEffects.pdb",
         "lib/Mono/WaveEngine.ImageEffects.xml",
         "lib/MonoAndroid/WaveEngine.ImageEffects.dll",
+        "lib/MonoAndroid/WaveEngine.ImageEffects.pdb",
         "lib/MonoAndroid/WaveEngine.ImageEffects.xml",
         "lib/Xamarin.Mac/WaveEngine.ImageEffects.dll",
         "lib/Xamarin.iOS/WaveEngine.ImageEffects.dll",
+        "lib/Xamarin.iOS/WaveEngine.ImageEffects.pdb",
         "lib/Xamarin.iOS/WaveEngine.ImageEffects.xml",
         "lib/net45/WaveEngine.ImageEffects.dll",
+        "lib/net45/WaveEngine.ImageEffects.pdb",
         "lib/net45/WaveEngine.ImageEffects.xml",
         "lib/uap10.0/WaveEngine.ImageEffects.dll",
+        "lib/uap10.0/WaveEngine.ImageEffects.pdb",
         "lib/uap10.0/WaveEngine.ImageEffects.xml",
         "waveengine.imageeffects.2.5.1-alpha-20171227-611.nupkg.sha512",
         "waveengine.imageeffects.nuspec"
@@ -26022,56 +26038,48 @@
     "UAP,Version=v10.0.10240": []
   },
   "packageFolders": {
-    "C:\\Users\\jsuarez\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {}
+    "C:\\Users\\jfrodriguez\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
-      "projectUniqueName": "C:\\Users\\jsuarez\\Documents\\QuickStarters\\P2PTank\\P2PTank3D\\P2PTank3D\\Launchers\\UWPProfile\\P2PTank3D.csproj",
+      "projectUniqueName": "C:\\PLAINCONCEPTS\\VSO\\Engine QuickStarters\\P2PTank\\P2PTank3D\\P2PTank3D\\Launchers\\UWPProfile\\P2PTank3D.csproj",
       "projectName": "P2PTank3D",
-      "projectPath": "C:\\Users\\jsuarez\\Documents\\QuickStarters\\P2PTank\\P2PTank3D\\P2PTank3D\\Launchers\\UWPProfile\\P2PTank3D.csproj",
-      "projectJsonPath": "C:\\Users\\jsuarez\\Documents\\QuickStarters\\P2PTank\\P2PTank3D\\P2PTank3D\\Launchers\\UWPProfile\\project.json",
-      "packagesPath": "C:\\Users\\jsuarez\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jsuarez\\Documents\\QuickStarters\\P2PTank\\P2PTank3D\\P2PTank3D\\Launchers\\UWPProfile\\obj\\",
+      "projectPath": "C:\\PLAINCONCEPTS\\VSO\\Engine QuickStarters\\P2PTank\\P2PTank3D\\P2PTank3D\\Launchers\\UWPProfile\\P2PTank3D.csproj",
+      "projectJsonPath": "C:\\PLAINCONCEPTS\\VSO\\Engine QuickStarters\\P2PTank\\P2PTank3D\\P2PTank3D\\Launchers\\UWPProfile\\project.json",
+      "packagesPath": "C:\\Users\\jfrodriguez\\.nuget\\packages\\",
+      "outputPath": "C:\\PLAINCONCEPTS\\VSO\\Engine QuickStarters\\P2PTank\\P2PTank3D\\P2PTank3D\\Launchers\\UWPProfile\\obj\\",
       "projectStyle": "ProjectJson",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\"
-      ],
       "configFilePaths": [
-        "C:\\Users\\jsuarez\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
+        "C:\\Users\\jfrodriguez\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Users\\jsuarez\\Documents\\xamarin-forms-samples\\NuGet": {},
+        "http://teamcity-win8.cloudapp.net/httpAuth/app/nuget/v1/FeedService.svc/": {},
         "https://api.nuget.org/v3/index.json": {},
-        "https://ci.appveyor.com/nuget/wpflighttoolkit-ci": {},
-        "https://ci.appveyor.com/nuget/xamarin-forms-wpf-ci": {},
-        "https://www.myget.org/F/waveengine-nightly/api/v2": {},
-        "https://www.myget.org/F/xamarinforms-dev/api/v3/index.json": {}
+        "https://www.myget.org/F/waveengine-nightly/api/v3/index.json": {}
       },
       "frameworks": {
         "uap10.0.10240": {
           "projectReferences": {
-            "C:\\Users\\jsuarez\\Documents\\QuickStarters\\P2PTank\\P2PTank3D\\WaveEngine.Networking.P2P\\WaveEngine.Networking.P2P\\WaveEngine.Networking.P2P.csproj": {
-              "projectPath": "C:\\Users\\jsuarez\\Documents\\QuickStarters\\P2PTank\\P2PTank3D\\WaveEngine.Networking.P2P\\WaveEngine.Networking.P2P\\WaveEngine.Networking.P2P.csproj"
+            "C:\\PLAINCONCEPTS\\VSO\\Engine QuickStarters\\P2PTank\\P2PTank3D\\WaveEngine.Networking.P2P\\WaveEngine.Networking.P2P\\WaveEngine.Networking.P2P.csproj": {
+              "projectPath": "C:\\PLAINCONCEPTS\\VSO\\Engine QuickStarters\\P2PTank\\P2PTank3D\\WaveEngine.Networking.P2P\\WaveEngine.Networking.P2P\\WaveEngine.Networking.P2P.csproj"
             }
           }
         }
       }
     },
     "dependencies": {
-      "Microsoft.NETCore.UniversalWindowsPlatform": "[5.2.2, )",
-      "Newtonsoft.Json": "[11.0.1-beta3, )",
-      "WaveEngine": "[2.5.1-alpha-20171227-611, )",
-      "WaveEngine.Adapter": "[2.5.1-alpha-20171227-611, )",
-      "WaveEngine.Common": "[2.5.1-alpha-20171227-611, )",
-      "WaveEngine.Components": "[2.5.1-alpha-20171227-611, )",
-      "WaveEngine.Framework": "[2.5.1-alpha-20171227-611, )",
-      "WaveEngine.ImageEffects": "[2.5.1-alpha-20171227-611, )",
-      "WaveEngine.Materials": "[2.5.1-alpha-20171227-611, )",
-      "rda.SocketsForPCL": "[2.0.2, )"
+      "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2",
+      "Newtonsoft.Json": "11.0.1-beta3",
+      "rda.SocketsForPCL": "2.0.2",
+      "WaveEngine": "2.5.1-alpha-20171227-611",
+      "WaveEngine.Adapter": "2.5.1-alpha-20171227-611",
+      "WaveEngine.Common": "2.5.1-alpha-20171227-611",
+      "WaveEngine.Components": "2.5.1-alpha-20171227-611",
+      "WaveEngine.Framework": "2.5.1-alpha-20171227-611",
+      "WaveEngine.ImageEffects": "2.5.1-alpha-20171227-611",
+      "WaveEngine.Materials": "2.5.1-alpha-20171227-611"
     },
     "frameworks": {
       "uap10.0.10240": {}
