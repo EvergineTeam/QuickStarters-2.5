@@ -668,8 +668,8 @@
         </d4p1:Rectangle>
         <d4p1:effect>None</d4p1:effect>
         <d4p1:origin xmlns:d5p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
-          <d5p1:X>0</d5p1:X>
-          <d5p1:Y>0</d5p1:Y>
+          <d5p1:X>0.5</d5p1:X>
+          <d5p1:Y>0.5</d5p1:Y>
         </d4p1:origin>
         <d4p1:screenPosition xmlns:d5p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
           <d5p1:X>0</d5p1:X>

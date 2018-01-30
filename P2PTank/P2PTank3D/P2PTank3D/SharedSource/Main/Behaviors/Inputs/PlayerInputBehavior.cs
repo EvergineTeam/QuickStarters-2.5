@@ -231,15 +231,6 @@ namespace P2PTank.Behaviors
                 playerCommand.SetRotate(1.0f);
             }
 
-            if (input.KeyboardState.A == ButtonState.Pressed)
-            {
-                playerCommand.SetRotateBarrel(-1.0f);
-            }
-            else if (input.KeyboardState.D == ButtonState.Pressed)
-            {
-                playerCommand.SetRotateBarrel(1.0f);
-            }
-
             if (input.KeyboardState.Space == ButtonState.Pressed)
             {
                 playerCommand.SetShoot();
