@@ -303,8 +303,11 @@ namespace P2PTank.Scenes
 
         private void DestroyFoe(GamePlayManager gameplayManager, string foeId)
         {
-            var foe = this.EntityManager.Find(foeId);
-            this.gameplayManager.DestroyTank(foe);
+            if (!string.IsNullOrEmpty(foeId))
+            {
+                var foe = this.EntityManager.Find(foeId);
+                this.gameplayManager.DestroyTank(foe);
+            }
         }
 
         private void OnMsgReceived(object sender, MsgReceivedEventArgs e)

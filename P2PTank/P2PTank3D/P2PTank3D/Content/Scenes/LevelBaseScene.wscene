@@ -65,13 +65,6 @@
           <d4p1:UpdateOrder>0.5</d4p1:UpdateOrder>
           <d4p1:isDisabled>false</d4p1:isDisabled>
         </d4p1:Component>
-        <d4p1:Component xmlns:d5p1="WaveEngine.Components.Cameras" i:type="d5p1:FreeCamera3DBehavior">
-          <d4p1:UpdateOrder>0.5</d4p1:UpdateOrder>
-          <d4p1:isDisabled>false</d4p1:isDisabled>
-          <d5p1:GamepadRotationSpeed>0.75</d5p1:GamepadRotationSpeed>
-          <d5p1:RotationSpeed>0.004</d5p1:RotationSpeed>
-          <d5p1:Speed>20</d5p1:Speed>
-        </d4p1:Component>
         <d4p1:Component xmlns:d5p1="http://schemas.datacontract.org/2004/07/P2PTank.Behaviors.Cameras" i:type="d5p1:Player3DCameraBehavior">
           <d4p1:UpdateOrder>0.5</d4p1:UpdateOrder>
           <d4p1:isDisabled>false</d4p1:isDisabled>
