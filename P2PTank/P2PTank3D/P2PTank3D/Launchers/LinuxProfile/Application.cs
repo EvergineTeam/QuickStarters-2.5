@@ -6,6 +6,7 @@ using WaveEngine.Common.Graphics;
 using WaveEngine.Common.Input;
 using WaveEngine.Common.Math;
 using WaveEngine.Framework.Graphics;
+using P2PTank3D.Services;
 
 namespace P2PTank3D
 {
@@ -32,6 +33,12 @@ namespace P2PTank3D
         {
             this.game = new P2PTank.Game();
             this.game.Initialize(this);
+
+            var localhostService = new LocalhostService
+            {
+                Localhost = new LocalhostImplementation()
+            };
+            WaveServices.RegisterService(localhostService);
 
             #region DEFAULT SPLASHSCREEN
             this.backgroundSplashColor = new Color("#ebebeb");
