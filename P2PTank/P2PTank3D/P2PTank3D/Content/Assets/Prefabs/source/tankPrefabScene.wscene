@@ -432,7 +432,7 @@
                   </d9p1:CollisionSpread>
                   <d9p1:CollisionType>None</d9p1:CollisionType>
                   <d9p1:Emit>false</d9p1:Emit>
-                  <d9p1:EmitRate>50</d9p1:EmitRate>
+                  <d9p1:EmitRate>25</d9p1:EmitRate>
                   <d9p1:EmitterShape>Rectangle</d9p1:EmitterShape>
                   <d9p1:EmitterSize xmlns:d10p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
                     <d10p1:X>0.5</d10p1:X>
@@ -445,8 +445,21 @@
                     <d10p1:Z>0</d10p1:Z>
                   </d9p1:Gravity>
                   <d9p1:InitialAngle>0</d9p1:InitialAngle>
-                  <d9p1:InterpolationColors xmlns:d10p1="WaveEngine.Common.Graphics" i:nil="true" />
-                  <d9p1:LinearColorEnabled>false</d9p1:LinearColorEnabled>
+                  <d9p1:InterpolationColors xmlns:d10p1="WaveEngine.Common.Graphics">
+                    <d10p1:Color>
+                      <d10p1:A>255</d10p1:A>
+                      <d10p1:B>255</d10p1:B>
+                      <d10p1:G>255</d10p1:G>
+                      <d10p1:R>255</d10p1:R>
+                    </d10p1:Color>
+                    <d10p1:Color>
+                      <d10p1:A>255</d10p1:A>
+                      <d10p1:B>0</d10p1:B>
+                      <d10p1:G>0</d10p1:G>
+                      <d10p1:R>0</d10p1:R>
+                    </d10p1:Color>
+                  </d9p1:InterpolationColors>
+                  <d9p1:LinearColorEnabled>true</d9p1:LinearColorEnabled>
                   <d9p1:LocalVelocity xmlns:d10p1="WaveEngine.Common.Math">
                     <d10p1:X>0</d10p1:X>
                     <d10p1:Y>0.04</d10p1:Y>
@@ -454,20 +467,20 @@
                   </d9p1:LocalVelocity>
                   <d9p1:MaxColor xmlns:d10p1="WaveEngine.Common.Graphics">
                     <d10p1:A>255</d10p1:A>
-                    <d10p1:B>255</d10p1:B>
-                    <d10p1:G>255</d10p1:G>
-                    <d10p1:R>255</d10p1:R>
-                  </d9p1:MaxColor>
-                  <d9p1:MaxLife>4</d9p1:MaxLife>
-                  <d9p1:MaxRotateSpeed>0.008726645</d9p1:MaxRotateSpeed>
-                  <d9p1:MaxSize>0.5</d9p1:MaxSize>
-                  <d9p1:MinColor xmlns:d10p1="WaveEngine.Common.Graphics">
-                    <d10p1:A>0</d10p1:A>
                     <d10p1:B>0</d10p1:B>
                     <d10p1:G>0</d10p1:G>
                     <d10p1:R>0</d10p1:R>
+                  </d9p1:MaxColor>
+                  <d9p1:MaxLife>2</d9p1:MaxLife>
+                  <d9p1:MaxRotateSpeed>0.008726645</d9p1:MaxRotateSpeed>
+                  <d9p1:MaxSize>0.3</d9p1:MaxSize>
+                  <d9p1:MinColor xmlns:d10p1="WaveEngine.Common.Graphics">
+                    <d10p1:A>151</d10p1:A>
+                    <d10p1:B>255</d10p1:B>
+                    <d10p1:G>255</d10p1:G>
+                    <d10p1:R>255</d10p1:R>
                   </d9p1:MinColor>
-                  <d9p1:MinLife>2</d9p1:MinLife>
+                  <d9p1:MinLife>1</d9p1:MinLife>
                   <d9p1:MinRotateSpeed>-0.008726645</d9p1:MinRotateSpeed>
                   <d9p1:MinSize>0.1</d9p1:MinSize>
                   <d9p1:RandomVelocity xmlns:d10p1="WaveEngine.Common.Math">
@@ -476,7 +489,7 @@
                     <d10p1:Z>0</d10p1:Z>
                   </d9p1:RandomVelocity>
                   <d9p1:endDeltaScale>6</d9p1:endDeltaScale>
-                  <d9p1:numParticles>90</d9p1:numParticles>
+                  <d9p1:numParticles>50</d9p1:numParticles>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="WaveEngine.Components.Graphics3D" i:type="d9p1:ParticleSystemRenderer3D">
                   <d8p1:FrustumCullingEnabled>true</d8p1:FrustumCullingEnabled>
