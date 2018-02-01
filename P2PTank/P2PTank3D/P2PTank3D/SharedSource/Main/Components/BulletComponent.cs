@@ -1,7 +1,9 @@
 ﻿using System.Runtime.Serialization;
 using WaveEngine.Common.Graphics;
 using WaveEngine.Components.Graphics2D;
+using WaveEngine.Components.Graphics3D;
 using WaveEngine.Framework;
+using WaveEngine.Materials;
 
 namespace P2PTank.Components
 {
@@ -48,6 +50,26 @@ namespace P2PTank.Components
             this.CurrentSpeed = this.InitialSpeed;
 
             this.UpdateColor();
+        }
+
+        protected override void Initialize()
+        {
+            base.Initialize();
+
+            var model3D = Owner.FindChild("model3D", true);
+
+            if (model3D != null)
+            {
+                var material = model3D.FindComponent<MaterialComponent>();
+                material.OnComponentInitialized += MaterialOnComponentInitialized;
+            }
+        }
+
+        private void MaterialOnComponentInitialized(object sender, System.EventArgs e)
+        {
+            var material = (MaterialComponent)sender;
+            ((StandardMaterial)material.Material).DiffuseColor = this.color;
+            material.OnComponentInitialized -= MaterialOnComponentInitialized;
         }
 
         private void UpdateColor()

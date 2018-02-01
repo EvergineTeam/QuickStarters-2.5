@@ -1,5 +1,5 @@
 ﻿<Prefab xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="WaveEngine.Framework.Models.Assets">
-  <Id xmlns="WaveEngine.Framework.Models">3aeaa9dd-87bd-4690-80f2-92c95b677ae6</Id>
+  <Id xmlns="WaveEngine.Framework.Models">8c70c67a-2e2c-403c-b597-762834695fce</Id>
   <EntityModel xmlns:d2p1="WaveEngine.Framework.Models.Entities">
     <d2p1:SerializeChildrens>
       <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
@@ -19,7 +19,7 @@
             </d6p1:LocalOrientation>
             <d6p1:LocalPosition xmlns:d7p1="WaveEngine.Common.Math">
               <d7p1:X>0</d7p1:X>
-              <d7p1:Y>0</d7p1:Y>
+              <d7p1:Y>0.3441291</d7p1:Y>
               <d7p1:Z>0</d7p1:Z>
             </d6p1:LocalPosition>
             <d6p1:LocalScale xmlns:d7p1="WaveEngine.Common.Math">
@@ -30,9 +30,9 @@
           </d5p1:Component>
           <d5p1:Component xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Components.Graphics3D" i:type="d6p1:MaterialComponent">
             <d6p1:AsignedTo i:nil="true" />
-            <d6p1:MaterialPath i:nil="true" />
-            <d6p1:UseCopy>false</d6p1:UseCopy>
-            <d6p1:useDummyMaterial>true</d6p1:useDummyMaterial>
+            <d6p1:MaterialPath>Content/Assets/Material/emptyBulletMaterial.wmat</d6p1:MaterialPath>
+            <d6p1:UseCopy>true</d6p1:UseCopy>
+            <d6p1:useDummyMaterial>false</d6p1:useDummyMaterial>
           </d5p1:Component>
           <d5p1:Component xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Components.Graphics3D" i:type="d6p1:SphereMesh">
             <ModelMeshName xmlns="WaveEngine.Components.Graphics3D">Primitive</ModelMeshName>
