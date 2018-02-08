@@ -32,5 +32,9 @@ namespace P2PTank
             Color.IndianRed,
             Color.LightSeaGreen
         };
+
+        // MiniMap
+        public static int MiniMapScale = 4;
+        public static int MiniMapMargin = 24;
     }
 }

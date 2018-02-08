@@ -70,6 +70,11 @@ namespace P2PTank.Scenes
                 WaveContent.Assets.Models.Materials.floorMaterial,
                 this.EntityManager).Wait();
 
+            this.EntityManager.Find("camera2D")
+                .FindComponent<Transform2D>().Position = new Vector2
+                (GameConstants.MiniMapScale * (VirtualScreenManager.ScreenWidth / 2) - GameConstants.MiniMapMargin,
+                GameConstants.MiniMapScale * (VirtualScreenManager.ScreenHeight / 2) - GameConstants.MiniMapMargin);
+            
             var audioService = WaveServices.GetService<AudioService>();
             audioService.Play(Audio.Music.Background_mp3, 0.4f);
 
