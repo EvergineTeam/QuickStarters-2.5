@@ -1,5 +1,5 @@
 ﻿<Prefab xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="WaveEngine.Framework.Models.Assets">
-  <Id xmlns="WaveEngine.Framework.Models">0686643c-d2bc-411d-abdb-e996aa73abe9</Id>
+  <Id xmlns="WaveEngine.Framework.Models">326c0124-9021-456f-a885-34d6e9c57277</Id>
   <EntityModel xmlns:d2p1="WaveEngine.Framework.Models.Entities">
     <d2p1:SerializeChildrens>
       <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
@@ -419,7 +419,7 @@
               <d7p1:Component xmlns:d8p1="http://schemas.datacontract.org/2004/07/WaveEngine.Components.Graphics3D" i:type="d8p1:MaterialComponent">
                 <d8p1:AsignedTo>blue</d8p1:AsignedTo>
                 <d8p1:MaterialPath>Content/Assets/Models/Materials/blue.wmat</d8p1:MaterialPath>
-                <d8p1:UseCopy>false</d8p1:UseCopy>
+                <d8p1:UseCopy>true</d8p1:UseCopy>
                 <d8p1:useDummyMaterial>false</d8p1:useDummyMaterial>
               </d7p1:Component>
               <d7p1:Component xmlns:d8p1="WaveEngine.Components.Graphics3D" i:type="d8p1:MeshRenderer">
@@ -461,7 +461,7 @@
               <d7p1:Component xmlns:d8p1="http://schemas.datacontract.org/2004/07/WaveEngine.Components.Graphics3D" i:type="d8p1:MaterialComponent">
                 <d8p1:AsignedTo>blue</d8p1:AsignedTo>
                 <d8p1:MaterialPath>Content/Assets/Models/Materials/blue.wmat</d8p1:MaterialPath>
-                <d8p1:UseCopy>false</d8p1:UseCopy>
+                <d8p1:UseCopy>true</d8p1:UseCopy>
                 <d8p1:useDummyMaterial>false</d8p1:useDummyMaterial>
               </d7p1:Component>
               <d7p1:Component xmlns:d8p1="WaveEngine.Components.Graphics3D" i:type="d8p1:MeshRenderer">

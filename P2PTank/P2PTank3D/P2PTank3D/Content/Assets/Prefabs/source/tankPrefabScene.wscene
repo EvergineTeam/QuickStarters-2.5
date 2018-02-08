@@ -620,7 +620,7 @@
                 <d8p1:Component xmlns:d9p1="http://schemas.datacontract.org/2004/07/WaveEngine.Components.Graphics3D" i:type="d9p1:MaterialComponent">
                   <d9p1:AsignedTo>blue</d9p1:AsignedTo>
                   <d9p1:MaterialPath>Content/Assets/Models/Materials/blue.wmat</d9p1:MaterialPath>
-                  <d9p1:UseCopy>false</d9p1:UseCopy>
+                  <d9p1:UseCopy>true</d9p1:UseCopy>
                   <d9p1:useDummyMaterial>false</d9p1:useDummyMaterial>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="WaveEngine.Components.Graphics3D" i:type="d9p1:MeshRenderer">
@@ -662,7 +662,7 @@
                 <d8p1:Component xmlns:d9p1="http://schemas.datacontract.org/2004/07/WaveEngine.Components.Graphics3D" i:type="d9p1:MaterialComponent">
                   <d9p1:AsignedTo>blue</d9p1:AsignedTo>
                   <d9p1:MaterialPath>Content/Assets/Models/Materials/blue.wmat</d9p1:MaterialPath>
-                  <d9p1:UseCopy>false</d9p1:UseCopy>
+                  <d9p1:UseCopy>true</d9p1:UseCopy>
                   <d9p1:useDummyMaterial>false</d9p1:useDummyMaterial>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="WaveEngine.Components.Graphics3D" i:type="d9p1:MeshRenderer">
@@ -853,7 +853,7 @@
       <d2p1:isDisabled>false</d2p1:isDisabled>
       <d2p1:isStatic>false</d2p1:isStatic>
       <d2p1:isVisible>true</d2p1:isVisible>
-      <d2p1:name>tank</d2p1:name>
+      <d2p1:name>tankPrefab</d2p1:name>
       <d2p1:tag i:nil="true" />
       <d2p1:SerializeComponents xmlns:d4p1="WaveEngine.Framework">
         <d4p1:Component xmlns:d5p1="WaveEngine.Framework.Graphics" i:type="d5p1:Transform2D">
