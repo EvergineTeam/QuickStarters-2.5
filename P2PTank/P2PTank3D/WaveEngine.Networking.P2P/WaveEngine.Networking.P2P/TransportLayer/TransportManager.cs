@@ -36,7 +36,7 @@ namespace Networking.P2P.TransportLayer
         {
             get
             {
-                return this.baseStation.KnownPeers;
+                return this.baseStation?.KnownPeers;
             }
         }
 
@@ -152,7 +152,7 @@ namespace Networking.P2P.TransportLayer
                 this.baseStation = null;
             }
 
-            KnownPeers.Clear();
+            KnownPeers?.Clear();
         }
 
         /// <summary>
