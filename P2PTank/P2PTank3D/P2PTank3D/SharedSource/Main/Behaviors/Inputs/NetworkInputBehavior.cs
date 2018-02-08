@@ -6,12 +6,15 @@ using P2PTank.Managers;
 using System.Linq;
 using WaveEngine.Framework.Graphics;
 using Networking.P2P.TransportLayer.EventArgs;
+using WaveEngine.Common.Math;
 
 namespace P2PTank.Behaviors
 {
     public class NetworkInputBehavior : Behavior
     {
         private P2PManager peerManager;
+
+        private Vector2 desiredPosition;
 
         [RequiredComponent]
         private Transform2D transform = null;
@@ -80,6 +83,10 @@ namespace P2PTank.Behaviors
 
         protected override void Update(TimeSpan gameTime)
         {
+            if(this.transform.Position != this.desiredPosition)
+            {
+                this.transform.Position = Vector2.Lerp(this.transform.Position, this.desiredPosition, 0.2f);
+            }
         }
 
         private void Move(float x, float y)
@@ -91,7 +98,8 @@ namespace P2PTank.Behaviors
             pos.X = x;
             pos.Y = y;
 
-            this.transform.Position = pos;
+            this.desiredPosition = pos;
+            // this.transform.Position = pos;
         }
 
         private void Rotate(float angle)
