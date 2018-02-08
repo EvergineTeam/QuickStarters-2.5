@@ -48,25 +48,9 @@ namespace Networking.P2P.TransportLayer
         {
             get
             {
-                return listener.IsListening;
+                return listener == null ? false : listener.IsListening;
             }
         }
-
-        private string ipAddress = null;
-
-        /// <summary>
-        /// Get methods that retreives the IPv4 address of the local peer asynchronously
-        /// </summary>
-        /// <returns> A string in the format xxxx.xxxx.xxxx.xxxx  </returns>
-        //public async Task<string> GetIpAddress()
-        //{
-        //    if (ipAddress == null)
-        //    {
-        //        ipAddress = await GetLocalIPAddress();
-        //    }
-
-        //    return ipAddress;
-        //}
 
         /// <summary>
         /// The port number used for sending and receiving messages
@@ -75,6 +59,7 @@ namespace Networking.P2P.TransportLayer
 
         public bool tcpOnly { get; }
 
+        private bool forwardAll;
         private Listener listener;
         private BaseStation baseStation;
 
@@ -86,15 +71,9 @@ namespace Networking.P2P.TransportLayer
         {
             this.PortNum = mPortNum;
             this.tcpOnly = mTcpOnly;
-            this.listener = new Listener(this.PortNum, commsInterface, mTcpOnly);
-            this.baseStation = new BaseStation(this.PortNum, mForwardAll, mTcpOnly);
+            this.forwardAll = mForwardAll;
 
-            this.baseStation.PeerPlayerChange += OnBaseStationPeerChange;
-            this.baseStation.MsgReceived += IncomingMsg;
-
-            //baseStation looks up incoming messages to see if there is a new peer talk to us
-            this.listener.IncomingMsg += this.baseStation.IncomingMsgAsync;
-            this.listener.PeerConnectTCPRequest += this.Listener_PeerConnectTCPRequest;
+            this.SelectedCommsInterface = commsInterface;
         }
 
 
@@ -135,6 +114,16 @@ namespace Networking.P2P.TransportLayer
                 throw (new NoNetworkInterface("Unable to find an active network interface connection. Is this device connected to wifi?"));
             }
 
+            this.listener = new Listener(this.PortNum, this.SelectedCommsInterface, this.tcpOnly);
+            this.baseStation = new BaseStation(this.PortNum, this.forwardAll, this.tcpOnly);
+
+            this.baseStation.PeerPlayerChange += OnBaseStationPeerChange;
+            this.baseStation.MsgReceived += IncomingMsg;
+
+            //baseStation looks up incoming messages to see if there is a new peer talk to us
+            this.listener.IncomingMsg += this.baseStation.IncomingMsgAsync;
+            this.listener.PeerConnectTCPRequest += this.Listener_PeerConnectTCPRequest;
+
             await listener.StartAsync();
         }
 
@@ -147,10 +136,20 @@ namespace Networking.P2P.TransportLayer
         /// <returns></returns>
         private void CloseConnection()
         {
-            if (listener == null)
+            if (listener != null )
             {
+                this.listener.IncomingMsg -= this.baseStation.IncomingMsgAsync;
+                this.listener.PeerConnectTCPRequest -= this.Listener_PeerConnectTCPRequest;
+
                 listener.Dispose();
                 listener = null;
+            }
+
+            if (this.baseStation != null)
+            {
+                this.baseStation.PeerPlayerChange -= OnBaseStationPeerChange;
+                this.baseStation.MsgReceived -= IncomingMsg;
+                this.baseStation = null;
             }
 
             KnownPeers.Clear();
