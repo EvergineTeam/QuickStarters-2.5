@@ -10,6 +10,8 @@ namespace P2PTank
 {
     public class Game : WaveEngine.Framework.Game
     {
+        private GamePlayScene gamePlayScene;
+
         public override void Initialize(IApplication application)
         {
             base.Initialize(application);
@@ -26,14 +28,16 @@ namespace P2PTank
             WaveServices.RegisterService(new AudioService());
             ScreenContext screenContext;
 
+            gamePlayScene = new GamePlayScene();
+
             if (WaveServices.Platform.PlatformFamily == PlatformFamily.Desktop)
             {
-                screenContext = new ScreenContext(new GamePlayScene());
+                screenContext = new ScreenContext(gamePlayScene);
             }
             else
             {
                 screenContext = new ScreenContext(
-                    new GamePlayScene(),
+                    gamePlayScene,
                     new VirtualJoystickScene())
                 {
                     Behavior = ScreenContextBehaviors.UpdateInBackground | ScreenContextBehaviors.DrawInBackground
@@ -42,6 +46,14 @@ namespace P2PTank
 
             WaveServices.ScreenContextManager.To(screenContext);
             // WaveServices.ScreenContextManager.SetDiagnosticsActive(true);
+
+
+            this.Application.Adapter.OnScreenSizeChanged += OnScreenSizeChanged;
+        }
+
+        private void OnScreenSizeChanged(object sender, WaveEngine.Common.Helpers.SizeEventArgs e)
+        {
+            gamePlayScene.UpdateMiniMapPosition();
         }
     }
 }

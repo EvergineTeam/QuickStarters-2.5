@@ -70,11 +70,8 @@ namespace P2PTank.Scenes
                 WaveContent.Assets.Models.Materials.floorMaterial,
                 this.EntityManager).Wait();
 
-            this.EntityManager.Find("camera2D")
-                .FindComponent<Transform2D>().Position = new Vector2
-                (GameConstants.MiniMapScale * (VirtualScreenManager.ScreenWidth / 2) - GameConstants.MiniMapMargin,
-                GameConstants.MiniMapScale * (VirtualScreenManager.ScreenHeight / 2) - GameConstants.MiniMapMargin);
-            
+            this.UpdateMiniMapPosition();
+
             var audioService = WaveServices.GetService<AudioService>();
             audioService.Play(Audio.Music.Background_mp3, 0.4f);
 
@@ -85,6 +82,14 @@ namespace P2PTank.Scenes
 #endif
 
             await peerManager.StartAsync();
+        }
+
+        public void UpdateMiniMapPosition()
+        {
+            this.EntityManager.Find("camera2D")
+              .FindComponent<Transform2D>().Position = new Vector2
+              (GameConstants.MiniMapScale * (VirtualScreenManager.ScreenWidth / 2) - GameConstants.MiniMapMargin,
+              GameConstants.MiniMapScale * (VirtualScreenManager.ScreenHeight / 2) - GameConstants.MiniMapMargin);
         }
 
         public void CreateCountDown()
