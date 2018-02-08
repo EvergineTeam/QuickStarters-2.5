@@ -35,7 +35,9 @@ namespace Networking.P2P.TransportLayer
             this.knownPeers = new List<PeerPlayer>();
 
             if (!mTcpOnly)
+            {
                 this.senderUDP = new UdpSocketClient();
+            }
 
             this.forwardAll = mForwardAll;
             this.portNum = mPortNum;

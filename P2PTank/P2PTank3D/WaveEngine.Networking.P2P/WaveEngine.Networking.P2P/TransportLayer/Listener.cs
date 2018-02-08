@@ -35,12 +35,18 @@ namespace Networking.P2P.TransportLayer
 
         private int portNum;
 
-        public Listener(int mPortNum, bool mTcpOnly=false)
+        private ICommsInterface commsInterface;
+
+        public Listener(int mPortNum, ICommsInterface commsInterface, bool mTcpOnly = false)
         {
-            isListening = false;
+            this.isListening = false;
+            this.commsInterface = commsInterface;
 
             if (!mTcpOnly)
+            {
                 this.listenerUDP = new UdpSocketReceiver();
+            }
+
             this.listenerTCP = new TcpSocketListener();
 
             this.portNum = mPortNum;
@@ -55,15 +61,18 @@ namespace Networking.P2P.TransportLayer
         public async Task StartAsync()
         {
             await StartListeningAsyncTCP(this.portNum);
+
             if (listenerUDP != null)
+            {
                 await StartListeningAsyncUDP(this.portNum);
+            }
             isListening = true;
         }
 
         private async Task StartListeningAsyncTCP(int portNum)
         {
             listenerTCP.ConnectionReceived += ListenerTCP_ConnectionReceived;
-            await listenerTCP.StartListeningAsync(portNum);
+            await listenerTCP.StartListeningAsync(portNum, this.commsInterface);
 
             ListenTcpLoop();
         }
@@ -114,13 +123,15 @@ namespace Networking.P2P.TransportLayer
 
         private async Task StartListeningAsyncUDP(int portNum)
         {
-            if (listenerUDP == null)
+            if (this.listenerUDP == null)
+            {
                 throw new InvalidOperationException("Cannot listen on UDP when in TCP only mode.");
+            }
 
-            listenerUDP.MessageReceived += ListenerUDP_MessageReceived;
-            await listenerUDP.StartListeningAsync(portNum);
+            this.listenerUDP.MessageReceived += this.ListenerUDP_MessageReceived;
+            await this.listenerUDP.StartListeningAsync(this.portNum, this.commsInterface);
 
-            ListenUdpLoop();
+            this.ListenUdpLoop();
         }
 
         // This method runs in a seperate thread.

@@ -3,44 +3,60 @@ using System.Text;
 using System.Threading.Tasks;
 using Networking.P2P.TransportLayer;
 using Networking.P2P.TransportLayer.EventArgs;
+using Sockets.Plugin.Abstractions;
+using Sockets.Plugin;
+using System.Linq;
 
 namespace Networking.P2P
 {
     public class NetworkManager
     {
-        private int portNum = 8080;
-
-        public string IpAddress { get; set; }  = string.Empty;
+        private int portNum;
+        private string interfaceName;
 
         private TransportManager transMgr;
-        private HeartBeatManager hrtBtMgr;
+        // private HeartBeatManager hrtBtMgr;
 
         public event EventHandler<PeerPlayerChangeEventArgs> PeerPlayerChange;
         public event EventHandler<MsgReceivedEventArgs> MsgReceived;
 
-        public NetworkManager(string ip = "")
+        public string IpAddress
         {
-            this.IpAddress = ip;
+            get
+            {
+                return this.transMgr?.SelectedCommsInterface?.IpAddress;
+            }
+        }
 
-            this.transMgr = new TransportManager(portNum, true);
-            this.transMgr.IpAddress = this.IpAddress;
-
-            this.hrtBtMgr = new HeartBeatManager("heartbeat", transMgr);
-
-            this.transMgr.PeerPlayerChange += OnPeerChange;
-            this.transMgr.MsgReceived += OnMsgReceived;
+        public NetworkManager(int port = 8080, string interfaceName = "")
+        {
+            this.portNum = port;
+            this.interfaceName = interfaceName;
         }
 
         public async Task StartAsync()
         {
+            ICommsInterface commsInterface = null;
+
+            if (!string.IsNullOrWhiteSpace(this.interfaceName))
+            {
+                var interfaces = await CommsInterface.GetAllInterfacesAsync();
+                commsInterface = interfaces.FirstOrDefault(i => i.Name.ToLower().Equals(this.interfaceName.ToLower()));
+            }
+
+            this.transMgr = new TransportManager(commsInterface, this.portNum, true);
+            this.transMgr.PeerPlayerChange += this.OnPeerChange;
+            this.transMgr.MsgReceived += this.OnMsgReceived;
+
             await this.transMgr.StartAsync();
         }
 
-        public async Task StartBroadcastingAsync()
-        {
-            this.hrtBtMgr.StartBroadcasting();
-            await this.transMgr.StartAsync();
-        }
+        //public async Task StartBroadcastingAsync()
+        //{
+        //    this.hrtBtMgr = new HeartBeatManager("heartbeat", transMgr);
+        //    this.hrtBtMgr.StartBroadcasting();
+        //    await this.transMgr.StartAsync();
+        //}
 
         public async Task SendMessage(string message)
         {
@@ -69,11 +85,6 @@ namespace Networking.P2P
             await transMgr.SendBroadcastAsyncUDP(msgBits);
         }
 
-        public async Task<string> GetIpAddress()
-        {
-            return await this.transMgr.GetIpAddress();
-        }
-        
         private void OnPeerChange(object sender, PeerPlayerChangeEventArgs e)
         {
             this.PeerPlayerChange?.Invoke(this, e);

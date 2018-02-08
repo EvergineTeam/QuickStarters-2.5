@@ -51,10 +51,9 @@ namespace P2PTank.Scenes
         public GamePlayScene()
         {
             var localHostService = WaveServices.GetService<LocalhostService>();
-            var ipAddress = localHostService.Localhost.Ip;
 
             this.mapLoader = new MapLoader();
-            this.peerManager = new P2PManager(ipAddress);
+            this.peerManager = new P2PManager(8080, "Npcap Loopback Adapter");
 
             this.peerManager.PeerPlayerChange += this.OnPeerChanged;
             this.peerManager.MsgReceived += this.OnMsgReceived;
@@ -410,19 +409,23 @@ namespace P2PTank.Scenes
             this.activeBullets.Add(id);
         }
 
-        private async void OnPeerChanged(object sender, PeerPlayerChangeEventArgs e)
+        private void OnPeerChanged(object sender, PeerPlayerChangeEventArgs e)
         {
-            var ipAddress = await this.peerManager.GetIpAddress();
-            foreach (PeerPlayer peer in e.Peers)
-            {
-                Labels.Add("OnPeerChanged", peer.IpAddress);
-                if (!this.ConnectedPeers.Contains(peer))
-                {
-                    this.ConnectedPeers.Add(peer);
+            var ipAddress = this.peerManager.IpAddress;
 
-                    if (ipAddress != peer.IpAddress)
+            if (ipAddress != null)
+            {
+                foreach (PeerPlayer peer in e.Peers)
+                {
+                    Labels.Add("OnPeerChanged", peer.IpAddress);
+                    if (!this.ConnectedPeers.Contains(peer))
                     {
-                        this.SendCreatePlayerMessage(null, null, peer.IpAddress);
+                        this.ConnectedPeers.Add(peer);
+
+                        if (ipAddress != peer.IpAddress)
+                        {
+                            this.SendCreatePlayerMessage(null, null, peer.IpAddress);
+                        }
                     }
                 }
             }

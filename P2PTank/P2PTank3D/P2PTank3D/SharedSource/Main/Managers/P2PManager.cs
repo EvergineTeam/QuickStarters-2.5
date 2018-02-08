@@ -14,21 +14,27 @@ namespace P2PTank.Managers
 {
     public class P2PManager : Component
     {
-        private string iPAddress;
         private NetworkManager peer2peer;
 
         public event EventHandler<PeerPlayerChangeEventArgs> PeerPlayerChange;
         public event EventHandler<MsgReceivedEventArgs> MsgReceived;
 
-        public P2PManager(string iPAddress = "")
+        public string IpAddress
         {
-            this.iPAddress = iPAddress;
-            this.peer2peer = new NetworkManager(iPAddress);
+            get
+            {
+                return this.peer2peer.IpAddress;
+            }
+        }
+
+        public P2PManager(int port = 8080, string interfaceName = null)
+        {
+            this.peer2peer = new NetworkManager(port, interfaceName);
 
             this.peer2peer.PeerPlayerChange += this.OnPeerChanged;
             this.peer2peer.MsgReceived += this.OnMsgReceived;
         }
-        
+
         protected override void Removed()
         {
             this.peer2peer.PeerPlayerChange -= this.OnPeerChanged;
@@ -57,14 +63,6 @@ namespace P2PTank.Managers
             var contentSerialized = JsonConvert.SerializeObject(content);
 
             return string.Format("{0}/{1}", messageType, contentSerialized);
-        }
-
-        public async Task<string> GetIpAddress()
-        {
-            if (string.IsNullOrEmpty(this.iPAddress))
-                return await peer2peer.GetIpAddress();
-            else
-                return this.iPAddress;
         }
 
         public Dictionary<P2PMessageType, object> ReadMessage(string message)
@@ -147,7 +145,7 @@ namespace P2PTank.Managers
                 }
 
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Debug.WriteLine(ex.Message);
             }

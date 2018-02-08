@@ -5,6 +5,7 @@ using Networking.P2P.TransportLayer.EventArgs;
 using System.Threading.Tasks;
 using System.IO;
 using Networking.P2P.Exceptions;
+using Sockets.Plugin.Abstractions;
 
 namespace Networking.P2P.TransportLayer
 {
@@ -23,6 +24,10 @@ namespace Networking.P2P.TransportLayer
         /// </summary>
         public event EventHandler<MsgReceivedEventArgs> MsgReceived;
 
+        /// <summary>
+        /// Selected Interface. If null OS will select first.
+        /// </summary>
+        public ICommsInterface SelectedCommsInterface { get; set; }
 
         /// <summary>
         /// A list of all peers that are known to this peer
@@ -53,26 +58,21 @@ namespace Networking.P2P.TransportLayer
         /// Get methods that retreives the IPv4 address of the local peer asynchronously
         /// </summary>
         /// <returns> A string in the format xxxx.xxxx.xxxx.xxxx  </returns>
-        public async Task<string> GetIpAddress()
-        {
-            if (ipAddress == null)
-            {
-                ipAddress = await GetLocalIPAddress();
-            }
+        //public async Task<string> GetIpAddress()
+        //{
+        //    if (ipAddress == null)
+        //    {
+        //        ipAddress = await GetLocalIPAddress();
+        //    }
 
-            return ipAddress;
-        }
-
-        public string IpAddress
-        {
-            get { return this.ipAddress; }
-            set { this.ipAddress = value; }
-        }
+        //    return ipAddress;
+        //}
 
         /// <summary>
         /// The port number used for sending and receiving messages
         /// </summary>
         public int PortNum { get; }
+
         public bool tcpOnly { get; }
 
         private Listener listener;
@@ -82,19 +82,19 @@ namespace Networking.P2P.TransportLayer
         /// </summary>
         /// <param name="mPortNum"> The port number which this peer will listen on and send messages with </param>
         /// <param name="mForwardAll"> When true, all messages received trigger a MsgReceived event. This includes UDB broadcasts that are reflected back to the local peer.</param>
-        public TransportManager(int mPortNum = 8080, bool mForwardAll = false, bool mTcpOnly = false)
+        public TransportManager(ICommsInterface commsInterface = null, int mPortNum = 8080, bool mForwardAll = false, bool mTcpOnly = false)
         {
             this.PortNum = mPortNum;
             this.tcpOnly = mTcpOnly;
-            this.listener = new Listener(this.PortNum, mTcpOnly);
+            this.listener = new Listener(this.PortNum, commsInterface, mTcpOnly);
             this.baseStation = new BaseStation(this.PortNum, mForwardAll, mTcpOnly);
 
             this.baseStation.PeerPlayerChange += OnBaseStationPeerChange;
             this.baseStation.MsgReceived += IncomingMsg;
 
             //baseStation looks up incoming messages to see if there is a new peer talk to us
-            this.listener.IncomingMsg += baseStation.IncomingMsgAsync;
-            this.listener.PeerConnectTCPRequest += Listener_PeerConnectTCPRequest;
+            this.listener.IncomingMsg += this.baseStation.IncomingMsgAsync;
+            this.listener.PeerConnectTCPRequest += this.Listener_PeerConnectTCPRequest;
         }
 
 
@@ -117,13 +117,22 @@ namespace Networking.P2P.TransportLayer
                 return;
             }
 
-            if (string.IsNullOrEmpty(this.IpAddress))
+            if (SelectedCommsInterface == null)
             {
-                baseStation.LocalIpAddress = await GetLocalIPAddress();
+                var interfaces = await CommsInterface.GetAllInterfacesAsync();
+                foreach (CommsInterface comms in interfaces)
+                {
+                    if (IsValidInterface(comms))
+                    {
+                        this.SelectedCommsInterface = comms;
+                        break;
+                    }
+                }
             }
-            else
+
+            if (SelectedCommsInterface == null)
             {
-                baseStation.LocalIpAddress = this.IpAddress;
+                throw (new NoNetworkInterface("Unable to find an active network interface connection. Is this device connected to wifi?"));
             }
 
             await listener.StartAsync();
@@ -266,22 +275,28 @@ namespace Networking.P2P.TransportLayer
             PeerPlayerChange?.Invoke(this, e);
         }
 
-        private async Task<string> GetLocalIPAddress()
-        {
-            
-            List<CommsInterface> interfaces = await CommsInterface.GetAllInterfacesAsync();
+        //private async Task<string> GetLocalIPAddress()
+        //{
+        //    if (this.SelectedCommsInterface != null)
+        //    {
+        //        return this.SelectedCommsInterface.IpAddress;
+        //    }
+        //    else
+        //    {
+        //        List<CommsInterface> interfaces = await CommsInterface.GetAllInterfacesAsync();
 
-            foreach (CommsInterface comms in interfaces)
-            {
-                if (IsValidInterface(comms))
-                {
-                    return comms.IpAddress;
-                }
-            }
+        //        foreach (CommsInterface comms in interfaces)
+        //        {
+        //            if (IsValidInterface(comms))
+        //            {
+        //                return comms.IpAddress;
+        //            }
+        //        }
+        //    }
 
-            // Raise exception
-            throw (new NoNetworkInterface("Unable to find an active network interface connection. Is this device connected to wifi?"));
-        }
+        //    // Raise exception
+        //    throw (new NoNetworkInterface("Unable to find an active network interface connection. Is this device connected to wifi?"));
+        //}
 
         private bool IsValidInterface(CommsInterface commsInterface)
         {
