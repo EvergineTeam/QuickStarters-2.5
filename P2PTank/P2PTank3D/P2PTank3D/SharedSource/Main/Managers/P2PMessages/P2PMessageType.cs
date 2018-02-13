@@ -7,7 +7,6 @@
         DestroyPlayer,
         Move,
         Rotate,
-        BarrelRotate,
         Shoot,
         BulletMove,
         BulletDestroy,

@@ -26,6 +26,7 @@ using Networking.P2P.TransportLayer;
 using Networking.P2P.TransportLayer.EventArgs;
 using P2PTank3D;
 using P2PTank3D.Services;
+using System.Diagnostics;
 
 namespace P2PTank.Scenes
 {
@@ -322,7 +323,8 @@ namespace P2PTank.Scenes
         private void OnMsgReceived(object sender, MsgReceivedEventArgs e)
         {
             var messageReceived = Encoding.ASCII.GetString(e.Message);
-            Labels.Add("OnMsgReceived", messageReceived);
+
+            Labels.Add("OnMsgReceived GamePlayScene", messageReceived);
 
             var result = peerManager.ReadMessage(messageReceived);
 

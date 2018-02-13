@@ -36,7 +36,7 @@ namespace Networking.P2P.TransportLayer
         {
             get
             {
-                return this.baseStation.KnownPeers;
+                return this.baseStation?.KnownPeers;
             }
         }
 

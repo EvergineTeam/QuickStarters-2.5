@@ -116,33 +116,20 @@ namespace P2PTank.Behaviors
                     {
                         PlayerId = this.PlayerID,
                         X = this.transform.LocalPosition.X,
-                        Y = this.transform.LocalPosition.Y,
+                        Y = this.transform.LocalPosition.Y
                     };
                     await this.peerManager.SendBroadcastAsync(this.peerManager.CreateMessage(P2PMessageType.Move, moveMessage));
 
                     var rotateMessage = new RotateMessage()
                     {
                         PlayerId = this.PlayerID,
-                        Rotation = this.transform.Rotation,
+                        Rotation = this.transform.Rotation
                     };
+
                     await this.peerManager.SendBroadcastAsync(this.peerManager.CreateMessage(P2PMessageType.Rotate, rotateMessage));
                 }
             }
-
-            if (this.lastBarrelRotation != this.barrelTransform.Rotation)
-            {
-                var barrelRotateMessage = new BarrelRotate()
-                {
-                    PlayerId = this.PlayerID,
-                    Rotation = this.barrelTransform.Rotation,
-                };
-
-                this.lastBarrelRotation = this.barrelTransform.Rotation;
-                await this.peerManager.SendBroadcastAsync(this.peerManager.CreateMessage(P2PMessageType.BarrelRotate, barrelRotateMessage));
-            }
         }
-
-        private float lastBarrelRotation;
 
         private void RunInputCommands(PlayerCommand playerCommand, float elapsedTime)
         {

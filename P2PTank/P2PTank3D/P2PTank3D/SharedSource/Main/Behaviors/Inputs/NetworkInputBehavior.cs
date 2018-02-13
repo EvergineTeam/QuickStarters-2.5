@@ -7,6 +7,7 @@ using System.Linq;
 using WaveEngine.Framework.Graphics;
 using Networking.P2P.TransportLayer.EventArgs;
 using WaveEngine.Common.Math;
+using WaveEngine.Framework.Diagnostic;
 
 namespace P2PTank.Behaviors
 {
@@ -42,6 +43,8 @@ namespace P2PTank.Behaviors
         {
             var messageReceived = Encoding.ASCII.GetString(e.Message);
 
+            Labels.Add("OnMsgReceived NetworkInputBehavior", messageReceived);
+
             var result = this.peerManager.ReadMessage(messageReceived);
 
             if (result.Any())
@@ -68,14 +71,6 @@ namespace P2PTank.Behaviors
                                 this.Rotate(rotateData.Rotation);
                             }
                             break;
-                        case P2PMessageType.BarrelRotate:
-                            var barrelRotateData = message.Value as BarrelRotate;
-
-                            if (this.PlayerID.Equals(barrelRotateData.PlayerId))
-                            {
-                                this.BarrelRotate(barrelRotateData.Rotation);
-                            }
-                            break;
                     }
                 }
             }
@@ -83,7 +78,7 @@ namespace P2PTank.Behaviors
 
         protected override void Update(TimeSpan gameTime)
         {
-            if(this.transform.Position != this.desiredPosition)
+            if (this.transform.Position != this.desiredPosition)
             {
                 this.transform.Position = Vector2.Lerp(this.transform.Position, this.desiredPosition, 0.2f);
             }

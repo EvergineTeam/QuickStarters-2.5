@@ -45,7 +45,7 @@ namespace P2PTank
             }
 
             WaveServices.ScreenContextManager.To(screenContext);
-            // WaveServices.ScreenContextManager.SetDiagnosticsActive(true);
+            WaveServices.ScreenContextManager.SetDiagnosticsActive(true);
 
 
             this.Application.Adapter.OnScreenSizeChanged += OnScreenSizeChanged;

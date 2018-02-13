@@ -32,7 +32,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)GameSettings.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Managers\GamePlayManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Managers\P2PManager.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Managers\P2PMessages\BarrelRotate.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Managers\P2PMessages\BulletCreateMessage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Managers\P2PMessages\BulletDestroyMessage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Managers\P2PMessages\BulletMoveMessage.cs" />
