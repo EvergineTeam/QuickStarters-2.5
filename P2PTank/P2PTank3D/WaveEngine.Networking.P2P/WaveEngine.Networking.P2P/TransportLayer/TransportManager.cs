@@ -152,7 +152,7 @@ namespace Networking.P2P.TransportLayer
                 this.baseStation = null;
             }
 
-            KnownPeers.Clear();
+            KnownPeers?.Clear();
         }
 
         /// <summary>
