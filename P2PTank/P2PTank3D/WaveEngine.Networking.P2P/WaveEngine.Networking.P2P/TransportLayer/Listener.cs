@@ -71,8 +71,9 @@ namespace Networking.P2P.TransportLayer
 
         private async Task StartListeningAsyncTCP(int portNum)
         {
+            listenerTCP.ConnectionReceived -= ListenerTCP_ConnectionReceived;
             listenerTCP.ConnectionReceived += ListenerTCP_ConnectionReceived;
-            await listenerTCP.StartListeningAsync(portNum);
+            await listenerTCP.StartListeningAsync(portNum, commsInterface);
 
             ListenTcpLoop();
         }
@@ -129,7 +130,7 @@ namespace Networking.P2P.TransportLayer
             }
 
             this.listenerUDP.MessageReceived += this.ListenerUDP_MessageReceived;
-            await this.listenerUDP.StartListeningAsync(this.portNum);
+            await this.listenerUDP.StartListeningAsync(this.portNum, this.commsInterface);
 
             this.ListenUdpLoop();
         }

@@ -54,7 +54,7 @@ namespace P2PTank.Scenes
             var localHostService = WaveServices.GetService<LocalhostService>();
 
             this.mapLoader = new MapLoader();
-            this.peerManager = new P2PManager(8080, "Ethernet");
+            this.peerManager = new P2PManager(8080, "vEthernet (New Virtual Switch)");
 
             this.peerManager.PeerPlayerChange += this.OnPeerChanged;
             this.peerManager.MsgReceived += this.OnMsgReceived;

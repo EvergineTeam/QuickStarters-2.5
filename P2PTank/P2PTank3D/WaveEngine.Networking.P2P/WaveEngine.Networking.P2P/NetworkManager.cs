@@ -44,7 +44,7 @@ namespace Networking.P2P
                 commsInterface = interfaces.FirstOrDefault(i => i.Name.ToLower().Equals(this.interfaceName.ToLower()));
             }
 
-            this.transMgr = new TransportManager(commsInterface, this.portNum, true);
+            this.transMgr = new TransportManager(commsInterface, this.portNum, false, false);
             this.transMgr.PeerPlayerChange += this.OnPeerChange;
             this.transMgr.MsgReceived += this.OnMsgReceived;
 
@@ -87,11 +87,13 @@ namespace Networking.P2P
 
         private void OnPeerChange(object sender, PeerPlayerChangeEventArgs e)
         {
+            System.Diagnostics.Debug.WriteLine($"NetworkManager: PeerChanged from {string.Join (",", e.Peers.Select(p=>p.IpAddress))}");
             this.PeerPlayerChange?.Invoke(this, e);
         }
 
         private void OnMsgReceived(object sender, MsgReceivedEventArgs e)
         {
+            System.Diagnostics.Debug.WriteLine($"NetworkManager: msgReceiverd from {e.RemoteIp}");
             this.MsgReceived?.Invoke(this, e);
         }
     }

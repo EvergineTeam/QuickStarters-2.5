@@ -30,7 +30,6 @@ namespace P2PTank.Managers
         public P2PManager(int port = 8080, string interfaceName = null)
         {
             this.peer2peer = new NetworkManager(port, interfaceName);
-
             this.peer2peer.PeerPlayerChange += this.OnPeerChanged;
             this.peer2peer.MsgReceived += this.OnMsgReceived;
         }

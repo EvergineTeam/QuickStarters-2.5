@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using System.IO;
 using Sockets.Plugin.Abstractions;
 using Networking.P2P.TransportLayer.EventArgs;
+using System.Diagnostics;
 
 namespace Networking.P2P.TransportLayer
 {
@@ -15,6 +16,7 @@ namespace Networking.P2P.TransportLayer
         {
             get
             {
+                Debug.WriteLine("PeerPlayer IpAddress: " + this.socketClient.RemoteAddress);
                 return socketClient.RemoteAddress;
             }
         }
