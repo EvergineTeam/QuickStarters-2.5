@@ -27,33 +27,32 @@ namespace P2PTank
 
             WaveServices.RegisterService(new AudioService());
             ScreenContext screenContext;
-
-            gamePlayScene = new GamePlayScene();
-
+            ///
+            this.gamePlayScene = new GamePlayScene();
             if (WaveServices.Platform.PlatformFamily == PlatformFamily.Desktop)
             {
-                screenContext = new ScreenContext(gamePlayScene);
+                screenContext = new ScreenContext(this.gamePlayScene);
             }
             else
             {
                 screenContext = new ScreenContext(
-                    gamePlayScene,
+                    this.gamePlayScene,
                     new VirtualJoystickScene())
                 {
                     Behavior = ScreenContextBehaviors.UpdateInBackground | ScreenContextBehaviors.DrawInBackground
                 };
             }
+            ////
 
             WaveServices.ScreenContextManager.To(screenContext);
-            WaveServices.ScreenContextManager.SetDiagnosticsActive(true);
-
-
             this.Application.Adapter.OnScreenSizeChanged += OnScreenSizeChanged;
+
+            WaveServices.ScreenContextManager.SetDiagnosticsActive(true);
         }
 
         private void OnScreenSizeChanged(object sender, WaveEngine.Common.Helpers.SizeEventArgs e)
         {
-            gamePlayScene.UpdateMiniMapPosition();
+            this.gamePlayScene.UpdateMiniMapPosition();
         }
     }
 }
