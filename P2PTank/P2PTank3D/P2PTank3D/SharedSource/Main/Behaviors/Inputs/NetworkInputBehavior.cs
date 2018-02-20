@@ -20,8 +20,6 @@ namespace P2PTank.Behaviors
         [RequiredComponent]
         private Transform2D transform = null;
 
-        private Transform2D barrelTransform = null;
-
         public string PlayerID { get; set; }
 
         public NetworkInputBehavior(P2PManager p2pManager)
@@ -29,14 +27,6 @@ namespace P2PTank.Behaviors
             this.peerManager = p2pManager;
 
             this.peerManager.MsgReceived += this.OnMessageReceived;
-        }
-
-        protected override void ResolveDependencies()
-        {
-            base.ResolveDependencies();
-
-            var barrelEntity = this.Owner.FindChild(GameConstants.EntitynameTankBarrel);
-            this.barrelTransform = barrelEntity.FindComponent<Transform2D>();
         }
 
         private void OnMessageReceived(object sender, MsgReceivedEventArgs e)
@@ -103,14 +93,6 @@ namespace P2PTank.Behaviors
                 return;
 
             this.transform.Rotation = angle;
-        }
-
-        private void BarrelRotate(float angle)
-        {
-            if (barrelTransform == null)
-                return;
-
-            this.barrelTransform.Rotation = angle;
         }
 
         protected override void Removed()

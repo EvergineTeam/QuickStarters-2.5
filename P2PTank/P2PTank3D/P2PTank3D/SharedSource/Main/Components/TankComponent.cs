@@ -53,9 +53,6 @@ namespace P2PTank.Components
         public float CurrentRotationSpeed { get; set; }
 
         [IgnoreDataMember]
-        public float CurrentRotationBarrelSpeed { get; set; }
-
-        [IgnoreDataMember]
         public float CurrentShootInterval { get; set; }
 
         protected override void DefaultValues()
@@ -80,7 +77,6 @@ namespace P2PTank.Components
             this.CurrentLive = this.InitialLive;
             this.CurrentSpeed = this.InitialSpeed;
             this.CurrentRotationSpeed = this.InitialRotationSpeed;
-            this.CurrentRotationBarrelSpeed = this.InitialRotationBarrelSpeed;
             this.CurrentShootInterval = this.InitialShootInterval;
 
             this.UpdateColor();

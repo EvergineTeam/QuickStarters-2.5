@@ -10,8 +10,6 @@ namespace P2PTank.Behaviors.Inputs
 
         public float Rotate { get; private set; }
 
-        public float RotateBarrel { get; private set; }
-
         public bool Shoot { get; private set; }
 
         public void SetMove(float move)
@@ -28,11 +26,6 @@ namespace P2PTank.Behaviors.Inputs
             var temp = this.AbsoluteMove;
             temp.X = this.Rotate;
             this.AbsoluteMove = temp;
-        }
-
-        public void SetRotateBarrel(float rotateBarrel)
-        {
-            this.RotateBarrel = MathHelper.Clamp(this.RotateBarrel + rotateBarrel, -1.0f, 1.0f);
         }
 
         public void SetShoot()
