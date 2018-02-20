@@ -27,7 +27,8 @@ namespace P2PTank3D
             this.Height = 720;
             this.FullScreen = false;
             this.WindowTitle = "P2PTank3D";
-            this.HasVideoSupport = true;
+            this.HasVideoSupport = false;
+            this.IsFixedTimeStep = false;
         }
 
         public override void Initialize()

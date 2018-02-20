@@ -18,6 +18,8 @@ namespace P2PTank.Behaviors
 {
     public class PlayerInputBehavior : Behavior
     {
+        private float speed = 2;
+
         public string PlayerID { get; set; }
 
         [RequiredComponent]
@@ -233,13 +235,13 @@ namespace P2PTank.Behaviors
 
             var orientation = this.transform.Orientation;
 
-            float fixedStep = (1f / 60f);
+            float fixedStep = speed * elapsedTime;
             this.rigidBody.LinearVelocity = forward * (orientation * Vector3.UnitY * fixedStep * this.tankComponent.CurrentSpeed).ToVector2();
         }
 
         private void Move(Vector2 forward, float elapsedTime)
         {
-            float fixedStep = (1f / 60f);
+            float fixedStep = speed * elapsedTime;
             this.rigidBody.LinearVelocity = forward * (fixedStep * this.tankComponent.CurrentSpeed);
         }
 
@@ -250,13 +252,16 @@ namespace P2PTank.Behaviors
                 return;
             }
 
-            var roll = left * this.tankComponent.CurrentRotationSpeed * elapsedTime;
+            float fixedStep = speed * elapsedTime;
+            var roll = left * this.tankComponent.CurrentRotationSpeed * fixedStep;
             this.rigidBody.AngularVelocity = roll;
         }
 
         private void Rotate(Vector2 orientation, float elapsedTime)
         {
-            var angle = Vector2.Angle(Vector2.UnitY, orientation * new Vector2(1, -1));
+            float fixedStep = speed * elapsedTime;
+
+            var angle = Vector2.Angle(Vector2.UnitY, orientation * new Vector2(1, -1)) * fixedStep;
 
             if (double.IsInfinity(angle) || double.IsNaN(angle))
                 return;
@@ -271,10 +276,10 @@ namespace P2PTank.Behaviors
                 return;
             }
 
-            var roll = 
+            var roll =
                 left * this.tankComponent.CurrentRotationBarrelSpeed * elapsedTime;
 
-            this.barrelTransform.Orientation = 
+            this.barrelTransform.Orientation =
                 this.barrelTransform.Orientation * Quaternion.CreateFromYawPitchRoll(0.0f, 0.0f, roll);
         }
 
