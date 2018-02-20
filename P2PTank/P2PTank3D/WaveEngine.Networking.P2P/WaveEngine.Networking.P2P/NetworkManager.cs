@@ -87,13 +87,11 @@ namespace Networking.P2P
 
         private void OnPeerChange(object sender, PeerPlayerChangeEventArgs e)
         {
-            System.Diagnostics.Debug.WriteLine($"NetworkManager: PeerChanged from {string.Join (",", e.Peers.Select(p=>p.IpAddress))}");
             this.PeerPlayerChange?.Invoke(this, e);
         }
 
         private void OnMsgReceived(object sender, MsgReceivedEventArgs e)
         {
-            System.Diagnostics.Debug.WriteLine($"NetworkManager: msgReceiverd from {e.RemoteIp}");
             this.MsgReceived?.Invoke(this, e);
         }
     }

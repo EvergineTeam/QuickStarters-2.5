@@ -16,7 +16,6 @@ namespace Networking.P2P.TransportLayer
         {
             get
             {
-                Debug.WriteLine("PeerPlayer IpAddress: " + this.socketClient.RemoteAddress);
                 return socketClient.RemoteAddress;
             }
         }
