@@ -157,6 +157,18 @@ namespace P2PTank.Managers
             entity.FindComponent<Transform2D>().LocalPosition = position;
             entity.FindComponent<TankComponent>().Color = color;
 
+            var tankBody = entity.FindComponentsInChildren<MaterialComponent>().FirstOrDefault(t => t.Owner.Name == "tankBody");
+            var tankHead = entity.FindComponentsInChildren<MaterialComponent>().FirstOrDefault(t => t.Owner.Name == "tankHead");
+
+            tankBody.OnComponentInitialized += (s, e) =>
+            {
+                ((StandardMaterial)tankBody.Material).DiffuseColor = color;
+            };
+            tankHead.OnComponentInitialized += (s, e) =>
+            {
+                ((StandardMaterial)tankHead.Material).DiffuseColor = color;
+            };
+
             this.tanksToAdd.Add(entity);
         }
 

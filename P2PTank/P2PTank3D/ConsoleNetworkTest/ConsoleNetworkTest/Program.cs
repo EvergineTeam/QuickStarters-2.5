@@ -1,11 +1,5 @@
-﻿using Networking.P2P.TransportLayer;
-using P2PTank.Managers;
-using Sockets.Plugin;
+﻿using Sockets.Plugin;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ConsoleNetworkTest
 {
@@ -50,10 +44,12 @@ namespace ConsoleNetworkTest
                         break;
                     }
                 }
-                catch
+                catch (Exception ex)
                 {
+                    Console.WriteLine(ex.Message);
                 }
             }
+
             return port;
         }
 
@@ -88,6 +84,7 @@ namespace ConsoleNetworkTest
             } while (selectedIndex < 0 || selectedIndex >= interfaces.Count);
 
             res = interfaces[selectedIndex];
+
             return res;
         }
     }
