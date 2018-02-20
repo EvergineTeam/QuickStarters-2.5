@@ -222,7 +222,7 @@ namespace P2PTank.Behaviors
             }
 
             // float fixedStep = this.tankComponent.CurrentSpeed * elapsedTime;
-            float fixedStep = this.tankComponent.CurrentSpeed;
+            float fixedStep = this.tankComponent.CurrentSpeed / 60.0f;
             var orientation = this.transform.Orientation;
             this.rigidBody.LinearVelocity = forward * (orientation * Vector3.UnitY * fixedStep).ToVector2();
         }
@@ -230,7 +230,7 @@ namespace P2PTank.Behaviors
         private void Move(Vector2 forward, float elapsedTime)
         {
             // float fixedStep = this.tankComponent.CurrentSpeed * elapsedTime;
-            float fixedStep = this.tankComponent.CurrentSpeed;
+            float fixedStep = this.tankComponent.CurrentSpeed / 60.0f; 
             this.rigidBody.LinearVelocity = forward * fixedStep;
         }
 
@@ -242,7 +242,7 @@ namespace P2PTank.Behaviors
             }
 
             //float fixedStep = this.tankComponent.CurrentRotationSpeed * elapsedTime;
-            float fixedStep = this.tankComponent.CurrentRotationSpeed;
+            float fixedStep = this.tankComponent.CurrentRotationSpeed / 60.0f;
             var roll = left * fixedStep;
             this.rigidBody.AngularVelocity = roll;
         }
@@ -250,7 +250,7 @@ namespace P2PTank.Behaviors
         private void Rotate(Vector2 orientation, float elapsedTime)
         {
             //float fixedStep = this.tankComponent.CurrentRotationSpeed * elapsedTime;
-            float fixedStep = this.tankComponent.CurrentRotationSpeed;
+            float fixedStep = this.tankComponent.CurrentRotationSpeed / 60.0f;
 
             var angle = Vector2.Angle(Vector2.UnitY, orientation * new Vector2(1, -1)) * fixedStep;
 
