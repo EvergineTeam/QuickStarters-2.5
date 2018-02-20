@@ -17,8 +17,6 @@ namespace P2PTank.Behaviors
 {
     public class PlayerInputBehavior : Behavior
     {
-        private float speed = 2;
-
         public string PlayerID { get; set; }
 
         [RequiredComponent]
@@ -223,16 +221,17 @@ namespace P2PTank.Behaviors
                 return;
             }
 
+            // float fixedStep = this.tankComponent.CurrentSpeed * elapsedTime;
+            float fixedStep = this.tankComponent.CurrentSpeed;
             var orientation = this.transform.Orientation;
-
-            float fixedStep = speed * elapsedTime;
-            this.rigidBody.LinearVelocity = forward * (orientation * Vector3.UnitY * fixedStep * this.tankComponent.CurrentSpeed).ToVector2();
+            this.rigidBody.LinearVelocity = forward * (orientation * Vector3.UnitY * fixedStep).ToVector2();
         }
 
         private void Move(Vector2 forward, float elapsedTime)
         {
-            float fixedStep = speed * elapsedTime;
-            this.rigidBody.LinearVelocity = forward * (fixedStep * this.tankComponent.CurrentSpeed);
+            // float fixedStep = this.tankComponent.CurrentSpeed * elapsedTime;
+            float fixedStep = this.tankComponent.CurrentSpeed;
+            this.rigidBody.LinearVelocity = forward * fixedStep;
         }
 
         private void Rotate(float left, float elapsedTime)
@@ -242,14 +241,16 @@ namespace P2PTank.Behaviors
                 return;
             }
 
-            float fixedStep = speed * elapsedTime;
-            var roll = left * this.tankComponent.CurrentRotationSpeed * fixedStep;
+            //float fixedStep = this.tankComponent.CurrentRotationSpeed * elapsedTime;
+            float fixedStep = this.tankComponent.CurrentRotationSpeed;
+            var roll = left * fixedStep;
             this.rigidBody.AngularVelocity = roll;
         }
 
         private void Rotate(Vector2 orientation, float elapsedTime)
         {
-            float fixedStep = speed * elapsedTime;
+            //float fixedStep = this.tankComponent.CurrentRotationSpeed * elapsedTime;
+            float fixedStep = this.tankComponent.CurrentRotationSpeed;
 
             var angle = Vector2.Angle(Vector2.UnitY, orientation * new Vector2(1, -1)) * fixedStep;
 
