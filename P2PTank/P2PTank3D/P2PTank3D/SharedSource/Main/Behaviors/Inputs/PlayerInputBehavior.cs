@@ -4,7 +4,6 @@ using P2PTank.Managers;
 using P2PTank.Scenes;
 using WaveEngine.Common.Input;
 using WaveEngine.Common.Math;
-using WaveEngine.Components.Graphics2D;
 using WaveEngine.Framework;
 using WaveEngine.Framework.Diagnostic;
 using WaveEngine.Framework.Graphics;
@@ -35,8 +34,6 @@ namespace P2PTank.Behaviors
 
         private Transform2D barrelTransform = null;
 
-        private Sprite barrel;
-
         private P2PManager peerManager;
 
         private float shootTimer;
@@ -64,7 +61,6 @@ namespace P2PTank.Behaviors
             }
 
             var barrelEntity = this.Owner.FindChild(GameConstants.EntitynameTankBarrel);
-            this.barrel = barrelEntity.FindComponent<Sprite>();
             this.barrelTransform = barrelEntity.FindComponent<Transform2D>();
 
             this.gamePlayManager = this.Owner.Scene.EntityManager.FindComponentFromEntityPath<GamePlayManager>(GameConstants.ManagerEntityPath);
@@ -144,7 +140,6 @@ namespace P2PTank.Behaviors
             {
                 this.Move(playerCommand.Move, elapsedTime);
                 this.Rotate(playerCommand.Rotate, elapsedTime);
-                this.RotateBarrel(playerCommand.RotateBarrel, elapsedTime);
             }
 
             this.Shoot(playerCommand.Shoot, elapsedTime);
@@ -163,11 +158,6 @@ namespace P2PTank.Behaviors
                 {
                     playerCommand.SetMove(-leftThumb.Y);
                     playerCommand.SetRotate(leftThumb.X);
-                }
-
-                if (rightthumb != Vector2.Zero)
-                {
-                    playerCommand.SetRotateBarrel(rightthumb.X);
                 }
 
                 if (gamepadState.Buttons.RightShoulder == ButtonState.Pressed
@@ -267,20 +257,6 @@ namespace P2PTank.Behaviors
                 return;
 
             this.rigidBody.SetTransform(this.rigidBody.Transform2D.Position, angle);
-        }
-
-        private void RotateBarrel(float left, float elapsedTime)
-        {
-            if (left == 0)
-            {
-                return;
-            }
-
-            var roll =
-                left * this.tankComponent.CurrentRotationBarrelSpeed * elapsedTime;
-
-            this.barrelTransform.Orientation =
-                this.barrelTransform.Orientation * Quaternion.CreateFromYawPitchRoll(0.0f, 0.0f, roll);
         }
 
         private void Shoot(bool shoot, float elapsedTime)
