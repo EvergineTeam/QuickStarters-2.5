@@ -27,6 +27,7 @@ using Networking.P2P.TransportLayer.EventArgs;
 using P2PTank3D;
 using P2PTank3D.Services;
 using System.Diagnostics;
+using P2PTank3D.Models;
 
 namespace P2PTank.Scenes
 {

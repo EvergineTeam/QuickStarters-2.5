@@ -23,6 +23,7 @@ using WaveEngine.Components.Particles;
 using P2PTank.Scenes;
 using P2PTank3D;
 using WaveEngine.Components.GameActions;
+using P2PTank3D.Models;
 
 namespace P2PTank.Managers
 {
@@ -53,6 +54,9 @@ namespace P2PTank.Managers
         private Entity[] explosions;
         private int explodeIndex;
 
+        private LeaderBoard leaderBoard;
+        private AudioService audioService;
+
         private int ExplodeIndex
         {
             get
@@ -77,6 +81,10 @@ namespace P2PTank.Managers
 
                 this.gamePlayScene = this.Owner.Scene as CURRENTSCENETYPE;
                 this.poolComponent = this.gamePlayScene.EntityManager.FindComponentFromEntityPath<PoolComponent>(GameConstants.ManagerEntityPath);
+
+                this.leaderBoard = this.EntityManager.Find("leaderboard").FindComponent<LeaderBoard>();
+
+                this.audioService = WaveServices.GetService<AudioService>();
             }
         }
 
@@ -142,6 +150,8 @@ namespace P2PTank.Managers
 
             this.tanksToAdd.Add(entity);
 
+            this.leaderBoard.AddOrUpdatePlayerIfNotExtist(this.playerID, color);
+
             return entity;
         }
 
@@ -169,12 +179,13 @@ namespace P2PTank.Managers
                 ((StandardMaterial)tankHead.Material).DiffuseColor = color;
             };
 
+            this.leaderBoard.AddOrUpdatePlayerIfNotExtist(foeID, color);
+
             this.tanksToAdd.Add(entity);
         }
 
         public void CreatePowerUp(string powerUpId, PowerUpType powerUpType, Vector2 position)
         {
-            var audioService = WaveServices.GetService<AudioService>();
             audioService.Play(Audio.Sfx.SpawnPowerUp_wav);
 
             var powerUp = this.EntityManager.Instantiate(WaveContent.Assets.Prefabs.powerUpPrefab);
@@ -268,7 +279,6 @@ namespace P2PTank.Managers
                 bulletNetworkBehavior.IsActive = false;
             }
 
-
             entity.Name = bulletID;
 
             this.bulletsToAdd.Add(new BulletState() { bullet = entity, direction = direction, position = position, isLocal = true });
@@ -320,7 +330,6 @@ namespace P2PTank.Managers
 
             this.bulletsToAdd.Add(new BulletState() { bullet = entity, isLocal = false });
 
-            var audioService = WaveServices.GetService<AudioService>();
             audioService.Play(Audio.Sfx.Gun_wav);
 
             return entity;
@@ -345,15 +354,17 @@ namespace P2PTank.Managers
             if (tank == null)
                 return;
 
+            leaderBoard.Killed(tank.Name);
+
             var particles = tank.FindChild("fireParticles").FindComponent<ParticleSystem3D>();
             particles.Emit = true;
 
             IGameAction a = this.gamePlayScene.CreateGameActionFromAction(() =>
-            {   
+            {
                 particles.Emit = true;
                 var playerInputBehavior = tank.FindComponent<PlayerInputBehavior>();
 
-                if(playerInputBehavior != null)
+                if (playerInputBehavior != null)
                 {
                     playerInputBehavior.IsActive = false;
                 }
@@ -498,7 +509,11 @@ namespace P2PTank.Managers
 
         protected override void Update(TimeSpan gameTime)
         {
-            var audioService = WaveServices.GetService<AudioService>();
+            foreach (var entry in leaderBoard.Board)
+            {
+                var data = entry.Value;
+                //Labels.Add(entry.Key, $"Kills = {data.Kills}; Deads = {data.Deads}");
+            }
 
             // Removes
             if (this.bulletsToRemove?.Count > 0)

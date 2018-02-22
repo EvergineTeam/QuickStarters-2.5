@@ -47,6 +47,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Managers\P2PMessages\RotateMessage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Managers\P2PMessages\ShootMessage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Managers\PowerUpManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\LeaderBoard.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\PlayerScoreComponent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Scenes\GamePlayScene.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Scenes\VirtualJoystickScene.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\Audio.cs" />
