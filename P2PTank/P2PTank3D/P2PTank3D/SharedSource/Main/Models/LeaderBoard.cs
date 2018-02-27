@@ -26,6 +26,7 @@ namespace P2PTank3D.Models
             if (!this.Board.ContainsKey(playerID))
             {
                 var entity = this.EntityManager.Instantiate(WaveContent.Assets.Prefabs.ScoreRowPrefab);
+                entity.Name = Guid.NewGuid().ToString();
                 playerScore = entity.FindComponent<PlayerScoreComponent>();
                 playerScore.PlayerID = playerID;
                 playerScore.Color = color;
