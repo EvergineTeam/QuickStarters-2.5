@@ -12,6 +12,7 @@ using WaveEngine.Framework.Services;
 using P2PTank.Services;
 using P2PTank.Entities;
 using P2PTank.Behaviors.Inputs;
+using P2PTank3D.Models;
 
 namespace P2PTank.Behaviors
 {
@@ -288,7 +289,7 @@ namespace P2PTank.Behaviors
             }
         }
 
-        public void Hit(float damage)
+        public void Hit(float damage, string playerId)
         {
             this.tankComponent.CurrentLive -= damage;
 
@@ -300,6 +301,9 @@ namespace P2PTank.Behaviors
             if (this.tankComponent.CurrentLive <= 0)
             {
                 this.DestroyTank();
+
+                var leaderBoard = this.EntityManager.Find("leaderboard").FindComponent<LeaderBoard>();
+                leaderBoard.Victory(playerId);
             }
         }
 

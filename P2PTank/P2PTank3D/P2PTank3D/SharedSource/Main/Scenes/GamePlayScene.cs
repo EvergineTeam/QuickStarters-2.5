@@ -21,13 +21,10 @@ using P2PTank.Services;
 using P2PTank.Components;
 using P2PTank.Managers.P2PMessages;
 using P2PTank.Tools;
-using WaveEngine.Framework.Models;
 using Networking.P2P.TransportLayer;
 using Networking.P2P.TransportLayer.EventArgs;
 using P2PTank3D;
 using P2PTank3D.Services;
-using System.Diagnostics;
-using P2PTank3D.Models;
 
 namespace P2PTank.Scenes
 {
@@ -240,10 +237,10 @@ namespace P2PTank.Scenes
                         // Cat5 is Foe Bullet
                         if (contact.ColliderB.CollisionCategories == ColliderCategory2D.Cat5)
                         {
-                            player.FindComponent<PlayerInputBehavior>().Hit(50);
                             var bulletCollider = contact.ColliderB.UserData as Collider2D;
                             if (bulletCollider != null)
                             {
+                                player.FindComponent<PlayerInputBehavior>().Hit(50, bulletCollider.Owner.Name);
                                 var bullet = bulletCollider.Owner;
                                 this.gameplayManager.DestroyBullet(bullet, this.peerManager);
                             }
