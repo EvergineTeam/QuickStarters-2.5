@@ -57,6 +57,8 @@ namespace P2PTank.Scenes
             this.mapLoader = new MapLoader();
             this.peerManager = new P2PManager(8080, "Ethernet");
 
+            this.playerID = Guid.NewGuid().ToString();
+
             this.peerManager.PeerPlayerChange += this.OnPeerChanged;
             this.peerManager.MsgReceived += this.OnMsgReceived;
         }
@@ -269,7 +271,7 @@ namespace P2PTank.Scenes
         private Entity CreatePlayer(GamePlayManager gameplayManager)
         {
             // New player identifier
-            this.playerID = Guid.NewGuid().ToString();
+            // this.playerID = Guid.NewGuid().ToString();
 
             // Get a random spawn point to initialize the player
             var spawnIndex = WaveServices.Random.Next(0, 4);
