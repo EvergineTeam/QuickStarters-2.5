@@ -355,6 +355,7 @@ namespace P2PTank.Managers
                 return;
 
             leaderBoard.Killed(tank.Name);
+            leaderBoard.Victory(this.playerID);
 
             var particles = tank.FindChild("fireParticles").FindComponent<ParticleSystem3D>();
             particles.Emit = true;
