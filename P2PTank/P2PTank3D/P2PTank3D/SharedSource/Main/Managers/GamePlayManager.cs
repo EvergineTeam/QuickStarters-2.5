@@ -346,17 +346,19 @@ namespace P2PTank.Managers
             particles.Emit = emit;
         }
 
-        public void DestroyTank(Entity tank)
+        public void DestroyTank(Entity tank, string killerId)
         {
-            this.ExplodeTank(tank);
+            this.ExplodeTank(tank, killerId);
         }
 
-        public void ExplodeTank(Entity tank)
+        public void ExplodeTank(Entity tank, string killerId)
         {
             if (tank == null)
                 return;
 
             leaderBoard.Killed(tank.Name);
+
+            leaderBoard.Victory(killerId);
 
             var particles = tank.FindChild("fireParticles").FindComponent<ParticleSystem3D>();
             particles.Emit = true;

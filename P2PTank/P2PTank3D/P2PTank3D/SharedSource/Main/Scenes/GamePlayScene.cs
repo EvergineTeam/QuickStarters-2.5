@@ -154,7 +154,7 @@ namespace P2PTank.Scenes
 
         public void TestDieMyself()
         {
-            this.DestroyFoe(this.gameplayManager, this.playerID);
+            this.DestroyFoe(this.gameplayManager, this.playerID, string.Empty);
         }
 
         private void ConfigurePhysics()
@@ -312,12 +312,12 @@ namespace P2PTank.Scenes
             this.gameplayManager.SmokeTank(foe, life <= 50);
         }
 
-        private void DestroyFoe(GamePlayManager gameplayManager, string foeId)
+        private void DestroyFoe(GamePlayManager gameplayManager, string foeId, string killerId)
         {
             if (!string.IsNullOrEmpty(foeId))
             {
                 var foe = this.EntityManager.Find(foeId);
-                this.gameplayManager.DestroyTank(foe);
+                this.gameplayManager.DestroyTank(foe, killerId);
             }
         }
 
@@ -370,7 +370,7 @@ namespace P2PTank.Scenes
                                 break;
                             }
 
-                            this.DestroyFoe(this.gameplayManager, destroyPlayerData.PlayerId);
+                            this.DestroyFoe(this.gameplayManager, destroyPlayerData.PlayerId, destroyPlayerData.KillerId);
 
                             break;
                         case P2PMessageType.BulletCreate:
@@ -382,7 +382,7 @@ namespace P2PTank.Scenes
                             }
 
                             this.AddActiveBullet(createBulletData.BulletID);
-                            this.gameplayManager.CreateFoeBullet(createBulletData.Color, this.playerID, createBulletData.BulletID, peerManager);
+                            this.gameplayManager.CreateFoeBullet(createBulletData.Color, createBulletData.PlayerID, createBulletData.BulletID, peerManager);
                             break;
                         case P2PMessageType.BulletDestroy:
                             var destroyBulletData = message.Value as BulletDestroyMessage;
