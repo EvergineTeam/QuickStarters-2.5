@@ -10,6 +10,7 @@ namespace P2PTank3D.Models
     [DataContract]
     public class PlayerScoreComponent : Component
     {
+        private Color color;
         private Sprite tankBody;
         private TextComponent tbKills;
         private TextComponent tbDeads;
@@ -18,7 +19,16 @@ namespace P2PTank3D.Models
         public string PlayerID { get; set; }
 
         [IgnoreDataMember]
-        public Color Color { get; set; }
+        public Color Color
+        {
+            get { return this.color; }
+            set
+            {
+                this.color = value;
+
+                UpdateValues();
+            }
+        }
 
         [IgnoreDataMember]
         public int Kills { get; private set; }
@@ -48,8 +58,13 @@ namespace P2PTank3D.Models
 
         private void UpdateValues()
         {
-            this.tankBody.TintColor = this.Color;
+            if (this.tankBody != null)
+                this.tankBody.TintColor = this.Color;
+
+            if (this.tbKills != null)
             this.tbKills.Text = this.Kills.ToString();
+
+            if (this.tbDeads != null)
             this.tbDeads.Text = this.Deads.ToString();
         }
 

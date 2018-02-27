@@ -290,6 +290,7 @@ namespace P2PTank.Scenes
         private void CreateFoe(GamePlayManager gameplayManager, Color foeColor, Vector2 foeSpawnPosition, string foeID)
         {
             gameplayManager.CreateFoe(1, peerManager, foeID, foeColor, foeSpawnPosition);
+            this.SendCreatePlayerMessage(foeColor, foeSpawnPosition);
         }
 
         private void CreatePowerUp(GamePlayManager gameplayManager, string powerUpId, PowerUpType powerUpType, Vector2 powerUpSpawnPosition)
@@ -427,10 +428,10 @@ namespace P2PTank.Scenes
                     {
                         this.ConnectedPeers.Add(peer);
 
-                        if (ipAddress != peer.IpAddress)
-                        {
-                            this.SendCreatePlayerMessage(null, null, peer.IpAddress);
-                        }
+                        //if (ipAddress != peer.IpAddress)
+                        //{
+                        //    this.SendCreatePlayerMessage(null, null, peer.IpAddress);
+                        //}
                     }
                 }
             }
