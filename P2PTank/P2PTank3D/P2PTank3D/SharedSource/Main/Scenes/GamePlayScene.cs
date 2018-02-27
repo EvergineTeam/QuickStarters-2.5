@@ -240,7 +240,7 @@ namespace P2PTank.Scenes
                             var bulletCollider = contact.ColliderB.UserData as Collider2D;
                             if (bulletCollider != null)
                             {
-                                player.FindComponent<PlayerInputBehavior>().Hit(50, bulletCollider.Owner.Name);
+                                player.FindComponent<PlayerInputBehavior>().Hit(50, bulletCollider.Owner.FindComponent<BulletComponent>().PlayerOwnerId);
                                 var bullet = bulletCollider.Owner;
                                 this.gameplayManager.DestroyBullet(bullet, this.peerManager);
                             }

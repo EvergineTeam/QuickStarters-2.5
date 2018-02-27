@@ -255,7 +255,8 @@ namespace P2PTank.Managers
             var category = ColliderCategory2D.Cat2;
             var collidesWith = ColliderCategory2D.Cat3 | ColliderCategory2D.Cat4;
 
-            var entity = this.CreateBaseBullet(category, collidesWith, color);
+            var entity = this.CreateBaseBullet(category, collidesWith, color, this.playerID);
+
             var bulletID = Guid.NewGuid().ToString();
 
             // Player Bullet Behavior should activate
@@ -298,12 +299,12 @@ namespace P2PTank.Managers
             }
         }
 
-        public Entity CreateFoeBullet(Color color, string playerID, string bulletID, P2PManager peerManager)
+        public Entity CreateFoeBullet(Color color, string foeId, string bulletID, P2PManager peerManager)
         {
             var category = ColliderCategory2D.Cat5;
             var collidesWith = ColliderCategory2D.Cat1 | ColliderCategory2D.Cat3;
 
-            var entity = this.CreateBaseBullet(category, collidesWith, color);
+            var entity = this.CreateBaseBullet(category, collidesWith, color, foeId);
 
             entity.Name = bulletID;
 
@@ -317,8 +318,9 @@ namespace P2PTank.Managers
             else
             {
                 bulletNetworkBehavior.BulletID = bulletID;
-                bulletNetworkBehavior.PlayerID = this.playerID;
+                bulletNetworkBehavior.PlayerID = foeId;
             }
+
             bulletNetworkBehavior.IsActive = true;
 
             // Deactivate player behavior for this bullet
@@ -473,12 +475,13 @@ namespace P2PTank.Managers
             return entity;
         }
 
-        private Entity CreateBaseBullet(ColliderCategory2D category, ColliderCategory2D collidesWith, Color color)
+        private Entity CreateBaseBullet(ColliderCategory2D category, ColliderCategory2D collidesWith, Color color, string playerId)
         {
             var entity = this.poolComponent?.RetrieveBulletEntity();
 
             var component = entity.FindComponent<BulletComponent>();
             component.Color = color;
+            component.PlayerOwnerId = playerID;
 
             var colliders = entity.FindComponentsInChildren<Collider2D>(false);
             var collider = colliders.FirstOrDefault();

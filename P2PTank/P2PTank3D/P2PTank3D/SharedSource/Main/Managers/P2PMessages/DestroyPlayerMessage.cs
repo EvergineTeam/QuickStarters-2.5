@@ -3,5 +3,6 @@
     public class DestroyPlayerMessage
     {
         public string PlayerId { get; set; }
+        public string KillerId { get; set; }
     }
 }
