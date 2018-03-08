@@ -47,6 +47,11 @@ namespace P2PTank.Managers
             this.currentSpawnTime = TimeSpan.FromSeconds(WaveServices.Random.Next(MinimumSpawnTime, MaximumSpawnTime));
         }
 
+        public void EmptyTimeCounter()
+        {
+            this.currentSpawnTime = TimeSpan.Zero;
+        }
+
         public async void SendCreatePowerUpMessage()
         {
             // New power up identifier

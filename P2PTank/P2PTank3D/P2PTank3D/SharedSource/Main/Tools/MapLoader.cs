@@ -183,7 +183,7 @@ namespace P2PTank.Tools
             var cube = new Entity { IsStatic = true }
                 .AddComponent(new Transform3D()
                 {
-                    LocalPosition = new Vector3((maxX / 2), -0.5f, (maxY / 2) - 0.5f),
+                    LocalPosition = new Vector3((maxX / 2), -0.001f, (maxY / 2) - 0.5f),
                     Scale = new Vector3(maxX, 0, maxY)
                 })
                 .AddComponent(new PlaneMesh()

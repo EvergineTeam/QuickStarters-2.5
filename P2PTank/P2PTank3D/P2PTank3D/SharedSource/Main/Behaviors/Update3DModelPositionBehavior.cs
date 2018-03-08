@@ -31,7 +31,7 @@ namespace P2PTank.Behaviors
             pos3D.Z = pos2D.Y;
 
             pos3D = pos3D / 46;
-            Labels.Add("2Dto3D", pos3D);
+            // Labels.Add("2Dto3D", pos3D);
             
             this.childEntityTransform3D.Position = pos3D;
             this.childEntityTransform3D.Rotation = -Vector3.UnitY * (this.transform.Rotation + MathHelper.Pi);

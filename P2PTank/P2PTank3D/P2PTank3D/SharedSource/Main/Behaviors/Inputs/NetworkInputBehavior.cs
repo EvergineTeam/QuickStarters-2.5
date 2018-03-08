@@ -13,7 +13,7 @@ namespace P2PTank.Behaviors
 {
     public class NetworkInputBehavior : Behavior
     {
-        private P2PManager peerManager;
+        // private P2PManager peerManager;
 
         private Vector2 desiredPosition;
 
@@ -22,49 +22,49 @@ namespace P2PTank.Behaviors
 
         public string PlayerID { get; set; }
 
-        public NetworkInputBehavior(P2PManager p2pManager)
+        public NetworkInputBehavior()
         {
-            this.peerManager = p2pManager;
+            //this.peerManager = p2pManager;
 
-            this.peerManager.MsgReceived += this.OnMessageReceived;
+            // this.peerManager.MsgReceived += this.OnMessageReceived;
         }
 
-        private void OnMessageReceived(object sender, MsgReceivedEventArgs e)
-        {
-            var messageReceived = Encoding.ASCII.GetString(e.Message);
+        //private void OnMessageReceived(object sender, MsgReceivedEventArgs e)
+        //{
+        //    var messageReceived = Encoding.ASCII.GetString(e.Message);
 
-            Labels.Add("OnMsgReceived NetworkInputBehavior", messageReceived);
+        //    Labels.Add("MessageOn NetworkInputBehavior", messageReceived);
 
-            var result = this.peerManager.ReadMessage(messageReceived);
+        //    var result = this.peerManager.ReadMessage(messageReceived);
 
-            if (result.Any())
-            {
-                var message = result.FirstOrDefault();
+        //    if (result.Any())
+        //    {
+        //        var message = result.FirstOrDefault();
 
-                if (message.Value != null)
-                {
-                    switch (message.Key)
-                    {
-                        case P2PMessageType.Move:
-                            var moveData = message.Value as MoveMessage;
+        //        if (message.Value != null)
+        //        {
+        //            switch (message.Key)
+        //            {
+        //                case P2PMessageType.Move:
+        //                    var moveData = message.Value as MoveMessage;
 
-                            if (this.PlayerID.Equals(moveData.PlayerId))
-                            {
-                                this.Move(moveData.X, moveData.Y);
-                            }
-                            break;
-                        case P2PMessageType.Rotate:
-                            var rotateData = message.Value as RotateMessage;
+        //                    if (this.PlayerID.Equals(moveData.PlayerId))
+        //                    {
+        //                        this.Move(moveData.X, moveData.Y);
+        //                    }
+        //                    break;
+        //                case P2PMessageType.Rotate:
+        //                    var rotateData = message.Value as RotateMessage;
 
-                            if (this.PlayerID.Equals(rotateData.PlayerId))
-                            {
-                                this.Rotate(rotateData.Rotation);
-                            }
-                            break;
-                    }
-                }
-            }
-        }
+        //                    if (this.PlayerID.Equals(rotateData.PlayerId))
+        //                    {
+        //                        this.Rotate(rotateData.Rotation);
+        //                    }
+        //                    break;
+        //            }
+        //        }
+        //    }
+        //}
 
         protected override void Update(TimeSpan gameTime)
         {
@@ -74,7 +74,7 @@ namespace P2PTank.Behaviors
             }
         }
 
-        private void Move(float x, float y)
+        public void Move(float x, float y)
         {
             if (transform == null)
                 return;
@@ -84,10 +84,9 @@ namespace P2PTank.Behaviors
             pos.Y = y;
 
             this.desiredPosition = pos;
-            // this.transform.Position = pos;
         }
 
-        private void Rotate(float angle)
+        public void Rotate(float angle)
         {
             if (transform == null)
                 return;
@@ -99,7 +98,7 @@ namespace P2PTank.Behaviors
         {
             base.Removed();
 
-            this.peerManager.MsgReceived -= this.OnMessageReceived;
+            // this.peerManager.MsgReceived -= this.OnMessageReceived;
         }
     }
 }

@@ -265,13 +265,13 @@ namespace P2PTank.Behaviors
         {
             if (shootTimer > 0)
             {
-                Labels.Add("Canshoot", false);
+                //Labels.Add("Canshoot", false);
 
                 this.shootTimer -= elapsedTime;
             }
             else
             {
-                Labels.Add("Canshoot", true);
+                //Labels.Add("Canshoot", true);
 
                 if (shoot)
                 {
@@ -312,17 +312,17 @@ namespace P2PTank.Behaviors
 
         private async void DestroyTank(string killerId)
         {
-            this.gamePlayManager.DestroyTank(this.Owner);
+            this.gamePlayManager.DestroyTank(this.Owner, killerId);
             var audioService = WaveServices.GetService<AudioService>();
             audioService.Play(Audio.Sfx.Explosion_wav);
 
             var destroyMessage = new DestroyPlayerMessage() { PlayerId = this.PlayerID, KillerId = killerId };
             await peerManager.SendBroadcastAsync(peerManager.CreateMessage(P2PMessageType.DestroyPlayer, destroyMessage));
 
-            var leaderBoard = this.EntityManager.Find("leaderboard").FindComponent<LeaderBoard>();
+            //var leaderBoard = this.EntityManager.Find("leaderboard").FindComponent<LeaderBoard>();
 
-            leaderBoard.Victory(killerId);
-            leaderBoard.Killed(this.PlayerID);
+            //leaderBoard.Victory(killerId);
+            //leaderBoard.Killed(this.PlayerID);
 
             ((GamePlayScene)this.Owner.Scene).CreateCountDown();
         }

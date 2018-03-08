@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Runtime.Serialization;
+using System.Text;
 using WaveEngine.Common.Graphics;
 using WaveEngine.Framework;
 using WaveEngine.Framework.Graphics;
@@ -44,6 +46,8 @@ namespace P2PTank3D.Models
                 playerScore.Color = color;
             }
 
+            Debug.WriteLine(this.ToString());
+
             return playerScore;
         }
 
@@ -59,6 +63,27 @@ namespace P2PTank3D.Models
             PlayerScoreComponent playerScore = null;
             this.Board.TryGetValue(playerID, out playerScore);
             playerScore?.Victory();
+        }
+
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+
+            sb.AppendLine("-- LeaderBoard Start --");
+            foreach (var tuple in this.Board)
+            {
+                sb.Append(tuple.Value.PlayerID);
+                sb.Append(" - ");
+                sb.Append(tuple.Value.Color.R);
+                sb.Append(",");
+                sb.Append(tuple.Value.Color.G);
+                sb.Append(",");
+                sb.Append(tuple.Value.Color.B);
+                sb.AppendLine();
+            }
+            sb.AppendLine("-- LeaderBoard End --");
+
+            return sb.ToString();
         }
     }
 }

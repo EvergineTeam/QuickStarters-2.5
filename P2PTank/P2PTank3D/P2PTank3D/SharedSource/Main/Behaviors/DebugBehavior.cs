@@ -43,6 +43,17 @@ namespace P2PTank.Behaviors
                     gamePlayScene.TestDieMyself();
                     gamePlayScene.CreateCountDown();
                 });
+
+                this.KeyPressAction(Keys.M, () =>
+                {
+                    WaveServices.MusicPlayer.IsMuted = !WaveServices.MusicPlayer.IsMuted;
+                });
+
+                this.KeyPressAction(Keys.P, () =>
+                {
+                    var gamePlayScene = WaveServices.ScreenContextManager.CurrentContext.FindScene<GamePlayScene>();
+                    gamePlayScene.CreateDebugPowerUp();
+                });
             }
 
             this.lastKeyboardState = currentKeyboardState;

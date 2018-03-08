@@ -24,6 +24,7 @@ using P2PTank.Scenes;
 using P2PTank3D;
 using WaveEngine.Components.GameActions;
 using P2PTank3D.Models;
+using System.Collections.Concurrent;
 
 namespace P2PTank.Managers
 {
@@ -43,7 +44,7 @@ namespace P2PTank.Managers
         private CURRENTSCENETYPE gamePlayScene;
         private PoolComponent poolComponent;
 
-        private string playerID;
+        private string localPlayerID;
 
         private List<Entity> tanksToRemove;
         private List<Entity> tanksToAdd;
@@ -53,6 +54,8 @@ namespace P2PTank.Managers
         private List<Entity> powerUpToRemove;
         private Entity[] explosions;
         private int explodeIndex;
+
+        private ConcurrentDictionary<string, NetworkInputBehavior> networkingTanks;
 
         private LeaderBoard leaderBoard;
         private AudioService audioService;
@@ -78,6 +81,8 @@ namespace P2PTank.Managers
                 this.bulletsToAdd = new List<BulletState>();
                 this.powerUpToAdd = new List<Entity>();
                 this.powerUpToRemove = new List<Entity>();
+
+                this.networkingTanks = new ConcurrentDictionary<string, NetworkInputBehavior>();
 
                 this.gamePlayScene = this.Owner.Scene as CURRENTSCENETYPE;
                 this.poolComponent = this.gamePlayScene.EntityManager.FindComponentFromEntityPath<PoolComponent>(GameConstants.ManagerEntityPath);
@@ -116,7 +121,7 @@ namespace P2PTank.Managers
 
         public Entity CreatePlayer(int playerIndex, P2PManager peerManager, string playerID, Vector2 position)
         {
-            this.playerID = playerID;
+            this.localPlayerID = playerID;
 
             var category = ColliderCategory2D.Cat1;
             var collidesWith = ColliderCategory2D.Cat3 | ColliderCategory2D.Cat4 | ColliderCategory2D.Cat5 | ColliderCategory2D.Cat6;
@@ -150,20 +155,20 @@ namespace P2PTank.Managers
 
             this.tanksToAdd.Add(entity);
 
-            this.leaderBoard.AddOrUpdatePlayerIfNotExtist(this.playerID, color);
+            this.leaderBoard.AddOrUpdatePlayerIfNotExtist(playerID, color);
 
             return entity;
         }
 
         public void CreateFoe(int playerIndex, P2PManager peerManager, string foeID, Color color, Vector2 position)
         {
-            Labels.Add("foeID", foeID);
+            // Labels.Add("foeID", foeID);
             var category = ColliderCategory2D.Cat4;
             var collidesWith = ColliderCategory2D.Cat1 | ColliderCategory2D.Cat2 | ColliderCategory2D.Cat3;
 
             var entity = this.CreateBaseTank(playerIndex, category, collidesWith);
             entity.Name = foeID;
-            entity.AddComponent(new NetworkInputBehavior(peerManager) { PlayerID = foeID });
+            entity.AddComponent(new NetworkInputBehavior() { PlayerID = foeID });
             entity.FindComponent<Transform2D>().LocalPosition = position;
             entity.FindComponent<TankComponent>().Color = color;
 
@@ -198,8 +203,18 @@ namespace P2PTank.Managers
             var powerUpBehavior = powerUp.FindComponent<PowerUpBehavior>();
             powerUpBehavior.PowerUpType = powerUpType;
 
-            this.powerUpToAdd.Add(powerUp);
+            powerUp.EntityInitialized += PowerUpEntityInitialized;
         }
+
+        private void PowerUpEntityInitialized(object sender, EventArgs e)
+        {
+            var powerUp = (Entity)sender;
+            this.powerUpToAdd.Add(powerUp);
+            powerUp.EntityInitialized -= this.PowerUpEntityInitialized;
+        }
+
+        private void PowerUpÌnitialized()
+        { }
 
         public void DestroyPowerUp(Entity powerUp)
         {
@@ -238,10 +253,10 @@ namespace P2PTank.Managers
 
         public void RemovePowerUp()
         {
-            if (string.IsNullOrEmpty(this.playerID) || playerID == null)
+            if (string.IsNullOrEmpty(this.localPlayerID) || localPlayerID == null)
                 return;
 
-            var player = this.EntityManager.Find(this.playerID);
+            var player = this.EntityManager.Find(this.localPlayerID);
 
             if (player == null)
                 return;
@@ -255,7 +270,7 @@ namespace P2PTank.Managers
             var category = ColliderCategory2D.Cat2;
             var collidesWith = ColliderCategory2D.Cat3 | ColliderCategory2D.Cat4;
 
-            var entity = this.CreateBaseBullet(category, collidesWith, color, this.playerID);
+            var entity = this.CreateBaseBullet(category, collidesWith, color, this.localPlayerID);
 
             var bulletID = Guid.NewGuid().ToString();
 
@@ -263,13 +278,13 @@ namespace P2PTank.Managers
             var bulletBehavior = entity.FindComponent<BulletBehavior>();
             if (bulletBehavior == null)
             {
-                bulletBehavior = new BulletBehavior(peerManager, bulletID, this.playerID);
+                bulletBehavior = new BulletBehavior(peerManager, bulletID, this.localPlayerID);
                 entity.AddComponent(bulletBehavior);
             }
             else
             {
                 bulletBehavior.BulletID = bulletID;
-                bulletBehavior.PlayerID = this.playerID;
+                bulletBehavior.PlayerID = this.localPlayerID;
             }
             bulletBehavior.IsActive = true;
 
@@ -291,7 +306,7 @@ namespace P2PTank.Managers
                 var createBulletMessage = new BulletCreateMessage()
                 {
                     BulletID = bulletID,
-                    PlayerID = this.playerID,
+                    PlayerID = this.localPlayerID,
                     Color = color,
                 };
 
@@ -312,7 +327,7 @@ namespace P2PTank.Managers
             var bulletNetworkBehavior = entity.FindComponent<BulletNetworkBehavior>();
             if (bulletNetworkBehavior == null)
             {
-                bulletNetworkBehavior = new BulletNetworkBehavior(peerManager, bulletID, playerID);
+                bulletNetworkBehavior = new BulletNetworkBehavior(peerManager, bulletID, foeId);
                 entity.AddComponent(bulletNetworkBehavior);
             }
             else
@@ -477,13 +492,35 @@ namespace P2PTank.Managers
             return entity;
         }
 
+        public void Move(string tankID, float x, float y)
+        {
+            NetworkInputBehavior networkBehavior = null;
+            this.networkingTanks.TryGetValue(tankID, out networkBehavior);
+
+            if (networkBehavior != null)
+            {
+                networkBehavior.Move(x, y);
+            }
+        }
+
+        public void Rotate(string tankID, float angle)
+        {
+            NetworkInputBehavior networkBehavior = null;
+            this.networkingTanks.TryGetValue(tankID, out networkBehavior);
+
+            if (networkBehavior != null)
+            {
+                networkBehavior.Rotate(angle);
+            }
+        }
+
         private Entity CreateBaseBullet(ColliderCategory2D category, ColliderCategory2D collidesWith, Color color, string playerId)
         {
             var entity = this.poolComponent?.RetrieveBulletEntity();
 
             var component = entity.FindComponent<BulletComponent>();
             component.Color = color;
-            component.PlayerOwnerId = playerID;
+            component.PlayerOwnerId = playerId;
 
             var colliders = entity.FindComponentsInChildren<Collider2D>(false);
             var collider = colliders.FirstOrDefault();
@@ -535,6 +572,9 @@ namespace P2PTank.Managers
                     if (!tank.IsDisposed)
                     {
                         this.EntityManager.Remove(tank);
+
+                        NetworkInputBehavior outEntity = null;
+                        this.networkingTanks.TryRemove(tank.Name, out outEntity);
                     }
                 }
 
@@ -566,6 +606,12 @@ namespace P2PTank.Managers
                         if (!tank.IsDisposed)
                         {
                             this.EntityManager.Add(tank);
+
+                            var behavior = tank.FindComponent<NetworkInputBehavior>();
+                            if (behavior != null)
+                            {
+                                this.networkingTanks.TryAdd(tank.Name, behavior);
+                            }
                         }
                     }
                 }
