@@ -72,8 +72,8 @@ namespace P2PTank.Managers
 
             await this.peerManager.SendBroadcastAsync(this.peerManager.CreateMessage(P2PMessageType.CreatePowerUp, createPowerUpMessage));
 
+            // this message is sent to remove the current powerup for any player
             var removePowerUpMessage = new RemovePowerUpMessage();
-
             await this.peerManager.SendBroadcastAsync(this.peerManager.CreateMessage(P2PMessageType.RemovePowerUp, removePowerUpMessage));
         }
 

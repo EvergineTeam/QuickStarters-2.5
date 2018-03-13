@@ -222,7 +222,7 @@
                   </d9p1:LocalOrientation>
                   <d9p1:LocalPosition xmlns:d10p1="WaveEngine.Common.Math">
                     <d10p1:X>0</d10p1:X>
-                    <d10p1:Y>0</d10p1:Y>
+                    <d10p1:Y>0.5</d10p1:Y>
                     <d10p1:Z>0</d10p1:Z>
                   </d9p1:LocalPosition>
                   <d9p1:LocalScale xmlns:d10p1="WaveEngine.Common.Math">
@@ -291,7 +291,7 @@
       <d2p1:isDisabled>false</d2p1:isDisabled>
       <d2p1:isStatic>false</d2p1:isStatic>
       <d2p1:isVisible>true</d2p1:isVisible>
-      <d2p1:name>powerUp</d2p1:name>
+      <d2p1:name>powerUpPrefab</d2p1:name>
       <d2p1:tag i:nil="true" />
       <d2p1:SerializeComponents xmlns:d4p1="WaveEngine.Framework">
         <d4p1:Component xmlns:d5p1="WaveEngine.Framework.Graphics" i:type="d5p1:Transform2D">
@@ -313,8 +313,8 @@
           </d5p1:LocalScale>
           <d5p1:Opacity>1</d5p1:Opacity>
           <d5p1:Rectangle xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
-            <d6p1:Height>0</d6p1:Height>
-            <d6p1:Width>0</d6p1:Width>
+            <d6p1:Height>62</d6p1:Height>
+            <d6p1:Width>62</d6p1:Width>
             <d6p1:X>0</d6p1:X>
             <d6p1:Y>0</d6p1:Y>
           </d5p1:Rectangle>
@@ -330,7 +330,7 @@
           <d5p1:transformMode>Standard</d5p1:transformMode>
         </d4p1:Component>
         <d4p1:Component xmlns:d5p1="WaveEngine.Framework.Physics3D" i:type="d5p1:CircleCollider2D">
-          <CollidesWith xmlns="WaveEngine.Framework.Physics2D">Cat2 Cat3 Cat4 Cat5 Cat6 Cat7 Cat8 Cat9 Cat10 Cat11 Cat12 Cat13 Cat14 Cat15 Cat16</CollidesWith>
+          <CollidesWith xmlns="WaveEngine.Framework.Physics2D">Cat1</CollidesWith>
           <CollisionCategories xmlns="WaveEngine.Framework.Physics2D">Cat6</CollisionCategories>
           <DebugLineColor xmlns:d6p1="WaveEngine.Common.Graphics" xmlns="WaveEngine.Framework.Physics2D">
             <d6p1:A>255</d6p1:A>
@@ -348,7 +348,7 @@
             <d6p1:X>0</d6p1:X>
             <d6p1:Y>0</d6p1:Y>
           </offset>
-          <d5p1:Radius>24</d5p1:Radius>
+          <d5p1:Radius>0.9</d5p1:Radius>
         </d4p1:Component>
         <d4p1:Component xmlns:d5p1="WaveEngine.Framework.Physics2D" i:type="d5p1:RigidBody2D">
           <d4p1:UpdateOrder>0.5</d4p1:UpdateOrder>
@@ -376,6 +376,24 @@
         <d4p1:Component xmlns:d5p1="http://schemas.datacontract.org/2004/07/P2PTank.Behaviors" i:type="d5p1:Update3DModelPositionBehavior">
           <d4p1:UpdateOrder>0.5</d4p1:UpdateOrder>
           <d4p1:isDisabled>false</d4p1:isDisabled>
+        </d4p1:Component>
+        <d4p1:Component xmlns:d5p1="WaveEngine.Components.Graphics2D" i:type="d5p1:Sprite">
+          <d5p1:IsGlobalAsset>false</d5p1:IsGlobalAsset>
+          <d5p1:SourceRectangle xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math" i:nil="true" />
+          <d5p1:TintColor xmlns:d6p1="WaveEngine.Common.Graphics">
+            <d6p1:A>255</d6p1:A>
+            <d6p1:B>255</d6p1:B>
+            <d6p1:G>255</d6p1:G>
+            <d6p1:R>255</d6p1:R>
+          </d5p1:TintColor>
+          <d5p1:materialPath i:nil="true" />
+          <d5p1:texturePath>Content/Assets/Textures/powerup-repair.png.wpk</d5p1:texturePath>
+        </d4p1:Component>
+        <d4p1:Component xmlns:d5p1="WaveEngine.Components.Graphics2D" i:type="d5p1:SpriteRenderer">
+          <d4p1:FrustumCullingEnabled>true</d4p1:FrustumCullingEnabled>
+          <d4p1:IsVisible>false</d4p1:IsVisible>
+          <layerId xmlns="WaveEngine.Framework.Graphics">2</layerId>
+          <d5p1:DrawMode>Simple</d5p1:DrawMode>
         </d4p1:Component>
       </d2p1:SerializeComponents>
     </d2p1:BaseEntityModel>

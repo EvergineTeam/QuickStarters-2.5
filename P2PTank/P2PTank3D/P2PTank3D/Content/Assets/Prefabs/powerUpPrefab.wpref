@@ -1,5 +1,5 @@
 ﻿<Prefab xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="WaveEngine.Framework.Models.Assets">
-  <Id xmlns="WaveEngine.Framework.Models">43919df8-5703-49b7-94ca-1043ffae0ddb</Id>
+  <Id xmlns="WaveEngine.Framework.Models">fd5dd9f0-50e3-4dbd-8eb2-1d65f97bb13b</Id>
   <EntityModel xmlns:d2p1="WaveEngine.Framework.Models.Entities">
     <d2p1:SerializeChildrens>
       <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
@@ -21,7 +21,7 @@
                 </d8p1:LocalOrientation>
                 <d8p1:LocalPosition xmlns:d9p1="WaveEngine.Common.Math">
                   <d9p1:X>0</d9p1:X>
-                  <d9p1:Y>0.505</d9p1:Y>
+                  <d9p1:Y>0.5</d9p1:Y>
                   <d9p1:Z>0</d9p1:Z>
                 </d8p1:LocalPosition>
                 <d8p1:LocalScale xmlns:d9p1="WaveEngine.Common.Math">
@@ -112,8 +112,8 @@
         </d4p1:LocalScale>
         <d4p1:Opacity>1</d4p1:Opacity>
         <d4p1:Rectangle xmlns:d5p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
-          <d5p1:Height>24</d5p1:Height>
-          <d5p1:Width>24</d5p1:Width>
+          <d5p1:Height>62</d5p1:Height>
+          <d5p1:Width>62</d5p1:Width>
           <d5p1:X>0</d5p1:X>
           <d5p1:Y>0</d5p1:Y>
         </d4p1:Rectangle>
@@ -147,7 +147,7 @@
           <d5p1:X>0</d5p1:X>
           <d5p1:Y>0</d5p1:Y>
         </offset>
-        <d4p1:Radius>2</d4p1:Radius>
+        <d4p1:Radius>0.9</d4p1:Radius>
       </d3p1:Component>
       <d3p1:Component xmlns:d4p1="WaveEngine.Framework.Physics2D" i:type="d4p1:RigidBody2D">
         <d3p1:UpdateOrder>0.5</d3p1:UpdateOrder>
@@ -175,6 +175,24 @@
       <d3p1:Component xmlns:d4p1="http://schemas.datacontract.org/2004/07/P2PTank.Behaviors" i:type="d4p1:Update3DModelPositionBehavior">
         <d3p1:UpdateOrder>0.5</d3p1:UpdateOrder>
         <d3p1:isDisabled>false</d3p1:isDisabled>
+      </d3p1:Component>
+      <d3p1:Component xmlns:d4p1="WaveEngine.Components.Graphics2D" i:type="d4p1:Sprite">
+        <d4p1:IsGlobalAsset>false</d4p1:IsGlobalAsset>
+        <d4p1:SourceRectangle xmlns:d5p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math" i:nil="true" />
+        <d4p1:TintColor xmlns:d5p1="WaveEngine.Common.Graphics">
+          <d5p1:A>255</d5p1:A>
+          <d5p1:B>255</d5p1:B>
+          <d5p1:G>255</d5p1:G>
+          <d5p1:R>255</d5p1:R>
+        </d4p1:TintColor>
+        <d4p1:materialPath i:nil="true" />
+        <d4p1:texturePath>Content/Assets/Textures/powerup-repair.png.wpk</d4p1:texturePath>
+      </d3p1:Component>
+      <d3p1:Component xmlns:d4p1="WaveEngine.Components.Graphics2D" i:type="d4p1:SpriteRenderer">
+        <d3p1:FrustumCullingEnabled>true</d3p1:FrustumCullingEnabled>
+        <d3p1:IsVisible>false</d3p1:IsVisible>
+        <layerId xmlns="WaveEngine.Framework.Graphics">2</layerId>
+        <d4p1:DrawMode>Simple</d4p1:DrawMode>
       </d3p1:Component>
     </d2p1:SerializeComponents>
   </EntityModel>

@@ -194,6 +194,11 @@ namespace P2PTank.Managers
             audioService.Play(Audio.Sfx.SpawnPowerUp_wav);
 
             var powerUp = this.EntityManager.Instantiate(WaveContent.Assets.Prefabs.powerUpPrefab);
+
+            var collider = powerUp.FindComponent<Collider2D>(false);
+            //collider.CollidesWith = ColliderCategory2D.Cat1;
+            //collider.CollisionCategories = ColliderCategory2D.Cat6;
+
             powerUp.Name = powerUpId;
             powerUp.IsVisible = true;
 
@@ -202,19 +207,8 @@ namespace P2PTank.Managers
 
             var powerUpBehavior = powerUp.FindComponent<PowerUpBehavior>();
             powerUpBehavior.PowerUpType = powerUpType;
-
-            powerUp.EntityInitialized += PowerUpEntityInitialized;
-        }
-
-        private void PowerUpEntityInitialized(object sender, EventArgs e)
-        {
-            var powerUp = (Entity)sender;
             this.powerUpToAdd.Add(powerUp);
-            powerUp.EntityInitialized -= this.PowerUpEntityInitialized;
         }
-
-        private void PowerUpÌnitialized()
-        { }
 
         public void DestroyPowerUp(Entity powerUp)
         {

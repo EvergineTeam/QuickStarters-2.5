@@ -357,7 +357,6 @@ namespace P2PTank.Scenes
                             {
                                 this.CreateFoe(this.gameplayManager, createPlayerData.PlayerColor, createPlayerData.SpawnPosition, createPlayerData.PlayerId);
                             }
-
                             break;
                         case P2PMessageType.Move:
                             var moveData = message.Value as MoveMessage;
@@ -413,6 +412,12 @@ namespace P2PTank.Scenes
                             var removePowerUpMessage = message.Value as RemovePowerUpMessage;
                             this.RemovePowerUp(this.gameplayManager);
                             break;
+                        case P2PMessageType.PlayerRequest:
+                            var player = this.EntityManager.Find(this.playerID);
+                            var playerColor = player.FindComponent<TankComponent>().Color;
+                            var position = player.FindComponent<Transform2D>().Position;
+                            this.SendCreatePlayerMessage(playerColor, position);
+                            break;
                     }
                 }
             }
@@ -436,13 +441,23 @@ namespace P2PTank.Scenes
                     {
                         this.ConnectedPeers.Add(peer);
 
-                        //if (ipAddress != peer.IpAddress)
-                        //{
-                        //    this.SendCreatePlayerMessage(null, null, peer.IpAddress);
-                        //}
+                        if (ipAddress != peer.IpAddress)
+                        {
+                            this.SendPlayerInfoRequest();
+                            //var index = WaveServices.Random.Next(0, GameConstants.Palette.Count());
+                            //var color = GameConstants.Palette[index];
+                            //this.SendCreatePlayerMessage(color, -Vector2.One * 100, peer.IpAddress);
+                        }
                     }
                 }
             }
+        }
+
+
+        private async void SendPlayerInfoRequest()
+        {
+            var message = peerManager.CreateMessage(P2PMessageType.PlayerRequest, null);
+            await peerManager.SendBroadcastAsync(message);
         }
 
         private async void SendCreatePlayerMessage(Color? playerColor, Vector2? spawnPosition, string ipAddress = "")
