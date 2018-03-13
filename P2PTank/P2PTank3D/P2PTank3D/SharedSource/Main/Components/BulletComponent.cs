@@ -21,6 +21,9 @@ namespace P2PTank.Components
         [IgnoreDataMember]
         public float CurrentSpeed { get; private set; }
 
+        [IgnoreDataMember]
+        public string PlayerOwnerId { get; set; }
+
         [DataMember]
         public Color Color
         {

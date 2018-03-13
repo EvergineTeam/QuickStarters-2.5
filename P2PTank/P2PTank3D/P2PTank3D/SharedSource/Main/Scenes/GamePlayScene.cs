@@ -25,6 +25,7 @@ using Networking.P2P.TransportLayer;
 using Networking.P2P.TransportLayer.EventArgs;
 using P2PTank3D;
 using P2PTank3D.Services;
+using System.Collections.Concurrent;
 
 namespace P2PTank.Scenes
 {
@@ -88,8 +89,13 @@ namespace P2PTank.Scenes
         {
             this.EntityManager.Find("camera2D")
               .FindComponent<Transform2D>().Position = new Vector2
-              (GameConstants.MiniMapScale * (VirtualScreenManager.ScreenWidth / 2) - GameConstants.MiniMapMargin,
-              GameConstants.MiniMapScale * (VirtualScreenManager.ScreenHeight / 2) - GameConstants.MiniMapMargin);
+                  (GameConstants.MiniMapScale * (VirtualScreenManager.ScreenWidth / 2) - GameConstants.MiniMapMargin,
+                  GameConstants.MiniMapScale * (VirtualScreenManager.ScreenHeight / 2) - GameConstants.MiniMapMargin);
+        }
+
+        public void CreateDebugPowerUp()
+        {
+            this.powerUpManager.EmptyTimeCounter();
         }
 
         public void CreateCountDown()
@@ -154,7 +160,7 @@ namespace P2PTank.Scenes
 
         public void TestDieMyself()
         {
-            this.DestroyFoe(this.gameplayManager, this.playerID);
+            this.DestroyFoe(this.gameplayManager, this.playerID, string.Empty);
         }
 
         private void ConfigurePhysics()
@@ -240,7 +246,9 @@ namespace P2PTank.Scenes
                             var bulletCollider = contact.ColliderB.UserData as Collider2D;
                             if (bulletCollider != null)
                             {
-                                player.FindComponent<PlayerInputBehavior>().Hit(50, bulletCollider.Owner.Name);
+                                var component = bulletCollider.Owner.FindComponent<BulletComponent>();
+                                var killer = component.PlayerOwnerId;
+                                player.FindComponent<PlayerInputBehavior>().Hit(50, killer);
                                 var bullet = bulletCollider.Owner;
                                 this.gameplayManager.DestroyBullet(bullet, this.peerManager);
                             }
@@ -287,7 +295,7 @@ namespace P2PTank.Scenes
         private void CreateFoe(GamePlayManager gameplayManager, Color foeColor, Vector2 foeSpawnPosition, string foeID)
         {
             gameplayManager.CreateFoe(1, peerManager, foeID, foeColor, foeSpawnPosition);
-            this.SendCreatePlayerMessage(foeColor, foeSpawnPosition);
+            //this.SendCreatePlayerMessage(foeColor, foeSpawnPosition);
         }
 
         private void CreatePowerUp(GamePlayManager gameplayManager, string powerUpId, PowerUpType powerUpType, Vector2 powerUpSpawnPosition)
@@ -312,12 +320,12 @@ namespace P2PTank.Scenes
             this.gameplayManager.SmokeTank(foe, life <= 50);
         }
 
-        private void DestroyFoe(GamePlayManager gameplayManager, string foeId)
+        private void DestroyFoe(GamePlayManager gameplayManager, string foeId, string killerId)
         {
             if (!string.IsNullOrEmpty(foeId))
             {
                 var foe = this.EntityManager.Find(foeId);
-                this.gameplayManager.DestroyTank(foe);
+                this.gameplayManager.DestroyTank(foe, killerId);
             }
         }
 
@@ -325,7 +333,7 @@ namespace P2PTank.Scenes
         {
             var messageReceived = Encoding.ASCII.GetString(e.Message);
 
-            Labels.Add("OnMsgReceived GamePlayScene", messageReceived);
+            Labels.Add("MessageOnGamePlayScene", messageReceived);
 
             var result = peerManager.ReadMessage(messageReceived);
 
@@ -352,14 +360,17 @@ namespace P2PTank.Scenes
 
                             break;
                         case P2PMessageType.Move:
+                            var moveData = message.Value as MoveMessage;
+                            this.gameplayManager.Move(moveData.PlayerId, moveData.X, moveData.Y);
                             break;
                         case P2PMessageType.Rotate:
+                            var rotateData = message.Value as RotateMessage;
+                            this.gameplayManager.Rotate(rotateData.PlayerId, rotateData.Rotation);
                             break;
                         case P2PMessageType.Shoot:
                             break;
                         case P2PMessageType.HitPlayer:
                             var hitPlayerData = message.Value as HitPlayerMessage;
-
                             this.HitFoe(this.gameplayManager, hitPlayerData.PlayerId, hitPlayerData.PlayerLife);
                             break;
                         case P2PMessageType.DestroyPlayer:
@@ -370,7 +381,7 @@ namespace P2PTank.Scenes
                                 break;
                             }
 
-                            this.DestroyFoe(this.gameplayManager, destroyPlayerData.PlayerId);
+                            this.DestroyFoe(this.gameplayManager, destroyPlayerData.PlayerId, destroyPlayerData.KillerId);
 
                             break;
                         case P2PMessageType.BulletCreate:
@@ -382,7 +393,7 @@ namespace P2PTank.Scenes
                             }
 
                             this.AddActiveBullet(createBulletData.BulletID);
-                            this.gameplayManager.CreateFoeBullet(createBulletData.Color, this.playerID, createBulletData.BulletID, peerManager);
+                            this.gameplayManager.CreateFoeBullet(createBulletData.Color, createBulletData.PlayerID, createBulletData.BulletID, peerManager);
                             break;
                         case P2PMessageType.BulletDestroy:
                             var destroyBulletData = message.Value as BulletDestroyMessage;
@@ -420,7 +431,7 @@ namespace P2PTank.Scenes
             {
                 foreach (PeerPlayer peer in e.Peers)
                 {
-                    Labels.Add("OnPeerChanged", peer.IpAddress);
+                    // Labels.Add("OnPeerChanged", peer.IpAddress);
                     if (!this.ConnectedPeers.Contains(peer))
                     {
                         this.ConnectedPeers.Add(peer);

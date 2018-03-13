@@ -1,5 +1,5 @@
 ﻿<Prefab xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="WaveEngine.Framework.Models.Assets">
-  <Id xmlns="WaveEngine.Framework.Models">8af672ca-f9c5-4660-9b25-ae71f6dce082</Id>
+  <Id xmlns="WaveEngine.Framework.Models">43919df8-5703-49b7-94ca-1043ffae0ddb</Id>
   <EntityModel xmlns:d2p1="WaveEngine.Framework.Models.Entities">
     <d2p1:SerializeChildrens>
       <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
@@ -21,7 +21,7 @@
                 </d8p1:LocalOrientation>
                 <d8p1:LocalPosition xmlns:d9p1="WaveEngine.Common.Math">
                   <d9p1:X>0</d9p1:X>
-                  <d9p1:Y>0</d9p1:Y>
+                  <d9p1:Y>0.505</d9p1:Y>
                   <d9p1:Z>0</d9p1:Z>
                 </d8p1:LocalPosition>
                 <d8p1:LocalScale xmlns:d9p1="WaveEngine.Common.Math">
@@ -53,7 +53,7 @@
                 <d7p1:isDisabled>false</d7p1:isDisabled>
                 <d8p1:AxisTotalIncreases xmlns:d9p1="WaveEngine.Common.Math">
                   <d9p1:X>0</d9p1:X>
-                  <d9p1:Y>-1.57079613</d9p1:Y>
+                  <d9p1:Y>3.14159226</d9p1:Y>
                   <d9p1:Z>0</d9p1:Z>
                 </d8p1:AxisTotalIncreases>
               </d7p1:Component>
@@ -90,7 +90,7 @@
     <d2p1:isDisabled>false</d2p1:isDisabled>
     <d2p1:isStatic>false</d2p1:isStatic>
     <d2p1:isVisible>true</d2p1:isVisible>
-    <d2p1:name>powerUp</d2p1:name>
+    <d2p1:name>powerUpPrefab</d2p1:name>
     <d2p1:tag i:nil="true" />
     <d2p1:SerializeComponents xmlns:d3p1="WaveEngine.Framework">
       <d3p1:Component xmlns:d4p1="WaveEngine.Framework.Graphics" i:type="d4p1:Transform2D">
