@@ -28,7 +28,7 @@ namespace P2PTank.Managers
         {
             this.currentSpawnTime = this.currentSpawnTime - gameTime;
 
-            if(this.currentSpawnTime <= TimeSpan.Zero)
+            if (this.currentSpawnTime <= TimeSpan.Zero)
             {
                 this.InitPowerUp();
                 this.SendCreatePowerUpMessage();
@@ -65,15 +65,15 @@ namespace P2PTank.Managers
 
             var createPowerUpMessage = new CreatePowerUpMessage()
             {
-                PowerUpId = powerUpId, 
+                PowerUpId = powerUpId,
                 PowerUpType = (PowerUpType)powerUpType,
                 SpawnPosition = spawnPosition
             };
 
             await this.peerManager.SendBroadcastAsync(this.peerManager.CreateMessage(P2PMessageType.CreatePowerUp, createPowerUpMessage));
 
-            // this message is sent to remove the current powerup for any player
             var removePowerUpMessage = new RemovePowerUpMessage();
+
             await this.peerManager.SendBroadcastAsync(this.peerManager.CreateMessage(P2PMessageType.RemovePowerUp, removePowerUpMessage));
         }
 
@@ -81,7 +81,7 @@ namespace P2PTank.Managers
         {
             var message = new DestroyPowerUpMessage()
             {
-                 PowerUpId = powerUpId
+                PowerUpId = powerUpId
             };
 
             await this.peerManager.SendBroadcastAsync(this.peerManager.CreateMessage(P2PMessageType.DestroyPowerUp, message));

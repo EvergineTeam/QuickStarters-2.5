@@ -42,6 +42,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Managers\P2PMessages\HitPlayerMessage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Managers\P2PMessages\MoveMessage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Managers\P2PMessages\P2PMessageType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Managers\P2PMessages\PlayerRequestMessage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Managers\P2PMessages\PowerUpMessage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Managers\P2PMessages\RemovePowerUpMessage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Managers\P2PMessages\RotateMessage.cs" />
