@@ -145,11 +145,17 @@ namespace P2PTank.Scenes
                 countDownTextBlock.Text = "1";
                 audioService.Play(Audio.Sfx.Zap_wav);
             }).Delay(delay)
-            .ContinueWith(new ActionGameAction(() =>
-            {
+            .ContinueWith (new ActionGameAction (() => {
                 countDownTextBlock.Text = string.Empty;
                 Entity player = this.CreatePlayer();
-                this.StartPlayerGamePlay(player);
+
+                if (player != null) {
+                    var playerColor = player.FindComponent<TankComponent>().Color;
+                    var position = player.FindComponent<Transform2D>().Position;
+                    this.SendCreatePlayerMessage (playerColor, position);
+                }
+
+                this.StartPlayerGamePlay (player);
             }))))).Run();
         }
 
@@ -452,10 +458,6 @@ namespace P2PTank.Scenes
                         if (localIpAddress != peer.IpAddress)
                         {
                             this.SendPlayerInfoRequest();
-
-                            //var index = WaveServices.Random.Next(0, GameConstants.Palette.Count());
-                            //var color = GameConstants.Palette[index];
-                            //this.SendCreatePlayerMessage(color, -Vector2.One * 100, peer.IpAddress);
                         }
                     }
                 }

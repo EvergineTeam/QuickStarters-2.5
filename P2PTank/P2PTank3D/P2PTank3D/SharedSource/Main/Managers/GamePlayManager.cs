@@ -162,7 +162,6 @@ namespace P2PTank.Managers
 
         public void CreateFoe(int playerIndex, P2PManager peerManager, string foeID, Color color, Vector2 position)
         {
-            // Labels.Add("foeID", foeID);
             var category = ColliderCategory2D.Cat4;
             var collidesWith = ColliderCategory2D.Cat1 | ColliderCategory2D.Cat2 | ColliderCategory2D.Cat3;
 
