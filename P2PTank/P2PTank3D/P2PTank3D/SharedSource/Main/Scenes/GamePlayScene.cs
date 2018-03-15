@@ -220,8 +220,6 @@ namespace P2PTank.Scenes
 
         private void StartPlayerGamePlay(Entity player)
         {
-            /// Create Local Player
-            //Entity player = this.CreatePlayer(gameplayManager);
             this.HandlePlayerCollision(player);
 
             this.StartPlayerCamera(player);
@@ -282,9 +280,6 @@ namespace P2PTank.Scenes
 
         private Entity CreatePlayer(GamePlayManager gameplayManager)
         {
-            // New player identifier
-            // this.playerID = Guid.NewGuid().ToString();
-
             // Get a random spawn point to initialize the player
             var spawnIndex = WaveServices.Random.Next(0, 4);
             var spawnPoint = this.mapLoader.GetSpawnPoint(spawnIndex);
@@ -294,15 +289,13 @@ namespace P2PTank.Scenes
 
             var playerColor = player.FindComponent<TankComponent>().Color;
 
-            //this.SendCreatePlayerMessage(playerColor, spawnPoint);
-
             return player;
         }
 
         private void CreateFoe(GamePlayManager gameplayManager, Color foeColor, Vector2 foeSpawnPosition, string foeID)
         {
             gameplayManager.CreateFoe(1, peerManager, foeID, foeColor, foeSpawnPosition);
-            //this.SendCreatePlayerMessage(foeColor, foeSpawnPosition);
+            this.SendCreatePlayerMessage(foeColor, foeSpawnPosition);
         }
 
         private void CreatePowerUp(GamePlayManager gameplayManager, string powerUpId, PowerUpType powerUpType, Vector2 powerUpSpawnPosition)
