@@ -318,14 +318,7 @@ namespace P2PTank.Behaviors
 
             var destroyMessage = new DestroyPlayerMessage() { PlayerId = this.PlayerID, KillerId = killerId };
             await peerManager.SendBroadcastAsync(peerManager.CreateMessage(P2PMessageType.DestroyPlayer, destroyMessage));
-
-            //var leaderBoard = this.EntityManager.Find("leaderboard").FindComponent<LeaderBoard>();
-
-            //leaderBoard.Victory(killerId);
-            //leaderBoard.Killed(this.PlayerID);
-
-            Entity player = ((GamePlayScene)this.Owner.Scene).CreatePlayer();
-            ((GamePlayScene)this.Owner.Scene).CreateCountDown(player);
+            ((GamePlayScene)this.Owner.Scene).CreateCountDown();
         }
     }
 }

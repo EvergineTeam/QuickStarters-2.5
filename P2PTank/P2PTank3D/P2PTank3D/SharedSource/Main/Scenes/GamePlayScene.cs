@@ -97,7 +97,7 @@ namespace P2PTank.Scenes
             this.powerUpManager.EmptyTimeCounter();
         }
 
-        public void CreateCountDown(Entity player)
+        public void CreateCountDown()
         {
             Vector2 pos = new Vector2(VirtualScreenManager.ScreenWidth / 2, VirtualScreenManager.ScreenHeight / 2);
             VirtualScreenManager.ToVirtualPosition(ref pos);
@@ -148,6 +148,7 @@ namespace P2PTank.Scenes
             .ContinueWith(new ActionGameAction(() =>
             {
                 countDownTextBlock.Text = string.Empty;
+                Entity player = this.CreatePlayer();
                 this.StartPlayerGamePlay(player);
             }))))).Run();
         }
@@ -193,12 +194,10 @@ namespace P2PTank.Scenes
             this.powerUpManager = new PowerUpManager(this.peerManager, this.mapLoader);
             gameplayEntity.AddComponent(this.powerUpManager);
 
-            Entity player = this.CreatePlayer();
-
             this.Configure3DCamera();
             this.powerUpManager.InitPowerUp();
             this.ConfigurePhysics();
-            this.CreateCountDown(player);
+            this.CreateCountDown();
         }
 
         public Entity CreatePlayer()

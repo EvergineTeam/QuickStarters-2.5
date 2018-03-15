@@ -41,8 +41,7 @@ namespace P2PTank.Behaviors
                 {
                     var gamePlayScene = WaveServices.ScreenContextManager.CurrentContext.FindScene<GamePlayScene>();
                     gamePlayScene.TestDieMyself();
-                    Entity player = gamePlayScene.CreatePlayer();
-                    gamePlayScene.CreateCountDown(player);
+                    gamePlayScene.CreateCountDown();
                 });
 
                 this.KeyPressAction(Keys.M, () =>
