@@ -324,7 +324,8 @@ namespace P2PTank.Behaviors
             //leaderBoard.Victory(killerId);
             //leaderBoard.Killed(this.PlayerID);
 
-            ((GamePlayScene)this.Owner.Scene).CreateCountDown();
+            Entity player = ((GamePlayScene)this.Owner.Scene).CreatePlayer();
+            ((GamePlayScene)this.Owner.Scene).CreateCountDown(player);
         }
     }
 }

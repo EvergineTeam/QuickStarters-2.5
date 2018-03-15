@@ -25,7 +25,6 @@ using Networking.P2P.TransportLayer;
 using Networking.P2P.TransportLayer.EventArgs;
 using P2PTank3D;
 using P2PTank3D.Services;
-using System.Collections.Concurrent;
 
 namespace P2PTank.Scenes
 {
@@ -98,7 +97,7 @@ namespace P2PTank.Scenes
             this.powerUpManager.EmptyTimeCounter();
         }
 
-        public void CreateCountDown()
+        public void CreateCountDown(Entity player)
         {
             Vector2 pos = new Vector2(VirtualScreenManager.ScreenWidth / 2, VirtualScreenManager.ScreenHeight / 2);
             VirtualScreenManager.ToVirtualPosition(ref pos);
@@ -147,10 +146,10 @@ namespace P2PTank.Scenes
                 audioService.Play(Audio.Sfx.Zap_wav);
             }).Delay(delay)
             .ContinueWith(new ActionGameAction(() =>
-           {
-               countDownTextBlock.Text = string.Empty;
-               this.StartPlayerGamePlay();
-           }))))).Run();
+            {
+                countDownTextBlock.Text = string.Empty;
+                this.StartPlayerGamePlay(player);
+            }))))).Run();
         }
 
         public void TestHitMyself()
@@ -194,10 +193,19 @@ namespace P2PTank.Scenes
             this.powerUpManager = new PowerUpManager(this.peerManager, this.mapLoader);
             gameplayEntity.AddComponent(this.powerUpManager);
 
+            Entity player = this.CreatePlayer();
+
             this.Configure3DCamera();
             this.powerUpManager.InitPowerUp();
             this.ConfigurePhysics();
-            this.CreateCountDown();
+            this.CreateCountDown(player);
+        }
+
+        public Entity CreatePlayer()
+        {
+            Entity player = this.CreatePlayer(gameplayManager);
+
+            return player;
         }
 
         protected override async void End()
@@ -211,10 +219,10 @@ namespace P2PTank.Scenes
             base.End();
         }
 
-        private void StartPlayerGamePlay()
+        private void StartPlayerGamePlay(Entity player)
         {
             /// Create Local Player
-            Entity player = this.CreatePlayer(gameplayManager);
+            //Entity player = this.CreatePlayer(gameplayManager);
             this.HandlePlayerCollision(player);
 
             this.StartPlayerCamera(player);
@@ -239,37 +247,37 @@ namespace P2PTank.Scenes
             if (collider != null)
             {
                 collider.BeginCollision += (contact) =>
+                {
+                    // Cat5 is Foe Bullet
+                    if (contact.ColliderB.CollisionCategories == ColliderCategory2D.Cat5)
                     {
-                        // Cat5 is Foe Bullet
-                        if (contact.ColliderB.CollisionCategories == ColliderCategory2D.Cat5)
+                        var bulletCollider = contact.ColliderB.UserData as Collider2D;
+                        if (bulletCollider != null)
                         {
-                            var bulletCollider = contact.ColliderB.UserData as Collider2D;
-                            if (bulletCollider != null)
-                            {
-                                var component = bulletCollider.Owner.FindComponent<BulletComponent>();
-                                var killer = component.PlayerOwnerId;
-                                player.FindComponent<PlayerInputBehavior>().Hit(50, killer);
-                                var bullet = bulletCollider.Owner;
-                                this.gameplayManager.DestroyBullet(bullet, this.peerManager);
-                            }
+                            var component = bulletCollider.Owner.FindComponent<BulletComponent>();
+                            var killer = component.PlayerOwnerId;
+                            player.FindComponent<PlayerInputBehavior>().Hit(50, killer);
+                            var bullet = bulletCollider.Owner;
+                            this.gameplayManager.DestroyBullet(bullet, this.peerManager);
                         }
-                        // Cat6 is Power Up
-                        if (contact.ColliderB.CollisionCategories == ColliderCategory2D.Cat6)
+                    }
+                    // Cat6 is Power Up
+                    if (contact.ColliderB.CollisionCategories == ColliderCategory2D.Cat6)
+                    {
+                        var powerUpCollider = contact.ColliderB.UserData as Collider2D;
+                        if (powerUpCollider != null)
                         {
-                            var powerUpCollider = contact.ColliderB.UserData as Collider2D;
-                            if (powerUpCollider != null)
-                            {
-                                var powerUp = powerUpCollider.Owner;
-                                this.powerUpManager.SendDestroyPowerUpMessage(powerUp.Name);
+                            var powerUp = powerUpCollider.Owner;
+                            this.powerUpManager.SendDestroyPowerUpMessage(powerUp.Name);
 
-                                var powerUpBehavior = powerUp.FindComponent<PowerUpBehavior>();
-                                this.gameplayManager.AddPowerUp(player.Name, powerUpBehavior.PowerUpType, this.peerManager);
+                            var powerUpBehavior = powerUp.FindComponent<PowerUpBehavior>();
+                            this.gameplayManager.AddPowerUp(player.Name, powerUpBehavior.PowerUpType, this.peerManager);
 
-                                var audioService = WaveServices.GetService<AudioService>();
-                                audioService.Play(Audio.Sfx.PowerUp_wav);
-                            }
+                            var audioService = WaveServices.GetService<AudioService>();
+                            audioService.Play(Audio.Sfx.PowerUp_wav);
                         }
-                    };
+                    }
+                };
             }
         }
 
@@ -287,7 +295,7 @@ namespace P2PTank.Scenes
 
             var playerColor = player.FindComponent<TankComponent>().Color;
 
-            this.SendCreatePlayerMessage(playerColor, spawnPoint);
+            //this.SendCreatePlayerMessage(playerColor, spawnPoint);
 
             return player;
         }
@@ -357,7 +365,6 @@ namespace P2PTank.Scenes
                             {
                                 this.CreateFoe(this.gameplayManager, createPlayerData.PlayerColor, createPlayerData.SpawnPosition, createPlayerData.PlayerId);
                             }
-
                             break;
                         case P2PMessageType.Move:
                             var moveData = message.Value as MoveMessage;
@@ -413,6 +420,21 @@ namespace P2PTank.Scenes
                             var removePowerUpMessage = message.Value as RemovePowerUpMessage;
                             this.RemovePowerUp(this.gameplayManager);
                             break;
+                        case P2PMessageType.PlayerRequest:
+                            var playerRequestMessage = message.Value as PlayerRequestMessage;
+
+                            if (playerRequestMessage != null)
+                            {
+                                var player = this.EntityManager.Find(this.playerID);
+
+                                if (player != null)
+                                {
+                                    var playerColor = player.FindComponent<TankComponent>().Color;
+                                    var position = player.FindComponent<Transform2D>().Position;
+                                    this.SendCreatePlayerMessage(playerColor, position);
+                                }
+                            }
+                            break;
                     }
                 }
             }
@@ -425,24 +447,34 @@ namespace P2PTank.Scenes
 
         private void OnPeerChanged(object sender, PeerPlayerChangeEventArgs e)
         {
-            var ipAddress = this.peerManager.IpAddress;
+            var localIpAddress = this.peerManager.IpAddress;
 
-            if (ipAddress != null)
+            if (localIpAddress != null)
             {
                 foreach (PeerPlayer peer in e.Peers)
                 {
-                    // Labels.Add("OnPeerChanged", peer.IpAddress);
                     if (!this.ConnectedPeers.Contains(peer))
                     {
                         this.ConnectedPeers.Add(peer);
 
-                        //if (ipAddress != peer.IpAddress)
-                        //{
-                        //    this.SendCreatePlayerMessage(null, null, peer.IpAddress);
-                        //}
+                        if (localIpAddress != peer.IpAddress)
+                        {
+                            this.SendPlayerInfoRequest();
+
+                            //var index = WaveServices.Random.Next(0, GameConstants.Palette.Count());
+                            //var color = GameConstants.Palette[index];
+                            //this.SendCreatePlayerMessage(color, -Vector2.One * 100, peer.IpAddress);
+                        }
                     }
                 }
             }
+        }
+
+
+        private async void SendPlayerInfoRequest()
+        {
+            var message = peerManager.CreateMessage(P2PMessageType.PlayerRequest, new PlayerRequestMessage());
+            await peerManager.SendBroadcastAsync(message);
         }
 
         private async void SendCreatePlayerMessage(Color? playerColor, Vector2? spawnPosition, string ipAddress = "")
