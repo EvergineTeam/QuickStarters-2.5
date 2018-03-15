@@ -133,8 +133,8 @@ namespace P2PTank.Managers
             entity.AddComponent(new PlayerInputBehavior(peerManager, playerID))
                  .AddComponent(new RigidBody2D
                  {
-                     AngularDamping = 8.0f,
-                     LinearDamping = 9.0f,
+                     AngularDamping = 30.0f,
+                     LinearDamping = 30.0f,
                  });
 
             entity.FindComponent<Transform2D>().LocalPosition = position;
