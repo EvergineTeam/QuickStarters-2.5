@@ -369,7 +369,10 @@ namespace P2PTank.Managers
 
             leaderBoard.Killed(tank.Name);
 
-            leaderBoard.Victory(killerId);
+            if (!string.IsNullOrEmpty(killerId))
+            {
+                leaderBoard.Victory(killerId);
+            }
 
             var particles = tank.FindChild("fireParticles").FindComponent<ParticleSystem3D>();
             particles.Emit = true;
