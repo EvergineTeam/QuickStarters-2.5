@@ -24,7 +24,7 @@ namespace P2PTank.Services
         private bool muteSFX;
 
         private SoundInfo[] sounds;
-        private Dictionary<string, string> audioPaths;
+        private Dictionary<string, string> audioPaths = null;
         private SoundBank soundsBank;
         private Audio.Music? currentMusic;
 

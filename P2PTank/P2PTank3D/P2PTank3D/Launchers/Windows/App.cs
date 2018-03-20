@@ -40,7 +40,7 @@ namespace P2PTank3D
             };
             WaveServices.RegisterService(localhostService);
 
-            this.game = new P2PTank.Game();
+            this.game = new Game();
             this.game.Initialize(this);
             
             #region DEFAULT SPLASHSCREEN

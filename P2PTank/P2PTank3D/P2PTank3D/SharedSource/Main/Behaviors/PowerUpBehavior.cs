@@ -17,8 +17,8 @@ namespace P2PTank.Behaviors
 
         private PowerUpManager powerUpManager;
         private TimeSpan currentLifeTime;
-        private Material bulletMaterial;
-        private Material repairMaterial;
+        private Material bulletMaterial = null;
+        private Material repairMaterial = null;
 
         [IgnoreDataMember]
         public PowerUpType PowerUpType { get; set; }

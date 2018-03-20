@@ -45,6 +45,7 @@ namespace P2PTank.Managers
         private PoolComponent poolComponent;
 
         private string localPlayerID;
+        private Color localPlayerColor;
 
         private List<Entity> tanksToRemove;
         private List<Entity> tanksToAdd;
@@ -90,6 +91,9 @@ namespace P2PTank.Managers
                 this.leaderBoard = this.EntityManager.Find("leaderboard").FindComponent<LeaderBoard>();
 
                 this.audioService = WaveServices.GetService<AudioService>();
+
+                var index = WaveServices.Random.Next(0, GameConstants.Palette.Count());
+                this.localPlayerColor = GameConstants.Palette[index];
             }
         }
 
@@ -109,7 +113,7 @@ namespace P2PTank.Managers
                     .AddComponent(new Transform2D() { Origin = Vector2.Center, XScale = 2, YScale = 2 })
                     .AddComponent(new SpriteAtlas(WaveContent.Assets.Textures.ExplodeSprite_spritesheet))
                     .AddComponent(new SpriteAtlasRenderer() { LayerId = DefaultLayers.Additive })
-                    .AddComponent(new Animation2D() { CurrentAnimation = "explosion", PlayAutomatically = false, SpeedFactor = 1.0f });
+                    .AddComponent(new Animation2D() { CurrentAnimation = "explosion", PlayAutomatically = false });
 
             explode.Enabled = false;
 
@@ -126,7 +130,7 @@ namespace P2PTank.Managers
             var category = ColliderCategory2D.Cat1;
             var collidesWith = ColliderCategory2D.Cat3 | ColliderCategory2D.Cat4 | ColliderCategory2D.Cat5 | ColliderCategory2D.Cat6;
 
-            var entity = this.CreateBaseTank(playerIndex, category, collidesWith);
+            var entity = this.CreateBaseTank(playerIndex, category, collidesWith, localPlayerColor);
 
             entity.Name = playerID;
 
@@ -165,11 +169,10 @@ namespace P2PTank.Managers
             var category = ColliderCategory2D.Cat4;
             var collidesWith = ColliderCategory2D.Cat1 | ColliderCategory2D.Cat2 | ColliderCategory2D.Cat3;
 
-            var entity = this.CreateBaseTank(playerIndex, category, collidesWith);
+            var entity = this.CreateBaseTank(playerIndex, category, collidesWith, color);
             entity.Name = foeID;
             entity.AddComponent(new NetworkInputBehavior() { PlayerID = foeID });
             entity.FindComponent<Transform2D>().LocalPosition = position;
-            entity.FindComponent<TankComponent>().Color = color;
 
             var tankBody = entity.FindComponentsInChildren<MaterialComponent>().FirstOrDefault(t => t.Owner.Name == "tankBody");
             var tankHead = entity.FindComponentsInChildren<MaterialComponent>().FirstOrDefault(t => t.Owner.Name == "tankHead");
@@ -412,7 +415,7 @@ namespace P2PTank.Managers
             }
         }
 
-        private Entity CreateBaseTank(int playerIndex, ColliderCategory2D category, ColliderCategory2D collidesWith)
+        private Entity CreateBaseTank(int playerIndex, ColliderCategory2D category, ColliderCategory2D collidesWith, Color? tankColor = null)
         {
             var entity = this.EntityManager.Instantiate(WaveContent.Assets.Prefabs.tankPrefab);
 
@@ -420,9 +423,13 @@ namespace P2PTank.Managers
 
             var tankComponent = entity.FindComponent<TankComponent>();
 
-            var index = WaveServices.Random.Next(0, GameConstants.Palette.Count());
-            tankComponent.Color = GameConstants.Palette[index];
+            if (!tankColor.HasValue)
+            {
+                var index = WaveServices.Random.Next(0, GameConstants.Palette.Count());
+                tankColor = GameConstants.Palette[index];
+            }
 
+            tankComponent.Color = tankColor.Value;
             var colliders = entity.FindComponentsInChildren<Collider2D>(false);
             var collider = colliders.FirstOrDefault();
 

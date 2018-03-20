@@ -1,5 +1,5 @@
 ﻿<Prefab xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="WaveEngine.Framework.Models.Assets">
-  <Id xmlns="WaveEngine.Framework.Models">326c0124-9021-456f-a885-34d6e9c57277</Id>
+  <Id xmlns="WaveEngine.Framework.Models">deca444f-7d02-42d5-b099-25fec776c920</Id>
   <EntityModel xmlns:d2p1="WaveEngine.Framework.Models.Entities">
     <d2p1:SerializeChildrens>
       <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
@@ -360,9 +360,9 @@
                   <d9p1:Z>0</d9p1:Z>
                 </d8p1:LocalOrientation>
                 <d8p1:LocalPosition xmlns:d9p1="WaveEngine.Common.Math">
-                  <d9p1:X>-0.0486579537</d9p1:X>
-                  <d9p1:Y>0.8735201</d9p1:Y>
-                  <d9p1:Z>-0.04442625</d9p1:Z>
+                  <d9p1:X>0</d9p1:X>
+                  <d9p1:Y>0.02265831</d9p1:Y>
+                  <d9p1:Z>0</d9p1:Z>
                 </d8p1:LocalPosition>
                 <d8p1:LocalScale xmlns:d9p1="WaveEngine.Common.Math">
                   <d9p1:X>1.75566423</d9p1:X>
@@ -402,9 +402,9 @@
                   <d9p1:Z>0</d9p1:Z>
                 </d8p1:LocalOrientation>
                 <d8p1:LocalPosition xmlns:d9p1="WaveEngine.Common.Math">
-                  <d9p1:X>-0.04865801</d9p1:X>
-                  <d9p1:Y>0.8735204</d9p1:Y>
-                  <d9p1:Z>-0.0444264561</d9p1:Z>
+                  <d9p1:X>0</d9p1:X>
+                  <d9p1:Y>0.0261786766</d9p1:Y>
+                  <d9p1:Z>0</d9p1:Z>
                 </d8p1:LocalPosition>
                 <d8p1:LocalScale xmlns:d9p1="WaveEngine.Common.Math">
                   <d9p1:X>1.75566423</d9p1:X>
@@ -444,9 +444,9 @@
                   <d9p1:Z>0</d9p1:Z>
                 </d8p1:LocalOrientation>
                 <d8p1:LocalPosition xmlns:d9p1="WaveEngine.Common.Math">
-                  <d9p1:X>-0.0486579537</d9p1:X>
-                  <d9p1:Y>0.8735204</d9p1:Y>
-                  <d9p1:Z>-0.04442625</d9p1:Z>
+                  <d9p1:X>0</d9p1:X>
+                  <d9p1:Y>0.0261786766</d9p1:Y>
+                  <d9p1:Z>0</d9p1:Z>
                 </d8p1:LocalPosition>
                 <d8p1:LocalScale xmlns:d9p1="WaveEngine.Common.Math">
                   <d9p1:X>1.75566423</d9p1:X>
@@ -490,9 +490,9 @@
               <d7p1:Z>0</d7p1:Z>
             </d6p1:LocalPosition>
             <d6p1:LocalScale xmlns:d7p1="WaveEngine.Common.Math">
-              <d7p1:X>0.2</d7p1:X>
-              <d7p1:Y>0.2</d7p1:Y>
-              <d7p1:Z>0.2</d7p1:Z>
+              <d7p1:X>8.32</d7p1:X>
+              <d7p1:Y>8.32</d7p1:Y>
+              <d7p1:Z>8.32</d7p1:Z>
             </d6p1:LocalScale>
           </d5p1:Component>
         </d2p1:SerializeComponents>
@@ -652,7 +652,7 @@
     <d2p1:isDisabled>false</d2p1:isDisabled>
     <d2p1:isStatic>false</d2p1:isStatic>
     <d2p1:isVisible>true</d2p1:isVisible>
-    <d2p1:name>tank</d2p1:name>
+    <d2p1:name>tankPrefab</d2p1:name>
     <d2p1:tag i:nil="true" />
     <d2p1:SerializeComponents xmlns:d3p1="WaveEngine.Framework">
       <d3p1:Component xmlns:d4p1="WaveEngine.Framework.Graphics" i:type="d4p1:Transform2D">
