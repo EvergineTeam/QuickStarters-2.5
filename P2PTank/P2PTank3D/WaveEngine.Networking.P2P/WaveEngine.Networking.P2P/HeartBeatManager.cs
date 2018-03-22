@@ -55,12 +55,15 @@ namespace Networking.P2P
         {
             this.hrtBtTimer.Cancel();
         }
-        
+
         private async void TimerCallBack(object parameter)
         {
-            byte[] msgBin = Encoding.UTF8.GetBytes(HeartBeatMessage);
-            await this.transMgr.SendBroadcastAsyncUDP(msgBin);
-            Debug.WriteLine("Sent heartbeat");
+            if (!string.IsNullOrEmpty(HeartBeatMessage))
+            {
+                byte[] msgBin = Encoding.UTF8.GetBytes(HeartBeatMessage);
+                await this.transMgr.SendBroadcastAsyncUDP(msgBin);
+                Debug.WriteLine("Sent heartbeat");
+            }
         }
     }
 }
