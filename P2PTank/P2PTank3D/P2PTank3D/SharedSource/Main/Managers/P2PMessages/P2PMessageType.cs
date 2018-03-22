@@ -15,6 +15,7 @@
         CreatePowerUp,
         DestroyPowerUp,
         RemovePowerUp,
-        PlayerRequest
+        PlayerRequest,
+        EndGame
     }
 }

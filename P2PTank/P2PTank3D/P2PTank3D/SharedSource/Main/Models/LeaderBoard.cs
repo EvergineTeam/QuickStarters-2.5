@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.Serialization;
@@ -84,6 +85,29 @@ namespace P2PTank3D.Models
             sb.AppendLine("-- LeaderBoard End --");
 
             return sb.ToString();
+        }
+
+        public PlayerScore[] GetGamePlayScore()
+        {
+            PlayerScore[] gamePlayScore = new PlayerScore[Board.Count];
+            var enumerator = Board.Keys.GetEnumerator();
+
+            for (int i = 0; i < Board.Count; i++)
+            {
+                var score = Board[enumerator.Current];
+
+                gamePlayScore[i] = new PlayerScore
+                {
+                    PlayerID = score.PlayerID,
+                    Color = score.Color,
+                    Deads = score.Deads,
+                    Kills = score.Kills
+                };
+
+                enumerator.MoveNext();
+            }
+
+            return gamePlayScore;
         }
     }
 }

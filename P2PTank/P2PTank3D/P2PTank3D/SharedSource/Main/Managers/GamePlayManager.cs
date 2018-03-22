@@ -61,6 +61,11 @@ namespace P2PTank.Managers
         private LeaderBoard leaderBoard;
         private AudioService audioService;
 
+        public LeaderBoard LeaderBoard
+        {
+            get { return this.leaderBoard; }
+        }
+
         private int ExplodeIndex
         {
             get

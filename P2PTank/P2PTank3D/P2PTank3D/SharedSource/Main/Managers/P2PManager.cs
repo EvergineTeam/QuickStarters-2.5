@@ -141,6 +141,11 @@ namespace P2PTank.Managers
                             P2PMessageType.PlayerRequest,
                             JsonConvert.DeserializeObject<PlayerRequestMessage>(result[1]));
                         break;
+                    case P2PMessageType.EndGame:
+                        messageObject.Add(
+                            P2PMessageType.EndGame,
+                            JsonConvert.DeserializeObject<EndGameMessage>(result[1]));
+                        break;
                 }
 
             }

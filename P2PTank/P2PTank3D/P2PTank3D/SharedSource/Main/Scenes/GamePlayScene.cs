@@ -47,6 +47,8 @@ namespace P2PTank.Scenes
 
         private string playerID;
 
+        private TimeSpan GamePlayTime = TimeSpan.FromSeconds(300); // Seconds
+
         public GamePlayScene()
         {
             var localHostService = WaveServices.GetService<LocalhostService>();
@@ -204,6 +206,57 @@ namespace P2PTank.Scenes
             this.powerUpManager.InitPowerUp();
             this.ConfigurePhysics();
             this.CreateCountDown();
+            this.CreateTimer();
+        }
+
+        private void CreateTimer()
+        {
+            Vector2 pos = new Vector2(VirtualScreenManager.ScreenWidth - 64, 0 + 24);
+            VirtualScreenManager.ToVirtualPosition(ref pos);
+
+            var entity = new Entity()
+                .AddComponent(new Transform2D()
+                {
+                    Position = pos,
+                    LocalScale = new Vector2(1),
+                    Origin = Vector2.Center
+                });
+
+            var timerTextBlock = new TextBlock()
+            {
+                Text = "5:00",
+                Foreground = Color.DarkOliveGreen
+            };
+
+            var grid = new Grid()
+            {
+                VerticalAlignment = VerticalAlignment.Center,
+                HorizontalAlignment = HorizontalAlignment.Center,
+            };
+            grid.Add(timerTextBlock);
+
+            entity.AddChild(grid.Entity);
+            this.EntityManager.Add(entity);
+
+            WaveServices.TimerFactory.CreateTimer(TimeSpan.FromSeconds(1), new Action(async () =>
+            {
+                GamePlayTime = GamePlayTime.Subtract(TimeSpan.FromSeconds(1));
+                timerTextBlock.Text = GamePlayTime.ToString(@"mm\:ss");
+
+
+                if(GamePlayTime <= TimeSpan.Zero)
+                {
+                    // Reset Timer
+                    GamePlayTime = TimeSpan.FromSeconds(300);
+
+                    var endMessage = new EndGameMessage
+                    {
+                        LeaderBoard = this.gameplayManager.LeaderBoard.GetGamePlayScore()
+                    };
+
+                    await peerManager.SendBroadcastAsync(peerManager.CreateMessage(P2PMessageType.EndGame, endMessage));
+                }
+            }), true);
         }
 
         public Entity CreatePlayer()
@@ -431,6 +484,14 @@ namespace P2PTank.Scenes
                                     var position = player.FindComponent<Transform2D>().Position;
                                     this.SendCreatePlayerMessage(playerColor, position);
                                 }
+                            }
+                            break;
+                        case P2PMessageType.EndGame:
+                            var endGameMessage = message.Value as EndGameMessage;
+
+                            if (endGameMessage != null)
+                            {
+
                             }
                             break;
                     }

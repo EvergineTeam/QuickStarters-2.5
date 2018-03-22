@@ -39,6 +39,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Managers\P2PMessages\CreatePowerUpMessage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Managers\P2PMessages\DestroyPlayerMessage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Managers\P2PMessages\DestroyPowerUpMessage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Managers\P2PMessages\EndGameMessage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Managers\P2PMessages\HitPlayerMessage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Managers\P2PMessages\MoveMessage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Managers\P2PMessages\P2PMessageType.cs" />
@@ -49,6 +50,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Managers\P2PMessages\ShootMessage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Managers\PowerUpManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\LeaderBoard.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\PlayerScore.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\PlayerScoreComponent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Scenes\GamePlayScene.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Scenes\VirtualJoystickScene.cs" />
