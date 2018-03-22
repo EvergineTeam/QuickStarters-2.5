@@ -15,7 +15,7 @@ namespace Networking.P2P
         private string interfaceName;
 
         private TransportManager transMgr;
-        // private HeartBeatManager hrtBtMgr;
+        private HeartBeatManager hrtBtMgr;
 
         public event EventHandler<PeerPlayerChangeEventArgs> PeerPlayerChange;
         public event EventHandler<MsgReceivedEventArgs> MsgReceived;
@@ -51,12 +51,19 @@ namespace Networking.P2P
             await this.transMgr.StartAsync();
         }
 
-        //public async Task StartBroadcastingAsync()
-        //{
-        //    this.hrtBtMgr = new HeartBeatManager("heartbeat", transMgr);
-        //    this.hrtBtMgr.StartBroadcasting();
-        //    await this.transMgr.StartAsync();
-        //}
+        public async Task StartHeartBeatAsync(int milliseconds)
+        {
+            this.hrtBtMgr = new HeartBeatManager(transMgr);
+            this.hrtBtMgr.StartBroadcasting(milliseconds);
+            await this.transMgr.StartAsync();
+        }
+        public void UpdateHeartBeatMessage(string message)
+        {
+            if (this.hrtBtMgr != null)
+            {
+                this.hrtBtMgr.HeartBeatMessage = message;
+            }
+        }
 
         public async Task SendMessage(string message)
         {

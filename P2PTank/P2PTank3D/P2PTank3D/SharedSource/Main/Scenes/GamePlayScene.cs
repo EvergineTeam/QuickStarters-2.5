@@ -40,14 +40,13 @@ namespace P2PTank.Scenes
 
         private List<PeerPlayer> ConnectedPeers { get; set; } = new List<PeerPlayer>();
 
+        private TimeSpan gamePlayTime;
         private MapLoader mapLoader;
         private P2PManager peerManager;
         private GamePlayManager gameplayManager;
         private PowerUpManager powerUpManager;
 
         private string playerID;
-
-        private TimeSpan GamePlayTime = TimeSpan.FromSeconds(30); // Seconds
 
         public GamePlayScene()
         {
@@ -224,7 +223,6 @@ namespace P2PTank.Scenes
 
             var timerTextBlock = new TextBlock()
             {
-                Text = "5:00",
                 Foreground = Color.DarkOliveGreen
             };
 
@@ -238,16 +236,19 @@ namespace P2PTank.Scenes
             entity.AddChild(grid.Entity);
             this.EntityManager.Add(entity);
 
+            gamePlayTime = TimeSpan.FromTicks(GameConstants.GamePlayTime.Ticks);
+
             WaveServices.TimerFactory.CreateTimer(TimeSpan.FromSeconds(1), new Action(async () =>
             {
-                GamePlayTime = GamePlayTime.Subtract(TimeSpan.FromSeconds(1));
-                timerTextBlock.Text = GamePlayTime.ToString(@"mm\:ss");
+                gamePlayTime = gamePlayTime.Subtract(TimeSpan.FromSeconds(1));
+                timerTextBlock.Text = gamePlayTime.ToString(@"mm\:ss");
 
+                this.peerManager.UpdateHeartBeatMessage(gamePlayTime.Milliseconds.ToString());
 
-                if(GamePlayTime <= TimeSpan.Zero)
+                if (gamePlayTime <= TimeSpan.Zero)
                 {
                     // Reset Timer
-                    GamePlayTime = TimeSpan.FromSeconds(300);
+                    gamePlayTime = TimeSpan.FromTicks(GameConstants.GamePlayTime.Ticks);
 
                     var endMessage = new EndGameMessage
                     {
@@ -483,6 +484,19 @@ namespace P2PTank.Scenes
                                     var playerColor = player.FindComponent<TankComponent>().Color;
                                     var position = player.FindComponent<Transform2D>().Position;
                                     this.SendCreatePlayerMessage(playerColor, position);
+                                }
+                            }
+                            break;
+                        case P2PMessageType.GamePlayTime:
+                            var gamePlayTimeMessage = message.Value as GamePlayTimeMessage;
+
+                            if (gamePlayTimeMessage != null)
+                            {
+                                var newGamePlayTimeMessage = TimeSpan.FromMilliseconds(gamePlayTimeMessage.MilliSeconds);
+
+                                if (gamePlayTime > newGamePlayTimeMessage)
+                                {
+                                    gamePlayTime = newGamePlayTimeMessage;
                                 }
                             }
                             break;

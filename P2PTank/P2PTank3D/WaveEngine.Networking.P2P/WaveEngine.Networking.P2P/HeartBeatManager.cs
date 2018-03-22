@@ -35,20 +35,20 @@ namespace Networking.P2P
 
     internal class HeartBeatManager
     {
-        private string heartBeatMsg;
         private TransportManager transMgr;
         private Timer hrtBtTimer;
+        
+        public string HeartBeatMessage { get; set; }
 
-        public HeartBeatManager(string mHeartBeatMsg, TransportManager mTransMgr)
+        public HeartBeatManager(TransportManager mTransMgr)
         {
             // Periodic signal 
-            this.heartBeatMsg = mHeartBeatMsg;
             this.transMgr = mTransMgr;
         }
 
-        public void StartBroadcasting()
+        public void StartBroadcasting(int milliSeconds = 1000)
         {
-            this.hrtBtTimer = new Timer(TimerCallBack, null, 0, 1000);
+            this.hrtBtTimer = new Timer(TimerCallBack, null, 0, milliSeconds);
         }
 
         public void EndBroadcasting()
@@ -58,7 +58,7 @@ namespace Networking.P2P
         
         private async void TimerCallBack(object parameter)
         {
-            byte[] msgBin = Encoding.UTF8.GetBytes(heartBeatMsg);
+            byte[] msgBin = Encoding.UTF8.GetBytes(HeartBeatMessage);
             await this.transMgr.SendBroadcastAsyncUDP(msgBin);
             Debug.WriteLine("Sent heartbeat");
         }

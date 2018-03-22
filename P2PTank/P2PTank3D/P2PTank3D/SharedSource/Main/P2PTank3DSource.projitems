@@ -40,6 +40,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Managers\P2PMessages\DestroyPlayerMessage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Managers\P2PMessages\DestroyPowerUpMessage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Managers\P2PMessages\EndGameMessage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Managers\P2PMessages\GamePlayTimeMessage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Managers\P2PMessages\HitPlayerMessage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Managers\P2PMessages\MoveMessage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Managers\P2PMessages\P2PMessageType.cs" />

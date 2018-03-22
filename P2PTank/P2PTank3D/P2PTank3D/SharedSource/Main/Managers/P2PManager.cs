@@ -45,6 +45,7 @@ namespace P2PTank.Managers
         public async Task StartAsync()
         {
             await peer2peer.StartAsync();
+            await peer2peer.StartHeartBeatAsync(5000);
         }
 
         public async Task SendMessage(string ipAddress, string message, TransportType transportType)
@@ -141,6 +142,11 @@ namespace P2PTank.Managers
                             P2PMessageType.PlayerRequest,
                             JsonConvert.DeserializeObject<PlayerRequestMessage>(result[1]));
                         break;
+                    case P2PMessageType.GamePlayTime:
+                        messageObject.Add(
+                            P2PMessageType.GamePlayTime,
+                            JsonConvert.DeserializeObject<GamePlayTimeMessage>(result[1]));
+                        break;
                     case P2PMessageType.EndGame:
                         messageObject.Add(
                             P2PMessageType.EndGame,
@@ -155,6 +161,11 @@ namespace P2PTank.Managers
             }
 
             return messageObject;
+        }
+
+        public void UpdateHeartBeatMessage(string message)
+        {
+            this.peer2peer.UpdateHeartBeatMessage(message);
         }
 
         private void OnMsgReceived(object sender, MsgReceivedEventArgs e)

@@ -1,9 +1,13 @@
-﻿using WaveEngine.Common.Graphics;
+﻿using System;
+using WaveEngine.Common.Graphics;
 
 namespace P2PTank
 {
     public class GameConstants
     {
+        // Game Time
+        public static TimeSpan GamePlayTime = TimeSpan.FromSeconds(30); // Seconds
+
         // Entity Names
         public static string ManagerEntityPath = "manager";
      

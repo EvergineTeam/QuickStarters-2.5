@@ -16,6 +16,7 @@
         DestroyPowerUp,
         RemovePowerUp,
         PlayerRequest,
+        GamePlayTime,
         EndGame
     }
 }
