@@ -91,6 +91,7 @@ namespace P2PTank3D.Models
         {
             PlayerScore[] gamePlayScore = new PlayerScore[Board.Count];
             var enumerator = Board.Keys.GetEnumerator();
+            enumerator.MoveNext();
 
             for (int i = 0; i < Board.Count; i++)
             {
