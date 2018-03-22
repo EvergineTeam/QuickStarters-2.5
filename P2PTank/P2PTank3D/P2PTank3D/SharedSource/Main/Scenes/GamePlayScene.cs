@@ -245,7 +245,7 @@ namespace P2PTank.Scenes
 
                 var gamePlayTimeMessage = new GamePlayTimeMessage
                 {
-                    MilliSeconds = gamePlayTime.Milliseconds
+                    Time = gamePlayTime
                 };
 
                 this.peerManager.UpdateHeartBeatMessage(this.peerManager.CreateMessage(P2PMessageType.GamePlayTime, gamePlayTimeMessage));
@@ -497,7 +497,7 @@ namespace P2PTank.Scenes
 
                             if (gamePlayTimeMessage != null)
                             {
-                                var newGamePlayTimeMessage = TimeSpan.FromMilliseconds(gamePlayTimeMessage.MilliSeconds);
+                                var newGamePlayTimeMessage = gamePlayTimeMessage.Time;
 
                                 if (gamePlayTime > newGamePlayTimeMessage)
                                 {

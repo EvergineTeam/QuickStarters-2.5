@@ -1,7 +1,9 @@
-﻿namespace P2PTank.Managers.P2PMessages
+﻿using System;
+
+namespace P2PTank.Managers.P2PMessages
 {
     public class GamePlayTimeMessage
     {
-        public double MilliSeconds { get; set; }
+        public TimeSpan Time { get; set; }
     }
 }
