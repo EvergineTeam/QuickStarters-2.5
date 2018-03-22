@@ -243,7 +243,12 @@ namespace P2PTank.Scenes
                 gamePlayTime = gamePlayTime.Subtract(TimeSpan.FromSeconds(1));
                 timerTextBlock.Text = gamePlayTime.ToString(@"mm\:ss");
 
-                this.peerManager.UpdateHeartBeatMessage(gamePlayTime.Milliseconds.ToString());
+                var gamePlayTimeMessage = new GamePlayTimeMessage
+                {
+                    MilliSeconds = gamePlayTime.Milliseconds
+                };
+
+                this.peerManager.UpdateHeartBeatMessage(this.peerManager.CreateMessage(P2PMessageType.GamePlayTime, gamePlayTimeMessage));
 
                 if (gamePlayTime <= TimeSpan.Zero)
                 {
