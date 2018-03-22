@@ -1,4 +1,5 @@
-﻿using WaveEngine.Common.Graphics;
+﻿using Newtonsoft.Json;
+using WaveEngine.Common.Graphics;
 
 namespace P2PTank3D.Models
 {
@@ -8,5 +9,8 @@ namespace P2PTank3D.Models
         public Color Color { get; set; }
         public int Kills { get; set; }
         public int Deads { get; set; }
+
+        [JsonIgnore]
+        public float Score { get; set; }
     }
 }

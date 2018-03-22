@@ -47,7 +47,7 @@ namespace P2PTank.Scenes
 
         private string playerID;
 
-        private TimeSpan GamePlayTime = TimeSpan.FromSeconds(300); // Seconds
+        private TimeSpan GamePlayTime = TimeSpan.FromSeconds(30); // Seconds
 
         public GamePlayScene()
         {
@@ -491,7 +491,7 @@ namespace P2PTank.Scenes
 
                             if (endGameMessage != null)
                             {
-
+                                this.CreateGamePlayScore(endGameMessage);
                             }
                             break;
                     }
@@ -558,6 +558,26 @@ namespace P2PTank.Scenes
             else
             {
                 await peerManager.SendMessage(ipAddress, message, TransportType.UDP);
+            }
+        }
+
+        private void CreateGamePlayScore(EndGameMessage endGameMessage)
+        {
+            for (int i = 0; i < endGameMessage.LeaderBoard.Length; i++)
+            {
+                var kills = endGameMessage.LeaderBoard[i].Kills;
+                var deads = endGameMessage.LeaderBoard[i].Deads;
+                endGameMessage.LeaderBoard[i].Score = (kills * 2) + (deads * -1);
+            }
+
+            var ranking = endGameMessage.LeaderBoard.OrderBy(l => l.Score).ToList();
+
+            this.gameplayManager.LeaderBoard.Clear();
+
+            for (int i = 0; i < ranking.Count; i++)
+            {
+                this.gameplayManager.LeaderBoard.AddOrUpdatePlayerIfNotExtist(ranking[i].PlayerID, ranking[i].Color);
+                this.gameplayManager.LeaderBoard.Score(ranking[i].Score.ToString());
             }
         }
     }

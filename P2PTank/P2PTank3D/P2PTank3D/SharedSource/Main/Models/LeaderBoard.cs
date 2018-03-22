@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.Serialization;
@@ -19,7 +18,17 @@ namespace P2PTank3D.Models
         {
             base.Initialize();
         }
-        
+
+        public void Clear()
+        {
+            var childs = this.Owner.ChildEntities;
+
+            foreach (var child in childs)
+            {
+                this.Owner.RemoveChild(child);
+            }
+        }
+
         public PlayerScoreComponent AddOrUpdatePlayerIfNotExtist(string playerID, Color color)
         {
             PlayerScoreComponent playerScore = null;
@@ -50,6 +59,13 @@ namespace P2PTank3D.Models
             Debug.WriteLine(this.ToString());
 
             return playerScore;
+        }
+
+        public void Score(string playerID)
+        {
+            PlayerScoreComponent playerScore = null;
+            this.Board.TryGetValue(playerID, out playerScore);
+            playerScore?.Loose();
         }
 
         public void Killed(string playerID)
