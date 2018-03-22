@@ -28,6 +28,8 @@ namespace P2PTank3D.Models
             {
                 this.Owner.RemoveChild(childs[i]);
             }
+
+            this.Board.Clear();
         }
 
         public PlayerScoreComponent AddOrUpdatePlayerIfNotExtist(string playerID, Color color)
