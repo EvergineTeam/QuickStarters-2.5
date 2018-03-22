@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using WaveEngine.Common.Graphics;
@@ -21,11 +22,11 @@ namespace P2PTank3D.Models
 
         public void Clear()
         {
-            var childs = this.Owner.ChildEntities;
+            var childs = this.Owner.ChildEntities.ToList();
 
-            foreach (var child in childs)
+            for (int i = 0; i < childs.Count; i++)
             {
-                this.Owner.RemoveChild(child);
+                this.Owner.RemoveChild(childs[i]);
             }
         }
 
