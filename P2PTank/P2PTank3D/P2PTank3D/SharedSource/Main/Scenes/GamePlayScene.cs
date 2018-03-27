@@ -25,6 +25,7 @@ using Networking.P2P.TransportLayer;
 using Networking.P2P.TransportLayer.EventArgs;
 using P2PTank3D;
 using P2PTank3D.Services;
+using P2PTank3D.Models;
 
 namespace P2PTank.Scenes
 {
@@ -156,7 +157,7 @@ namespace P2PTank.Scenes
                     this.SendCreatePlayerMessage (playerColor, position);
                 }
 
-                this.StartPlayerGamePlay (player);
+                this.StartPlayerGamePlay(player);
             }))))).Run();
         }
 
@@ -285,6 +286,14 @@ namespace P2PTank.Scenes
 
         private void StartPlayerGamePlay(Entity player)
         {
+            // Enable player Input
+            var tank = this.EntityManager.Find(this.playerID);
+            var playerInputBehavior = tank?.FindComponent<PlayerInputBehavior>();
+            if (playerInputBehavior != null)
+            {
+                playerInputBehavior.IsActive = true;
+            }
+
             this.HandlePlayerCollision(player);
 
             this.StartPlayerCamera(player);
@@ -511,11 +520,94 @@ namespace P2PTank.Scenes
                             if (endGameMessage != null)
                             {
                                 this.CreateGamePlayScore(endGameMessage);
+                                this.WaitSummaryAndRestartGame();
                             }
                             break;
                     }
                 }
             }
+        }
+
+        private void WaitSummaryAndRestartGame()
+        {
+            Vector2 pos = new Vector2(VirtualScreenManager.ScreenWidth / 2, (VirtualScreenManager.ScreenHeight / 2) - 100);
+            VirtualScreenManager.ToVirtualPosition(ref pos);
+
+            var entity = new Entity()
+                .AddComponent(new Transform2D()
+                {
+                    Position = pos,
+                    LocalScale = new Vector2(1),
+                    Origin = Vector2.Center,
+                });
+            var countDownTextBlock = new TextBlock()
+            {
+                FontPath = WaveContent.Assets.Fonts.Top_Secret_36_ttf,
+                HorizontalAlignment = HorizontalAlignment.Center,
+                Foreground = Color.DarkOliveGreen,
+                VerticalAlignment = VerticalAlignment.Center,
+            };
+
+            var grid = new Grid()
+            {
+                VerticalAlignment = VerticalAlignment.Center,
+                HorizontalAlignment = HorizontalAlignment.Center,
+            };
+            grid.Add(countDownTextBlock);
+
+            entity.AddChild(grid.Entity);
+            this.EntityManager.Add(entity);
+
+            var delay = TimeSpan.FromSeconds(1);
+            var audioService = WaveServices.GetService<AudioService>();
+
+            var tank = this.EntityManager.Find(this.playerID);
+            var playerInputBehavior = tank?.FindComponent<PlayerInputBehavior>();
+            this.CreateGameAction(new ActionGameAction(() =>
+            {
+                if (playerInputBehavior != null)
+                {
+                    playerInputBehavior.IsActive = false;
+                }
+                countDownTextBlock.Text = "5";
+                audioService.Play(Audio.Sfx.Zap_wav);
+            }).Delay(delay)
+            .ContinueWith(new ActionGameAction(() =>
+            {
+                countDownTextBlock.Text = "4";
+                audioService.Play(Audio.Sfx.Zap_wav);
+            }).Delay(delay)
+            .ContinueWith(new ActionGameAction(() =>
+            {
+                countDownTextBlock.Text = "3";
+                audioService.Play(Audio.Sfx.Zap_wav);
+            }).Delay(delay)
+            .ContinueWith(new ActionGameAction(() =>
+            {
+                countDownTextBlock.Text = "2";
+                audioService.Play(Audio.Sfx.Zap_wav);
+            }).Delay(delay)
+            .ContinueWith(new ActionGameAction(() =>
+            {
+                countDownTextBlock.Text = "1";
+                audioService.Play(Audio.Sfx.Zap_wav);
+            }).Delay(delay)
+            .ContinueWith(new ActionGameAction(() => {
+                countDownTextBlock.Text = string.Empty;
+                Entity player = this.CreatePlayer();
+
+                if (player != null)
+                {
+                    var playerColor = player.FindComponent<TankComponent>().Color;
+                    var position = player.FindComponent<Transform2D>().Position;
+                    this.SendCreatePlayerMessage(playerColor, position);
+                }
+
+                var summary = this.EntityManager.Find("summaryLeaderboard");
+                summary.Enabled = false;
+
+                this.StartPlayerGamePlay(player);
+            }))))))).Run();
         }
 
         public void AddActiveBullet(string id)
@@ -582,6 +674,16 @@ namespace P2PTank.Scenes
 
         private void CreateGamePlayScore(EndGameMessage endGameMessage)
         {
+            var summary = this.EntityManager.Find("summaryLeaderboard");
+            var summaryTransform = summary.FindComponent<Transform2D>();
+            summaryTransform.Position = new Vector2
+                  (4 * VirtualScreenManager.ScreenWidth / 2,
+                  4 * VirtualScreenManager.ScreenHeight / 2);
+
+            summary.Enabled = true;
+            var finalClassification = summary.FindComponent<LeaderBoard>();
+            finalClassification.Clear();
+
             for (int i = 0; i < endGameMessage.LeaderBoard.Length; i++)
             {
                 var kills = endGameMessage.LeaderBoard[i].Kills;
@@ -595,8 +697,11 @@ namespace P2PTank.Scenes
 
             for (int i = 0; i < ranking.Count; i++)
             {
-                this.gameplayManager.LeaderBoard.AddOrUpdatePlayerIfNotExtist(ranking[i].PlayerID, ranking[i].Color);
-                this.gameplayManager.LeaderBoard.Score(ranking[i].Score.ToString());
+                finalClassification.AddOrUpdatePlayerIfNotExtist(ranking[i].PlayerID, ranking[i].Color);
+                finalClassification.Score(ranking[i].Score.ToString());
+
+                //this.gameplayManager.LeaderBoard.AddOrUpdatePlayerIfNotExtist(ranking[i].PlayerID, ranking[i].Color);
+                //this.gameplayManager.LeaderBoard.Score(ranking[i].Score.ToString());
             }
         }
     }
