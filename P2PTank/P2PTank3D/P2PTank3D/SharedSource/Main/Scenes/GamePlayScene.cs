@@ -525,8 +525,9 @@ namespace P2PTank.Scenes
                         case P2PMessageType.EndGame:
                             var endGameMessage = message.Value as EndGameMessage;
 
-                            if (endGameMessage != null && endGameMessage.Time >= TimeSpan.Zero)
+                            if (endGameMessage != null && endGameMessage.Time >= TimeSpan.Zero && !this.counterShown)
                             {
+                                this.gameplayManager.RemoveAllTanks();
                                 this.CreateGamePlayScore(endGameMessage);
                                 this.WaitSummaryAndRestartGame();
                             }
@@ -699,25 +700,25 @@ namespace P2PTank.Scenes
             var finalClassification = summary.FindComponent<LeaderBoard>();
             finalClassification.Clear();
 
-            for (int i = 0; i < endGameMessage.LeaderBoard.Length; i++)
-            {
-                var kills = endGameMessage.LeaderBoard[i].Kills;
-                var deads = endGameMessage.LeaderBoard[i].Deads;
-                endGameMessage.LeaderBoard[i].Score = (kills * 2) + (deads * -1);
-            }
+            //for (int i = 0; i < endGameMessage.LeaderBoard.Length; i++)
+            //{
+            //    var kills = endGameMessage.LeaderBoard[i].Kills;
+            //    var deads = endGameMessage.LeaderBoard[i].Deads;
+            //    endGameMessage.LeaderBoard[i].Score = (kills * 2) + (deads * -1);
+            //}
 
-            var ranking = endGameMessage.LeaderBoard.OrderBy(l => l.Score).ToList();
+            //var ranking = endGameMessage.LeaderBoard.OrderBy(l => l.Score).ToList();
 
             this.gameplayManager.LeaderBoard.Clear();
 
-            for (int i = 0; i < ranking.Count; i++)
-            {
-                finalClassification.AddOrUpdatePlayerIfNotExtist(ranking[i].PlayerID, ranking[i].Color);
-                finalClassification.Score(ranking[i].Score.ToString());
+            //for (int i = 0; i < ranking.Count; i++)
+            //{
+            //    finalClassification.AddOrUpdatePlayerIfNotExtist(ranking[i].PlayerID, ranking[i].Color);
+            //    finalClassification.Score(ranking[i].Score.ToString());
 
-                //this.gameplayManager.LeaderBoard.AddOrUpdatePlayerIfNotExtist(ranking[i].PlayerID, ranking[i].Color);
-                //this.gameplayManager.LeaderBoard.Score(ranking[i].Score.ToString());
-            }
+            //    //this.gameplayManager.LeaderBoard.AddOrUpdatePlayerIfNotExtist(ranking[i].PlayerID, ranking[i].Color);
+            //    //this.gameplayManager.LeaderBoard.Score(ranking[i].Score.ToString());
+            //}
         }
     }
 }

@@ -372,10 +372,9 @@ namespace P2PTank.Managers
             if (tank == null)
                 return;
 
-            leaderBoard.Killed(tank.Name);
-
             if (!string.IsNullOrEmpty(killerId))
             {
+                leaderBoard.Killed(tank.Name);
                 leaderBoard.Victory(killerId);
             }
 
@@ -665,6 +664,17 @@ namespace P2PTank.Managers
                 if (this.explosions[i].FindComponent<Animation2D>().State == WaveEngine.Framework.Animation.AnimationState.Stopped)
                 {
                     this.explosions[i].IsActive = this.explosions[i].IsVisible = false;
+                }
+            }
+        }
+
+        public void RemoveAllTanks()
+        {
+            foreach (var tankBehavior in this.networkingTanks.Values)
+            {
+                if (tankBehavior != null && tankBehavior.Owner != null)
+                {
+                    this.DestroyTank(tankBehavior.Owner, string.Empty);
                 }
             }
         }
