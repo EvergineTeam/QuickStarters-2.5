@@ -47,6 +47,8 @@ namespace P2PTank.Scenes
         private GamePlayManager gameplayManager;
         private PowerUpManager powerUpManager;
 
+        private bool counterShown = false;
+
         private string playerID;
 
         public GamePlayScene()
@@ -101,6 +103,11 @@ namespace P2PTank.Scenes
 
         public void CreateCountDown()
         {
+            if(this.counterShown)
+            {
+                return;
+            }
+
             Vector2 pos = new Vector2(VirtualScreenManager.ScreenWidth / 2, VirtualScreenManager.ScreenHeight / 2);
             VirtualScreenManager.ToVirtualPosition(ref pos);
 
@@ -253,15 +260,16 @@ namespace P2PTank.Scenes
 
                 if (gamePlayTime <= TimeSpan.Zero)
                 {
-                    // Reset Timer
-                    gamePlayTime = TimeSpan.FromTicks(GameConstants.GamePlayTime.Ticks);
-
                     var endMessage = new EndGameMessage
                     {
-                        LeaderBoard = this.gameplayManager.LeaderBoard.GetGamePlayScore()
+                        LeaderBoard = this.gameplayManager.LeaderBoard.GetGamePlayScore(),
+                        Time = gamePlayTime,
                     };
 
                     await peerManager.SendBroadcastAsync(peerManager.CreateMessage(P2PMessageType.EndGame, endMessage));
+
+                    // Reset Timer
+                    gamePlayTime = TimeSpan.FromTicks(GameConstants.GamePlayTime.Ticks);
                 }
             }), true);
         }
@@ -517,7 +525,7 @@ namespace P2PTank.Scenes
                         case P2PMessageType.EndGame:
                             var endGameMessage = message.Value as EndGameMessage;
 
-                            if (endGameMessage != null)
+                            if (endGameMessage != null && endGameMessage.Time >= TimeSpan.Zero)
                             {
                                 this.CreateGamePlayScore(endGameMessage);
                                 this.WaitSummaryAndRestartGame();
@@ -530,6 +538,8 @@ namespace P2PTank.Scenes
 
         private void WaitSummaryAndRestartGame()
         {
+            this.counterShown = true;
+
             Vector2 pos = new Vector2(VirtualScreenManager.ScreenWidth / 2, (VirtualScreenManager.ScreenHeight / 2) - 100);
             VirtualScreenManager.ToVirtualPosition(ref pos);
 
@@ -569,6 +579,9 @@ namespace P2PTank.Scenes
                 {
                     playerInputBehavior.IsActive = false;
                 }
+
+                this.DestroyFoe(this.gameplayManager, this.playerID, string.Empty);
+
                 countDownTextBlock.Text = "5";
                 audioService.Play(Audio.Sfx.Zap_wav);
             }).Delay(delay)
@@ -607,6 +620,8 @@ namespace P2PTank.Scenes
                 summary.Enabled = false;
 
                 this.StartPlayerGamePlay(player);
+
+                this.counterShown = false;
             }))))))).Run();
         }
 
