@@ -31,10 +31,10 @@ namespace P2PTank3D.Models
         }
 
         [IgnoreDataMember]
-        public int Kills { get; private set; }
+        public int Kills { get; internal set; }
 
         [IgnoreDataMember]
-        public int Deads { get; private set; }
+        public int Deads { get; internal set; }
 
         protected override void ResolveDependencies()
         {

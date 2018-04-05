@@ -32,6 +32,15 @@ namespace P2PTank3D.Models
             this.Board.Clear();
         }
 
+        public void SetDirectValues(string playerID, int killed, int deads)
+        {
+            PlayerScoreComponent playerScore = null;
+            this.Board.TryGetValue(playerID, out playerScore);
+
+            playerScore.Kills = killed;
+            playerScore.Deads = deads;
+        }
+
         public PlayerScoreComponent AddOrUpdatePlayerIfNotExtist(string playerID, Color color)
         {
             PlayerScoreComponent playerScore = null;
@@ -62,13 +71,6 @@ namespace P2PTank3D.Models
             Debug.WriteLine(this.ToString());
 
             return playerScore;
-        }
-
-        public void Score(string playerID)
-        {
-            PlayerScoreComponent playerScore = null;
-            this.Board.TryGetValue(playerID, out playerScore);
-            playerScore?.Loose();
         }
 
         public void Killed(string playerID)

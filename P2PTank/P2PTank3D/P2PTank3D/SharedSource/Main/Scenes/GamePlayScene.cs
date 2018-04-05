@@ -700,25 +700,35 @@ namespace P2PTank.Scenes
             var finalClassification = summary.FindComponent<LeaderBoard>();
             finalClassification.Clear();
 
-            //for (int i = 0; i < endGameMessage.LeaderBoard.Length; i++)
-            //{
-            //    var kills = endGameMessage.LeaderBoard[i].Kills;
-            //    var deads = endGameMessage.LeaderBoard[i].Deads;
-            //    endGameMessage.LeaderBoard[i].Score = (kills * 2) + (deads * -1);
-            //}
+            for (int i = 0; i < endGameMessage.LeaderBoard.Length; i++)
+            {
+                var kills = endGameMessage.LeaderBoard[i].Kills;
+                var deads = endGameMessage.LeaderBoard[i].Deads;
+                endGameMessage.LeaderBoard[i].Score = (kills * 2) + (deads * -1);
 
-            //var ranking = endGameMessage.LeaderBoard.OrderBy(l => l.Score).ToList();
+            }
 
+            var ranking = endGameMessage.LeaderBoard.OrderByDescending(l => l.Score).ToList();
+            
             this.gameplayManager.LeaderBoard.Clear();
 
-            //for (int i = 0; i < ranking.Count; i++)
-            //{
-            //    finalClassification.AddOrUpdatePlayerIfNotExtist(ranking[i].PlayerID, ranking[i].Color);
-            //    finalClassification.Score(ranking[i].Score.ToString());
+            for (int i = 0; i < ranking.Count; i++)
+            {
+                finalClassification.AddOrUpdatePlayerIfNotExtist(ranking[i].PlayerID, ranking[i].Color);
+                for (int j = 0; j < ranking[i].Kills; j++)
+                {
+                    finalClassification.Victory(ranking[i].PlayerID);
+                }
 
-            //    //this.gameplayManager.LeaderBoard.AddOrUpdatePlayerIfNotExtist(ranking[i].PlayerID, ranking[i].Color);
-            //    //this.gameplayManager.LeaderBoard.Score(ranking[i].Score.ToString());
-            //}
+                for (int k = 0; k < ranking[i].Deads; k++)
+                {
+                    finalClassification.Killed(ranking[i].PlayerID);
+                }
+                finalClassification.SetDirectValues(ranking[i].PlayerID, ranking[i].Kills, ranking[i].Deads);
+
+                //this.gameplayManager.LeaderBoard.AddOrUpdatePlayerIfNotExtist(ranking[i].PlayerID, ranking[i].Color);
+                //this.gameplayManager.LeaderBoard.Score(ranking[i].Score.ToString());
+            }
         }
     }
 }
