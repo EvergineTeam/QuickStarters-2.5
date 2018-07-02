@@ -228,7 +228,7 @@ namespace DeepSpace.Components.Gameplay
             var explode = new Entity() { IsSerializable = false }
                     .AddComponent(new Transform2D() { Origin = Vector2.Center, XScale = 2, YScale = 2 })
                     .AddComponent(new SpriteAtlas(WaveContent.Assets.ExplodeSprite_spritesheet))
-                    .AddComponent(new SpriteAtlasRenderer() { LayerType = DefaultLayers.Additive })
+                    .AddComponent(new SpriteAtlasRenderer() { LayerId = DefaultLayers.Additive })
                     .AddComponent(new Animation2D() { CurrentAnimation = "explosion", PlayAutomatically = false });
 
             explode.Enabled = false;
@@ -387,11 +387,7 @@ namespace DeepSpace.Components.Gameplay
         public void Reset()
         {
             this.Score = 0;
-            var handler = this.GameReset;
-            if (handler != null)
-            {
-                handler();
-            }
+            this.GameReset?.Invoke();
         }
     }
 }

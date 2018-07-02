@@ -9,6 +9,8 @@ namespace DeepSpace
         public override void Initialize(IApplication application)
         {
             base.Initialize(application);
+
+            this.Load(WaveContent.GameInfo);
             
             this.RegisterServices();
             
@@ -19,11 +21,6 @@ namespace DeepSpace
             var introContext = new ScreenContext(new IntroScene());
             WaveServices.ScreenContextManager.Push(gameContext);
             WaveServices.ScreenContextManager.Push(introContext);
-
-            // Play background music
-            //WaveServices.MusicPlayer.Play(new MusicInfo("Content/music.mp3"));
-            //WaveServices.MusicPlayer.Volume = 0.3f;
-            //WaveServices.MusicPlayer.IsRepeat = true;
         }
 
         private void RegisterServices()
