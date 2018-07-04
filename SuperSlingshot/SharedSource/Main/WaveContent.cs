@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// File generated on 8/14/2017 1:19:55 PM
+// File generated on 7/4/2018 10:52:09 AM
 namespace SuperSlingshot
 {
     using System;
@@ -708,6 +708,28 @@ namespace SuperSlingshot
                 /// <summary> Path to Content/Scenes/Levels/TestLevel.wscene </summary>
                 public const string TestLevel = "Content/Scenes/Levels/TestLevel.wscene";
             }
+        }
+        
+        public sealed class RenderLayers
+        {
+            
+            /// <summary>Id of Opaque</summary>
+            public const int Opaque = 0;
+            
+            /// <summary>Id of Skybox</summary>
+            public const int Skybox = 1;
+            
+            /// <summary>Id of Alpha</summary>
+            public const int Alpha = 2;
+            
+            /// <summary>Id of Additive</summary>
+            public const int Additive = 3;
+            
+            /// <summary>Id of GUI</summary>
+            public const int GUI = 4;
+            
+            /// <summary>Id of Debug</summary>
+            public const int Debug = 5;
         }
         
         public sealed class Materials

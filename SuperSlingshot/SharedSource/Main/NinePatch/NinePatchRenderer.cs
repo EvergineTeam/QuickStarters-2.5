@@ -95,7 +95,7 @@ namespace SuperSlingshot.NinePatch
                 this.RefreshMesh();
             }
 
-            this.ninePatch.Material.LayerType = this.LayerType;
+            this.ninePatch.Material.LayerId = this.LayerId;
 
             if (this.transform2D.GlobalOpacity > 0
              && this.mesh != null)
@@ -199,7 +199,7 @@ namespace SuperSlingshot.NinePatch
 
         private void GenerateVertices()
         {
-            var texture = (this.ninePatch.Material as StandardMaterial).Diffuse;
+            var texture = (this.ninePatch.Material as StandardMaterial).Diffuse1;
 
             this.lastTexturePath = this.ninePatch.TexturePath;
 

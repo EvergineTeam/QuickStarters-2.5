@@ -1,4 +1,5 @@
-﻿<Scene xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="WaveEngine.Framework.Models">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Scene xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="WaveEngine.Framework.Models">
   <Id>3dbf1218-6d77-40d0-a695-d4d3764d568c</Id>
   <Entities xmlns:d2p1="WaveEngine.Framework.Models.Entities">
     <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
@@ -399,7 +400,7 @@
                 <d8p1:Component xmlns:d9p1="http://schemas.datacontract.org/2004/07/SuperSlingshot.NinePatch" i:type="d9p1:NinePatchRenderer">
                   <d8p1:IsVisible>true</d8p1:IsVisible>
                   <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
-                  <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
+                  <layerId xmlns="WaveEngine.Framework.Graphics">2</layerId>
                 </d8p1:Component>
               </d2p1:SerializeComponents>
             </d2p1:BaseEntityModel>
@@ -472,7 +473,7 @@
                 <d8p1:Component xmlns:d9p1="WaveEngine.Components.Toolkit" i:type="d9p1:TextRenderer2D">
                   <d8p1:IsVisible>true</d8p1:IsVisible>
                   <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
-                  <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
+                  <layerId xmlns="WaveEngine.Framework.Graphics">2</layerId>
                 </d8p1:Component>
               </d2p1:SerializeComponents>
             </d2p1:BaseEntityModel>
@@ -580,7 +581,7 @@
             <d6p1:Component xmlns:d7p1="http://schemas.datacontract.org/2004/07/SuperSlingshot.NinePatch" i:type="d7p1:NinePatchRenderer">
               <d6p1:IsVisible>true</d6p1:IsVisible>
               <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
-              <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
+              <layerId xmlns="WaveEngine.Framework.Graphics">2</layerId>
             </d6p1:Component>
           </d2p1:SerializeComponents>
         </d2p1:BaseEntityModel>
