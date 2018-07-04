@@ -21,10 +21,11 @@ namespace DeepSpace
 
         public App()
         {
-            this.Width = 1024;
-            this.Height = 768;
+            this.Width = 1280;
+            this.Height = 720;
             this.FullScreen = false;
             this.WindowTitle = "DeepSpace";
+            this.HasVideoSupport = true;
         }
 
         public override void Initialize()
@@ -32,8 +33,8 @@ namespace DeepSpace
             this.game = new DeepSpace.Game();
             this.game.Initialize(this);
 
-            #region WAVE SOFTWARE LICENSE AGREEMENT
-            this.backgroundSplashColor = new Color("#ebebeb");
+            #region DEFAULT SPLASHSCREEN
+            this.backgroundSplashColor = Color.White;
             this.spriteBatch = new SpriteBatch(WaveServices.GraphicsDevice);
 
             var resourceNames = Assembly.GetExecutingAssembly().GetManifestResourceNames();
@@ -75,7 +76,7 @@ namespace DeepSpace
 
                 if (this.splashState)
                 {
-                    #region WAVE SOFTWARE LICENSE AGREEMENT
+                    #region DEFAULT SPLASHSCREEN
                     this.time += elapsedTime;
                     if (time > TimeSpan.FromSeconds(2))
                     {
@@ -103,7 +104,7 @@ namespace DeepSpace
             {
                 if (this.splashState)
                 {
-                    #region WAVE SOFTWARE LICENSE AGREEMENT
+                    #region DEFAULT SPLASHSCREEN
                     WaveServices.GraphicsDevice.RenderTargets.SetRenderTarget(null);
                     WaveServices.GraphicsDevice.Clear(ref this.backgroundSplashColor, ClearFlags.Target, 1);
                     this.spriteBatch.Draw(this.splashScreen, this.position, Color.White);
@@ -142,4 +143,3 @@ namespace DeepSpace
         }
     }
 }
-

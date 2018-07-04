@@ -178,13 +178,13 @@ UpgradeLog*.htm
 # Microsoft Fakes
 FakesAssemblies/
 
-Intermediate/
-packages/
-
 #Wave Editor intermediate folder
 generate.info
 generate.winfo
 WaveContent.cs
+Intermediate/
+packages/
+.vs/
 
 UpgradeLog.txt
 *backup.zip
