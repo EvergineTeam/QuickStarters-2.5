@@ -9,23 +9,7 @@
 
 #region Using Statements
 using FlyingKite.Behaviors;
-using FlyingKite.Components;
-using FlyingKite.Layers;
-using System;
-using WaveEngine.Common;
-using WaveEngine.Common.Graphics;
-using WaveEngine.Common.Math;
-using WaveEngine.Components.Gestures;
-using WaveEngine.Components.Graphics2D;
-using WaveEngine.Components.Transitions;
-using WaveEngine.Components.UI;
 using WaveEngine.Framework;
-using WaveEngine.Framework.Animation;
-using WaveEngine.Framework.Graphics;
-using WaveEngine.Framework.Models;
-using WaveEngine.Framework.Physics2D;
-using WaveEngine.Framework.Services;
-using WaveEngine.Framework.UI;
 #endregion
 
 namespace FlyingKite.Scenes

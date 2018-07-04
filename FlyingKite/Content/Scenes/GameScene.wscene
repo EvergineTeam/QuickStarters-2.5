@@ -52,28 +52,33 @@
             <d6p1:R>100</d6p1:R>
           </d5p1:BackgroundColor>
           <d5p1:CameraOrder>0</d5p1:CameraOrder>
+          <d5p1:ClearDepth>1</d5p1:ClearDepth>
           <d5p1:ClearFlags>All</d5p1:ClearFlags>
+          <d5p1:ClearStencil>0</d5p1:ClearStencil>
+          <d5p1:DepthRange xmlns:d6p1="WaveEngine.Common.Graphics">
+            <d6p1:MaxDepth>1</d6p1:MaxDepth>
+            <d6p1:MinDepth>0</d6p1:MinDepth>
+          </d5p1:DepthRange>
           <d5p1:FarPlane>1000</d5p1:FarPlane>
           <d5p1:FieldOfView>0</d5p1:FieldOfView>
+          <d5p1:FrustumCullingEnabled>true</d5p1:FrustumCullingEnabled>
           <d5p1:IsActive>true</d5p1:IsActive>
           <d5p1:LayerMaskDefaultValue>true</d5p1:LayerMaskDefaultValue>
           <d5p1:NearPlane>-1000</d5p1:NearPlane>
           <d5p1:UpVector xmlns:d6p1="WaveEngine.Common.Math">
-            <d6p1:X>0</d6p1:X>
+            <d6p1:X>-0</d6p1:X>
             <d6p1:Y>1</d6p1:Y>
             <d6p1:Z>0</d6p1:Z>
           </d5p1:UpVector>
           <d5p1:Viewport xmlns:d6p1="WaveEngine.Common.Graphics">
             <d6p1:Height>1</d6p1:Height>
-            <d6p1:MaxDepth>1</d6p1:MaxDepth>
-            <d6p1:MinDepth>0</d6p1:MinDepth>
             <d6p1:Width>1</d6p1:Width>
             <d6p1:X>0</d6p1:X>
             <d6p1:Y>0</d6p1:Y>
           </d5p1:Viewport>
           <d5p1:customVirtualScreen xmlns:d6p1="WaveEngine.Framework.Managers" i:nil="true" />
           <d5p1:distance>0</d5p1:distance>
-          <d5p1:rotation>0</d5p1:rotation>
+          <d5p1:rotation>-0</d5p1:rotation>
           <d5p1:vanishingPoint xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
             <d6p1:X>0.5</d6p1:X>
             <d6p1:Y>0.5</d6p1:Y>
@@ -141,11 +146,10 @@
           <d5p1:texturePath>Content/Assets/Gameplay/bg.png.wpk</d5p1:texturePath>
         </d4p1:Component>
         <d4p1:Component xmlns:d5p1="WaveEngine.Components.Graphics2D" i:type="d5p1:SpriteRenderer">
+          <d4p1:FrustumCullingEnabled>true</d4p1:FrustumCullingEnabled>
           <d4p1:IsVisible>true</d4p1:IsVisible>
-          <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
-          <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.OpaqueLayer,WaveEngine.Framework</LayerTypeName>
+          <layerId xmlns="WaveEngine.Framework.Graphics">0</layerId>
           <d5p1:DrawMode>Simple</d5p1:DrawMode>
-          <d5p1:SamplerMode>LinearClamp</d5p1:SamplerMode>
         </d4p1:Component>
         <d4p1:Component xmlns:d5p1="http://schemas.datacontract.org/2004/07/FlyingKite.Components" i:type="d5p1:StretchComponent" />
       </d2p1:SerializeComponents>
@@ -202,20 +206,19 @@
           </d5p1:TintColor>
           <d5p1:isGlobalAsset>false</d5p1:isGlobalAsset>
           <d5p1:spriteSheetPath>Content/Assets/Gameplay/kite_anims.spritesheet.wpk</d5p1:spriteSheetPath>
-          <d5p1:textureName>fish_blue_kite_01</d5p1:textureName>
+          <d5p1:textureName>fish_green_kite_01</d5p1:textureName>
         </d4p1:Component>
         <d4p1:Component xmlns:d5p1="WaveEngine.Components.Graphics2D" i:type="d5p1:SpriteAtlasRenderer">
+          <d4p1:FrustumCullingEnabled>true</d4p1:FrustumCullingEnabled>
           <d4p1:IsVisible>true</d4p1:IsVisible>
-          <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
-          <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
-          <d5p1:SamplerMode>LinearClamp</d5p1:SamplerMode>
+          <layerId xmlns="WaveEngine.Framework.Graphics">1001</layerId>
         </d4p1:Component>
         <d4p1:Component xmlns:d5p1="WaveEngine.Components.Animation" i:type="d5p1:Animation2D">
           <d4p1:UpdateOrder>0.5</d4p1:UpdateOrder>
           <d4p1:isDisabled>false</d4p1:isDisabled>
-          <d5p1:CurrentAnimation>Blue</d5p1:CurrentAnimation>
+          <d5p1:CurrentAnimation>Green</d5p1:CurrentAnimation>
           <d5p1:PlayAutomatically>false</d5p1:PlayAutomatically>
-          <d5p1:currentAnimation>Blue</d5p1:currentAnimation>
+          <d5p1:currentAnimation>Green</d5p1:currentAnimation>
         </d4p1:Component>
         <d4p1:Component xmlns:d5p1="WaveEngine.Framework.Physics2D" i:type="d5p1:PolygonCollider2D">
           <d5p1:CollidesWith>All</d5p1:CollidesWith>
@@ -659,7 +662,7 @@
               <d7p1:LocalPosition xmlns:d8p1="WaveEngine.Common.Math">
                 <d8p1:X>0</d8p1:X>
                 <d8p1:Y>0</d8p1:Y>
-                <d8p1:Z>0.1</d8p1:Z>
+                <d8p1:Z>0.100000024</d8p1:Z>
               </d7p1:LocalPosition>
               <d7p1:LocalScale xmlns:d8p1="WaveEngine.Common.Math">
                 <d8p1:X>1</d8p1:X>
@@ -691,9 +694,9 @@
               <d7p1:useDummyMaterial>false</d7p1:useDummyMaterial>
             </d6p1:Component>
             <d6p1:Component xmlns:d7p1="http://schemas.datacontract.org/2004/07/FlyingKite.Drawables" i:type="d7p1:DrawableCurve2D">
+              <d6p1:FrustumCullingEnabled>true</d6p1:FrustumCullingEnabled>
               <d6p1:IsVisible>true</d6p1:IsVisible>
-              <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
-              <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
+              <layerId xmlns="WaveEngine.Framework.Graphics">2</layerId>
             </d6p1:Component>
             <d6p1:Component xmlns:d7p1="http://schemas.datacontract.org/2004/07/FlyingKite.Behaviors" i:type="d7p1:LinkedRopeBehavior">
               <d6p1:UpdateOrder>0.5</d6p1:UpdateOrder>
@@ -756,9 +759,9 @@
               <d7p1:useDummyMaterial>false</d7p1:useDummyMaterial>
             </d6p1:Component>
             <d6p1:Component xmlns:d7p1="http://schemas.datacontract.org/2004/07/FlyingKite.Drawables" i:type="d7p1:DrawableCurve2D">
+              <d6p1:FrustumCullingEnabled>true</d6p1:FrustumCullingEnabled>
               <d6p1:IsVisible>true</d6p1:IsVisible>
-              <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
-              <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
+              <layerId xmlns="WaveEngine.Framework.Graphics">2</layerId>
             </d6p1:Component>
             <d6p1:Component xmlns:d7p1="http://schemas.datacontract.org/2004/07/FlyingKite.Behaviors" i:type="d7p1:LinkedRopeBehavior">
               <d6p1:UpdateOrder>0.5</d6p1:UpdateOrder>
@@ -821,9 +824,9 @@
               <d7p1:useDummyMaterial>false</d7p1:useDummyMaterial>
             </d6p1:Component>
             <d6p1:Component xmlns:d7p1="http://schemas.datacontract.org/2004/07/FlyingKite.Drawables" i:type="d7p1:DrawableCurve2D">
+              <d6p1:FrustumCullingEnabled>true</d6p1:FrustumCullingEnabled>
               <d6p1:IsVisible>true</d6p1:IsVisible>
-              <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
-              <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
+              <layerId xmlns="WaveEngine.Framework.Graphics">2</layerId>
             </d6p1:Component>
             <d6p1:Component xmlns:d7p1="http://schemas.datacontract.org/2004/07/FlyingKite.Behaviors" i:type="d7p1:LinkedRopeBehavior">
               <d6p1:UpdateOrder>0.5</d6p1:UpdateOrder>
@@ -853,7 +856,7 @@
           <d5p1:LocalPosition xmlns:d6p1="WaveEngine.Common.Math">
             <d6p1:X>350</d6p1:X>
             <d6p1:Y>350</d6p1:Y>
-            <d6p1:Z>-1</d6p1:Z>
+            <d6p1:Z>0</d6p1:Z>
           </d5p1:LocalPosition>
           <d5p1:LocalScale xmlns:d6p1="WaveEngine.Common.Math">
             <d6p1:X>1</d6p1:X>
@@ -890,10 +893,9 @@
           <d5p1:textureName>kite_ball</d5p1:textureName>
         </d4p1:Component>
         <d4p1:Component xmlns:d5p1="WaveEngine.Components.Graphics2D" i:type="d5p1:SpriteAtlasRenderer">
+          <d4p1:FrustumCullingEnabled>true</d4p1:FrustumCullingEnabled>
           <d4p1:IsVisible>true</d4p1:IsVisible>
-          <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
-          <LayerTypeName xmlns="WaveEngine.Framework.Graphics">FlyingKite.Layers.KiteLayer,FlyingKite_0</LayerTypeName>
-          <d5p1:SamplerMode>LinearClamp</d5p1:SamplerMode>
+          <layerId xmlns="WaveEngine.Framework.Graphics">2</layerId>
         </d4p1:Component>
         <d4p1:Component xmlns:d5p1="http://schemas.datacontract.org/2004/07/FlyingKite.Behaviors" i:type="d5p1:Follower2DBehavior">
           <d4p1:UpdateOrder>0.5</d4p1:UpdateOrder>
@@ -1004,11 +1006,10 @@
           <d5p1:texturePath>Content/Assets/Gameplay/white_pixel.png.wpk</d5p1:texturePath>
         </d4p1:Component>
         <d4p1:Component xmlns:d5p1="WaveEngine.Components.Graphics2D" i:type="d5p1:SpriteRenderer">
+          <d4p1:FrustumCullingEnabled>true</d4p1:FrustumCullingEnabled>
           <d4p1:IsVisible>true</d4p1:IsVisible>
-          <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
-          <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
+          <layerId xmlns="WaveEngine.Framework.Graphics">0</layerId>
           <d5p1:DrawMode>Simple</d5p1:DrawMode>
-          <d5p1:SamplerMode>LinearClamp</d5p1:SamplerMode>
         </d4p1:Component>
         <d4p1:Component xmlns:d5p1="WaveEngine.Framework.Animation" i:type="d5p1:AnimationUI">
           <d4p1:UpdateOrder>0.5</d4p1:UpdateOrder>
@@ -1076,10 +1077,9 @@
               <d7p1:textureName>bg_cloud</d7p1:textureName>
             </d6p1:Component>
             <d6p1:Component xmlns:d7p1="WaveEngine.Components.Graphics2D" i:type="d7p1:SpriteAtlasRenderer">
+              <d6p1:FrustumCullingEnabled>true</d6p1:FrustumCullingEnabled>
               <d6p1:IsVisible>true</d6p1:IsVisible>
-              <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
-              <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
-              <d7p1:SamplerMode>LinearClamp</d7p1:SamplerMode>
+              <layerId xmlns="WaveEngine.Framework.Graphics">2</layerId>
             </d6p1:Component>
             <d6p1:Component xmlns:d7p1="http://schemas.datacontract.org/2004/07/FlyingKite.Behaviors" i:type="d7p1:ScrollBehavior">
               <d6p1:UpdateOrder>0.5</d6p1:UpdateOrder>
@@ -1144,10 +1144,9 @@
               <d7p1:textureName>bg_plane</d7p1:textureName>
             </d6p1:Component>
             <d6p1:Component xmlns:d7p1="WaveEngine.Components.Graphics2D" i:type="d7p1:SpriteAtlasRenderer">
+              <d6p1:FrustumCullingEnabled>true</d6p1:FrustumCullingEnabled>
               <d6p1:IsVisible>true</d6p1:IsVisible>
-              <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
-              <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
-              <d7p1:SamplerMode>LinearClamp</d7p1:SamplerMode>
+              <layerId xmlns="WaveEngine.Framework.Graphics">2</layerId>
             </d6p1:Component>
             <d6p1:Component xmlns:d7p1="http://schemas.datacontract.org/2004/07/FlyingKite.Behaviors" i:type="d7p1:ScrollBehavior">
               <d6p1:UpdateOrder>0.5</d6p1:UpdateOrder>
@@ -1212,10 +1211,9 @@
               <d7p1:textureName>bg_fish_kite_02</d7p1:textureName>
             </d6p1:Component>
             <d6p1:Component xmlns:d7p1="WaveEngine.Components.Graphics2D" i:type="d7p1:SpriteAtlasRenderer">
+              <d6p1:FrustumCullingEnabled>true</d6p1:FrustumCullingEnabled>
               <d6p1:IsVisible>true</d6p1:IsVisible>
-              <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
-              <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
-              <d7p1:SamplerMode>LinearClamp</d7p1:SamplerMode>
+              <layerId xmlns="WaveEngine.Framework.Graphics">2</layerId>
             </d6p1:Component>
             <d6p1:Component xmlns:d7p1="http://schemas.datacontract.org/2004/07/FlyingKite.Behaviors" i:type="d7p1:ScrollBehavior">
               <d6p1:UpdateOrder>0.5</d6p1:UpdateOrder>
@@ -1280,10 +1278,9 @@
               <d7p1:textureName>bg_fish_kite_01</d7p1:textureName>
             </d6p1:Component>
             <d6p1:Component xmlns:d7p1="WaveEngine.Components.Graphics2D" i:type="d7p1:SpriteAtlasRenderer">
+              <d6p1:FrustumCullingEnabled>true</d6p1:FrustumCullingEnabled>
               <d6p1:IsVisible>true</d6p1:IsVisible>
-              <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
-              <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
-              <d7p1:SamplerMode>LinearClamp</d7p1:SamplerMode>
+              <layerId xmlns="WaveEngine.Framework.Graphics">2</layerId>
             </d6p1:Component>
             <d6p1:Component xmlns:d7p1="http://schemas.datacontract.org/2004/07/FlyingKite.Behaviors" i:type="d7p1:ScrollBehavior">
               <d6p1:UpdateOrder>0.5</d6p1:UpdateOrder>
@@ -1348,10 +1345,9 @@
               <d7p1:textureName>bg_fish_kite_01</d7p1:textureName>
             </d6p1:Component>
             <d6p1:Component xmlns:d7p1="WaveEngine.Components.Graphics2D" i:type="d7p1:SpriteAtlasRenderer">
+              <d6p1:FrustumCullingEnabled>true</d6p1:FrustumCullingEnabled>
               <d6p1:IsVisible>true</d6p1:IsVisible>
-              <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
-              <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
-              <d7p1:SamplerMode>LinearClamp</d7p1:SamplerMode>
+              <layerId xmlns="WaveEngine.Framework.Graphics">2</layerId>
             </d6p1:Component>
             <d6p1:Component xmlns:d7p1="http://schemas.datacontract.org/2004/07/FlyingKite.Behaviors" i:type="d7p1:ScrollBehavior">
               <d6p1:UpdateOrder>0.5</d6p1:UpdateOrder>
@@ -1416,10 +1412,9 @@
               <d7p1:textureName>bg_fish_kite_02</d7p1:textureName>
             </d6p1:Component>
             <d6p1:Component xmlns:d7p1="WaveEngine.Components.Graphics2D" i:type="d7p1:SpriteAtlasRenderer">
+              <d6p1:FrustumCullingEnabled>true</d6p1:FrustumCullingEnabled>
               <d6p1:IsVisible>true</d6p1:IsVisible>
-              <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
-              <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
-              <d7p1:SamplerMode>LinearClamp</d7p1:SamplerMode>
+              <layerId xmlns="WaveEngine.Framework.Graphics">2</layerId>
             </d6p1:Component>
             <d6p1:Component xmlns:d7p1="http://schemas.datacontract.org/2004/07/FlyingKite.Behaviors" i:type="d7p1:ScrollBehavior">
               <d6p1:UpdateOrder>0.5</d6p1:UpdateOrder>
@@ -1484,10 +1479,9 @@
               <d7p1:textureName>bg_fish_kite_01</d7p1:textureName>
             </d6p1:Component>
             <d6p1:Component xmlns:d7p1="WaveEngine.Components.Graphics2D" i:type="d7p1:SpriteAtlasRenderer">
+              <d6p1:FrustumCullingEnabled>true</d6p1:FrustumCullingEnabled>
               <d6p1:IsVisible>true</d6p1:IsVisible>
-              <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
-              <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
-              <d7p1:SamplerMode>LinearClamp</d7p1:SamplerMode>
+              <layerId xmlns="WaveEngine.Framework.Graphics">2</layerId>
             </d6p1:Component>
             <d6p1:Component xmlns:d7p1="http://schemas.datacontract.org/2004/07/FlyingKite.Behaviors" i:type="d7p1:ScrollBehavior">
               <d6p1:UpdateOrder>0.5</d6p1:UpdateOrder>
@@ -1552,10 +1546,9 @@
               <d7p1:textureName>bg_fish_kite_01</d7p1:textureName>
             </d6p1:Component>
             <d6p1:Component xmlns:d7p1="WaveEngine.Components.Graphics2D" i:type="d7p1:SpriteAtlasRenderer">
+              <d6p1:FrustumCullingEnabled>true</d6p1:FrustumCullingEnabled>
               <d6p1:IsVisible>true</d6p1:IsVisible>
-              <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
-              <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
-              <d7p1:SamplerMode>LinearClamp</d7p1:SamplerMode>
+              <layerId xmlns="WaveEngine.Framework.Graphics">2</layerId>
             </d6p1:Component>
             <d6p1:Component xmlns:d7p1="http://schemas.datacontract.org/2004/07/FlyingKite.Behaviors" i:type="d7p1:ScrollBehavior">
               <d6p1:UpdateOrder>0.5</d6p1:UpdateOrder>
@@ -1666,10 +1659,9 @@
               <d7p1:textureName>obstacle_top</d7p1:textureName>
             </d6p1:Component>
             <d6p1:Component xmlns:d7p1="WaveEngine.Components.Graphics2D" i:type="d7p1:SpriteAtlasRenderer">
+              <d6p1:FrustumCullingEnabled>true</d6p1:FrustumCullingEnabled>
               <d6p1:IsVisible>true</d6p1:IsVisible>
-              <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
-              <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
-              <d7p1:SamplerMode>LinearClamp</d7p1:SamplerMode>
+              <layerId xmlns="WaveEngine.Framework.Graphics">2</layerId>
             </d6p1:Component>
             <d6p1:Component xmlns:d7p1="WaveEngine.Framework.Physics2D" i:type="d7p1:PolygonCollider2D">
               <d7p1:CollidesWith>All</d7p1:CollidesWith>
@@ -2840,10 +2832,9 @@
               <d7p1:textureName>obstacle_bottom</d7p1:textureName>
             </d6p1:Component>
             <d6p1:Component xmlns:d7p1="WaveEngine.Components.Graphics2D" i:type="d7p1:SpriteAtlasRenderer">
+              <d6p1:FrustumCullingEnabled>true</d6p1:FrustumCullingEnabled>
               <d6p1:IsVisible>true</d6p1:IsVisible>
-              <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
-              <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
-              <d7p1:SamplerMode>LinearClamp</d7p1:SamplerMode>
+              <layerId xmlns="WaveEngine.Framework.Graphics">2</layerId>
             </d6p1:Component>
             <d6p1:Component xmlns:d7p1="WaveEngine.Framework.Physics2D" i:type="d7p1:PolygonCollider2D">
               <d7p1:CollidesWith>All</d7p1:CollidesWith>
@@ -3363,11 +3354,10 @@
               <d7p1:texturePath>Content/Assets/Menus/star.png.wpk</d7p1:texturePath>
             </d6p1:Component>
             <d6p1:Component xmlns:d7p1="WaveEngine.Components.Graphics2D" i:type="d7p1:SpriteRenderer">
+              <d6p1:FrustumCullingEnabled>true</d6p1:FrustumCullingEnabled>
               <d6p1:IsVisible>true</d6p1:IsVisible>
-              <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
-              <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
+              <layerId xmlns="WaveEngine.Framework.Graphics">2</layerId>
               <d7p1:DrawMode>Simple</d7p1:DrawMode>
-              <d7p1:SamplerMode>LinearClamp</d7p1:SamplerMode>
             </d6p1:Component>
             <d6p1:Component xmlns:d7p1="WaveEngine.Framework.Physics3D" i:type="d7p1:CircleCollider2D">
               <CollidesWith xmlns="WaveEngine.Framework.Physics2D">All</CollidesWith>
@@ -3501,9 +3491,9 @@
               <d7p1:SortEnabled>false</d7p1:SortEnabled>
             </d6p1:Component>
             <d6p1:Component xmlns:d7p1="WaveEngine.Components.Graphics2D" i:type="d7p1:ParticleSystemRenderer2D">
+              <d6p1:FrustumCullingEnabled>true</d6p1:FrustumCullingEnabled>
               <d6p1:IsVisible>true</d6p1:IsVisible>
-              <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
-              <LayerTypeName i:nil="true" xmlns="WaveEngine.Framework.Graphics" />
+              <layerId xmlns="WaveEngine.Framework.Graphics">2</layerId>
             </d6p1:Component>
           </d2p1:SerializeComponents>
         </d2p1:BaseEntityModel>
@@ -3641,10 +3631,9 @@
               <d7p1:textureName>obstacle_top</d7p1:textureName>
             </d6p1:Component>
             <d6p1:Component xmlns:d7p1="WaveEngine.Components.Graphics2D" i:type="d7p1:SpriteAtlasRenderer">
+              <d6p1:FrustumCullingEnabled>true</d6p1:FrustumCullingEnabled>
               <d6p1:IsVisible>true</d6p1:IsVisible>
-              <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
-              <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
-              <d7p1:SamplerMode>LinearClamp</d7p1:SamplerMode>
+              <layerId xmlns="WaveEngine.Framework.Graphics">2</layerId>
             </d6p1:Component>
             <d6p1:Component xmlns:d7p1="WaveEngine.Framework.Physics2D" i:type="d7p1:PolygonCollider2D">
               <d7p1:CollidesWith>All</d7p1:CollidesWith>
@@ -4815,10 +4804,9 @@
               <d7p1:textureName>obstacle_bottom</d7p1:textureName>
             </d6p1:Component>
             <d6p1:Component xmlns:d7p1="WaveEngine.Components.Graphics2D" i:type="d7p1:SpriteAtlasRenderer">
+              <d6p1:FrustumCullingEnabled>true</d6p1:FrustumCullingEnabled>
               <d6p1:IsVisible>true</d6p1:IsVisible>
-              <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
-              <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
-              <d7p1:SamplerMode>LinearClamp</d7p1:SamplerMode>
+              <layerId xmlns="WaveEngine.Framework.Graphics">2</layerId>
             </d6p1:Component>
             <d6p1:Component xmlns:d7p1="WaveEngine.Framework.Physics2D" i:type="d7p1:PolygonCollider2D">
               <d7p1:CollidesWith>All</d7p1:CollidesWith>
@@ -5338,11 +5326,10 @@
               <d7p1:texturePath>Content/Assets/Menus/star.png.wpk</d7p1:texturePath>
             </d6p1:Component>
             <d6p1:Component xmlns:d7p1="WaveEngine.Components.Graphics2D" i:type="d7p1:SpriteRenderer">
+              <d6p1:FrustumCullingEnabled>true</d6p1:FrustumCullingEnabled>
               <d6p1:IsVisible>true</d6p1:IsVisible>
-              <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
-              <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
+              <layerId xmlns="WaveEngine.Framework.Graphics">2</layerId>
               <d7p1:DrawMode>Simple</d7p1:DrawMode>
-              <d7p1:SamplerMode>LinearClamp</d7p1:SamplerMode>
             </d6p1:Component>
             <d6p1:Component xmlns:d7p1="WaveEngine.Framework.Physics3D" i:type="d7p1:CircleCollider2D">
               <CollidesWith xmlns="WaveEngine.Framework.Physics2D">All</CollidesWith>
@@ -5470,9 +5457,9 @@
               <d7p1:SortEnabled>false</d7p1:SortEnabled>
             </d6p1:Component>
             <d6p1:Component xmlns:d7p1="WaveEngine.Components.Graphics2D" i:type="d7p1:ParticleSystemRenderer2D">
+              <d6p1:FrustumCullingEnabled>true</d6p1:FrustumCullingEnabled>
               <d6p1:IsVisible>true</d6p1:IsVisible>
-              <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
-              <LayerTypeName i:nil="true" xmlns="WaveEngine.Framework.Graphics" />
+              <layerId xmlns="WaveEngine.Framework.Graphics">2</layerId>
             </d6p1:Component>
             <d6p1:Component xmlns:d7p1="http://schemas.datacontract.org/2004/07/WaveEngine.Components.Graphics3D" i:type="d7p1:MaterialComponent">
               <d7p1:AsignedTo i:nil="true" />
@@ -5664,10 +5651,9 @@
               <d7p1:textureName>obstacle_top</d7p1:textureName>
             </d6p1:Component>
             <d6p1:Component xmlns:d7p1="WaveEngine.Components.Graphics2D" i:type="d7p1:SpriteAtlasRenderer">
+              <d6p1:FrustumCullingEnabled>true</d6p1:FrustumCullingEnabled>
               <d6p1:IsVisible>true</d6p1:IsVisible>
-              <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
-              <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
-              <d7p1:SamplerMode>LinearClamp</d7p1:SamplerMode>
+              <layerId xmlns="WaveEngine.Framework.Graphics">2</layerId>
             </d6p1:Component>
             <d6p1:Component xmlns:d7p1="WaveEngine.Framework.Physics2D" i:type="d7p1:PolygonCollider2D">
               <d7p1:CollidesWith>All</d7p1:CollidesWith>
@@ -6838,10 +6824,9 @@
               <d7p1:textureName>obstacle_bottom</d7p1:textureName>
             </d6p1:Component>
             <d6p1:Component xmlns:d7p1="WaveEngine.Components.Graphics2D" i:type="d7p1:SpriteAtlasRenderer">
+              <d6p1:FrustumCullingEnabled>true</d6p1:FrustumCullingEnabled>
               <d6p1:IsVisible>true</d6p1:IsVisible>
-              <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
-              <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
-              <d7p1:SamplerMode>LinearClamp</d7p1:SamplerMode>
+              <layerId xmlns="WaveEngine.Framework.Graphics">2</layerId>
             </d6p1:Component>
             <d6p1:Component xmlns:d7p1="WaveEngine.Framework.Physics2D" i:type="d7p1:PolygonCollider2D">
               <d7p1:CollidesWith>All</d7p1:CollidesWith>
@@ -7361,11 +7346,10 @@
               <d7p1:texturePath>Content/Assets/Menus/star.png.wpk</d7p1:texturePath>
             </d6p1:Component>
             <d6p1:Component xmlns:d7p1="WaveEngine.Components.Graphics2D" i:type="d7p1:SpriteRenderer">
+              <d6p1:FrustumCullingEnabled>true</d6p1:FrustumCullingEnabled>
               <d6p1:IsVisible>true</d6p1:IsVisible>
-              <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
-              <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
+              <layerId xmlns="WaveEngine.Framework.Graphics">2</layerId>
               <d7p1:DrawMode>Simple</d7p1:DrawMode>
-              <d7p1:SamplerMode>LinearClamp</d7p1:SamplerMode>
             </d6p1:Component>
             <d6p1:Component xmlns:d7p1="WaveEngine.Framework.Physics3D" i:type="d7p1:CircleCollider2D">
               <CollidesWith xmlns="WaveEngine.Framework.Physics2D">All</CollidesWith>
@@ -7493,9 +7477,9 @@
               <d7p1:SortEnabled>false</d7p1:SortEnabled>
             </d6p1:Component>
             <d6p1:Component xmlns:d7p1="WaveEngine.Components.Graphics2D" i:type="d7p1:ParticleSystemRenderer2D">
+              <d6p1:FrustumCullingEnabled>true</d6p1:FrustumCullingEnabled>
               <d6p1:IsVisible>true</d6p1:IsVisible>
-              <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
-              <LayerTypeName i:nil="true" xmlns="WaveEngine.Framework.Graphics" />
+              <layerId xmlns="WaveEngine.Framework.Graphics">2</layerId>
             </d6p1:Component>
             <d6p1:Component xmlns:d7p1="http://schemas.datacontract.org/2004/07/WaveEngine.Components.Graphics3D" i:type="d7p1:MaterialComponent">
               <d7p1:AsignedTo i:nil="true" />
@@ -7639,10 +7623,9 @@
               <d7p1:textureName>obstacle_top</d7p1:textureName>
             </d6p1:Component>
             <d6p1:Component xmlns:d7p1="WaveEngine.Components.Graphics2D" i:type="d7p1:SpriteAtlasRenderer">
+              <d6p1:FrustumCullingEnabled>true</d6p1:FrustumCullingEnabled>
               <d6p1:IsVisible>true</d6p1:IsVisible>
-              <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
-              <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
-              <d7p1:SamplerMode>LinearClamp</d7p1:SamplerMode>
+              <layerId xmlns="WaveEngine.Framework.Graphics">2</layerId>
             </d6p1:Component>
             <d6p1:Component xmlns:d7p1="WaveEngine.Framework.Physics2D" i:type="d7p1:PolygonCollider2D">
               <d7p1:CollidesWith>All</d7p1:CollidesWith>
@@ -8813,10 +8796,9 @@
               <d7p1:textureName>obstacle_bottom</d7p1:textureName>
             </d6p1:Component>
             <d6p1:Component xmlns:d7p1="WaveEngine.Components.Graphics2D" i:type="d7p1:SpriteAtlasRenderer">
+              <d6p1:FrustumCullingEnabled>true</d6p1:FrustumCullingEnabled>
               <d6p1:IsVisible>true</d6p1:IsVisible>
-              <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
-              <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
-              <d7p1:SamplerMode>LinearClamp</d7p1:SamplerMode>
+              <layerId xmlns="WaveEngine.Framework.Graphics">2</layerId>
             </d6p1:Component>
             <d6p1:Component xmlns:d7p1="WaveEngine.Framework.Physics2D" i:type="d7p1:PolygonCollider2D">
               <d7p1:CollidesWith>All</d7p1:CollidesWith>
@@ -9336,11 +9318,10 @@
               <d7p1:texturePath>Content/Assets/Menus/star.png.wpk</d7p1:texturePath>
             </d6p1:Component>
             <d6p1:Component xmlns:d7p1="WaveEngine.Components.Graphics2D" i:type="d7p1:SpriteRenderer">
+              <d6p1:FrustumCullingEnabled>true</d6p1:FrustumCullingEnabled>
               <d6p1:IsVisible>true</d6p1:IsVisible>
-              <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
-              <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
+              <layerId xmlns="WaveEngine.Framework.Graphics">2</layerId>
               <d7p1:DrawMode>Simple</d7p1:DrawMode>
-              <d7p1:SamplerMode>LinearClamp</d7p1:SamplerMode>
             </d6p1:Component>
             <d6p1:Component xmlns:d7p1="WaveEngine.Framework.Physics3D" i:type="d7p1:CircleCollider2D">
               <CollidesWith xmlns="WaveEngine.Framework.Physics2D">All</CollidesWith>
@@ -9468,9 +9449,9 @@
               <d7p1:SortEnabled>false</d7p1:SortEnabled>
             </d6p1:Component>
             <d6p1:Component xmlns:d7p1="WaveEngine.Components.Graphics2D" i:type="d7p1:ParticleSystemRenderer2D">
+              <d6p1:FrustumCullingEnabled>true</d6p1:FrustumCullingEnabled>
               <d6p1:IsVisible>true</d6p1:IsVisible>
-              <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
-              <LayerTypeName i:nil="true" xmlns="WaveEngine.Framework.Graphics" />
+              <layerId xmlns="WaveEngine.Framework.Graphics">2</layerId>
             </d6p1:Component>
             <d6p1:Component xmlns:d7p1="http://schemas.datacontract.org/2004/07/WaveEngine.Components.Graphics3D" i:type="d7p1:MaterialComponent">
               <d7p1:AsignedTo i:nil="true" />

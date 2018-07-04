@@ -8,32 +8,14 @@
 #endregion
 
 #region Using Statements
-using FlyingKite.Behaviors;
-using FlyingKite.Components;
-using FlyingKite.Drawables;
-using FlyingKite.Layers;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using WaveEngine.Common.Math;
-using WaveEngine.Components.Graphics2D;
-using WaveEngine.Components.Graphics3D;
 using WaveEngine.Components.UI;
-using WaveEngine.Framework;
-using WaveEngine.Framework.Animation;
-using WaveEngine.Framework.Graphics;
-using WaveEngine.Framework.Physics2D;
-using WaveEngine.Framework.Resources;
-using WaveEngine.Framework.Services;
 using WaveEngine.Framework.UI;
-using WaveEngine.Materials;
 #endregion
 
 namespace FlyingKite
 {
     public static class EntitiesFactory
-    {  
+    {
         /// <summary>
         /// Creates a new BestScore panel.
         /// </summary>
@@ -46,18 +28,14 @@ namespace FlyingKite
             {
                 HorizontalAlignment = WaveEngine.Framework.UI.HorizontalAlignment.Center,
                 Orientation = WaveEngine.Components.UI.Orientation.Horizontal,
-                Margin = new Thickness(
-                            0,
-                            y,
-                            0,
-                            0)
+                Margin = new Thickness(0, y, 0, 0)
             };
 
-            var bestScoreText = new Image(WaveContent.Assets.Menus.best_score_png); 
+            var bestScoreText = new Image(WaveContent.Assets.Menus.best_score_png);
 
             var bestScoreNumber = new TextBlock()
             {
-                FontPath =  WaveContent.Assets.Fonts.BadaBoom_BB_wpk,
+                FontPath = WaveContent.Assets.Fonts.BadaBoom_BB_wpk,
                 Text = score.ToString(),
                 TextAlignment = WaveEngine.Components.UI.TextAlignment.Right,
                 Width = 50,

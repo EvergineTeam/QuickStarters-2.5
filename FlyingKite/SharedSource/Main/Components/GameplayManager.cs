@@ -10,21 +10,14 @@
 #region Using Statements
 using FlyingKite.Behaviors;
 using FlyingKite.Enums;
-using FlyingKite.Layers;
 using FlyingKite.Managers;
 using FlyingKite.Scenes;
 using System;
-using System.Collections.Generic;
 using System.Runtime.Serialization;
-using System.Text;
-using WaveEngine.Common.Attributes;
-using WaveEngine.Components.Graphics2D;
 using WaveEngine.Components.Transitions;
 using WaveEngine.Components.UI;
 using WaveEngine.Framework;
 using WaveEngine.Framework.Animation;
-using WaveEngine.Framework.Graphics;
-using WaveEngine.Framework.Models;
 using WaveEngine.Framework.Services;
 #endregion
 
@@ -195,14 +188,14 @@ namespace FlyingKite.Components
         /// </summary>
         private void UpdateCustomLayerEntities()
         {
-            this.RenderManager.RegisterLayerAfter(new KiteLayer(this.RenderManager), DefaultLayers.Alpha);
+            //this.RenderManager.RegisterLayerAfter(new KiteLayer(this.RenderManager), DefaultLayers.Alpha);
 
-            this.Assets.LoadModel<MaterialModel>(WaveContent.Assets.Gameplay.Materials.KiteRopeMaterial).Material.LayerType = CustomLayers.Kite;
+            //this.Assets.LoadModel<MaterialModel>(WaveContent.Assets.Gameplay.Materials.KiteRopeMaterial).Material.LayerType = CustomLayers.Kite;
 
-            // Game Entities
-            this.EntityManager.Find("kiteBall")
-                              .FindComponent<SpriteAtlasRenderer>()
-                              .LayerType = CustomLayers.Kite;
+            //// Game Entities
+            //this.EntityManager.Find("kiteBall")
+            //                  .FindComponent<SpriteAtlasRenderer>()
+            //                  .LayerType = CustomLayers.Kite;
         }
 
         /// <summary>

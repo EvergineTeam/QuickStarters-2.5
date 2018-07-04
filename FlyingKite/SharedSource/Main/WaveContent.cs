@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// File generated on 8/14/2017 11:10:41 AM
+// File generated on 04/07/2018 8:56:29
 namespace FlyingKite
 {
     using System;
@@ -198,6 +198,31 @@ namespace FlyingKite
             }
         }
         
+        public sealed class RenderLayers
+        {
+            
+            /// <summary>Id of Opaque</summary>
+            public const int Opaque = 0;
+            
+            /// <summary>Id of Skybox</summary>
+            public const int Skybox = 1;
+            
+            /// <summary>Id of Alpha</summary>
+            public const int Alpha = 2;
+            
+            /// <summary>Id of PlayerKite</summary>
+            public const int PlayerKite = 1001;
+            
+            /// <summary>Id of Additive</summary>
+            public const int Additive = 3;
+            
+            /// <summary>Id of GUI</summary>
+            public const int GUI = 4;
+            
+            /// <summary>Id of Debug</summary>
+            public const int Debug = 5;
+        }
+        
         public sealed class Scenes
         {
             
@@ -209,6 +234,9 @@ namespace FlyingKite
             
             /// <summary> Path to Content/Scenes/MenuScene.wscene </summary>
             public const string MenuScene = "Content/Scenes/MenuScene.wscene";
+            
+            /// <summary> Path to Content/Scenes/MyScene.wscene </summary>
+            public const string MyScene = "Content/Scenes/MyScene.wscene";
         }
     }
 }

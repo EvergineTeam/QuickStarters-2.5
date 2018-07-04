@@ -18,6 +18,8 @@ namespace FlyingKite
         {
             base.Initialize(application);
 
+            this.Load(WaveContent.GameInfo);
+
             // Load storage game data
             GameStorage gameStorage;
 

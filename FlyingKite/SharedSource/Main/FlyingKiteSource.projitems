@@ -25,8 +25,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Enums\KiteStates.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Enums\KiteCollisionTypes.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Game.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Layers\CustomLayers.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Layers\KiteLayer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Managers\GameStorage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Managers\SoundManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Scenes\GameOverScene.cs" />
