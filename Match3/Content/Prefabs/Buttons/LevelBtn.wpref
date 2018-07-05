@@ -18,9 +18,9 @@
               <d7p1:Z>0</d7p1:Z>
             </d6p1:LocalOrientation>
             <d6p1:LocalPosition xmlns:d7p1="WaveEngine.Common.Math">
-              <d7p1:X>62</d7p1:X>
-              <d7p1:Y>69.99997</d7p1:Y>
-              <d7p1:Z>-1.99999988</d7p1:Z>
+              <d7p1:X>61.9999924</d7p1:X>
+              <d7p1:Y>69.99996</d7p1:Y>
+              <d7p1:Z>-1.99999976</d7p1:Z>
             </d6p1:LocalPosition>
             <d6p1:LocalScale xmlns:d7p1="WaveEngine.Common.Math">
               <d7p1:X>1.42857146</d7p1:X>
@@ -57,10 +57,9 @@
             <d6p1:textureName>StarSmallGray</d6p1:textureName>
           </d5p1:Component>
           <d5p1:Component xmlns:d6p1="WaveEngine.Components.Graphics2D" i:type="d6p1:SpriteAtlasRenderer">
+            <d5p1:FrustumCullingEnabled>true</d5p1:FrustumCullingEnabled>
             <d5p1:IsVisible>true</d5p1:IsVisible>
-            <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
-            <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
-            <d6p1:SamplerMode>LinearClamp</d6p1:SamplerMode>
+            <layerId xmlns="WaveEngine.Framework.Graphics">2</layerId>
           </d5p1:Component>
         </d2p1:SerializeComponents>
       </d2p1:BaseEntityModel>
@@ -80,9 +79,9 @@
               <d7p1:Z>0</d7p1:Z>
             </d6p1:LocalOrientation>
             <d6p1:LocalPosition xmlns:d7p1="WaveEngine.Common.Math">
-              <d7p1:X>-4.10676221E-05</d7p1:X>
-              <d7p1:Y>70</d7p1:Y>
-              <d7p1:Z>-1.99999988</d7p1:Z>
+              <d7p1:X>-4.106762E-05</d7p1:X>
+              <d7p1:Y>69.99999</d7p1:Y>
+              <d7p1:Z>-1.99999976</d7p1:Z>
             </d6p1:LocalPosition>
             <d6p1:LocalScale xmlns:d7p1="WaveEngine.Common.Math">
               <d7p1:X>1.42857146</d7p1:X>
@@ -119,10 +118,9 @@
             <d6p1:textureName>StarSmallGray</d6p1:textureName>
           </d5p1:Component>
           <d5p1:Component xmlns:d6p1="WaveEngine.Components.Graphics2D" i:type="d6p1:SpriteAtlasRenderer">
+            <d5p1:FrustumCullingEnabled>true</d5p1:FrustumCullingEnabled>
             <d5p1:IsVisible>true</d5p1:IsVisible>
-            <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
-            <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
-            <d6p1:SamplerMode>LinearClamp</d6p1:SamplerMode>
+            <layerId xmlns="WaveEngine.Framework.Graphics">2</layerId>
           </d5p1:Component>
         </d2p1:SerializeComponents>
       </d2p1:BaseEntityModel>
@@ -142,9 +140,9 @@
               <d7p1:Z>0</d7p1:Z>
             </d6p1:LocalOrientation>
             <d6p1:LocalPosition xmlns:d7p1="WaveEngine.Common.Math">
-              <d7p1:X>-62</d7p1:X>
-              <d7p1:Y>69.99997</d7p1:Y>
-              <d7p1:Z>-1.99999988</d7p1:Z>
+              <d7p1:X>-61.9999924</d7p1:X>
+              <d7p1:Y>69.99996</d7p1:Y>
+              <d7p1:Z>-1.99999976</d7p1:Z>
             </d6p1:LocalPosition>
             <d6p1:LocalScale xmlns:d7p1="WaveEngine.Common.Math">
               <d7p1:X>1.42857146</d7p1:X>
@@ -181,10 +179,9 @@
             <d6p1:textureName>StarSmallGray</d6p1:textureName>
           </d5p1:Component>
           <d5p1:Component xmlns:d6p1="WaveEngine.Components.Graphics2D" i:type="d6p1:SpriteAtlasRenderer">
+            <d5p1:FrustumCullingEnabled>true</d5p1:FrustumCullingEnabled>
             <d5p1:IsVisible>true</d5p1:IsVisible>
-            <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
-            <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
-            <d6p1:SamplerMode>LinearClamp</d6p1:SamplerMode>
+            <layerId xmlns="WaveEngine.Framework.Graphics">2</layerId>
           </d5p1:Component>
         </d2p1:SerializeComponents>
       </d2p1:BaseEntityModel>
@@ -204,9 +201,9 @@
               <d7p1:Z>0</d7p1:Z>
             </d6p1:LocalOrientation>
             <d6p1:LocalPosition xmlns:d7p1="WaveEngine.Common.Math">
-              <d7p1:X>-0.00010646243</d7p1:X>
+              <d7p1:X>-0.000106462416</d7p1:X>
               <d7p1:Y>-17.000145</d7p1:Y>
-              <d7p1:Z>-0.999997556</d7p1:Z>
+              <d7p1:Z>-0.9999975</d7p1:Z>
             </d6p1:LocalPosition>
             <d6p1:LocalScale xmlns:d7p1="WaveEngine.Common.Math">
               <d7p1:X>1</d7p1:X>
@@ -255,9 +252,9 @@
             <d6p1:width>120</d6p1:width>
           </d5p1:Component>
           <d5p1:Component xmlns:d6p1="WaveEngine.Components.Toolkit" i:type="d6p1:TextRenderer2D">
+            <d5p1:FrustumCullingEnabled>true</d5p1:FrustumCullingEnabled>
             <d5p1:IsVisible>true</d5p1:IsVisible>
-            <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
-            <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
+            <layerId xmlns="WaveEngine.Framework.Graphics">2</layerId>
           </d5p1:Component>
         </d2p1:SerializeComponents>
       </d2p1:BaseEntityModel>
@@ -315,10 +312,9 @@
         <d4p1:textureName>BgBlueSquareButton</d4p1:textureName>
       </d3p1:Component>
       <d3p1:Component xmlns:d4p1="WaveEngine.Components.Graphics2D" i:type="d4p1:SpriteAtlasRenderer">
+        <d3p1:FrustumCullingEnabled>true</d3p1:FrustumCullingEnabled>
         <d3p1:IsVisible>true</d3p1:IsVisible>
-        <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
-        <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
-        <d4p1:SamplerMode>LinearClamp</d4p1:SamplerMode>
+        <layerId xmlns="WaveEngine.Framework.Graphics">2</layerId>
       </d3p1:Component>
       <d3p1:Component xmlns:d4p1="WaveEngine.Framework.Physics2D" i:type="d4p1:RectangleCollider2D">
         <d4p1:CollidesWith>All</d4p1:CollidesWith>
@@ -352,8 +348,8 @@
         <d4p1:ManualTouchOrder>false</d4p1:ManualTouchOrder>
         <d4p1:MaxScale>5</d4p1:MaxScale>
         <d4p1:MinScale>0.1</d4p1:MinScale>
-        <d4p1:ProjectCamera>true</d4p1:ProjectCamera>
-        <d4p1:TouchOrder>500</d4p1:TouchOrder>
+        <d4p1:ProjectCamera>false</d4p1:ProjectCamera>
+        <d4p1:TouchOrder>600</d4p1:TouchOrder>
       </d3p1:Component>
       <d3p1:Component xmlns:d4p1="http://schemas.datacontract.org/2004/07/Match3.UI" i:type="d4p1:ButtonComponent">
         <d4p1:IsActive>true</d4p1:IsActive>

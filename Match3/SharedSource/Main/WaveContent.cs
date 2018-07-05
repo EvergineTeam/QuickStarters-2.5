@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// File generated on 14/08/2017 12:56:06
+// File generated on 05/07/2018 12:14:35
 namespace Match3
 {
     using System;
@@ -262,6 +262,31 @@ namespace Match3
                     
                     public const string StarBigColor = "StarBigColor";
                 }
+                
+                public sealed class Panels
+                {
+                    
+                    /// <summary> Path to Content/Assets/GUI/Panels/PanelBg1.9.png </summary>
+                    public const string PanelBg1_9_png = "Content/Assets/GUI/Panels/PanelBg1.9.png";
+                    
+                    /// <summary> Path to Content/Assets/GUI/Panels/PanelBg2.9.png </summary>
+                    public const string PanelBg2_9_png = "Content/Assets/GUI/Panels/PanelBg2.9.png";
+                    
+                    /// <summary> Path to Content/Assets/GUI/Panels/PanelBg3.9.png </summary>
+                    public const string PanelBg3_9_png = "Content/Assets/GUI/Panels/PanelBg3.9.png";
+                    
+                    /// <summary> Path to Content/Assets/GUI/Panels/PanelBg4.9.png </summary>
+                    public const string PanelBg4_9_png = "Content/Assets/GUI/Panels/PanelBg4.9.png";
+                    
+                    /// <summary> Path to Content/Assets/GUI/Panels/PanelBg5.9.png </summary>
+                    public const string PanelBg5_9_png = "Content/Assets/GUI/Panels/PanelBg5.9.png";
+                    
+                    /// <summary> Path to Content/Assets/GUI/Panels/PanelBgSlice.9.png </summary>
+                    public const string PanelBgSlice_9_png = "Content/Assets/GUI/Panels/PanelBgSlice.9.png";
+                    
+                    /// <summary> Path to Content/Assets/GUI/Panels/Slice.9.png </summary>
+                    public const string Slice_9_png = "Content/Assets/GUI/Panels/Slice.9.png";
+                }
             }
             
             public sealed class Textures
@@ -298,6 +323,28 @@ namespace Match3
                 /// <summary> Path to Content/Prefabs/Panels/FillStar.wpref </summary>
                 public const string FillStar = "Content/Prefabs/Panels/FillStar.wpref";
             }
+        }
+        
+        public sealed class RenderLayers
+        {
+            
+            /// <summary>Id of Opaque</summary>
+            public const int Opaque = 0;
+            
+            /// <summary>Id of Skybox</summary>
+            public const int Skybox = 1;
+            
+            /// <summary>Id of Alpha</summary>
+            public const int Alpha = 2;
+            
+            /// <summary>Id of Additive</summary>
+            public const int Additive = 3;
+            
+            /// <summary>Id of GUI</summary>
+            public const int GUI = 4;
+            
+            /// <summary>Id of Debug</summary>
+            public const int Debug = 5;
         }
         
         public sealed class Scenes

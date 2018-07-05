@@ -52,28 +52,33 @@
             <d6p1:R>255</d6p1:R>
           </d5p1:BackgroundColor>
           <d5p1:CameraOrder>0</d5p1:CameraOrder>
+          <d5p1:ClearDepth>1</d5p1:ClearDepth>
           <d5p1:ClearFlags>DepthAndStencil</d5p1:ClearFlags>
+          <d5p1:ClearStencil>0</d5p1:ClearStencil>
+          <d5p1:DepthRange xmlns:d6p1="WaveEngine.Common.Graphics">
+            <d6p1:MaxDepth>1</d6p1:MaxDepth>
+            <d6p1:MinDepth>0</d6p1:MinDepth>
+          </d5p1:DepthRange>
           <d5p1:FarPlane>1000</d5p1:FarPlane>
           <d5p1:FieldOfView>0</d5p1:FieldOfView>
+          <d5p1:FrustumCullingEnabled>true</d5p1:FrustumCullingEnabled>
           <d5p1:IsActive>true</d5p1:IsActive>
           <d5p1:LayerMaskDefaultValue>true</d5p1:LayerMaskDefaultValue>
           <d5p1:NearPlane>-1000</d5p1:NearPlane>
           <d5p1:UpVector xmlns:d6p1="WaveEngine.Common.Math">
-            <d6p1:X>0</d6p1:X>
+            <d6p1:X>-0</d6p1:X>
             <d6p1:Y>1</d6p1:Y>
             <d6p1:Z>0</d6p1:Z>
           </d5p1:UpVector>
           <d5p1:Viewport xmlns:d6p1="WaveEngine.Common.Graphics">
             <d6p1:Height>1</d6p1:Height>
-            <d6p1:MaxDepth>1</d6p1:MaxDepth>
-            <d6p1:MinDepth>0</d6p1:MinDepth>
             <d6p1:Width>1</d6p1:Width>
             <d6p1:X>0</d6p1:X>
             <d6p1:Y>0</d6p1:Y>
           </d5p1:Viewport>
           <d5p1:customVirtualScreen xmlns:d6p1="WaveEngine.Framework.Managers" i:nil="true" />
           <d5p1:distance>0</d5p1:distance>
-          <d5p1:rotation>0</d5p1:rotation>
+          <d5p1:rotation>-0</d5p1:rotation>
           <d5p1:vanishingPoint xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
             <d6p1:X>0.5</d6p1:X>
             <d6p1:Y>0.5</d6p1:Y>
@@ -156,9 +161,9 @@
                   <d9p1:width>390</d9p1:width>
                 </d8p1:Component>
                 <d8p1:Component xmlns:d9p1="WaveEngine.Components.Toolkit" i:type="d9p1:TextRenderer2D">
+                  <d8p1:FrustumCullingEnabled>true</d8p1:FrustumCullingEnabled>
                   <d8p1:IsVisible>true</d8p1:IsVisible>
-                  <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
-                  <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
+                  <layerId xmlns="WaveEngine.Framework.Graphics">2</layerId>
                 </d8p1:Component>
               </d2p1:SerializeComponents>
             </d2p1:BaseEntityModel>
@@ -177,13 +182,13 @@
                 <d8p1:Z>0</d8p1:Z>
               </d7p1:LocalOrientation>
               <d7p1:LocalPosition xmlns:d8p1="WaveEngine.Common.Math">
-                <d8p1:X>-5</d8p1:X>
-                <d8p1:Y>-330</d8p1:Y>
+                <d8p1:X>-1.21378624</d8p1:X>
+                <d8p1:Y>-136.259567</d8p1:Y>
                 <d8p1:Z>-1</d8p1:Z>
               </d7p1:LocalPosition>
               <d7p1:LocalScale xmlns:d8p1="WaveEngine.Common.Math">
-                <d8p1:X>1</d8p1:X>
-                <d8p1:Y>1</d8p1:Y>
+                <d8p1:X>0.226855591</d8p1:X>
+                <d8p1:Y>0.412220567</d8p1:Y>
                 <d8p1:Z>1</d8p1:Z>
               </d7p1:LocalScale>
               <d7p1:Opacity>1</d7p1:Opacity>
@@ -216,10 +221,9 @@
               <d7p1:textureName>SignBg</d7p1:textureName>
             </d6p1:Component>
             <d6p1:Component xmlns:d7p1="WaveEngine.Components.Graphics2D" i:type="d7p1:SpriteAtlasRenderer">
+              <d6p1:FrustumCullingEnabled>true</d6p1:FrustumCullingEnabled>
               <d6p1:IsVisible>true</d6p1:IsVisible>
-              <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
-              <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
-              <d7p1:SamplerMode>LinearClamp</d7p1:SamplerMode>
+              <layerId xmlns="WaveEngine.Framework.Graphics">2</layerId>
             </d6p1:Component>
           </d2p1:SerializeComponents>
         </d2p1:BaseEntityModel>
@@ -311,6 +315,10 @@
                     <d10p1:Y>-120</d10p1:Y>
                     <d10p1:Z>0</d10p1:Z>
                   </d8p1:Value>
+                </d8p1:KeyValueOfstringanyType>
+                <d8p1:KeyValueOfstringanyType>
+                  <d8p1:Key>WaveEngine.Components.Gestures.TouchGestures#0#TouchOrder</d8p1:Key>
+                  <d8p1:Value xmlns:d10p1="http://www.w3.org/2001/XMLSchema" i:type="d10p1:int">700</d8p1:Value>
                 </d8p1:KeyValueOfstringanyType>
               </d2p1:modifiedProperties>
             </d2p1:BaseEntityModel>
@@ -418,6 +426,10 @@
                 <d8p1:KeyValueOfstringanyType>
                   <d8p1:Key>WaveEngine.Components.Graphics2D.SpriteAtlas#0#textureName</d8p1:Key>
                   <d8p1:Value xmlns:d10p1="http://www.w3.org/2001/XMLSchema" i:type="d10p1:string">LockedButton</d8p1:Value>
+                </d8p1:KeyValueOfstringanyType>
+                <d8p1:KeyValueOfstringanyType>
+                  <d8p1:Key>WaveEngine.Components.Gestures.TouchGestures#0#TouchOrder</d8p1:Key>
+                  <d8p1:Value xmlns:d10p1="http://www.w3.org/2001/XMLSchema" i:type="d10p1:int">700</d8p1:Value>
                 </d8p1:KeyValueOfstringanyType>
                 <d8p1:KeyValueOfstringanyType>
                   <d8p1:Key>Match3.UI.ButtonComponent#0#IsActive</d8p1:Key>
@@ -539,6 +551,10 @@
                   <d8p1:Value xmlns:d10p1="http://www.w3.org/2001/XMLSchema" i:type="d10p1:string">LockedButton</d8p1:Value>
                 </d8p1:KeyValueOfstringanyType>
                 <d8p1:KeyValueOfstringanyType>
+                  <d8p1:Key>WaveEngine.Components.Gestures.TouchGestures#0#TouchOrder</d8p1:Key>
+                  <d8p1:Value xmlns:d10p1="http://www.w3.org/2001/XMLSchema" i:type="d10p1:int">700</d8p1:Value>
+                </d8p1:KeyValueOfstringanyType>
+                <d8p1:KeyValueOfstringanyType>
                   <d8p1:Key>Match3.UI.ButtonComponent#0#IsActive</d8p1:Key>
                   <d8p1:Value xmlns:d10p1="http://www.w3.org/2001/XMLSchema" i:type="d10p1:boolean">false</d8p1:Value>
                 </d8p1:KeyValueOfstringanyType>
@@ -656,6 +672,10 @@
                 <d8p1:KeyValueOfstringanyType>
                   <d8p1:Key>WaveEngine.Components.Graphics2D.SpriteAtlas#0#textureName</d8p1:Key>
                   <d8p1:Value xmlns:d10p1="http://www.w3.org/2001/XMLSchema" i:type="d10p1:string">LockedButton</d8p1:Value>
+                </d8p1:KeyValueOfstringanyType>
+                <d8p1:KeyValueOfstringanyType>
+                  <d8p1:Key>WaveEngine.Components.Gestures.TouchGestures#0#TouchOrder</d8p1:Key>
+                  <d8p1:Value xmlns:d10p1="http://www.w3.org/2001/XMLSchema" i:type="d10p1:int">700</d8p1:Value>
                 </d8p1:KeyValueOfstringanyType>
                 <d8p1:KeyValueOfstringanyType>
                   <d8p1:Key>Match3.UI.ButtonComponent#0#IsActive</d8p1:Key>
@@ -777,6 +797,10 @@
                   <d8p1:Value xmlns:d10p1="http://www.w3.org/2001/XMLSchema" i:type="d10p1:string">LockedButton</d8p1:Value>
                 </d8p1:KeyValueOfstringanyType>
                 <d8p1:KeyValueOfstringanyType>
+                  <d8p1:Key>WaveEngine.Components.Gestures.TouchGestures#0#TouchOrder</d8p1:Key>
+                  <d8p1:Value xmlns:d10p1="http://www.w3.org/2001/XMLSchema" i:type="d10p1:int">700</d8p1:Value>
+                </d8p1:KeyValueOfstringanyType>
+                <d8p1:KeyValueOfstringanyType>
                   <d8p1:Key>Match3.UI.ButtonComponent#0#IsActive</d8p1:Key>
                   <d8p1:Value xmlns:d10p1="http://www.w3.org/2001/XMLSchema" i:type="d10p1:boolean">false</d8p1:Value>
                 </d8p1:KeyValueOfstringanyType>
@@ -894,6 +918,10 @@
                 <d8p1:KeyValueOfstringanyType>
                   <d8p1:Key>WaveEngine.Components.Graphics2D.SpriteAtlas#0#textureName</d8p1:Key>
                   <d8p1:Value xmlns:d10p1="http://www.w3.org/2001/XMLSchema" i:type="d10p1:string">LockedButton</d8p1:Value>
+                </d8p1:KeyValueOfstringanyType>
+                <d8p1:KeyValueOfstringanyType>
+                  <d8p1:Key>WaveEngine.Components.Gestures.TouchGestures#0#TouchOrder</d8p1:Key>
+                  <d8p1:Value xmlns:d10p1="http://www.w3.org/2001/XMLSchema" i:type="d10p1:int">700</d8p1:Value>
                 </d8p1:KeyValueOfstringanyType>
                 <d8p1:KeyValueOfstringanyType>
                   <d8p1:Key>Match3.UI.ButtonComponent#0#IsActive</d8p1:Key>
@@ -1015,6 +1043,10 @@
                   <d8p1:Value xmlns:d10p1="http://www.w3.org/2001/XMLSchema" i:type="d10p1:string">LockedButton</d8p1:Value>
                 </d8p1:KeyValueOfstringanyType>
                 <d8p1:KeyValueOfstringanyType>
+                  <d8p1:Key>WaveEngine.Components.Gestures.TouchGestures#0#TouchOrder</d8p1:Key>
+                  <d8p1:Value xmlns:d10p1="http://www.w3.org/2001/XMLSchema" i:type="d10p1:int">700</d8p1:Value>
+                </d8p1:KeyValueOfstringanyType>
+                <d8p1:KeyValueOfstringanyType>
                   <d8p1:Key>Match3.UI.ButtonComponent#0#IsActive</d8p1:Key>
                   <d8p1:Value xmlns:d10p1="http://www.w3.org/2001/XMLSchema" i:type="d10p1:boolean">false</d8p1:Value>
                 </d8p1:KeyValueOfstringanyType>
@@ -1132,6 +1164,10 @@
                 <d8p1:KeyValueOfstringanyType>
                   <d8p1:Key>WaveEngine.Components.Graphics2D.SpriteAtlas#0#textureName</d8p1:Key>
                   <d8p1:Value xmlns:d10p1="http://www.w3.org/2001/XMLSchema" i:type="d10p1:string">LockedButton</d8p1:Value>
+                </d8p1:KeyValueOfstringanyType>
+                <d8p1:KeyValueOfstringanyType>
+                  <d8p1:Key>WaveEngine.Components.Gestures.TouchGestures#0#TouchOrder</d8p1:Key>
+                  <d8p1:Value xmlns:d10p1="http://www.w3.org/2001/XMLSchema" i:type="d10p1:int">700</d8p1:Value>
                 </d8p1:KeyValueOfstringanyType>
                 <d8p1:KeyValueOfstringanyType>
                   <d8p1:Key>Match3.UI.ButtonComponent#0#IsActive</d8p1:Key>
@@ -1253,6 +1289,10 @@
                   <d8p1:Value xmlns:d10p1="http://www.w3.org/2001/XMLSchema" i:type="d10p1:string">LockedButton</d8p1:Value>
                 </d8p1:KeyValueOfstringanyType>
                 <d8p1:KeyValueOfstringanyType>
+                  <d8p1:Key>WaveEngine.Components.Gestures.TouchGestures#0#TouchOrder</d8p1:Key>
+                  <d8p1:Value xmlns:d10p1="http://www.w3.org/2001/XMLSchema" i:type="d10p1:int">700</d8p1:Value>
+                </d8p1:KeyValueOfstringanyType>
+                <d8p1:KeyValueOfstringanyType>
                   <d8p1:Key>Match3.UI.ButtonComponent#0#IsActive</d8p1:Key>
                   <d8p1:Value xmlns:d10p1="http://www.w3.org/2001/XMLSchema" i:type="d10p1:boolean">false</d8p1:Value>
                 </d8p1:KeyValueOfstringanyType>
@@ -1370,6 +1410,10 @@
                 <d8p1:KeyValueOfstringanyType>
                   <d8p1:Key>WaveEngine.Components.Graphics2D.SpriteAtlas#0#textureName</d8p1:Key>
                   <d8p1:Value xmlns:d10p1="http://www.w3.org/2001/XMLSchema" i:type="d10p1:string">LockedButton</d8p1:Value>
+                </d8p1:KeyValueOfstringanyType>
+                <d8p1:KeyValueOfstringanyType>
+                  <d8p1:Key>WaveEngine.Components.Gestures.TouchGestures#0#TouchOrder</d8p1:Key>
+                  <d8p1:Value xmlns:d10p1="http://www.w3.org/2001/XMLSchema" i:type="d10p1:int">700</d8p1:Value>
                 </d8p1:KeyValueOfstringanyType>
                 <d8p1:KeyValueOfstringanyType>
                   <d8p1:Key>Match3.UI.ButtonComponent#0#IsActive</d8p1:Key>
@@ -1491,6 +1535,10 @@
                   <d8p1:Value xmlns:d10p1="http://www.w3.org/2001/XMLSchema" i:type="d10p1:string">LockedButton</d8p1:Value>
                 </d8p1:KeyValueOfstringanyType>
                 <d8p1:KeyValueOfstringanyType>
+                  <d8p1:Key>WaveEngine.Components.Gestures.TouchGestures#0#TouchOrder</d8p1:Key>
+                  <d8p1:Value xmlns:d10p1="http://www.w3.org/2001/XMLSchema" i:type="d10p1:int">700</d8p1:Value>
+                </d8p1:KeyValueOfstringanyType>
+                <d8p1:KeyValueOfstringanyType>
                   <d8p1:Key>Match3.UI.ButtonComponent#0#IsActive</d8p1:Key>
                   <d8p1:Value xmlns:d10p1="http://www.w3.org/2001/XMLSchema" i:type="d10p1:boolean">false</d8p1:Value>
                 </d8p1:KeyValueOfstringanyType>
@@ -1608,6 +1656,10 @@
                 <d8p1:KeyValueOfstringanyType>
                   <d8p1:Key>WaveEngine.Components.Graphics2D.SpriteAtlas#0#textureName</d8p1:Key>
                   <d8p1:Value xmlns:d10p1="http://www.w3.org/2001/XMLSchema" i:type="d10p1:string">LockedButton</d8p1:Value>
+                </d8p1:KeyValueOfstringanyType>
+                <d8p1:KeyValueOfstringanyType>
+                  <d8p1:Key>WaveEngine.Components.Gestures.TouchGestures#0#TouchOrder</d8p1:Key>
+                  <d8p1:Value xmlns:d10p1="http://www.w3.org/2001/XMLSchema" i:type="d10p1:int">700</d8p1:Value>
                 </d8p1:KeyValueOfstringanyType>
                 <d8p1:KeyValueOfstringanyType>
                   <d8p1:Key>Match3.UI.ButtonComponent#0#IsActive</d8p1:Key>
@@ -1729,6 +1781,10 @@
                   <d8p1:Value xmlns:d10p1="http://www.w3.org/2001/XMLSchema" i:type="d10p1:string">LockedButton</d8p1:Value>
                 </d8p1:KeyValueOfstringanyType>
                 <d8p1:KeyValueOfstringanyType>
+                  <d8p1:Key>WaveEngine.Components.Gestures.TouchGestures#0#TouchOrder</d8p1:Key>
+                  <d8p1:Value xmlns:d10p1="http://www.w3.org/2001/XMLSchema" i:type="d10p1:int">700</d8p1:Value>
+                </d8p1:KeyValueOfstringanyType>
+                <d8p1:KeyValueOfstringanyType>
                   <d8p1:Key>Match3.UI.ButtonComponent#0#IsActive</d8p1:Key>
                   <d8p1:Value xmlns:d10p1="http://www.w3.org/2001/XMLSchema" i:type="d10p1:boolean">false</d8p1:Value>
                 </d8p1:KeyValueOfstringanyType>
@@ -1846,6 +1902,10 @@
                 <d8p1:KeyValueOfstringanyType>
                   <d8p1:Key>WaveEngine.Components.Graphics2D.SpriteAtlas#0#textureName</d8p1:Key>
                   <d8p1:Value xmlns:d10p1="http://www.w3.org/2001/XMLSchema" i:type="d10p1:string">LockedButton</d8p1:Value>
+                </d8p1:KeyValueOfstringanyType>
+                <d8p1:KeyValueOfstringanyType>
+                  <d8p1:Key>WaveEngine.Components.Gestures.TouchGestures#0#TouchOrder</d8p1:Key>
+                  <d8p1:Value xmlns:d10p1="http://www.w3.org/2001/XMLSchema" i:type="d10p1:int">700</d8p1:Value>
                 </d8p1:KeyValueOfstringanyType>
                 <d8p1:KeyValueOfstringanyType>
                   <d8p1:Key>Match3.UI.ButtonComponent#0#IsActive</d8p1:Key>
@@ -1967,6 +2027,10 @@
                   <d8p1:Value xmlns:d10p1="http://www.w3.org/2001/XMLSchema" i:type="d10p1:string">LockedButton</d8p1:Value>
                 </d8p1:KeyValueOfstringanyType>
                 <d8p1:KeyValueOfstringanyType>
+                  <d8p1:Key>WaveEngine.Components.Gestures.TouchGestures#0#TouchOrder</d8p1:Key>
+                  <d8p1:Value xmlns:d10p1="http://www.w3.org/2001/XMLSchema" i:type="d10p1:int">700</d8p1:Value>
+                </d8p1:KeyValueOfstringanyType>
+                <d8p1:KeyValueOfstringanyType>
                   <d8p1:Key>Match3.UI.ButtonComponent#0#IsActive</d8p1:Key>
                   <d8p1:Value xmlns:d10p1="http://www.w3.org/2001/XMLSchema" i:type="d10p1:boolean">false</d8p1:Value>
                 </d8p1:KeyValueOfstringanyType>
@@ -1995,13 +2059,13 @@
                 <d8p1:Z>0</d8p1:Z>
               </d7p1:LocalOrientation>
               <d7p1:LocalPosition xmlns:d8p1="WaveEngine.Common.Math">
-                <d8p1:X>-151.6991</d8p1:X>
-                <d8p1:Y>-35.39911</d8p1:Y>
+                <d8p1:X>-34.4932976</d8p1:X>
+                <d8p1:Y>-14.8190193</d8p1:Y>
                 <d8p1:Z>-1</d8p1:Z>
               </d7p1:LocalPosition>
               <d7p1:LocalScale xmlns:d8p1="WaveEngine.Common.Math">
-                <d8p1:X>1</d8p1:X>
-                <d8p1:Y>1</d8p1:Y>
+                <d8p1:X>0.226855591</d8p1:X>
+                <d8p1:Y>0.412220567</d8p1:Y>
                 <d8p1:Z>1</d8p1:Z>
               </d7p1:LocalScale>
               <d7p1:Opacity>1</d7p1:Opacity>
@@ -2039,19 +2103,19 @@
             <d6p1:Z>0</d6p1:Z>
           </d5p1:LocalOrientation>
           <d5p1:LocalPosition xmlns:d6p1="WaveEngine.Common.Math">
-            <d6p1:X>540</d6p1:X>
-            <d6p1:Y>740</d6p1:Y>
+            <d6p1:X>540.350464</d6p1:X>
+            <d6p1:Y>740.5501</d6p1:Y>
             <d6p1:Z>0</d6p1:Z>
           </d5p1:LocalPosition>
           <d5p1:LocalScale xmlns:d6p1="WaveEngine.Common.Math">
-            <d6p1:X>1</d6p1:X>
-            <d6p1:Y>1</d6p1:Y>
+            <d6p1:X>4.40809059</d6p1:X>
+            <d6p1:Y>2.42588568</d6p1:Y>
             <d6p1:Z>1</d6p1:Z>
           </d5p1:LocalScale>
           <d5p1:Opacity>1</d5p1:Opacity>
           <d5p1:Rectangle xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
-            <d6p1:Height>650</d6p1:Height>
-            <d6p1:Width>927</d6p1:Width>
+            <d6p1:Height>267</d6p1:Height>
+            <d6p1:Width>210</d6p1:Width>
             <d6p1:X>0</d6p1:X>
             <d6p1:Y>0</d6p1:Y>
           </d5p1:Rectangle>
@@ -2066,25 +2130,23 @@
           </d5p1:screenPosition>
           <d5p1:transformMode>Standard</d5p1:transformMode>
         </d4p1:Component>
-        <d4p1:Component xmlns:d5p1="http://schemas.datacontract.org/2004/07/Match3.UI.NinePatch" i:type="d5p1:NinePatchSpriteAtlas">
+        <d4p1:Component xmlns:d5p1="WaveEngine.Components.Graphics2D" i:type="d5p1:Sprite">
+          <d5p1:IsGlobalAsset>false</d5p1:IsGlobalAsset>
+          <d5p1:SourceRectangle xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math" i:nil="true" />
           <d5p1:TintColor xmlns:d6p1="WaveEngine.Common.Graphics">
             <d6p1:A>255</d6p1:A>
             <d6p1:B>255</d6p1:B>
             <d6p1:G>255</d6p1:G>
             <d6p1:R>255</d6p1:R>
           </d5p1:TintColor>
-          <d5p1:isGlobalAsset>true</d5p1:isGlobalAsset>
-          <d5p1:size xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
-            <d6p1:X>927</d6p1:X>
-            <d6p1:Y>650</d6p1:Y>
-          </d5p1:size>
-          <d5p1:texturePath>Content/Assets/GUI/Panels.spritesheet.wpk</d5p1:texturePath>
-          <d5p1:textureName>PanelBg1</d5p1:textureName>
+          <d5p1:materialPath i:nil="true" />
+          <d5p1:texturePath>Content/Assets/GUI/Panels/PanelBg1.9.png.wpk</d5p1:texturePath>
         </d4p1:Component>
-        <d4p1:Component xmlns:d5p1="http://schemas.datacontract.org/2004/07/Match3.UI.NinePatch" i:type="d5p1:NinePatchRenderer">
+        <d4p1:Component xmlns:d5p1="WaveEngine.Components.Graphics2D" i:type="d5p1:SpriteRenderer">
+          <d4p1:FrustumCullingEnabled>true</d4p1:FrustumCullingEnabled>
           <d4p1:IsVisible>true</d4p1:IsVisible>
-          <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
-          <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
+          <layerId xmlns="WaveEngine.Framework.Graphics">2</layerId>
+          <d5p1:DrawMode>Sliced</d5p1:DrawMode>
         </d4p1:Component>
       </d2p1:SerializeComponents>
     </d2p1:BaseEntityModel>
@@ -2113,8 +2175,8 @@
         <d4p1:KeyValueOfstringanyType>
           <d4p1:Key>WaveEngine.Framework.Graphics.Transform2D#0#LocalPosition</d4p1:Key>
           <d4p1:Value xmlns:d6p1="WaveEngine.Common.Math" i:type="d6p1:Vector3">
-            <d6p1:X>-1422.39954</d6p1:X>
-            <d6p1:Y>1038.99963</d6p1:Y>
+            <d6p1:X>-469.920715</d6p1:X>
+            <d6p1:Y>1438.20117</d6p1:Y>
             <d6p1:Z>0</d6p1:Z>
           </d4p1:Value>
         </d4p1:KeyValueOfstringanyType>

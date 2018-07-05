@@ -57,10 +57,9 @@
             <d6p1:textureName>explosionblue01</d6p1:textureName>
           </d5p1:Component>
           <d5p1:Component xmlns:d6p1="WaveEngine.Components.Graphics2D" i:type="d6p1:SpriteAtlasRenderer">
+            <d5p1:FrustumCullingEnabled>true</d5p1:FrustumCullingEnabled>
             <d5p1:IsVisible>true</d5p1:IsVisible>
-            <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
-            <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
-            <d6p1:SamplerMode>LinearClamp</d6p1:SamplerMode>
+            <layerId xmlns="WaveEngine.Framework.Graphics">2</layerId>
           </d5p1:Component>
           <d5p1:Component xmlns:d6p1="WaveEngine.Components.Animation" i:type="d6p1:Animation2D">
             <d5p1:UpdateOrder>0.5</d5p1:UpdateOrder>
@@ -125,10 +124,9 @@
         <d4p1:textureName>bean_blue</d4p1:textureName>
       </d3p1:Component>
       <d3p1:Component xmlns:d4p1="WaveEngine.Components.Graphics2D" i:type="d4p1:SpriteAtlasRenderer">
+        <d3p1:FrustumCullingEnabled>true</d3p1:FrustumCullingEnabled>
         <d3p1:IsVisible>true</d3p1:IsVisible>
-        <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
-        <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
-        <d4p1:SamplerMode>LinearClamp</d4p1:SamplerMode>
+        <layerId xmlns="WaveEngine.Framework.Graphics">2</layerId>
       </d3p1:Component>
       <d3p1:Component xmlns:d4p1="WaveEngine.Framework.Physics3D" i:type="d4p1:CircleCollider2D">
         <CollidesWith xmlns="WaveEngine.Framework.Physics2D">All</CollidesWith>
@@ -158,8 +156,8 @@
         <d4p1:ManualTouchOrder>false</d4p1:ManualTouchOrder>
         <d4p1:MaxScale>5</d4p1:MaxScale>
         <d4p1:MinScale>0.1</d4p1:MinScale>
-        <d4p1:ProjectCamera>true</d4p1:ProjectCamera>
-        <d4p1:TouchOrder>500</d4p1:TouchOrder>
+        <d4p1:ProjectCamera>false</d4p1:ProjectCamera>
+        <d4p1:TouchOrder>600</d4p1:TouchOrder>
       </d3p1:Component>
     </d2p1:SerializeComponents>
   </EntityModel>

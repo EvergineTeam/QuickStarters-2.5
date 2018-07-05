@@ -57,10 +57,9 @@
             <d6p1:textureName>StarBigColor</d6p1:textureName>
           </d5p1:Component>
           <d5p1:Component xmlns:d6p1="WaveEngine.Components.Graphics2D" i:type="d6p1:SpriteAtlasRenderer">
+            <d5p1:FrustumCullingEnabled>true</d5p1:FrustumCullingEnabled>
             <d5p1:IsVisible>true</d5p1:IsVisible>
-            <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
-            <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
-            <d6p1:SamplerMode>LinearClamp</d6p1:SamplerMode>
+            <layerId xmlns="WaveEngine.Framework.Graphics">2</layerId>
           </d5p1:Component>
         </d2p1:SerializeComponents>
       </d2p1:BaseEntityModel>
@@ -118,10 +117,9 @@
         <d4p1:textureName>StarEmpty</d4p1:textureName>
       </d3p1:Component>
       <d3p1:Component xmlns:d4p1="WaveEngine.Components.Graphics2D" i:type="d4p1:SpriteAtlasRenderer">
+        <d3p1:FrustumCullingEnabled>true</d3p1:FrustumCullingEnabled>
         <d3p1:IsVisible>true</d3p1:IsVisible>
-        <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
-        <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
-        <d4p1:SamplerMode>LinearClamp</d4p1:SamplerMode>
+        <layerId xmlns="WaveEngine.Framework.Graphics">2</layerId>
       </d3p1:Component>
     </d2p1:SerializeComponents>
   </EntityModel>

@@ -10,6 +10,8 @@ namespace Match3
         {
             base.Initialize(application);
 
+            this.Load(WaveContent.GameInfo);
+
             CustomServices.AudioPlayer.PlayMusic(Songs.Menu);
             CustomServices.NavigationService.StartNavigation();
         }

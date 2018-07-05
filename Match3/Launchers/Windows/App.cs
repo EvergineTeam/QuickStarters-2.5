@@ -1,4 +1,3 @@
-using Match3.Services.Navigation;
 using System;
 using System.IO;
 using System.Reflection;
@@ -19,19 +18,14 @@ namespace Match3
         TimeSpan time;
         Vector2 position;
         Color backgroundSplashColor;
-        KeyboardState lastKeyboardState;
 
         public App()
         {
-            this.Width = 720;
-            this.Height = 960;
+            this.Width = 1280;
+            this.Height = 720;
             this.FullScreen = false;
             this.WindowTitle = "Match3";
-            this.HasVideoSupport = false;
-
-#if DEBUG
-            this.splashState = false;
-#endif
+            this.HasVideoSupport = true;
         }
 
         public override void Initialize()
@@ -40,7 +34,7 @@ namespace Match3
             this.game.Initialize(this);
 
             #region DEFAULT SPLASHSCREEN
-            this.backgroundSplashColor = new Color("#ebebeb");
+            this.backgroundSplashColor = Color.White;
             this.spriteBatch = new SpriteBatch(WaveServices.GraphicsDevice);
 
             var resourceNames = Assembly.GetExecutingAssembly().GetManifestResourceNames();
@@ -48,7 +42,7 @@ namespace Match3
 
             foreach (string item in resourceNames)
             {
-                if (item.Contains("SplashScreen.wpk"))
+                if (item.Contains("SplashScreen.png"))
                 {
                     name = item;
                     break;
@@ -62,7 +56,7 @@ namespace Match3
 
             using (Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream(name))
             {
-                this.splashScreen = WaveServices.Assets.Global.LoadAsset<Texture2D>(name, stream);
+                this.splashScreen = Texture2D.FromFile(WaveServices.GraphicsDevice, stream);
             }
 
             position = new Vector2();
@@ -75,10 +69,7 @@ namespace Match3
         {
             if (this.game != null && !this.game.HasExited)
             {
-                var keyboardState = WaveServices.Input.KeyboardState;
-
-                if (keyboardState.IsKeyReleased(Keys.F10) &&
-                    this.lastKeyboardState.IsKeyPressed(Keys.F10))
+                if (WaveServices.Input.KeyboardState.F10 == ButtonState.Pressed)
                 {
                     this.FullScreen = !this.FullScreen;
                 }
@@ -95,23 +86,15 @@ namespace Match3
                 }
                 else
                 {
-                    if (keyboardState.IsKeyReleased(Keys.Escape) &&
-                        this.lastKeyboardState.IsKeyPressed(Keys.Escape))
+                    if (WaveServices.Input.KeyboardState.Escape == ButtonState.Pressed)
                     {
-                        var navService = WaveServices.GetService<NavigationService>();
-
-                        if (navService.CanNavigate(NavigateCommands.Back))
-                        {
-                            navService.Navigate(NavigateCommands.Back);
-                        }
+                        WaveServices.Platform.Exit();
                     }
                     else
                     {
                         this.game.UpdateFrame(elapsedTime);
                     }
                 }
-
-                this.lastKeyboardState = keyboardState;
             }
         }
 
@@ -160,4 +143,3 @@ namespace Match3
         }
     }
 }
-

@@ -58,11 +58,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)UI\Navigation\NextLevelComponent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)UI\Navigation\TimerNavigationComponent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)UI\Navigation\TouchNavigationComponent.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)UI\NinePatch\NinePatchBase.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)UI\NinePatch\NinePatchRenderer.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)UI\NinePatch\NinePatchSprite.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)UI\NinePatch\NinePatchSpriteAtlas.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)UI\NinePatch\NinePatchTextureInfo.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)UI\ToggleButtonComponent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)WaveContent.cs" />
   </ItemGroup>

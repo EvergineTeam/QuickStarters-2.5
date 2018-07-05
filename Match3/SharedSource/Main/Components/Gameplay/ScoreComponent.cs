@@ -1,5 +1,4 @@
 ﻿using Match3.Services;
-using Match3.UI.NinePatch;
 using System;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -15,18 +14,16 @@ namespace Match3.Components.Gameplay
     {
         private GameLogic gameLogic;
         private Transform2D scoreSliceTransform;
-        private NinePatchSpriteAtlas scoreSliceNinePatch;
         private Transform2D[] starsTransforms;
         private SpriteAtlas[] starsSpriteAtlas;
 
         private float currentScore;
         private float desiredScore;
 
-        private float minScoreSliceX;
-        private float maxScoreSliceX;
-        private float currentScoreSliceX;
-        private float desiredScoreSliceX;
-        
+        private float maxScoreSliceXScale;
+        private float currentScoreSliceXScale;
+        private float desiredScoreSliceXScale;
+
         public float CurrentScore
         {
             get
@@ -36,7 +33,7 @@ namespace Match3.Components.Gameplay
             set
             {
                 this.desiredScore = value;
-                this.desiredScoreSliceX = this.ScoreSliceX(this.desiredScore);
+                this.desiredScoreSliceXScale = this.ScoreSliceX(this.desiredScore);
             }
         }
 
@@ -53,14 +50,13 @@ namespace Match3.Components.Gameplay
 
                 var scoreSliceEntity = this.Owner.FindChild("ScoreSlice");
                 this.scoreSliceTransform = scoreSliceEntity.FindComponent<Transform2D>();
-                this.scoreSliceNinePatch = scoreSliceEntity.FindComponent<NinePatchSpriteAtlas>();
             }
         }
 
         protected override void Initialize()
         {
             base.Initialize();
-            
+
             this.Owner.EntityInitialized += this.Owner_EntityInitialized;
         }
 
@@ -68,11 +64,11 @@ namespace Match3.Components.Gameplay
         {
             this.Owner.EntityInitialized -= this.Owner_EntityInitialized;
 
-            this.minScoreSliceX = this.scoreSliceNinePatch.TextureSize.X;
-            this.maxScoreSliceX = this.scoreSliceNinePatch.Size.X;
-            this.currentScoreSliceX = this.desiredScoreSliceX = 0;
+            this.maxScoreSliceXScale = this.scoreSliceTransform.XScale;
+            this.currentScoreSliceXScale = this.desiredScoreSliceXScale = 0;
             this.UpdateStarsPosition();
             this.UpdateStarsTexture();
+            this.scoreSliceTransform.XScale = 1;
         }
 
         private void UpdateStarsPosition()
@@ -109,29 +105,25 @@ namespace Match3.Components.Gameplay
                 }
             }
         }
-        
+
         private void UpdateSliceSize()
         {
-            var scoreSlice = this.scoreSliceNinePatch.Size;
-            scoreSlice.X = Math.Max(this.minScoreSliceX, Math.Min(this.currentScoreSliceX, this.maxScoreSliceX));
-            this.scoreSliceNinePatch.Size = scoreSlice;
-
-            var xScale = Math.Min(1.0, this.currentScoreSliceX / this.minScoreSliceX);
-            this.scoreSliceTransform.LocalXScale = (float)xScale;
+            var xScale = Math.Max(1, Math.Min(this.currentScoreSliceXScale, this.maxScoreSliceXScale));
+            this.scoreSliceTransform.XScale = xScale;
         }
 
         private float ScoreSliceX(float score)
         {
             var scoreRatio = score / this.gameLogic.StarsScores[this.gameLogic.StarsScores.Length - 1];
-            return scoreRatio * this.maxScoreSliceX;
+            return (scoreRatio * this.maxScoreSliceXScale) + 1;
         }
 
         protected override void Update(TimeSpan gameTime)
         {
-            if (this.desiredScoreSliceX != this.currentScoreSliceX)
+            if (this.desiredScoreSliceXScale != this.currentScoreSliceXScale)
             {
                 this.currentScore = MathHelper.SmoothStep(this.currentScore, this.desiredScore, 0.1f);
-                this.currentScoreSliceX = MathHelper.SmoothStep(this.currentScoreSliceX, this.desiredScoreSliceX, 0.1f);
+                this.currentScoreSliceXScale = MathHelper.SmoothStep(this.currentScoreSliceXScale, this.desiredScoreSliceXScale, 0.1f);
                 this.UpdateSliceSize();
                 this.UpdateStarsTexture();
             }
