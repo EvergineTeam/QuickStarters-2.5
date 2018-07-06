@@ -163,7 +163,7 @@ namespace SuperSlingshot.Scenes
                     }
 
                     Sprite sprite = new Sprite(WaveContent.Assets.Other.crate_png);
-                    SpriteRenderer spriteRenderer = new SpriteRenderer(DefaultLayers.Alpha, AddressMode.PointWrap);
+                    SpriteRenderer spriteRenderer = new SpriteRenderer(DefaultLayers.Alpha);
 
                     colliderEntity.AddComponent(sprite);
                     colliderEntity.AddComponent(spriteRenderer);
@@ -197,7 +197,7 @@ namespace SuperSlingshot.Scenes
                     }
 
                     Sprite sprite = new Sprite(WaveContent.Assets.Gui.gem_png);
-                    SpriteRenderer spriteRenderer = new SpriteRenderer(DefaultLayers.Alpha, AddressMode.PointWrap);
+                    SpriteRenderer spriteRenderer = new SpriteRenderer(DefaultLayers.Alpha);
 
                     colliderEntity.AddComponent(sprite);
                     colliderEntity.AddComponent(spriteRenderer);

@@ -1,4 +1,4 @@
-﻿<Prefab xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="WaveEngine.Framework.Models.Assets">
+<Prefab xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="WaveEngine.Framework.Models.Assets">
   <Id xmlns="WaveEngine.Framework.Models">1866567a-73c1-4bce-8084-45e250576be7</Id>
   <EntityModel xmlns:d2p1="WaveEngine.Framework.Models.Entities">
     <d2p1:SerializeChildrens>
@@ -70,7 +70,7 @@
           <d5p1:Component xmlns:d6p1="WaveEngine.Components.Toolkit" i:type="d6p1:TextRenderer2D">
             <d5p1:IsVisible>true</d5p1:IsVisible>
             <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
-            <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
+            <layerId xmlns="WaveEngine.Framework.Graphics">2</layerId>
           </d5p1:Component>
         </d2p1:SerializeComponents>
       </d2p1:BaseEntityModel>
@@ -174,7 +174,7 @@
       <d3p1:Component xmlns:d4p1="WaveEngine.Components.Graphics2D" i:type="d4p1:SpriteRenderer">
         <d3p1:IsVisible>true</d3p1:IsVisible>
         <CullingEnabled xmlns="WaveEngine.Framework.Graphics">true</CullingEnabled>
-        <LayerTypeName xmlns="WaveEngine.Framework.Graphics">WaveEngine.Framework.Graphics.AlphaLayer,WaveEngine.Framework</LayerTypeName>
+        <layerId xmlns="WaveEngine.Framework.Graphics">2</layerId>
         <d4p1:SamplerMode>LinearClamp</d4p1:SamplerMode>
       </d3p1:Component>
     </d2p1:SerializeComponents>

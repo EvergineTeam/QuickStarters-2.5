@@ -410,7 +410,7 @@ namespace SuperSlingshot.NinePatch
                 innerTextureInfoCache.Add(textureId, this.ninePatchTexture);
             }
 
-            (this.material as StandardMaterial).Diffuse = this.ninePatchTexture.InnerTexture;
+            (this.material as StandardMaterial).Diffuse1 = this.ninePatchTexture.InnerTexture;
 
             if (this.size == Vector2.Zero)
             {
@@ -429,8 +429,7 @@ namespace SuperSlingshot.NinePatch
 
                 this.material = new StandardMaterial()
                 {
-                    Diffuse = innerTexture,
-                    SamplerMode = AddressMode.LinearClamp,
+                    Diffuse1 = innerTexture,                    
                     LightingEnabled = false,
                     VertexColorEnable = true
                 };

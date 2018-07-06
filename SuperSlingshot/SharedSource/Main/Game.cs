@@ -18,6 +18,8 @@ namespace SuperSlingshot
             SerializerFactory.DefaultSerializationType = SerializationType.DATACONTRACT;
             base.Initialize(application);
 
+            this.Load(WaveContent.GameInfo);
+
             var navigationManager = new NavigationManager();
 
             WaveServices.RegisterService(new StorageService());
