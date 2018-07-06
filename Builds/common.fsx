@@ -89,10 +89,8 @@ let printReport (l : List<quickstarterReport>) =
 
 let buildquickstarter (platform: string, configuration : string, architecture : string, quickstarter : string) = 
     match platform with
-    | "Windows" -> MSBuild null "Build" [("Configuration", configuration); ("Platform", architecture)] [quickstarter] |> ignore
-    | "Linux" -> Exec "xbuild" ("/p:Configuration=" + configuration + " " + quickstarter)
-    | "MacOS" -> Exec "/Applications/Xamarin Studio.app/Contents/MacOS/mdtool" ("-v build -t:Build -c:" + configuration + " " + quickstarter)
-    | _-> ()
+    | "Linux" -> MSBuild null "Build" [("Configuration", configuration); ("Platform", "x86")] [quickstarter] |> ignore
+    | _-> MSBuild null "Build" [("Configuration", configuration); ("Platform", architecture)] [quickstarter] |> ignore
 
 let buildquickstarters(platform: string) =       
 
