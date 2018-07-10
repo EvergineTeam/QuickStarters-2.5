@@ -34,7 +34,7 @@ namespace WaveFrogger
 			this.game.Initialize(this);
 			
 			#region WAVE SOFTWARE LICENSE AGREEMENT
-			this.backgroundSplashColor = new Color("#ebebeb");
+			this.backgroundSplashColor = Color.White;
 			this.spriteBatch = new SpriteBatch(WaveServices.GraphicsDevice);
 			
 			var resourceNames = Assembly.GetExecutingAssembly().GetManifestResourceNames();

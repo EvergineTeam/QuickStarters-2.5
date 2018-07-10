@@ -12,9 +12,6 @@ namespace WaveFrogger.Behaviors
     [DataContract]
     public class VehicleBehavior : Behavior
     {
-        [IgnoreDataMember]
-        public BoundingBox AABBBoundingBox;
-
         [RequiredComponent]
         private Transform3D transform = null;
 
@@ -65,16 +62,6 @@ namespace WaveFrogger.Behaviors
 
             pos.X = nextPos;
             this.transform.LocalPosition = pos;
-
-            // Bounding box must rotate (or swap X-Z
-            var halfExtend = this.collider.BoundingBox.HalfExtent;
-            var temp = halfExtend.X;
-            halfExtend.X = halfExtend.Z;
-            halfExtend.Z = temp;
-
-            // Update aabbCollider
-            this.AABBBoundingBox.Min = this.transform.Position - halfExtend;
-            this.AABBBoundingBox.Max = this.transform.Position + halfExtend;
         }
 
         protected override void Update(TimeSpan gameTime)

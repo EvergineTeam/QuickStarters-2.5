@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Runtime.Serialization;
 using WaveEngine.Common.Math;
 using WaveEngine.Components.GameActions;
@@ -22,13 +23,13 @@ namespace WaveFrogger.Behaviors
         [RequiredComponent]
         private Transform3D transform = null;
 
-        [RequiredComponent]
-        private BoxCollider3D collider = null;
+        [RequiredComponent(false)]
+        private PhysicBody3D physicBody = null;
 
         private AnimationService animationService;
         private AudioService audioService;
 
-        private BoundingBox aabbBoundingBox;
+        private List<CollisionInfo3D> collisionList;
 
         private Quaternion leftOrientation;
         private Quaternion rightOrientation;
@@ -43,8 +44,6 @@ namespace WaveFrogger.Behaviors
         private Vector3 currentScale;
         private Vector3 desiredScale;
         private float scaleAnimationSpeed;
-
-        private bool firstUpdate;
 
         private TextComponent scoreControl;
 
@@ -68,7 +67,8 @@ namespace WaveFrogger.Behaviors
         protected override void ResolveDependencies()
         {
             base.ResolveDependencies();
-            this.firstUpdate = true;
+
+            this.collisionList = new List<CollisionInfo3D>();
 
             this.animationService = WaveServices.GetService<AnimationService>();
             this.audioService = WaveServices.GetService<AudioService>();
@@ -87,10 +87,18 @@ namespace WaveFrogger.Behaviors
             this.desiredOrientation = upOrientation;
             this.currentOrientation = this.desiredOrientation;
 
-            this.desiredScale = Vector3.One;
-            this.currentScale = this.desiredScale;
+            ////this.desiredScale = Vector3.One;
+            ////this.currentScale = this.desiredScale;
 
             this.jumpSounds = new Audio.Sfx[] { Audio.Sfx.jump1_wav, Audio.Sfx.jump2_wav, Audio.Sfx.jump3_wav };
+        }
+
+        protected override void Initialize()
+        {
+            base.Initialize();
+
+            this.desiredScale = this.transform.LocalScale;
+            this.currentScale = this.desiredScale;
         }
 
         public void MoveUp()
@@ -209,21 +217,10 @@ namespace WaveFrogger.Behaviors
                 return;
             }
 
-            if (this.firstUpdate)
-            {
-                this.aabbBoundingBox.Min = this.currentPosition - this.collider.BoundingBox.HalfExtent;
-                this.aabbBoundingBox.Max = this.currentPosition + this.collider.BoundingBox.HalfExtent;
-
-                this.firstUpdate = false;
-            }
-
             if (this.currentPosition != this.desiredPosition)
             {
                 this.transform.Position = Vector3.SmoothStep(this.currentPosition, this.desiredPosition, this.JumpSmoothStep * (float)gameTime.TotalSeconds);
                 this.currentPosition = this.transform.Position;
-
-                this.aabbBoundingBox.Min = this.currentPosition - this.collider.BoundingBox.HalfExtent;
-                this.aabbBoundingBox.Max = this.currentPosition + this.collider.BoundingBox.HalfExtent;
             }
 
 
@@ -248,7 +245,9 @@ namespace WaveFrogger.Behaviors
                 // TODO: Workaround: check if position Z >0 cause vehicle boundingboxe create in <0,0,0> and collides
                 if (this.currentPosition.Z > 2)
                 {
-                    if (this.aabbBoundingBox.Intersects(vehicleBehavior.AABBBoundingBox))
+                    this.physicBody.ContactTest(this.collisionList);
+
+                    if (this.collisionList.Count > 0)
                     {
                         // Input stop
                         var inputBehavior = this.Owner.FindComponent<PlayerInputBehavior>();

@@ -1,12 +1,13 @@
 ﻿<Prefab xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="WaveEngine.Framework.Models.Assets">
-  <Id xmlns="WaveEngine.Framework.Models">1c2f5ecb-a11c-4b46-bdc2-bc10904c9e80</Id>
+  <Id xmlns="WaveEngine.Framework.Models">8a1dfdc9-b680-47fe-9203-62fb6c1560d6</Id>
   <EntityModel xmlns:d2p1="WaveEngine.Framework.Models.Entities">
     <d2p1:SerializeChildrens>
       <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
         <d2p1:SerializeChildrens />
+        <d2p1:isDisabled>false</d2p1:isDisabled>
         <d2p1:isStatic>false</d2p1:isStatic>
         <d2p1:isVisible>true</d2p1:isVisible>
-        <d2p1:name>model03</d2p1:name>
+        <d2p1:name>model01</d2p1:name>
         <d2p1:tag i:nil="true" />
         <d2p1:SerializeComponents xmlns:d5p1="WaveEngine.Framework">
           <d5p1:Component xmlns:d6p1="WaveEngine.Framework.Graphics" i:type="d6p1:Transform3D">
@@ -19,33 +20,33 @@
             <d6p1:LocalPosition xmlns:d7p1="WaveEngine.Common.Math">
               <d7p1:X>0</d7p1:X>
               <d7p1:Y>-0.25</d7p1:Y>
-              <d7p1:Z>0</d7p1:Z>
+              <d7p1:Z>2.5</d7p1:Z>
             </d6p1:LocalPosition>
             <d6p1:LocalScale xmlns:d7p1="WaveEngine.Common.Math">
-              <d7p1:X>1</d7p1:X>
-              <d7p1:Y>1</d7p1:Y>
-              <d7p1:Z>1</d7p1:Z>
+              <d7p1:X>100</d7p1:X>
+              <d7p1:Y>100</d7p1:Y>
+              <d7p1:Z>100</d7p1:Z>
             </d6p1:LocalScale>
           </d5p1:Component>
-          <d5p1:Component xmlns:d6p1="WaveEngine.Components.Graphics3D" i:type="d6p1:MaterialsMap">
-            <d6p1:DefaultMaterialPath>Content/Assets/Materials/grassMat.wmat</d6p1:DefaultMaterialPath>
-            <d6p1:MaterialsPath xmlns:d7p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
-            <d6p1:UseMaterialCopy>false</d6p1:UseMaterialCopy>
-            <d6p1:useDefaultMaterial>false</d6p1:useDefaultMaterial>
+          <d5p1:Component xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Components.Graphics3D" i:type="d6p1:FileMesh">
+            <ModelMeshName xmlns="WaveEngine.Components.Graphics3D">strip_grass_1</ModelMeshName>
+            <d6p1:ModelPath>Content/Assets/Models/strip_grass_1.obj.wpk</d6p1:ModelPath>
+          </d5p1:Component>
+          <d5p1:Component xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Components.Graphics3D" i:type="d6p1:MaterialComponent">
+            <d6p1:AsignedTo>strip_road_1Mat</d6p1:AsignedTo>
+            <d6p1:MaterialPath>Content/Assets/Materials/grassMat.wmat</d6p1:MaterialPath>
+            <d6p1:UseCopy>false</d6p1:UseCopy>
             <d6p1:useDummyMaterial>false</d6p1:useDummyMaterial>
           </d5p1:Component>
-          <d5p1:Component xmlns:d6p1="WaveEngine.Components.Graphics3D" i:type="d6p1:Model">
-            <ModelPath xmlns="WaveEngine.Framework.Graphics">Content/Assets/Models/strip_grass_1.obj.wpk</ModelPath>
-            <d6p1:ModelType>Custom</d6p1:ModelType>
-          </d5p1:Component>
-          <d5p1:Component xmlns:d6p1="WaveEngine.Components.Graphics3D" i:type="d6p1:ModelRenderer">
+          <d5p1:Component xmlns:d6p1="WaveEngine.Components.Graphics3D" i:type="d6p1:MeshRenderer">
+            <d5p1:FrustumCullingEnabled>true</d5p1:FrustumCullingEnabled>
             <d5p1:IsVisible>true</d5p1:IsVisible>
-            <FrustumCullingEnabled xmlns="WaveEngine.Framework.Graphics">true</FrustumCullingEnabled>
           </d5p1:Component>
         </d2p1:SerializeComponents>
       </d2p1:BaseEntityModel>
       <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
         <d2p1:SerializeChildrens />
+        <d2p1:isDisabled>false</d2p1:isDisabled>
         <d2p1:isStatic>false</d2p1:isStatic>
         <d2p1:isVisible>true</d2p1:isVisible>
         <d2p1:name>model02</d2p1:name>
@@ -61,32 +62,31 @@
             <d6p1:LocalPosition xmlns:d7p1="WaveEngine.Common.Math">
               <d7p1:X>0</d7p1:X>
               <d7p1:Y>-0.25</d7p1:Y>
-              <d7p1:Z>2</d7p1:Z>
+              <d7p1:Z>1.5</d7p1:Z>
             </d6p1:LocalPosition>
             <d6p1:LocalScale xmlns:d7p1="WaveEngine.Common.Math">
-              <d7p1:X>1</d7p1:X>
-              <d7p1:Y>1</d7p1:Y>
-              <d7p1:Z>1</d7p1:Z>
+              <d7p1:X>100</d7p1:X>
+              <d7p1:Y>100</d7p1:Y>
+              <d7p1:Z>100</d7p1:Z>
             </d6p1:LocalScale>
           </d5p1:Component>
-          <d5p1:Component xmlns:d6p1="WaveEngine.Components.Graphics3D" i:type="d6p1:MaterialsMap">
-            <d6p1:DefaultMaterialPath>Content/Assets/Materials/roadMat.wmat</d6p1:DefaultMaterialPath>
-            <d6p1:MaterialsPath xmlns:d7p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
-            <d6p1:UseMaterialCopy>false</d6p1:UseMaterialCopy>
-            <d6p1:useDefaultMaterial>false</d6p1:useDefaultMaterial>
+          <d5p1:Component xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Components.Graphics3D" i:type="d6p1:FileMesh">
+            <ModelMeshName xmlns="WaveEngine.Components.Graphics3D">strip_road_1</ModelMeshName>
+            <d6p1:ModelPath>Content/Assets/Models/strip_road_1.obj.wpk</d6p1:ModelPath>
+          </d5p1:Component>
+          <d5p1:Component xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Components.Graphics3D" i:type="d6p1:MaterialComponent">
+            <d6p1:AsignedTo i:nil="true" />
+            <d6p1:MaterialPath>Content/Assets/Materials/roadMat.wmat</d6p1:MaterialPath>
+            <d6p1:UseCopy>false</d6p1:UseCopy>
             <d6p1:useDummyMaterial>false</d6p1:useDummyMaterial>
           </d5p1:Component>
-          <d5p1:Component xmlns:d6p1="WaveEngine.Components.Graphics3D" i:type="d6p1:Model">
-            <ModelPath xmlns="WaveEngine.Framework.Graphics">Content/Assets/Models/strip_road_1.obj.wpk</ModelPath>
-            <d6p1:ModelType>Custom</d6p1:ModelType>
-          </d5p1:Component>
-          <d5p1:Component xmlns:d6p1="WaveEngine.Components.Graphics3D" i:type="d6p1:ModelRenderer">
+          <d5p1:Component xmlns:d6p1="WaveEngine.Components.Graphics3D" i:type="d6p1:MeshRenderer">
+            <d5p1:FrustumCullingEnabled>true</d5p1:FrustumCullingEnabled>
             <d5p1:IsVisible>true</d5p1:IsVisible>
-            <FrustumCullingEnabled xmlns="WaveEngine.Framework.Graphics">true</FrustumCullingEnabled>
           </d5p1:Component>
           <d5p1:Component xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveFrogger.Behaviors" i:type="d6p1:VehicleGeneratorBehavior">
-            <d5p1:IsActive>true</d5p1:IsActive>
             <d5p1:UpdateOrder>0.5</d5p1:UpdateOrder>
+            <d5p1:isDisabled>false</d5p1:isDisabled>
             <d6p1:IsLeft>true</d6p1:IsLeft>
             <d6p1:MaxSpawnTimeInSeconds>PT5S</d6p1:MaxSpawnTimeInSeconds>
             <d6p1:MaxSpeed>9</d6p1:MaxSpeed>
@@ -98,10 +98,11 @@
       </d2p1:BaseEntityModel>
       <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
         <d2p1:SerializeChildrens />
+        <d2p1:isDisabled>false</d2p1:isDisabled>
         <d2p1:isStatic>false</d2p1:isStatic>
         <d2p1:isVisible>true</d2p1:isVisible>
-        <d2p1:name>model01</d2p1:name>
-        <d2p1:tag></d2p1:tag>
+        <d2p1:name>model03</d2p1:name>
+        <d2p1:tag i:nil="true" />
         <d2p1:SerializeComponents xmlns:d5p1="WaveEngine.Framework">
           <d5p1:Component xmlns:d6p1="WaveEngine.Framework.Graphics" i:type="d6p1:Transform3D">
             <d6p1:LocalOrientation xmlns:d7p1="WaveEngine.Common.Math">
@@ -113,46 +114,46 @@
             <d6p1:LocalPosition xmlns:d7p1="WaveEngine.Common.Math">
               <d7p1:X>0</d7p1:X>
               <d7p1:Y>-0.25</d7p1:Y>
-              <d7p1:Z>1</d7p1:Z>
+              <d7p1:Z>0.5</d7p1:Z>
             </d6p1:LocalPosition>
             <d6p1:LocalScale xmlns:d7p1="WaveEngine.Common.Math">
-              <d7p1:X>1</d7p1:X>
-              <d7p1:Y>1</d7p1:Y>
-              <d7p1:Z>1</d7p1:Z>
+              <d7p1:X>100</d7p1:X>
+              <d7p1:Y>100</d7p1:Y>
+              <d7p1:Z>100</d7p1:Z>
             </d6p1:LocalScale>
           </d5p1:Component>
-          <d5p1:Component xmlns:d6p1="WaveEngine.Components.Graphics3D" i:type="d6p1:MaterialsMap">
-            <d6p1:DefaultMaterialPath>Content/Assets/Materials/road2Mat.wmat</d6p1:DefaultMaterialPath>
-            <d6p1:MaterialsPath xmlns:d7p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
-            <d6p1:UseMaterialCopy>false</d6p1:UseMaterialCopy>
-            <d6p1:useDefaultMaterial>false</d6p1:useDefaultMaterial>
+          <d5p1:Component xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Components.Graphics3D" i:type="d6p1:FileMesh">
+            <ModelMeshName xmlns="WaveEngine.Components.Graphics3D">strip_road_1</ModelMeshName>
+            <d6p1:ModelPath>Content/Assets/Models/strip_road_1.obj.wpk</d6p1:ModelPath>
+          </d5p1:Component>
+          <d5p1:Component xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Components.Graphics3D" i:type="d6p1:MaterialComponent">
+            <d6p1:AsignedTo i:nil="true" />
+            <d6p1:MaterialPath>Content/Assets/Materials/road2Mat.wmat</d6p1:MaterialPath>
+            <d6p1:UseCopy>false</d6p1:UseCopy>
             <d6p1:useDummyMaterial>false</d6p1:useDummyMaterial>
           </d5p1:Component>
-          <d5p1:Component xmlns:d6p1="WaveEngine.Components.Graphics3D" i:type="d6p1:Model">
-            <ModelPath xmlns="WaveEngine.Framework.Graphics">Content/Assets/Models/strip_road_1.obj.wpk</ModelPath>
-            <d6p1:ModelType>Custom</d6p1:ModelType>
-          </d5p1:Component>
-          <d5p1:Component xmlns:d6p1="WaveEngine.Components.Graphics3D" i:type="d6p1:ModelRenderer">
+          <d5p1:Component xmlns:d6p1="WaveEngine.Components.Graphics3D" i:type="d6p1:MeshRenderer">
+            <d5p1:FrustumCullingEnabled>true</d5p1:FrustumCullingEnabled>
             <d5p1:IsVisible>true</d5p1:IsVisible>
-            <FrustumCullingEnabled xmlns="WaveEngine.Framework.Graphics">true</FrustumCullingEnabled>
           </d5p1:Component>
           <d5p1:Component xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveFrogger.Behaviors" i:type="d6p1:VehicleGeneratorBehavior">
-            <d5p1:IsActive>true</d5p1:IsActive>
             <d5p1:UpdateOrder>0.5</d5p1:UpdateOrder>
+            <d5p1:isDisabled>false</d5p1:isDisabled>
             <d6p1:IsLeft>false</d6p1:IsLeft>
-            <d6p1:MaxSpawnTimeInSeconds>PT5S</d6p1:MaxSpawnTimeInSeconds>
+            <d6p1:MaxSpawnTimeInSeconds>PT3S</d6p1:MaxSpawnTimeInSeconds>
             <d6p1:MaxSpeed>9</d6p1:MaxSpeed>
-            <d6p1:MinSpawnTimeInSeconds>PT3S</d6p1:MinSpawnTimeInSeconds>
+            <d6p1:MinSpawnTimeInSeconds>PT5S</d6p1:MinSpawnTimeInSeconds>
             <d6p1:MinSpeed>5</d6p1:MinSpeed>
             <d6p1:SpawnDistante>12</d6p1:SpawnDistante>
           </d5p1:Component>
         </d2p1:SerializeComponents>
       </d2p1:BaseEntityModel>
     </d2p1:SerializeChildrens>
+    <d2p1:isDisabled>false</d2p1:isDisabled>
     <d2p1:isStatic>false</d2p1:isStatic>
     <d2p1:isVisible>true</d2p1:isVisible>
     <d2p1:name>roadRow</d2p1:name>
-    <d2p1:tag i:nil="true" />
+    <d2p1:tag></d2p1:tag>
     <d2p1:SerializeComponents xmlns:d3p1="WaveEngine.Framework">
       <d3p1:Component xmlns:d4p1="WaveEngine.Framework.Graphics" i:type="d4p1:Transform3D">
         <d4p1:LocalOrientation xmlns:d5p1="WaveEngine.Common.Math">
@@ -174,4 +175,5 @@
       </d3p1:Component>
     </d2p1:SerializeComponents>
   </EntityModel>
+  <EntityPointers xmlns:d2p1="http://schemas.datacontract.org/2004/07/WaveEngine.Framework.Models.Entities" />
 </Prefab>

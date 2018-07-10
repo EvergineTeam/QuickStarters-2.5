@@ -15,6 +15,8 @@ namespace WaveFrogger
         public override void Initialize(IApplication application)
         {
             base.Initialize(application);
+			
+            this.Load(WaveContent.GameInfo);
 
             WaveServices.RegisterService(new ScoreService());
             WaveServices.RegisterService(new AnimationService());

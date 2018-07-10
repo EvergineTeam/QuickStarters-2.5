@@ -42,11 +42,11 @@ namespace WaveFrogger.Behaviors
                 this.tapping = true;
                 this.initialTapPosition = touch[0].Position;
 
-                this.playerBehavior.AnimatedScaleY(0.8f, 15f);
+                this.playerBehavior.AnimatedScaleY(80f, 15f);
             }
             else if (this.tapping && touch.Count == 0)
             {
-                this.playerBehavior.AnimatedScaleY(1f, 30f);
+                this.playerBehavior.AnimatedScaleY(100f, 30f);
 
                 this.tapping = false;
                 this.finalTapPosition = this.touchPosition;
