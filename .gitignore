@@ -6,6 +6,8 @@
 *.user
 *.sln.docstates
 *.db
+.vs/
+.fake/
 
 # Build results
 [Dd]ebug/
@@ -181,10 +183,20 @@ FakesAssemblies/
 #Wave Editor intermediate folder
 generate.info
 generate.winfo
-WaveContent.cs
 Intermediate/
 packages/
 .vs/
+
+
+.wetest
+wetest/
+
+WaveEngine.VisualTestManager/
+WaveEngine.WindowsTools/
+WaveEngine.LinuxTools/
+WaveEngine.MacTools/
+
+WaveContent.cs
 
 UpgradeLog.txt
 *backup.zip
