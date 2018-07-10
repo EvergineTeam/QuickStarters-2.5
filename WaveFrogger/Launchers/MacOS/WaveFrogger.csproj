@@ -119,5 +119,5 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
   <Import Project="..\..\packages\WaveEngine.2.5.1-alpha-20180706-669\build\Xamarin.Mac\WaveEngine.targets" Condition="Exists('..\..\packages\WaveEngine.2.5.1-alpha-20180706-669\build\Xamarin.Mac\WaveEngine.targets')" />
   <Import Project="..\..\packages\WaveEngine.Box2D.2.5.1-alpha-20180706-669\build\Xamarin.Mac\WaveEngine.Box2D.targets" Condition="Exists('..\..\packages\WaveEngine.Box2D.2.5.1-alpha-20180706-669\build\Xamarin.Mac\WaveEngine.Box2D.targets')" />
-  <Import Project="..\..\packages\WaveEngine.Bullet.2.5.1-alpha-20180706-669\build\Xamarin.Mac\WaveEngine.Bullet.targets" Condition="Exists('..\..\packages\WaveEngine.Bullet.2.5.1-alpha-20180706-669\build\Xamarin.Mac\WaveEngine.Bullet.targets')" xmlns="" />
+  <Import Project="..\..\packages\WaveEngine.Bullet.2.5.1-alpha-20180706-669\build\Xamarin.Mac\WaveEngine.Bullet.targets" Condition="Exists('..\..\packages\WaveEngine.Bullet.2.5.1-alpha-20180706-669\build\Xamarin.Mac\WaveEngine.Bullet.targets')"/>
 </Project>
