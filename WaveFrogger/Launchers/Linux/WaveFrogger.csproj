@@ -139,5 +139,5 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
-  <Import Project="..\..\packages\WaveEngine.Bullet.2.5.1-alpha-20180706-669\build\Mono\WaveEngine.Bullet.targets" Condition="Exists('..\..\packages\WaveEngine.Bullet.2.5.1-alpha-20180706-669\build\Mono\WaveEngine.Bullet.targets')" xmlns="" />
+  <Import Project="..\..\packages\WaveEngine.Bullet.2.5.1-alpha-20180706-669\build\Mono\WaveEngine.Bullet.targets" Condition="Exists('..\..\packages\WaveEngine.Bullet.2.5.1-alpha-20180706-669\build\Mono\WaveEngine.Bullet.targets')"/>
 </Project>
