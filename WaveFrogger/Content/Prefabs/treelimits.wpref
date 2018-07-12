@@ -1,11 +1,516 @@
 ﻿<Prefab xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="WaveEngine.Framework.Models.Assets">
-  <Id xmlns="WaveEngine.Framework.Models">912d7c1a-3689-42d0-893f-6fdaaa11c517</Id>
+  <Id xmlns="WaveEngine.Framework.Models">ba2e802b-9180-4b37-91dc-95f37773a6fa</Id>
   <EntityModel xmlns:d2p1="WaveEngine.Framework.Models.Entities">
-    <d2p1:SerializeChildrens />
+    <d2p1:SerializeChildrens>
+      <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
+        <d2p1:SerializeChildrens />
+        <d2p1:isDisabled>false</d2p1:isDisabled>
+        <d2p1:isStatic>false</d2p1:isStatic>
+        <d2p1:isVisible>true</d2p1:isVisible>
+        <d2p1:name>Tree</d2p1:name>
+        <d2p1:tag i:nil="true" />
+        <d2p1:SerializeComponents xmlns:d5p1="WaveEngine.Framework">
+          <d5p1:Component xmlns:d6p1="WaveEngine.Framework.Graphics" i:type="d6p1:Transform3D">
+            <d6p1:LocalOrientation xmlns:d7p1="WaveEngine.Common.Math">
+              <d7p1:W>1</d7p1:W>
+              <d7p1:X>0</d7p1:X>
+              <d7p1:Y>0</d7p1:Y>
+              <d7p1:Z>0</d7p1:Z>
+            </d6p1:LocalOrientation>
+            <d6p1:LocalPosition xmlns:d7p1="WaveEngine.Common.Math">
+              <d7p1:X>0</d7p1:X>
+              <d7p1:Y>0</d7p1:Y>
+              <d7p1:Z>1</d7p1:Z>
+            </d6p1:LocalPosition>
+            <d6p1:LocalScale xmlns:d7p1="WaveEngine.Common.Math">
+              <d7p1:X>100</d7p1:X>
+              <d7p1:Y>100</d7p1:Y>
+              <d7p1:Z>100</d7p1:Z>
+            </d6p1:LocalScale>
+          </d5p1:Component>
+          <d5p1:Component xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Components.Graphics3D" i:type="d6p1:MaterialComponent">
+            <d6p1:AsignedTo>tree_1Mat</d6p1:AsignedTo>
+            <d6p1:MaterialPath>Content/Assets/Materials/Tree1Mat.wmat</d6p1:MaterialPath>
+            <d6p1:UseCopy>false</d6p1:UseCopy>
+            <d6p1:useDummyMaterial>false</d6p1:useDummyMaterial>
+          </d5p1:Component>
+          <d5p1:Component xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Components.Graphics3D" i:type="d6p1:FileMesh">
+            <ModelMeshName xmlns="WaveEngine.Components.Graphics3D">tree_1</ModelMeshName>
+            <d6p1:ModelPath>Content/Assets/Models/tree_1.obj.wpk</d6p1:ModelPath>
+          </d5p1:Component>
+          <d5p1:Component xmlns:d6p1="WaveEngine.Components.Graphics3D" i:type="d6p1:MeshRenderer">
+            <d5p1:FrustumCullingEnabled>true</d5p1:FrustumCullingEnabled>
+            <d5p1:IsVisible>true</d5p1:IsVisible>
+          </d5p1:Component>
+        </d2p1:SerializeComponents>
+      </d2p1:BaseEntityModel>
+      <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
+        <d2p1:SerializeChildrens />
+        <d2p1:isDisabled>false</d2p1:isDisabled>
+        <d2p1:isStatic>false</d2p1:isStatic>
+        <d2p1:isVisible>true</d2p1:isVisible>
+        <d2p1:name>Tree11</d2p1:name>
+        <d2p1:tag></d2p1:tag>
+        <d2p1:SerializeComponents xmlns:d5p1="WaveEngine.Framework">
+          <d5p1:Component xmlns:d6p1="WaveEngine.Framework.Graphics" i:type="d6p1:Transform3D">
+            <d6p1:LocalOrientation xmlns:d7p1="WaveEngine.Common.Math">
+              <d7p1:W>1</d7p1:W>
+              <d7p1:X>0</d7p1:X>
+              <d7p1:Y>0</d7p1:Y>
+              <d7p1:Z>0</d7p1:Z>
+            </d6p1:LocalOrientation>
+            <d6p1:LocalPosition xmlns:d7p1="WaveEngine.Common.Math">
+              <d7p1:X>1</d7p1:X>
+              <d7p1:Y>0</d7p1:Y>
+              <d7p1:Z>1</d7p1:Z>
+            </d6p1:LocalPosition>
+            <d6p1:LocalScale xmlns:d7p1="WaveEngine.Common.Math">
+              <d7p1:X>100</d7p1:X>
+              <d7p1:Y>100</d7p1:Y>
+              <d7p1:Z>100</d7p1:Z>
+            </d6p1:LocalScale>
+          </d5p1:Component>
+          <d5p1:Component xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Components.Graphics3D" i:type="d6p1:MaterialComponent">
+            <d6p1:AsignedTo></d6p1:AsignedTo>
+            <d6p1:MaterialPath>Content/Assets/Materials/Tree3Mat.wmat</d6p1:MaterialPath>
+            <d6p1:UseCopy>false</d6p1:UseCopy>
+            <d6p1:useDummyMaterial>false</d6p1:useDummyMaterial>
+          </d5p1:Component>
+          <d5p1:Component xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Components.Graphics3D" i:type="d6p1:FileMesh">
+            <ModelMeshName xmlns="WaveEngine.Components.Graphics3D">tree_3</ModelMeshName>
+            <d6p1:ModelPath>Content/Assets/Models/tree_3.obj.wpk</d6p1:ModelPath>
+          </d5p1:Component>
+          <d5p1:Component xmlns:d6p1="WaveEngine.Components.Graphics3D" i:type="d6p1:MeshRenderer">
+            <d5p1:FrustumCullingEnabled>true</d5p1:FrustumCullingEnabled>
+            <d5p1:IsVisible>true</d5p1:IsVisible>
+          </d5p1:Component>
+        </d2p1:SerializeComponents>
+      </d2p1:BaseEntityModel>
+      <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
+        <d2p1:SerializeChildrens />
+        <d2p1:isDisabled>false</d2p1:isDisabled>
+        <d2p1:isStatic>false</d2p1:isStatic>
+        <d2p1:isVisible>true</d2p1:isVisible>
+        <d2p1:name>Tree10</d2p1:name>
+        <d2p1:tag i:nil="true" />
+        <d2p1:SerializeComponents xmlns:d5p1="WaveEngine.Framework">
+          <d5p1:Component xmlns:d6p1="WaveEngine.Framework.Graphics" i:type="d6p1:Transform3D">
+            <d6p1:LocalOrientation xmlns:d7p1="WaveEngine.Common.Math">
+              <d7p1:W>1</d7p1:W>
+              <d7p1:X>0</d7p1:X>
+              <d7p1:Y>0</d7p1:Y>
+              <d7p1:Z>0</d7p1:Z>
+            </d6p1:LocalOrientation>
+            <d6p1:LocalPosition xmlns:d7p1="WaveEngine.Common.Math">
+              <d7p1:X>-2</d7p1:X>
+              <d7p1:Y>0</d7p1:Y>
+              <d7p1:Z>0</d7p1:Z>
+            </d6p1:LocalPosition>
+            <d6p1:LocalScale xmlns:d7p1="WaveEngine.Common.Math">
+              <d7p1:X>100</d7p1:X>
+              <d7p1:Y>100</d7p1:Y>
+              <d7p1:Z>100</d7p1:Z>
+            </d6p1:LocalScale>
+          </d5p1:Component>
+          <d5p1:Component xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Components.Graphics3D" i:type="d6p1:MaterialComponent">
+            <d6p1:AsignedTo></d6p1:AsignedTo>
+            <d6p1:MaterialPath>Content/Assets/Materials/Tree4Mat.wmat</d6p1:MaterialPath>
+            <d6p1:UseCopy>false</d6p1:UseCopy>
+            <d6p1:useDummyMaterial>false</d6p1:useDummyMaterial>
+          </d5p1:Component>
+          <d5p1:Component xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Components.Graphics3D" i:type="d6p1:FileMesh">
+            <ModelMeshName xmlns="WaveEngine.Components.Graphics3D">tree_4</ModelMeshName>
+            <d6p1:ModelPath>Content/Assets/Models/tree_4.obj.wpk</d6p1:ModelPath>
+          </d5p1:Component>
+          <d5p1:Component xmlns:d6p1="WaveEngine.Components.Graphics3D" i:type="d6p1:MeshRenderer">
+            <d5p1:FrustumCullingEnabled>true</d5p1:FrustumCullingEnabled>
+            <d5p1:IsVisible>true</d5p1:IsVisible>
+          </d5p1:Component>
+        </d2p1:SerializeComponents>
+      </d2p1:BaseEntityModel>
+      <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
+        <d2p1:SerializeChildrens />
+        <d2p1:isDisabled>false</d2p1:isDisabled>
+        <d2p1:isStatic>false</d2p1:isStatic>
+        <d2p1:isVisible>true</d2p1:isVisible>
+        <d2p1:name>Tree09</d2p1:name>
+        <d2p1:tag i:nil="true" />
+        <d2p1:SerializeComponents xmlns:d5p1="WaveEngine.Framework">
+          <d5p1:Component xmlns:d6p1="WaveEngine.Framework.Graphics" i:type="d6p1:Transform3D">
+            <d6p1:LocalOrientation xmlns:d7p1="WaveEngine.Common.Math">
+              <d7p1:W>1</d7p1:W>
+              <d7p1:X>0</d7p1:X>
+              <d7p1:Y>0</d7p1:Y>
+              <d7p1:Z>0</d7p1:Z>
+            </d6p1:LocalOrientation>
+            <d6p1:LocalPosition xmlns:d7p1="WaveEngine.Common.Math">
+              <d7p1:X>-1</d7p1:X>
+              <d7p1:Y>0</d7p1:Y>
+              <d7p1:Z>0</d7p1:Z>
+            </d6p1:LocalPosition>
+            <d6p1:LocalScale xmlns:d7p1="WaveEngine.Common.Math">
+              <d7p1:X>100</d7p1:X>
+              <d7p1:Y>100</d7p1:Y>
+              <d7p1:Z>100</d7p1:Z>
+            </d6p1:LocalScale>
+          </d5p1:Component>
+          <d5p1:Component xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Components.Graphics3D" i:type="d6p1:MaterialComponent">
+            <d6p1:AsignedTo>tree_1Mat</d6p1:AsignedTo>
+            <d6p1:MaterialPath>Content/Assets/Materials/Tree1Mat.wmat</d6p1:MaterialPath>
+            <d6p1:UseCopy>false</d6p1:UseCopy>
+            <d6p1:useDummyMaterial>false</d6p1:useDummyMaterial>
+          </d5p1:Component>
+          <d5p1:Component xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Components.Graphics3D" i:type="d6p1:FileMesh">
+            <ModelMeshName xmlns="WaveEngine.Components.Graphics3D">tree_1</ModelMeshName>
+            <d6p1:ModelPath>Content/Assets/Models/tree_1.obj.wpk</d6p1:ModelPath>
+          </d5p1:Component>
+          <d5p1:Component xmlns:d6p1="WaveEngine.Components.Graphics3D" i:type="d6p1:MeshRenderer">
+            <d5p1:FrustumCullingEnabled>true</d5p1:FrustumCullingEnabled>
+            <d5p1:IsVisible>true</d5p1:IsVisible>
+          </d5p1:Component>
+        </d2p1:SerializeComponents>
+      </d2p1:BaseEntityModel>
+      <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
+        <d2p1:SerializeChildrens />
+        <d2p1:isDisabled>false</d2p1:isDisabled>
+        <d2p1:isStatic>false</d2p1:isStatic>
+        <d2p1:isVisible>true</d2p1:isVisible>
+        <d2p1:name>Tree08</d2p1:name>
+        <d2p1:tag></d2p1:tag>
+        <d2p1:SerializeComponents xmlns:d5p1="WaveEngine.Framework">
+          <d5p1:Component xmlns:d6p1="WaveEngine.Framework.Graphics" i:type="d6p1:Transform3D">
+            <d6p1:LocalOrientation xmlns:d7p1="WaveEngine.Common.Math">
+              <d7p1:W>1</d7p1:W>
+              <d7p1:X>0</d7p1:X>
+              <d7p1:Y>0</d7p1:Y>
+              <d7p1:Z>0</d7p1:Z>
+            </d6p1:LocalOrientation>
+            <d6p1:LocalPosition xmlns:d7p1="WaveEngine.Common.Math">
+              <d7p1:X>0</d7p1:X>
+              <d7p1:Y>0</d7p1:Y>
+              <d7p1:Z>0</d7p1:Z>
+            </d6p1:LocalPosition>
+            <d6p1:LocalScale xmlns:d7p1="WaveEngine.Common.Math">
+              <d7p1:X>100</d7p1:X>
+              <d7p1:Y>100</d7p1:Y>
+              <d7p1:Z>100</d7p1:Z>
+            </d6p1:LocalScale>
+          </d5p1:Component>
+          <d5p1:Component xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Components.Graphics3D" i:type="d6p1:MaterialComponent">
+            <d6p1:AsignedTo></d6p1:AsignedTo>
+            <d6p1:MaterialPath>Content/Assets/Materials/Tree3Mat.wmat</d6p1:MaterialPath>
+            <d6p1:UseCopy>false</d6p1:UseCopy>
+            <d6p1:useDummyMaterial>false</d6p1:useDummyMaterial>
+          </d5p1:Component>
+          <d5p1:Component xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Components.Graphics3D" i:type="d6p1:FileMesh">
+            <ModelMeshName xmlns="WaveEngine.Components.Graphics3D">tree_3</ModelMeshName>
+            <d6p1:ModelPath>Content/Assets/Models/tree_3.obj.wpk</d6p1:ModelPath>
+          </d5p1:Component>
+          <d5p1:Component xmlns:d6p1="WaveEngine.Components.Graphics3D" i:type="d6p1:MeshRenderer">
+            <d5p1:FrustumCullingEnabled>true</d5p1:FrustumCullingEnabled>
+            <d5p1:IsVisible>true</d5p1:IsVisible>
+          </d5p1:Component>
+        </d2p1:SerializeComponents>
+      </d2p1:BaseEntityModel>
+      <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
+        <d2p1:SerializeChildrens />
+        <d2p1:isDisabled>false</d2p1:isDisabled>
+        <d2p1:isStatic>false</d2p1:isStatic>
+        <d2p1:isVisible>true</d2p1:isVisible>
+        <d2p1:name>Tree07</d2p1:name>
+        <d2p1:tag i:nil="true" />
+        <d2p1:SerializeComponents xmlns:d5p1="WaveEngine.Framework">
+          <d5p1:Component xmlns:d6p1="WaveEngine.Framework.Graphics" i:type="d6p1:Transform3D">
+            <d6p1:LocalOrientation xmlns:d7p1="WaveEngine.Common.Math">
+              <d7p1:W>1</d7p1:W>
+              <d7p1:X>0</d7p1:X>
+              <d7p1:Y>0</d7p1:Y>
+              <d7p1:Z>0</d7p1:Z>
+            </d6p1:LocalOrientation>
+            <d6p1:LocalPosition xmlns:d7p1="WaveEngine.Common.Math">
+              <d7p1:X>-2</d7p1:X>
+              <d7p1:Y>-1.49011614E-09</d7p1:Y>
+              <d7p1:Z>2</d7p1:Z>
+            </d6p1:LocalPosition>
+            <d6p1:LocalScale xmlns:d7p1="WaveEngine.Common.Math">
+              <d7p1:X>100</d7p1:X>
+              <d7p1:Y>100</d7p1:Y>
+              <d7p1:Z>100</d7p1:Z>
+            </d6p1:LocalScale>
+          </d5p1:Component>
+          <d5p1:Component xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Components.Graphics3D" i:type="d6p1:MaterialComponent">
+            <d6p1:AsignedTo></d6p1:AsignedTo>
+            <d6p1:MaterialPath>Content/Assets/Materials/Tree2Mat.wmat</d6p1:MaterialPath>
+            <d6p1:UseCopy>false</d6p1:UseCopy>
+            <d6p1:useDummyMaterial>false</d6p1:useDummyMaterial>
+          </d5p1:Component>
+          <d5p1:Component xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Components.Graphics3D" i:type="d6p1:FileMesh">
+            <ModelMeshName xmlns="WaveEngine.Components.Graphics3D">tree_2</ModelMeshName>
+            <d6p1:ModelPath>Content/Assets/Models/tree_2.obj.wpk</d6p1:ModelPath>
+          </d5p1:Component>
+          <d5p1:Component xmlns:d6p1="WaveEngine.Components.Graphics3D" i:type="d6p1:MeshRenderer">
+            <d5p1:FrustumCullingEnabled>true</d5p1:FrustumCullingEnabled>
+            <d5p1:IsVisible>true</d5p1:IsVisible>
+          </d5p1:Component>
+        </d2p1:SerializeComponents>
+      </d2p1:BaseEntityModel>
+      <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
+        <d2p1:SerializeChildrens />
+        <d2p1:isDisabled>false</d2p1:isDisabled>
+        <d2p1:isStatic>false</d2p1:isStatic>
+        <d2p1:isVisible>true</d2p1:isVisible>
+        <d2p1:name>Tree06</d2p1:name>
+        <d2p1:tag i:nil="true" />
+        <d2p1:SerializeComponents xmlns:d5p1="WaveEngine.Framework">
+          <d5p1:Component xmlns:d6p1="WaveEngine.Framework.Graphics" i:type="d6p1:Transform3D">
+            <d6p1:LocalOrientation xmlns:d7p1="WaveEngine.Common.Math">
+              <d7p1:W>1</d7p1:W>
+              <d7p1:X>0</d7p1:X>
+              <d7p1:Y>0</d7p1:Y>
+              <d7p1:Z>0</d7p1:Z>
+            </d6p1:LocalOrientation>
+            <d6p1:LocalPosition xmlns:d7p1="WaveEngine.Common.Math">
+              <d7p1:X>-2</d7p1:X>
+              <d7p1:Y>0</d7p1:Y>
+              <d7p1:Z>1</d7p1:Z>
+            </d6p1:LocalPosition>
+            <d6p1:LocalScale xmlns:d7p1="WaveEngine.Common.Math">
+              <d7p1:X>100</d7p1:X>
+              <d7p1:Y>100</d7p1:Y>
+              <d7p1:Z>100</d7p1:Z>
+            </d6p1:LocalScale>
+          </d5p1:Component>
+          <d5p1:Component xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Components.Graphics3D" i:type="d6p1:MaterialComponent">
+            <d6p1:AsignedTo>tree_1Mat</d6p1:AsignedTo>
+            <d6p1:MaterialPath>Content/Assets/Materials/Tree1Mat.wmat</d6p1:MaterialPath>
+            <d6p1:UseCopy>false</d6p1:UseCopy>
+            <d6p1:useDummyMaterial>false</d6p1:useDummyMaterial>
+          </d5p1:Component>
+          <d5p1:Component xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Components.Graphics3D" i:type="d6p1:FileMesh">
+            <ModelMeshName xmlns="WaveEngine.Components.Graphics3D">tree_1</ModelMeshName>
+            <d6p1:ModelPath>Content/Assets/Models/tree_1.obj.wpk</d6p1:ModelPath>
+          </d5p1:Component>
+          <d5p1:Component xmlns:d6p1="WaveEngine.Components.Graphics3D" i:type="d6p1:MeshRenderer">
+            <d5p1:FrustumCullingEnabled>true</d5p1:FrustumCullingEnabled>
+            <d5p1:IsVisible>true</d5p1:IsVisible>
+          </d5p1:Component>
+        </d2p1:SerializeComponents>
+      </d2p1:BaseEntityModel>
+      <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
+        <d2p1:SerializeChildrens />
+        <d2p1:isDisabled>false</d2p1:isDisabled>
+        <d2p1:isStatic>false</d2p1:isStatic>
+        <d2p1:isVisible>true</d2p1:isVisible>
+        <d2p1:name>Tree05</d2p1:name>
+        <d2p1:tag i:nil="true" />
+        <d2p1:SerializeComponents xmlns:d5p1="WaveEngine.Framework">
+          <d5p1:Component xmlns:d6p1="WaveEngine.Framework.Graphics" i:type="d6p1:Transform3D">
+            <d6p1:LocalOrientation xmlns:d7p1="WaveEngine.Common.Math">
+              <d7p1:W>1</d7p1:W>
+              <d7p1:X>0</d7p1:X>
+              <d7p1:Y>0</d7p1:Y>
+              <d7p1:Z>0</d7p1:Z>
+            </d6p1:LocalOrientation>
+            <d6p1:LocalPosition xmlns:d7p1="WaveEngine.Common.Math">
+              <d7p1:X>-1</d7p1:X>
+              <d7p1:Y>-1.49011614E-09</d7p1:Y>
+              <d7p1:Z>2</d7p1:Z>
+            </d6p1:LocalPosition>
+            <d6p1:LocalScale xmlns:d7p1="WaveEngine.Common.Math">
+              <d7p1:X>100</d7p1:X>
+              <d7p1:Y>100</d7p1:Y>
+              <d7p1:Z>100</d7p1:Z>
+            </d6p1:LocalScale>
+          </d5p1:Component>
+          <d5p1:Component xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Components.Graphics3D" i:type="d6p1:MaterialComponent">
+            <d6p1:AsignedTo></d6p1:AsignedTo>
+            <d6p1:MaterialPath>Content/Assets/Materials/Tree2Mat.wmat</d6p1:MaterialPath>
+            <d6p1:UseCopy>false</d6p1:UseCopy>
+            <d6p1:useDummyMaterial>false</d6p1:useDummyMaterial>
+          </d5p1:Component>
+          <d5p1:Component xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Components.Graphics3D" i:type="d6p1:FileMesh">
+            <ModelMeshName xmlns="WaveEngine.Components.Graphics3D">tree_2</ModelMeshName>
+            <d6p1:ModelPath>Content/Assets/Models/tree_2.obj.wpk</d6p1:ModelPath>
+          </d5p1:Component>
+          <d5p1:Component xmlns:d6p1="WaveEngine.Components.Graphics3D" i:type="d6p1:MeshRenderer">
+            <d5p1:FrustumCullingEnabled>true</d5p1:FrustumCullingEnabled>
+            <d5p1:IsVisible>true</d5p1:IsVisible>
+          </d5p1:Component>
+        </d2p1:SerializeComponents>
+      </d2p1:BaseEntityModel>
+      <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
+        <d2p1:SerializeChildrens />
+        <d2p1:isDisabled>false</d2p1:isDisabled>
+        <d2p1:isStatic>false</d2p1:isStatic>
+        <d2p1:isVisible>true</d2p1:isVisible>
+        <d2p1:name>Tree04</d2p1:name>
+        <d2p1:tag i:nil="true" />
+        <d2p1:SerializeComponents xmlns:d5p1="WaveEngine.Framework">
+          <d5p1:Component xmlns:d6p1="WaveEngine.Framework.Graphics" i:type="d6p1:Transform3D">
+            <d6p1:LocalOrientation xmlns:d7p1="WaveEngine.Common.Math">
+              <d7p1:W>1</d7p1:W>
+              <d7p1:X>0</d7p1:X>
+              <d7p1:Y>0</d7p1:Y>
+              <d7p1:Z>0</d7p1:Z>
+            </d6p1:LocalOrientation>
+            <d6p1:LocalPosition xmlns:d7p1="WaveEngine.Common.Math">
+              <d7p1:X>-1</d7p1:X>
+              <d7p1:Y>0</d7p1:Y>
+              <d7p1:Z>1</d7p1:Z>
+            </d6p1:LocalPosition>
+            <d6p1:LocalScale xmlns:d7p1="WaveEngine.Common.Math">
+              <d7p1:X>100</d7p1:X>
+              <d7p1:Y>100</d7p1:Y>
+              <d7p1:Z>100</d7p1:Z>
+            </d6p1:LocalScale>
+          </d5p1:Component>
+          <d5p1:Component xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Components.Graphics3D" i:type="d6p1:MaterialComponent">
+            <d6p1:AsignedTo>tree_1Mat</d6p1:AsignedTo>
+            <d6p1:MaterialPath>Content/Assets/Materials/Tree1Mat.wmat</d6p1:MaterialPath>
+            <d6p1:UseCopy>false</d6p1:UseCopy>
+            <d6p1:useDummyMaterial>false</d6p1:useDummyMaterial>
+          </d5p1:Component>
+          <d5p1:Component xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Components.Graphics3D" i:type="d6p1:FileMesh">
+            <ModelMeshName xmlns="WaveEngine.Components.Graphics3D">tree_1</ModelMeshName>
+            <d6p1:ModelPath>Content/Assets/Models/tree_1.obj.wpk</d6p1:ModelPath>
+          </d5p1:Component>
+          <d5p1:Component xmlns:d6p1="WaveEngine.Components.Graphics3D" i:type="d6p1:MeshRenderer">
+            <d5p1:FrustumCullingEnabled>true</d5p1:FrustumCullingEnabled>
+            <d5p1:IsVisible>true</d5p1:IsVisible>
+          </d5p1:Component>
+        </d2p1:SerializeComponents>
+      </d2p1:BaseEntityModel>
+      <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
+        <d2p1:SerializeChildrens />
+        <d2p1:isDisabled>false</d2p1:isDisabled>
+        <d2p1:isStatic>false</d2p1:isStatic>
+        <d2p1:isVisible>true</d2p1:isVisible>
+        <d2p1:name>Tree03</d2p1:name>
+        <d2p1:tag i:nil="true" />
+        <d2p1:SerializeComponents xmlns:d5p1="WaveEngine.Framework">
+          <d5p1:Component xmlns:d6p1="WaveEngine.Framework.Graphics" i:type="d6p1:Transform3D">
+            <d6p1:LocalOrientation xmlns:d7p1="WaveEngine.Common.Math">
+              <d7p1:W>1</d7p1:W>
+              <d7p1:X>0</d7p1:X>
+              <d7p1:Y>0</d7p1:Y>
+              <d7p1:Z>0</d7p1:Z>
+            </d6p1:LocalOrientation>
+            <d6p1:LocalPosition xmlns:d7p1="WaveEngine.Common.Math">
+              <d7p1:X>1</d7p1:X>
+              <d7p1:Y>-1.49011614E-09</d7p1:Y>
+              <d7p1:Z>2</d7p1:Z>
+            </d6p1:LocalPosition>
+            <d6p1:LocalScale xmlns:d7p1="WaveEngine.Common.Math">
+              <d7p1:X>100</d7p1:X>
+              <d7p1:Y>100</d7p1:Y>
+              <d7p1:Z>100</d7p1:Z>
+            </d6p1:LocalScale>
+          </d5p1:Component>
+          <d5p1:Component xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Components.Graphics3D" i:type="d6p1:MaterialComponent">
+            <d6p1:AsignedTo></d6p1:AsignedTo>
+            <d6p1:MaterialPath>Content/Assets/Materials/Tree2Mat.wmat</d6p1:MaterialPath>
+            <d6p1:UseCopy>false</d6p1:UseCopy>
+            <d6p1:useDummyMaterial>false</d6p1:useDummyMaterial>
+          </d5p1:Component>
+          <d5p1:Component xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Components.Graphics3D" i:type="d6p1:FileMesh">
+            <ModelMeshName xmlns="WaveEngine.Components.Graphics3D">tree_2</ModelMeshName>
+            <d6p1:ModelPath>Content/Assets/Models/tree_2.obj.wpk</d6p1:ModelPath>
+          </d5p1:Component>
+          <d5p1:Component xmlns:d6p1="WaveEngine.Components.Graphics3D" i:type="d6p1:MeshRenderer">
+            <d5p1:FrustumCullingEnabled>true</d5p1:FrustumCullingEnabled>
+            <d5p1:IsVisible>true</d5p1:IsVisible>
+          </d5p1:Component>
+        </d2p1:SerializeComponents>
+      </d2p1:BaseEntityModel>
+      <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
+        <d2p1:SerializeChildrens />
+        <d2p1:isDisabled>false</d2p1:isDisabled>
+        <d2p1:isStatic>false</d2p1:isStatic>
+        <d2p1:isVisible>true</d2p1:isVisible>
+        <d2p1:name>Tree02</d2p1:name>
+        <d2p1:tag i:nil="true" />
+        <d2p1:SerializeComponents xmlns:d5p1="WaveEngine.Framework">
+          <d5p1:Component xmlns:d6p1="WaveEngine.Framework.Graphics" i:type="d6p1:Transform3D">
+            <d6p1:LocalOrientation xmlns:d7p1="WaveEngine.Common.Math">
+              <d7p1:W>1</d7p1:W>
+              <d7p1:X>0</d7p1:X>
+              <d7p1:Y>0</d7p1:Y>
+              <d7p1:Z>0</d7p1:Z>
+            </d6p1:LocalOrientation>
+            <d6p1:LocalPosition xmlns:d7p1="WaveEngine.Common.Math">
+              <d7p1:X>1</d7p1:X>
+              <d7p1:Y>-1.49011614E-09</d7p1:Y>
+              <d7p1:Z>0</d7p1:Z>
+            </d6p1:LocalPosition>
+            <d6p1:LocalScale xmlns:d7p1="WaveEngine.Common.Math">
+              <d7p1:X>100</d7p1:X>
+              <d7p1:Y>100</d7p1:Y>
+              <d7p1:Z>100</d7p1:Z>
+            </d6p1:LocalScale>
+          </d5p1:Component>
+          <d5p1:Component xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Components.Graphics3D" i:type="d6p1:MaterialComponent">
+            <d6p1:AsignedTo></d6p1:AsignedTo>
+            <d6p1:MaterialPath>Content/Assets/Materials/Tree2Mat.wmat</d6p1:MaterialPath>
+            <d6p1:UseCopy>false</d6p1:UseCopy>
+            <d6p1:useDummyMaterial>false</d6p1:useDummyMaterial>
+          </d5p1:Component>
+          <d5p1:Component xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Components.Graphics3D" i:type="d6p1:FileMesh">
+            <ModelMeshName xmlns="WaveEngine.Components.Graphics3D">tree_2</ModelMeshName>
+            <d6p1:ModelPath>Content/Assets/Models/tree_2.obj.wpk</d6p1:ModelPath>
+          </d5p1:Component>
+          <d5p1:Component xmlns:d6p1="WaveEngine.Components.Graphics3D" i:type="d6p1:MeshRenderer">
+            <d5p1:FrustumCullingEnabled>true</d5p1:FrustumCullingEnabled>
+            <d5p1:IsVisible>true</d5p1:IsVisible>
+          </d5p1:Component>
+        </d2p1:SerializeComponents>
+      </d2p1:BaseEntityModel>
+      <d2p1:BaseEntityModel i:type="d2p1:EntityModel">
+        <d2p1:SerializeChildrens />
+        <d2p1:isDisabled>false</d2p1:isDisabled>
+        <d2p1:isStatic>false</d2p1:isStatic>
+        <d2p1:isVisible>true</d2p1:isVisible>
+        <d2p1:name>Tree01</d2p1:name>
+        <d2p1:tag i:nil="true" />
+        <d2p1:SerializeComponents xmlns:d5p1="WaveEngine.Framework">
+          <d5p1:Component xmlns:d6p1="WaveEngine.Framework.Graphics" i:type="d6p1:Transform3D">
+            <d6p1:LocalOrientation xmlns:d7p1="WaveEngine.Common.Math">
+              <d7p1:W>1</d7p1:W>
+              <d7p1:X>0</d7p1:X>
+              <d7p1:Y>0</d7p1:Y>
+              <d7p1:Z>0</d7p1:Z>
+            </d6p1:LocalOrientation>
+            <d6p1:LocalPosition xmlns:d7p1="WaveEngine.Common.Math">
+              <d7p1:X>0</d7p1:X>
+              <d7p1:Y>0</d7p1:Y>
+              <d7p1:Z>2</d7p1:Z>
+            </d6p1:LocalPosition>
+            <d6p1:LocalScale xmlns:d7p1="WaveEngine.Common.Math">
+              <d7p1:X>100</d7p1:X>
+              <d7p1:Y>100</d7p1:Y>
+              <d7p1:Z>100</d7p1:Z>
+            </d6p1:LocalScale>
+          </d5p1:Component>
+          <d5p1:Component xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Components.Graphics3D" i:type="d6p1:MaterialComponent">
+            <d6p1:AsignedTo>tree_1Mat</d6p1:AsignedTo>
+            <d6p1:MaterialPath>Content/Assets/Materials/Tree1Mat.wmat</d6p1:MaterialPath>
+            <d6p1:UseCopy>false</d6p1:UseCopy>
+            <d6p1:useDummyMaterial>false</d6p1:useDummyMaterial>
+          </d5p1:Component>
+          <d5p1:Component xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Components.Graphics3D" i:type="d6p1:FileMesh">
+            <ModelMeshName xmlns="WaveEngine.Components.Graphics3D">tree_1</ModelMeshName>
+            <d6p1:ModelPath>Content/Assets/Models/tree_1.obj.wpk</d6p1:ModelPath>
+          </d5p1:Component>
+          <d5p1:Component xmlns:d6p1="WaveEngine.Components.Graphics3D" i:type="d6p1:MeshRenderer">
+            <d5p1:FrustumCullingEnabled>true</d5p1:FrustumCullingEnabled>
+            <d5p1:IsVisible>true</d5p1:IsVisible>
+          </d5p1:Component>
+        </d2p1:SerializeComponents>
+      </d2p1:BaseEntityModel>
+    </d2p1:SerializeChildrens>
     <d2p1:isDisabled>false</d2p1:isDisabled>
     <d2p1:isStatic>false</d2p1:isStatic>
     <d2p1:isVisible>true</d2p1:isVisible>
-    <d2p1:name>treelimits00</d2p1:name>
+    <d2p1:name>treelimits</d2p1:name>
     <d2p1:tag i:nil="true" />
     <d2p1:SerializeComponents xmlns:d3p1="WaveEngine.Framework">
       <d3p1:Component xmlns:d4p1="WaveEngine.Framework.Graphics" i:type="d4p1:Transform3D">
@@ -18,7 +523,7 @@
         <d4p1:LocalPosition xmlns:d5p1="WaveEngine.Common.Math">
           <d5p1:X>0</d5p1:X>
           <d5p1:Y>0</d5p1:Y>
-          <d5p1:Z>-1.49011614E-09</d5p1:Z>
+          <d5p1:Z>0</d5p1:Z>
         </d4p1:LocalPosition>
         <d4p1:LocalScale xmlns:d5p1="WaveEngine.Common.Math">
           <d5p1:X>1</d5p1:X>

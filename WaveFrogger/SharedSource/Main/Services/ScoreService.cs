@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using System.Text;
 using WaveEngine.Common;
 
 namespace WaveFrogger.Services
 {
+    [DataContract]
     public class ScoreService : Service
     {
         public int MaxScore { get; private set; }

@@ -188,10 +188,10 @@ namespace WaveFrogger.Services
             {
                 // Limit models
                 this.AddTreeLimits("leftMargin", Vector3.UnitX * (this.HalfExtendLimits + 3), entity);
-                this.AddTreeLimits("rightMargin", -Vector3.UnitX * (this.HalfExtendLimits + 3), entity);
+                this.AddTreeLimits("rightMargin", -Vector3.UnitX * (this.HalfExtendLimits + 2), entity);
 
                 // Obstacles
-                this.AddRandomTrees(6, entity);
+                this.AddRandomTrees(5, entity);
             }
 
             return entity;
@@ -262,7 +262,7 @@ namespace WaveFrogger.Services
 
                     Vector3 pos = Vector3.Zero;
                     pos.X = WaveServices.Random.Next(-this.HalfExtendLimits, this.HalfExtendLimits + 1);
-                    pos.Z = WaveServices.Random.Next(4);
+                    pos.Z = WaveServices.Random.Next(3);
 
                     tree.FindComponent<Transform3D>().LocalPosition = pos;
 

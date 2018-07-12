@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// File generated on 7/10/2018 2:58:48 AM
+// File generated on 7/12/2018 1:06:52 AM
 namespace WaveFrogger
 {
     using System;
@@ -348,6 +348,9 @@ namespace WaveFrogger
             
             /// <summary> Path to Content/Prefabs/treelimits.wpref </summary>
             public const string treelimits = "Content/Prefabs/treelimits.wpref";
+            
+            /// <summary> Path to Content/Prefabs/treelimits2.wpref </summary>
+            public const string treelimits2 = "Content/Prefabs/treelimits2.wpref";
         }
         
         public sealed class Scenes

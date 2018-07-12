@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.Serialization;
 using WaveEngine.Common;
 using WaveEngine.Common.Math;
 using WaveEngine.Components.GameActions;
@@ -8,6 +9,7 @@ using WaveEngine.Framework.Services;
 
 namespace WaveFrogger.Services
 {
+    [DataContract]
     public class AnimationService : Service
     {
         public IGameAction CreateDeadAnimation(Entity entity, Transform3D transform, Vector3 to)
@@ -36,8 +38,8 @@ namespace WaveFrogger.Services
 
         public IGameAction CreateIdleAnimation(Entity entity, double lapse)
         {
-            var actionAnimation = GameActionFactory.CreateLoopGameActionUntil(entity.Scene, () => new ScaleTo3DGameAction(entity, new Vector3(1.0f, 0.9f, 1.0f), TimeSpan.FromMilliseconds(lapse), EaseFunction.CubicInEase)
-                .ContinueWith(new ScaleTo3DGameAction(entity, Vector3.One, TimeSpan.FromMilliseconds(lapse), EaseFunction.CubicOutEase)), () => false);
+            var actionAnimation = GameActionFactory.CreateLoopGameActionUntil(entity.Scene, () => new ScaleTo3DGameAction(entity, new Vector3(100f, 90f, 100f), TimeSpan.FromMilliseconds(lapse), EaseFunction.CubicInEase)
+                .ContinueWith(new ScaleTo3DGameAction(entity, Vector3.One * 100, TimeSpan.FromMilliseconds(lapse), EaseFunction.CubicOutEase)), () => false);
 
             return actionAnimation;
         }

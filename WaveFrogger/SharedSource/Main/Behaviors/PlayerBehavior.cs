@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Runtime.Serialization;
 using WaveEngine.Common.Math;
 using WaveEngine.Components.GameActions;
@@ -236,70 +237,63 @@ namespace WaveFrogger.Behaviors
                 this.transform.Scale = this.currentScale;
             }
 
-
-            var vehicles = this.EntityManager.FindAllByTag(Constants.TAG_VEHICLE);
-            foreach (Entity vehicle in vehicles)
+            // TODO: Workaround: check if position Z >0 cause vehicle boundingboxe create in <0,0,0> and collides
+            if (this.currentPosition.Z > 2)
             {
-                var vehicleBehavior = vehicle.FindComponent<VehicleBehavior>();
+                this.physicBody.ContactTest(this.collisionList);
 
-                // TODO: Workaround: check if position Z >0 cause vehicle boundingboxe create in <0,0,0> and collides
-                if (this.currentPosition.Z > 2)
+                if (this.collisionList.Count > 0)
                 {
-                    this.physicBody.ContactTest(this.collisionList);
+                    // Input stop
+                    var inputBehavior = this.Owner.FindComponent<PlayerInputBehavior>();
+                    inputBehavior.IgnoreInput = true;
 
-                    if (this.collisionList.Count > 0)
+                    var vector = this.currentPosition - collisionList[0].ThisBody.Transform3D.Position;
+                    var angle = Vector2.Angle(Vector2.UnitX, new Vector2(vector.X, vector.Z));
+
+                    if (this.audioService != null)
                     {
-                        // Input stop
-                        var inputBehavior = this.Owner.FindComponent<PlayerInputBehavior>();
-                        inputBehavior.IgnoreInput = true;
-
-                        var vector = this.currentPosition - vehicle.FindComponent<Transform3D>().Position;
-                        var angle = Vector2.Angle(Vector2.UnitX, new Vector2(vector.X, vector.Z));
-
-                        if (this.audioService != null)
-                        {
-                            this.audioService.Play(Audio.Sfx.chicken1_wav);
-                        }
-
-                        if (this.animationService != null)
-                        {
-                            IGameAction animation = null;
-                            if (angle > MathHelper.PiOver4 && angle < 3 * MathHelper.PiOver4)
-                            {
-                                // look up on this dead
-                                this.desiredOrientation = this.upOrientation;
-                                this.currentOrientation = this.desiredOrientation;
-                                this.transform.Orientation = this.currentOrientation;
-
-                                animation = animationService.CreateDeadAnimation(this.Owner, transform, new Vector3(2f, 1.2f, 0.2f));
-
-                                animation.Delay(TimeSpan.FromMilliseconds(250))
-                                    .ContinueWithAction(() =>
-                                    {
-                                        if (this.audioService != null)
-                                        {
-                                            this.audioService.Play(Audio.Sfx.deadDrop1_wav);
-                                        }
-                                    })
-                                    .ContinueWith(animationService.CreateFallAnimation(this.Owner, transform));
-                            }
-                            else
-                            {
-                                animation = animationService.CreateDeadAnimation(this.Owner, transform, new Vector3(2f, 0.2f, 1.2f));
-                            }
-
-                            animation
-                                .Delay(TimeSpan.FromMilliseconds(1500))
-                                .ContinueWithAction(() =>
-                            {
-                                this.BackToInitial();
-                            });
-
-                            animation.Run();
-                        }
-
-                        this.isDeadAnimation = true;
+                        this.audioService.Play(Audio.Sfx.chicken1_wav);
                     }
+
+                    if (this.animationService != null)
+                    {
+                        IGameAction animation = null;
+                        if (angle > MathHelper.PiOver4 && angle < 3 * MathHelper.PiOver4)
+                        {
+                            // look up on this dead
+                            this.desiredOrientation = this.upOrientation;
+                            this.currentOrientation = this.desiredOrientation;
+                            this.transform.Orientation = this.currentOrientation;
+
+                            animation = animationService.CreateDeadAnimation(this.Owner, transform, new Vector3(200f, 120f, 20f));
+
+                            animation.Delay(TimeSpan.FromMilliseconds(250))
+                                .ContinueWithAction(() =>
+                                {
+                                    if (this.audioService != null)
+                                    {
+                                        this.audioService.Play(Audio.Sfx.deadDrop1_wav);
+                                    }
+                                })
+                                .ContinueWith(animationService.CreateFallAnimation(this.Owner, transform));
+                        }
+                        else
+                        {
+                            animation = animationService.CreateDeadAnimation(this.Owner, transform, new Vector3(200f, 20f, 120f));
+                        }
+
+                        animation
+                            .Delay(TimeSpan.FromMilliseconds(1500))
+                            .ContinueWithAction(() =>
+                        {
+                            this.BackToInitial();
+                        });
+
+                        animation.Run();
+                    }
+
+                    this.isDeadAnimation = true;
                 }
             }
 

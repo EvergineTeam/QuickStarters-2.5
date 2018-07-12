@@ -27,8 +27,4 @@
     <Compile Include="$(MSBuildThisFileDirectory)WaveContent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Components\OrtographicCameraComponent.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="$(MSBuildThisFileDirectory)Entities\" />
-    <Folder Include="$(MSBuildThisFileDirectory)Extensions\" />
-  </ItemGroup>
 </Project>

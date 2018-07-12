@@ -4,6 +4,7 @@ using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
+using System.Runtime.Serialization;
 using WaveEngine.Common;
 using WaveEngine.Common.Math;
 using WaveEngine.Common.Media;
@@ -16,6 +17,7 @@ namespace WaveFrogger.Services
     /// <summary>
     /// Audio Service class.
     /// </summary>
+    [DataContract]
     public class AudioService : UpdatableService
     {
         private const float MUSIC_VOLUME = 0.2f;

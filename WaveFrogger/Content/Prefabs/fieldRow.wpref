@@ -20,7 +20,7 @@
             <d6p1:LocalPosition xmlns:d7p1="WaveEngine.Common.Math">
               <d7p1:X>0</d7p1:X>
               <d7p1:Y>-0.25</d7p1:Y>
-              <d7p1:Z>1.5</d7p1:Z>
+              <d7p1:Z>1</d7p1:Z>
             </d6p1:LocalPosition>
             <d6p1:LocalScale xmlns:d7p1="WaveEngine.Common.Math">
               <d7p1:X>100</d7p1:X>
