@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// File generated on 7/12/2018 1:06:52 AM
+// File generated on 7/12/2018 1:15:11 AM
 namespace WaveFrogger
 {
     using System;
@@ -361,6 +361,9 @@ namespace WaveFrogger
             
             /// <summary> Path to Content/Scenes/InitialScene.wscene </summary>
             public const string InitialScene = "Content/Scenes/InitialScene.wscene";
+            
+            /// <summary> Path to Content/Scenes/MyScene.wscene </summary>
+            public const string MyScene = "Content/Scenes/MyScene.wscene";
         }
     }
 }
