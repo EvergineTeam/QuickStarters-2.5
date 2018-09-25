@@ -1,4 +1,4 @@
-<Project xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="WaveEngine.Framework.Models">
+﻿<Project xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="WaveEngine.Framework.Models">
   <Id>fec393df-751f-4d6d-9b43-cb779fca94e4</Id>
   <GameInfoPath>FlyingKite.wgame</GameInfoPath>
   <ResourcesPath>Content</ResourcesPath>
