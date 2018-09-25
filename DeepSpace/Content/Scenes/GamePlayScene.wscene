@@ -17,9 +17,9 @@
             <d6p1:Z>0</d6p1:Z>
           </d5p1:LocalOrientation>
           <d5p1:LocalPosition xmlns:d6p1="WaveEngine.Common.Math">
-            <d6p1:X>508</d6p1:X>
-            <d6p1:Y>365</d6p1:Y>
-            <d6p1:Z>-10</d6p1:Z>
+            <d6p1:X>507.999939</d6p1:X>
+            <d6p1:Y>364.999939</d6p1:Y>
+            <d6p1:Z>10</d6p1:Z>
           </d5p1:LocalPosition>
           <d5p1:LocalScale xmlns:d6p1="WaveEngine.Common.Math">
             <d6p1:X>1</d6p1:X>
@@ -1081,21 +1081,6 @@
           </d5p1:screenPosition>
           <d5p1:transformMode>Standard</d5p1:transformMode>
         </d4p1:Component>
-        <d4p1:Component xmlns:d5p1="http://schemas.datacontract.org/2004/07/DeepSpace.Components.Alignment" i:type="d5p1:ViewportAligmentComponent">
-          <d5p1:HorizontalAlignment>Right</d5p1:HorizontalAlignment>
-          <d5p1:HorizontalMargin xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
-            <d6p1:X>0</d6p1:X>
-            <d6p1:Y>160</d6p1:Y>
-          </d5p1:HorizontalMargin>
-          <d5p1:IsGlobalPosition>false</d5p1:IsGlobalPosition>
-          <d5p1:ProportionalMarginOffset>0</d5p1:ProportionalMarginOffset>
-          <d5p1:UseTextureSize>true</d5p1:UseTextureSize>
-          <d5p1:VerticalAlignment>Bottom</d5p1:VerticalAlignment>
-          <d5p1:VerticalMargin xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
-            <d6p1:X>0</d6p1:X>
-            <d6p1:Y>160</d6p1:Y>
-          </d5p1:VerticalMargin>
-        </d4p1:Component>
         <d4p1:Component xmlns:d5p1="http://schemas.datacontract.org/2004/07/DeepSpace.Components.Joystick" i:type="d5p1:JoystickComponent">
           <d4p1:UpdateOrder>0</d4p1:UpdateOrder>
           <d4p1:isDisabled>false</d4p1:isDisabled>
@@ -1216,21 +1201,6 @@
             <d6p1:Y>0</d6p1:Y>
           </d5p1:screenPosition>
           <d5p1:transformMode>Standard</d5p1:transformMode>
-        </d4p1:Component>
-        <d4p1:Component xmlns:d5p1="http://schemas.datacontract.org/2004/07/DeepSpace.Components.Alignment" i:type="d5p1:ViewportAligmentComponent">
-          <d5p1:HorizontalAlignment>Left</d5p1:HorizontalAlignment>
-          <d5p1:HorizontalMargin xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
-            <d6p1:X>160</d6p1:X>
-            <d6p1:Y>0</d6p1:Y>
-          </d5p1:HorizontalMargin>
-          <d5p1:IsGlobalPosition>false</d5p1:IsGlobalPosition>
-          <d5p1:ProportionalMarginOffset>0</d5p1:ProportionalMarginOffset>
-          <d5p1:UseTextureSize>true</d5p1:UseTextureSize>
-          <d5p1:VerticalAlignment>Bottom</d5p1:VerticalAlignment>
-          <d5p1:VerticalMargin xmlns:d6p1="http://schemas.datacontract.org/2004/07/WaveEngine.Common.Math">
-            <d6p1:X>0</d6p1:X>
-            <d6p1:Y>160</d6p1:Y>
-          </d5p1:VerticalMargin>
         </d4p1:Component>
         <d4p1:Component xmlns:d5p1="http://schemas.datacontract.org/2004/07/DeepSpace.Components.Joystick" i:type="d5p1:JoystickComponent">
           <d4p1:UpdateOrder>0</d4p1:UpdateOrder>
@@ -1614,11 +1584,11 @@
       <d3p1:KeyValueOfstringanyType>
         <d3p1:Key>VirtualScreen</d3p1:Key>
         <d3p1:Value xmlns:d5p1="WaveEngine.Framework.Managers" i:type="d5p1:VirtualScreenManager">
-          <d5p1:Enabled>true</d5p1:Enabled>
+          <d5p1:Enabled>false</d5p1:Enabled>
           <d5p1:Expand>true</d5p1:Expand>
           <d5p1:Stretch>Uniform</d5p1:Stretch>
-          <d5p1:VirtualHeight>1024</d5p1:VirtualHeight>
-          <d5p1:VirtualWidth>768</d5p1:VirtualWidth>
+          <d5p1:VirtualHeight>730</d5p1:VirtualHeight>
+          <d5p1:VirtualWidth>1016</d5p1:VirtualWidth>
         </d3p1:Value>
       </d3p1:KeyValueOfstringanyType>
     </d2p1:Categories>
