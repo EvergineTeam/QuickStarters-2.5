@@ -9,7 +9,7 @@ AppPackages/
 BundleArtifacts/
 WaveEngine.WindowsTools/
 WaveEngine.MacTools/
-
+Deploy/
 
 /output/
 /outputilc/
