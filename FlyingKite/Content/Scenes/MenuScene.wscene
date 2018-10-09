@@ -66,7 +66,7 @@
           <d5p1:LayerMaskDefaultValue>true</d5p1:LayerMaskDefaultValue>
           <d5p1:NearPlane>-1000</d5p1:NearPlane>
           <d5p1:UpVector xmlns:d6p1="WaveEngine.Common.Math">
-            <d6p1:X>-0</d6p1:X>
+            <d6p1:X>0</d6p1:X>
             <d6p1:Y>1</d6p1:Y>
             <d6p1:Z>0</d6p1:Z>
           </d5p1:UpVector>
@@ -146,9 +146,9 @@
           <d5p1:texturePath>Content/Assets/Menus/logo.png.wpk</d5p1:texturePath>
         </d4p1:Component>
         <d4p1:Component xmlns:d5p1="WaveEngine.Components.Graphics2D" i:type="d5p1:SpriteRenderer">
-          <d4p1:FrustumCullingEnabled>true</d4p1:FrustumCullingEnabled>
+          <d4p1:FrustumCullingEnabled>false</d4p1:FrustumCullingEnabled>
           <d4p1:IsVisible>true</d4p1:IsVisible>
-          <layerId xmlns="WaveEngine.Framework.Graphics">0</layerId>
+          <layerId xmlns="WaveEngine.Framework.Graphics">2</layerId>
           <d5p1:DrawMode>Simple</d5p1:DrawMode>
         </d4p1:Component>
       </d2p1:SerializeComponents>

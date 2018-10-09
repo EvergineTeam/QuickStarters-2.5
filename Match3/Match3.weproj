@@ -1,4 +1,4 @@
-<Project xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="WaveEngine.Framework.Models">
+﻿<Project xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="WaveEngine.Framework.Models">
   <Id>9584bc6a-c5c5-48b9-968b-efbe511c2932</Id>
   <GameInfoPath>Match3.wgame</GameInfoPath>
   <ResourcesPath>Content</ResourcesPath>
@@ -28,6 +28,13 @@
               <Name>MacOS</Name>
               <NonAlphaCompressionFormat>R8G8B8A8</NonAlphaCompressionFormat>
               <Platform>MacOS</Platform>
+            </Profile>
+            <Profile>
+              <AlphaCompressionFormat>PVRTC4BPP</AlphaCompressionFormat>
+              <LauncherType>Default</LauncherType>
+              <Name>iOS</Name>
+              <NonAlphaCompressionFormat>PVRTC4BPP</NonAlphaCompressionFormat>
+              <Platform>iOS</Platform>
             </Profile>
           </d5p1:Profiles>
         </d3p1:Value>
