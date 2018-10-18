@@ -201,4 +201,7 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\..\packages\WaveEngine.2.5.0.39\build\Xamarin.iOS\WaveEngine.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\WaveEngine.2.5.0.39\build\Xamarin.iOS\WaveEngine.targets'))" />
   </Target>
+  <Import Project="..\..\packages\WaveEngine.MacTools.2.5.0.4\build\WaveEngine.MacTools.targets" Condition="Exists('..\..\packages\WaveEngine.MacTools.2.5.0.4\build\WaveEngine.MacTools.targets')" />
+  <Import Project="..\..\packages\WaveEngine.LinuxTools.2.5.0.4\build\WaveEngine.LinuxTools.targets" Condition="Exists('..\..\packages\WaveEngine.LinuxTools.2.5.0.4\build\WaveEngine.LinuxTools.targets')" />
+  <Import Project="..\..\packages\WaveEngine.WindowsTools.2.5.0.5\build\WaveEngine.WindowsTools.targets" Condition="Exists('..\..\packages\WaveEngine.WindowsTools.2.5.0.5\build\WaveEngine.WindowsTools.targets')" />
 </Project>
