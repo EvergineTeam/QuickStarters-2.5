@@ -4,8 +4,6 @@
 <dict>
 	<key>CFBundleDisplayName</key>
 	<string>Match3</string>
-	<key>CFBundleIdentifier</key>
-	<string>Match3.Match3</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
@@ -13,7 +11,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>MinimumOSVersion</key>
-	<string>8.0</string>
+	<string>9.0</string>
 	<key>UIDeviceFamily</key>
 	<array>
 		<integer>1</integer>
@@ -47,5 +45,7 @@
 	<string>UIStatusBarStyleLightContent</string>
 	<key>UIRequiresFullScreen</key>
 	<true/>
+	<key>CFBundleIdentifier</key>
+	<string>com.waveengine.quickstarters.match3</string>
 </dict>
 </plist>
