@@ -49,8 +49,6 @@
     <CodesignKey>iPhone Developer</CodesignKey>
     <MtouchDebug>True</MtouchDebug>
     <MtouchProfiling>True</MtouchProfiling>
-    <MtouchSdkVersion>
-    </MtouchSdkVersion>
     <MtouchLink>SdkOnly</MtouchLink>
     <MtouchFastDev>False</MtouchFastDev>
     <MtouchEnableGenericValueTypeSharing>False</MtouchEnableGenericValueTypeSharing>
@@ -74,7 +72,6 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>False</ConsolePause>
     <CodesignKey>iPhone Developer</CodesignKey>
-    <MtouchSdkVersion>8.1</MtouchSdkVersion>
     <MtouchLink>SdkOnly</MtouchLink>
     <MtouchDebug>False</MtouchDebug>
     <MtouchProfiling>False</MtouchProfiling>
@@ -201,4 +198,7 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\..\packages\WaveEngine.2.5.0.39\build\Xamarin.iOS\WaveEngine.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\WaveEngine.2.5.0.39\build\Xamarin.iOS\WaveEngine.targets'))" />
   </Target>
+  <Import Project="..\..\packages\WaveEngine.LinuxTools.2.5.0.4\build\WaveEngine.LinuxTools.targets" Condition="Exists('..\..\packages\WaveEngine.LinuxTools.2.5.0.4\build\WaveEngine.LinuxTools.targets')" />
+  <Import Project="..\..\packages\WaveEngine.WindowsTools.2.5.0.5\build\WaveEngine.WindowsTools.targets" Condition="Exists('..\..\packages\WaveEngine.WindowsTools.2.5.0.5\build\WaveEngine.WindowsTools.targets')" />
+  <Import Project="..\..\packages\WaveEngine.MacTools.2.5.0.4\build\WaveEngine.MacTools.targets" Condition="Exists('..\..\packages\WaveEngine.MacTools.2.5.0.4\build\WaveEngine.MacTools.targets')" />
 </Project>
