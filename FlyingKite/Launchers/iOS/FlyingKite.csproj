@@ -49,12 +49,10 @@
     <CodesignKey>iPhone Developer</CodesignKey>
     <MtouchDebug>True</MtouchDebug>
     <MtouchProfiling>True</MtouchProfiling>
-    <MtouchSdkVersion>
-    </MtouchSdkVersion>
     <MtouchLink>SdkOnly</MtouchLink>
     <MtouchFastDev>False</MtouchFastDev>
     <MtouchEnableGenericValueTypeSharing>False</MtouchEnableGenericValueTypeSharing>
-    <MtouchArch>ARM64</MtouchArch>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
     <MtouchUseLlvm>False</MtouchUseLlvm>
     <MtouchUseThumb>False</MtouchUseThumb>
     <MtouchOptimizePNGs>True</MtouchOptimizePNGs>
@@ -74,7 +72,6 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>False</ConsolePause>
     <CodesignKey>iPhone Developer</CodesignKey>
-    <MtouchSdkVersion>8.1</MtouchSdkVersion>
     <MtouchLink>SdkOnly</MtouchLink>
     <MtouchDebug>False</MtouchDebug>
     <MtouchProfiling>False</MtouchProfiling>
